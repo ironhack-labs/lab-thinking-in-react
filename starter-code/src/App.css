@@ -1,0 +1,60 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+.container{
+  display: flex;
+  justify-content: center;
+}
+
+.Yellow-one{
+  display:flex;
+  justify-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 600px;
+  border: 3px #f9f98b dashed;
+  
+}
+
+.Purple-one{
+  display:flex;
+  justify-items: center;
+  border:3px purple dashed;
+  height: 80px;
+}
+
+.input-search{
+  padding-left: 20px;
+  margin: 20px 10px;
+}
+
+.Green-one{
+  display:flex;
+  justify-items: center;
+  border: 3px green dashed;
+  height: 200px;
+}
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
