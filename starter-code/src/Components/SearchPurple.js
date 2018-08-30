@@ -1,19 +1,20 @@
 import React from 'react'
 
-const SearchPurple = () => 
-<div>
-    <input 
-    type="text" 
-    className="input-search" 
-    type="text" 
-    name="search" 
-    placeholder="Search">
-    </input> <br></br>
-    <label>
+const SearchPurple = ({handleSearch}) => <div>
+  <input
+    type="text"
+    className="input-search"
+    name="search"
+    placeholder="Search"
+    
+    onChange={handleSearch}
+  />
+  <br></br>
+  <label>
     <input type="checkbox"/>
     Only Show Products in Stock
-    </label>
-   
+  </label>
+
 </div>
 
 export default SearchPurple

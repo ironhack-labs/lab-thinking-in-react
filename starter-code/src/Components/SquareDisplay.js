@@ -1,18 +1,19 @@
 import React from 'react'
 import SearchPurple from './SearchPurple';
-import GreenBox from './GreenBox';
+import Table from './GreenBox';
 
 
-const YellowSquare = () => 
+const YellowSquare = ({handleSearch}) =>
 <div>
 <h1>This is the YellowSquare</h1>
 <div className="Purple-one">
-    <SearchPurple/>
+    <SearchPurple handleSearch={handleSearch}/>
 </div>
+<br></br>
 <div className = "Green-one">
-    <GreenBox/>
+    <Table/>
 </div>
- 
+
 </div>
 
 export default YellowSquare
