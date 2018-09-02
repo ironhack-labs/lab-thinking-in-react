@@ -1,0 +1,59 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.Filter{
+  border: orange solid 2px;
+  padding: 10px;
+  margin: 10px;
+  width: 300px;
+}
+
+.Search{
+  border: blue solid 2px;
+  margin: 0 0 5px 0;
+  text-align: left;
+}
+
+.Table{
+  border: green solid 2px;
+}
+
+.Category{
+  border: skyblue solid 2px;
+  margin: 5px 5px 5px 5px;
+}
+
+.Item{
+  border: red solid 2px;
+  margin: 0 5px 5px 5px;
+}
+
+.Non-stocked{
+  color: red;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
