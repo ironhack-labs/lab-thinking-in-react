@@ -1,0 +1,44 @@
+body {
+    background: rgb(81, 90, 190);
+    margin: 0;
+    min-height: 100vh;
+    color: #fff;
+    padding: 25px;
+}
+
+.card {
+    width: 300px;
+    border: 1px solid white;
+    padding: 15px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.card {
+    width: 300px;
+    box-shadow: 0 5px 15px rgba(226, 22, 117, 0.15);
+    padding: 15px;
+    border: 10px solid rgb(232, 236, 16);
+    border-radius: 5px;
+    margin: 15px;
+
+    img {
+        max-width: 100%;
+    }
+}
+
+.notThere {
+    color: rgb(143, 16, 16);
+}
+
+table{
+    width: 100%;
+}
+
+.category{
+    font-size: 15pt;
+    background: black;
+}

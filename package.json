@@ -1,0 +1,32 @@
+{
+  "name": "w7d1",
+  "version": "1.0.0",
+  "description": "-   We're using parcel.js to bundle our javascript files (as well as scss) -   Additionally, we use babel to transform our code -   The framework is called React",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "parcel src/index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.22.2",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "node-sass": "^4.9.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elizavetaRa/lab-thinking-in-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/elizavetaRa/lab-thinking-in-react/issues"
+  },
+  "homepage": "https://github.com/elizavetaRa/lab-thinking-in-react#readme"
+}
