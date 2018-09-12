@@ -15,9 +15,11 @@ const Table = ({ products, filter, checked }) => {
   .filter(el => el.category === "Electronics")
   
   return (
-    <table>
+    <table cellSpacing="0">
+    <col width="50%"></col>
+    <col width="50%"></col>
       <tbody>
-        <tr>
+        <tr className="tableHead">
           <th>Name</th>
           <th>Price</th>
         </tr>

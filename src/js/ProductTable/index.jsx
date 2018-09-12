@@ -25,7 +25,7 @@ class ProductTable extends React.Component {
     render() {
         return (
             <div className="container">
-                <h1>List</h1>
+                <h1>Product List</h1>
                 <Search 
                 search={this.state.search.query}
                 checked={this.state.search.checked}

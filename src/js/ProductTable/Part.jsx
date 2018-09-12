@@ -9,7 +9,7 @@ const Part = ({ list, category}) => {
   return (
     <React.Fragment>
       <tr>
-        <th>{category}</th>
+        <th colSpan="2">{category}</th>
         </tr>
         {productList}
     </React.Fragment>

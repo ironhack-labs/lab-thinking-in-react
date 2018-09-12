@@ -13,8 +13,36 @@ body {
     .container {
       padding: 25px 10px; } }
 
-.container td {
-  padding: 10px; }
-
-.container .outOfStock {
-  color: red; }
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .container h1 {
+    color: white;
+    text-shadow: 0px 2px 2px grey; }
+  .container .searchBar {
+    display: flex;
+    width: 80%;
+    margin: 30px 0;
+    display: flex;
+    justify-content: space-around; }
+    .container .searchBar .bar {
+      border: none;
+      width: 50%;
+      padding: 10px;
+      box-shadow: 0px 10px 50px rgba(179, 179, 179, 0.637); }
+  .container table {
+    border: none;
+    width: 80%;
+    border-collapse: collapse;
+    box-shadow: 0px 10px 50px rgba(179, 179, 179, 0.637); }
+  .container td {
+    padding: 10px;
+    text-align: center; }
+  .container th, .container .tableHead {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.034); }
+  .container tr {
+    box-shadow: 0px 5px 30px rgba(179, 179, 179, 0.425); }
+  .container .outOfStock {
+    color: red; }

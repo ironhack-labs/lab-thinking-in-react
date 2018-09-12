@@ -20952,11 +20952,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Search = function Search(props) {
     return _react2.default.createElement(
         "div",
-        null,
-        _react2.default.createElement("input", { onChange: props.handleSearchQuery, value: props.search, type: "text", placeholder: "search..." }),
-        _react2.default.createElement("input", { onChange: props.handleCheckBox, type: "checkbox", name: "inStock", value: "inStock", checked: props.checked }),
-        " Only show products in stock",
-        _react2.default.createElement("br", null)
+        { className: "searchBar" },
+        _react2.default.createElement("input", { className: "bar", onChange: props.handleSearchQuery, value: props.search, type: "text", placeholder: "search..." }),
+        _react2.default.createElement(
+            "div",
+            null,
+            " ",
+            _react2.default.createElement("input", { onChange: props.handleCheckBox, type: "checkbox", name: "inStock", value: "inStock", checked: props.checked }),
+            " Only show products in stock"
+        )
     );
 };
 
@@ -21027,7 +21031,7 @@ var Part = function Part(_ref) {
       null,
       _react2.default.createElement(
         "th",
-        null,
+        { colSpan: "2" },
         category
       )
     ),
@@ -21076,13 +21080,15 @@ var Table = function Table(_ref) {
 
   return _react2.default.createElement(
     "table",
-    null,
+    { cellSpacing: "0" },
+    _react2.default.createElement("col", { width: "50%" }),
+    _react2.default.createElement("col", { width: "50%" }),
     _react2.default.createElement(
       "tbody",
       null,
       _react2.default.createElement(
         "tr",
-        null,
+        { className: "tableHead" },
         _react2.default.createElement(
           "th",
           null,
@@ -21169,7 +21175,7 @@ var ProductTable = function (_React$Component) {
                 _react2.default.createElement(
                     'h1',
                     null,
-                    'List'
+                    'Product List'
                 ),
                 _react2.default.createElement(_Search2.default, {
                     search: this.state.search.query,
@@ -21305,7 +21311,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '38329' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '39235' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
