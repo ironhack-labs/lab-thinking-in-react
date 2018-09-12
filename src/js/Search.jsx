@@ -12,6 +12,7 @@ const Search = props => {
             />
             <br/>
             <input type="checkbox" name="stocked" id="stockedbox"
+                onChange={event => props.handleCheckBox(event.target.value)}
             /><label> Show Only In Stock</label>
             <br/>
             <input type="submit" className="button is-primary" value="Search" />

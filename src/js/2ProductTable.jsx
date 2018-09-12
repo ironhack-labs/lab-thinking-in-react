@@ -10,9 +10,11 @@ class ProductTable extends React.Component {
     this.state = {
       items: data.data,
       search: {
-        name: ""
+        name: "",
+        checked: "",
       }
     };
+    this._handleCheckBox=this._handleCheckBox.bind(this);
     this._searchItems = this._searchItems.bind(this);
     this._handleSearchChange = this._handleSearchChange.bind(this);
   }
@@ -32,6 +34,7 @@ class ProductTable extends React.Component {
           search={this.state.search}
           handleSearchChange={this._handleSearchChange}
           searchItems={this._searchItems}
+          handleCheckBox={this._handleCheckBox}
         />
         <FilteredTable list={list} cats={tableCats} />
       </div>
@@ -59,6 +62,14 @@ class ProductTable extends React.Component {
         search: newSearch
       });
   }
+  _handleCheckBox(event) {
+    this.setState({
+        search : {
+            name: this.state.search.name,
+            checked: event.target.checked
+        }
+    })
+}
 }
 
 export default ProductTable;
