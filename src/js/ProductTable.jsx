@@ -57,11 +57,12 @@ constructor(props) {
     );
   }
   _searchItems(event) {
+      console.log('what?------')
     let query = this.state.search
     event.preventDefault()
     console.log("search",query.name )
     // REGEX
-    let queryList = items.filter((el,index)=> el.name.match(new RegExp(`.*${this.state.search.name}.*`,'i')))
+    let queryList = data.data.filter((el,index)=> el.name.match(new RegExp(`.*${this.state.search.name}.*`,'i')))
     console.log(queryList)
     this.setState({
       items : queryList
