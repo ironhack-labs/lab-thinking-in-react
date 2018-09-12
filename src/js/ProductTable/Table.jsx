@@ -2,13 +2,16 @@ import React, { Component } from "react";
 
 import Part from "./Part";
 
-const Table = ({ products, filter }) => {
+const Table = ({ products, filter, checked }) => {
+
 
   const Sporting = products
   .filter(el => el.name.toLowerCase().includes(filter.toLowerCase()))
+  .filter(el => !checked || el.stocked)
   .filter(el => el.category === "Sporting Goods")
   const Electronics = products
   .filter(el => el.name.toLowerCase().includes(filter.toLowerCase()))
+  .filter(el => !checked || el.stocked)
   .filter(el => el.category === "Electronics")
   
   return (

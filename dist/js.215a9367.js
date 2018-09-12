@@ -20954,7 +20954,7 @@ var Search = function Search(props) {
         "div",
         null,
         _react2.default.createElement("input", { onChange: props.handleSearchQuery, value: props.search, type: "text", placeholder: "search..." }),
-        _react2.default.createElement("input", { type: "checkbox", name: "inStock", value: "inStock" }),
+        _react2.default.createElement("input", { onChange: props.handleCheckBox, type: "checkbox", name: "inStock", value: "inStock", checked: props.checked }),
         " Only show products in stock",
         _react2.default.createElement("br", null)
     );
@@ -21015,8 +21015,8 @@ var Part = function Part(_ref) {
   var list = _ref.list,
       category = _ref.category;
 
-  var productList = list.map(function (el) {
-    return _react2.default.createElement(_Row2.default, { product: el });
+  var productList = list.map(function (el, index) {
+    return _react2.default.createElement(_Row2.default, { product: el, key: "prod_" + index });
   });
 
   return _react2.default.createElement(
@@ -21055,16 +21055,21 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var Table = function Table(_ref) {
   var products = _ref.products,
-      filter = _ref.filter;
+      filter = _ref.filter,
+      checked = _ref.checked;
 
 
   var Sporting = products.filter(function (el) {
     return el.name.toLowerCase().includes(filter.toLowerCase());
   }).filter(function (el) {
+    return !checked || el.stocked;
+  }).filter(function (el) {
     return el.category === "Sporting Goods";
   });
   var Electronics = products.filter(function (el) {
     return el.name.toLowerCase().includes(filter.toLowerCase());
+  }).filter(function (el) {
+    return !checked || el.stocked;
   }).filter(function (el) {
     return el.category === "Electronics";
   });
@@ -21143,10 +21148,15 @@ var ProductTable = function (_React$Component) {
 
         _this.state = {
             products: _data2.default.data,
-            search: ""
+            search: {
+                query: "",
+                checked: false
+            }
         };
 
         _this._handleSearchQuery = _this._handleSearchQuery.bind(_this);
+        _this._handleCheckBox = _this._handleCheckBox.bind(_this);
+
         return _this;
     }
 
@@ -21162,10 +21172,13 @@ var ProductTable = function (_React$Component) {
                     'List'
                 ),
                 _react2.default.createElement(_Search2.default, {
-                    search: this.state.search,
+                    search: this.state.search.query,
+                    checked: this.state.search.checked,
+                    handleCheckBox: this._handleCheckBox,
                     handleSearchQuery: this._handleSearchQuery }),
                 _react2.default.createElement(_Table2.default, {
-                    filter: this.state.search,
+                    checked: this.state.search.checked,
+                    filter: this.state.search.query,
                     products: this.state.products })
             );
         }
@@ -21173,7 +21186,20 @@ var ProductTable = function (_React$Component) {
         key: '_handleSearchQuery',
         value: function _handleSearchQuery(event) {
             this.setState({
-                search: event.target.value
+                search: {
+                    query: event.target.value,
+                    checked: this.state.checked
+                }
+            });
+        }
+    }, {
+        key: '_handleCheckBox',
+        value: function _handleCheckBox(event) {
+            this.setState({
+                search: {
+                    query: this.state.search.query,
+                    checked: event.target.checked
+                }
             });
         }
     }]);

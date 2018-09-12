@@ -2,8 +2,8 @@ import React from "react";
 import Row from "./Row";
 
 const Part = ({ list, category}) => {
-  const productList = list.map(el => {
-      return <Row product={el} />
+  const productList = list.map((el, index) => {
+      return <Row product={el} key={"prod_" + index}/>
   });
 
   return (

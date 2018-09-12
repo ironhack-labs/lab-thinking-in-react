@@ -11,10 +11,15 @@ class ProductTable extends React.Component {
     
         this.state = {
           products : data.data,
-          search: ""
+          search: {
+              query : "",
+              checked: false
+          }
         }
 
         this._handleSearchQuery = this._handleSearchQuery.bind(this)
+        this._handleCheckBox = this._handleCheckBox.bind(this)
+
       }
 
     render() {
@@ -22,10 +27,13 @@ class ProductTable extends React.Component {
             <div className="container">
                 <h1>List</h1>
                 <Search 
-                search={this.state.search}
+                search={this.state.search.query}
+                checked={this.state.search.checked}
+                handleCheckBox={this._handleCheckBox}
                 handleSearchQuery={this._handleSearchQuery} />
                 <Table
-                filter={this.state.search}
+                checked={this.state.search.checked}
+                filter={this.state.search.query}
                 products={this.state.products}/>
             </div>
         )
@@ -33,7 +41,19 @@ class ProductTable extends React.Component {
 
     _handleSearchQuery(event) {
         this.setState({
-           search : event.target.value 
+           search : {
+               query: event.target.value ,
+               checked: this.state.checked
+           }
+        })
+    }
+
+    _handleCheckBox(event) {
+        this.setState({
+            search : {
+                query: this.state.search.query,
+                checked: event.target.checked
+            }
         })
     }
 }

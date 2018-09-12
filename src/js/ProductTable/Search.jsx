@@ -5,7 +5,7 @@ const Search = (props) => {
     return (
         <div>
             <input onChange={props.handleSearchQuery} value={props.search} type="text" placeholder="search..."/>
-            <input type="checkbox" name="inStock" value="inStock"/> Only show products in stock<br/>
+            <input onChange={props.handleCheckBox} type="checkbox" name="inStock" value="inStock" checked={props.checked}/> Only show products in stock<br/>
         </div>
     );
 };
