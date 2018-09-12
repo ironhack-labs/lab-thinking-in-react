@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.search-bar {
+  border: 1px solid black;
+  width: 300px;
+}
+
+#product-table {
+  display: flex;
+  justify-content: center;
+}
