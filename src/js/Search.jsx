@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 const Search = props => {
     return (
-<form className="search" onSubmit={props.searchPokemon}>
+<form className="search" onSubmit={props.searchItems}>
             <input
                 className="input"
                 value={props.search.name}

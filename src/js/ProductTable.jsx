@@ -10,10 +10,12 @@ constructor(props) {
     super(props);
 
     this.state = {
-      items: []
-      // search: {name: ''}
+      items: [],
+    //   search: ''
+      search: {name: ''}
     };
-   
+    this._searchItems = this._searchItems.bind(this);
+    this._handleSearchChange = this._handleSearchChange.bind(this)
   }
   componentDidMount() {
     this.setState({ items: data.data });
@@ -21,7 +23,6 @@ constructor(props) {
 
   render() {
     console.log(this.state.items);
-    console.log(typeof this.state.items);
     const mappedData = this.state.items.map((el, index) => (
       <DataBox
         name={el.name}
@@ -37,11 +38,11 @@ constructor(props) {
 
     return (
       <div>
-        {/* <Search
+        <Search
                      search={this.state.search}
                      handleSearchChange={this._handleSearchChange}
-                     searchPokemon={this._searchFoods}
-                 /> */}
+                     searchItems={this._searchItems}
+                 />
 
         <table>
           <thead>
@@ -55,6 +56,25 @@ constructor(props) {
       </div>
     );
   }
+  _searchItems(event) {
+    let query = this.state.search
+    event.preventDefault()
+    console.log("search",query.name )
+    // REGEX
+    let queryList = items.filter((el,index)=> el.name.match(new RegExp(`.*${this.state.search.name}.*`,'i')))
+    console.log(queryList)
+    this.setState({
+      items : queryList
+    })
+}
+_handleSearchChange(key, value) {
+    const newSearch = { ...this.state.search.name }
+    console.log(newSearch,"newsearch")
+    newSearch[key] = value
+    this.setState({
+        search: newSearch,
+    })
+}
 }
 
 export default ProductTable;

@@ -4,7 +4,7 @@ import ProductTable from "./ProductTable";
 class Application extends React.Component {
   render() {
     return (
-      <div classname="container">
+      <div className="container">
       <h1>IronThinking By Jason</h1>
       <ProductTable/></div>
     )}

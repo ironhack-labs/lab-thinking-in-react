@@ -7,6 +7,7 @@ const DataBox = props => {
         <tr className="itemBox" stocked={props.stocked.toString()} cat={props.cat} key={props.index}>
             <td>{props.name}</td>
             <td>{props.price}</td>
+            {/* <td> <button onClick={props.clickToDelete}>Delete</button></td> */}
         </tr>
     )
 }
