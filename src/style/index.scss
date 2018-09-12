@@ -1,0 +1,11 @@
+@import './base.scss';
+
+.container {
+    td {
+        padding: 10px;
+    }
+
+    .outOfStock {
+        color: red;
+    }
+}
