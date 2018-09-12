@@ -3,11 +3,23 @@
 *{
     font-family: 'Playfair Display SC', serif;
 }
-h1{
-    font-size:200px;
+table{
+    // padding-left: 500px;
+    background: grey;
+    border-radius: 10px;
+    margin: 10px;
 }
-.card-flex {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+// .card-flex {
+//     display: flex;
+//     justify-content: space-between;
+//     flex-wrap: wrap;
+// }
+.itemBoxStocked{
+    border: 1px dashed red;
+}
+.itemBoxNotStocked{
+    border: 1px dashed blue;
+}
+.catBox{
+    border: 1px dashed teal;
 }
