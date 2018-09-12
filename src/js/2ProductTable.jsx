@@ -11,7 +11,7 @@ class ProductTable extends React.Component {
       items: data.data,
       search: {
         name: "",
-        checked: "",
+        checked: false,
       }
     };
     this._handleCheckBox=this._handleCheckBox.bind(this);
@@ -25,8 +25,6 @@ class ProductTable extends React.Component {
     list.forEach(el => {
       if (!tableCats.includes(el.category)) tableCats.push(el.category);
     });
-    console.log(`Categories: `, tableCats);
-    console.log(`list`, typeof list, list);
 
     return (
       <div>
@@ -41,14 +39,14 @@ class ProductTable extends React.Component {
     );
   }
   _searchItems(event) {
-    console.log("what?------");
     let query = this.state.search;
     event.preventDefault();
-    console.log("search", query.name);
+    console.log("search", query);
     // REGEX
     let queryList = data.data.filter(el =>
       el.name.match(new RegExp(`.*${this.state.search.name}.*`, "i"))
     )
+    if(this.state.search.checked) queryList = queryList.filter(el => el.stocked)
     console.log(queryList);
     this.setState({
       items: queryList
