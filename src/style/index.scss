@@ -1,0 +1,13 @@
+@import "./base.scss";
+@import "./card.scss";
+*{
+    font-family: 'Playfair Display SC', serif;
+}
+h1{
+    font-size:200px;
+}
+.card-flex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

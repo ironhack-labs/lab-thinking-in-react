@@ -1,0 +1,11 @@
+.card {
+    width: 300px;
+    box-shadow: 0 5px 15px rgba(0,0,0, 0.15);
+    padding: 15px;
+    border-radius: 5px;
+    margin: 15px;
+
+    img {
+        max-width: 100%;
+    }
+}
