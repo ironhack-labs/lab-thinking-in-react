@@ -1,11 +1,9 @@
 @import "./base.scss";
-@import "./card.scss";
+@import "./table.scss";
 *{
     font-family: 'Playfair Display SC', serif;
 }
 table{
-    // padding-left: 500px;
-    background: grey;
     border-radius: 10px;
     margin: 10px;
 }
@@ -14,12 +12,14 @@ table{
 //     justify-content: space-between;
 //     flex-wrap: wrap;
 // }
-.itemBoxStocked{
-    border: 1px dashed red;
+
+.soldOut{
+    background:red;
 }
-.itemBoxNotStocked{
-    border: 1px dashed blue;
+.category{
+    background: Grey;
 }
-.catBox{
-    border: 1px dashed teal;
+
+th{
+    border-bottom:solid black 1px;
 }

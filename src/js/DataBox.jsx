@@ -1,15 +1,16 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 const DataBox = props => {
+  const mappedList = props.myItems.map((el, index) => (
+    <tr key={index+el.category} className={el.stocked ===false && "soldOut"}>
+      <td>{el.name}</td>
+      <td>{el.price}</td>
+      <td>{el.stocked ? "" : "outOfStock"}</td>
+    </tr>
+  ));
+  return (
+    <React.Fragment>{mappedList}</React.Fragment>
+  );
+};
 
-    
-    return (
-        <tr className="itemBox" stocked={props.stocked.toString()} cat={props.cat} key={props.index}>
-            <td>{props.name}</td>
-            <td>{props.price}</td>
-            {/* <td> <button onClick={props.clickToDelete}>Delete</button></td> */}
-        </tr>
-    )
-}
-
-export default DataBox
+export default DataBox;

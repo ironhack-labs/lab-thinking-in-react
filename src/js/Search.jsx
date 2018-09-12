@@ -10,6 +10,10 @@ const Search = props => {
                 type="text"
                 placeholder="name"
             />
+            <br/>
+            <input type="checkbox" name="stocked" id="stockedbox"
+            /><label> Show Only In Stock</label>
+            <br/>
             <input type="submit" className="button is-primary" value="Search" />
         </form>
     )
