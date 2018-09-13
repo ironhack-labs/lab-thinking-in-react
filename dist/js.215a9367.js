@@ -20938,7 +20938,7 @@ if ('development' === 'production') {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _react = require("react");
@@ -20950,18 +20950,30 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //rsc Shortcut for "dumb Component"
 
 var Search = function Search(props) {
-    return _react2.default.createElement(
-        "div",
-        { className: "searchBar" },
-        _react2.default.createElement("input", { className: "bar", onChange: props.handleSearchQuery, value: props.search, type: "text", placeholder: "search..." }),
-        _react2.default.createElement(
-            "div",
-            null,
-            " ",
-            _react2.default.createElement("input", { onChange: props.handleCheckBox, type: "checkbox", name: "inStock", value: "inStock", checked: props.checked }),
-            " Only show products in stock"
-        )
-    );
+  return _react2.default.createElement(
+    "div",
+    { className: "searchBar" },
+    _react2.default.createElement("input", {
+      className: "bar",
+      onChange: props.handleSearchQuery,
+      value: props.search,
+      type: "text",
+      placeholder: "search..."
+    }),
+    _react2.default.createElement(
+      "label",
+      { "class": "container-checkbox" },
+      "Only show products in stock",
+      _react2.default.createElement("input", {
+        onChange: props.handleCheckBox,
+        type: "checkbox",
+        name: "inStock",
+        value: "inStock",
+        checked: props.checked
+      }),
+      _react2.default.createElement("span", { "class": "checkmark" })
+    )
+  );
 };
 
 exports.default = Search;
@@ -21311,7 +21323,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '39235' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '39847' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
