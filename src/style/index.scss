@@ -1,7 +1,17 @@
 body {
-  border: 1px solid black;
+  margin: 0px;
+}
+
+.application {
+  width: 400px;
+  margin: auto;
+  padding: 50px;
 }
 
 .stocked-false {
   color: red;
+}
+
+.search-box {
+  margin-bottom: 20px;
 }

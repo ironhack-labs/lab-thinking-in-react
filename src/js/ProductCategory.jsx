@@ -7,8 +7,8 @@ const ProductCategory = props => {
   });
   return (
     <React.Fragment>
-      <tr>
-        <td className="product-category">
+      <tr className="row">
+        <td className="product-category thead-light">
           <h3>{props.categoryName}</h3>
         </td>
       </tr>
