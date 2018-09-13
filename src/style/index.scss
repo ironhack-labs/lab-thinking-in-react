@@ -24,6 +24,10 @@
       box-shadow: 0px 10px 50px rgba(179, 179, 179, 0.637);
     }
 
+    .bar:focus {
+        outline-color: #2196f3;
+    }
+
     .container-checkbox {
       display: block;
       position: relative;
