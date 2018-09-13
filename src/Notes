@@ -1,0 +1,10 @@
+import {BrowserRouter, Route, Switch} from "react-router-dom"
+
+render() {
+    return (
+        <BrowserRouter>
+            <Route exact path="/products" component= {Products} />
+            <Route exact path="/coutries" component={Countries}
+        </BrowserRouter>
+    )
+}
