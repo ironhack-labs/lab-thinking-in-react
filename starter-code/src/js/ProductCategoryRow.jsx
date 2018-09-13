@@ -3,7 +3,7 @@ import React from "react";
 const ProductCategoryRow = ({ category }) => {
   // console.log(props);
   return (
-    <tr>
+    <tr className="category-header">
       <td>
         <strong>{category}</strong>
       </td>

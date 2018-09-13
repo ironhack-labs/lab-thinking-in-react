@@ -5,6 +5,7 @@ const SearchBar = props => {
     <div className="search-bar">
       <div>
         <input
+          className="search-field"
           type="text"
           placeholder="Search.."
           onChange={props.handleQueryChange}

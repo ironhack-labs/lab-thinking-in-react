@@ -7,6 +7,15 @@ body {
 .search-bar {
   border: 1px solid black;
   width: 300px;
+  margin: 14px 0;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-field {
+  margin: 6px 0;
+  width: 200px;
 }
 
 #product-table {
@@ -16,4 +25,21 @@ body {
 
 .out-of-stock {
   color: red;
+}
+
+table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product td,
+th {
+  width: 150px;
+}
+
+.category-header {
+  display: flex;
+  justify-content: center;
+  margin: 4px 0;
 }
