@@ -4,7 +4,9 @@ const ProductCategoryRow = ({ category }) => {
   // console.log(props);
   return (
     <tr>
-      <td>{category}</td>
+      <td>
+        <strong>{category}</strong>
+      </td>
     </tr>
   );
 };

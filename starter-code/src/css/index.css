@@ -13,3 +13,7 @@ body {
   display: flex;
   justify-content: center;
 }
+
+.out-of-stock {
+  color: red;
+}
