@@ -60,7 +60,7 @@ Possible approach could be something like this:
 
 ![image](https://user-images.githubusercontent.com/23629340/42808309-54d1594a-89b3-11e8-9df3-450127e4459e.png)
 
-You’ll see here that we have five components in our simple app.
+As you can see here, we have five components in our simple app.
 
 - **FilterableProductTable (orange):** contains the entirety of the example (read between the lines, this is going to be our *App.js*)
 - **SearchBar (blue):** receives all user input
