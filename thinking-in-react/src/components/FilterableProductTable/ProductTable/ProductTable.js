@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import './ProductTable.css';
 
 import ProductCategoryRow from './ProductCategoryRow/ProductCategoryRow';
@@ -22,15 +22,23 @@ const ProductTable = (props) => {
             <tbody>
             {
                 categories.map((cat, id) => (
-                        <ProductCategoryRow key={ cat + id } category={ cat } />
+                    <Fragment key={ cat + id }>
+                        <ProductCategoryRow  category={ cat } />
+                        {
+                            goodsList.map( (g, id) => {
+                                if(g.category === cat) {
+                                    return (
+                                        <ProductRow key={ id + g.name } {...g}/>
+                                    )
+                                }
+                            })
+                        }
+                    </Fragment>
                     )
                 )
             }
             </tbody>
         </table>
-
-
-        <ProductRow/>
     </div>
     );
 };

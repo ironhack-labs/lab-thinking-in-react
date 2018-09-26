@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8d4c6a6-9bf5-47f7-98dc-c0205d9ba502" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thinking-in-react/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/thinking-in-react/src/data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thinking-in-react/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/thinking-in-react/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thinking-in-react/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/thinking-in-react/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/FilterableProductTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/FilterableProductTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/ProductTable/ProductCategoryRow/ProductCategoryRow.css" beforeDir="false" afterPath="$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/ProductTable/ProductCategoryRow/ProductCategoryRow.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/ProductTable/ProductCategoryRow/ProductCategoryRow.js" beforeDir="false" afterPath="$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/ProductTable/ProductCategoryRow/ProductCategoryRow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/ProductTable/ProductRow/ProductRow.css" beforeDir="false" afterPath="$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/ProductTable/ProductRow/ProductRow.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/ProductTable/ProductRow/ProductRow.js" beforeDir="false" afterPath="$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/ProductTable/ProductRow/ProductRow.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/ProductTable/ProductTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/ProductTable/ProductTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/SearchBar/SearchBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/SearchBar/SearchBar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/SearchBar/SearchBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/SearchBar/SearchBar.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,11 +22,32 @@
       <file leaf-file-name="ProductTable.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/ProductTable/ProductTable.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+            <state relative-caret-position="316">
+              <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProductRow.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/ProductTable/ProductRow/ProductRow.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="5" column="49" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProductRow.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/ProductTable/ProductRow/ProductRow.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -42,20 +55,11 @@
       <file leaf-file-name="ProductCategoryRow.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/ProductTable/ProductCategoryRow/ProductCategoryRow.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" column="48" lean-forward="true" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="48" />
+            <state>
+              <caret selection-end-line="12" selection-end-column="34" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductCategoryRow.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/ProductTable/ProductCategoryRow/ProductCategoryRow.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -86,14 +90,16 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/thinking-in-react/src/App.js" />
-        <option value="$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/ProductTable/ProductRow/ProductRow.js" />
         <option value="$PROJECT_DIR$/thinking-in-react/public/index.html" />
         <option value="$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/SearchBar/SearchBar.css" />
         <option value="$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/SearchBar/SearchBar.js" />
         <option value="$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/FilterableProductTable.js" />
-        <option value="$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/ProductTable/ProductTable.js" />
         <option value="$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/ProductTable/ProductCategoryRow/ProductCategoryRow.js" />
         <option value="$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/ProductTable/ProductCategoryRow/ProductCategoryRow.css" />
+        <option value="$PROJECT_DIR$/thinking-in-react/src/hoc/Hoc.js" />
+        <option value="$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/ProductTable/ProductTable.js" />
+        <option value="$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/ProductTable/ProductRow/ProductRow.css" />
+        <option value="$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/ProductTable/ProductRow/ProductRow.js" />
       </list>
     </option>
   </component>
@@ -178,16 +184,7 @@
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="FilterableProductTable" type="462c0819:PsiDirectoryNode" />
               <item name="ProductTable" type="462c0819:PsiDirectoryNode" />
-              <item name="ProductCategoryRow" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lab-thinking-in-react" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lab-thinking-in-react" type="462c0819:PsiDirectoryNode" />
-              <item name="thinking-in-react" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="FilterableProductTable" type="462c0819:PsiDirectoryNode" />
-              <item name="SearchBar" type="462c0819:PsiDirectoryNode" />
+              <item name="ProductRow" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -232,12 +229,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1537968164881</updated>
-      <workItem from="1537968167120" duration="3395000" />
+      <workItem from="1537968167120" duration="4622000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3395000" />
+    <option name="totallyTimeSpent" value="4622000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="197" y="43" width="1343" height="921" extended-state="0" />
@@ -275,25 +272,12 @@
     <entry file="file://$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/ProductTable/ProductTable.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/ProductTable/ProductRow/ProductRow.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/thinking-in-react/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/ProductTable/ProductRow/ProductRow.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -332,33 +316,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/thinking-in-react/src/data.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/ProductTable/ProductTable.js">
+    <entry file="file://$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/ProductTable/ProductCategoryRow/ProductCategoryRow.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="19">
+          <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thinking-in-react/src/hoc/Hoc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/ProductTable/ProductCategoryRow/ProductCategoryRow.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="48" lean-forward="true" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="48" />
+        <state>
+          <caret selection-end-line="12" selection-end-column="34" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/ProductTable/ProductCategoryRow/ProductCategoryRow.css">
+    <entry file="file://$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/ProductTable/ProductRow/ProductRow.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
-          <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+          <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thinking-in-react/src/data.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/ProductTable/ProductTable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thinking-in-react/src/components/FilterableProductTable/ProductTable/ProductRow/ProductRow.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="49" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
