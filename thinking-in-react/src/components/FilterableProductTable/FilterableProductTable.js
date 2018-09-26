@@ -12,10 +12,20 @@ class FilterableProductTable extends Component {
       goods: goods.data
     };
 
+    handleSearchChange = (search) => {
+        const copyGoods = goods.data.filter(g => {
+            return g.name.toLowerCase().includes(search.toLowerCase());
+        });
+
+        this.setState({
+            goods: copyGoods
+        });
+    };
+
     render() {
         return (
-            <div>
-                <SearchBar />
+            <div className="main-wrapper">
+                <SearchBar changeInput={ this.handleSearchChange }/>
                 <ProductTable goodsList={ this.state.goods } />
             </div>
         );

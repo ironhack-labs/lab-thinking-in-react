@@ -25,7 +25,7 @@ const ProductTable = (props) => {
                     <Fragment key={ cat + id }>
                         <ProductCategoryRow  category={ cat } />
                         {
-                            goodsList.map( (g, id) => {
+                             goodsList.map( (g, id) => {
                                 if(g.category === cat) {
                                     return (
                                         <ProductRow key={ id + g.name } {...g}/>
