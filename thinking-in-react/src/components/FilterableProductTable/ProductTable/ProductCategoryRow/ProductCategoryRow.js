@@ -3,7 +3,7 @@ import './ProductCategoryRow.css';
 
 
 const ProductCategoryRow = ({ category }) => (
-    <tr>
+    <tr className="category-row">
         <td colSpan="2" className="category-name">
             { category }
         </td>

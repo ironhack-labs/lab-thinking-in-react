@@ -69,6 +69,7 @@ class FilterableProductTable extends Component {
     render() {
         return (
             <div className="main-wrapper">
+                <h1 className="main-header">STORE LIST</h1>
                 <SearchBar
                     changeInput={ this.handleSearchChange }
                     searchString={ this.state.searchString }

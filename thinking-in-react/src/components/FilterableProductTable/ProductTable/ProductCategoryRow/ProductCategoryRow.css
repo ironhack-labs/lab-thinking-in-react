@@ -1,3 +1,11 @@
 .category-name {
     font-weight: bold;
 }
+
+.category-row {
+    background: deepskyblue;
+    color: dimgrey;
+    text-transform: uppercase;
+    font-size: 2rem;
+    text-shadow: 0 0 1px white;
+}

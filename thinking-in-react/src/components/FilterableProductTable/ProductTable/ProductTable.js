@@ -11,8 +11,8 @@ const ProductTable = (props) => {
         .filter((cat, id, arr) => arr.indexOf(cat) === id);
 
     return (
-    <div>
-        <table>
+    <div className="tableDiv">
+        <table className="main-table">
             <thead>
             <tr>
                 <th>Name</th>

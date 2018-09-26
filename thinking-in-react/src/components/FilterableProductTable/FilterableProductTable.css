@@ -1,3 +1,17 @@
 .main-wrapper {
     padding: 50px;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 50px;
+    background: rgba(144, 173, 226, 0.3);
+    border-radius: 10px;
+}
+
+.main-header {
+    text-align: center;
+    color: white;
+    font-size: 3rem;
+    letter-spacing: 10px;
+    text-shadow: 0 3px 10px black;
+    margin-bottom: 40px;
 }
