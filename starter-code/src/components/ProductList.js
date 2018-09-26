@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 // import './App.css';
 import data from './data.json';
 import ProductRow from './ProductRow';
+import Search from './Search'
 
 
 
@@ -12,16 +13,26 @@ class ProductList extends Component {
     this.state = {
 
       products: data.data,
+      productList: data.data
 
     }
   }
 
   sortProduct = (sortBy) => {
-    const sortedList = this.state.products.filter((oneProduct)=>{
+    const sortedList = this.state.productList.filter((oneProduct)=>{
       console.log(oneProduct)
       return oneProduct.category.toLowerCase().includes(sortBy.toLowerCase())
     })
     return this.showProduct(sortedList)
+  }
+
+  searchFunction = (searchTerm)=>{
+    let theList = [...this.state.products];
+    theList = theList.filter((eachProduct)=>{
+      return eachProduct.name.toUpperCase().includes(searchTerm.toUpperCase())
+    })
+
+    this.setState({productList: theList});
   }
 
   showProduct = (productList) => {
@@ -32,6 +43,9 @@ class ProductList extends Component {
       color: 'black'
     }
 
+
+
+    
 
     return productList.map((eachProduct, index)=>{
       return(
@@ -48,6 +62,9 @@ class ProductList extends Component {
   render() {
     return (
       <div>
+
+
+<Search mySearch={this.searchFunction} />
 
 
         <table className="table">

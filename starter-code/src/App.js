@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 // import data from "./components/data.json";
 import ProductList from "./components/ProductList";
+import Search from "./components/Search";
 
 
 
