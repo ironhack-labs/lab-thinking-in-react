@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 // import data from './data.json';
+import './../App.css'
+
 
 
 class ProductRow extends Component {
@@ -8,16 +10,28 @@ class ProductRow extends Component {
     this.state = {
 
 
+
+
+
+
     }
   }
+
+
+
+
   render() {
+
+
+
+
     return (
       <div>
 
 <tr>
-<td>{this.props.name}</td>
-<td>{this.props.price}</td>
 
+<td style = {this.props.myColor}>{this.props.name}</td>
+<td>{this.props.price}</td>
 
 </tr>
 

@@ -16,13 +16,30 @@ class ProductList extends Component {
     }
   }
 
-  showProduct = () => {
-    return this.state.products.map((eachProduct, index)=>{
+  sortProduct = (sortBy) => {
+    const sortedList = this.state.products.filter((oneProduct)=>{
+      console.log(oneProduct)
+      return oneProduct.category.toLowerCase().includes(sortBy.toLowerCase())
+    })
+    return this.showProduct(sortedList)
+  }
+
+  showProduct = (productList) => {
+    const rStyle = {
+      color: 'red'
+    }
+    const bStyle = {
+      color: 'black'
+    }
+
+
+    return productList.map((eachProduct, index)=>{
       return(
       <ProductRow 
-      name={eachProduct.name} 
-      price={eachProduct.price} 
+      name = {eachProduct.name} 
+      price = {eachProduct.price} 
       key = {index}
+      myColor = {eachProduct.stocked ? bStyle : rStyle}
       />
       )
     })
@@ -44,12 +61,21 @@ class ProductList extends Component {
   </tr>
 
 
+
   
-{this.showProduct()}
+{/* // {this.showProduct()} */}
 
 
 
 </thead>
+
+<tr><td>Electronics</td></tr>
+{this.sortProduct('electronics')}
+
+<tr><td>Sports Products</td></tr>
+{this.sortProduct('Sporting Goods')}
+
+
 
 
 </table>
