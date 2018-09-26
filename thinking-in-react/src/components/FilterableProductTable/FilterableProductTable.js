@@ -13,13 +13,30 @@ class FilterableProductTable extends Component {
     };
 
     handleSearchChange = (search) => {
-        const copyGoods = goods.data.filter(g => {
-            return g.name.toLowerCase().includes(search.toLowerCase());
-        });
 
-        this.setState({
-            goods: copyGoods
-        });
+        if(search === false) {
+            const copyGoods = goods.data.filter(g => {
+                return g.stocked;
+            });
+
+            this.setState({
+                goods: copyGoods
+            });
+        } else if(search === true) {
+            const copyGoods = goods.data.concat([]);
+
+            this.setState({
+                goods: copyGoods
+            });
+        } else {
+            const copyGoods = goods.data.filter(g => {
+                return g.name.toLowerCase().includes(search.toLowerCase());
+            });
+
+            this.setState({
+                goods: copyGoods
+            });
+        }
     };
 
     render() {

@@ -15,6 +15,7 @@ class SearchBar extends Component {
             value = !this.state[name];
 
             this.setState({[name]: value});
+            this.props.changeInput(this.state.showStockOnly);
             return;
         }
 
