@@ -61,14 +61,14 @@ class ProductList extends Component {
 
   render () {
     return (
-      <div>
+      <div className="row justify-content-center">
         <Search handleSearch={this.searchFunction}/>
-        <div className="form-check col-6">
+        <div className="form-check col-8 my-2">
           <input type="checkbox" className="form-check-input" value="horns" name="check" 
           onChange = {e=>this.checkInputChange(e)}/>
           <label className="form-check-label" >Only show products on stock</label>
         </div>
-      <table className="table">
+      <table className="table col-8 my-2">
           <thead className="thead-light">
             <tr>
               <th scope="col">Name</th>
@@ -76,11 +76,11 @@ class ProductList extends Component {
             </tr>
           </thead>
           <tbody>
-            <tr><th>Electronics</th></tr>
+            <tr><th colspan="2" >Electronics</th></tr>
             {this.sortProducts('electronics')}
           </tbody>
           <tbody>
-            <tr><th>Sporting goods</th></tr>
+            <tr><th colspan="2" >Sporting goods</th></tr>
             {this.sortProducts('Sporting Goods')}
           </tbody>
         </table>

@@ -17,12 +17,9 @@ class Search extends Component {
 
     }
 
-
-
-
     render(){
         return(
-            <div className="form-group col-6">
+            <div className="form-group col-8 my-2">
             <label >Search</label>
             <div className="control">
               <input 
