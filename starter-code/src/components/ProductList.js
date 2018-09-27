@@ -9,6 +9,7 @@ class ProductList extends Component {
     this.state = { 
       products: data.data,
       filtered: data.data,
+      stocked:false,
     }
   }
 
@@ -43,15 +44,30 @@ class ProductList extends Component {
 
   sortProducts = (sortBy) => {
     const sortedList = this.state.filtered.filter((oneProduct)=> {
-      return oneProduct.category.toLowerCase().includes(sortBy.toLowerCase())
+      if (this.state.stocked) {
+        return (oneProduct.stocked && oneProduct.category.toLowerCase().includes(sortBy.toLowerCase()))
+      } else {
+        return oneProduct.category.toLowerCase().includes(sortBy.toLowerCase())
+      }
     })
    return this.showProducts(sortedList)
+  }
+
+  checkInputChange(event) {
+    let newStatus = !this.state.stocked;
+    this.setState({stocked: newStatus})
+    console.log(event)
   }
 
   render () {
     return (
       <div>
-        <Search handleSearch={this.searchFunction} />
+        <Search handleSearch={this.searchFunction}/>
+        <div className="form-check col-6">
+          <input type="checkbox" className="form-check-input" value="horns" name="check" 
+          onChange = {e=>this.checkInputChange(e)}/>
+          <label className="form-check-label" >Only show products on stock</label>
+        </div>
       <table className="table">
           <thead className="thead-light">
             <tr>
@@ -59,10 +75,14 @@ class ProductList extends Component {
               <th scope="col">Price</th>
             </tr>
           </thead>
-          <tr> <th>Electronics</th></tr>
-          {this.sortProducts('electronics')}
-          <tr><th>Sporting goods</th></tr>
-          {this.sortProducts('Sporting Goods')}
+          <tbody>
+            <tr><th>Electronics</th></tr>
+            {this.sortProducts('electronics')}
+          </tbody>
+          <tbody>
+            <tr><th>Sporting goods</th></tr>
+            {this.sortProducts('Sporting Goods')}
+          </tbody>
         </table>
       </div>
     )
