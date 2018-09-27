@@ -5,35 +5,26 @@ import './../App.css'
 
 
 class ProductRow extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-
-
-
-
 
 
     }
   }
 
 
-
-
   render() {
-
-
 
 
     return (
       <div>
 
-<tr>
+        <tr>
+          <td style={this.props.myColor}>{this.props.name}</td>
+          <td>{this.props.price}</td>
 
-<td style = {this.props.myColor}>{this.props.name}</td>
-<td>{this.props.price}</td>
-
-</tr>
+        </tr>
 
       </div>
     );

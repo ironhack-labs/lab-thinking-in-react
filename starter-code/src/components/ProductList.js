@@ -13,20 +13,29 @@ class ProductList extends Component {
     this.state = {
 
       products: data.data,
-      productList: data.data
+      productList: data.data,
+      checkbox: false,
 
     }
   }
 
   sortProduct = (sortBy) => {
     const sortedList = this.state.productList.filter((oneProduct)=>{
+    //   if(this.state.checkbox){
+
+    //     return oneProduct.sortBy === sortBy && oneProduct.name.toUpperCase().includes(this.props.searchTerm.toUpperCase()) && oneProduct.stocked === this.state.checkbox
+
+    // }else{
+
+    //     return oneProduct.sortBy === sortBy && oneProduct.name.toUpperCase().includes(this.props.searchTerm.toUpperCase())
+    // }
       console.log(oneProduct)
       return oneProduct.category.toLowerCase().includes(sortBy.toLowerCase())
     })
     return this.showProduct(sortedList)
   }
 
-  searchFunction = (searchTerm)=>{
+  searchFunction = (searchTerm) => {
     let theList = [...this.state.products];
     theList = theList.filter((eachProduct)=>{
       return eachProduct.name.toUpperCase().includes(searchTerm.toUpperCase())
@@ -43,10 +52,6 @@ class ProductList extends Component {
       color: 'black'
     }
 
-
-
-    
-
     return productList.map((eachProduct, index)=>{
       return(
       <ProductRow 
@@ -59,12 +64,21 @@ class ProductList extends Component {
     })
   }
 
+  updateCheckBox = (e) =>{
+    this.setState({checkbox: e.target.checked})
+  }
+
   render() {
     return (
       <div>
 
 
 <Search mySearch={this.searchFunction} />
+
+<br/>
+
+  <input type="checkBox" onChange = {e => this.updateCheckBox(e)} checked={this.state.checkbox}/>
+  <label> Only show products in stock</label>
 
 
         <table className="table">
@@ -86,12 +100,13 @@ class ProductList extends Component {
 
 </thead>
 
+<div className = "category">
 <tr><td>Electronics</td></tr>
 {this.sortProduct('electronics')}
 
 <tr><td>Sports Products</td></tr>
 {this.sortProduct('Sporting Goods')}
-
+</div>
 
 
 

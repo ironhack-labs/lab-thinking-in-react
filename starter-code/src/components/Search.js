@@ -23,7 +23,7 @@ class Search extends Component {
     render(){
         return(
             <div>
-            <label>Search</label>
+            <label>Search for a product:</label>
             <div>
               <input 
               onChange={e=>this.updateInpute(e)}
