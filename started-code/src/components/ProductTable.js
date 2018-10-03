@@ -1,28 +1,39 @@
 import React from 'react';
 import 'bulma/css/bulma.css';
+import { ProductCategoryRow } from './ProductCategoryRow';
+import { ProductRow } from './ProductRow';
+import data from '../data.json';
 
 export class ProductTable extends React.Component {
 
-  constructor(props){
-    super(props);
+  constructor(){
+    super();
     this.state = {
-
+      data:data.data
     };
   }
    render(){
      return (
        <div>
-      <input className="input" type="text" placeholder="Text input"/>
-      <label className="checkbox"><input type="checkbox"/>Only show products in stock</label>
+         <table>
+           <thead>
+             <tr>
+             <td>Name</td>
+             <td>Price</td>
+             </tr>
+           </thead>
+           <tbody>
+             {
+               this.state.data.map((e, i) => {
+               return (
+                 <ProductCategoryRow key={i} category={e.category}/>
+               )
+             })}
+               <ProductRow/>
+           </tbody>
+         </table>
       </div>
      )
    }
-
-
-
-
-
-
-
 
 }
