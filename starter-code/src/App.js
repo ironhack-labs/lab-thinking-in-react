@@ -7,6 +7,7 @@ class App extends Component {
   state = {
     productos: data
   };
+
   render() {
     return (
       <div className="App">
