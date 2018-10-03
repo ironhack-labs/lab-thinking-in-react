@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import data from './data.json';
 import './App.css';
+import ProductTable from './ProductTable';
 
 class SearchBar extends Component {
   render(){
     return(
       <form>
-        <input type="text" placeholder="Search..." />
+        <input type="text" onChange={(event) => this.props.filterProducts(event)} placeholder="Search..."/>
         <p>
           <input type="checkbox" />
           {' '}

@@ -3,7 +3,6 @@ import data from './data.json';
 import './App.css';
 
 export const ProductRow = (props) => {
-  console.log(props.products)
   
     /* const product = this.props.product;
     const name = product.stocked ?

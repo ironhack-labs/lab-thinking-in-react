@@ -25,24 +25,27 @@ class ProductTable extends React.Component {
     });
     
     return (
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          {Object.keys(rows).map(category => {
-            return (
-              <div>
-                <ProductCategoryRow category={category} />
-                <ProductRow products={rows[category]} />
-              </div>
-            );
-          })}
-        </tbody>
-      </table>
+      <div>
+        <SearchBar filterProducts={this.props.filterProducts} />
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            {Object.keys(rows).map(category => {
+              return (
+                <div>
+                  <ProductCategoryRow category={category} />
+                  <ProductRow products={rows[category]} />
+                </div>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
     );
   }
 }
