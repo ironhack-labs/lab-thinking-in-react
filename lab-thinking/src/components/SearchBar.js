@@ -10,6 +10,11 @@ class SearchBar extends Component {
     this.props.newSearch(e.target.value);
   };
 
+  sendCheckbox = e => {
+    this.props.isChecked (e.target.checked);
+    
+  }
+
   render() {
     return (
       <div style={{ border: "green" }}>
@@ -18,8 +23,8 @@ class SearchBar extends Component {
           type="text"
           placeholder="Search.."
         />
-        <input type="checkbox" name="stock" />
-        <p>Hola marte</p>
+        <input type="checkbox" name="stock" unchecked onChange={(e)=> {this.sendCheckbox(e)}} />
+      
       </div>
     );
   }

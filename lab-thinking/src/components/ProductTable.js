@@ -6,16 +6,13 @@ import ProductRow from "./ProductRow";
 class ProductTable extends Component {
   constructor() {
     super();
-    // this.state = {
-    //   data: data.data
-    // };
+    
   }
 
   render() {
-    // console.log(this.props.data);
     return (
       <div style={{ border: "green" }}>
-        <p>Hola</p>
+        
         <ProductCategoryRow category="Electronics" />
         <div>
           {this.props.data.map((e, i) => {
