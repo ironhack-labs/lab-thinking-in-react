@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 
 class ProdcutRow extends Component {
     render() {
+        let { name, price } = this.props
         return(
             <tr>
-                <td></td>
-                <td>$</td>
+                <td>{name}</td>
+                <td>{price}</td>
             </tr>
         )
     }
