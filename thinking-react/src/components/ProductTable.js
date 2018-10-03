@@ -28,6 +28,7 @@ class ProductTable extends Component {
                   key={elem.name}
                   name={elem.name}
                   price={elem.price}
+                  stock={elem.stocked}
                 />
               ) : (
                 undefined
@@ -46,6 +47,7 @@ class ProductTable extends Component {
                   key={elem.name}
                   name={elem.name}
                   price={elem.price}
+                  stock={elem.stocked}
                 />
               ) : (
                 undefined

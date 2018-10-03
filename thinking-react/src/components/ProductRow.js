@@ -7,9 +7,11 @@ class ProductRow extends Component {
     this.state = {};
   }
   render() {
+    let color;
+    if (!this.props.stock) {color={color: "red"}}
     return (
       <tr>
-        <td>{this.props.name}</td>
+        <td style={color}>{this.props.name}</td>
         <td>{this.props.price}</td>
       </tr>
     );
