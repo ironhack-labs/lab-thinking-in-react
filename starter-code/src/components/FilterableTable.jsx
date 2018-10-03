@@ -16,6 +16,10 @@ class FilterableTable extends Component {
 
   inStock = (e) => {
     let data = Data.data
+    if(!e.target.checked){
+      this.setState({data})
+      return;
+    }
     let filtered = data.filter(val =>{return val.stocked})
     console.log(filtered)
     this.setState({data: filtered})
