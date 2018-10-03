@@ -14,19 +14,27 @@ export default class FilterableProductTable extends Component {
     };
   }
 
-  searchProduct = (value) => {
-    let filteredProducts = this.products.filter(e => e.name.toLowerCase().includes(value.toLowerCase()));
-    this.setState({products: filteredProducts})
-  }
-
-  stockedProduct = (value) => {
-    if (!value) {
-      let filteredProducts = this.products.filter(e => (e.stocked === true));
+  searchProduct = ({value, check}) => {
+    if (check) {
+      let filteredProducts = this.products.filter(e => (e.stocked === true)).filter(e => e.name.toLowerCase().includes(value.toLowerCase()));
       this.setState({products: filteredProducts})
     } else {
-      this.setState({products: this.products})
-    }
+      let filteredProducts = this.products.filter(e => e.name.toLowerCase().includes(value.toLowerCase()));
+      this.setState({products: filteredProducts})
+    }   
+    // this.setState({products: this.products})
+    // let filteredProducts = this.products.filter(e => e.name.toLowerCase().includes(value.toLowerCase()));
+    // this.setState({products: filteredProducts})
   }
+
+  // stockedProduct = (value) => {
+  //   if (!value) {
+  //     let filteredProducts = this.products.filter(e => (e.stocked === true));
+  //     this.setState({products: filteredProducts})
+  //   } else {
+  //     this.setState({products: this.products})
+  //   }
+  // }
 
   render(){
     return (
