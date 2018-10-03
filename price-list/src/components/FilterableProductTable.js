@@ -6,12 +6,27 @@ import data from "../data.json";
 export default class FilterableProductTable extends Component {
 	constructor() {
 		super();
-		this.state = { data: data.data }
+		this.state = { data: data.data,dataFiltered:data.data,checked:false,search:"" }
 	}
-
+	filterList=(search)=>{
+		this.setState({search})
+	}
+	onlyStock=(checked)=>{
+		this.setState({checked})
+	}
+	filterData=(data)=>{
+		const dataFilter= data.filter(p=>{
+				if(this.state.checked && !p.stocked) return false
+				return true 
+			}).filter(p=>{
+				return p.name.toLowerCase().includes(this.state.search.toLowerCase())
+			})
+		return dataFilter
+	}
 	render() {
+		const dataFiltered=this.filterData(this.state.data)
 		const dataByCategory = {}
-		this.state.data.forEach(pro => {
+		dataFiltered.forEach(pro => {
 			let categoryObj = pro.category.replace(" ", "")
 			if (!dataByCategory[categoryObj]) dataByCategory[categoryObj] = []
 			dataByCategory[categoryObj].push({
@@ -24,7 +39,7 @@ export default class FilterableProductTable extends Component {
 		return (
 			<section>
 				<p>FilterableProductTable</p>
-				<SearchBar />
+				<SearchBar onOnlyStock={this.onlyStock} onFilterList={this.filterList}/>
 				<ProductTable data={dataByCategory} />
 			</section>
 		)
