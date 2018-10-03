@@ -4,8 +4,9 @@ export default class ProductRow extends Component {
 	
 	
 	render() {
+		const {name,price,stocked}=this.props
 		return(
-			<p>ProductRow</p>
+			<li className={stocked || "red" }>{name} {price} {stocked}</li>
 		)
 	}
 }
