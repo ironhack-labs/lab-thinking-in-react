@@ -6,19 +6,19 @@ import ProductRow from "./ProductRow";
 class ProductTable extends Component {
   constructor() {
     super();
-    this.state = {
-      data: data.data
-    };
+    // this.state = {
+    //   data: data.data
+    // };
   }
 
   render() {
-    console.log(this.state.data);
+    // console.log(this.props.data);
     return (
       <div style={{ border: "green" }}>
         <p>Hola</p>
         <ProductCategoryRow category="Electronics" />
         <div>
-          {this.state.data.map((e, i) => {
+          {this.props.data.map((e, i) => {
             if (e.category === "Electronics") {
               return (<ProductRow key={e.name} name={e.name} price={e.price} color={e.stocked?'black':'red'}/>);
             }
@@ -26,7 +26,7 @@ class ProductTable extends Component {
         </div>
         <ProductCategoryRow category="Sporting Goods" />
         <div>
-          {this.state.data.map((e, i) => {
+          {this.props.data.map((e, i) => {
             if (e.category === "Sporting Goods") {
               return (<ProductRow key={e.name} name={e.name} price={e.price} color={e.stocked?'black':'red'}/>);
             }

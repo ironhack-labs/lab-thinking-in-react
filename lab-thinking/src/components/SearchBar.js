@@ -6,12 +6,21 @@ class SearchBar extends Component {
     super();
   }
 
+  sendSearch = e => {
+    this.props.newSearch(e.target.value);
+  };
+
   render() {
-    return (<div style={{border: 'green'}}>
-    <input type='text' placeholder='Search..'/>
-    <input type='checkbox' name='stock'/>
-    <p>Hola marte</p>
-    </div>
+    return (
+      <div style={{ border: "green" }}>
+        <input
+          onChange={e => this.sendSearch(e)}
+          type="text"
+          placeholder="Search.."
+        />
+        <input type="checkbox" name="stock" />
+        <p>Hola marte</p>
+      </div>
     );
   }
 }
