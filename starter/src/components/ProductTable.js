@@ -18,11 +18,15 @@ export const ProductTable = ({products}) => {
                 </th>
             </tr>
             
-
-            <ProductCategoryRow category={products.category} />
-
-            <ProductRow name={products.name} price={products.price} />
-            </tbody>
+            <ProductCategoryRow category={products.data.category} />
+            
+            {
+                products.data.map((e) => {
+                    return <ProductRow name={e.name} price={e.price} />
+                })
+            }
+            
+            </tbody>    
 
         </table>
     )
