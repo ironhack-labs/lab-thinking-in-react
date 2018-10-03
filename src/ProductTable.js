@@ -4,26 +4,32 @@ import ProductCategoryRow from './ProductCategoryRow';
 import { data } from './data.json';
 
 export default class ProductTable extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props)
         this.state = {
-            products: data,
+            filtered: this.props.filtered,
             categories: [...new Set(data.map(item => item.category))],
-        };
-    };
+            items: []
+        }
+    }
+
+    componentDidUpdate() {
+        // this.setState({filtered: this.props.filtered})
+    }
 
     orderItems() {
         const _items = [];
         this.state.categories.map(e => {
             _items.push(<ProductCategoryRow category={e}></ProductCategoryRow>)
-            this.state.products.map(p => {
+            this.props.filtered.map(p => {
                 if (p.category === e) _items.push(<ProductRow name={p.name} price={p.price}></ProductRow>)
             });
         });
-        return _items
-    }
+        this.setState({ items: _items })
+    };
 
     render() {
+        console.log(this.props.filtered)
         return (
             <table>
                 <thead>
@@ -33,7 +39,7 @@ export default class ProductTable extends React.Component {
                     </tr>
                 </thead>
                 <tbody>
-                    {this.orderItems()}
+                    {this.state.items}
                 </tbody>
             </table>
         )
