@@ -6,15 +6,33 @@ import ProductRow from "./ProductRow";
 class ProductTable extends Component {
   constructor() {
     super();
+    this.state = {
+      data: data.data
+    };
   }
 
   render() {
-    return (<div style={{border: 'green'}}>
-    <p>Hola marte</p>
-    <ProductCategoryRow category='electronics'/>
-    <ProductRow name='Baseball' price='10'/>
-
-    </div>
+    console.log(this.state.data);
+    return (
+      <div style={{ border: "green" }}>
+        <p>Hola</p>
+        <ProductCategoryRow category="Electronics" />
+        <div>
+          {this.state.data.map((e, i) => {
+            if (e.category === "Electronics") {
+              return (<ProductRow key={e.name} name={e.name} price={e.price} color={e.stocked?'black':'red'}/>);
+            }
+          })}
+        </div>
+        <ProductCategoryRow category="Sporting Goods" />
+        <div>
+          {this.state.data.map((e, i) => {
+            if (e.category === "Sporting Goods") {
+              return (<ProductRow key={e.name} name={e.name} price={e.price} color={e.stocked?'black':'red'}/>);
+            }
+          })}
+        </div>
+      </div>
     );
   }
 }

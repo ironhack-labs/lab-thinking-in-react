@@ -9,8 +9,8 @@ class ProductRow extends Component {
 
   render() {
     return (<div style={{border: 'orange'}}>
-    <p>{this.props.name}</p>
-    <p>{this.props.price}</p>
+    <p style={{color:this.props.color}}>{this.props.name} {this.props.price}</p>
+    
     </div>
     );
   }
