@@ -12,14 +12,17 @@ class FilterableProductTable extends Component {
     };
   }
 
-  filterProds = (list, search) =>{
-    console.log(list)
+  filterProds = (list, search, isOn) =>{
+    /* console.log(list)
+    console.log(isOn)
     console.log(search)
-    let filtered = list.filter(prod => {
-      return prod.name.includes(search.toUpperCase()) || prod.name.includes(search.toLowerCase())
-    })
+ */
+    let filtered = list.filter(prod =>
+      isOn ? (prod.name.includes(search.toUpperCase()) || prod.name.includes(search.toLowerCase())) && prod.stocked
+      : prod.name.includes(search.toUpperCase()) || prod.name.includes(search.toLowerCase())
+    )
     this.setState({data:filtered})
-    console.log(filtered)
+    //console.log(filtered)
   }
   
   render() {
