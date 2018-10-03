@@ -8,5 +8,6 @@
     {"category": "Electronics",     "price": "$199.99",   "stocked": true,    "name": "iPad Mini"},
     {"category": "Sporting Goods",  "price": "$199.99",   "stocked": true,    "name": "Tennis Balls"},
     {"category": "Electronics",     "price": "$199.99",   "stocked": true,    "name": "Huawei P10"}
+    
   ]
 }
