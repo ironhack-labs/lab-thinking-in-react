@@ -1,34 +1,60 @@
-import React, { Component } from 'react';
-import data from '../data.json'
-import ProductCategoryRow from './ProductCategoryRow';
-import ProductRow from './ProductRow';
+import React, { Component } from "react";
+import data from "../data.json";
+import ProductCategoryRow from "./ProductCategoryRow";
+import ProductRow from "./ProductRow";
 
 class ProductTable extends Component {
-    constructor(){
-        super()
-        this.state={data: data,
-                    categories: ['Sporting Goods', 'Electronics']
-        }
+  constructor(props) {
+    super(props);
+    this.state = {
+      categories: ["Sporting Goods", "Electronics"]
+    };
+  }
 
-    }
-    render() {
-        return(
-            <table>
-                <p>ProductTable</p>
-                <ProductCategoryRow name={this.state.categories[0]} />
-                {
+  
+  render() {
+    console.log(this.props.data);
+    const category = this.state.categories;
+    return (
+      <table>
+        <thead>
+          <ProductCategoryRow name={category[0]} />
+        </thead>
+        <tbody>
+          {this.props.data.map(
+            elem =>
+              elem.category === category[0] ? (
+                <ProductRow
+                  key={elem.name}
+                  name={elem.name}
+                  price={elem.price}
+                />
+              ) : (
+                undefined
+              )
+          )}
+        </tbody>
 
-                    <ProductRow />
-                }
-
-                <ProductCategoryRow name={this.state.categories[1]} />
-                {
-
-                    <ProductRow />
-                }
-            </table>
-        )
-    }
+        <thead>
+          <ProductCategoryRow name={this.state.categories[1]} />
+        </thead>
+        <tbody>
+          {this.props.data.map(
+            elem =>
+              elem.category === category[1] ? (
+                <ProductRow
+                  key={elem.name}
+                  name={elem.name}
+                  price={elem.price}
+                />
+              ) : (
+                undefined
+              )
+          )}
+        </tbody>
+      </table>
+    );
+  }
 }
 
 export default ProductTable;
