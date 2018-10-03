@@ -7,7 +7,10 @@ import { ProductTable } from './ProductTable';
 export default class FilterableProductTable extends Component {
     constructor() {
         super()
-        this.state = { products: products}
+        this.state = { 
+            category: products.data.category,
+            products: products.data
+        }
     }
 
     render() {
