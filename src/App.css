@@ -1,0 +1,43 @@
+.App {
+  text-align: center;
+}
+
+.orange {
+  margin: 0 auto;
+  margin-top: 20px;
+  border: 4px solid orange;
+  width: 50%;
+  height: 800px;
+}
+
+.blue {
+  margin: 0 auto;
+  margin-top: 20px;
+  border: 4px solid blue;
+  width: 92%;
+  height: 219px;
+}
+
+.green {
+  margin: 0 auto;
+  margin-top: 15px;
+  border: 4px solid green;
+  width: 92%;
+  height: 512px;
+}
+
+.turquoise {
+  margin: 0 auto;
+  margin-top: 15px;
+  border: 4px solid turquoise;
+  width: 91%;
+  height: 38px;
+}
+
+.red {
+  margin: 0 auto;
+  margin-top: 15px;
+  border: 4px solid red;
+  width: 91%;
+  height: 38px;
+}
