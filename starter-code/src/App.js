@@ -7,15 +7,15 @@ class ProductBox extends Component {
   constructor(props) {
     super(props)
   }
-  handleStyle(stocked){
-    if(!stocked){
+  handleStyle(stocked) {
+    if (!stocked) {
       return 'red';
     }
   }
   render() {
     return (
       <div>
-        <p style={{color:this.handleStyle(this.props.stocked)}}>{this.props.name} {this.props.price} {this.props.stocked}</p>
+        <p style={{ color: this.handleStyle(this.props.stocked) }}>{this.props.name} {this.props.price} {this.props.stocked}</p>
       </div>
     )
   }
@@ -24,7 +24,7 @@ class ProductBox extends Component {
 class App extends Component {
   constructor(props) {
     super(props)
-    this.state = { Products, listProducts: Products.data, categories: [] }
+    this.state = { Products, listProducts: Products.data, searchedList: Products.data, categories: [], searchValue: "", displayTitle: true, checked: false }
     // categories: this.state.listProducts.filter({ this.onlyUnique })
   }
 
@@ -32,13 +32,82 @@ class App extends Component {
     return self.indexOf(value) === index;
   }
 
-  // uniqueCategories= () => {
-  //   var arraytemp=this.state.listProducts.map(product=> product.category)
-  //   var arrayCategories = arraytemp.filter(this.onlyUnique)
-  //   this.setState({ categories: arrayCategories })
-  // }
+  toggleTitle() {
+    this.setState({ displayTitle: !this.state.displayTitle })
+  }
 
- 
+
+  handleChange(event) {
+    const valuetosearch = event.target.value
+
+    const getSearchList = (valuetosearch) => {
+      let newarray = []
+      if (valuetosearch === "") {
+        newarray = this.state.listProducts
+      } else {
+        newarray = this.state.listProducts.filter(product => product.name.toLowerCase().includes(valuetosearch.toLowerCase()))
+      }
+      this.setState({ searchedList: newarray })
+    }
+
+    this.setState({ searchValue: valuetosearch }, () => {
+      getSearchList(valuetosearch)
+    })
+  }
+  
+  handleCheckBox(event) {
+    this.setState({ checked: !this.state.checked })
+    let newarray = []
+    if (event.target.checked === true) {
+
+      newarray = this.state.listProducts.filter(product => product.stocked === true)
+    } else {
+      newarray = this.state.listProducts
+    }
+    this.setState({ searchedList: newarray })
+  }
+
+  handleAllChanges(event) {
+    let { name, value } = event.target;
+    // console.log({ name, value })
+    let valuechecked=this.state.checked
+    let valuetosearch=this.state.searchValue
+    if (name==="checked"){
+      valuechecked= !this.state.checked
+      // console.log("valuechecked", valuechecked)
+    }else if(name==="searchValue"){
+      valuetosearch=event.target.value
+      // console.log("valuetosearch", valuetosearch)
+    } else{
+      console.log("what it is?", event.target.value)
+    }
+    
+    const mycallbackfunction = (valuetosearch,valuechecked) => {
+      let newarray = []
+      if (valuetosearch === "" & valuechecked === false) {
+        // console.log("condition 1")
+        newarray = this.state.listProducts
+      } else if (valuetosearch != "" & valuechecked === true) {
+        // console.log("condition 2")
+        newarray = this.state.listProducts.filter(product => product.name.toLowerCase().includes(valuetosearch.toLowerCase()))
+        newarray = newarray.filter(product => product.stocked === true)
+      } else if (valuetosearch === "" & valuechecked === true) {
+        // console.log("condition 3")
+        newarray = this.state.listProducts.filter(product => product.stocked === true)
+      } else if (valuetosearch != "" & valuechecked === false) {
+        // console.log("condition 4")
+        newarray = this.state.listProducts.filter(product => product.name.toLowerCase().includes(valuetosearch.toLowerCase()))
+      }else{
+        
+        console.log("Je n'ai pas pensé à ça",valuetosearch)
+      }
+      this.setState({ searchedList: newarray })
+    }
+    this.setState({ searchValue: valuetosearch, checked: valuechecked }, () => {
+      mycallbackfunction(valuetosearch,valuechecked)
+    })
+  
+  }
 
   render() {
 
@@ -55,21 +124,22 @@ class App extends Component {
         <div className="FilterableProductTable">
 
           <div className="searchBar">
-            <input type="test" defaultValue="Search..." />
-            <input type="checkbox" id="instack" name="feature"
-              value="instock" />
+            <input type="test" name="searchValue" value={this.state.searchValue} onChange={(e) => this.handleAllChanges(e)} /><br />
+            <input type="checkbox" id="instack" name="checked" value={this.state.checked} onChange={(e) => this.handleAllChanges(e)}
+            />
             <label htmlFor="horns">Only show products in stock</label>
           </div>
-          <div className="FilterableProductTable">
+          {/* <div className="FilterableProductTable">
 
             {
-              arrayCategories.map(product => {
+              arrayCategories.map(category => {
                 return (
-                  <div key={product}>
-                    <h2> {product}</h2>
+                  <div key={category}>
+                    <h2> {category}</h2>
                     <div>
+
                       {
-                        this.state.listProducts.filter(productfilter => productfilter.category === product).map(product => {
+                        this.state.listProducts.filter(productfilter => productfilter.category === category).map(product => {
                           return (
                             <ProductBox key={product.name} name={product.name} price={product.price} stocked={product.stocked} ></ProductBox>
                           )
@@ -82,7 +152,31 @@ class App extends Component {
                 )
               })
             }
+          </div> */}
+          <div>
+          {
+              arrayCategories.map(category => {
+                return (
+                  <div key={category}>
+                    <h2> {category}</h2>
+            {
+              // this.state.listProducts.filter(this.searchFilter.bind(this)).map(product => {
+              // this.state.listProducts.filter(this.searchFilter.bind(this)).map(product => {
+              this.state.searchedList.filter(productfilter => productfilter.category === category).map(product => {
+                return (
 
+                  <div>
+                    {/* <h2> {product.category}</h2> */}
+                    <ProductBox key={product.name} name={product.name} price={product.price} stocked={product.stocked} ></ProductBox>
+
+                  </div>
+                )
+              })
+            }
+            </div>
+                )
+              })
+            }
           </div>
 
 
