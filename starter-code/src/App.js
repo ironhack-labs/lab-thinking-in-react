@@ -1,18 +1,46 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import data from './data.json';
+import SearchBar from './components/SearchBar';
+import List from "./components/List"
 
 class App extends Component {
+  
+  constructor(){
+    super();
+
+    this.state = {
+      data : data.data.sort(),
+      search: {
+        keyword: "",
+        stocked: false
+      }
+    }
+  }
+
+  searchChange = (e) => {
+    let { search } = this.state;
+    search.keyword = e.target.value.toLowerCase();
+
+    this.setState({ search });
+  }
+
+  searchCheckbox = (e) => {
+    let { search } = this.state;
+    search.stocked = e.target.checked;
+
+    this.setState({ search });
+  }
+
   render() {
+    let { data, search } = this.state;
+
+    data = data.filter(i => i.name.toLowerCase().includes(search.keyword));
+    search.stocked ? data = data.filter(i => i.stocked) : null;
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className="uk-container">
+        <SearchBar searchChange={this.searchChange} searchCheckbox={this.searchCheckbox} />
+        <List data={data} />
       </div>
     );
   }
