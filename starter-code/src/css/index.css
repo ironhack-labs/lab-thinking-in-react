@@ -1,0 +1,64 @@
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  justify-content: center;
+  padding-top: 70px;
+}
+.search-bar {
+  padding: 30px 15px;
+}
+input[type="text"] {
+  border: 1px inset rgba(224, 224, 224, 0.5);
+  border-radius: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  padding: 5px 20px;
+  width: 100%;
+}
+.search-bar div:nth-of-type(2) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+label {
+  font-size: 16px;
+  margin-left: 10px;
+}
+table {
+  border-radius: 10px;
+  border-collapse: collapse;
+  overflow: hidden;
+  width: 300px;
+}
+thead th {
+  background: #11293b;
+  color: #fff;
+  padding: 15px 0;
+  text-transform: uppercase
+}
+tbody tr:nth-of-type(odd) {
+  background: rgba(17, 41, 59, 0.1);
+}
+tbody tr:nth-of-type(even) {
+  background: rgba(17, 41, 59, 0.2);
+}
+th, td {
+  padding: 10px 20px;
+}
+th.category {
+  background: rgb(29, 67, 95);
+  color: #fff;
+  padding: 15px 20px;
+  text-align: left;
+}
+td.price {
+  text-align: right;
+}
+td.out {
+  color: tomato;
+}

@@ -1,19 +1,43 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import inventory    from './data.json'
+import SearchBar    from './components/SearchBar';
+import ProductTable from './components/ProductTable';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      stock:  [],
+      search: '',
+      check:  false
+    }
+  }
+
+  componentWillMount() {
+    let [...stock] = inventory.data;
+    this.setState({stock});
+  }
+
+  handleSearch = e => {
+    let {search} = this.state;
+    search = e.target.value;
+    this.setState({search});
+  }
+
+  handleCheck = e => {
+    let check = this.state;
+    check = e.target.checked;
+    this.setState({check});
+    
+  }
+
   render() {
+    const {stock, search, check} = this.state;
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <main>
+        <SearchBar holder="Search..." nameSearch="search" nameStock="check" onChange={this.handleSearch} onCheck={this.handleCheck} />
+        <ProductTable stock={stock} search={search} check={check} />
+      </main>
     );
   }
 }
