@@ -22,7 +22,50 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+html{
+  display: flex;
+  justify-content: center;
+
+}
+
+table{
+  display: flex;
+  justify-content: center;
+
+}
+
+th{
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 200;
+  background-color: skyblue;
+  padding: 8px;
+}
+
+.categorias{
+  background-color: lightgoldenrodyellow;
+  margin: 10px;
+  width: 250px;
+}
+
+.search{
+  border: none;
+  border-bottom: #222222;
+  background-color: beige;
+  padding: 10px 20px;
+  margin: 20px;
+  width: 300px;
+}
+
+.searchbar{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.productos{
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 8px;
 }
