@@ -18,10 +18,21 @@ class App extends Component {
     this.setState({data: newData})
   }
 
+  searchStock(check) {
+    let newData = data.filter(value => {
+      console.log(value.stocked+'' === check)
+      return value.stocked+'' === check
+    })
+   // console.log(check, data, newData)
+    this.setState({data: newData})
+  }
+
   render() {
     return (
       <div className="App">
-        <SearchBar onQueryChange={e => this.searchData(e)} />
+        <SearchBar 
+          onQueryChange={e => this.searchData(e)} 
+          isStockedChange={e => this.searchStock(e)}/>
         <ProductTable {...this.state} />
       </div>
     );

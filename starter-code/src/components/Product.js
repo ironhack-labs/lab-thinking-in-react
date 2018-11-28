@@ -1,9 +1,10 @@
 import React from 'react';
+import './Product.css';
 
 const product = (props) => {
   return (
     <tr>
-      <td>{props.name}</td>
+      <td className={!props.stocked ? 'not-stocked' : undefined}>{props.name}</td>
       <td>{props.price}</td>
     </tr>
   )

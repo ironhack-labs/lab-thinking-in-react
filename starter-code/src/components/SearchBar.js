@@ -5,11 +5,17 @@ class SearchBar extends Component {
     super(props)
     this.state = {
       data: null,
+      isStock: true,
     }
   }
 
   handleChange = (e) => {
     this.props.onQueryChange(e.target.value);
+  }
+
+  isStocked = (e) => {
+    this.props.isStockedChange(e.target.value);
+    this.setState({ isStock: !this.state.isStock })
   }
 
   render() {
@@ -19,7 +25,12 @@ class SearchBar extends Component {
         <input 
           type="text"
           onChange={e => this.handleChange(e)}/>
-        <input type="radio" value="true"/>
+        <label for="stock">Only show prodcuts in stock</label>
+        <input
+          id="stock" 
+          type="checkbox"
+          value={this.state.isStock}
+          onChange={e => this.isStocked(e)}/>
       </div>
     )
   }
