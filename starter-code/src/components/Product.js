@@ -1,11 +1,10 @@
 import React from 'react';
 
 const product = (props) => {
-
   return (
     <tr>
-      <td>PropsName</td>
-      <td>PropsPrice</td>
+      <td>{props.name}</td>
+      <td>{props.price}</td>
     </tr>
   )
 }
