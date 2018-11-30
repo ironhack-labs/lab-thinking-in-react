@@ -1,0 +1,8 @@
+.SearchResult > .columns{
+    margin-bottom: 0;
+    font-weight: 700;
+}
+
+.SearchResult > .columns .column{
+    padding-bottom: 0;
+}

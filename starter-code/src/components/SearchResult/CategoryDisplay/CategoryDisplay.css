@@ -1,0 +1,19 @@
+.CategoryDisplay{
+    margin-bottom: 12px;
+}
+
+.CategoryDisplay h3{
+    font-weight: 700;
+    margin-bottom: 18px;
+    font-style: italic;
+    font-size: 0.9rem;
+
+}
+
+.CategoryDisplay .column{
+    padding: 3px 12px;
+}
+
+.CategoryDisplay .out-of-stock{
+    color: red;
+}
