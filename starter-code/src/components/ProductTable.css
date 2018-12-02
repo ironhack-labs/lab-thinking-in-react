@@ -1,0 +1,18 @@
+.productTable .properties{
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+li{
+  list-style-type: none;
+}
+
+div li .content{
+  display: flex;
+  justify-content: space-evenly;
+}
