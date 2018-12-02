@@ -32,7 +32,7 @@ class ProductTable extends Component{
 
     const productHtml = 
       displayItem.map((oneProduct, index) => {
-        if(oneProduct.category != tempoData){
+        if(oneProduct.category !== tempoData){
           tempoData = oneProduct.category
           return(
             <div>
