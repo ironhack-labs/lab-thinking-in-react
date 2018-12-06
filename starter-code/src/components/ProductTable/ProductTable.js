@@ -11,12 +11,12 @@ export default class ProductTable extends Component {
     super(props)
     this.props = props
     this.state = {
-      newJson: this.groupBy(this.props.Products, "category")
+      products: this.groupBy(this.props.products, "category"),
     }
   }
 
   groupBy = (data, key) => {
-    return data.data.reduce(function (acumulador, product) {
+    return data.reduce(function (acumulador, product) {
       (acumulador[product[key]] = acumulador[product[key]] || []).push(product);
       return acumulador;
     }, {});
@@ -34,12 +34,17 @@ export default class ProductTable extends Component {
   //   })
   // }
 
+  componentWillReceiveProps(props){
+    let arr =  this.groupBy(props.products, "category")
+    this.setState({...this.state, products:arr})
+  }
+
   render() {
     return (
       <div className="table-products">
         <table className="table">
           <tbody>
-            {Object.keys(this.state.newJson).map((category, i) => {
+            {Object.keys(this.state.products).map((category, i) => {
               return (
                 <tr key={i}>
                   <tr>
@@ -52,7 +57,7 @@ export default class ProductTable extends Component {
                   </tr>
                   <ProductCategoryRow category={category} />
 
-                  {this.state.newJson[category].map((product, i) => {
+                  {this.state.products[category].map((product, i) => {
                     return (
                      <ProductRow key={i} product={product}/>
                     );

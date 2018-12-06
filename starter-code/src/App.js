@@ -10,7 +10,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <FilterableProductTable Products={Products}/>
+        <FilterableProductTable products={Products}/>
       </div>
     );
   }
