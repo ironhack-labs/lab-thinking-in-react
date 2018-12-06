@@ -1,18 +1,39 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+import SearchBar from './components/SearchBar'
+import ProductCategoryRow from './components/ProductCategoryRow'
+
+import products from './data.json'
+
+
+const groupBy = (json, key) => {
+  return json.data.reduce((acc, product) => {
+      (acc[product[key]] = acc[product[key]] || []).push(product);
+      return acc;
+  }, {});
+};
+
 class App extends Component {
+  state ={
+    myJson: groupBy(products, "category")
+  }  
   render() {
+
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <SearchBar/>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ProductCategoryRow categories={this.state.myJson}/>
+        </tbody>  
+      </table>
       </div>
     );
   }
