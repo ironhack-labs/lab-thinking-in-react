@@ -1,28 +1,47 @@
-.App {
-  text-align: center;
+.orange-box{
+  border: 1px solid orange;
+  border-radius: 2px;
+  width: 500px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+
+
+.search-box{
+  border: 1px solid lightskyblue;
+  border-radius: 2px;
+  margin: 10px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+
+.product-table{
+  border: 1px solid greenyellow;
+  border-radius: 2px;
+  margin: 10px;
+  display: flex;
+  justify-content: space-around;
+  font-weight: bold;
 }
 
-.App-title {
-  font-size: 1.5em;
+.category-header{
+  border: 1px solid  lavender;
+  border-radius: 2px;
+  margin: 5px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
 }
 
-.App-intro {
-  font-size: large;
+.single-product{
+  border: 1px solid red;
+  border-radius: 2px;
+  margin: 5px;
+  display: flex;
+  justify-content: space-around;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+
+.full-table{
+  border: 1px solid black;
+  border-radius: 2px;
+  margin: 10px
 }

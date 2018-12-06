@@ -7,6 +7,9 @@
     {"category": "Electronics",     "price": "$99.99",    "stocked": true,    "name": "iPod Touch"},
     {"category": "Electronics",     "price": "$399.99",   "stocked": false,   "name": "iPhone X"},
     {"category": "Electronics",     "price": "$199.99",   "stocked": true,    "name": "iPad Mini"},
-    {"category": "Electronics",     "price": "$199.99",   "stocked": true,    "name": "Huawei P10"}
+    {"category": "Electronics",     "price": "$199.99",   "stocked": true,    "name": "Huawei P10"},
+    {"category": "Wolf Supplies",   "price": "$39.99",   "stocked": true,    "name": "Wolf Pup Chew Toy"},
+    {"category": "Wolf Supplies",   "price": "$79.99",   "stocked": true,    "name": "OutDoor Wolf House"},
+    {"category": "Wolf Supplies",   "price": "$9.99",   "stocked": true,    "name": "Lost Kid In The Woods Flavored Kibble"}
   ]
 }
