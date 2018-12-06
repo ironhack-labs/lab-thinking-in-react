@@ -1,0 +1,10 @@
+.category-row{
+    text-align: center;
+}
+
+.category-row td {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: .5rem;
+
+}

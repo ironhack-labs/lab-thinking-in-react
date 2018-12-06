@@ -1,0 +1,14 @@
+.ProductTable {
+    margin: 0 auto;
+    text-align: left;
+    margin-top: 2rem;
+}
+
+.ProductTable thead {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.ProductTable thead th {
+    padding: .5rem;
+}

@@ -23,23 +23,20 @@ export default class FilterableProductTable extends Component {
             groupedProducts[product.category] =[product]
            }
         });
-        console.log(groupedProducts);   
         return groupedProducts;
-      
     }
 
     handleChange =(event)=>{
         this.setState({...this.state,searchWord:event.target.value})
     }
     searchFilter(){
-        let filteredProduct= this.state.products.filter(product=>{
+       return this.state.products.filter(product=>{
 
             if( product.name.match(new RegExp(this.state.searchWord,'i'))
                 && ((this.state.onlyStock && product.stocked) || !(this.state.onlyStock))) {
                 return product
             }
         })
-        return filteredProduct;
     }
 
     handleStockChange=(e)=>{
@@ -47,9 +44,7 @@ export default class FilterableProductTable extends Component {
     }
  
   render() {
-     console.log(this.state.searchWord);
-     let filteredProducts = this.searchFilter();
-     console.log(filteredProducts);
+    let filteredProducts = this.searchFilter();
     return (
       <div>
         <SearchBar  handleChange={this.handleChange} handleStockChange={this.handleStockChange} />

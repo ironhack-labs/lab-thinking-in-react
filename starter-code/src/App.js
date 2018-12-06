@@ -17,6 +17,7 @@ export default class App extends Component {
       console.log(productsData.data)
     return (
       <div className="App">
+        <h1>Products Searcher</h1>
         <FilterableProductTable productsData = {productsData.data}/>
       </div>
     );
