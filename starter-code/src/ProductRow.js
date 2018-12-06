@@ -1,28 +1,31 @@
 import React, { Component } from 'react';
-import data from './data.json'
+
 
 class ProductRow extends Component {
-    state = {
-        listOfAllGoods: data.data,
-    }
-    
-    showSports = () => {
-        const allTheGoods = this.state.listOfAllGoods;
 
-        const listItems = allTheGoods.map((theItems, index) => {
-            if(allTheGoods.category === "Sporting Goods"){
-            return (
-                    listItems.category.filter(theItems)
-                )}
+    showSports = () => {
+        const allTheGoods = [...this.props.data];
+        const listItems = allTheGoods.filter((theItem, index) => {
+            return theItem.category === "Sporting Goods"
         })  
+            return listItems.map((theItem, index) => {
+                return (
+
+                    <div key={index} className="redBox">
+                        <span>{theItem.name}</span>
+                        <span>{theItem.price}</span>
+                    </div>
+                )
+            })
     }
    
 
   render() {
+
         return (
 
-        <div className="redBox"> {/* red box */}
-            {/* {this.showSports()} */}
+        <div> {/* red box */}
+            {this.showSports()}
         </div>
         )
   }
