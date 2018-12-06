@@ -7,14 +7,12 @@ export default class SearchBar extends Component {
       };
     }
 
-
-
     
   render() {
     return (
       <form>
         <input type="text" placeholder="Search" onChange={this.props.handleChange}/>
-        <input type="checkbox"/>Only show product in Stock
+        <input type="checkbox" onClick={this.props.handleStockChange}/>Only show product in Stock
       </form>
     )
   }
