@@ -1,0 +1,12 @@
+.searchBar{
+  margin-top: 15px;
+  width: 400px;
+  height: 50px;
+  font-size: 20px;
+}
+.checkbox-container{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
