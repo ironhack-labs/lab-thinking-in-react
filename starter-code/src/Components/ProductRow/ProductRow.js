@@ -8,7 +8,6 @@ export default class ProductRow extends Component {
       <tr>
         
         {this.props.categoryData.map(item => {
-          console.log(item)
            return (
             <tr>
               <td className={item.stocked?'verde':'rojo'}>{item.name}</td>

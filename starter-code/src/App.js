@@ -8,7 +8,8 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      data: []
+      data: [],
+      originalData: []
     }
   }
   componentDidMount = () => {
@@ -24,12 +25,29 @@ class App extends Component {
       }
 
     })
-    this.setState({ ...this.state, data: newJson });
+    this.setState({ ...this.state, data: newJson,originalData: newJson });
+  
+  }
+  onSearch = (e) => {
+    var filter;
+    var filter2=[];
+    this.state.data=this.state.originalData;
+    Object.values(this.state.data).forEach(item => {
+       filter=item.filter(myobejct => {
+        return myobejct.name.includes(e.target.value)
+      })
+      filter2.push(filter)
+    });
+    this.setState({ ...this.state, data: filter2 })
+
+  }
+  onCheck = (e) => {
+
   }
   render() {
     return (
       <div className="App">
-        <FilterableProductTable jsonData={this.state.data} />
+        <FilterableProductTable onSearch={this.onSearch} onCheck={this.onCheck} jsonData={this.state.data} />
       </div>
     );
   }

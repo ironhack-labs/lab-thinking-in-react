@@ -9,7 +9,7 @@ class FilterableProductTable extends Component {
 
         return (
             <div>
-                <SearchBar search={this.onChange}/>
+                <SearchBar onSearch={this.props.onSearch} search={this.onChange}/>
                 <ProductTable jsonData={this.props.jsonData}/>
             </div>
         )

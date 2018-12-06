@@ -18,7 +18,7 @@ export default class ProductTable extends Component {
         if (this.state.data) {
             return (
                 <div>
-                    <table>
+                    <table border="all">
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -27,9 +27,10 @@ export default class ProductTable extends Component {
                         </thead>
                         <tbody>
                             {Object.values(this.props.jsonData).map((item,index) => {
+                                
                                 return (
                                     <tr>
-                                        <ProductCategoryRow category={item[0].category} />
+                                        <ProductCategoryRow category={(item.length>0)?item[0].category:''} />
                                         <ProductRow  categoryData={item} />
                                     </tr>
 
