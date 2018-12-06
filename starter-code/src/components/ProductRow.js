@@ -10,17 +10,17 @@ export default class ProductRow extends Component {
     if (this.props.state) {
       myFilterData = myFilterData.filter(product => product.stocked === true);
     }
-    let products = myFilterData.map(prod => {
+    let products = myFilterData.map((prod, index) => {
       if (!prod.stocked) {
         return (
-          <tr>
+          <tr key={index}>
             <td style={{ color: "red" }}>{prod.name}</td>
             <td>{prod.price}</td>
           </tr>
         );
       } else {
         return (
-          <tr>
+          <tr key={index}>
             <td style={{ color: "black" }}>{prod.name}</td>
             <td>{prod.price}</td>
           </tr>

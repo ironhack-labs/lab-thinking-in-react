@@ -50,16 +50,16 @@ class App extends Component {
           <label>Only show products in stock</label>
         </div>
         <div className="table">
-          <table>
+          <table className="table">
             <thead>
               <tr>
                 <th>Name</th>
                 <th>Price</th>
               </tr>
             </thead>
-            {this.myCategories.map((element)=>{
+            {this.myCategories.map((element,index)=>{
               return(
-              <ProductRow category={element} data={this.myData} state={this.state.check}/>)
+              <ProductRow key={index} category={element} data={this.myData} state={this.state.check}/>)
             })}
               
           </table>
