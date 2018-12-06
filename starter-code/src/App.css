@@ -1,5 +1,7 @@
 .App {
+  display: flex;
   text-align: center;
+  justify-content: center;
 }
 
 .App-logo {
@@ -20,6 +22,20 @@
 
 .App-intro {
   font-size: large;
+}
+
+.red{
+  color: red;
+}
+
+tr{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.search{
+  display: flex;
+  flex-direction: column;
 }
 
 @keyframes App-logo-spin {
