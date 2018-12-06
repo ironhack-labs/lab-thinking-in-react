@@ -19,13 +19,23 @@ export default class FilterableProductTable extends Component {
     this.setState({...this.state, products:filteredProduct}, () => console.log(this.state))    
 }
 
+searchOutStock = (checked) => {
+  const filteredProduct = [...this.props.products.data].filter(({stocked}) => stocked === checked);
+  if (checked) {
+    this.setState({...this.state, products:filteredProduct}, () => console.log(this.state)) 
+  } else {
+    this.setState({...this.state, products:this.props.products.data}, () => console.log(this.state)) 
+  }
+    
+}
+
 
 
   render() {
 
     return (
       <div>
-        <SearchBar searchProduct={this.searchProduct}/>
+        <SearchBar searchProduct={this.searchProduct} searchOutStock={this.searchOutStock}/>
         <ProductTable products={this.state.products}/>
       </div>
     )

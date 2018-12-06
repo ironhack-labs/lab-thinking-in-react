@@ -8,18 +8,19 @@ export default class SearchBar extends Component {
     this.props=props
     this.state = {
       name: "",
+      checkbox: false
     }
   }
 
   handleInput = (e) => {
-    // let { name, value } = e.target
-    // this.setState({[name]: value})
-    
+
     this.setState({ ...this.state, name: e.target.value}, ()=> this.props.searchProduct(this.state.name))
   }
 
-  componentDidUpdate() {
-
+  toggleChange = () => {
+    this.setState({...this.state,
+      checkbox: !this.state.checkbox,
+    }, () => this.props.searchOutStock(this.state.checkbox));
   }
    
   render() {
@@ -27,7 +28,7 @@ export default class SearchBar extends Component {
       <div>
         <input className="searchBar" name="searchBar" type="text" placeholder="search..." onChange={event => this.handleInput(event)}/> 
         <div className="checkbox-container">
-        <input type="checkbox"/> <span>Only show products in stock</span>
+        <input type="checkbox" checked={this.state.checkbox} onChange={this.toggleChange} /> <span>Only show products in stock</span>
 
         </div>
        
