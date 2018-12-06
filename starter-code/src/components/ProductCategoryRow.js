@@ -2,10 +2,8 @@ import React, { Component } from 'react'
 
 export default class ProductCategoryRow extends Component {
   render() {
-    return (
-      <div>
-        
-      </div>
-    )
+
+  
+    return <tbody><th>{this.props.cat}</th></tbody>
   }
 }
