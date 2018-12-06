@@ -11,12 +11,21 @@ class App extends Component {
 
     this.myData = data.data;
     this.myCheckedData = data.data
+    this.myCategories = []
 
     this.state = {
       data: this.myData,
       check: false
       
     };
+
+    this.categories = this.myData.map((element)=>element.category)
+    this.categories.forEach(element => {
+      if(!this.myCategories.includes(element)){
+        this.myCategories.push(element)
+      }
+    })
+    console.log(this.myCategories)
   }
   searchFilter = (e) => {
     this.myData = data.data
@@ -48,10 +57,11 @@ class App extends Component {
                 <th>Price</th>
               </tr>
             </thead>
-            
-              <ProductRow category="Sporting Goods" data={this.myData} state={this.state.check}/>
+            {this.myCategories.map((element)=>{
+              return(
+              <ProductRow category={element} data={this.myData} state={this.state.check}/>)
+            })}
               
-              <ProductRow category="Electronics" data={this.myData} state={this.state.check}/>
           </table>
         </div>
       </div>
