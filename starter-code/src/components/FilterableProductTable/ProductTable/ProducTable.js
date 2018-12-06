@@ -10,7 +10,7 @@ export default class ProducTable extends Component {
     this.props.products.forEach(product => {
       if (!categories.includes(product.category))
         categories.push(product.category);
-    })
+    })  
     return (
       <table className="product-table">
         <thead>
