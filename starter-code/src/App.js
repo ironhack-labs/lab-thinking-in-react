@@ -9,21 +9,35 @@ class App extends Component {
   constructor() {
     super();
 
-    this.myData = data;
+    this.myData = data.data;
+    this.myCheckedData = data.data
 
     this.state = {
-      category: this.myData.category,
-      price: this.myData.price,
-      stocked: this.myData.stocked,
-      name: this.myData.name
+      data: this.myData,
+      check: false
+      
     };
   }
+  searchFilter = (e) => {
+    this.myData = data.data
+    this.myData = this.myData.filter((element)=>element.name.includes(e.target.value))
+    this.setState({data: this.myData}) 
+  }
+
+  checkFilter = (e) => {
+    
+    this.myCheckedData = e.target.checked
+    this.setState({check: this.myCheckedData}) 
+  }
+
   render() {
+    console.log(this.state.check)
+
     return (
       <div className="App">
         <div className="search-bar">
-          <input type="text" placeholder="Search..." />
-          <input type="checkbox" name="stock" id="stock" />
+          <input type="text" placeholder="Search..." onChange={(e) => this.searchFilter(e)}/>
+          <input type="checkbox" name="stock" id="stock" onChange={(e) => this.checkFilter(e)}/>
           <label>Only show products in stock</label>
         </div>
         <div className="table">
@@ -34,24 +48,10 @@ class App extends Component {
                 <th>Price</th>
               </tr>
             </thead>
-            <thead>
-              <tr>
-                <td>
-                  Sporting Goods
-                  {/* <ProductCategoryRow /> */}
-                </td>
-              </tr>
-              </thead>
-              <ProductRow category="Sporting Goods" data={this.myData}/>
-              <thead>
-              <tr>
-                <td>
-                  Electronics
-                  {/* <ProductCategoryRow /> */}
-                </td>
-              </tr>
-            </thead>
-              <ProductRow category="Electronics" data={this.myData}/>
+            
+              <ProductRow category="Sporting Goods" data={this.myData} state={this.state.check}/>
+              
+              <ProductRow category="Electronics" data={this.myData} state={this.state.check}/>
           </table>
         </div>
       </div>
