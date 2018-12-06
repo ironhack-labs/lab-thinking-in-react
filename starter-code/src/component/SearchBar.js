@@ -1,7 +1,4 @@
-import React, { Component } from 'react'
-import 'bootstrap/dist/css/bootstrap.css';
-
-
+import React, { Component } from 'react';
 
 class SearchBar extends Component {
   
@@ -9,8 +6,8 @@ class SearchBar extends Component {
 
         return (
             <form>
-                <input type="text" placeholder="Search..." value="0" ref="filterTextInput"onChange="0"/><p>
-                <input type="checkbox" checked="" ref="inStockOnlyInput" onChange="0"/>Only show products in stock</p>
+                <input className="search" type="text" placeholder="Search..." value="0" ref="filterTextInput"onChange="0"/><p>
+                <input type="checkbox" checked="" ref="inStockOnlyInput" onChange="true"/>Only show products in stock</p>
             </form>
         )
     };

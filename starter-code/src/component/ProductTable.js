@@ -1,18 +1,17 @@
-import React, { Component } from 'react'
-import 'bootstrap/dist/css/bootstrap.css';
+import React, { Component } from 'react';
 
 
 
 class ProductTable extends Component {
-  
+    
     render () {
-
+        console.log(this.props)
         return (
             <table>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Price</th>
+            <th>{this.props.name}</th>
+            <th>{this.props.price}</th>
           </tr>
             </thead>
             <tbody></tbody>
