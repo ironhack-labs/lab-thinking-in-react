@@ -25,16 +25,16 @@ class App extends Component {
       }
 
     })
-    this.setState({ ...this.state, data: newJson,originalData: newJson });
-  
+    this.setState({ ...this.state, data: newJson, originalData: newJson });
+
   }
   onSearch = (e) => {
     var filter;
-    var filter2=[];
-    this.state.data=this.state.originalData;
+    var filter2 = [];
+    this.state.data = this.state.originalData;
     Object.values(this.state.data).forEach(item => {
-       filter=item.filter(myobejct => {
-        return myobejct.name.includes(e.target.value)
+      filter = item.filter(myobejct => {
+        return myobejct.name.includes(e.target.value) 
       })
       filter2.push(filter)
     });
@@ -42,6 +42,22 @@ class App extends Component {
 
   }
   onCheck = (e) => {
+
+    var filter;
+    var filter2 = [];
+    this.state.data = this.state.originalData;
+    if (e.target.checked) {
+      Object.values(this.state.data).forEach(item => {
+        filter = item.filter(myobejct => {
+          return myobejct.stocked == true
+        })
+        filter2.push(filter)
+      });
+      this.setState({ ...this.state, data: filter2 })
+    } else {
+      this.setState({ ...this.state, data: this.state.data })
+    }
+
 
   }
   render() {

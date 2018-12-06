@@ -6,7 +6,7 @@ export default class SearchBar extends Component {
             <div>
                 <input className="input" onChange={e => this.props.onSearch(e)} type="text" placeholder="Search"></input>
                 <br></br>
-                <input type="checkbox" id="checkStock"></input><label>Only show products in stock</label>
+                <input type="checkbox" onChange={e =>this.props.onCheck(e)} id="checkStock"></input><label>Only show products in stock</label>
             </div>
         )
     }
