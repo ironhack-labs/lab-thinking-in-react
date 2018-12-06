@@ -6,7 +6,7 @@ export default class ProductRow extends Component {
     
   render() {
     return (
-      <tr>
+      <tr style={this.props.style}>
           <td>{this.props.name}</td>
           <td>{this.props.price}</td>
       </tr>

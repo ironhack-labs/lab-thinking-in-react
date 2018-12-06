@@ -25,7 +25,14 @@ export default class ProductTable extends Component {
               return (
                 <React.Fragment>
                   <ProductCategoryRow {...filterReduce}>{key}</ProductCategoryRow>
-                  {filterReduce[key].map(article => <ProductRow name={article.name} price={article.price}></ProductRow>)}
+                  {filterReduce[key].map(article => {
+                    console.log(article)
+                    if (article.stocked === false){
+                      return <ProductRow style={{color:"red"}} name={article.name} price={article.price}></ProductRow>
+                    } else {
+                      return <ProductRow name={article.name} price={article.price}></ProductRow>
+                    }
+                  })}
                 </React.Fragment>
               );
             })}
