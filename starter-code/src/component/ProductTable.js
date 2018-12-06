@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 class ProductTable extends Component {
     
     render () {
-        console.log(this.props)
+        
         return (
             <table>
         <thead>

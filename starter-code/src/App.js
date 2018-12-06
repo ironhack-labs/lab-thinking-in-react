@@ -11,13 +11,33 @@ const filterForEach = {};
 })
 
 
+
 class App extends Component {
+  
+  constructor() {
+    super() 
+      this.state = {
+        dat: filterForEach,
+      }
+      }
+      handleName = (event) => {
+
+        console.log(event.target.value)
+        // let searchName = filterForEach.filter((e, i) => {
+        //   console.log(e[i])
+          console.log(filterForEach); 
+        // })
+        // this.setState({
+          // name: event.target.value
+        //  })
+}
+
   render() {
     return (
 
       <div className="App">
       
-      <SearchBar/>
+      <SearchBar onChange={this.handleName}/>
       {Object.keys(filterForEach).map((title, key) => {
         return (<div>
           <ProductCategoryRow key={key} title={title}/>
