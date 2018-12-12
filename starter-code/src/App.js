@@ -1,18 +1,50 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import products from './data.json'
+import SeachBar from './components/SearchBar'
+import ProductTable from './components/ProductTable'
+import CategoryRow from './components/CategoryRow'
 
 class App extends Component {
+  state = {
+    products: products.data,
+    inStock: false
+  }
+
+  draw = () => {
+    let { products } = this.state
+    const { inStock } = this.state
+
+    let categories = products.map(product => product.category)
+      .filter((value, index, self) => self.indexOf(value) === index)
+    if (inStock) products = products.filter((product) => product.stocked)
+    return categories.map((category, index) => <CategoryRow products={products} category={category} key={index} />)
+  }
+
+  toggleStock = () => {
+    let { inStock } = this.state
+    inStock = !inStock
+    this.setState({ inStock })
+  }
+
+  searchProducts = (e) => {
+    console.log(e.target.value)
+    const searchQuery = e.target.value
+    const regEx = RegExp(searchQuery, 'i')
+
+    const filtered = products.data.filter((product) => regEx.test(product.name))
+    this.setState({ products: filtered })
+  }
+
   render() {
+    console.table(this.state.products)
+    const { draw, searchProducts, toggleStock } = this
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <SeachBar searchProducts={searchProducts} toggleStock={toggleStock} />
+        <ProductTable>
+          {draw()}
+        </ProductTable>
       </div>
     );
   }
