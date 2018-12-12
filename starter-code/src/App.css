@@ -2,6 +2,24 @@
   text-align: center;
 }
 
+.filterable-product-table{
+  width: 400px;
+  margin-left: 40px;
+  margin-top: 40px;
+  border: 2px solid orange;
+  border-radius: 50px;
+  padding: 20px;
+
+}
+
+th{
+  height: 50px;
+}
+
+th, td{
+  padding: 10px;
+  text-align: left;
+}
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
