@@ -7,6 +7,7 @@
     {"category": "Electronics",     "price": "$99.99",    "stocked": true,    "name": "iPod Touch"},
     {"category": "Electronics",     "price": "$399.99",   "stocked": false,   "name": "iPhone X"},
     {"category": "Electronics",     "price": "$199.99",   "stocked": true,    "name": "iPad Mini"},
-    {"category": "Electronics",     "price": "$199.99",   "stocked": true,    "name": "Huawei P10"}
+    {"category": "Electronics",     "price": "$199.99",   "stocked": true,    "name": "Huawei P10"},
+    {"category": "Kitchen",         "price": "$199.99",   "stocked": true,    "name": "TeaPot"}
   ]
 }
