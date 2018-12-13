@@ -26,3 +26,40 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+
+.main-div {
+width: 50%;
+
+  border: 5px solid orange;
+  margin-left: 100px;
+  
+}
+
+.whole-app{
+   display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center 
+}
+
+
+.search-bar {
+  border: 3px solid blue;
+  margin-bottom: 10px;
+}
+
+/* .products {
+  width:25%;
+  
+} */
+
+.items {
+  height: auto;
+  width: auto;
+  border: 3px solid turquoise;
+
+}
+
+
