@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/core": "^10.0.6",
     "@emotion/styled": "^10.0.6",
     "ajv": "^6.7.0",
     "bulma": "^0.7.2",
+    "classnames": "^2.2.6",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-scripts": "1.1.5"
