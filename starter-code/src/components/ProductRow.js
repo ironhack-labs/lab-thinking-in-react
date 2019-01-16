@@ -9,6 +9,7 @@ export const ProductRow = ({ rowCat, prodData }) => {
           <tr key={prod.name}>
             <td>{prod.name}</td>
             <td>{prod.price}</td>
+            {prod.stocked ? <td><i className="fas fa-check-circle"></i></td> : <td><i className="fas fa-exclamation-circle"></i></td>}
           </tr>
         ))}
     </React.Fragment>

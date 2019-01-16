@@ -13,6 +13,7 @@ export const ProductTable = ({ prodData }) => {
             <tr>
               <th>Name</th>
               <th>Price</th>
+              <th>Stock</th>
             </tr>
           </thead>
           <tbody>

@@ -1,7 +1,16 @@
 import React, { Component } from "react";
 
 export default class SearchBar extends Component {
-  handleChange(e) {
+
+  constructor(){
+    super();
+    this.state={
+      filteredList : [],
+      checkBox : true
+    }
+  }
+  
+  handleSearchBar(e) {
     let initialList = [];
     let newList = [];
 
@@ -19,6 +28,10 @@ export default class SearchBar extends Component {
     this.props.filtered(newList);
   }
 
+  handleCheckbox(){
+    this.setState({checkBox : !this.state.checkBox})
+  }
+
   render() {
     return (
       <section className="section">
@@ -28,12 +41,12 @@ export default class SearchBar extends Component {
             type="text"
             placeholder="Search products..."
             onChange={e => {
-              this.handleChange(e);
+              this.handleSearchBar(e);
             }}
           />
 
           <label className="checkbox">
-            <input type="checkbox" />
+            <input type="checkbox" onClick={()=>{this.handleCheckbox()}}/>
             Only show products in stock
           </label>
         </div>
