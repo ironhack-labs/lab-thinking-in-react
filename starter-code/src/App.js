@@ -10,16 +10,21 @@ class App extends Component {
     this.state = { data, search: "", checkbox: false };
   }
   handleSearch = e => {
+    const filter = data.filter(el =>
+      el.name.toLowerCase().includes(e.target.value.toLowerCase())
+    );
     this.setState({
-      data: data.filter(el => el.name.toLowerCase().includes(e.target.value.toLowerCase())),
+      data: this.state.checkbox ? filter.filter(el => el.stocked) : filter,
       search: e.target.value
     });
   };
 
-  filterCheck = e => {
+  filterCheck = () => {
     const datafiltered = !this.state.checkbox
       ? this.state.data.filter(e => e.stocked)
-      : data;
+      : data.filter(e =>
+          e.name.toLowerCase().includes(this.state.search.toLocaleLowerCase())
+        );
     this.setState({ data: datafiltered, checkbox: !this.state.checkbox });
   };
 
@@ -30,7 +35,7 @@ class App extends Component {
         <SearchBar func={[this.handleSearch, this.filterCheck]}>
           {search}
         </SearchBar>
-        <ProductTable data={data}/>
+        <ProductTable data={data} />
       </div>
     );
   }

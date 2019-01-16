@@ -1,5 +1,6 @@
 import React from "react";
 import { Categorilist } from "./CategoriList";
+import { ProductRow } from "./ProductRow";
 
 export const ProductTable = ({ data }) => {
   let cat = [];
@@ -12,10 +13,9 @@ export const ProductTable = ({ data }) => {
   return (
     <table>
       <tbody className="prueba">
-        <tr>
-          <td><h3>Name</h3></td>
-          <td><h3>Price</h3></td>
-        </tr>
+        <ProductRow>
+          {{ name: "Name", price: "Price", stocked: true }}
+        </ProductRow>
         {cat.map((e, i) => (
           <Categorilist key={i}>
             {data.filter(list => list.category == e)}
