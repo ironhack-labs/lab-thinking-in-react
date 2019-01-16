@@ -1,8 +1,10 @@
 import React from "react";
 import { ProductCategoryRow } from "./ProductCategoryRow";
 import { ProductRow } from "./ProductRow";
+import {getDataCategories} from '../functions/getDataCategories.js'
 
 export const ProductTable = ({ prodData }) => {
+  let dataCat=getDataCategories(prodData,"category");
   return (
     <section className="section">
       <div className="container" id="ProductTable">
@@ -14,11 +16,12 @@ export const ProductTable = ({ prodData }) => {
             </tr>
           </thead>
           <tbody>
-            <ProductCategoryRow rowCat="Sporting Goods" />
-            <ProductRow rowCat="Sporting Goods" prodData={prodData}/>
-
-            <ProductCategoryRow rowCat="Electronics" />
-            <ProductRow rowCat="Electronics" prodData={prodData}/>
+           {dataCat.map(cat=>(
+             <React.Fragment key={cat}>
+                <ProductCategoryRow rowCat={cat} />
+                <ProductRow rowCat={cat} prodData={prodData}/>
+             </React.Fragment>
+           ))}
           </tbody>
         </table>
       </div>
