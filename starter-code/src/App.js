@@ -30,7 +30,7 @@ class App extends Component {
         <SearchBar func={[this.handleSearch, this.filterCheck]}>
           {search}
         </SearchBar>
-        <ProductTable data={data} />
+        <ProductTable data={data}/>
       </div>
     );
   }

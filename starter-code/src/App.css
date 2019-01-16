@@ -1,9 +1,35 @@
 .App {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  width: 30%;
+  margin: 15vh auto;
+}
+
+h2 {
+  text-align: center;
+  margin: 10px;
+  display: block;
+}
+
+.checkboxdiv {
   text-align: center;
 }
-.noStock{
-  color: red
+
+.category {
+  border-bottom: 2px solid black;
 }
+
+.searchbar {
+  display: flex;
+  flex-direction: column;
+}
+
+.noStock {
+  color: red;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
@@ -25,6 +51,10 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

@@ -11,10 +11,10 @@ export const ProductTable = ({ data }) => {
 
   return (
     <table>
-      <tbody>
+      <tbody className="prueba">
         <tr>
-          <td>Name</td>
-          <td>Price</td>
+          <td><h3>Name</h3></td>
+          <td><h3>Price</h3></td>
         </tr>
         {cat.map((e, i) => (
           <Categorilist key={i}>
