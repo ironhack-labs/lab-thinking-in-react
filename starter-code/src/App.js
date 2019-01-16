@@ -11,7 +11,7 @@ class App extends Component {
   }
   handleSearch = e => {
     this.setState({
-      data: data.filter(el => el.name.toLowerCase().includes(e.target.value)),
+      data: data.filter(el => el.name.toLowerCase().includes(e.target.value.toLowerCase())),
       search: e.target.value
     });
   };
