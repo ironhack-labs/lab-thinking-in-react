@@ -54,6 +54,41 @@
       "price": "$199.99",
       "stocked": true,
       "name": "Huawei P10"
+    },
+    {
+      "_id": "09",
+      "category": "Clothes",
+      "price": "$599.99",
+      "stocked": true,
+      "name": "Channel Coat"
+    },
+    {
+      "_id": "10",
+      "category": "Clothes",
+      "price": "$89.99",
+      "stocked": false,
+      "name": "Nike tracksuit"
+    },
+    {
+      "_id": "11",
+      "category": "Food",
+      "price": "$59.99",
+      "stocked": true,
+      "name": "Oysters"
+    },
+    {
+      "_id": "12",
+      "category": "Food",
+      "price": "$0.99",
+      "stocked": true,
+      "name": "Crisps"
+    },
+    {
+      "_id": "13",
+      "category": "Food",
+      "price": "$10.99",
+      "stocked": false,
+      "name": "Wonka bar"
     }
   ]
 }

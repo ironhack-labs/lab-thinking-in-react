@@ -4,18 +4,17 @@ import ProductRow from './ProductRow';
 import { StyledTable } from '../styledComponents/StyledTable';
 
 export default class ProductTable extends Component {
-  handleList(category) {
-    //let prodArr = [];
-    // this.props.products.map((p) => {
-    //   if ((this.props.checked && p.stocked) || !this.props.checked) {
-    //     return (p.category !== category) ? null : prodArr.push(<ProductRow key={p._id} product={p}/>)
-    //   }
-    // });
-    let prodArr = this.props.products
+  handleCategory() {
+    let cat = [];
+    this.props.products.forEach(p => {if (cat.indexOf(p.category) === -1) {cat.push(p.category)}});
+    return cat;
+  }
+  handleList(cat) {
+    let prodArr = this.props.filterProducts
       .filter(p => (this.props.checked && p.stocked) || !this.props.checked)
-      .filter(p => p.category !== category)
+      .filter(p => p.category === cat)
       .map(p => <ProductRow key={p._id} product={p}/>);
-    return prodArr < 1 ? <li className="productRow noProducts">There're no {category.toLowerCase()} products with those search features</li> : prodArr;
+    return prodArr < 1 ? <li className="productRow noProducts">There're no {cat.toLowerCase()} products with those search features</li> : prodArr;
   }
   render() {
     return (
@@ -24,15 +23,16 @@ export default class ProductTable extends Component {
           <span className="nameTitle">Name</span>
           <span className="priceTitle">Price</span>
         </div>
-        <ProductCategoryRow name="Sporting Goods"></ProductCategoryRow>
-        <ul className="productList firstList">
-          {this.handleList('Sporting Goods')}
-        </ul>
-
-        <ProductCategoryRow name="Electronics"></ProductCategoryRow>
-        <ul className="productList firstList">
-          {this.handleList('Electronics')}
-        </ul>
+        {this.handleCategory()
+          .map((c)=>{
+            return (
+              <div key={c} className="categoryProducts">
+                <ProductCategoryRow name={c}></ProductCategoryRow>
+                <ul className="productList">{this.handleList(c)}</ul>
+              </div>
+            )
+          })
+        }
       </StyledTable>
     );
   }
