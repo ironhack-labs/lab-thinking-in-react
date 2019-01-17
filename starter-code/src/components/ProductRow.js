@@ -1,18 +1,21 @@
-import React from "react";
+import React, { Component } from 'react';
 
-const productRow = ({ categoryRow, productsData }) => {
-  return (
-    <React.Fragment>
-      {productsData
-        .filter(prod => prod.category === categoryRow)
-        .map(prod => (
-          <tr key={prod.name}>
-            <td>{prod.name}</td>
-            <td>{prod.price}</td>
-          </tr>
-        ))}
-    </React.Fragment>
-  );
-};
+class ProductRow extends Component {
+  render() {
+    const product = this.props.product;
+    const name = product.stocked ?
+      product.name :
+      <span style={{color: 'red'}}>
+        {product.name}
+      </span>;
 
-export default productRow;
+    return (
+      <tr>
+        <td>{name}</td>
+        <td>{product.price}</td>
+      </tr>
+    );
+  }
+}
+
+export default ProductRow;

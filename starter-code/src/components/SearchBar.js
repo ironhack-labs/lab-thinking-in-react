@@ -1,56 +1,39 @@
 import React, { Component } from "react";
 
 class SearchBar extends Component {
-  constructor({ productsData }) {
-    super({ productsData });
-    this.state = {
-      initialList: { productsData },
-      newList: []
-    };
+  constructor(props) {
+    super(props);
+    this.handleFilterTextChange = this.handleFilterTextChange.bind(this);
+    this.handleInStockChange = this.handleInStockChange.bind(this);
   }
-
-  componentDidMount = () => {
-    this.setState({
-      newList: this.state.initialList
-    });
+  
+  handleFilterTextChange(e) {
+    this.props.onFilterTextChange(e.target.value);
   }
-
-  onChangeHandler = (e) => {
-    var updatedList = this.state.initialList;
-    updatedList = updatedList.filter(item => {
-      return item.toLowerCase().search(e.target.value.toLowerCase()) !== -1;
-    });
-    this.setState({
-      newList: updatedList
-    });
-    if (updatedList === 0) {
-      this.setState({
-        message: true
-      });
-    } else {
-      this.setState({
-        message: false
-      });
-    }
+  
+  handleInStockChange(e) {
+    this.props.onInStockChange(e.target.checked);
   }
-
+  
   render() {
     return (
-      <div>
+      <form>
         <input
           type="text"
-          name="title"
           placeholder="Search..."
-          onChange={e => this.onChangeHandler(e)}
+          value={this.props.filterText}
+          onChange={this.handleFilterTextChange}
         />
-        <br />
-        <input
-          type="checkbox"
-          name="stock"
-          onChange={e => this.onChangeHandler(e)}
-        />
-        <label>Only show products in stock</label>
-      </div>
+        <p>
+          <input
+            type="checkbox"
+            checked={this.props.inStockOnly}
+            onChange={this.handleInStockChange}
+          />
+          {' '}
+          Only show products in stock
+        </p>
+      </form>
     );
   }
 }
