@@ -13,13 +13,21 @@ class App extends Component {
     data: data.data
   }
 
-  searchFunction = (searchWord) => {
+  searchFunction = (searchWord, checked) => {
     let newState = {
       ...this.state
     }
+    if (checked) {
+      newState.data = data.data.filter(product => {
+        return (product.name.toLowerCase().indexOf(searchWord.toLowerCase()) !== -1 && product.stocked);
+      })
+    }
+
+    else {
     newState.data = data.data.filter(product => {
       return product.name.toLowerCase().indexOf(searchWord.toLowerCase()) !== -1;
     })
+    }
 
     this.setState(newState)
   }
