@@ -2,7 +2,7 @@ import React from "react";
 
 export default function SearchBar({ search, isOnStock, onSearch, onClick }) {
   return (
-    <form>
+    <form className="d-flex flex-column align-items-center">
       <div className="form-group">
         <input
           value={search}

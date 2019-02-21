@@ -26,15 +26,17 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
-        <h1>IronStore</h1>
-        <SearchBar
-          search={this.state.search}
-          isOnStock={this.state.onStock}
-          onSearch={search => this.handleSearch(search)}
-          onClick={() => this.handleClick()}
-        />
-        <ProductTable search={this.state.search} isOnStock={this.state.isOnStock} />
+      <div className="bg-dark pt-5 min-vh-100 text-white">
+        <div className="container">
+          <h1 className="text-center">IronStore</h1>
+          <SearchBar
+            search={this.state.search}
+            isOnStock={this.state.onStock}
+            onSearch={search => this.handleSearch(search)}
+            onClick={() => this.handleClick()}
+          />
+          <ProductTable search={this.state.search} isOnStock={this.state.isOnStock} />
+        </div>
       </div>
     );
   }
