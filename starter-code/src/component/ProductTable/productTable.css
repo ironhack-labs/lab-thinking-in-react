@@ -1,0 +1,9 @@
+tr th {
+  padding: 20px;
+}
+
+tr {
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+}
