@@ -4,10 +4,19 @@ import ProductRow from './ProductRow';
 export default class ProductTable extends Component {
   render() {
     return (
-      <div>
-        <p>Name Price</p>
+      <div className="row">
+      <table className="table mt-5">
+        <thead>
+          <tr>
+        <th>Name</th>
+        <th>Price</th>
+        </tr>
+        </thead>
+        <tbody>
         {this.props.productsFromFilterableProductTable.data.map((product, index) => <ProductRow key={index} name={product.name} stocked={product.stocked} price={product.price} />)}
         <ProductRow />
+        </tbody>
+      </table>
       </div>
     )
   }
