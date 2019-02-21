@@ -1,18 +1,30 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import SearchInput from './components/SearchInput/SearchInput';
+import data from './data.json'
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import ProductTable from './components/ProductTable/ProductTable';
 
 class App extends Component {
+  state = {
+    data: data
+  }
+  filterData = (e) => {
+    let newState = {
+      ...this.state,
+      data: data
+    }
+    this.setState({
+      data: {
+        data: newState.data.data.filter(elem => elem.name.toLowerCase().includes(e.text.toLowerCase())).filter(elem2 => elem2.stocked === e.checked )
+    }})
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <h1>IronStore</h1>
+        <SearchInput function={this.filterData}>Search</SearchInput>
+        <ProductTable {...this.state.data} />
       </div>
     );
   }

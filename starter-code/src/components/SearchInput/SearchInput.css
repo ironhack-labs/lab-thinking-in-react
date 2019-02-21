@@ -1,0 +1,14 @@
+.searchBox {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.searchBox input[type="text"] {
+    width: 60%;
+    height: 35px;
+    margin: 15px auto;
+}
+.searchBox input[type="checkbox"] {
+    margin: 0 auto;
+}
