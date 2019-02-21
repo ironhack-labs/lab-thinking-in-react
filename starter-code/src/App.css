@@ -1,28 +1,22 @@
-.App {
+.filterable-products-table {
   text-align: center;
+  padding: 10px;
+  border: 4px solid orange;
+  margin: 10px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.search-bar {
+  padding: 10px;
+  border: 4px solid blue;
+  margin: 10px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.product-table {
+  padding: 10px 100px;
+  border: 4px solid green;
+  margin: 10px;
 }
 
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.product-row {
+  border: 4px solid red;
 }
