@@ -13,12 +13,13 @@ export class ProductTable extends Component {
         product.name.toLowerCase().includes(this.props.search.toLowerCase()))
     }
     return (
-      <div>
-        <div className="tableRow">
-          <h3>Name Price</h3>
+      <div className="productTable container">
+        <div className="tableRow row">
+          <h3 className="col-6">Name</h3>
+          <h3 className="col-6">Price</h3>
         </div>
         {products.map((product,i) => 
-          <div className="tableRow" key={i} style={{color:product.stocked? "black" : "red"}}>
+          <div className="container" key={i} style={{color:product.stocked? "black" : "red"}}>
             <Product name={product.name} price={product.price}/>
           </div>
           )}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Search} from './Search.js'
 import {ProductTable} from './ProductTable.js'
+import {Input, Label} from 'reactstrap'
 
 export class FiltProductTable extends Component {
   constructor(props) {
@@ -29,9 +30,15 @@ export class FiltProductTable extends Component {
     return(
       <div>
         <h1>IronStore</h1>
+        <div className="container">
         <Search onInput={this.handleInput}/>
-        <input onChange={this.handleCheck} type="checkbox"/>
-        <ProductTable inStock={this.state.inStock} search={this.state.search} products={this.props.products}/>
+        <Label check>
+          <Input onChange={this.handleCheck} type="checkbox" id="searchBar"/>
+          {' '}Only show products in stock</Label>
+          <div className="container">
+            <ProductTable inStock={this.state.inStock} search={this.state.search} products={this.props.products}/>
+          </div>
+          </div>
       </div>
     )
   }
