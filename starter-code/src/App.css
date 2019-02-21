@@ -20,3 +20,12 @@
 .FilterableProductTable > h1 {
     align-self: center
 }
+
+.ProductTable {
+    margin: 10px;
+    width: 80%;
+    align-self: center;
+}
+.ProductTable > th, .ProductTable > td {
+    text-align: center;
+}

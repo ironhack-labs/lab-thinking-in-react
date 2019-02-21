@@ -23,7 +23,7 @@ class FilterableProductTable extends Component {
       })
     }
     availableProducts(checkValue){
-      let availableProducts = this.props.products.data.filter(product => {
+      let availableProducts = this.state.filtered.filter(product => {
         return (this.state.available ? true : product.stocked === true)
       })
         this.setState({
