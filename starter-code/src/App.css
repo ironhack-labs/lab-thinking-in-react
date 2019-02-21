@@ -1,28 +1,22 @@
-.App {
-  text-align: center;
+.search {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    align-items: center;
+    width: 100%;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.search > input {
+    width: 90%;
+    margin: 5px;
+    height: 30px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.FilterableProductTable {
+    display: flex;
+    flex-direction: column;
 }
 
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.FilterableProductTable > h1 {
+    align-self: center
 }
