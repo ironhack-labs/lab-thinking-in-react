@@ -26,3 +26,56 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.FilterableProductTable {
+  margin: auto;
+  width: 1200px;
+  height: auto;
+  display: flex;
+  flex-flow: column nowrap
+}
+
+.FilterableProductTable > h1 {
+  text-align: center;
+}
+
+.FilterableProductTable > .SearchContainer {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.checkBox {
+  border-radius: 2.5%;
+  height: 1rem;
+  width: 1rem;
+}
+
+.checkBoxDiv > label {
+  line-height: 1rem;
+}
+
+.SearchBar {
+  width: 100%;
+}
+
+.SearchBar > input {
+  width: 98%;
+  margin: auto;
+  border: 1px lightgray solid;
+  border-radius: 5px;
+}
+.ProductTable {
+  line-height: 100%;
+  border: 1px solid black;
+  width: 80%;
+  margin: auto;
+}
+.ProductTable > thead > .HeadRow {
+  background-color: lightgray;
+}
+
+.ProductTable > tbody > .ProductRow {
+  border: 1px solid black;
+}
