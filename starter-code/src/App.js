@@ -7,7 +7,7 @@ import FilterableProductTable from "./components/FilterableProductTable"
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="App container">
         <FilterableProductTable productsFromApp={data} />
       </div>
     );
