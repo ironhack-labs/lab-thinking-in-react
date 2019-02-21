@@ -1,0 +1,31 @@
+.search-bar {
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	margin: auto;
+}
+
+.check {
+	padding: 20px 0px;
+}
+
+.input-search {
+	height: 30px;
+}
+
+input[type=checkbox] + label {
+	color: gray;
+	font-style: italic;
+}
+input[type=checkbox]:checked + label {
+	color: rgb(74, 207, 103);
+	font-style: normal;
+}
+
+input::placeholder {
+	color: red;
+}
+
+input:placeholder {
+	color: gray;
+}
