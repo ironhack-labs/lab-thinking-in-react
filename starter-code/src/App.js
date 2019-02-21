@@ -1,18 +1,34 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import data from './data';
+import Products from './Components/products';
+import SearchBar from './Components/searchBar';
+
+console.log(data.data)
 
 class App extends Component {
+
+  state = {
+    data: data.data
+  }
+
+  searchFunction = (searchWord) => {
+    let newState = {
+      ...this.state
+    }
+    newState.data = data.data.filter(product => {
+      return product.name.toLowerCase().indexOf(searchWord.toLowerCase()) !== -1;
+    })
+
+    this.setState(newState)
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <SearchBar searchFunctionProp={this.searchFunction} />
+        <Products dataProp={this.state.data} />
       </div>
     );
   }
