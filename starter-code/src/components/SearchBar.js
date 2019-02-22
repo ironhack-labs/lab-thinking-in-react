@@ -13,6 +13,14 @@ class SearchBar extends Component {
           type="text"
           placeholder="Search"
         />
+        <label>Only show products in stock </label>
+        <input
+          onChange={event => this.props.checkChange(event)}
+          type="checkbox"
+          name="checkBox"
+          value="Only show products in stock"
+          // checked={this.props.checkBox}
+        />
       </div>
     );
   }

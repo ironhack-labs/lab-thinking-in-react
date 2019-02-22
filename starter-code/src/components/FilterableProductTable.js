@@ -8,7 +8,8 @@ class FilterableProductTable extends Component {
     super(props);
     this.state = {
       searchedProduct: "",
-      results: []
+      checkBox: false,
+      resultsProduct: []
     };
   }
 
@@ -19,15 +20,45 @@ class FilterableProductTable extends Component {
   }
 
   searchProducts() {
-    const { searchedProduct, results } = this.state;
+    const { searchedProduct, resultsProduct, checkBox } = this.state;
     const { products } = this.props;
 
-    var allResults = products.data.filter(oneProduct => {
-      return oneProduct.name.indexOf(searchedProduct) > -1;
-    });
+    if (checkBox === true) {
+      var allResults = products.data.filter(oneProduct => {
+        return (
+          oneProduct.name.indexOf(searchedProduct) > -1 &&
+          oneProduct.stocked === false
+        );
+      });
+      return allResults;
+    }
 
-    return allResults;
+    if (checkBox === false) {
+      var allResults = products.data.filter(oneProduct => {
+        return oneProduct.name.indexOf(searchedProduct) > -1;
+      });
+
+      return allResults;
+    }
   }
+
+  updateCheck(event) {
+    const { checked } = event.target;
+    const { checkBox } = this.state;
+
+    // const{checkBox} = this.state;
+
+    console.log(checked);
+    this.setState({ checkBox: checked });
+  }
+  // const target = event.target;
+  // const value = target.type === "checked" ? target.checked : target.value;
+  // const name = target.name;
+  // this.setState({ [name]: value });
+  // var inStock = allResults.filter(oneProduct => {
+  //   return oneProduct.stocked === true;
+  // });
+  // return inStock;
 
   render() {
     // console.log(this.props.products);
@@ -37,6 +68,8 @@ class FilterableProductTable extends Component {
         <SearchBar
           search={this.state.searchedProduct}
           searchChange={event => this.updateSearch(event)}
+          checkBox={this.state.checked}
+          checkChange={event => this.updateCheck(event)}
         />
         <ProductTable allProducts={this.searchProducts()} />
       </div>
