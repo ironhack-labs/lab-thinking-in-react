@@ -1,0 +1,7 @@
+.ProductRow {
+  align-self: center;
+}
+
+.noStock {
+  color: red;
+}
