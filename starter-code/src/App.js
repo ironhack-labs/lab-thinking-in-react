@@ -1,18 +1,23 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from "react";
+import data from "./data.json";
+import FilterableProductTable from "./components/FilterableProductTable.js";
+
+import "bulma/css/bulma.css";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <section class="hero is-primary">
+          <div class="hero-body">
+            <div class="container">
+              <h1 class="title">IronStore</h1>
+            </div>
+          </div>
+        </section>
+        <div className="container">
+          <FilterableProductTable product={data} />
+        </div>
       </div>
     );
   }
