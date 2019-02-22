@@ -5,7 +5,6 @@ class SearchBar extends Component {
   render() {
     return (
       <div className="SearchBar">
-        SEARCH SearchBar
         <input
           onChange={event => this.props.searchChange(event)}
           name="search"

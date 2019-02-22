@@ -7,7 +7,6 @@ class ProductTable extends Component {
     // console.log(this.props.allProducts);
     return (
       <div className="ProductTable">
-        PRODUCT TABLE
         <table>
           <thead>
             <th>Name</th>

@@ -64,7 +64,6 @@ class FilterableProductTable extends Component {
     // console.log(this.props.products);
     return (
       <div className="FilterableProductTable">
-        FilterableProductTable
         <SearchBar
           search={this.state.searchedProduct}
           searchChange={event => this.updateSearch(event)}
