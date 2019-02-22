@@ -3,8 +3,7 @@ import ProductRow from "../productTable/productRow/ProductRow";
 
 class ProductTable extends Component {
   render() {
-    //debugger;
-    const productsArr = this.props.productsProps.map((product, idx) => {
+       const productsArr = this.props.productsProps.map((product, idx) => {
       return <ProductRow product={product} key={idx} />;
     });
     return (

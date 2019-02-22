@@ -13,16 +13,25 @@ filterListData = (filtro) => {
 
   let newState = {...this.state}
   
-
- 
-  newState = newState.productsAll.filter((item) => {
-    debugger
+  newState.productsAll = newState.productsAll.filter((item) => {
+  /*   debugger */
       return item.name.toLowerCase().includes(filtro.toLowerCase());
   });
   
 
   this.setState(newState);
  };
+
+
+//  filterListFood = (filtro) => {
+ 
+//   const newState = { ...this.state };
+
+//   newState.foodsAll = newState.foodsAll.filter((food) => {
+//       return food.name.indexOf(filtro) != -1;
+//   });
+//   this.setState(newState);
+// };
 
  render (){
    return(
