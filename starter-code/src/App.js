@@ -8,6 +8,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1>IronStore</h1>
         <FilterableProductTable />
       </div>
     );

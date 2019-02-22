@@ -24,7 +24,8 @@ export default class SearchBar extends React.Component {
       <div>
         <h2>Search</h2>
         <input type="text" onChange={e => this.searchBarHandler(e)}></input>
-        <input type="checkbox" onClick={this.checkboxHandler}></input>
+        <input type="checkbox" name="checkbox" onClick={this.checkboxHandler}></input>
+        <label htmlFor="checkbox">Only show products in stock</label>
       </div>
     )
   }

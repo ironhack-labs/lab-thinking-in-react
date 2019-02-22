@@ -28,6 +28,9 @@ export default class FilterableProductTable extends Component {
     this.setState(newState)
   }
 
+
+
+
   render() {
     return (
       <div>
