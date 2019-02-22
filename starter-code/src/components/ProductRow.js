@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Table from "react-bootstrap/Table";
 
 class ProductRow extends Component {
   constructor(props) {
@@ -8,7 +7,6 @@ class ProductRow extends Component {
   }
   render() {
     const { item } = this.props;
-    console.log(item);
     return (
       <tr>
         <td>{item.name}</td>

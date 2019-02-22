@@ -12,8 +12,8 @@ class ProductTable extends Component {
     };
   }
   render() {
-    console.log(this.state.articleArray);
     const { articleArray } = this.state;
+    const { filterValue } = this.props;
     return (
       <Table bordered>
         <thead>
@@ -24,7 +24,11 @@ class ProductTable extends Component {
         </thead>
         <tbody>
           {articleArray.data.map(oneArticle => {
-            return <ProductRow item={oneArticle} key={oneArticle.name} />;
+            if (
+              oneArticle.name.toLowerCase().includes(filterValue.toLowerCase())
+            ) {
+              return <ProductRow item={oneArticle} key={oneArticle.name} />;
+            }
           })}
         </tbody>
       </Table>

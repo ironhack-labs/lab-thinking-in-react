@@ -3,16 +3,17 @@ import Form from "react-bootstrap/Form";
 import "./SearchBar.css";
 
 class SearchBar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
   render() {
     return (
       <div>
         <Form.Group controlId="searchBar">
           <Form.Label>Search Bar</Form.Label>
-          <Form.Control type="text" placeholder="search..." />
+          <Form.Control
+            type="text"
+            placeholder="search..."
+            onChange={event => this.props.update(event.target.value)}
+            name="searchInput"
+          />
           <Form.Check
             custom
             type="checkbox"
