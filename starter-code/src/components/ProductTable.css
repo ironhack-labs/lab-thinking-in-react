@@ -1,0 +1,12 @@
+.ProductTable {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.ProductTable th,
+.ProductTable td {
+  color: white;
+}
+
+.ProductTable .outofstock {
+  color: red;
+}

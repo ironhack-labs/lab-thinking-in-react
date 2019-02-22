@@ -1,5 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Cinzel|Playfair+Display|Playfair+Display+SC");
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: "Cinzel", serif;
+  background-image: url("/images/dragon.jpg");
+  background-size: cover;
+  color: white;
 }
