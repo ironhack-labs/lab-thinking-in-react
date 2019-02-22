@@ -4,7 +4,7 @@ import ProductRow from "./ProductRow";
 
 class ProductTable extends Component {
   render() {
-    console.log(this.props.allProducts);
+    // console.log(this.props.allProducts);
     return (
       <div className="ProductTable">
         PRODUCT TABLE

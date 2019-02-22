@@ -12,7 +12,7 @@ class ProductRow extends Component {
         {/* MAP on an array sent by the app.js */}
 
         <tbody>
-          {theProducts.data.map(oneProduct => {
+          {theProducts.map(oneProduct => {
             return oneProduct.stocked ? (
               <tr>
                 <td>{oneProduct.name}</td>
