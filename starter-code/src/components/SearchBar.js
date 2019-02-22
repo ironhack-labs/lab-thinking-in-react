@@ -16,6 +16,7 @@ class SearchBar extends Component {
           />
           <Form.Check
             custom
+            onChange={event => this.props.stockStatus(event.target.value)}
             type="checkbox"
             label="Only show products on stock"
             id="isAvailable"

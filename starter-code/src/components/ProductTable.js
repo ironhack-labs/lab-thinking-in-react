@@ -13,7 +13,7 @@ class ProductTable extends Component {
   }
   render() {
     const { articleArray } = this.state;
-    const { filterValue } = this.props;
+    const { filterValue, showOnlyAvailable } = this.props;
     return (
       <Table bordered>
         <thead>

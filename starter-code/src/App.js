@@ -9,20 +9,32 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentUserSearch: ""
+      currentUserSearch: "",
+      checkedBox: false
     };
   }
 
   updateAppSearch(event) {
     this.setState({ currentUserSearch: event });
   }
+
+  toggleCheckBox() {
+    this.setState({ checkedBox: !this.state.checkedBox });
+  }
+
   render() {
     return (
       <Container className="FilterableProductable">
         <h1>Iron Store</h1>
         <Row>
-          <SearchBar update={event => this.updateAppSearch(event)} />
-          <ProductTable filterValue={this.state.currentUserSearch} />
+          <SearchBar
+            update={event => this.updateAppSearch(event)}
+            stockStatus={event => this.toggleCheckBox()}
+          />
+          <ProductTable
+            filterValue={this.state.currentUserSearch}
+            showOnlyAvailable={this.state.checkedBox}
+          />
         </Row>
       </Container>
     );
