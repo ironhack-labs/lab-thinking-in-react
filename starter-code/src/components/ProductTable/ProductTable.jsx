@@ -12,8 +12,8 @@ export default class ProductTable extends Component {
             <th>Name</th>
             <th>Price</th>
           </tr>{" "}
-          {this.props.datos.data.map((e, inx) => {
-            return <ProductRow datos={e} />;
+          {this.props.datos.data.map((e, idx) => {
+            return <ProductRow datos={e} key={idx} />;
           })}
         </table>
       </div>
