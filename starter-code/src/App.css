@@ -21,6 +21,12 @@
 .App-intro {
   font-size: large;
 }
+.ProductTable{
+  border: 2px solid green;
+}
+.FilterableProductTable{
+  border: 2px solid orange;
+}
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
