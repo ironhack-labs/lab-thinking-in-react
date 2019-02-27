@@ -1,21 +1,44 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import data from './data.json'
 import './App.css';
+import FilterableProductTable from './components/FilterableProductTable';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+export default class App extends Component {
+    state = {
+     products: []
+  }
+
+  componentDidMount() {
+    this.setState({ products: data.data })
+  }
+
+  onChangeSearch = e => {
+    let searchProd = e.target.value.toLowerCase()
+    if (searchProd === "") return this.setState({ products: data.data })
+    let arr = this.state.products.filter(p => p.name.toLowerCase().includes(searchProd)
+  )
+  this.setState({ products: arr })
+}
+
+onChangeStock = e => {
+  let { products } = this.state
+  if (e.target.checked) {
+    products = products.filter(pro => pro.stocked === true)
+    this.setState({ products })
+  } else {
+    this.setState({ products: data.data })
   }
 }
 
-export default App;
+render() {
+  let { products } = this.state
+
+  return (
+    <div className="App">
+      <h1>IronStore</h1>
+      <FilterableProductTable products={products} onChangeSearch={this.onChangeSearch} onChangeStock={this.onChangeStock} />
+    </div>
+  );
+ }
+}
+
