@@ -2,11 +2,21 @@ import React, { Component } from 'react';
 
 const ProductTable = (props) => {
 
+
+
     const ProductRow = props.products.map((product, index) => {
+
+
+
+        const changeColor = (product) => {
+            return product.stocked ? "black" : "red"
+        }
+        console.log(changeColor)
+
         return (
 
             <tr key={index}>
-                <td>{product.name}</td>
+                <td style={{ color: changeColor(product) }}>{product.name}</td>
                 <td>{product.price}</td>
             </tr>
         );
@@ -15,11 +25,13 @@ const ProductTable = (props) => {
     return (
         <div>
             <table>
-                <tr>
-                    <th>Name</th>
-                    <th>Price</th>
-                </tr>
-                {ProductRow}
+                <tbody>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </tr>
+                    {ProductRow}
+                </tbody>
             </table>
         </div>
     )

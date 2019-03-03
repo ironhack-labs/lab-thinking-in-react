@@ -27,7 +27,7 @@ class FilterableProductTable extends Component {
     render() {
         return (
             <div>
-                <SearchBar blub='bla' onSearch={this.searchFunction}/>
+                <SearchBar onSearch={this.searchFunction}/>
                 <ProductTable products={this.state.products} />
             </div>
         )
