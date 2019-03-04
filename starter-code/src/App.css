@@ -22,6 +22,15 @@
   font-size: large;
 }
 
+.table{
+  width: 100%
+}
+
+.buscaprod {
+  width: 800px;
+  height: 30px;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
