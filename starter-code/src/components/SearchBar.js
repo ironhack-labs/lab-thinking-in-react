@@ -23,6 +23,7 @@ class SearchBar extends Component {
     }
 
     if(e.target.name === "producto"){
+      document.getElementById("inStock").checked=0
       if(e.target.value ===''){
         filtroProds=this.props.products.data
       }      
