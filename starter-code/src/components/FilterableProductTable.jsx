@@ -1,21 +1,46 @@
 import React, { Component } from "react";
+import SearchBar from "./SearchBar";
+import ProductTable from "./ProductTable";
 
 class FilterableProductTable extends Component {
-  render() {
-    console.log(this.props);
+  state = {
+    filterText: "",
+    inStockOnly: false,
+  };
 
-    const data = this.props.data.map((element, index) => {
-      return (
-        <ul key={index}>
-          <li>{element.category}</li>
-          <li>{element.price}</li>
-          <li>{element.stocked}</li>
-          <li>{element.name}</li>
-        </ul>
-      );
+  //Metodos de searchBar
+
+  handleFilterTextChange = filterText => {
+    this.setState({
+      filterText: filterText,
     });
+  };
 
-    return <div>{data}</div>;
+  handleInStockChange = inStockOnly => {
+    this.setState({
+      inStockOnly: inStockOnly,
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <h1 className="title">Iron Store</h1>
+
+        <SearchBar
+          filterText={this.state.filterText}
+          inStockOnly={this.state.inStockOnly}
+          onFilterTextChange={this.handleFilterTextChange}
+          onInStockChange={this.handleInStockChange}
+        />
+
+        <ProductTable
+          products={this.props.data}
+          filterText={this.state.filterText}
+          inStockOnly={this.state.inStockOnly}
+        />
+      </div>
+    );
   }
 }
 
