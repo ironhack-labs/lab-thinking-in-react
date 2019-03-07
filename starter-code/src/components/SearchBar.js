@@ -5,13 +5,25 @@ import '../App.css';
 
 
 class SearchBar extends Component {
+    state = {
+      search:''
+    }
+
+    handleChange = (e) => {
+      console.log(e.target.value)
+      // this.setState({
+      //     search:e.target.value
+      // })
+      this.props.searchProducts(e.target.value)
+  }
+
   render() {
     return (
       <div className="SearchBar">
        Search
-       <form>
-          <input type="text" name="filter"  onChange={(e) => this.filter(e)}></input>
-       </form>
+      
+          <input type="text" name="filter" onChange={(e) => this.handleChange(e)}></input>
+       
       </div>
     );
   }
