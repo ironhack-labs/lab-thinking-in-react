@@ -17,7 +17,7 @@ class SearchBar extends Component {
   }
 
     handleCheckbox = (check) => {
-      console.log(check.target.checked)
+      
       this.props.searchStockedProducts(check.target.checked)
     }
 

@@ -21,12 +21,20 @@ class FilterableProductTable extends Component {
   }
 
   searchStockedProducts = (search) => {
-    let newProducts = [...this.state.products]
-    newProducts = newProducts.filter(item => item.stocked === search);
+    let checkedProducts = [...this.state.products]
+    if(search === true){
+      checkedProducts = checkedProducts.filter(item => item.stocked === search);
+        this.setState({
+          filteredProducts: checkedProducts
+        });
+    }
+    else{
+      this.setState({
+        filteredProducts: checkedProducts
+      });
+    }
 
-    this.setState({
-      filteredProducts: newProducts
-    });
+    
   }
 
 
