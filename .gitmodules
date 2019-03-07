@@ -1,0 +1,3 @@
+[submodule "lab-thinking-in-react"]
+	path = lab-thinking-in-react
+	url = https://github.com/rxkonanz/lab-thinking-in-react.git
