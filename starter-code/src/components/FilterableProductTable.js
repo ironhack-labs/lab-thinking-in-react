@@ -12,8 +12,17 @@ class FilterableProductTable extends Component {
 
   searchProducts = (search) => {
     let newProducts = [...this.state.products]
-    newProducts = newProducts.filter(item => item.name.toLowerCase().includes( search.toLowerCase()));
-    console.log("search:" + search)
+    newProducts = newProducts.filter(item => item.name.toLowerCase().includes(search.toLowerCase()));
+    
+
+    this.setState({
+      filteredProducts: newProducts
+    });
+  }
+
+  searchStockedProducts = (search) => {
+    let newProducts = [...this.state.products]
+    newProducts = newProducts.filter(item => item.stocked === search);
 
     this.setState({
       filteredProducts: newProducts
@@ -25,7 +34,7 @@ class FilterableProductTable extends Component {
     return (
       <div className="FilterableProductTable">
       <h1>IronStore</h1>
-        <SearchBar  searchProducts={this.searchProducts} />
+        <SearchBar  searchProducts={this.searchProducts} searchStockedProducts={this.searchStockedProducts} />
         <ProductTable products={this.state.filteredProducts} />  
       </div>
     );

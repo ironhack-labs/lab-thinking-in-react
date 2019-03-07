@@ -6,7 +6,7 @@ class ProductTable extends Component {
 
   showProducts = () => {
     return this.props.products.map((aProduct, i) => {
-      return <ProductRow index={i.toString()}  productName={aProduct} />
+      return <ProductRow index={i.toString()}  product={aProduct} />
     })
   }
 

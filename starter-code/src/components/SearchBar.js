@@ -5,17 +5,21 @@ import '../App.css';
 
 
 class SearchBar extends Component {
-    state = {
-      search:''
-    }
+    // state = {
+    //   search:'',
+    //   checked: ''
+    // }
 
     handleChange = (e) => {
       console.log(e.target.value)
-      // this.setState({
-      //     search:e.target.value
-      // })
-      this.props.searchProducts(e.target.value)
+     
+      //this.props.searchProducts('hi')//e.target.value)
   }
+
+    handleCheckbox = (check) => {
+      console.log(check.target.checked)
+      this.props.searchStockedProducts(check.target.checked)
+    }
 
   render() {
     return (
@@ -23,6 +27,8 @@ class SearchBar extends Component {
        Search
       
           <input type="text" name="filter" onChange={(e) => this.handleChange(e)}></input>
+          <br/>
+          <input type="checkbox" name="stocked" onChange={(check) => this.handleCheckbox(check)} /> In Stock
        
       </div>
     );
