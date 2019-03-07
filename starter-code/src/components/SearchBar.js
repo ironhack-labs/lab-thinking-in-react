@@ -28,7 +28,7 @@ class SearchBar extends Component {
       
           <input type="text" name="filter" onChange={(e) => this.handleChange(e)}></input>
           <br/>
-          <input type="checkbox" name="stocked" onChange={(check) => this.handleCheckbox(check)} /> In Stock
+          <input type="checkbox" name="stocked" onChange={(check) => this.handleCheckbox(check)} /> Only Show In Stock
        
       </div>
     );
