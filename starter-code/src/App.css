@@ -47,3 +47,11 @@ body,
 .flex.column {
   flex-direction: column;
 }
+
+.row {
+  justify-content: space-around;
+}
+
+.tableHead {
+  background: gray;
+}
