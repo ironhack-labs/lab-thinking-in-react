@@ -14,11 +14,13 @@ class ProductTable extends Component {
     return (
       <div className="ProductTable">
         <table>
+          <tbody>
           <tr>
             <th>Product</th>
             <th>Price</th>
           </tr>
           {this.showProducts()}
+          </tbody>
         </table>
         
       </div>
