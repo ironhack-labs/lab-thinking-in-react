@@ -4,16 +4,31 @@ import '../App.css';
 
 class ProductTable extends Component {
   state = {
-    products:this.props.products
+    // products:this.props.products
+  }
+  showProducts () {
+    let products = this.props.products;
+    return products.map((aProduct, i) => {
+      //console.log(aProduct)
+      return (
+      <tr key={i}>
+        <td>{aProduct.name}</td>
+        <td>{aProduct.price}</td>
+      </tr>
+      )
+    })
   }
 
   render() {
+    //console.log(this)
     return (
       <div className="App">
         <header className="ProductTable">
           <table>
             <tbody>
-              <ProductRow productName={aProduct}/>
+              
+              {this.showProducts()}
+              {/* <ProductRow productName={aProduct}/> */}
             </tbody>
           </table>
         </header>
@@ -21,17 +36,6 @@ class ProductTable extends Component {
     );
   }
 
-  showProducts () {
-    let products = this.props.products;
-    return products.map((aProduct, i) => {
-      return (
-      <tr key={i}>
-        <td>{products[i].name}</td>
-        <td>{products[i].price}</td>
-      </tr>
-      )
-    })
-  }
 }
 
 export default ProductTable;
