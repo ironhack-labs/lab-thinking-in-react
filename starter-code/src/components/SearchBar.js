@@ -13,7 +13,7 @@ class SearchBar extends Component {
     handleChange = (e) => {
       console.log(e.target.value)
      
-      //this.props.searchProducts('hi')//e.target.value)
+      this.props.searchProducts(e.target.value)
   }
 
     handleCheckbox = (check) => {
