@@ -31,7 +31,7 @@
   }
 }
 
-html,
+/* html,
 body,
 .App,
 #root {
@@ -48,10 +48,10 @@ body,
   flex-direction: column;
 }
 
-.row {
+.flex.row {
   justify-content: space-around;
 }
 
 .tableHead {
   background: gray;
-}
+} */
