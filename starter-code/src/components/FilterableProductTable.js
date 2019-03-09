@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 import data from '../data.json';
-import ProductTable from './ProductTable';
+import ProductTable from './ProductTable.js';
+import SearchBar from './SearchBar.js';
 
 class FilterableProductTable extends Component {
+  state = {
+      searchquery: ""
+  }
 
-
+  callme = (val) => {
+    console.log("on m'a transmis la valeur " + val)
+    this.setState({searchquery: val});
+  }
 
 
   render() {
@@ -12,12 +19,9 @@ class FilterableProductTable extends Component {
       <div className="FilterableProductTable">
         <h1>IronStrore</h1>
 
-        <form>
-            <input type="" ></input>
-        </form>
+        <SearchBar callme={this.callme} />
         <br/>
-
-        <ProductTable/>
+        <ProductTable searchquery={this.state.searchquery} />
       
 
         

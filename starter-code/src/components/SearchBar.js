@@ -1,14 +1,33 @@
 import React, { Component } from 'react';
-import './App.css';
+
 
 class SearchBar extends Component {
-  render() {
-    return (
-      <div>
 
-      </div>
+  state = {
+    searchtext: ""
+ };
+
+  handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+
+    if (name === 'searchtext') {
+      this.props.callme(value);
+    }
+
+    let o = {};
+    o[name] = value; // o['searchtext'] = value
+    this.setState(o);
+  }
+
+  render() {
+
+    return (
+      <form>
+        <input type="text" className='search-bar' name='searchtext' value={this.state.searchtext} onChange={this.handleChange}/>
+      </form>
     );
   }
 }
 
-export default SearchBar;
+export default SearchBar
