@@ -1,18 +1,17 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import data from "./data.json";
+import FilterableProductTable from "./components/FilterableProductTable.js";
+import SearchBar from "./components/SearchBar.js";
+import "./App.css";
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        {/* data.data cat dans data.json on a un objet qui contient un tableau. 
+        et ce qui nous intéresse c'est uniquement le tableau qui est dans cet objet.
+        le clé du tableau s'appelle data, donc data(nom du fichier).data(clé du tableau) */}
+        <FilterableProductTable products={data.data} />
       </div>
     );
   }
