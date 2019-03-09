@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-export default () => (
-  <div className="columns">
-    <div className="column is-half">
-      Football
-    </div>
-    <div className="column is-half">
-      $49.99
-    </div>
-  </div>
-);
+export default class ProductRow extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    const { name, price } = this.props.data;
+
+    return (
+      <div className="columns">
+        <div className="column is-half">
+          {name}
+        </div>
+        <div className="column is-half">
+          {price}
+        </div>
+      </div>
+    );
+  }
+}
