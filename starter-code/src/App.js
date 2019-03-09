@@ -1,18 +1,27 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ProductTable from './components/FilterProductTable'
+//import data from "./data.json"
+
+import Row from './components/ProductRow';
+import Search from './components/SearchBar';
 
 class App extends Component {
+
+  state = {
+    termino: ''
+  }
+
+  recibirInfo = word => {
+    this.setState({termino: word})
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Search recibirInfoFunc={this.recibirInfo} />
+        <Row word={this.state.termino} />
       </div>
     );
   }
