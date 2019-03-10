@@ -7,29 +7,31 @@ import ProductTable from './ProductTable.js';
 
 
 class FilterableProductTable extends Component {
-
   state = {
+    searchquery: ""
+  }
 
-  };
+  //fonction permettant au composant SearchBar de transmettre la valeur de sa query
+  callme = (val) => {
+    console.log("on m'a transmis la valeur " + val)
+    this.setState({ searchquery: val });
+  }
 
   render() {
 
-    //TODO: créer une fonction pour récupérer la valeur de la query du composant SearchBar
+
     return (
       <div>
         <h1>IronStore</h1>
 
-        <SearchBar />
+        <SearchBar callme={this.callme} />
 
-        <ProductTable />
+        <ProductTable searchquery={this.state.searchquery} />
       </div>
     )
   }
 
 }
-
-
-
 
 
 export default FilterableProductTable;

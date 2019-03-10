@@ -14,6 +14,10 @@ class SearchBar extends Component {
       value = !this.state.instockonly;
     }
 
+    if (name === 'query') {
+      this.props.callme(value);
+    }
+
     this.setState({ [name]: value });
   }
 
