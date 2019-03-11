@@ -1,9 +1,21 @@
 import React, { Component } from "react";
 
 class SearchBar extends Component {
+  state = {
+    search: "",
+    checkbox: false
+  };
+
   handleChange = event => {
-    let { value } = event.target;
-    this.props.updateString(value);
+    // let { value } = event.target;
+    // this.props.updateString(value);
+    this.setState({ search: event.target.value });
+    this.props.updateString(event.target.value);
+  };
+
+  handleCheckbox = event => {
+    this.setState({ checkbox: event.target.checked });
+    this.props.updateCheckBox(event.target.checked);
   };
 
   render() {
@@ -28,11 +40,13 @@ class SearchBar extends Component {
             <input
               type="checkbox"
               className="form-check-input"
+              name="checkbox"
               id="checkbox"
-              onChange={event => this.props.handleCheckbox(event)}
+              checked={this.state.checkbox}
+              onChange={event => this.handleCheckbox(event)}
             />
-            <label className="form-check-label" htmlFor="checkbox">
-              Only show products in stock
+            <label className="form-check-label">
+              Only show products on stock
             </label>
           </div>
         </form>

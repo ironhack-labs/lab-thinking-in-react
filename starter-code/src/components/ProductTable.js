@@ -15,15 +15,15 @@ class ProductTable extends Component {
           <tbody>
             {this.props.products
               .filter(oneArticle => {
-                return new RegExp(this.props.searchString, "i").test(
+                return (
                   oneArticle.name
+                    .toLowerCase()
+                    .includes(this.props.search.toLowerCase()) &&
+                  (oneArticle.stocked || !this.props.stock)
                 );
               })
               .map(oneArticle => {
-                return (
-                  // <ProductRow name={oneArticle.name} price={oneArticle.price} />
-                  <ProductRow {...oneArticle} key={oneArticle.name} />
-                );
+                return <ProductRow {...oneArticle} key={oneArticle.name} />;
               })}
           </tbody>
         </table>
