@@ -22,6 +22,13 @@
   font-size: large;
 }
 
+.w-80{
+  width: 80%;
+}
+.red{
+  color: red;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
