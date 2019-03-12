@@ -19,7 +19,7 @@ class ProductTable extends Component {
                   oneArticle.name
                     .toLowerCase()
                     .includes(this.props.search.toLowerCase()) &&
-                  (oneArticle.stocked || !this.props.stock)
+                  (oneArticle.stocked || !this.props.stockItem)
                 );
               })
               .map(oneArticle => {

@@ -29,7 +29,7 @@ class FilterableProductTable extends Component {
         <ProductTable
           products={this.props.products}
           search={this.state.searchString}
-          stock={this.state.checked}
+          stockItem={this.state.stock}
         />
       </div>
     );
