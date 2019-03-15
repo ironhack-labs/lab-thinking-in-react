@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const ProductRow = (props) => {
   const setColor = () => (!props.stocked) ? "text-danger" : null;
   
@@ -12,3 +13,4 @@ const ProductRow = (props) => {
 }
 
 export default ProductRow;
+

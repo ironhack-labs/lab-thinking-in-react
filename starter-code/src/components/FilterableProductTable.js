@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import SearchBar from './SearchBar';
 import ProductTable from './ProductTable';
 
+
 class FilterableProductTable extends Component {
 
   state = {
@@ -23,7 +24,7 @@ class FilterableProductTable extends Component {
     return (
       <div>
         <h1>IronStore</h1>
-        <SearchBar onSearch={ this.onSearch } onCheck={ this.onCheck }/>
+        <SearchBar onSearch={ this.onSearch } keyword={this.state.search} onCheck={ this.onCheck }/>
         <ProductTable products={ products } />
       </div>
     )
@@ -31,3 +32,4 @@ class FilterableProductTable extends Component {
 }
 
 export default FilterableProductTable;
+

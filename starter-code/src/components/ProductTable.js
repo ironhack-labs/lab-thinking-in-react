@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ProductRow from './ProductRow';
+
 
 const ProductTable = ({products}) => {
 
@@ -22,3 +23,4 @@ const ProductTable = ({products}) => {
 }
 
 export default ProductTable;
+
