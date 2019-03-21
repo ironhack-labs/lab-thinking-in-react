@@ -22,6 +22,16 @@
   font-size: large;
 }
 
+.search-bar{
+  width: 700px;
+  height: 40px;
+  font-size: 20px;
+}
+
+.red-item{
+  color: red;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
