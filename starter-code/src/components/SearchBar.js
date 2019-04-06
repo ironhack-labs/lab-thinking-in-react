@@ -6,7 +6,7 @@ class SearchBar extends Component {
             <div className="SearchBar">
                 <input type="text" name="query" placeholder="Search product" onChange={e => this.props.handleSearch(e)} />
                 <br />
-                <input type="checkbox" onChange={e => this.props.handleCheckbox(e)} /> In stock only
+                <input type="checkbox" onChange={e => this.props.handleCheckBox(e)} /> In stock only
             </div>
         );
     }

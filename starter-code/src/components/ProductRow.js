@@ -2,12 +2,26 @@ import React, { Component } from 'react';
 
 class ProductRow extends Component {
     render() {
-        return (
+        const { stocked, name, price } = this.props.product;
+        const nameStyle = stocked ? { color: 'black' } : { color: 'red' };
+        return this.props.checked ? (
+            stocked ? (
             <tr className="ProductRow">
-                <td>{ this.props.product.data } </td>
-                <td> { this.props.product.price } </td>
-                <td> { this.props.product.stocked ? "Yes" : "No" } </td>
+                {/* first curly brace is recognizing javascript, second curly brace is passing color as an object
+                becuase that is the only way you can pass, as an object */}
+                <td style={ nameStyle }> { name } </td>
+                <td> { price } </td>
+                <td> { stocked ? "Yes" : "No" } </td>
             </tr>
+            ) : (
+                ''
+            )
+            ) : (
+                <tr className="ProductRow">
+                    <td style={ nameStyle }> { name } </td>
+                    <td> { price } </td>
+                    <td> { stocked ? "Yes" : "No" } </td>
+                </tr>
         );
     }
 }
