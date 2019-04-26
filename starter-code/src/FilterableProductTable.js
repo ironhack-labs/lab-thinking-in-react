@@ -9,14 +9,16 @@ class FilterableProductTable extends Component {
     this.state = {
       products: products.data,
       searchValue: '',
-      filteredProducts: []
+      filteredProducts: [],
+      
     }
 
   }
-  
-  getSearchValue = (value) => {
-    const valueLower = value.toLowerCase();
+
+  getSearchValue = (value, showStockedProducts) => {
     const products = [...this.state.products];
+    
+    const valueLower = value.toLowerCase();
     const filteredProducts = products.filter(product => {
       const productName = (product.name).toLowerCase();
       return productName.includes(valueLower)
