@@ -21,7 +21,8 @@ class ProductTable extends Component {
 
   render() {
     return (
-      <div>
+
+      <div className="container">
         <table className="table is-bordered">
           <thead>
             <tr>
