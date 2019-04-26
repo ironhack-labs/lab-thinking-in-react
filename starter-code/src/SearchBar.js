@@ -2,21 +2,12 @@ import React, { Component } from "react";
 
 class SearchBar extends Component {
     
-    constructor() {
-        super()
-        this.state = {
-            search: ''
-        }
-    }
-
 
     handleChange = (e) => {
-        this.setState({search: e.target.value});
-        this.props.searchValue(this.state.search)
+        this.props.searchValue(e.target.value)
     }
 
   render() {
-     // console.log(this.state.search)
     return (
       <div>
         <input className="input is-rounded" type="text" placeholder="Search" onChange={this.handleChange}/>

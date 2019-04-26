@@ -20,7 +20,6 @@ class ProductTable extends Component {
 
 
   render() {
-    console.log(this.state.products)
     return (
       <div>
         <table className="table is-bordered">
