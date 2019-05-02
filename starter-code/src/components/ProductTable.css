@@ -1,0 +1,12 @@
+.productTable{
+    background-color: rgba(184, 135, 11, 0.397);
+    padding: 5%;
+}
+.productTable ul li{
+    display: flex;
+    border: 2px solid rgba(0, 0, 0, 0.473);
+    border-radius: 10px;
+    justify-content: space-between;
+    margin: 2%;
+    padding: 0% 2%;
+}
