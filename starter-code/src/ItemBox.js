@@ -14,10 +14,10 @@ class ItemBox extends React.Component {
         </thead>
         <tbody>
           {
-          this.props.dataInfo.data.map((item, idx) => {
+          this.props.dataInfo.map((item, idx) => {
          return (
-           <tr>
-            <Item key={idx} item={item}/>
+           <tr key={idx}>
+            <Item item={item}/>
            </tr>
          ) 
         })
