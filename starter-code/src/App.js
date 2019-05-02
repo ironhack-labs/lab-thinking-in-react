@@ -1,12 +1,13 @@
 import React from 'react';
 import './App.css';
+import MainBox from './MainBox';
 
 class App extends React.Component {
   render() {
     return (
-      <div className="App">
-        
-      </div>
+      <React.Fragment>
+        <MainBox />
+      </React.Fragment>
     );
   }
 }
