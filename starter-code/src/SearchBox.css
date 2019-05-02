@@ -1,0 +1,21 @@
+.search-box {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-box h2 {
+  font-weight: lighter;
+  font-size: 20px;
+}
+
+.check-box {
+  margin: 20px;
+}
+
+.search {
+  height: 25px;
+}

@@ -1,0 +1,32 @@
+table {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+thead {
+width: 300px;
+display: flex;
+justify-content: space-around;
+align-items: center;
+background-color: silver;
+font-weight: lighter;
+}
+
+tbody {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: lavender;
+}
+
+th {
+  padding: 15px;
+}
+
+td {
+  padding: 10px;
+}

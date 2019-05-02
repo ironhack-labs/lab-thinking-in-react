@@ -1,5 +1,6 @@
 import React from 'react';
 import Item from './Item';
+import './ItemBox.css';
 
 class ItemBox extends React.Component {
   render() {
@@ -30,3 +31,4 @@ class ItemBox extends React.Component {
 }
 
 export default ItemBox;
+
