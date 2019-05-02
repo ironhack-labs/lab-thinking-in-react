@@ -1,0 +1,16 @@
+tr {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product {
+    display: flex;
+    border: 1px solid red;
+}
+
+.product.stocked {
+    display: flex;
+    border: 1px solid black;
+}
