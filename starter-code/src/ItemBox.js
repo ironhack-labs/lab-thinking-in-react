@@ -1,16 +1,29 @@
 import React from 'react';
 import Item from './Item';
-import data from './data.json';
 
 class ItemBox extends React.Component {
   render() {
     return (
       <React.Fragment>
-        {this.props.dataInfo.data.map((item, idx) => {
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+          this.props.dataInfo.data.map((item, idx) => {
          return (
-           <Item key={idx}/>
+           <tr>
+            <Item key={idx} item={item}/>
+           </tr>
          ) 
-        })}
+        })
+        }
+        </tbody>
+      </table>
       </React.Fragment>
     )
   }

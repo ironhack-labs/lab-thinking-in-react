@@ -7,6 +7,7 @@ class MainBox extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <h1>IronStore</h1>
         <SearchBox />
         <ItemBox dataInfo={data} />
       </React.Fragment>
