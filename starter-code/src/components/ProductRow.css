@@ -1,0 +1,14 @@
+.productRow{
+  display: inline-block;
+  padding: 50px;
+  outline: 1px solid silver;
+}
+
+.onStock{
+  color: black;
+}
+
+.outOfStock{
+  color: red;
+}
+
