@@ -1,7 +1,26 @@
 import React, { Component } from 'react';
+import SearchBar from "./SearchBar"
+import ProductTable from "./ProductTable"
 
-export default function FilteredProducts(data) {
-	<div className="productsContainer">
-		{data}
-	</div>
+export default class FilteredProducts extends Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+			"filteredProducts" : props
+		}
+	}
+
+	searchFilter(searchTerm) {
+		console.log("here i am, and here is the search term: ", searchTerm)
+	}
+
+	render() {
+		return(
+		<div className="productsContainer">
+			<h1 className="heading">IronStore</h1>
+			<SearchBar updateTable={(term) => this.searchFilter} />
+			<ProductTable {...this.state.filteredProducts} />
+		</div>
+	)
+	}
 } 
