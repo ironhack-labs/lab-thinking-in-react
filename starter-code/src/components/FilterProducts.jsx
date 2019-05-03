@@ -18,7 +18,7 @@ export default class FilteredProducts extends Component {
 		return(
 		<div className="productsContainer">
 			<h1 className="heading">IronStore</h1>
-			<SearchBar updateTable={(term) => this.searchFilter} />
+			<SearchBar updateTable={(searchTerm) => this.searchFilter(searchTerm)} />
 			<ProductTable {...this.state.filteredProducts} />
 		</div>
 	)
