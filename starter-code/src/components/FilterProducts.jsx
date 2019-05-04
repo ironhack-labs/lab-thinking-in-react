@@ -6,7 +6,8 @@ export default class FilteredProducts extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			"products" : props.data
+			"products" : props.data,
+			"allProducts" : props.data
 		}
 	}
 
@@ -24,21 +25,17 @@ export default class FilteredProducts extends Component {
 	}
 
 	searchFilter(searchTerm) {
-		var filteredProducts = this.state.products.filter( product => 
+		var filteredProducts = this.state.allProducts.filter( product => 
 			this.objectContainsString(searchTerm, product)
 		)
 
-		console.log("new filtered: ", filteredProducts);
+		// console.log("new filtered: ", filteredProducts);
 		this.setState({"products" : filteredProducts},
 			console.log("new state: ", this.state)
 		)
 	}
 
 	render() {
-		// const object = {"category": "Sporting Goods", "name": "Football"}
-		// var test = this.objectContainsString("sport", object)
-		// console.log("test: ", test)
-
 		return(
 		<div className="productsContainer">
 			<h1 className="heading">IronStore</h1>

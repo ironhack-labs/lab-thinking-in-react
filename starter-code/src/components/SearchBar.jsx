@@ -13,8 +13,7 @@ export default class Search extends Component {
 						this.props.updateTable(this.state.input)
 		}
 		)
-			// const searchTerm = this.state.input
-			// console.log("searchTerm: ", this.state.input)
+			console.log("searchTerm: ", this.state.input)
 	}
 
 	render() {

@@ -1,25 +1,11 @@
 import React, { Component } from 'react';
 
-export default class ProductTable extends Component {
-	constructor(props) {
-		super(props)
-		this.state = {
-			"name" : this.props.name,
-			"category" : this.props.category,
-			"price" : this.props.price,
-		}
-	}
-
-	componentDidMount() {
-	}
-
-	render() {
-		return(
-			<tr className="productRow">
-				<td className="rowValue">{this.state.name}</td>
-				<td className="rowValue">{this.state.category}</td>
-				<td className="rowValue">{this.state.price}</td>
-			</tr>
-		)
-	}
+export default function productRow(props) {
+	return(
+		<tr className="productRow">
+			<td className="rowValue">{props.name}</td>
+			<td className="rowValue">{props.category}</td>
+			<td className="rowValue">{props.price}</td>
+		</tr>
+	)
 }
