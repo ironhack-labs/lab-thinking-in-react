@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ProductRow from "./ProductRow"
 
 export default function productTable(props) {
@@ -13,13 +13,16 @@ export default function productTable(props) {
 					<th>Price</th>
 				</tr>
 			</thead>
-			<tbody>
-				{
-					props.products.map( (product, index) => (
-						<ProductRow key={index} {...product} />
-					))
-				}
-			</tbody>
+			{
+				props.products.map( (product, index) => (
+					<tbody>
+						{
+						!props.stocked ? <ProductRow key={index} {...product} /> :
+						product.stocked && <ProductRow key={index} {...product} />
+						}
+					</tbody>))
+			}
+			
 		</table>
 	)
 }

@@ -7,9 +7,12 @@ export default class FilteredProducts extends Component {
 		super(props)
 		this.state = {
 			"products" : props.data,
-			"allProducts" : props.data
+			"allProducts" : props.data,
+			"stockChecked": false,
 		}
 	}
+
+	stockFilter = [];
 
 	objectContainsString(string, object) {
 		var compString = string.toLowerCase()
@@ -28,19 +31,21 @@ export default class FilteredProducts extends Component {
 		var filteredProducts = this.state.allProducts.filter( product => 
 			this.objectContainsString(searchTerm, product)
 		)
-
-		// console.log("new filtered: ", filteredProducts);
 		this.setState({"products" : filteredProducts},
 			console.log("new state: ", this.state)
 		)
+	}
+
+	inStockFilter() {
+		this.state.stockChecked ? this.setState({"stockChecked": false}, console.log("stock was true, now: ", this.state)) : this.setState({"stockChecked": true}, console.log("stock was false, now: ", this.state))
 	}
 
 	render() {
 		return(
 		<div className="productsContainer">
 			<h1 className="heading">IronStore</h1>
-			<SearchBar updateTable={(searchTerm) => this.searchFilter(searchTerm)} />
-			<ProductTable products={this.state.products} />
+			<SearchBar updateTable={(searchTerm) => this.searchFilter(searchTerm)} stockFilter={() => this.inStockFilter()} />
+			<ProductTable products={this.state.products} stocked={this.state.stockChecked} />
 		</div>
 	)
 	}
