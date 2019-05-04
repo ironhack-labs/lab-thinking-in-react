@@ -11,9 +11,7 @@ export default class Search extends Component {
 	handleSearch = (event) => {
 		this.setState( {"input" : event.target.value}, () => {
 			this.props.updateTable(this.state.input)
-		}
-		)
-			console.log("searchTerm: ", this.state.input)
+		})
 	}
 
 	handleCheck = (event) => {

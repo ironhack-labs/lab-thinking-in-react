@@ -32,7 +32,6 @@ export default class FilteredProducts extends Component {
 			this.objectContainsString(searchTerm, product)
 		)
 		this.setState({"products" : filteredProducts},
-			console.log("new state: ", this.state)
 		)
 	}
 

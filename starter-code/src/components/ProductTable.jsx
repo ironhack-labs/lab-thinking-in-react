@@ -2,8 +2,6 @@ import React from 'react';
 import ProductRow from "./ProductRow"
 
 export default function productTable(props) {
-	console.log("here i am in product table. props: ", props)
-
 	return(
 		<table className="productTable">
 			<thead>
