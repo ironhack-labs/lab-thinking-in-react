@@ -13,13 +13,22 @@ class FilterableProductTable extends Component{
 //   console.log(data)
 
   }
-
+  
+  
   searchProductHandler(OneProduct) {
-    const productCopy = [...data.data];    
-    
-    const searchedProduct = productCopy.filter(e =>
-        e.name.toLowerCase().includes(OneProduct.name.toLowerCase())  
-        
+    const productCopy = [...data.data];  
+    let onStock =[];
+     if(!OneProduct.stocked){
+       onStock = productCopy.filter(e =>
+        e.stocked        
+       );                  
+     }else{
+        onStock = productCopy;
+     }
+     console.log(onStock);
+
+    const searchedProduct = onStock.filter(e =>
+        e.name.toLowerCase().includes(OneProduct.name.toLowerCase())        
     );    
     this.setState({
       products: searchedProduct,

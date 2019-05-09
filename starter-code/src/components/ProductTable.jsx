@@ -14,6 +14,9 @@ const ProductTable = (props) =>{
           <tbody>
             {
               props.data.map(e =>{
+                if(!e.stocked){
+                  return <tr><td style={{ color:'red'}}>{e.name}</td><td>{e.price}</td></tr>      
+                }  
                 return <tr><td>{e.name}</td><td>{e.price}</td></tr>
               })    
             }           
