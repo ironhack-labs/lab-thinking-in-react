@@ -6,16 +6,27 @@ const { data } = dataJson
 
 export default class MyProvider extends Component {
   state = {
-    products: data
+    products: data,
+    searchField: ''
   }
 
-  componentDidMount() {
-    console.log(this.state.products)
+  onSearchChange = event => {
+    this.setState({ searchField: event.target.value })
   }
 
   render() {
+    const filteredProducts = this.state.products.filter(product => {
+      return product.name
+        .toLowerCase()
+        .includes(this.state.searchField.toLowerCase())
+    })
     return (
-      <Mycontext.Provider value={{ products: this.state.products }}>
+      <Mycontext.Provider
+        value={{
+          products: filteredProducts,
+          searchChange: this.onSearchChange
+        }}
+      >
         {this.props.children}
       </Mycontext.Provider>
     )

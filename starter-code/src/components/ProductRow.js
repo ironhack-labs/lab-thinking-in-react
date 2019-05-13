@@ -8,7 +8,7 @@ export default function ProductRow() {
         <tbody>
           {products.map((product, i) => (
             <tr key={i}>
-              {product.stocked == true ? (
+              {product.stocked === true ? (
                 <td>{product.name}</td>
               ) : (
                 <td style={{ color: 'red' }}>{product.name}</td>
