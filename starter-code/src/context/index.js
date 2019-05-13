@@ -5,14 +5,16 @@ export const Mycontext = createContext()
 
 export default class MyProvider extends Component{
   state = {
-    products: data
+    products: data,
+    temp: data
   }
 
   handleSearch = e => {
     const filteredProducts = data.filter(product => product.name.toLowerCase().includes(e.target.value.toLowerCase()))
 
     this.setState({
-      products: filteredProducts  
+      products: filteredProducts, 
+      temp: filteredProducts
     })
   }
 
@@ -20,7 +22,7 @@ export default class MyProvider extends Component{
     if(e.target.checked) {
       const filteredProducts = this.state.products.filter(product => product.stocked)
       this.setState({ products: filteredProducts })
-    } else this.setState({ products: data })
+    } else this.setState({ products: this.state.temp })
   }
 
   render() {
