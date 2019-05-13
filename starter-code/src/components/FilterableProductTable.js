@@ -4,8 +4,8 @@ import ProductTable from './ProductTable'
 
 export default function FilterableProductTable() {
   return (
-    <div>
-      <h1>IronStore</h1>
+    <div className="container">
+      <h1 className="title">IronStore</h1>
       <SearchBar />
       <ProductTable />
     </div>
