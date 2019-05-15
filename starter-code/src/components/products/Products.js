@@ -21,13 +21,13 @@ class Products extends Component {
   render () {
     // console.log(this.props);
     return (
-      <table>
+      <table className="tableProd">
       <tr>
         <th>Name</th>
+        <td className="table">{this.state.name}</td>
         <th>Price</th>
       </tr>
       <ListProducts nameListProduct={this.props} list={this.state.products}/>
-
     </table>
     );
   }

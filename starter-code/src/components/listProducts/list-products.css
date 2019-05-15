@@ -1,0 +1,13 @@
+.tableProd {
+  margin: 0 auto;
+  padding: 10px;
+  text-align: center;
+}
+
+.table {
+  border: 2px solid red;
+  justify-content: space-evenly;
+  padding: 5px 30px 5px 30px;
+
+  color: black;
+}

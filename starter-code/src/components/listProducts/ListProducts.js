@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './list-products.css'
 const ListProducts = (props) => {
 // console.log(props.list.data)
 console.log(props.nameListProduct)
@@ -11,10 +11,13 @@ console.log(props.nameListProduct)
  const productList = filteredArray.map((e) =>{
  console.log(e)
       return (
-      <tr>
-        <td>{e.name}</td>
-        <td>{e.price}</td>
-      </tr>
+        <table className="tableProd">
+          <tr>
+            <td className="table">{e.name}</td>
+            <td className="table">{e.price}</td>
+          </tr>
+        </table>
+
       )
  }
  );
