@@ -10,9 +10,9 @@ const ProductRow = props => {
     <div>
       <tr key={props.index}>
         <th scope="row" />
-        <td>{props.name}</td>
+        <td>{props.name} {props.stocked}</td>
         <td>{props.price}</td>
-        <td>{props.stocked}</td>
+
       </tr>
     </div>
   );

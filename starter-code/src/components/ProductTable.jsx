@@ -7,13 +7,14 @@ class ProductTable extends Component {
     data: data.data,
   };
 
-  handleStocked = () => {
-    let font = '';
-    font += this.state.data.stocked === false ? 'text-danger' : 'text-primary';
-  };
+  handleStocked () {
+    let font = 'text-';
+    font += this.state.data.stocked === true ? 'danger' : 'primary';
+    return font;
+  }
 
   // handleSearch = e => {
-  //   let search = this.state.data.filter (s => s.name == name);
+  //   let search = data.filter (s => s.name == name);
   //   this.setState ({data: search});
   // };
 
@@ -30,10 +31,13 @@ class ProductTable extends Component {
   // };
 
   render () {
-    console.log (this.state.data);
+    console.log (data);
+
+    //destructure not to repeat this.state:
+    const {data} = this.state;
 
     // showing the number of products in the output:
-    const count = this.state.data.length;
+    const count = data.length;
     if (count === 0) return <p>There are no products to show.</p>;
 
     return (
@@ -48,12 +52,12 @@ class ProductTable extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.data.map ((d, index) => (
+            {data.map ((d, index) => (
               <ProductRow
                 key={d.index}
                 name={d.name}
                 price={d.price}
-                stocked={this.handleStocked}
+                stocked={this.handleStocked ()}
               />
             ))}
           </tbody>

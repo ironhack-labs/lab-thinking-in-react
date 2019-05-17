@@ -1,36 +1,40 @@
 import React, {Component} from 'react';
 
-const SearchBar = () => {
-  // const css = {
-  //   type: text,
-  // };
-  const checkbox = {
-    type: checkbox,
+class SearchBar extends Component {
+  state = {
+    account: {search: '', check: ''},
   };
 
-  return (
-    <React.Fragment>
-      <h3>Search</h3>
-      <form>
-        <div className="form-group">
-          <input
-            className="form-control"
-            // style={css}
-            onChange={e => this.handleChange (e)}
-          />
-        </div>
+  handleChange = e => {
+    const account = {...this.state.account};
+    account.search = e.currentTarget.value;
+    this.setState ({account});
+  };
 
-        {/* checkbox functionality: */}
-        {/* <div className="form-check">
-          <input style={checkbox} class="form-check-input" id="exampleCheck1" />
-          <label className="form-check-label" for="exampleCheck1">
-            Check me out
-          </label>
-        </div> */}
-
-      </form>
-    </React.Fragment>
-  );
-};
+  render () {
+    return (
+      <React.Fragment>
+        <form>
+          <div className="form-group">
+            <label htmlFor="search">Search</label>
+            <input
+              value={this.state.account.search}
+              onChange={this.handleChange}
+              type="text"
+              className="form-control"
+              id="search"
+            />
+          </div>
+          <div className="form-check">
+            <input type="checkbox" className="form-check-input" id="check" />
+            <label htmlFor="check" className="form-check-label">
+              Only products on stock
+            </label><br />
+          </div>
+        </form>
+      </React.Fragment>
+    );
+  }
+}
 
 export default SearchBar;
