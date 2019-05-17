@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-// import ProductRow from './ProductRow'
+import ProductRow from './ProductRow';
 import data from '../data.json';
 
 class ProductTable extends Component {
@@ -9,13 +9,13 @@ class ProductTable extends Component {
 
   handleStocked = () => {
     let font = '';
-    font += this.state.data.stocked == false ? 'text-danger' : 'text-primary';
+    font += this.state.data.stocked === false ? 'text-danger' : 'text-primary';
   };
 
-  handleSearch = (e) => {
-    let search = this.state.data.filter (s => s.name == name);
-    this.setState ({data: search});
-  };
+  // handleSearch = e => {
+  //   let search = this.state.data.filter (s => s.name == name);
+  //   this.setState ({data: search});
+  // };
 
   // handleChange = e => {
   //   let { name, value, checked, type } = e.target;
@@ -27,7 +27,7 @@ class ProductTable extends Component {
   //   this.setState({
   //     [name]: value
   //   });
-  };
+  // };
 
   render () {
     console.log (this.state.data);
@@ -37,7 +37,7 @@ class ProductTable extends Component {
     if (count === 0) return <p>There are no products to show.</p>;
 
     return (
-      <div>
+      <React.Fragment>
         <p>Showing {count} products</p>
         <table className="table">
           <thead className="thead-dark">
@@ -50,14 +50,15 @@ class ProductTable extends Component {
           <tbody>
             {this.state.data.map ((d, index) => (
               <ProductRow
-                name={this.state.date.name}
-                price={this.state.data.price}
-                stocked={() => this.handleStocked}
+                key={d.index}
+                name={d.name}
+                price={d.price}
+                stocked={this.handleStocked}
               />
             ))}
           </tbody>
         </table>
-      </div>
+      </React.Fragment>
     );
   }
 }
