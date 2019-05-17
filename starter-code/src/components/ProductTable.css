@@ -1,0 +1,11 @@
+.product-table { 
+  margin: 20px auto;   
+}
+
+.product-table tr > th, .product-table tr > td {
+  padding: 5px 50px;
+}
+
+.product-out-of-stock {
+  color: red;
+}
