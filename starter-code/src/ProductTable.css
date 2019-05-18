@@ -1,0 +1,12 @@
+.ProductTable {
+  width:30%;
+  margin: 0 auto;
+}
+
+.ProductTable table {
+  width: 100%;
+}
+
+.ProductTable tr {
+  width:100%;
+}
