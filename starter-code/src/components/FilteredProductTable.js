@@ -26,8 +26,10 @@ class FilteredProductTable extends Component {
       <div>
         <h2>IronStore</h2>
         <SearchBar
-          handleChange={(e) => this.updateSearch(e)}
-          handleChangeStock={(e) => this.updateStockFilter(e)}
+          // handleChange={(e) => this.updateSearch(e)}
+          handleChange={this.updateSearch}
+          // handleChangeStock={(e) => this.updateStockFilter(e)}
+          handleChangeStock={this.updateStockFilter}
         />
         <ProductTable
           products={this.props.products}
