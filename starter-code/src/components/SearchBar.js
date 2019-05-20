@@ -1,6 +1,6 @@
 import React from "react";
 
-const SearchBar = () => (
+const SearchBar = ({handleSearch}) => (
   <div>
     <nav className="uk-navbar-container" uk-navbar="true">
       <div className="uk-navbar-left">
@@ -8,6 +8,7 @@ const SearchBar = () => (
           <form className="uk-search uk-search-navbar">
             <span uk-search-icon="true" />
             <input
+              onChange={handleSearch}
               className="uk-search-input"
               type="search"
               placeholder="Search..."

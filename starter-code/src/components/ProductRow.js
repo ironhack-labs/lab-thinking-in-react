@@ -1,13 +1,15 @@
 import React from "react";
 
-const ProductRow = products => {
-  const data = products.products.products.products.data;
+const ProductRow = ({products, filtered}) => {
+  console.log('products: ', products)
+  const data = products.data;
+  console.log('filtered desde ProductRow: ', filtered)
   return (
     <tbody>
-      {data.map((product, index) => 
+      {data.map((item, index) => 
       <tr key={index}>
-        <td>{product.name}</td>
-        <td>{product.price}</td>
+        <td style={{color: item.stocked ? "black" : "red"}}>{item.name}</td>
+        <td style={{color: item.stocked ? "black" : "red"}}>{item.price}</td>
       </tr>)}
     </tbody>
   );
