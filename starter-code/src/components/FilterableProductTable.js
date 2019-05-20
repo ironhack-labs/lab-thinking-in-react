@@ -11,10 +11,10 @@ class FilterableDataTable extends Component {
   }
 
   handleSearch = e => {
-    console.log(e.target.value)
     let {value} = e.target;
     let {products, filtered} = this.state;
-    filtered.push(products.data.filter(product => product.name.includes(value)))
+    if(!value) filtered = data;
+    filtered = products.data.filter(product => product.name.includes(value))
     this.setState({products, filtered})
   }
   
@@ -22,8 +22,8 @@ class FilterableDataTable extends Component {
     return(
       <div>
       <h1>IronStore</h1>
-      <SearchBar handleSearch={this.handleSearch} products={this.state.products}/>
-      <ProductTable products={data} filtered={this.state.filtered}/>
+      <SearchBar handleSearch={this.handleSearch} />
+      <ProductTable products={data} filtered={this.state.filtered} />
     </div>
     )
   }
