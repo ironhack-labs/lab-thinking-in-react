@@ -13,7 +13,6 @@ class FilterableDataTable extends Component {
   handleSearch = e => {
     let {value} = e.target;
     let {products, filtered} = this.state;
-    if(!value) filtered = data;
     filtered = products.data.filter(product => product.name.includes(value))
     this.setState({products, filtered})
   }

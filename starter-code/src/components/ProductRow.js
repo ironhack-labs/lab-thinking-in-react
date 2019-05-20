@@ -1,15 +1,31 @@
 import React from "react";
 
-const ProductRow = ({ filtered }) => {
+const ProductRow = ({ filtered, products }) => {
   console.log("filtered desde ProductRow: ", filtered);
+  let data = products.data;
   return (
     <tbody>
-      {filtered.map((item, index) => (
-        <tr key={index}>
-          <td style={{ color: item.stocked ? "black" : "red" }}>{item.name}</td>
-          <td style={{ color: item.stocked ? "black" : "red" }}>{item.price}</td>
-        </tr>
-      ))}
+      {!filtered.length
+        ? data.map((item, index) => (
+            <tr key={index}>
+              <td style={{ color: item.stocked ? "black" : "red" }}>
+                {item.name}
+              </td>
+              <td style={{ color: item.stocked ? "black" : "red" }}>
+                {item.price}
+              </td>
+            </tr>
+          ))
+        : filtered.map((item, index) => (
+            <tr key={index}>
+              <td style={{ color: item.stocked ? "black" : "red" }}>
+                {item.name}
+              </td>
+              <td style={{ color: item.stocked ? "black" : "red" }}>
+                {item.price}
+              </td>
+            </tr>
+          ))}
     </tbody>
   );
 };
