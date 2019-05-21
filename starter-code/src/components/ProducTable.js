@@ -1,57 +1,47 @@
-import React from 'react';
-import Row from "./Row";
+import React from "react";
+import ProductRow from "./ProductRow";
 
-const ProducTable = ({category1,category2}) => (
+const getCategories = products => {
+  return products.reduce((acc, product) => {
+    if (acc.includes(product.category)) return acc;
+    else {
+      acc.push(product.category);
+      return acc;
+    }
+  }, []);
+};
 
-
-
-
+const ProducTable = ({ products }) => {
+  const categories = getCategories(products);
+  return (
     <table className="striped z-depth-2">
       <thead>
-      <tr>
-
-        <th>Name</th>
-
-        <th>Item Price</th>
-      </tr>
+        <tr>
+          <th>Name</th>
+          <th>Item Price</th>
+        </tr>
       </thead>
       <tbody>
-      <tr>
-        <td> <h5>Catergoria 1</h5>
-        </td>
-      </tr>
-
-        {
-          category1.map((el,i) =>
-              <Row
-                name={el.name}
-                price={el.price}
-                avaible={el.stocked}
-                key={i}
-              />
-          )
-        }
-      <tr>
-          <td> <h5>Catergoria 2</h5>
-        </td>
-      </tr>
-        {
-          category2.map((el,i) =>
-
-
-              <Row
-                name={el.name}
-                price={el.price}
-                avaible={el.stocked}
-                key={i}
-              />
-
-          )
-        }
-
+        {/* For each category, create a row */}
+        {categories.map((category, index) => (
+          // JSX tag to avoid unnecesary DOM Nodes
+          <React.Fragment>
+            <tr key={`cat-${index}`}>
+              <td colSpan="2">
+                <h5>{category}</h5>
+              </td>
+            </tr>
+            {/* Now, retrieving products belonging to that category */}
+            {products
+              .filter(product => category === product.category)
+              .map((productFiltered, index) => (
+                <ProductRow id={index} {...productFiltered}/>
+              ))}
+          </React.Fragment>
+        ))}
       </tbody>
     </table>
+  );
+};
 
-);
-
-export default ProducTable; 
+export default ProducTable;
