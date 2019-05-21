@@ -1,16 +1,6 @@
 import React, {Component} from 'react';
 
 class SearchBar extends Component {
-  state = {
-    account: {search: '', check: ''},
-  };
-
-  handleChange = e => {
-    const account = {...this.state.account};
-    account.search = e.currentTarget.value;
-    this.setState ({account});
-  };
-
   render () {
     return (
       <React.Fragment>
@@ -18,15 +8,21 @@ class SearchBar extends Component {
           <div className="form-group">
             <label htmlFor="search">Search</label>
             <input
-              value={this.state.account.search}
-              onChange={this.handleChange}
+              onChange={e => this.props.handleSearch (e)}
               type="text"
               className="form-control"
               id="search"
+              name="search"
             />
           </div>
           <div className="form-check">
-            <input type="checkbox" className="form-check-input" id="check" />
+            <input
+              // onChange={this.handleCheckBox}
+              type="checkbox"
+              className="form-check-input"
+              id="check"
+              name="check"
+            />
             <label htmlFor="check" className="form-check-label">
               Only products on stock
             </label><br />
