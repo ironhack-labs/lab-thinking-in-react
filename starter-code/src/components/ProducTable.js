@@ -14,11 +14,11 @@ const getCategories = products => {
 const ProducTable = ({ products }) => {
   const categories = getCategories(products);
   return (
-    <table className="striped z-depth-2">
+    <table className="uk-table uk-table-divider ">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Item Price</th>
+          <th className="uk-text-center">Name</th>
+          <th className="uk-text-center">Item Price</th>
         </tr>
       </thead>
       <tbody>
