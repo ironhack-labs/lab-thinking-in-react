@@ -8,10 +8,15 @@ import React from 'react';
 const ProductRow = props => {
   return (
     <div>
-      <tr key={props.index}>
+      <tr key={props.key}>
         <th scope="row" />
-        <td>{props.name} {props.stocked}</td>
+        <td>{props.name} </td>
         <td>{props.price}</td>
+
+        {/*         
+        key={props.index}
+                name={d.name}
+                price={d.price} */}
 
       </tr>
     </div>

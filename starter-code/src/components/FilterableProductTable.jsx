@@ -38,7 +38,11 @@ class FilterableProductTable extends Component {
           handleSearch={this.onSearch}
           handleCheckBox={this.onCheckBox}
         />
-        <ProductTable handleSort={this.getSortedList} />
+        <ProductTable
+          products={this.state.data}
+          searchWord={this.state.searchWord}
+        />
+        {/* // handleSort={this.getSortedList} /> */}
       </React.Fragment>
     );
   }

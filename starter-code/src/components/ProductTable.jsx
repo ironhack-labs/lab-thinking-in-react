@@ -3,13 +3,12 @@ import ProductRow from './ProductRow';
 
 class ProductTable extends Component {
   render () {
-    console.log (data);
-    //destructure not to repeat this.state:
-    const {data} = this.props.state;
-
     // showing the number of products in the output:
-    const count = data.length;
+    const count = this.props.products.length;
     if (count === 0) return <p>There are no products to show.</p>;
+
+    console.log (this.props.products);
+    console.log ('The word you are looking is: ', this.props.searchWord);
 
     return (
       <React.Fragment>
@@ -24,14 +23,24 @@ class ProductTable extends Component {
             </tr>
           </thead>
           <tbody>
-            {data.map ((d, index) => (
-              <ProductRow
-                getSortedList
-                key={d.index}
-                name={d.name}
-                price={d.price}
-              />
-            ))}
+            {this.props.products.map ((p, index) => {
+              if (
+                p.name
+                  .toLowerCase ()
+                  .includes (this.props.searchWord.toLowerCase ())
+              ) {
+                return (
+                  <ProductRow
+                    key={index}
+                    name={p.name}
+                    price={p.price}
+                    stocked={p.stocked}
+                  />
+                );
+              } else {
+                return null;
+              }
+            })}
           </tbody>
         </table>
       </React.Fragment>
