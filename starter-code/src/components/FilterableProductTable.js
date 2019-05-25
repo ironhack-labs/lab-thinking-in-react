@@ -4,17 +4,20 @@ import ProductTable from './ProductTable'
 
 class Filterable extends Component {
   state = {
-    products : this.props.products.data
+    products : this.props.products
   }
   handleSearch = (query) =>{
     this.setState({
-      products : this.props.products.data.filter(e=>e.name.toLowerCase().includes(query.toLowerCase()))
+      products : this.props.products.filter(e=>e.name.toLowerCase().includes(query.toLowerCase())),
     })
+    // console.log(this.state)
   }
   showStock = (boolean) => {
-    this.setState({
-      products : this.props.products.data.filter(e=>e.stocked===boolean)
-    })
+    if(!boolean){
+      this.setState({products : this.props.products.filter(e=> e.stocked!==boolean)})    
+    } else {
+      this.setState({products : this.props.products })
+    }
   }
   render() {    
     return (

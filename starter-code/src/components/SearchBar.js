@@ -12,7 +12,7 @@ class SearchBar extends React.Component {
   }
   handleCheckboxChange = e => {
     this.setState({ stock: e.target.checked })
-    this.props.stock(this.state.checked)
+    this.props.stock(this.state.stock)
   }
 
   render () {
