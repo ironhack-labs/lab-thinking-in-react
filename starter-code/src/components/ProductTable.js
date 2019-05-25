@@ -1,8 +1,11 @@
 import React from 'react'
 import ProductRow from './ProductRow'
-export default () => (
+export default (props) => {
+return (
   <div>
     ProductTable
-    <ProductRow />
+    {props.products.map((e,i)=>(
+      <ProductRow product={e} key={i}/>
+    ))}
   </div>
-)
+)}

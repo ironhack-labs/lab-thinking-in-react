@@ -1,4 +1,4 @@
 import React from 'react'
-export default () => (
-  <div>ProductRow</div>
+export default (props) => (
+  <div>{props.product.name}</div>
 )
