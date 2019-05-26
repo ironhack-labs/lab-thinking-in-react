@@ -7,16 +7,32 @@ import ProductTable from './components/ProductTable.js';
 
 class App extends Component {
   state = {
-    filteredProducts : [...data.data]
+    filteredProducts : [...data.data],
+    inStock: false
+  }
+
+
+
+  handleSearch = (text) => {
+    this.setState({
+      filteredProducts: data.data.filter(e => e.name.toLowerCase().includes(text.toLowerCase()))
+    })
+  }
+
+  handleCheckboxChange = () => {
+    this.setState({
+      inStock: !this.state.inStock
+    })
   }
 
   render() {
+    const filteredItems = this.state.filteredProducts.filter(e => this.state.inStock ? e.stocked === this.state.inStock : e.stocked === true || e.stocked === false )
     return (
       <div className="App">
-        <h1>IronStore</h1>
+        <h1 className='mt-3 mb-3'>IronStore</h1>
         <div className='container'>
-          <SearchBar/>
-          <ProductTable products = {data.data}/>
+          <SearchBar onSearch ={this.handleSearch} onHandleCheckbox={this.handleCheckboxChange}/>
+          <ProductTable products = {filteredItems}/>
         </div>
       </div>
     );

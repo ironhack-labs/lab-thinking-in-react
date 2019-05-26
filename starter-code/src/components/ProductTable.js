@@ -3,11 +3,11 @@ import ProductRow from './ProductRow';
 
 const ProductTable = ({products}) => {
  return(
-   <table>
-    <thead>
+   <table className="table">
+    <thead className="thead-light">
       <tr>
-        <th colSpan="2">Name</th>
-        <th colSpan="2">Price</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
       </tr>
     </thead>
     <tbody>
