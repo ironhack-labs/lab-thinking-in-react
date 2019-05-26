@@ -1,0 +1,20 @@
+import React from "react";
+import ProductRow from "./ProductRow";
+
+export default function ProductTable({ products }) {
+    
+  return (
+    <table class="table">
+  <thead class="thead-light">
+    
+      <tr class="table-active">
+        <th>Name</th>
+        <th>Price</th>
+        </tr> 
+      {products.map((e, i) => (
+        <ProductRow key={i} price={e.price} name={e.name} />
+      ))}
+      </thead>
+    </table>
+  );
+}
