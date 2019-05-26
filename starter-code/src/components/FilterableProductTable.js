@@ -8,9 +8,8 @@ class Filterable extends Component {
   }
   handleSearch = (query) =>{
     this.setState({
-      products : this.props.products.filter(e=>e.name.toLowerCase().includes(query.toLowerCase())),
+      products : this.props.products.filter(e=>e.name.toLowerCase().includes(query.toLowerCase()))
     })
-    // console.log(this.state)
   }
   showStock = (boolean) => {
     if(!boolean){
@@ -20,6 +19,7 @@ class Filterable extends Component {
     }
   }
   render() {    
+    // console.log(this.state.products)
     return (
       <div className="App">
         <SearchBar search={this.handleSearch} stock={this.showStock} />
