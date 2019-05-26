@@ -12,8 +12,8 @@ class Filterable extends Component {
     })
   }
   showStock = (boolean) => {
-    if(!boolean){
-      this.setState({products : this.props.products.filter(e=> e.stocked!==boolean)})    
+    if(boolean){
+      this.setState({products : this.props.products.filter(e=> e.stocked===boolean)})    
     } else {
       this.setState({products : this.props.products })
     }
@@ -21,7 +21,7 @@ class Filterable extends Component {
   render() {    
     // console.log(this.state.products)
     return (
-      <div className="App">
+      <div className="section">
         <SearchBar search={this.handleSearch} stock={this.showStock} />
         <ProductTable products = {this.state.products}/>
       </div>
