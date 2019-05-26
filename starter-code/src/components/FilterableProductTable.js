@@ -22,8 +22,11 @@ class Filterable extends Component {
     // console.log(this.state.products)
     return (
       <div className="section">
-        <SearchBar search={this.handleSearch} stock={this.showStock} />
-        <ProductTable products = {this.state.products}/>
+        <div className='container'>
+          <h1 class="title">IrontStore</h1>
+          <SearchBar search={this.handleSearch} stock={this.showStock} />
+          <ProductTable products = {this.state.products}/>
+        </div>
       </div>
     );
   }

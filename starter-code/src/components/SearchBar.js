@@ -19,7 +19,7 @@ class SearchBar extends React.Component {
 
   render () {
     return (
-      <form onSubmit={(e)=>e.preventDefault()} className='container'>
+      <form onSubmit={(e)=>e.preventDefault()} >
         <div className="field-body">
           <div className="field">
             <input 

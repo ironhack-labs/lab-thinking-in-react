@@ -4,7 +4,6 @@ import 'bulma/css/bulma.css';
 import ProductRow from './ProductRow'
 export default (props) => {
 return (
-  <div className="container">
     <table className="table">
       <thead>
         <tr>
@@ -19,5 +18,4 @@ return (
         ))}
       </tbody>
     </table>
-  </div>
 )}
