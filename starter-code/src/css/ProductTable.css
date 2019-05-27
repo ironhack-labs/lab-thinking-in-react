@@ -1,0 +1,12 @@
+.media-title {
+	display: flex;
+	justify-content: space-evenly;
+	width: 100%;
+	border: solid 5px whitesmoke;
+}
+
+.product-table {
+	width: 80%;
+	margin: auto;
+	border-bottom: solid 5px whitesmoke;
+}

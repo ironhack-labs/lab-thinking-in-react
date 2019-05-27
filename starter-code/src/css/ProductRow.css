@@ -1,0 +1,14 @@
+.media {
+	display: flex;
+	justify-content: space-evenly;
+	width: 100%;
+	border: solid 1px whitesmoke;
+	border-left: solid 5px whitesmoke;
+	border-right: solid 5px whitesmoke;
+}
+
+.media li {
+	width: 100%;
+	list-style: none;
+	padding: 10px 0px;
+}

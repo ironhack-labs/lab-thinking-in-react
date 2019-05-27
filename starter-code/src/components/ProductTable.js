@@ -1,20 +1,29 @@
-import React from "react";
-import ProductRow from "./ProductRow";
+import React, { Component } from 'react';
+import ProductRow from './ProductRow';
+import '../css/ProductTable.css';
 
-export default function ProductTable({ products }) {
-    
-  return (
-    <table class="table">
-  <thead class="thead-light">
-    
-      <tr class="table-active">
-        <th>Name</th>
-        <th>Price</th>
-        </tr> 
-      {products.map((e, i) => (
-        <ProductRow key={i} price={e.price} name={e.name} />
-      ))}
-      </thead>
-    </table>
-  );
+// import './ProductTable.css';
+
+class ProductTable extends Component {
+	render() {
+		const array = this.props.listproduct.map((product, idx) => {
+			return <ProductRow productInfo={product} key={idx} />;
+		});
+
+		return (
+			<div className="product-table">
+				<article className="media-title">
+					<div className="name-title">
+						<h3>Name</h3>
+					</div>
+					<div className="price-title">
+						<h3>Price</h3>
+					</div>
+				</article>
+				<div className="box">{array}</div>
+			</div>
+		);
+	}
 }
+
+export default ProductTable;

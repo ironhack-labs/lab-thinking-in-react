@@ -1,14 +1,23 @@
-import React from "react";
+import React, { Component } from 'react';
+import '../css/ProductRow.css';
 
-function ProductRow({ price, name }) {
-  return (
-    <React.Fragment>
-      <tr>
-        <td>{name}</td>
-        <td>{price}</td>
-      </tr>
-    </React.Fragment>
-  );
+class ProductRow extends Component {
+	render() {
+		return (
+			<article className="media">
+				<div className="name h4">
+					<li style={{ color: this.props.productInfo.stocked ? 'white' : 'red' }}>
+						{this.props.productInfo.name}
+					</li>
+				</div>
+				<div className="price  h4">
+					<li style={{ color: this.props.productInfo.stocked ? 'white' : 'red' }}>
+						{this.props.productInfo.price}
+					</li>
+				</div>
+			</article>
+		);
+	}
 }
 
 export default ProductRow;
