@@ -15,11 +15,18 @@ class FilterableProductTable extends React.Component {
     })
   }
 
+  handleFilter = (bool) => {
+    this.setState({
+      products: bool ? this.props.products.filter(item => item.stocked === false) : this.props.products.filter(item => item.stocked === true)
+    })
+  }
+
+
   render() {
     
     return (
     <div>
-      <SearchBar handleSearch={this.handleSearch} />
+      <SearchBar handleSearch={this.handleSearch} handleFilter={this.handleFilter}/>
       <ProductTable products={this.state.products}/>
     </div>
     )
