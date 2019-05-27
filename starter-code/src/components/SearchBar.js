@@ -1,0 +1,30 @@
+import React from 'react'
+
+class SearchBar extends React.Component {
+  state = {
+    searchText: ""
+  }
+
+  handleChange = e => {
+    
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+    this.props.handleSearch(e.target.value)
+  }
+
+  render(){
+
+    return (
+      <div className="search-section">
+        <h2 className="search-title">Search</h2>
+        <input name='searchText' type="text" className="input" value={this.state.searchText} onChange={this.handleChange}></input>
+        <form>
+          <input type="checkbox"></input> <p>Only show products in stock</p>
+        </form>
+      </div>
+    )
+  }
+}
+
+export default SearchBar
