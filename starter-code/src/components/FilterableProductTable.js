@@ -19,12 +19,10 @@ class FilterableProductTable extends React.Component {
     if (e === false) {
       this.setState({
         products: this.props.data.filter(product => product.stocked === true),
-        text: this.state.text
       }) 
     } else {
       this.setState({
         products: this.props.data,
-        text: this.state.text
       }) 
     }
   }
