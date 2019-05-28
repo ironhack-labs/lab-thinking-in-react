@@ -9,13 +9,20 @@ class FilterableProductTable extends React.Component {
   }
 
   filterBy = (someState) => {
-    const productsCopy = [...this.state.products];
-    const filteredProducts = productsCopy.filter(element => element.name.indexOf(someState))
+    this.setState({
+      products: this.props.data.filter(item => item.name.toLowerCase().includes(someState.toLowerCase())),
+      text:someState
+    })
+  }
+  /* por qué cojones este no va y el otro si?¿
+    filterBy = (someState) => {
+    const filteredProducts = this.props.data.filter(element => element.name.toUpperCase().includes(this.state.text.toUpperCase()))
     this.setState({
       products:filteredProducts,
       text:someState
     })
   }
+  */
 
   render(){
     console.log(this.state.text)
