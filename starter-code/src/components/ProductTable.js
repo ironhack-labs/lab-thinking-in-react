@@ -2,7 +2,6 @@ import React from 'react'
 import ProductRow from './ProductRow';
 
 const ProductTable = (props) => {
-  console.log(props)
   return (
     <div>
      <table className='table'>

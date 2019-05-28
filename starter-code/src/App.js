@@ -5,7 +5,6 @@ import data from './data.json'
 
 class App extends React.Component {
   render() {
-    console.log(data)
     return (
       <div className="App">
         <FilterableProductTable {...data}/>
