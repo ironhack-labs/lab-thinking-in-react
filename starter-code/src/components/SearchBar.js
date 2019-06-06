@@ -19,6 +19,7 @@ class SearchBar extends Component {
 			},
 			() => {
 				this.props.search(this.state.search);
+				//this.props.stock(this.state.stock);
 			}
 		);
 	};

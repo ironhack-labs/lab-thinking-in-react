@@ -24,12 +24,16 @@ class FilterableProductTable extends Component {
 		this.setState({ filteredProducts });
 	};
 
+	showStockProducts = (stock) => {
+		console.log(stock);
+	};
+
 	render() {
 		console.log('props en filterable', this.props);
 		return (
 			<main>
 				<h1>IronStore</h1>
-				<SearchBar search={this.searchProduct} />
+				<SearchBar search={this.searchProduct} stock={this.showStockProducts} />
 				<ProductTable {...this.state.filteredProducts} />
 			</main>
 		);

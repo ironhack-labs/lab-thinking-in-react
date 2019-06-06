@@ -8,7 +8,7 @@ const ProductTable = (props) => {
 	const products = Object.values(props);
 	return (
 		<main>
-			<table>
+			<table className="table is-striped">
 				<thead>
 					<tr>
 						<th>Name</th>
