@@ -11,12 +11,16 @@ class SearchBar extends Component {
 
 	handleChange = (e) => {
 		let { name, value, checked } = e.target;
-
 		value = checked ? checked : value;
 
-		this.setState({
-			[name]: value
-		});
+		this.setState(
+			{
+				[name]: value
+			},
+			() => {
+				this.props.search(this.state.search);
+			}
+		);
 	};
 
 	render() {
