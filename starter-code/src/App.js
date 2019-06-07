@@ -1,18 +1,36 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import SearchBar from "./components/stateful/Searchbar";
+import ProductTable from "./components/stateful/ProductTable";
+import data from "./data.json"
+import "./App.css";
 
 class App extends Component {
+  constructor() {
+    super()
+
+    this.state = {
+      allProducts: data.data,
+      filteredProducts: data.data
+    }
+
+    this.filter = (searchString) => {
+
+      let filteredProducts = [...this.state.allProducts]
+      filteredProducts = filteredProducts.filter(elm => elm.name.includes(searchString))
+
+      this.setState({filteredProducts})
+    }
+    
+  }
+
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <h1>Iron Store</h1>
+        {console.log(this.state.allProducts)}
+        <SearchBar filter={this.filter}/>
+        <ProductTable products={this.state.filteredProducts}/>
       </div>
     );
   }

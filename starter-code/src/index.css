@@ -2,4 +2,21 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  text-align: center;
+  font-size: 2em;
+}
+
+input {
+  width: 70vw;
+  height: 40px;
+}
+
+.productCard {
+  border: 1px solid black;
+  width: 100%;
+  margin: 5px 0;
+}
+
+.red {
+  color: red;
 }
