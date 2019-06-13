@@ -10,6 +10,7 @@ class FilterableProductTable extends Component {
         this.state = {
             products: this.props.products.data,
             copyProducts: this.props.products.data,
+            queryProducts: this.props.products.data,
             query: ''
         }
     }
@@ -22,26 +23,25 @@ class FilterableProductTable extends Component {
         }
         let productsFound = copyProducts.filter(filterProducts)
         productsFound.length > 0
-        ?   this.setState({products: productsFound})
+        ?   this.setState({products: productsFound, queryProducts: productsFound})
         :   ''
         this.setState({query: query})
     }
 
     productsInStock = (boolean) => {
-        let copyProducts = [...this.state.copyProducts]
-        this.setState({products: copyProducts})
-        if(boolean){
-            const filterProductsInStock = (el) => {
-                if(el.stocked) {
-                    return true
-                } else {
-                    return false
-                }
+        let copyProducts = [...this.state.products]
+        const filterProductsInStock = (el) => {
+            if(el.stocked) {
+                return true
+            } else {
+                return false
             }
+        }
+        if(boolean){
             let productsFound = copyProducts.filter(filterProductsInStock)
             this.setState({products: productsFound})
         } else {
-            this.setState({products: copyProducts})
+            this.setState({products: this.state.queryProducts})
         }
     }
 
