@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .App-logo {
@@ -25,4 +27,41 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+#search-container {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#search-container label {
+  margin: 15px 0;
+}
+
+#search-container input {
+  font-size: 1em;
+  padding: 10px 10px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  margin-bottom: 15px;
+}
+
+table {
+  width: 100%;
+  margin-top: 30px;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: lightgray;
+}
+
+td {
+  padding: 15px 0;
+}
+
+tr {
+  border-bottom: 1px solid lightgray;
 }
