@@ -6,10 +6,15 @@ class SearchBar extends Component {
         this.props.searchProduct(event.target.value)
     }
 
+    handleProductsInStock = (event) => {
+        this.props.productsInStock(event.target.checked)
+    }
+
     render() {
         return (
             <div>
-                <input onChange={(event) => this.handleSearchProduct(event)} type="text" className="input search-bar" name="search" placeholder="Search" />
+                <input type="text" onChange={(event) => this.handleSearchProduct(event)} className="input search-bar" name="search" placeholder="Search" />
+                <input type="checkbox" onChange={(event) => this.handleProductsInStock(event)} name="products-in-stock" />
             </div>
         );
     }

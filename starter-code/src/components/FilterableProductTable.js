@@ -17,17 +17,32 @@ class FilterableProductTable extends Component {
     searchProduct = (query) => {
         let copyProducts = [...this.state.copyProducts]
         this.setState({products: copyProducts})
-
         const filterProducts = (el) => {
             return el.name.toUpperCase().indexOf(query.toUpperCase()) > -1
         }
-
         let productsFound = copyProducts.filter(filterProducts)
         productsFound.length > 0
         ?   this.setState({products: productsFound})
         :   ''
         this.setState({query: query})
-        console.log(this.state.products)
+    }
+
+    productsInStock = (boolean) => {
+        let copyProducts = [...this.state.copyProducts]
+        this.setState({products: copyProducts})
+        if(boolean){
+            const filterProductsInStock = (el) => {
+                if(el.stocked) {
+                    return true
+                } else {
+                    return false
+                }
+            }
+            let productsFound = copyProducts.filter(filterProductsInStock)
+            this.setState({products: productsFound})
+        } else {
+            this.setState({products: copyProducts})
+        }
     }
 
     render() {
@@ -35,7 +50,10 @@ class FilterableProductTable extends Component {
             <div>
                 <div>
                     <h1>IronStore</h1>
-                    <SearchBar searchProduct={this.searchProduct} />
+                    <SearchBar 
+                        searchProduct={this.searchProduct} 
+                        productsInStock={this.productsInStock}
+                    />
                 </div>
                 <div>
                     <ProductTable 
