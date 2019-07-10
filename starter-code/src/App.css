@@ -23,6 +23,33 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.big-container {
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+}
+
+.search-container {
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+
+#searchBar {
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+.products-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 20px;
 }
