@@ -23,6 +23,40 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  width: 70%;
+  margin: auto;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th,
+tr {
+  height: 50px;
+}
+td {
+  border: 1px solid black;
+}
+.table-wrapper {
+  margin-top: 70px;
+}
+input {
+  line-height: 2.5em;
+}
+h3 {
+  margin-top: 3%;
 }
