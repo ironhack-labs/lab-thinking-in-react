@@ -22,6 +22,49 @@
   font-size: large;
 }
 
+.outOfStock{
+  color: red; 
+}
+
+.product-table{
+  display: flex; 
+  flex-flow: column; 
+  justify-content: center; 
+  align-items: center; 
+  margin: 2vh; 
+}
+
+.product-table thead{
+  background-color: rgb(238, 241, 241); 
+  width: 50%;  
+}
+
+.product-table tbody{
+  width: 50%;  
+}
+
+.product-table td, .product-table th{
+  width: 30vw; 
+  padding: 1vh;
+  border-bottom: 1px solid lightgrey;
+}
+
+
+.search-bar{
+  margin: 2vh; 
+}
+
+.search-bar input{  
+  padding: 1vh; 
+  border-radius: 5px; 
+  width: 48%;
+  margin: 2vh;
+}
+
+.check-box{
+  margin: 2vh; 
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
