@@ -42,7 +42,8 @@ class FilterableProductTable extends Component {
         checked: !this.state.checked
       },
       () => {
-        const copiedProduct = [...this.props.products.data];
+        const copiedProduct = [...this.state.products];
+        const copiedDataProduct = [...this.props.products.data];
         if (this.state.checked) {
           console.log(this.state.checked);
           const filteredProducts = copiedProduct.filter(
@@ -52,8 +53,11 @@ class FilterableProductTable extends Component {
             products: filteredProducts
           });
         } else {
+          const filteredProducts = copiedDataProduct.filter(product =>
+            product.name.toLowerCase().includes(this.state.searchBarValue)
+          );
           this.setState({
-            products: copiedProduct
+            products: filteredProducts
           });
         }
       }
