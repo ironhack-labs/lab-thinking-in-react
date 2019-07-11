@@ -21,9 +21,14 @@ class FilterableProductTable extends Component {
       },
       () => {
         const copiedProduct = [...this.props.products.data];
-        const filteredProducts = copiedProduct.filter(product =>
+        var filteredProducts = copiedProduct.filter(product =>
           product.name.toLowerCase().includes(this.state.searchBarValue)
         );
+        if (this.state.checked) {
+          filteredProducts = filteredProducts.filter(
+            product => product.stocked
+          );
+        }
         this.setState({
           products: filteredProducts
         });
