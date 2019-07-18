@@ -3,11 +3,10 @@ import ProductRow from '../ProductRow/ProductRow';
 
 
 export default class ProductTable extends Component {
-  state = {
-    products: this.props.products
-  }
+
 
   render() {
+
     return (
       <React.Fragment>
         <table>
@@ -19,7 +18,7 @@ export default class ProductTable extends Component {
           </thead>
           <tbody>
             {
-              this.state.products.map((product, idx) => {
+              this.props.filteredProducts.map((product, idx) => {
                 return <ProductRow product={product} key={idx} />
               })
             }

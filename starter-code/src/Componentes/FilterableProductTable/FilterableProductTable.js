@@ -3,22 +3,27 @@ import Searchbar from '../Searchbar/Searchbar';
 import ProductTable from '../ProductTable/ProductTable';
 
 export default class FilterableProductTable extends Component {
-  state = {
-    products: this.props.products
-  }
 
 
   render() {
+    //debugger
+    //console.log(this.props.filteredProducts)
+
     return (
       <div>
-        <Searchbar></Searchbar>
+        <Searchbar
+          filterP={(e) => this.props.filterP(e)}
+          filterQuery={this.props.filterQuery}
+          checkFilter={(e) => this.props.checkFilter(e)}
+        // filterCheckAndText={(e) => this.props.filterCheckAndText(e)}
+        />
+
+
         <ProductTable
-          products={this.state.products}
 
+          products={this.props.products}
+          filteredProducts={this.props.filteredProducts}
 
-        // name={this.props.products.name}
-        // price={this.props.products.price}
-        // category={this.props.products.category}
         />
       </div>
     )
