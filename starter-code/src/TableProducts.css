@@ -1,0 +1,16 @@
+table{
+    width: 100vw;
+}
+
+thead{
+    background-color: #E7ECEF;
+    font-weight: bold;
+}
+
+thead, tbody{
+    font-size:20px;
+}
+
+th{
+    padding: 15px;
+}
