@@ -14,6 +14,7 @@ class App extends Component {
   }
 
   filterProduct(e) {
+    
     const filter = e.target.value;
     let filteredProducts = this.state.products.filter(product => {
       return product.name.toLowerCase().indexOf(filter.toLowerCase()) > -1;
@@ -27,20 +28,29 @@ class App extends Component {
   }
 
   filterStock(e) {
+    
     const isCheckedOnlyStock = e.target.checked;
-    let filteredProducts;
-
+    let filterLink;
+    let newFilter = {...this.state}
     if (isCheckedOnlyStock) {
-      filteredProducts = this.state.products.filter(product => {
+      filterLink = this.state.filteredProducts.filter(product => {
         return product.stocked === isCheckedOnlyStock;
       });
     } else {
-      filteredProducts = this.state.products;
+      filterLink = this.state.filteredProducts;
+      
+      
     }
 
     this.setState({
       ...this.state,
-      filteredProducts: filteredProducts
+
+      filteredProducts: filterLink
+      
+
+    },()=>{
+      console.log(newFilter)
+      this.state.filteredProducts = [...newFilter.filteredProducts]
     });
   }
 
