@@ -1,20 +1,27 @@
 import React, { Component } from "react";
 import Row from "../ProductRow/Row";
 
+
 export default class ProductTable extends Component {
-  render() {
+  
+    render() {
     return (
-      <div>
-        <table>
+      
+        <table className="table">
           <tbody>
           <tr>
             <th>Name</th>
             <th>Price</th>
           </tr>
-          <Row></Row>
+            
+            
+          {
+            this.props.products.map((product, idx)=> <Row key={idx} product={product}/>)
+          }
+
           </tbody>
         </table>
-      </div>
+      
     );
   }
 }

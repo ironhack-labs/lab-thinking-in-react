@@ -7,8 +7,11 @@ export default class FilterableProduct extends Component {
         return (
             <div>
                 <h1>IronStore</h1>
-                <SearchBar></SearchBar>
-                <ProductTable></ProductTable>
+                
+
+                <SearchBar filterStock={(e) => this.props.filterStock(e)} filterProductHandler={(e)=>this.props.filterProductHandler(e)}></SearchBar>
+
+                <ProductTable products={this.props.products}></ProductTable>
             </div>
         )
     }
