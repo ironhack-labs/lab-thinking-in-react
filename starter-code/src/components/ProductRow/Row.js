@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export default class Row extends Component {
   render() {
     return (
-        <tr>
+        <tr className="row">
      
         {this.props.product.stocked && <td> {this.props.product.name} </td>}
 

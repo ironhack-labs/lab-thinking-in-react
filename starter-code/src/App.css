@@ -5,6 +5,8 @@ body {
   background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
   color: white;
   text-align: center;
+  animation: fade 1s;
+  
 }
 
 h1 {
@@ -28,6 +30,7 @@ h1 {
   padding: 20px;
   width: 500px;
   font-size: 20px;
+  border-radius: 15px;
 }
 .checkBox {
   display: flex;
@@ -52,6 +55,10 @@ h1 {
   font-size: 20px;
 }
 
+.row {
+  animation: fade 1.5s;
+}
+
 @keyframes glow {
 from {
   text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
@@ -60,4 +67,15 @@ from {
 to {
   text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
 }
+}
+
+@keyframes fade {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1
+  }
 }
