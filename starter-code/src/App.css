@@ -26,3 +26,34 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+.search-bar{
+  display: block;
+  width: 80%;
+  margin: 0 10%;
+}
+.top{
+  margin: 15px 20%;
+  border: black 1px solid;
+}
+.top *{
+  padding: 15px 0;
+}
+.table-prod{
+  border: 2px black solid;
+  width: 100%;
+}
+.body{
+width: 70%;
+margin: 0 15%;
+
+}
+
+.head{
+  background-color: lightgrey;
+}
+.bodyOfTable{
+  border: lightgray 1px solid;
+}
+.redtext{
+  color: red;
+}
