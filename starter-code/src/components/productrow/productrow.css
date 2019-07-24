@@ -1,0 +1,11 @@
+.product-row {
+  border-bottom: 1px solid #999;
+}
+
+.data-row {
+  padding: 10px 0;
+}
+
+.red {
+  color: red;
+}
