@@ -1,0 +1,12 @@
+.table-header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #ccc;
+  height: 60px;
+  margin: 15px;
+}
+.inline {
+  display: inline;
+  color: #333;
+}
