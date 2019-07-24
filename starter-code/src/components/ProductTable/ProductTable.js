@@ -14,9 +14,14 @@ class ProductTable extends Component {
               }
   }
 
-  showProducts = ()=>{
+  showProducts = (catex)=>{
+    let cat = "Electronics";
     return(
+      
       this.state.allProductsFiltered
+      .filter( (productz)=>{
+        return productz.category === catex;
+      })
       .filter( (producty)=>{ 
         return producty.name.toUpperCase().includes(this.props.mysearchterm.toUpperCase())
       })
@@ -25,7 +30,22 @@ class ProductTable extends Component {
       })
 
     )
+
   }
+
+  showProductsWithCategory = ()=>{
+    
+    let arrjjsx = [];
+    for (let i=0; i<this.props.categories.length; i++){
+      let catTitle = <div key={i}>Category: {this.props.categories[i]} </div>;
+      arrjjsx.push(catTitle);
+      arrjjsx.push(<div key={i+1000}><span> Name</span>&nbsp;&nbsp;&nbsp;&nbsp; <span> Price</span></div>);
+      let categoryx = this.props.categories[i];
+      arrjjsx.push( this.showProducts( categoryx ));
+    }
+    return (arrjjsx)
+  }
+
 
   render(){
     
@@ -33,8 +53,9 @@ class ProductTable extends Component {
       <div className="greenborder">
 
       <div>PRODUCT TABLE</div>
-      <div><span> Name</span>&nbsp;&nbsp;&nbsp;&nbsp; <span> Price</span></div>
-        {this.showProducts()}
+     
+      {this.showProductsWithCategory()}
+       
       </div>
     )
   }
