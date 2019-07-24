@@ -1,0 +1,11 @@
+.not-stocked {
+  color: red;
+}
+
+.row {
+  height: 60px;
+}
+
+.cell {
+  border-bottom: 1px solid gray;
+}

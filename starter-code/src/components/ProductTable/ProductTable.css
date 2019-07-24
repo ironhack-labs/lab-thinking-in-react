@@ -1,0 +1,10 @@
+.product-table {
+  margin: 0 auto;
+  margin-top: 40px;
+  width: 80%;
+}
+.table-header {
+  background-color: #E7ECEF;
+  height: 50px;
+  color: #5D6369;
+}
