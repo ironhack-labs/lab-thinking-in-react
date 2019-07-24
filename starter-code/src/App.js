@@ -12,6 +12,8 @@ class App extends Component {
     this.state = {
       allTheProducts: data.data,
       visibleProducs: data.data,
+      searchInput: '',
+      checkBox: false
     }
   }
 
@@ -19,36 +21,27 @@ class App extends Component {
     let clone = [...this.state.allTheProducts]
     console.log(typedText)
     let filteredList = clone.filter((eachItem)=>{
-      return eachItem.name.toUpperCase().includes(typedText.toUpperCase())
+      if(this.state.checkBox){
+        return eachItem.name.toUpperCase().includes(typedText.toUpperCase()) && eachItem.stocked
+      } else {
+        return eachItem.name.toUpperCase().includes(typedText.toUpperCase())
+      }
     })
-
-    this.setState({visibleProducs: filteredList})
-    
+    this.setState({searchInput: typedText, visibleProducs: filteredList})
   }
 
-  // search = (e) => {
-  //   let clone = [...this.state.allTheProducts]
-  //   console.log(clone)
-  //   let filteredList = clone.filter((eachItem)=>{
-  //     return eachItem.name.toUpperCase().includes(this.state.searchTerm.toUpperCase())
-  //   })
+  checkCheckbox = async () => {
+    await this.setState({checkBox: !this.state.checkBox});
+    this.setSearchTerm(this.state.searchInput);
 
-  //   console.log(filteredList)
-  //   this.setState({visibleProducs: filteredList})
-  
-  // }
-
-
-  //write a function to set state of searchterm = whatever argument I recieve then based onthat argument filter the visible producxts
-  //take this function and pass it to searchbar through props
-  //call that function in searchbar onchange
+  }
 
   render() {
     return (
       <div className="App">
         <h1>IronStore</h1>
         <div className="search-div">
-          <SearchBar sendToParent = {this.setSearchTerm} />
+          <SearchBar sendToParent = {this.setSearchTerm} checkCheckbox={this.checkCheckbox} />
         </div>
         <div className="product-table">
           <ShowAllProducts allVisibleProducts={this.state.visibleProducs} />

@@ -12,12 +12,12 @@ function SearchBar(props) {
 
 
     return (
-      <input
-        // className="input search"
-        placeholder="Enter a Search Term"
-        // value = {props.sendToParent}
-        onChange={ (e) => {updateInput(e)}}
-      />
+      <div>
+        
+        <input placeholder="Enter a Search Term" onChange={ (e) => {updateInput(e)}} />
+        <input type='checkbox' onChange={props.checkCheckbox} />
+
+      </div>
     )
 }
 
