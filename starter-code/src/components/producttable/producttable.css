@@ -1,0 +1,9 @@
+.Green {
+  border: 4px solid green;
+  margin: 5px;
+}
+
+.Columns {
+  display: flex;
+  justify-content: space-around;
+}
