@@ -1,0 +1,15 @@
+.searchbar-check{
+display: flex;
+justify-content:center;
+}
+
+.Search{ 
+width:50%;
+border:2px solid;
+
+}
+
+.Search > input{
+    width: 100%;
+    box-sizing: border-box;
+}

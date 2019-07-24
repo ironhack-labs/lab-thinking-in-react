@@ -1,0 +1,8 @@
+.items{
+    display: flex;
+    margin-top:23px;
+    margin-right:5%;
+    margin-left:5%;
+    justify-content: space-around;
+
+}
