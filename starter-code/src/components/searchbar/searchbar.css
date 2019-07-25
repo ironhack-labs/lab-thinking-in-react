@@ -15,3 +15,8 @@
 .check {
   font-size: 1.3rem;
 }
+
+.checkbox {
+  transform: scale(1.6);
+  margin-right: .5rem;
+}

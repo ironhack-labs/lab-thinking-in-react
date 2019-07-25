@@ -13,4 +13,11 @@
   width: 100%;
   line-height: 2rem;
   margin: 15px 0;
+  font-size: 1.3rem;
+  padding-left: 1rem;
+}
+
+::placeholder {
+  font-weight: 300;
+  color: rgba(97, 97, 97, 0.342);
 }
