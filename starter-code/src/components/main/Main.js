@@ -23,7 +23,6 @@ class Main extends Component {
   render() {
     return (
       <div>
-        Hello fine react developer {this.props.products.data[0].category}
         <h1 className="title is-h2">Iron Store</h1>
         <SearchBar search={this.handleSearch} value={this.state.search} check={this.updateCheckbox}/>
         <ProductTable

@@ -21,16 +21,33 @@ class ProductTable extends Component {
       electronics: [],
       sport: []
     };
-
-
+    
     this.props.products.forEach(eachProduct => {
       if(eachProduct.category == "Sporting Goods") {
         newArr.sport.push(eachProduct)
-
+        
       } else {
         newArr.electronics.push(eachProduct)
       }
     })
+
+    if(newArr.electronics.length > 0) {
+      newArr.electronics.unshift({
+        name: 'Electronics',
+        price: '',
+        stocked: true,
+        isCategory: true
+      })
+    }
+
+    if(newArr.sport.length > 0) {
+      newArr.sport.unshift({
+        name: 'Sport goods',
+        price: '',
+        stocked: true,
+        isCategory: true
+      })
+    }
 
     return newArr[what]
     .filter(eachProduct=> {
@@ -42,7 +59,7 @@ class ProductTable extends Component {
     })
     .map((eachProduct, i) => {
         return (
-          <ProductRow key={i} name={eachProduct.name} price={eachProduct.price} inStock={eachProduct.stocked}/>
+          <ProductRow key={i} name={eachProduct.name} price={eachProduct.price} inStock={eachProduct.stocked} isCategory={eachProduct.isCategory}/>
           )
     })
   }
@@ -56,10 +73,8 @@ class ProductTable extends Component {
         </div>
           <div className="container">
             
-          {this.state.hasElectronics && <div className="has-text-centered">Electronics</div>}
             {this.showProductRow('electronics') }
 
-            {this.state.hasSportGoods && <div className="has-text-centered">Sport</div>}
             {this.showProductRow('sport')}
 
           </div>
