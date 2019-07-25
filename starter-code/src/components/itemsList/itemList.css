@@ -1,0 +1,9 @@
+.list-headers {
+	display: flex;
+	justify-content: space-around;
+	background-color: rgb(232, 236, 239);
+	line-height: 35px;
+}
+.list-headers > h3 {
+	font-weight: bolder;
+}
