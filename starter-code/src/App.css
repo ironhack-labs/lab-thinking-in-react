@@ -1,5 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+html, body {
+  height: 100%;
+  font-family: sans-serif;
+}
+
+#root {
+  height: 100%;
+}
+
 .App {
   text-align: center;
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  /* background: #e1e1e1; */
+  padding-top: 60px;
 }
 
 .App-logo {
@@ -25,4 +51,102 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.not-in-stock {
+  color: red;
+}
+
+.search-bar {
+  margin: 40px 0;
+  padding: 30px;
+}
+
+.search-bar .input-search {
+  width: 60%;
+  padding: 10px;
+  border: 1px solid #1d1d1d;
+  border-radius: 5px;
+  margin: 20px;
+}
+
+.search-bar label {
+  margin-left: 5px;
+}
+
+.stock-checkbox {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stock-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  height: 15px;
+  width: 15px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.stock-checkbox:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.stock-checkbox input:checked ~ .checkmark {
+  background-color: #4BB543;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.stock-checkbox input:checked ~ .checkmark:after {
+  margin: 3px 5px;
+  display: flex;
+}
+
+/* Style the checkmark/indicator */
+.stock-checkbox .checkmark:after {
+  width: 3px;
+  height: 5px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table thead {
+  background: #d1d1d1;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+table thead td {
+  padding: 20px;
+  width: 50%;
+}
+
+table tbody tr {
+  border-bottom: 1px solid #d1d1d1;
+}
+
+table tbody td {
+  padding: 20px;
 }
