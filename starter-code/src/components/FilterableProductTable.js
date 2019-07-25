@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
-import data from './data.json'
-import SearchBar from "./components/SearchBar";
-import ProductTable from "./components/ProductTable";
+import SearchBar from "./SearchBar";
+import ProductTable from "./ProductTable";
 
 
-export class App extends Component {
+export class FilterableProductTable extends Component {
   state = {
-    data: data.data,
+    data: this.props.products,
     search: '',
-    filteredList: data.data,
+    filteredList: this.props.products,
   }
 
   searchHandler = (event) => {
     const {value} = event.target
-    const updatedList = [...this.state.data].filter(element => element.name.toLowerCase().includes(value.toLowerCase()))
+    const updatedList = [...this.state.data].filter(element => element.name.includes(value))
 
     this.setState({
       filteredList: updatedList,
@@ -32,4 +31,4 @@ export class App extends Component {
   }
 }
 
-export default App;
+export default FilterableProductTable
