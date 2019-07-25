@@ -3,20 +3,47 @@ import './productTable.css';
 import ProductRow from '../productRow/ProductRow';
 
 class ProductTable extends Component {
+  constructor(props) {
+    super(props);
+    this.state ={
+      hasElectronics: true,
+      hasSportGoods: true,
+     
+    }
+  }
 
-  showProductRow() {
-    return this.props.products
+ 
+  
+
+  showProductRow(what) {
+
+    let newArr = {
+      electronics: [],
+      sport: []
+    };
+
+
+    this.props.products.forEach(eachProduct => {
+      if(eachProduct.category == "Sporting Goods") {
+        newArr.sport.push(eachProduct)
+
+      } else {
+        newArr.electronics.push(eachProduct)
+      }
+    })
+
+    return newArr[what]
     .filter(eachProduct=> {
       if(this.props.showInstockOnly) {
         return eachProduct.stocked
       } else {
-        return eachProduct
+        return true
       }
     })
     .map((eachProduct, i) => {
-      return (
-        <ProductRow key={i} name={eachProduct.name} price={eachProduct.price} inStock={eachProduct.stocked}/>
-      )
+        return (
+          <ProductRow key={i} name={eachProduct.name} price={eachProduct.price} inStock={eachProduct.stocked}/>
+          )
     })
   }
 
@@ -28,7 +55,13 @@ class ProductTable extends Component {
           <h6 className="title is-size-6 inline">Price</h6>
         </div>
           <div className="container">
-            {this.showProductRow()}
+            
+          {this.state.hasElectronics && <div className="has-text-centered">Electronics</div>}
+            {this.showProductRow('electronics') }
+
+            {this.state.hasSportGoods && <div className="has-text-centered">Sport</div>}
+            {this.showProductRow('sport')}
+
           </div>
       </div>
     );
@@ -36,3 +69,5 @@ class ProductTable extends Component {
 }
 
 export default ProductTable;
+
+
