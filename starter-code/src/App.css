@@ -3,4 +3,14 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: 100;
   font-size: 1.5rem;
+  border: 4px solid gray;
+  padding: 20px;
+  margin: 20px;
+  margin: 20px calc(50% - 375px);
+}
+
+.input {
+  width: 100%;
+  line-height: 2rem;
+  margin: 15px 0;
 }

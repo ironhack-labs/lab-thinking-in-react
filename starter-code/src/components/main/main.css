@@ -1,4 +1,11 @@
-/* .Orange {
-  border: 4px solid orange;
-} */
+.title {
+  font-size: 3rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: gray;
+  color: white;
+  margin: 5px;
+}
 
+.Orange {
+  margin: 0 calc(50% - 350px);
+}

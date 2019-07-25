@@ -1,5 +1,17 @@
 .Blue {
-  /* border: 4px solid blue; */
   margin: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 40px;
+  background-color: rgb(235, 235, 235);
 }
 
+.Blue > legend {
+  align-self: flex-start;
+  font-weight: 500;
+}
+
+.check {
+  font-size: 1.3rem;
+}

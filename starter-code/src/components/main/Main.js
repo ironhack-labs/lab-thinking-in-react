@@ -30,7 +30,7 @@ class Main extends Component {
   render() {
     return (
       <div className="Orange">
-        <h3>IronStore</h3>
+        <h3 className="title">IRONSTORE</h3>
         <SearchBar searchFunction = {this.search} toggleSearchFunction = {this.toggleSearch} />
         <ProductTable products = {this.state.visibleProducts} toggleBoolean = {this.state.onlyShowStocked} />
       </div>

@@ -18,8 +18,8 @@ function ProductTable(props) {
       <div className="Green">
       {console.log(props.products)}
         <div className="Columns">
-          <h5>Name</h5>
-          <h5>Price</h5>
+          <h5>NAME</h5>
+          <h5>PRICE</h5>
         </div>
         {showProducts()}
       </div>

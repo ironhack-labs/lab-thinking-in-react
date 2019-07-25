@@ -5,11 +5,11 @@ function SearchBar(props) {
 
   return (
     <div className="Blue">
-      <legend>Search</legend>
-      <input  onChange={props.searchFunction} />
+      <legend>Search:</legend>
+      <input className="input" onChange={props.searchFunction} />
       <div>
         <input type="checkbox" onChange={props.toggleSearchFunction} />
-        <label>Only show products on stock</label>
+        <label className="check"> only show products in stock</label>
       </div>
     </div>
   );
