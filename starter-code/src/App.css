@@ -26,3 +26,26 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.outOfStock {
+  color: red;
+}
+
+.wrapper {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+}
+.center {
+  margin: auto;
+}
+
+.search {
+  border: 1px black solid;
+}
+.checkbox {
+  display: flex;
+  width: 50%;
+}
