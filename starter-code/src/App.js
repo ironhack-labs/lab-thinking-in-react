@@ -10,11 +10,16 @@ class App extends Component {
     super(props)
   
   }
+
+  search = (string)=> {
+
+  }
+
   render() {
     return (
       <div className="App">
        <FilterableProductTable store = { data } />
-       <SearchBar />
+       <SearchBar search={this.search}/>
 
        <div className="row">
 

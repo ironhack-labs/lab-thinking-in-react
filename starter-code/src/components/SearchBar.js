@@ -10,9 +10,9 @@ class SearchBar extends Component {
         }
      }
      handleChangeInput = e => {
-
+        console.log(e)
         this.setState({[e.target.name]: e.target.value}, () =>
-        this.props.search(this.state)
+            this.props.search(this.state.name)
         )
      }
 
@@ -22,7 +22,7 @@ class SearchBar extends Component {
                 <form>
             <label>Search</label><br></br>
         
-            <input type="text" name='name' onChange={this.handleChangeInput}></input>
+            <input type="text" name='name' onChange={(e)=>this.handleChangeInput(e)}></input>
         </form>
             )
           }
