@@ -3,7 +3,7 @@ import React from 'react'
 
 
 const ProductTable = props => {
-  console.log(props.pepe)
+  // console.log(props.pepe)
 
   return(
       <div className="green"> 

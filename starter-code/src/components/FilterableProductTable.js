@@ -10,7 +10,18 @@ class FilterableProductTable extends Component {
     this.state = {
       storeList : data.data
     }
-    console.log(this.state.storeList)
+    // console.log(this.state.storeList)
+  }
+
+  searchProduct = (word) => {
+    let results = []
+    data.data.find(elm => {
+      if(elm.name.includes(word)) 
+      results.push(elm)
+    })
+    this.setState({
+      storeList: results
+    })
   }
 
       render(){
@@ -18,8 +29,8 @@ class FilterableProductTable extends Component {
           <div>
               <h1>IronStore</h1>
               <div>
-                <Search/>
-                <ProductTable pepe={this.state.storeList}/>
+                <Search search={this.searchProduct}/>
+                <ProductTable pepe={this.state.storeList} />
               </div>
             </div>
         )
