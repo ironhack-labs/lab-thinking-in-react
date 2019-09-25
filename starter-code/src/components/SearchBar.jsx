@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 export default props => (
   <Form>
     <Form.Group>
-      <Form.Label>Search</Form.Label>
+      <Form.Label style={{ textAlign: 'center' }}>Search</Form.Label>
       <Form.Control
         type="text"
         value={props.query}
@@ -13,9 +13,11 @@ export default props => (
     </Form.Group>
     <Form.Group controlId="formBasicCheckbox">
       <Form.Check
+        style={{ textAlign: 'center' }}
         type="checkbox"
+        checked={props.checked}
         label="Only show products on stock"
-        onChange={props.onStock}
+        onChange={event => props.toggleCheckBox(event.target.checked)}
       />
     </Form.Group>
   </Form>
