@@ -5,7 +5,12 @@ export default class SearchBar extends Component {
     return (
       <div>
         <label for="site-search">Search the site:</label>
-        <input type="search" id="site-search" name="q" />
+        <input
+          type="search"
+          id="site-search"
+          name="q"
+          onChange={event => this.props.search(event.target.value)}
+        />
       </div>
     );
   }
