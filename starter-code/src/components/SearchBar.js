@@ -11,6 +11,15 @@ export default class SearchBar extends Component {
           name="q"
           onChange={event => this.props.search(event.target.value)}
         />
+        <label class="inStock">
+          In Stock:
+          <input
+            name="inStock"
+            type="checkbox"
+            // checked={event => this.props.checked(event.target.value)}
+            onClick={event => this.props.checked(event.target.checked)}
+          />
+        </label>
       </div>
     );
   }

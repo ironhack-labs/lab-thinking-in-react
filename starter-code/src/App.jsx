@@ -13,6 +13,7 @@ class App extends Component {
       data: data.data
     };
     this.search = this.search.bind(this);
+    this.checked = this.checked.bind(this);
   }
 
   search = searchTerm => {
@@ -29,11 +30,33 @@ class App extends Component {
     });
   };
 
+  checked = checked => {
+    if (checked) {
+      const itemCopy = [...data.data];
+      const checkedItems = itemCopy.filter(item => {
+        if (item.stocked) {
+          return item;
+        }
+      });
+      this.setState({
+        data: checkedItems
+      });
+    } else {
+      this.setState({
+        data: data.data
+      });
+    }
+  };
+
   render() {
     return (
       <div className="App">
         <FilterableProductTable data={this.state.data} />
-        <SearchBar data={this.state.data} search={this.search} />
+        <SearchBar
+          data={this.state.data}
+          search={this.search}
+          checked={this.checked}
+        />
         <ProductTable data={this.state.data} />
       </div>
     );
