@@ -8,7 +8,7 @@ export class ProductList extends Component {
     const filter = this.props.filterProductList;
     return (
       <div>
-        <Table>
+        <Table variant="dark">
           <thead>
             <tr>
               <th>Name</th>

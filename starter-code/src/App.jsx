@@ -42,7 +42,6 @@ export default class App extends Component {
   }
 
   render() {
-    console.log(this.state.check);
     return (
       <div className="App">
         <SearchBar

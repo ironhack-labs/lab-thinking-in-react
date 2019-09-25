@@ -6,7 +6,9 @@ export default props => (
   <div>
     <Form>
       <Form.Group>
-        <Form.Label>Search</Form.Label>
+        <Form.Label>
+          <h3>Search</h3>
+        </Form.Label>
         <Form.Control
           type="text"
           value={props.query}
