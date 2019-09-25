@@ -12,12 +12,20 @@ export class FilteredProductTable extends Component {
     super();
     this.state = {
       query: '',
-      productList: []
+      productList: [],
+      filteredList: []
     };
   }
 
   callbackFunction = childData => {
-    this.setState({ query: childData });
+    const query = this.state.query;
+    const ProductList = this.props.products.data;
+    this.setState({
+      query: childData,
+      filteredList: ProductList.filter(product =>
+        product.name.toLowerCase().includes(query.toLowerCase())
+      )
+    });
     console.log('filtered component state', this.state);
   };
 
@@ -46,8 +54,11 @@ export class FilteredProductTable extends Component {
         </Jumbotron>
         <Container className="p-2">
           <div>
-            {this.props.products.data.map(product => (
-              <Card body>{product.name}</Card>
+            {this.state.filteredList.map(product => (
+              <Card body>
+                {product.name}
+                {product.price}
+              </Card>
             ))}{' '}
           </div>
         </Container>
