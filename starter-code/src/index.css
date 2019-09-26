@@ -3,3 +3,7 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+#head1, #head2, #head3, #head5, #head6, #head7 {  
+  visibility: hidden;
+}
