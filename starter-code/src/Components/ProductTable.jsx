@@ -7,38 +7,45 @@ class ProductTable extends React.Component {
         super(props);
 
         this.state = {
-            category1: "Sporting Goods",
-            category2: "Electronics"
+            categories: ["Sporting Goods", "Electronics"],
         }
 
     }
 
     displayBody = () => {
-        if(this.props.searchOn === ""){
+        if(this.props.category === ""){
+            return this.state.categories.map((eachCategory, index) => {
             return (
-                <tbody>
-                <tbody>
+                <tbody key={index}>
                     <tr>
-                    <th colspan="2">{this.state.category1}</th> 
+                    <th colSpan="2">{eachCategory}</th> 
                     </tr>
-                    {this.filterItems(this.props.dataToPass, this.state.category1)}
+                    {this.filterItems(this.props.dataToPass, eachCategory)}
                 </tbody>
-                <tbody>
-                  <tr>
-                  <th colspan="2">{this.state.category2}</th> 
-                  </tr>
-                  {this.filterItems(this.props.dataToPass, this.state.category2)}
-               </tbody>
-               </tbody>
             )
-        }else{
-            
-        }
+
+        })  
+    }else if(this.state.categories.indexOf(this.props.category) < 0){
+return (
+    <div>
+
+    </div>
+)
+
+    }else{
+        return (
+            <tbody>
+                <tr>
+                <th colSpan="2">{this.props.category}</th> 
+                </tr>
+                {this.filterItems(this.props.dataToPass, this.props.category)}
+            </tbody>
+        ) 
     }
+        }
+     
 
     filterItems = (theData, title) => {
-
-        // let categoryList = [...this.state.categories]
 
 return theData.map((eachItem, index) => {
         if(eachItem.category === title){
@@ -78,11 +85,12 @@ return theData.map((eachItem, index) => {
                    <th>Price</th>
                </tr>
                </thead>
-               <tbody>
+            
+    
                 {this.displayBody()}
                {/* {this.displayAllItems(this.props.dataToPass)} */}
               
-               </tbody>
+    
            </table>
         )
     }

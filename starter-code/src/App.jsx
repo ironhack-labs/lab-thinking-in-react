@@ -14,17 +14,17 @@ import data from './data.json'
       itemList: data.data,
       filteredList: [],
       itemToSearch:"",
-      onlyStock: "checked"
+      onlyStock: "checked",
+      categorySearch: ''
     }
   }
 
-  searchItem = (e) => {
-    console.log(e.currentTarget.value);
+   searchItem = (e) => {
 
-    this.setState({
+      this.setState({
       itemToSearch: e.currentTarget.value
     })
-    console.log("THE ITEM TO SEARCH IS " + this.state.itemToSearch)
+
     let newList = [...this.state.itemList]
 
     let filterList = newList.filter(eachItem => {
@@ -32,8 +32,19 @@ import data from './data.json'
     })
 
   this.setState({
-    filteredList: filterList
+    filteredList: filterList,
   })
+
+ if(filterList.length !== 0){
+
+    this.setState({
+      categorySearch: filterList[0].category
+    })
+  }else{
+      this.setState({
+      categorySearch: e.currentTarget.value
+    })
+  }
   }
 
   displayAllItems = () => {
@@ -75,7 +86,7 @@ import data from './data.json'
         onlyStock={this.showOnlyStock}/>
         </div>
 
-        <ProductTable dataToPass={this.displayAllItems()} searchOn={this.state.itemToSearch}/>
+        <ProductTable dataToPass={this.displayAllItems()}  category={this.state.categorySearch}/>
       </div>
     );
   }
