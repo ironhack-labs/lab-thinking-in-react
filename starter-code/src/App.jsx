@@ -9,7 +9,8 @@ import ProductTable from './components/ProductTable';
 export default class App extends Component {
   state = {
     query: '',
-    products: products
+    products: products,
+    checked: false
   };
 
   setQuery = query => {
@@ -18,12 +19,29 @@ export default class App extends Component {
     });
   };
 
+  checkHandle = event => {
+    const { checked } = event.target;
+    console.log(checked);
+    this.setState({
+      checked
+    });
+  };
+
   render() {
     return (
       <div className="App">
         <h1>IronStore</h1>
-        <Search query={this.state.query} handleQuery={this.setQuery} />
-        <ProductTable products={products} query={this.state.query} />
+        <Search
+          checked={this.state.checked}
+          query={this.state.query}
+          handleQuery={this.setQuery}
+          checkHandle={this.checkHandle}
+        />
+        <ProductTable
+          products={products}
+          query={this.state.query}
+          checked={this.state.checked}
+        />
       </div>
     );
   }

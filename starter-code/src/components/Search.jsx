@@ -6,9 +6,10 @@ export default class Search extends Component {
     console.log(value);
     this.props.handleQuery(value);
   };
+
   render() {
     return (
-      <div>
+      <form>
         <label htmlFor="search">Search</label>
         <input
           type="text"
@@ -17,7 +18,15 @@ export default class Search extends Component {
           value={this.props.query}
           onChange={this.handleChange}
         />
-      </div>
+        <label htmlFor="inStock">Only show products on stock</label>
+        <input
+          type="checkbox"
+          name="inStock"
+          id="inStock"
+          value={this.props.checked}
+          onChange={this.props.checkHandle}
+        />
+      </form>
     );
   }
 }

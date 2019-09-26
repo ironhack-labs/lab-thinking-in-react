@@ -4,10 +4,34 @@ import Product from './Product';
 
 const ProductTable = props => {
   //   console.log(props.products.data);
-  const allProducts = props.products.data
-    .filter(product =>
-      product.name.toLowerCase().includes(props.query.toLowerCase())
-    )
+  const sportingGoods = props.products.data
+    .filter(product => {
+      const name = product.name
+        .toLowerCase()
+        .includes(props.query.toLowerCase());
+
+      const sporting = product.category === 'Sporting Goods';
+
+      const checked = product.stocked;
+      return props.checked ? name && sporting && checked : name && sporting;
+
+      // return name && sporting && checked;
+    })
+    .map(el => {
+      return <Product data={el} />;
+    });
+
+  const electronics = props.products.data
+    .filter(product => {
+      const name = product.name
+        .toLowerCase()
+        .includes(props.query.toLowerCase());
+
+      const eletronics = product.category === 'Electronics';
+
+      const checked = product.stocked;
+      return props.checked ? name && eletronics && checked : name && eletronics;
+    })
     .map(el => <Product data={el} />);
   //   console.log(props.products.data[0]);
   //   const allProducts = props.products.data
@@ -24,7 +48,20 @@ const ProductTable = props => {
           <td>Price</td>
         </tr>
       </thead>
-      <tbody>{allProducts}</tbody>
+      <tbody>
+        {sportingGoods.length !== 0 && (
+          <tr>
+            <td>Sporting Goods</td>
+          </tr>
+        )}
+        {sportingGoods}
+        {electronics.length !== 0 && (
+          <tr>
+            <td>Electronics</td>
+          </tr>
+        )}
+        {electronics}
+      </tbody>
     </table>
   );
 };
