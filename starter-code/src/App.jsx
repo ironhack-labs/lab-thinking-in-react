@@ -1,18 +1,40 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Searchbar from './components/Searchbar';
+import ShopList from './components/ShopList';
 
 export default class App extends Component {
+  state = {
+    query: '',
+    stock: false
+  };
+
+  setQuery = query => {
+    this.setState({
+      query
+    });
+  };
+
+  setStock = stock => {
+    this.setState({
+      stock
+    });
+  };
+
   render() {
+    console.log(this.state.stock);
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <h1>Ironstore</h1>
+        <div className="searchbar">
+          <Searchbar
+            handleQuery={this.setQuery}
+            query={this.state.query}
+            handleCheck={this.setStock}
+            stock={this.state.stock}
+          />
+        </div>
+        <ShopList query={this.state.query} stock={this.state.stock} />
       </div>
     );
   }
