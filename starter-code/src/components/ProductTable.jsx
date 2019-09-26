@@ -14,8 +14,6 @@ const ProductTable = props => {
 
       const checked = product.stocked;
       return props.checked ? name && sporting && checked : name && sporting;
-
-      // return name && sporting && checked;
     })
     .map(el => {
       return <Product data={el} />;
@@ -33,12 +31,6 @@ const ProductTable = props => {
       return props.checked ? name && eletronics && checked : name && eletronics;
     })
     .map(el => <Product data={el} />);
-  //   console.log(props.products.data[0]);
-  //   const allProducts = props.products.data
-  //     .filter(product => {
-  //       product.name.toLowerCase().includes(props.query.toLowerCase());
-  //     })
-  //     .map(products => <Product data={allProducts} />);
 
   return (
     <table>
