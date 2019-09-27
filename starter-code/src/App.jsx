@@ -4,6 +4,7 @@ import './App.css';
 import Search from './components/Search';
 import products from './data.json';
 import ProductTable from './components/ProductTable';
+import SearchBar from './components/SearchBar';
 // console.log(products);
 
 export default class App extends Component {
@@ -37,8 +38,14 @@ export default class App extends Component {
           handleQuery={this.setQuery}
           checkHandle={this.checkHandle}
         />
+        <SearchBar
+          checked={this.state.checked}
+          query={this.state.query}
+          setQuery={this.setQuery}
+          checkHandle={this.checkHandle}
+        />
         <ProductTable
-          products={products}
+          products={this.state.products}
           query={this.state.query}
           checked={this.state.checked}
         />

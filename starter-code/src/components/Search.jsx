@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default class Search extends Component {
   handleChange = event => {
     const { value } = event.target;
-    console.log(value);
+    // console.log(value);
     this.props.handleQuery(value);
   };
 
