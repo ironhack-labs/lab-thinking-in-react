@@ -28,17 +28,17 @@ import data from './data.json'
     let newList = [...this.state.itemList]
 
     let filterList = newList.filter(eachItem => {
-      return eachItem.name.toLowerCase().includes(this.state.itemToSearch.toLowerCase());
+      return eachItem.name.toLowerCase().includes(this.state.itemToSearch.toLowerCase()) === true;
     })
 
   this.setState({
     filteredList: filterList,
   })
 
- if(filterList.length !== 0){
+ if(this.state.filteredList.length !== 0){
 
     this.setState({
-      categorySearch: filterList[0].category
+      categorySearch: this.state.filteredList[0].category
     })
   }else{
       this.setState({

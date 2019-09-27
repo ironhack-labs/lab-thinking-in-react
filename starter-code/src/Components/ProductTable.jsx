@@ -8,6 +8,7 @@ class ProductTable extends React.Component {
 
         this.state = {
             categories: ["Sporting Goods", "Electronics"],
+            chosenOne: 0
         }
 
     }
@@ -26,11 +27,7 @@ class ProductTable extends React.Component {
 
         })  
     }else if(this.state.categories.indexOf(this.props.category) < 0){
-return (
-    <div>
-
-    </div>
-)
+return;
 
     }else{
         return (
@@ -63,19 +60,7 @@ return theData.map((eachItem, index) => {
     
 })
     }
-    
-  displayAllItems = (theData) => {
-      return theData.map((eachItem, index) =>{
-        return (
-    <ProductRow key={index}
-    name={eachItem.name}
-    price={eachItem.price}
-    stock={eachItem.stocked}
-    />
-    )
-    })
-}
-
+  
     render(){
         return(
            <table>
@@ -88,7 +73,7 @@ return theData.map((eachItem, index) => {
             
     
                 {this.displayBody()}
-               {/* {this.displayAllItems(this.props.dataToPass)} */}
+               {/* {this.displayAllItems(this.props.dataToPass, this.state.categories)} */}
               
     
            </table>
@@ -97,3 +82,48 @@ return theData.map((eachItem, index) => {
 }
 
 export default ProductTable;
+
+  //OLD VERSION
+//   displayAllItems = (theData, category) => {
+   
+//       return category.map(eachCategory => {
+//         let chosenOne = 0;
+//         return theData.map((eachItem, index) =>{
+//             if(eachItem.category === eachCategory){
+//                 if(index < 1 || index === this.state.chosenOne){
+//               return (
+//                   <tbody>
+//                   <th>{eachItem.category}</th>
+//                   <ProductRow key={index}
+//                   name={eachItem.name}
+//                   price={eachItem.price}
+//                   stock={eachItem.stocked}
+//                   />
+//                   </tbody>
+//                   )
+//                 }else{
+//                     return (
+//                         <tbody>     
+//                         <ProductRow key={index}
+//                         name={eachItem.name}
+//                         price={eachItem.price}
+//                         stock={eachItem.stocked}
+//                         />
+//                         </tbody>  
+//                     )
+//                 }
+//             }else{
+    
+//             }
+             
+//       })
+//     })
+// }
+    //         }else{
+    //       return (
+    //   <ProductRow key={index}
+    //   name={eachItem.name}
+    //   price={eachItem.price}
+    //   stock={eachItem.stocked}
+    //   />
+    //   )
