@@ -1,19 +1,45 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import FilterableProductTable from './components/FilterableProductTable';
 import './App.css';
+import data from './data.json';
 
-export default class App extends Component {
+class App extends Component {
+  state = {
+    product: data,
+    query: '',
+    Checked: false
+  };
+
+   //SetQueryBox opdaterer vores state for hvad vi indtaster i searchbox
+  setQuery = query => {
+    console.log(2);
+    this.setState({
+      query: query
+    });
+  };
+
+  //SetQueryBox opdaterer vores state for checked om det er false eller true
+  setQueryBox = queries => {
+    console.log(2);
+    this.setState({
+      Checked: queries
+    });
+  };
+
   render() {
+    console.log(3)
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <FilterableProductTable
+          products={this.state.product}
+          handleQuery={this.setQuery}
+          query={this.state.query}
+          handleQueries={this.setQueryBox}
+          queries={this.state.Checked}
+        />
       </div>
     );
   }
 }
+
+export default App;

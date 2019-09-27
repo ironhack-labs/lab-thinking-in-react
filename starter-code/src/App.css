@@ -26,3 +26,13 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+.tableHeader {
+  display:flex;
+  border: 1px solid red;
+}
+
+.tableHeader div {
+  width: 50vh
+}
