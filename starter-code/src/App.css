@@ -1,5 +1,13 @@
+.body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
+
+  margin: 20px
 }
 
 .App-logo {
@@ -25,4 +33,32 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.product-row {
+  border: 1px solid red;
+
+  width: 80vw;
+  margin: auto;
+}
+
+.product-table {
+  border: 1px solid green;
+
+  width: 90vw;
+  margin: auto;
+}
+
+.search-bar {
+  border: 1px solid blue;
+
+  width: 90vw;
+  margin: auto;
+}
+
+.filterable-product-table {
+  border: 1px solid orange;
+
+  width: 100vw;
+  margin: auto;
 }
