@@ -10,6 +10,10 @@
   margin: 20px
 }
 
+.App h1 {
+  margin: 20px;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
@@ -35,46 +39,33 @@
   to { transform: rotate(360deg); }
 }
 
-.product-row {
-  border: 1px solid red;
-
-  width: 80vw;
-  margin: auto;
-}
-
 .product-table {
-  border: 1px solid green;
-
-  width: 90vw;
-  margin: auto;
+  width: 96vw;
+  margin: 10px;
 }
 
-.search-bar {
-  border: 1px solid blue;
+thead {
+  background-color: #E8ECEF;
+}
 
-  width: 90vw;
-  margin: auto;
+.search-container {
+  margin: 10px;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .filterable-product-table {
-  border: 1px solid orange;
-
-  width: 100vw;
-  margin: auto;
-}
-
-.table {
-  border: 1px dotted purple;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.table-body-items {
-  border: 1px dotted yellow;
+  width: 100%;
 }
 
 .search {
-  width: 400px;
-  height: 30px;
+  width: 95vw;
+  height: 40px;
+
+  margin: 10px;
+}
+
+.checkbox {
+  margin: 5px;
 }

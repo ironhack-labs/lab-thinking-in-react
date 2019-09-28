@@ -1,5 +1,6 @@
 
 import React, { Component } from 'react';
+import productList from '../data.json'
 import SearchBar from './SearchBar';
 import ProductTable from './ProductTable';
 
@@ -7,11 +8,11 @@ class FilterableProductTable extends Component {
   // Initial state
   state = {
     query: '',
-    stocked: false
+    checked: false,
+    products: productList
   }
 
   setUserQuery = query => {
-    // Shorthand property assignment
     this.setState({
       query
     })
@@ -19,21 +20,24 @@ class FilterableProductTable extends Component {
 
   setStockState = query => {
     this.setState({
-      stocked: true
+      checked: true
     })
   }
 
   render () {
-    // console.log(`Props on Filterable Product Table (FPT)`, this.props)
-
     return (
       <div className="filterable-product-table">
-          <h2>Filterable Product Table</h2>
-          {/* handleQuery has to map with child (SearchBar)*/}
           <SearchBar
-            userQuery={this.state.query}
-            handleQuery={this.setUserQuery} handleCheckbox={this.setStockState}/>
-          <ProductTable productsOnFPT={ this.props }/>
+            query={this.state.query}
+            handleQuery={this.setUserQuery}
+            handleCheckbox={this.setStockState}
+            checked={this.state.checked}
+            />
+          <ProductTable
+            products={this.state.products}
+            query={this.state.query}
+            checked={this.state.checked}
+          />
       </div>
     )
   }

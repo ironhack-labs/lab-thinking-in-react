@@ -1,46 +1,33 @@
 import React from 'react';
-import SearchBar from './SearchBar';
-const uuidv4 = require('uuid/v4'); // provide unique key for array items
+const uuidv4 = require('uuid/v4'); // Generate unique key identifier for array items
 
-const ProductRow = (props) => {
-  // Props Heritage: App.js > FilterableProductTable.js > ProductTable.js > ProductRow.js
-  // Getting props: props < ProductTable < Filterable Products Table < App
-  // console.log(`Props from ProductRow`, props.productsOnPT.productsOnFPT.productsOnApp.data);
+const ProductRow = props => {
+  // console.log(`Props from PR:`, props.checked)
+  // console.log(`Products Data`, props.products.data)
 
-  const productList = props.productsOnPT.productsOnFPT.productsOnApp.data;
+  let soldOut = {
+    color: 'red'
+  };
 
-  const getAllProducts =
-    productList.map(product => {
+  const filterProducts = props.products.data.filter(word => {
+    let search = word.name.toLowerCase();
+    let query = props.query.toLowerCase();
+
     return (
-      <tr key={uuidv4()}>
-        <td>{product.name}</td>
-        <td>{product.price}</td>
+      // If either 'checked' or 'stocked' is true
+      // AND search term matches query
+      (!props.checked || word.stocked) && search.includes(query)
+    )
+  }).map(item => {
+    return (
+      <tr key={uuidv4()} className="product-item">
+        {!item.stocked ? <td style={soldOut}>{item.name}</td>:<td>{item.name}</td>}
+        <td>{item.price}</td>
       </tr>
     )
   });
 
-  const getFilteredProducts = props => {
-    console.log(props.stocked)
-  }
-
-  return (
-    <div className="product-row">
-      <h2>ProductRow</h2>
-      <table className="table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Price</th>
-          </tr>
-        </thead>
-        <tbody className="table-body-items">
-          <>
-            { getAllProducts }
-          </>
-        </tbody>
-      </table>
-    </div>
-  )
-}
+  return filterProducts;
+};
 
 export default ProductRow;
