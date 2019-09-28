@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import SearchBar from './SearchBar';
 const uuidv4 = require('uuid/v4'); // provide unique key for array items
 
 const ProductRow = (props) => {
@@ -6,14 +7,21 @@ const ProductRow = (props) => {
   // Getting props: props < ProductTable < Filterable Products Table < App
   // console.log(`Props from ProductRow`, props.productsOnPT.productsOnFPT.productsOnApp.data);
 
-  const getProducts = props.productsOnPT.productsOnFPT.productsOnApp.data.map(product => {
-      return (
-        <tr key={uuidv4()}>
-          <td>{product.name}</td>
-          <td>{product.price}</td>
-        </tr>
-      )
-    })
+  const productList = props.productsOnPT.productsOnFPT.productsOnApp.data;
+
+  const getAllProducts =
+    productList.map(product => {
+    return (
+      <tr key={uuidv4()}>
+        <td>{product.name}</td>
+        <td>{product.price}</td>
+      </tr>
+    )
+  });
+
+  const getFilteredProducts = props => {
+    console.log(props.stocked)
+  }
 
   return (
     <div className="product-row">
@@ -26,7 +34,9 @@ const ProductRow = (props) => {
           </tr>
         </thead>
         <tbody className="table-body-items">
-          { getProducts }
+          <>
+            { getAllProducts }
+          </>
         </tbody>
       </table>
     </div>
