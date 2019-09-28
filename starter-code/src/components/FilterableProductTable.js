@@ -2,16 +2,14 @@
 import React from 'react'
 import SearchBar from './SearchBar'
 import ProductTable from './ProductTable'
-//import productList from '../../src/data.json'
 
-const FilterableProductTable = () => {
-  //const data = productList
-
+const FilterableProductTable = (props) => {
+  console.log(`Props from Filterable Product Table (FPT)`, props)
   return (
     <div className="filterable-product-table">
         <h2>Filterable Product Table</h2>
         <SearchBar />
-        <ProductTable />
+        <ProductTable productsFromFPT={ props }/>
     </div>
   )
 }
