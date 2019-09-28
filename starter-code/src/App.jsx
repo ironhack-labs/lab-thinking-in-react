@@ -8,7 +8,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <h1>IronStore</h1>
-          <FilterableProductTable productsFromApp={ data }/>
+          <FilterableProductTable productsOnApp={ data }/>
       </div>
     );
   }
