@@ -14,10 +14,10 @@ export default class ProductTable extends Component {
   }
 
   printCategory=(category)=>{
-    return this.props.products.map((product,index)=>{
-      if(product.category === category){
-        return <ProductRaw  key={index} product={product}/>
-      }
+    return this.props.products.filter((product)=>{
+      return(product.category === category)
+    }).map((product,index)=>{
+      return <ProductRaw  key={index} product={product}/>
     })
   }
 
@@ -28,12 +28,11 @@ export default class ProductTable extends Component {
           <p>Name</p>
           <p>Price</p>
         </div>
-      {this.getCategories().map(category=>{ 
-              return <div>
+        {this.getCategories().map((category, index)=>{ 
+              return <div key={index}>
                 <div style={{backgroundColor:'#ddd', height:'40px' ,lineHeight:'40px'}}>
                     {category}
-                </div>
-                        
+                </div>    
                     {this.printCategory(category)}
                 </div>
         })}
