@@ -51,6 +51,5 @@ const styleHeader ={
 }
 
 const style ={
-  padding:'15px',
   position: 'relative',
 }
