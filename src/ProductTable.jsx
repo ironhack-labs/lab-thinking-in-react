@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ProductRow from './ProductRow'
 
 export default class ProductTable extends Component {
+
   render() {
     return (
       <div id="table">
@@ -21,9 +22,9 @@ export default class ProductTable extends Component {
           </thead>
           <tbody>
               {
-              this.props.products.data.map((product, i) => {
-                return <ProductRow product={product} key={i} />
-              })
+               this.props.products.map((product, i) => {
+                  return <ProductRow product={product} key={i} />
+                })
             }
           </tbody>
         </table>
