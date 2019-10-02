@@ -1,0 +1,15 @@
+.flex {
+    display: flex
+}
+
+.flex-v {
+    flex-direction: column
+}
+
+.aic {
+    align-items: center
+}
+
+.jcsb {
+    justify-content: space-between
+}

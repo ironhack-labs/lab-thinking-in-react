@@ -1,0 +1,12 @@
+.search span, label {
+    padding: 1rem;
+    width: 100%;
+}
+
+.search>input {
+    box-sizing: border-box;
+    padding: .5rem 1rem;
+    width: 100%;
+    border: 1px lightgray solid;
+    border-radius: 5px;
+}

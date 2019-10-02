@@ -1,0 +1,10 @@
+.out-of-stock {
+    color: red;
+}
+.product-row-div{
+    border-bottom: 1px lightgray solid;
+}
+
+.product-row-div span {
+    padding: 1rem;
+}

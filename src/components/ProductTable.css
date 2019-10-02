@@ -1,0 +1,12 @@
+.product-table {
+    margin: 0 auto;
+}
+
+.table-column-headers {
+    background-color: lightsteelblue
+}
+
+.table-column-headers span {
+    padding: 1rem;
+    font-weight: 600;
+}
