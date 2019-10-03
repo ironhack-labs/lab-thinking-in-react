@@ -1,28 +1,53 @@
-.App {
+h1{
   text-align: center;
+  font-weight: 100;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+form > input{
+  width: 60vw;
+  padding: 10px 20px;
+  border: 1px solid rgba(0, 0, 0, 0.171);
+  outline: none;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.checkbox{
+  margin:20px 0;
 }
 
-.App-title {
-  font-size: 1.5em;
+
+.productContainer {
+  width: 60vw;
+  margin: 0 auto;
+  /* background: rgba(0, 0, 0, 0.089); */
 }
 
-.App-intro {
-  font-size: large;
+.column{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 8px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.30);
+  
+}
+.head{
+  background: rgba(79, 80, 153, 0.767);
+  
+}
+
+.noStocked{
+  background:rgba(255, 0, 0, 0.281);
 }

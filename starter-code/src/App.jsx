@@ -1,18 +1,46 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Searchbar from './Components/Searchbar';
+import Producttable from './Components/Producttable';
+
+
 
 export default class App extends Component {
+
+  constructor(){
+    super()
+    this.state={
+      search: '',
+      onstock:false
+    }
+  }
+
+  updateSearch(e){
+    let search=e.target.value
+    
+    this.setState({
+      ...this.state,
+      search: search
+    })
+    
+  }
+
+  onStock() {
+    
+    this.setState({
+      ...this.state,
+      onstock: !this.state.onstock
+    })
+
+  }
+
   render() {
+
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <h1>IronStore</h1>
+        <Searchbar onStock={()=>this.onStock()} updateSearch={(e)=>this.updateSearch(e)}/>
+        <Producttable onStock={this.state.onstock} filterProducts={this.state.search} />
       </div>
     );
   }
