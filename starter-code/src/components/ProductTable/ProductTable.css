@@ -1,0 +1,12 @@
+.out-of-stock {
+  position: relative;
+}
+
+.product-table .badge {
+  position: absolute;
+  left: 1rem;
+}
+
+tbody tr:hover {
+  background-color: rgba(0, 0, 0, .1) !important;
+}
