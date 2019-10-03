@@ -1,18 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import SearchBar from './/components/SearchBar';
+import ProductTable from './components/ProductTable';
+import data from '../src/data.json';
 
 export default class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      products: data.data,
+      filterProducts: data.data
+    };
+  }
+
+  search = e => {
+    const copyProduct = [...this.state.products];
+    let newSearch = copyProduct.filter(elm => {
+      return elm.name.toLowerCase().includes(e.target.value.toLowerCase());
+    });
+    this.setState({
+      ...this.state,
+      filterProducts: newSearch
+    });
+  };
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <h1>IronStore</h1>
+        <SearchBar search={this.search} />
+        <ProductTable  filterProducts={this.state.filterProducts} />
       </div>
     );
   }
