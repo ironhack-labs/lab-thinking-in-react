@@ -9,7 +9,7 @@ export default class SearchBar extends Component {
           <input type="text" name="search" id="search"/>
         </form>
         <form action="">
-          <input type="checkbox" onChange={(e) => {this.props.handleCheckbox(e)}}/>
+          <input type="checkbox" onChange={(e) => {this.props.handleSearch(e)}}/>
           <label htmlFor="checkbox">show only items in stock</label>
         </form>
       </div>

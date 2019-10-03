@@ -15,16 +15,35 @@ export default class App extends Component {
 
 
   handleSearch = (e) => {
-    let filtered = this.state.products.filter((product, i) => {
-      console.log(product)
-      if (product.name.toLowerCase().includes(e.target.value.toLowerCase()) || product.category.toLowerCase().includes(e.target.value.toLowerCase())) {
-        return product
-      }
-    })
+      console.log(e.target.value)
+    if (e.target.checked === true) {
+      console.log('true')
+      let filtered = this.state.products.filter((product, i) => {
+        if ((product.name.toLowerCase().includes(e.target.value.toLowerCase()) || product.category.toLowerCase().includes(e.target.value.toLowerCase())) && product.stocked === true) {
+          return product
+        }
+      })
+  
+      this.setState({
+        filteredProds: filtered,
+        checked: e.target.checked
+      })
+    }
+    else {
+        console.log('else')
+            //// ORIGINAL
+            let filtered = this.state.products.filter((product, i) => {
+              if (product.name.toLowerCase().includes(e.target.value.toLowerCase()) || product.category.toLowerCase().includes(e.target.value.toLowerCase())) {
+                return product
+              }
+            })
+        
+            this.setState({
+              filteredProds: filtered
+            })
+    }
 
-    this.setState({
-      filteredProds: filtered
-    })
+
   } 
 
 
