@@ -1,1 +1,7 @@
-.not-in-stock { color: red }
+td { color: #444 }
+
+.not-in-stock::after { 
+  content: ' (Sold out)';
+  color: red;
+  font-style: italic;
+}

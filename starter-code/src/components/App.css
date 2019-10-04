@@ -1,28 +1,24 @@
-.App {
+html { font-size: 10px }
+body { background: calc(100vw - 25rem) calc(100vh - 25rem)  no-repeat url(https://cdn.pixabay.com/photo/2014/07/21/11/51/rose-398576__340.png)}
+
+footer {
+  position: absolute;
+  bottom: 2rem;
   text-align: center;
+  width: 100%;
+  
 }
+  footer p {
+    color: pink;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+  footer img {
+    width: 60px;
+    filter: hue-rotate(140deg);
+    opacity: .4;
+  }
+  
+.App { font: 1.6rem Arial, Helvetica, sans-serif }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}

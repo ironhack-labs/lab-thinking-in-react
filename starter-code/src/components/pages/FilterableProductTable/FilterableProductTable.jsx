@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import SearchBar from '../../sections/SearchBar/SearchBar'
 import ProductTable from '../../sections/ProductTable/ProductTable'
+import './FilterableProductTable.css'
 
 export default class FilterableProductTable extends Component {
 
@@ -8,20 +9,58 @@ export default class FilterableProductTable extends Component {
     super();
 
     this.state = {
-      products: props.products
+      products: props.products,
+      filteredProducts: props.products,
+      showOnlyStocked: false
     }
   }
 
+  toggleStocked(){
+
+    const stockToggled = !this.state.showOnlyStocked;
+
+    this.setState({
+      ...this.state,
+      showOnlyStocked: stockToggled
+    })
+  }
+
   searchProducts(search) {
-    console.log(search);
+  
+    let newProducts = [ ...this.state.products ];
+
+    const newRegEx = new RegExp(`^${search}|\\s${search}`, 'i');
+
+    newProducts = newProducts.filter(product => newRegEx.test(product.name))
+    
+    this.setState({
+      ...this.state,
+      filteredProducts: newProducts
+    })
   }
 
   render() {
     return (
-      <div class="filterable-product-table">
+      <div className="filterable-product-table">
         <h1>IronStore</h1>
-        <SearchBar searchProducts={(search) => this.searchProducts(search)} />
-        <ProductTable products={this.state.products}/>
+        <SearchBar 
+            searchProducts={(search) => this.searchProducts(search)} 
+            toggleStocked={() => this.toggleStocked()}
+        />
+
+        {
+          this.state.filteredProducts.length === 0 ?
+       
+          <p>No products found</p> :
+
+          <ProductTable 
+              products={
+                this.state.showOnlyStocked ? 
+                this.state.filteredProducts.filter(product => product.stocked) 
+                : this.state.filteredProducts }
+          /> 
+        }
+
       </div>
     )
   }

@@ -1,0 +1,22 @@
+.product-table {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.product-table th { 
+  padding: 1rem;
+  background-color: palevioletred;
+  color: white;
+}
+.product-table th:last-child { border-top-right-radius: 1rem }
+.product-table th:first-child  { border-top-left-radius: 1rem }
+.product-table td { padding: .5rem 1rem }
+.product-table td:last-child{ width: 20% }
+.product-table tbody tr { background-color: white } 
+
+.product-table tbody tr:nth-child(2n) { background-color: rgb(255, 238, 241) } 
+.product-table tbody td:first-child, .product-table thead th:first-child{
+  border-right: .5rem solid white;
+  width: 100%;
+}
+

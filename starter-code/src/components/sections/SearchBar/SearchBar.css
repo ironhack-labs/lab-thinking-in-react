@@ -1,0 +1,68 @@
+.search-bar { padding: 2rem 0 }
+
+.search-bar > li label{
+  display: block;
+  text-align: center;
+  color: palevioletred;
+  font-size: 2rem;
+}
+
+  .search-bar div > input{
+    display: block;
+    width: 100%;
+    color: palevioletred;
+    border-top: 1px solid pink;
+    border-bottom: 1px solid pink;
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    padding-right: 10rem;
+    border-radius: 1rem;
+  }
+
+  .search-bar div {
+    position: relative;
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .search-bar div ol {
+    position: absolute;
+    top: calc(50% - 1rem);
+    right: 2rem;
+    height: 2rem;
+  }
+
+  .search-bar div li {
+    display: flex;
+    align-items: center;
+  }
+
+  .search-bar div li input[type=checkbox] {
+    -ms-transform: scale(2); 
+    -moz-transform: scale(2); 
+    -webkit-transform: scale(2);
+    -o-transform: scale(2); 
+    transform: scale(2);
+    padding: 1rem;
+    border: 0;
+    position: relative;
+    top: -.2rem;
+    left: -1rem;
+    cursor: pointer;
+  }
+
+
+  ::placeholder { 
+    color: #888;
+    opacity: 1; /* Firefox */
+    font-style: italic;
+    font-size: 70%;
+  }
+  
+  :-ms-input-placeholder {
+    color: red;
+  }
+  
+  ::-ms-input-placeholder { 
+    color: red;
+  }

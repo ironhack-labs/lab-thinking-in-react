@@ -1,18 +1,11 @@
 import React, { Component } from 'react'
 import ProductRow from './ProductRow/ProductRow';
+import './ProductTable.css'
 
 export default class ProductTable extends Component {
 
-
-  constructor(props) {
-    super();
-
-    this.state = {
-      products: props.products
-    }
-  }
-
   render() {
+    debugger;
     return (
       <table className="product-table">
         <thead>
@@ -22,7 +15,7 @@ export default class ProductTable extends Component {
           </tr>
         </thead>
         <tbody>
-          {this.state.products.map((product) => <tr><ProductRow product={product}/></tr>)}
+          {this.props.products.map((product) => <tr><ProductRow {...product}/></tr>)}
         </tbody>
       </table>
     )
