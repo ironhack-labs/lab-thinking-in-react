@@ -1,23 +1,60 @@
-import React, { Component, Fragment } from 'react'
-import data from '../data.json'
-import SearchBar from './SearchBar'
-import ProductTable from './ProductTable'
+import React, { Component } from 'react';
+import SearchBar from './SearchBar';
+import ProductTable from './ProductTable';
+import '../../src/App.css';
 
-
-class FilterableProductTable extends Component{
-  constructor(){
-    super()
+class FilterableProductTable extends Component {
+  constructor(props) {
+    super(props);
+    this.allProductList = this.props.products.data;
     this.state = {
-    }
+      ProductList: this.allProductList,
+      showProducts: false,
+      search: ''
+    };
+    this.checkboxHandler = this.checkboxHandler.bind(this);
+    this.searchHandler = this.searchHandler.bind(this);
   }
-  
-  render(){
+
+  checkboxHandler(event) {
+    let { name, value, type, checked } = event.target;
+    let listCopy = [...this.allProductList];
+    let filterList;
+    value = type === 'checkbox' ? checked : value;
+    if (checked) filterList = listCopy.filter(item => item.stocked === value);
+    else filterList = listCopy;
+    this.setState({
+      [name]: value,
+      ProductList: filterList
+    });
+  }
+
+  searchHandler(event) {
+    let { value } = event.target;
+    let listCopy = [...this.allProductList];
+    let filterList = listCopy.filter(item => {
+      let nameLower = item.name.toLowerCase();
+      return nameLower.includes(value.toLowerCase());
+    });
+    this.setState({
+      search: value,
+      ProductList: filterList
+    });
+  }
+
+  render() {
     return (
       <>
-          <SearchBar />
-          <ProductTable />
+        <h1>IronStore</h1>
+        <SearchBar
+          showProducts={this.state.showProducts}
+          searchValue={this.state.search}
+          handleChange={this.checkboxHandler}
+          handleSearch={this.searchHandler}
+        />
+        <ProductTable productList={this.state.ProductList} />
       </>
-    )
+    );
   }
 }
 export default FilterableProductTable;

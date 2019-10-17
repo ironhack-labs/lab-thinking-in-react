@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import './App.css';
-import FilterableProductsTable from './components/FilterableProductTable'
+import data from './data.json'
+import FilterableProductTable from './components/FilterableProductTable';
 
 class App extends Component {
   render() {
     return (
-      // <div className="App">
-        <FilterableProductsTable />
-      // </div>
+      <div className="App">
+        <FilterableProductTable products={ data } />
+      </div>
     );
   }
 }
