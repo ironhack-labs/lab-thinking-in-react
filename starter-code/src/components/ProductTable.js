@@ -5,10 +5,10 @@ class ProductTable extends Component {
 
   render() {
     return (
-      <table>
+      <table className="table is-striped is-fullwidth">
         <tr>
-          <th>Name</th>
-          <th>Price</th>
+          <th className="has-text-centered">Name</th>
+          <th className="has-text-centered">Price</th>
         </tr>
         {this.props.productList.map((elem,idx) => <ProductRow key={idx} product = {elem}/>)}
       </table>

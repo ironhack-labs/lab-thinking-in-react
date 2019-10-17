@@ -1,13 +1,11 @@
-/* *{
+*{
   margin: 0;
-  padding: 0;
+  padding: 50px;
 }
 
-.App > h1{
+body{
   text-align: center;
-  color:red;
-} */
-
+}
 .red{
   color:red;
 }

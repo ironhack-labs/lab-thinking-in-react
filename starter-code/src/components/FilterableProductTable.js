@@ -45,7 +45,7 @@ class FilterableProductTable extends Component {
   render() {
     return (
       <>
-        <h1>IronStore</h1>
+        <h1 className="title is-1">IronStore</h1>
         <SearchBar
           showProducts={this.state.showProducts}
           searchValue={this.state.search}
