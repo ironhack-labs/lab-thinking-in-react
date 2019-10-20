@@ -23,6 +23,13 @@ class FilterableProductTable extends Component {
     value = type === 'checkbox' ? checked : value;
     if (checked) filterList = listCopy.filter(item => item.stocked === value);
     else filterList = listCopy;
+
+    if(this.state.search !== ''){
+    filterList = filterList.filter(item => {
+      let nameLower = item.name.toLowerCase();
+      return nameLower.includes(this.state.search.toLowerCase());      
+    });
+  }
     this.setState({
       [name]: value,
       ProductList: filterList
@@ -36,6 +43,9 @@ class FilterableProductTable extends Component {
       let nameLower = item.name.toLowerCase();
       return nameLower.includes(value.toLowerCase());
     });
+    if (this.state.showProducts) filterList = filterList.filter(item => item.stocked === true);
+    // else filterList = listCopy;
+
     this.setState({
       search: value,
       ProductList: filterList
