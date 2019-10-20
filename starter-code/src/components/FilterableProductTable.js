@@ -50,8 +50,7 @@ class FilterableProductTable extends Component {
     return (
       <div>
         <h1>IronStore</h1>
-        <input onChange={this.checkedProducts} type='checkbox' />Only products in stock
-        <SearchBar search={this.state.search} searchProducts={this.searchProducts} />
+        <SearchBar checkedProducts={this.checkedProducts} search={this.state.search} searchProducts={this.searchProducts} />
         <ProductTable productsList={this.state.productsList} />
       </div>
     )

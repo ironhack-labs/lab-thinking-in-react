@@ -15,6 +15,7 @@ const SearchBar = props => {
         placeholder="Find a repository"
         onChange={e => props.searchProducts(e)}
       />
+        <input onChange={props.checkedProducts} type='checkbox' />Only products in stock
     </div>
   );
 };
