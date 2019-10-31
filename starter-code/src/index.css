@@ -3,3 +3,12 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.SearchBar{
+  margin-bottom: 20px;
+} 
+
+.FilterableProductTable {
+  margin: 20px;
+}
+
