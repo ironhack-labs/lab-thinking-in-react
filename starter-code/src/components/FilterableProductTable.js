@@ -24,7 +24,17 @@ class FilterableProductTable extends Component {
       : this.setState({ products: list });
   };
 
-  filterStock = isChecked => {};
+  filterStock = isChecked => {
+    const results = [];
+    const list = [...this.state.products];
+    list.map(i => {
+      return i.stocked === true ? results.push(i) : null;
+    });
+
+    isChecked
+      ? this.setState({ products: results })
+      : this.setState({ products: list });
+  };
 
   render() {
     console.log(this.state.products);
@@ -32,7 +42,10 @@ class FilterableProductTable extends Component {
       <div>
         <div className="App">
           <h1>IronStore</h1>
-          <SearchBar searchItems={this.searchItems} />
+          <SearchBar
+            searchItems={this.searchItems}
+            filterStock={this.filterStock}
+          />
           <ProductTable blah={this.state.products} />
         </div>
       </div>

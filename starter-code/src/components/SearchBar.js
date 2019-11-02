@@ -16,9 +16,11 @@ class SearchBar extends Component {
     this.props.searchItems(this.state.search);
   };
 
-  // checkBoxHandler = (e){
-  //   this.props.wbalakasd(this.state.isChecked)
-  // }
+  checkBoxHandler = e => {
+    let { name, value } = e.target;
+    this.setState({ [name]: value });
+    this.props.filterStock(this.state.isChecked);
+  };
 
   render() {
     return (
@@ -36,10 +38,13 @@ class SearchBar extends Component {
         </div>
         <div className="field">
           <div className="control">
-            <label className="checkbox">
-              <input type="checkbox" />
-              Only show products in stock
-            </label>
+            <label className="checkbox">Only show products in stock</label>
+
+            <input
+              type="checkbox"
+              onChange={this.checkBoxHandler}
+              name="isChecked"
+            />
           </div>
         </div>
       </div>

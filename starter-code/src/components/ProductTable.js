@@ -13,7 +13,12 @@ function ProductTable(props) {
         </tr>
 
         {props.blah.map((item, indx) => (
-          <ProductRow name={item.name} price={item.price} key={indx} />
+          <ProductRow
+            stocked={item.stocked}
+            name={item.name}
+            price={item.price}
+            key={indx}
+          />
         ))}
       </table>
     </div>
