@@ -12,6 +12,7 @@ class FilterableProductTable extends Component {
   }
 
   searchItems = searchTerm => {
+    console.log(searchTerm);
     const searchResults = [];
     const list = [...this.state.products];
     list.map(p => {
@@ -37,7 +38,6 @@ class FilterableProductTable extends Component {
   };
 
   render() {
-    console.log(this.state.products);
     return (
       <div>
         <div className="App">

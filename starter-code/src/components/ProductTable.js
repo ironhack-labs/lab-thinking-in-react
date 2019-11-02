@@ -1,25 +1,32 @@
 import React from 'react';
 import 'bulma/css/bulma.css';
 import ProductRow from './ProductRow';
+import '../App.css';
 
 function ProductTable(props) {
-  console.log(props.blah);
   return (
-    <div>
-      <table>
-        <tr>
-          <th>Name:</th>
-          <th>Price:</th>
-        </tr>
+    <div className="App">
+      <table
+        className="table is-bordered is-fullwidth
+"
+      >
+        <thead>
+          <tr>
+            <th>Name:</th>
+            <th>Price:</th>
+          </tr>
+        </thead>
 
-        {props.blah.map((item, indx) => (
-          <ProductRow
-            stocked={item.stocked}
-            name={item.name}
-            price={item.price}
-            key={indx}
-          />
-        ))}
+        <tbody>
+          {props.blah.map((item, indx) => (
+            <ProductRow
+              stocked={item.stocked}
+              name={item.name}
+              price={item.price}
+              key={indx}
+            />
+          ))}
+        </tbody>
       </table>
     </div>
   );

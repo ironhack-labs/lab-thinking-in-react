@@ -2,24 +2,12 @@ import React, { Component } from 'react';
 import 'bulma/css/bulma.css';
 
 class SearchBar extends Component {
-  constructor() {
-    super();
-    this.state = {
-      search: '',
-      isChecked: false
-    };
-  }
-
   changeHandler = e => {
-    let { name, value } = e.target;
-    this.setState({ [name]: value });
-    this.props.searchItems(this.state.search);
+    this.props.searchItems(e.target.value);
   };
 
   checkBoxHandler = e => {
-    let { name, value } = e.target;
-    this.setState({ [name]: value });
-    this.props.filterStock(this.state.isChecked);
+    this.props.filterStock(e.target.value);
   };
 
   render() {
@@ -27,24 +15,17 @@ class SearchBar extends Component {
       <div>
         <div>
           <label className="label">Search</label>
-
           <input
             className="input is-rounded"
             type="text"
             placeholder="Rounded input"
-            name="search"
             onChange={this.changeHandler}
           ></input>
         </div>
         <div className="field">
-          <div className="control">
+          <div className="App control">
+            <input type="checkbox" onChange={this.checkBoxHandler} />
             <label className="checkbox">Only show products in stock</label>
-
-            <input
-              type="checkbox"
-              onChange={this.checkBoxHandler}
-              name="isChecked"
-            />
           </div>
         </div>
       </div>
