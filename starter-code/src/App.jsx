@@ -1,18 +1,29 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import FilterableProductTable from './components/FilterableProductTable';
+import products from './data.json';
 
 export default class App extends Component {
+  state = {
+    unmutableProd: products.data,
+    filteredProd: products.data
+  };
+
+  handleSearchChange = e => {
+    let unmutableProdCopy = [...this.state.unmutableProd];
+    let search = e.target.value;
+    const filteredProd = unmutableProdCopy.filter(product =>
+      product.name.toLowerCase().includes(search.toLowerCase())
+    );
+    this.setState({ filteredProd: filteredProd });
+  };
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <FilterableProductTable
+          searchAbility={this.handleSearchChange}
+          products={this.state.filteredProd}
+        />
       </div>
     );
   }
