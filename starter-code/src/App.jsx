@@ -11,6 +11,8 @@ export default class App extends Component {
       search: '',
       toggled: false,
     }
+    this.cat = "";
+    this.lat = "";
   }
 
   searchBar = (e) =>{
@@ -49,16 +51,30 @@ export default class App extends Component {
     })
   }
 
+  decideCat = (eachItem) =>{
+    console.log('decide')
+    if(eachItem.category === this.last){
+      this.cat = ""
+    }else{
+      this.cat = eachItem.category
+      this.last = eachItem.category
+    }
+    console.log(this.cat)
+  }
+
   allItems = () =>{
     return this.state.list.map((eachItem, i)=>{
       let red = "";
       if(!eachItem.stocked){
         red = "red"
       }
+      this.decideCat(eachItem)
+      console.log(eachItem)
       if(this.state.toggled){
         if(red === ""){return (
           <div className="box" key={i}>
-            <strong>{eachItem.category}</strong>
+          
+            <strong>{this.cat}</strong>
             <p>
                 <span className={red}> {eachItem.name} </span>
                 <small>{eachItem.price}</small>
@@ -68,7 +84,7 @@ export default class App extends Component {
       }else{
         return (
           <div className="box" key={i}>
-            <strong>{eachItem.category}</strong>
+            <strong>{this.cat}</strong>
             <p>
                 <span className={red}> {eachItem.name} </span>
                 <small>{eachItem.price}</small>
