@@ -1,0 +1,8 @@
+.product-table {
+  display: flex;
+  width: 80vw;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: aquamarine;
+}

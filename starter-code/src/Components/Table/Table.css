@@ -1,0 +1,11 @@
+.table {
+  background-color: midnightblue;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-between;
+}
+thead {
+  color: aliceblue;
+}
