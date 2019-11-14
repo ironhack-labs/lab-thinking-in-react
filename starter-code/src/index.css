@@ -3,3 +3,18 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+thead > tr > td {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.category{
+  font-weight: bold;
+  font-size: 1.1em;
+  text-align: center;
+}
+
+.main-div h1{
+  font-size: 3em;
+}
