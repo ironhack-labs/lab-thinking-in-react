@@ -15,7 +15,11 @@ export default class SearchBar extends Component {
           </form>
         </div>
         <div className="form-group">
-          <form>
+          <form
+            onChange={e => {
+              this.props.handleCheckbox(e);
+            }}
+          >
             <input type="checkbox" />
             <label htmlFor="checkbox">Only show products in stock</label>
           </form>

@@ -6,7 +6,11 @@ export default class extends Component {
   render() {
     return (
       <div>
-        <SearchBar products={this.props.products} handleSearch={this.props.handleSearch}/>
+        <SearchBar
+          products={this.props.products}
+          handleSearch={this.props.handleSearch}
+          handleCheckbox={this.props.handleCheckbox}
+        />
         <ProductTable products={this.props.products} />
       </div>
     );

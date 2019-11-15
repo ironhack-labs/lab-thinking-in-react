@@ -7,7 +7,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export default class App extends Component {
   state = {
     products: data,
-    filteredProducts: data
+    filteredProducts: data,
+    checked: false
   };
 
   handleSearch = e => {
@@ -25,6 +26,24 @@ export default class App extends Component {
     });
   };
 
+  handleCheckbox = e => {
+    console.log(e, e.target, e.target.checked);
+    if (e.target.checked === true) {
+      let filtered = this.state.filteredProducts.filter((product,i)=>{
+        return (product.stocked === true)
+      })
+      this.setState({
+        filteredProducts:filtered,
+        checked:e.target.checked
+      })
+    } if (e.target.checked === false) {
+      this.setState({
+        filteredProducts:this.state.products,
+        checked:e.target.checked
+      })
+      }
+  };
+
   render() {
     return (
       <div className="App">
@@ -34,6 +53,7 @@ export default class App extends Component {
         <FilterableProductTable
           products={this.state.filteredProducts}
           handleSearch={this.handleSearch}
+          handleCheckbox={this.handleCheckbox}
         />
       </div>
     );
