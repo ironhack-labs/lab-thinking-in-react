@@ -1,19 +1,40 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+//import {Link} from 'react-dom'
 import './App.css';
+import {data} from './data.json';
 
 export default class App extends Component {
+
+
+showItems = ()=>{
+  return data.map(eachProduct=>{
+    return <li>
+      
+     <span className="name">{eachProduct.name}</span> 
+     <span className="price">{eachProduct.price}</span> 
+    
+    </li>
+  })
+}
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <div className ='App'>
+        
+          IronShop
+          <div className ="searchbar">
+            <form>
+          Search
+          <input placeholder="helololllololololololol"/>
+        </form>
+          </div>
+        <div>FOOODSS</div>
+        <div className="list-group">
+                {this.showItems()}
+                {console.log(data)}
+              </div>
+        </div>
+      
     );
   }
 }
