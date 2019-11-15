@@ -21,8 +21,44 @@
 .App-intro {
   font-size: large;
 }
-
+.main-content {
+  width: 100%;
+  height: 100vh;
+}
+header {
+  position: fixed;
+  z-index: 2;
+  background-color: rgba(20, 19, 18, 0.993);
+  width: 100%;
+  top:0;
+  color: white;
+}
+h1 {
+  text-align: center;
+}
+.table-content {
+  width: 100%;
+  margin-top: 8%;
+}
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+ @media only screen and (max-width : 1200px) {
+  .table-content {
+    margin-top: 10%;
+  }
+  
+}
+@media only screen and (max-width : 900px) {
+  .table-content {
+    margin-top: 12%;
+  }
+  
+} 
+@media only screen and (max-width : 768px) {
+  .table-content {
+    margin-top: 15%;
+  }
+ 
 }
