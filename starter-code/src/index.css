@@ -1,5 +1,41 @@
 body {
   margin: 0;
+  background-color:#00805652;
   padding: 0;
   font-family: sans-serif;
+}
+
+input {
+  font-size: 1em;
+  padding: .5em;
+  width:100%;
+}
+
+li{
+  width:100%;
+  list-style-type: none;
+  display: flex;
+  font-size: 1em;
+  padding: 2em;
+  border: 1px dashed #ddd;
+  justify-content: space-around;
+}
+
+li:nth-child(2n){
+  background: #ddd;
+}
+
+.instock{
+  color:blue;
+}
+.outofstock{
+  color:red;
+}
+
+.checkbox{
+  height:100px;
+}
+.name{
+}
+.price{
 }
