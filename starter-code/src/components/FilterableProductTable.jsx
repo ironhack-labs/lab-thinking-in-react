@@ -6,7 +6,7 @@ export default class extends Component {
   render() {
     return (
       <div>
-        <SearchBar />
+        <SearchBar products={this.props.products} handleSearch={this.props.handleSearch}/>
         <ProductTable products={this.props.products} />
       </div>
     );
