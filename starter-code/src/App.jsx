@@ -1,18 +1,55 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { data } from './data.json';
+import SearchBar from './components/SearchBar/SearchBar';
+import ProductTable from './components/ProductTable/ProductTable';
 
 export default class App extends Component {
+  state = {
+    data: data,
+    dataFiltered: '',
+    search: "",
+  };
+  
+  filterOutofStock = (e) => {
+    console.log(e.target.checked)
+    // let dataCopy = [...this.state.data]
+    let outStockProduct = this.state.data.filter(outStock => {
+      return outStock.stocked === e.target.checked ? outStock.stocked === false : outStock
+    })
+    
+    // return console.log(outStockProduct)
+     this.setState({
+       dataFiltered:outStockProduct
+      })
+  }
+  searchProducts = (e) => {
+    console.log(e.target.value)
+    // const dataCopy = [...this.state.data]
+    let searchedProducts = this.state.data.filter(theProducts => {
+      return theProducts.name.toLowerCase().includes(e.target.value)
+    })
+    // return console.log(searchedProducts)
+    this.setState({
+      dataFiltered: searchedProducts,
+    })
+  }
+
+  switchData() {
+    if(this.state.dataFiltered===''){
+      
+      return this.state.data
+    }else {
+      return this.state.dataFiltered
+    }
+    
+  }
+  
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <h1>Iron Store</h1>
+        <SearchBar searchProducts={this.searchProducts} filterOutofStock={this.filterOutofStock}/>
+        <ProductTable data={this.switchData()} />
       </div>
     );
   }

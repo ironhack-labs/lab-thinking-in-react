@@ -3,3 +3,23 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.product-list {
+  margin: 50px;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-content: center;
+}
+
+.in-stock {
+  color: blue;
+}
+
+.out-of-stock {
+  color: red;
+}
