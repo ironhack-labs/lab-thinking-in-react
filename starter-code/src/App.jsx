@@ -8,40 +8,61 @@ export default class App extends Component {
   state = {
     products: data,
     filteredProducts: data,
-    checked: false
+    checked: true
   };
 
   handleSearch = e => {
     console.log(e, e.target, e.target.value);
-    let filtered = this.state.products.filter((product, i) => {
-      if (
-        product.name.toLowerCase().includes(e.target.value.toLowerCase()) ||
-        product.category.toLowerCase().includes(e.target.value.toLowerCase())
-      ) {
-        return product;
-      }
-    });
-    this.setState({
-      filteredProducts: filtered
-    });
+    if (e.target.checked === true) {
+      console.log('true');
+      let filtered = this.state.products.filter(product => {
+        if (
+          (product.name.toLowerCase().includes(e.target.value.toLowerCase()) ||
+            product.category
+              .toLowerCase()
+              .includes(e.target.value.toLowerCase())) &&
+          product.stocked === true
+        ) {
+          return product;
+        }
+      });
+      this.setState({
+        filteredProducts: filtered
+      });
+    }
+    if (e.target.checked === false) {
+      console.log('else');
+      let filtered = this.state.products.filter((product, i) => {
+        if (
+          product.name.toLowerCase().includes(e.target.value.toLowerCase()) ||
+          product.category.toLowerCase().includes(e.target.value.toLowerCase())
+        ) {
+          return product;
+        }
+      });
+      this.setState({
+        filteredProducts: filtered
+      });
+    }
   };
 
   handleCheckbox = e => {
     console.log(e, e.target, e.target.checked);
     if (e.target.checked === true) {
-      let filtered = this.state.filteredProducts.filter((product,i)=>{
-        return (product.stocked === true)
-      })
+      let filtered = this.state.filteredProducts.filter((product, i) => {
+        return product.stocked === true;
+      });
       this.setState({
-        filteredProducts:filtered,
-        checked:e.target.checked
-      })
-    } if (e.target.checked === false) {
+        filteredProducts: filtered,
+        checked: e.target.checked
+      });
+    }
+    if (e.target.checked === false) {
       this.setState({
-        filteredProducts:this.state.products,
-        checked:e.target.checked
-      })
-      }
+        filteredProducts: this.state.products,
+        checked: e.target.checked
+      });
+    }
   };
 
   render() {
