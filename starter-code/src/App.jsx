@@ -11,7 +11,7 @@ export default class App extends Component {
   };
 
   handleSearch = e => {
-    console.log(e.target.value);
+    console.log(e, e.target, e.target.value);
     let filtered = this.state.products.filter((product, i) => {
       if (
         product.name.toLowerCase().includes(e.target.value.toLowerCase()) ||
