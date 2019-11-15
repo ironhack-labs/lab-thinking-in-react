@@ -8,4 +8,7 @@
 }
 thead {
   color: aliceblue;
+  text-align: center;
+  justify-self: center;
+  align-content: center;
 }

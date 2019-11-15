@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Search from '../Search/Search';
 import Table from '../Table/Table';
 import './ProductTable.css';
-import { tsMethodSignature } from '@babel/types';
 
 export default class ProductTable extends Component {
   constructor(props) {
