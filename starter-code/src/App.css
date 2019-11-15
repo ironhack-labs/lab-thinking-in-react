@@ -26,3 +26,37 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+.container{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:50px;
+  width: 50%;
+  border: 2px solid yellow;
+}
+.search-section, h1{
+  text-align:center;
+}
+.search-bar{
+  width:100%;
+  margin:5px;
+  height: 30px;
+  border-radius: 2px;
+  box-sizing : border-box; 
+}
+tr{
+  display:flex;
+  justify-content: space-around;
+  width:100%;
+  
+}
+table{
+  width: 100%;
+
+}
+.products-title{
+  margin:5px;
+  background-color:grey;
+}
+td{
+  margin:5px;
+}
