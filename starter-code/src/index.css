@@ -3,3 +3,36 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+
+li {
+  width: 100%;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 1em;
+  border: 1px dashed #ddd;
+}
+
+li:nth-child(2n) {
+  background: #ddd;
+}
+
+.instock {
+  color: blue;
+}
+
+.outstock {
+  color: red;
+}
+
+input {
+  font-size: 1.4em;
+  padding: .5em;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.checkbox {
+  height: 25px;
+}
