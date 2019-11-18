@@ -26,3 +26,76 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+table {
+  width: 100vw;
+  height: 500px;
+ 
+}
+
+th {
+  height: 50px;
+  background-color: #222;
+  color: white;
+
+}
+
+SearchBar {
+  width: 100vw;
+}
+
+tr {
+  background-color: coral;
+  width: 100vw;
+  height: 70px;
+}
+td {
+  width: 50vw;
+}
+
+tr:nth-child(2n){
+  background-color: grey;
+
+}
+
+.instock {
+  color: white;
+}
+
+.outofstock {
+  color: red;
+}
+
+.searchbar {
+  width: 80vw;
+  height: 30px;
+  border: 2px solid black
+}
+
+.search {
+background-color:#222;
+}
+
+.checkboxDiv {
+  display: flex;
+  justify-content: center;
+  background-color: #222;
+}
+h3 {
+  color: white;
+}
+
+form {
+ background-color: #222;
+ display: flex;
+ width: 250px;
+ align-items: center;
+ justify-content: space-between;
+}
+
+
+
+
+
+
