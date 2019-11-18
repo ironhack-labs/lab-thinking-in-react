@@ -1,19 +1,35 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Tabla from './Tabla';
+import data from './data';
 
 export default class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      items: data.data,
+      itemsshown: data.data,
+      includeoutofstock: true
+    };
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <input onChange={this.handleInput} type="text" />
+        <Tabla
+          items={this.state.items}
+          itemsshown={this.state.itemsshown}
+        ></Tabla>
       </div>
     );
   }
+
+  handleInput = input => {
+    console.log(input.target.value);
+    let templist = this.state.items.filter(item =>
+      item.name.toLowerCase().includes(input.target.value.toLowerCase())
+    );
+    this.setState({ itemsshown: templist });
+  };
 }
