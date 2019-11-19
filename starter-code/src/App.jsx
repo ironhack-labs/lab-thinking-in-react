@@ -1,18 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import items from './data.json';
 import './App.css';
+import './components/SearchBox';
+import SearchBox from './components/SearchBox';
+import CheckBox from './components/CheckBox';
+import ItemTable from './components/ItemTable';
 
 export default class App extends Component {
+  state = { items: items.data, onlyInStock: false };
+  handleSearch = e => {
+    const searchTerm = e.target.value.toLowerCase();
+    const filteredItems = items.data.filter(item =>
+      item.name.toLowerCase().includes(searchTerm)
+    );
+    this.setState({ items: filteredItems });
+  };
+  toggleInStock = () => {
+    this.setState(prevState => ({ onlyInStock: !prevState.onlyInStock }));
+  };
   render() {
+    const { items, onlyInStock } = this.state;
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div>
+          <h1> IronStore </h1>
+          <SearchBox handleSearch={this.handleSearch} />
+          <CheckBox toggleInStock={this.toggleInStock} />
+        </div>
+        <div className="item-list">
+          <ItemTable onlyInStock={onlyInStock} items={items} />
+        </div>
       </div>
     );
   }
