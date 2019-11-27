@@ -1,0 +1,12 @@
+.products-list {
+    margin-top: 50px;
+    width: 100%;
+}
+
+.products-list thead {
+    background: #E7ECEF;
+}
+
+.products-list th {
+    padding: 10px 0;
+}
