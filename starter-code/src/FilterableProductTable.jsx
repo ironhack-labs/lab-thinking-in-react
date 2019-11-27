@@ -19,12 +19,18 @@ export default class FilterableProductTable extends Component {
     // donc pour voir les résultats dans la console
     //il faut écrire le console.log dans la callback function ,() => {}
 
+    handleSearch = (val) => {
+        console.log("ici", val, this.props.products);
+        let filteredItem = this.props.products.filter(item => item.name.toUpperCase().includes(val.toUpperCase()));
+        this.setState({ currentList: filteredItem });
+    }
+
     render() {
         return (
             <div>
                 <h1>IronStore</h1>
                 <React.Fragment>
-                    <SearchBar />
+                    <SearchBar clbk={this.handleSearch} />
                     <hr />
                     <ProductTable products={this.state.currentList} />
                 </React.Fragment>
