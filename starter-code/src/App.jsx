@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import products from './data.json'; // on l'a renommé en products pour pouvoir y accéder avec .data
+import FilterableProductTable from './FilterableProductTable';
 import './App.css';
 
+
 export default class App extends Component {
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <h1>Lab du jour</h1>
+        <FilterableProductTable products={products.data} />
       </div>
     );
   }
