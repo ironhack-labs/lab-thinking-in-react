@@ -1,19 +1,47 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import data from './data.json';
+import ProductTable from './ProductTable';
+import SearchBar from './SearchBar';
 
-export default class App extends Component {
+class App extends Component {
+  state = {
+    data: [...data],
+    query: '',
+    showIfIsStocked: false
+  };
+
+  setQuery = query => {
+    console.log('query:', query);
+    this.setState({
+      query: query
+    });
+  };
+
+  setCheckbox = check => {
+    this.setState({
+      showIfIsStocked: check
+    });
+  };
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <h1>Ironstore</h1>
+        <SearchBar
+          setQuery={this.setQuery}
+          query={this.state.query}
+          showIfIsStocked={this.state.showIfIsStocked}
+          setCheckbox={this.setCheckbox}
+        />
+        <ProductTable
+          query={this.state.query}
+          data={this.state.data}
+          showIfIsStocked={this.state.showIfIsStocked}
+        />
       </div>
     );
   }
 }
+
+export default App;
