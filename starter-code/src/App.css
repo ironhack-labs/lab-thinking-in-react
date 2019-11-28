@@ -23,6 +23,42 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+h1 {
+  background-color: lightsalmon;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  color: white;
+  align-items: center;
+}
+
+.input {
+  width: 40vw;
+  height: 30px;
+  margin: 40px;
+  border-radius: 5px
+}
+
+.table {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+thead {
+  width: 60vw;
+  display: flex;
+  align-content: center;
+  text-align: center;
+  justify-content: center;
 }
