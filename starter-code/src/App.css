@@ -22,6 +22,42 @@
   font-size: large;
 }
 
+.checkBox, .productSection, .productStyle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+table{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90vw;
+}
+
+
+thead  {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width:inherit;
+  display: inline-block;
+  background-color: gray;
+}
+
+tbody {
+  width:inherit;
+  display: inline-block;
+}
+
+
+tr {
+  display: flex;
+  justify-content: space-around;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
