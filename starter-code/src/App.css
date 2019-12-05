@@ -26,3 +26,28 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.product-list{
+  width:60vw;
+}
+
+
+.product-list ul{
+  list-style-type: none;
+}
+
+.product-list ul li{
+  display:flex;
+  justify-content:space-between;
+  background-color: rgb(216, 216, 216);
+  padding:10px;
+  margin:5px 0;
+}
+
+.red{
+  color:red;
+}
+
+.green{
+  color:green;
+}
