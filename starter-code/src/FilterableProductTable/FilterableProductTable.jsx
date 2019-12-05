@@ -11,8 +11,8 @@ export default class FilterableProductTable extends Component {
         return (
             <div>
                 <h1>IronStore</h1>
-        <SearchBar></SearchBar>
-        <ProductSection data={this.props.products.data}></ProductSection>
+                <SearchBar search={this.props.search}></SearchBar>
+                <ProductSection data={this.props.products}></ProductSection>
             </div>
         )
     }

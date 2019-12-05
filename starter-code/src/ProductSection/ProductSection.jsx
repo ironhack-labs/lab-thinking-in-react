@@ -18,7 +18,7 @@ export default class ProductSection extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.props.data.map((product, idx) => <Product  key={idx} data={product}></Product>)}
+                        {this.props.data.map((product, idx) => <Product key={idx} data={product}></Product>)}
  
                     </tbody>
                 </table>
