@@ -9,7 +9,7 @@ export default class SearchBar extends React.Component {
           type="text"
           className="input search-bar"
           placeholder="Search a product"
-          //   onChange={(e) => this.findFood(e)}
+          onChange={(e) => this.props.findProducts(e)}
         />
 
         <input type="checkbox" name="stocked" />
