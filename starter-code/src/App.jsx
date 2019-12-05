@@ -1,19 +1,34 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+// import { booleanLiteral } from '@babel/types';
+import data from './data.json'
+import SearchBar from './components/SearchBar'
+import ProductList from './components/ProductList'
 
 export default class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      dataCopy: data.data
+    }
+  }
+  search = e => {
+    // let product = [...this.state.dataCopy]
+    console.log("baaaaaaaaaaa")
+    console.log(e)
+    // let filterProduct = this.state.dataCopy.filter(elm => elm.name.toUpperCase().includes(e.target.value.toUpperCase()))
+    // this.setState({ dataCopy: filterProduct })
+  }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+      <>
+        {/* {console.log(this.state.dataCopy)} */}
+        <h1>IronStore</h1>
+        <SearchBar search={this.search} />
+        <ProductList data={this.state.dataCopy} />
+
+      </>
+
+    )
   }
 }
