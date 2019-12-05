@@ -13,40 +13,64 @@ class App extends Component {
 
     this.state = {
       checked: false,
-      products: this.products,
-      productsToFilter: [...this.products]
+      hasText: false,
+      products: [...this.products],
+      productsToFilter: [...this.products],
+      productsToFilter2: [...this.products],
+      productsToChecked: [...this.products]
     };
   }
 
   findProduct(e) {
-    let searchedProduct = [...this.state.products];
+    let searchedProduct;
+    if (this.state.checked) {
+      searchedProduct = [...this.state.productsToChecked];
+      // searchedProduct = [...this.state.productsToFilter]
+    } else {
+      searchedProduct = [...this.state.products];
+    }
     searchedProduct = searchedProduct.filter(product => {
       return product.name.toLowerCase().includes(e.target.value.toLowerCase());
     });
     // debugger;
     this.setState({
       ...this.state,
-      productsToFilter: searchedProduct
+      hasText: e.target.value.length != 0,
+      productsToFilter: searchedProduct,
+      productsToFilter2: searchedProduct
     });
     // debugger
   }
 
   findStocked(e) {
-    console.log(e.target.checked);
-    this.state.checked = !this.state.checked;
-    let stockedProducts = [...this.state.products];
-    if (e.target.checked) {
+    let productsToFilterCopy = [...this.state.productsToFilter];
+    let stockedProducts = this.state.hasText
+      ? [...this.state.productsToFilter2]
+      : [...this.state.products];
+    console.log(this.state.hasText);
+    // console.log(e.target.checked);
+    // let stockedProducts = [...this.state.productsToFilter];
+
+    if (!this.state.checked) {
+      console.log(this.state.productsToFilter2);
       stockedProducts = stockedProducts.filter(product => {
         return product.stocked;
       });
+      this.setState({
+        ...this.state,
+        checked: !this.state.checked,
+        // productsToChecked: stockedProducts,
+        productsToFilter: stockedProducts
+      });
+    } else {
+      console.log(this.state.productsToFilter2);
+      this.setState({
+        ...this.state,
+        checked: !this.state.checked,
+        // productsToChecked: productsToFilterCopy,
+        productsToFilter: stockedProducts
+      });
     }
-
-    // debugger;
-    this.setState({
-      ...this.state,
-      productsToFilter: stockedProducts
-    });
-    // debugger
   }
 
   render() {
