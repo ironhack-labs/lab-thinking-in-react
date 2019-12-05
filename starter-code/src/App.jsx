@@ -10,21 +10,22 @@ export default class App extends Component {
     super();
     this.state = {
       products: [...data.data],
-      searchProducts: ""
+      searchProducts: "",
+      initialProducts: [...data.data],
     };
   }
 
 
   searchProduct(e){
     let searchProducts = e.target.value;
-    let updatedProducts = [...this.state.products]
-    updatedProducts = updatedProducts.filter((product) => {
+    let initialProducts = [...this.state.initialProducts]
+     let filteredProducts = initialProducts.filter((product) => {
       let productName = product.name.toLowerCase()
       return productName.indexOf(searchProducts.toLowerCase()) !== -1
     })
     this.setState({
       ...this.state,
-      products: updatedProducts,
+      products: filteredProducts,
       searchProducts: searchProducts
     })
   }
