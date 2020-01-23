@@ -18,6 +18,12 @@ class ProductTable extends Component {
       </thead>
       <tbody>
         {
+          this.props.showStock
+          ?
+          allProducts.filter(product => product.name.toLowerCase().includes(this.props.searchInput.toLowerCase())).filter(product => product.stocked).map((product) => {
+            return <ProductRow product={product} />
+          })
+          :
           allProducts.filter(product => product.name.toLowerCase().includes(this.props.searchInput.toLowerCase())).map((product) => {
             return <ProductRow product={product} />
           })

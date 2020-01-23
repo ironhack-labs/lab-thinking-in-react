@@ -14,9 +14,11 @@ export default class App extends Component {
     this.state = {
       products: data,
       searchInput: '',
+      showStock: false,
     }
 
     this.searchProduct = this.searchProduct.bind(this);
+    this.checkStock = this.checkStock.bind(this);
 
   }
 
@@ -26,10 +28,16 @@ export default class App extends Component {
     })
   }
 
+    checkStock(input) {
+      this.setState({
+        showStock: input,
+      })
+    }
+
   render() {
     return (
       <div className="App">
-      <FilterableProductTable products={this.state.products} search={this.searchProduct} searchInput={this.state.searchInput} />
+      <FilterableProductTable checkStock={this.checkStock} products={this.state.products} search={this.searchProduct} searchInput={this.state.searchInput} showStock={this.state.showStock} />
       </div>
     );
   }

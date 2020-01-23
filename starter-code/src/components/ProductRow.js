@@ -8,7 +8,13 @@ class ProductRow extends Component {
     const { name, price } = this.props.product;
       return (
         <tr>
-          <td>{name}</td>
+        {
+          this.props.product.stocked
+          ?
+          <td class='black-word'>{name}</td>
+          :
+          <td class='red-word'>{name}</td>
+        }
           <td>{price}</td>
         </tr>
       )

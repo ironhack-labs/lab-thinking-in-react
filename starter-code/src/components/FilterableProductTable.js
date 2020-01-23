@@ -12,8 +12,8 @@ class FilterableTable extends Component {
     return (
       <div>
         <h1>IronStore</h1>
-        <SearchBar search={this.props.search} />
-        <ProductTable searchInput={this.props.searchInput} products={this.props.products} />
+        <SearchBar checkStock={this.props.checkStock} search={this.props.search} />
+        <ProductTable showStock={this.props.showStock} searchInput={this.props.searchInput} products={this.props.products} />
       </div>
     )
   }
