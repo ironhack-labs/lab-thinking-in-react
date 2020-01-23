@@ -1,6 +1,10 @@
 import React from 'react';
 
-export default function SearchBar({ handleChangeTextField, searchFieldValue }) {
+export default function SearchBar({
+  handleInputChange,
+  searchFieldValue,
+  isOnStockFilter
+}) {
   return (
     <div>
       <label>
@@ -10,12 +14,17 @@ export default function SearchBar({ handleChangeTextField, searchFieldValue }) {
           type="search"
           name="searchField"
           value={searchFieldValue}
-          onChange={handleChangeTextField}
+          onChange={handleInputChange}
         />
       </label>
       <label>
         <br />
-        <input type="checkbox" name="" />
+        <input
+          type="checkbox"
+          name="isOnStockFilter"
+          value={isOnStockFilter}
+          onChange={handleInputChange}
+        />
         only show products on stock
       </label>
       <hr />

@@ -10,17 +10,19 @@ export default class FilterableProductTable extends Component {
     this.state = {
       data: data,
       searchField: '',
-      filteredData: data
+      filteredData: data,
+      isOnStockFilter: false
     };
-    this.handleChangeTextField = this.handleChangeTextField.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
     this.getFilteredData = this.getFilteredData.bind(this);
   }
 
-  handleChangeTextField(event) {
-    const { value, name } = event.target;
+  handleInputChange(event) {
+    const { value, name, type, checked } = event.target;
+    const returnValue = type === 'checkbox' ? checked : value;
     this.setState(
       {
-        [name]: value
+        [name]: returnValue
       },
       // TODO: Achei no google a opção de passar como callback. Fiquei curioso sobre quais são minhas outras opção. Que papai do chão me ilumine.
       this.getFilteredData
@@ -28,20 +30,23 @@ export default class FilterableProductTable extends Component {
   }
 
   getFilteredData() {
-    const searchString = this.state.searchField;
-    const data = this.state.data;
-    let result;
-    if (searchString.length === 0) {
-      result = data;
-    } else {
-      result = data.filter(
-        e =>
-          e.name.toLowerCase().includes(searchString) ||
-          e.name.toUpperCase().includes(searchString)
+    const isIncludedFilter = (element, string) => {
+      return (
+        element.name.toLowerCase().includes(string) ||
+        element.name.toUpperCase().includes(string)
       );
-    }
-    // nada está chamando essa função
-    console.log(result);
+    };
+    const removeOutOfStockFilter = element => {
+      return element.stocked;
+    };
+
+    const searchString = this.state.searchField;
+    let result = this.state.data;
+
+    if (this.state.isOnStockFilter)
+      result = result.filter(removeOutOfStockFilter);
+    if (searchString.length > 0)
+      result = result.filter(e => isIncludedFilter(e, searchString));
     this.setState({
       filteredData: result
     });
@@ -52,9 +57,9 @@ export default class FilterableProductTable extends Component {
       <div>
         <h1>Iron Store</h1>
         <SearchBar
-          // getFilteredData={this.getFilteredData}
-          handleChangeTextField={this.handleChangeTextField}
+          handleInputChange={this.handleInputChange}
           searchFieldValue={this.state.searchField}
+          isOnStockFilter={this.state.isOnStockFilter}
         />
         <ProductTable filteredData={this.state.filteredData} />
       </div>
