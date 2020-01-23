@@ -7,7 +7,6 @@ class FilterableTable extends Component {
     super(props)
   }
 
-
   render() {
     return (
       <div>
