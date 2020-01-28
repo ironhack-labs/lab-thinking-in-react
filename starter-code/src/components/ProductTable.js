@@ -3,7 +3,7 @@ import ProductRow from './ProductRow';
 
 export default class ProductTable extends Component {
     render() {
-        console.log(this.props);
+        //console.log(this.props);
         return (
             <span>
                 <table>

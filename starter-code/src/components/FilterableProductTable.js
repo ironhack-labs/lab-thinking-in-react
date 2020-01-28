@@ -37,7 +37,7 @@ export default class FilterableProductTable extends Component {
 
         return (
             <div>
-                <SearchBar searchValue={this.state.searchValue} searchHandler={this.searchHandler} stockedHandler={this.stockedHandler}/>
+                <SearchBar searchHandler={this.searchHandler} stockedHandler={this.stockedHandler}/>
                 <ProductTable products={filteredProducts} />
             </div>
         )
