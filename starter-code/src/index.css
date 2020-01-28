@@ -3,3 +3,37 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+
+.ironStore{
+  margin: 20px 10px 20px 10px;
+  padding: 5px 0 15px 0;
+  border: 1px solid 
+}
+
+
+.searchBar{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.searchBar label{
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+
+.searchBar >input{
+  width: 80%;
+  height: 50px;
+}
+
+
+#onStock{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;  
+}
