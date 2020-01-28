@@ -21,7 +21,6 @@ export default class FilterableProductTable extends Component {
       }
       
       handleInStockChange() {
-          console.log("instock handle aufgerufen")
         this.setState({
           inStockOnly: !this.state.inStockOnly
         })
@@ -37,7 +36,6 @@ export default class FilterableProductTable extends Component {
                  onInStockChange={this.handleInStockChange}
               />
               <ProductTable
-                data={this.props.data}
                 filterText={this.state.filterText}
                 inStockOnly={this.state.inStockOnly}
                 products ={this.props.products}

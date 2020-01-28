@@ -5,15 +5,14 @@ import ProductRow from './ProductRow';
 export default class ProductTable extends React.Component {
     render() {
         const filterText = this.props.filterText;
-        const inStockOnly = this.props.inStock ;
+        const inStockOnly = this.props.inStockOnly ;
         const rows = [];
 
-        console.log(this.props.products);
         this.props.products.forEach((product) => {
             if (product.name.indexOf(filterText) === -1) {
                 return;
               }
-              if (inStockOnly && !product.stocked) {
+            if (inStockOnly && !product.stocked) {
                 return;
               }
             rows.push(
