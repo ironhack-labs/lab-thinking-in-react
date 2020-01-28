@@ -1,19 +1,26 @@
+//Parent Component: FilterableProductTable
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import data from './data.json';
+import FilterableProductTable from './components/FilterableProductTable';
 
-export default class App extends Component {
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      data: data
+    }
+  }
+
   render() {
+    //console.log("data in App ", data );
+
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <h1>IronStore</h1>
+        <FilterableProductTable parentCallback={ data } />
       </div>
     );
   }
 }
+
+export default App;
