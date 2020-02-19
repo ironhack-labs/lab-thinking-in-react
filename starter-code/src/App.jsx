@@ -1,18 +1,37 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import 'bulma/css/bulma.css';
 import './App.css';
+import dataArray from './data.json';
+import FilterableProductTable from './Component/FilterableProductTable';
 
 export default class App extends Component {
+  state = {
+    searchInput: '',
+    inStock : false
+  };
+
+  retrieveDataInput = e => {
+    this.setState({ searchInput: e.target.value }, () => {
+    });
+  };
+  inStockOrNot = e => {
+    this.setState({ inStock: !this.state.inStock}, () => {
+    });
+  };
+  handleFormSubmit = e => {
+    e.persist()
+    if (e.target.name === 'search') this.retrieveDataInput(e);
+    if (e.target.name === 'checkbox') this.inStockOrNot(e);
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <FilterableProductTable
+          products={dataArray.data}
+          inputHandler={this.handleFormSubmit}
+          searchInput={this.state.searchInput}
+          inStock={this.state.inStock}
+        />
       </div>
     );
   }
