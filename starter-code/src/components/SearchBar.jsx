@@ -1,11 +1,12 @@
 import React from 'react'
 
-const SearchBar = (props) => {
+const SearchBar = ({clbk}) => {
+
   return (
     <div className="search-bar">
       <div>Search</div>
-      <div><input className="text-input" type="text"/></div>
-      <div><input type="checkbox" name="inStock"/><label htmlFor="inStock">Only show products in stock</label></div>
+      <div><input onChange={(e) => clbk('search', e.target.value)} className="text-input" type="text"/></div>
+      <div><input onChange={(e) => clbk('instock', e.target.checked)} type="checkbox" name="inStock"/><label htmlFor="inStock">Only show products in stock</label></div>
     </div>
   )
 }
