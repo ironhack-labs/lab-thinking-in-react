@@ -1,28 +1,47 @@
-.App {
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
+* {
+  font-family: 'Poppins', Courier, monospace;
+}
+
+h1 {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+/* SEARCH BAR */
+.search-bar {
+  border: 1px solid #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+.bar {
+  width: 50%;
+  border: 1px solid #e5e5e5;
+}
+
+/* PRODUCT TABLE */
+.product-table {
+  margin: 30px auto;
+  border: 1px solid #e5e5e5;
+  text-align: center;
+}
+
+.product-table th {
+  background-color: black;
   color: white;
 }
 
-.App-title {
-  font-size: 1.5em;
+.product-table th,
+.product-table td {
+  padding: 10px;
+  width: 200px;
 }
 
-.App-intro {
-  font-size: large;
+.red {
+  color: darkred;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
