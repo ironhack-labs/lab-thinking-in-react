@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ProductRow from './ProductRow';
 
+
+
 export default class ProductTable extends Component {
   render() {
     return (
@@ -13,7 +15,7 @@ export default class ProductTable extends Component {
             </tr>
           </thead>
           <tbody>
-            <ProductRow />
+            <ProductRow products={this.props.products}/>
           </tbody>
         </table>
       </div>
