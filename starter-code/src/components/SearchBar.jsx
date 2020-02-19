@@ -6,11 +6,14 @@ export default class SearchBar extends Component {
   render() {
     return (
       <form
-        className="search-bar flex column center"
-        onChange={e => this.props.clbk(e)}
+        className="flex column center"
+        onChange={e => (this.props.clbk(e))}
       >
         <p>Search</p>
-        <input type="text" name="" placeholder="ex: football"/>
+        <div className="search-bar">
+        <input id="input-name" type="text" name="" placeholder="by name"/>
+        <input id="input-number" type="number" name="input-number" placeholder="by price"/>
+        </div>
         <div>
           <input type="checkbox" />
           <span>Only show products on stock</span>

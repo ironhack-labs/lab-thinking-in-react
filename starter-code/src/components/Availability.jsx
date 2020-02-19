@@ -5,7 +5,7 @@ import { faBan } from '@fortawesome/free-solid-svg-icons'
 
 
 export default function Availability({inStock}) {
-    console.log(inStock)
+
     return (
         <>
             {inStock ? <FontAwesomeIcon icon={faCheckCircle}/> : <FontAwesomeIcon icon={faBan}/>}

@@ -8,13 +8,16 @@ import ProductTable from './ProductTable';
 export default class FilterableProductTable extends Component {
   state = {
     searchElement: '',
-    availability: false
+    availability: false,
+    maxPrice: 10000,
   };
 
   searchHandler = e => {
-    e.target.type === 'checkbox'
+     e.target.type === 'checkbox'
       ? this.setState({ availability: e.target.checked })
+      : e.target.type === 'number' ? this.setState({ maxPrice: +e.target.value ? +e.target.value : 10000 })
       : this.setState({ searchElement: e.target.value });
+      console.log(this.state.maxPrice);
   };
 
   render() {
@@ -31,7 +34,8 @@ export default class FilterableProductTable extends Component {
                     .includes(this.state.searchElement.toLowerCase())
                 : true
             )
-            .filter(a=> this.state.availability? a.stocked : true)}
+            .filter(a=> this.state.availability? a.stocked : true).filter(a=> +a.price.substring(1) <= this.state.maxPrice )
+          }
         />
       </div>
     );

@@ -1,4 +1,6 @@
-
+*{
+  box-sizing: border-box;
+}
 
 .flex{
 display: flex;
@@ -13,10 +15,16 @@ display: flex;
 }
 
 .search-bar > input{
-  min-width: 300px;
-  border: none;
-  border-bottom: 1px solid;
+
   font-size: 1em;
+}
+
+#input-name{
+  width: 200px;
+  margin-right: 10px;
+}
+#input-number{
+  width: 90px;
 }
 
 .search-bar > input:focus{
