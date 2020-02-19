@@ -10,6 +10,9 @@ export default class FilterableProductTable extends Component {
     searchElement: '',
     availability: false,
     maxPrice: 10000,
+    sortByName: 1,
+    sortByPrice: 1,
+    superSort: "name"
   };
 
   searchHandler = e => {
@@ -17,17 +20,24 @@ export default class FilterableProductTable extends Component {
       ? this.setState({ availability: e.target.checked })
       : e.target.type === 'number' ? this.setState({ maxPrice: +e.target.value ? +e.target.value : 10000 })
       : this.setState({ searchElement: e.target.value });
-      console.log(this.state.maxPrice);
   };
 
+  sortByNameHandler = () => this.setState({ sortByName: -this.state.sortByName, superSort: "name" })
+
+  sortByPriceHandler = () => this.setState({ sortByPrice: -this.state.sortByPrice, superSort: "price" })  
+
+  sortByName = (p) => [...data.data].sort((a,b)=>a.name.toLowerCase()>b.name.toLowerCase()? -this.state.sortByName:this.state.sortByName)
+  sortByPrice = (p) => [...data.data].sort((a,b)=>(+a.price.substring(1))<(+b.price.substring(1)) ? -this.state.sortByPrice:this.state.sortByPrice)
+  
+  superSort = parameter => parameter === "name" ? this.sortByName() : this.sortByPrice()
+  
   render() {
     return (
       <div className="flex center column">
         <h1>IronStore{' '}<FontAwesomeIcon icon={faShoppingCart}/></h1>
         <SearchBar clbk={this.searchHandler} />
         <ProductTable
-          products={data.data
-            .filter(a =>
+          products={this.superSort(this.state.superSort).filter(a =>
               this.state.searchElement
                 ? a.name
                     .toLowerCase()
@@ -35,7 +45,7 @@ export default class FilterableProductTable extends Component {
                 : true
             )
             .filter(a=> this.state.availability? a.stocked : true).filter(a=> +a.price.substring(1) <= this.state.maxPrice )
-          }
+          } clbkSortName={this.sortByNameHandler} clbkSortPrice={this.sortByPriceHandler} sortByName={this.state.sortByName} sortByPrice={this.state.sortByPrice}
         />
       </div>
     );
