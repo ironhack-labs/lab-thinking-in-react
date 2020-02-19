@@ -5,13 +5,12 @@ import ProductTable from './ProductTable';
 export default class FilterableProductTable extends Component {
 
   state = {
-    products : this.props.products,
     filterByString : "",
     filterByStock : false
   }
 
   productsFiltered = () => {
-    return this.state.products.filter((p) => {
+    return this.props.products.filter((p) => {
       if (!!this.state.filterByStock && !p.stocked) { return false }
       return p.name.toLowerCase().includes(this.state.filterByString.toLowerCase())
     })
