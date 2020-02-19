@@ -1,0 +1,35 @@
+.search-box{
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+
+.searchbar{
+    background: none;
+    border: 2px solid rgb(83, 210, 249);
+    border-radius: 2em;
+    padding: 10px 30px;
+    width: 60%;
+    margin-bottom: 30px;
+    color: rgb(83, 210, 249);
+    font-size: 1.5em;
+    outline: none;
+}
+
+.search-box>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+.check{
+    margin-right: 20px;
+    background: none;
+    border: 2px solid rgb(83, 210, 249);
+    border-radius: 2em;
+}
+

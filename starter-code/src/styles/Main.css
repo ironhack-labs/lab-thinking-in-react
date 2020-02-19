@@ -1,0 +1,11 @@
+.main-section{
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    color: rgb(83, 210, 249);
+    border-left: 5px dotted rgb(83, 210, 249);
+    border-right: 5px dotted rgb(83, 210, 249);
+}
