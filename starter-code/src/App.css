@@ -1,28 +1,28 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+hr {
+  margin: 15px 0;
+}
+
 .App {
-  text-align: center;
+  padding: 25px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+table tr td,
+table tr th {
+  border: 1px solid #666;
+  padding: 10px;
 }
 
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.outstock td {
+  background-color: #f4b2b2;
 }
