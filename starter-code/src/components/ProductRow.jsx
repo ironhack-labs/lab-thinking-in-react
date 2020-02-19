@@ -2,8 +2,9 @@ import React from 'react'
 
 export default function ProductRow() {
     return (
-        <div>
-            
-        </div>
+        <tr>
+            <td>foot</td>
+            <td>200000€</td>
+        </tr>
     )
 }
