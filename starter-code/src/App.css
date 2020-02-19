@@ -1,3 +1,5 @@
+
+
 .flex{
 display: flex;
 }
@@ -12,14 +14,32 @@ display: flex;
 
 .search-bar > input{
   min-width: 300px;
-  margin: 1em;
+  border: none;
+  border-bottom: 1px solid;
+  font-size: 1em;
+}
+
+.search-bar > input:focus{
+  border-bottom: green solid 1px;
 }
 
 table{
-  text-align: center;
-  width: 600px;
+margin-top: 2vh;
+min-width: 300px;
+  border: 1px solid;
+  text-align: left;
+  border-collapse: collapse;
 }
 
 td{
   padding: 5px 10px;
+  border-top: 1px solid black;
+
+}
+thead{
+  background-color: black;
+  color: white;
+}
+tbody tr:nth-child(even){
+  background-color: rgb(241, 232, 232);
 }

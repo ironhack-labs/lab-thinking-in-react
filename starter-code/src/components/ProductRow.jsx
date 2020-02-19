@@ -1,13 +1,16 @@
 import React from 'react';
+import Availability from './Availability';
 
 export default function ProductRow({ products }) {
   console.table(products.data);
   return (
     <>
-      {products.map((p, i) => (
+      {products.map((product, i) => (
         <tr key={i}>
-          <td>{p.name}</td>
-          <td>{p.price}</td>
+          <td style={{ color: product.stocked ? 'green' : 'red' }}>
+            <Availability inStock={product.stocked} /> {product.name}
+          </td>
+          <td>{product.price}</td>
         </tr>
       ))}
     </>

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import data from './../data.json';
 import SearchBar from './SearchBar';
 import ProductTable from './ProductTable';
@@ -18,7 +20,7 @@ export default class FilterableProductTable extends Component {
   render() {
     return (
       <div className="flex center column">
-        <h1>IronStore</h1>
+        <h1>IronStore{' '}<FontAwesomeIcon icon={faShoppingCart}/></h1>
         <SearchBar clbk={this.searchHandler} />
         <ProductTable
           products={data.data

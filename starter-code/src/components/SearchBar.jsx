@@ -10,7 +10,7 @@ export default class SearchBar extends Component {
         onChange={e => this.props.clbk(e)}
       >
         <p>Search</p>
-        <input type="text" name="" />
+        <input type="text" name="" placeholder="ex: football"/>
         <div>
           <input type="checkbox" />
           <span>Only show products on stock</span>
