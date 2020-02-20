@@ -8,8 +8,14 @@ const FilterableProductTable = props => {
       <SearchBar
         updateSearchText={props.updateSearchText}
         search={props.search}
+        inStock={props.inStock}
+        handleCheckboxChange={props.handleCheckboxChange}
       />
-      <ProductTable products={props.products} searchText={props.searchText} />
+      <ProductTable
+        products={props.products}
+        searchText={props.searchText}
+        inStock={props.inStock}
+      />
     </div>
   );
 };

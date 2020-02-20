@@ -15,9 +15,16 @@ const ProductTable = props => {
           .filter(product => {
             return product.name.toLowerCase().includes(props.searchText);
           })
-          .map(product => {
-            // TODO: unique key
-            return <ProductRow product={product} key={product.name} />;
+          .filter(product => {
+            if (!props.inStock) {
+              return true;
+            } else if (props.inStock && product.stocked === true) {
+              return true;
+            }
+            return false;
+          })
+          .map((product, index) => {
+            return <ProductRow product={product} key={index} />;
           })}
       </tbody>
     </table>

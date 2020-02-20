@@ -6,12 +6,19 @@ import FilterableProductTable from './components/FilterableProductTable';
 export default class App extends Component {
   state = {
     products: data.data,
-    searchText: ''
+    searchText: '',
+    inStock: false
   };
 
   updateSearchText = text => {
     this.setState({
       searchText: text
+    });
+  };
+
+  handleCheckboxChange = checked => {
+    this.setState({
+      inStock: checked
     });
   };
 
@@ -23,6 +30,8 @@ export default class App extends Component {
           products={this.state.products}
           updateSearchText={this.updateSearchText}
           searchText={this.state.searchText}
+          inStock={this.state.inStock}
+          handleCheckboxChange={this.handleCheckboxChange}
         />
       </div>
     );
