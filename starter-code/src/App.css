@@ -23,6 +23,24 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.notStocked {
+  color: red;
+}
+
+table {
+  /* border: 1px solid black; */
+  margin-left: 35%;
+}
+
+td {
+  padding: 5px 40px;
+  border: 1px solid black;
 }

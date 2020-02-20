@@ -1,18 +1,36 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import data from './data';
+import FilterableProductTable from './components/FilterableProductTable';
 
 export default class App extends Component {
+  state = {
+    productList: data.data,
+    text: ''
+  };
+
+  handleChange = event => {
+    console.log(event);
+
+    let filteredProducts = data.data.filter(product => {
+      return product.name.toLowerCase().search(event.toLowerCase()) !== -1;
+    });
+
+    this.setState({
+      productList: filteredProducts,
+      text: event
+    });
+  };
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <FilterableProductTable
+          products={this.state.productList}
+          searchProducts={this.handleChange}
+          searchText={this.state.text}
+        />
       </div>
     );
   }
