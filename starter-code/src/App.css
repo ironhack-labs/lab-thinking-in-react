@@ -23,6 +23,49 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
+
+.searchbar {
+  width: 70vw;
+  height: 20px;
+}
+
+.table-container {
+  width: 60vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tablehead {
+  border: 1px solid black;
+  background-color: lightgray;
+}
+
+/* .tablehead th {
+  width: 40%;
+  padding: 2% 40%;
+  text-align: center;
+} */
+
+.tablebody {
+  border-bottom: 1px solid black;
+}
+
+/* .tablebody td {
+  width: 40%;
+  text-align: center;
+  padding: 2% 40%;
+} */
+
+/* .tablebody td {
+  width: 40%;
+  text-align: center;
+  margin-left: 40vw;
+} */
