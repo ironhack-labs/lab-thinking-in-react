@@ -1,28 +1,57 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.notAvailable {
+  color: red
+}
+
+h1 {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.searchBar {
+  text-align: center;
+  margin: 20px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.textInput {
+  width: 100%;
+  margin: 10px 0;
+  padding: 2px;
 }
 
-.App-title {
-  font-size: 1.5em;
+.checkbox {
+  display: flex;
+  justify-content: center;
 }
 
-.App-intro {
-  font-size: large;
+.tableItem {
+  width: 85%;
+  text-align: center;
+  border: solid 0.5px;
+  margin: 0 auto;
+  border-collapse: collapse;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.tableHead th {
+  width: 50%;
+  background-color: lightgray;
+  padding: 10px 0;
+  border-bottom: solid grey 0.5px;
+}
+
+.tableBody td {
+  border-bottom: solid 0.5px lightgray;
+  padding: 10px;
+}
+
+.available:hover {
+  cursor: pointer;
+  background-color: lightpink;
+  transform: translate(-5px, -5px);
+  box-shadow: grey 5px 5px 10px;
+
 }
