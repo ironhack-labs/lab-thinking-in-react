@@ -4,19 +4,20 @@ export default class ProductRow extends Component {
   constructor(props) {
     super(props);
 
-    this.name = this.props.product.name;
-    this.price = this.props.product.price;
-
     this.state = {};
   }
 
   componentDidMount() {}
 
   render() {
+    let dynamicClass = 'stocked';
+    if (!this.props.product.stocked) {
+      dynamicClass = 'not-stocked';
+    }
     return (
-      <tr>
-        <td>{this.name}</td>
-        <td>{this.price}</td>
+      <tr className={dynamicClass}>
+        <td>{this.props.product.name}</td>
+        <td>{this.props.product.price}</td>
       </tr>
     );
   }

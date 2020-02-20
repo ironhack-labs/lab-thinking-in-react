@@ -1,5 +1,10 @@
 .App {
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  max-width: 1200px;
+  padding: 1rem;
+  position: relative;
 }
 
 .App-logo {
@@ -22,7 +27,53 @@
   font-size: large;
 }
 
+.not-stocked {
+  background-color: red;
+}
+
+form {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+form input[type='text'] {
+  margin-bottom: 1rem;
+  width: 100%;
+  height: 20px;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 1rem;
+}
+
+table tr {
+  width: 100%;
+
+  border-bottom: 1px solid lightgray;
+}
+
+table tr:last-child {
+  width: 100%;
+
+  border-bottom: unset;
+}
+table tr th {
+  background-color: lightgray;
+}
+table tr td,
+table tr th {
+  padding: 1rem;
+}
+
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

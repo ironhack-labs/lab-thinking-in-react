@@ -10,23 +10,41 @@ export default class ProductTable extends Component {
   }
 
   render() {
-    // console.log(this.props);
+    console.log(this.props.search);
+    console.log(
+      this.props.products.filter(element => {
+        return element.name
+          .toLowerCase()
+          .includes(this.props.search.toLowerCase());
+      })
+    );
     return (
-      <div>
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Price</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.props.products.map(element => {
-              return <ProductRow product={element} />;
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {this.props.products
+            .filter(element => {
+              return element.name
+                .toLowerCase()
+                .includes(this.props.search.toLowerCase());
+            })
+            .filter(element => {
+              if (this.props.checkStatus) {
+                return element.stocked === true;
+              }
+              return true;
+            })
+            .map((element, index) => {
+              console.log(element.name);
+              return <ProductRow product={element} key={index} />;
             })}
-          </tbody>
-        </table>
-      </div>
+        </tbody>
+      </table>
     );
   }
 }

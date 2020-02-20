@@ -7,7 +7,9 @@ export default class FilterableProductTable extends Component {
     super(props);
 
     this.state = {
-      products: []
+      products: [],
+      query: '',
+      checkStatus: false
     };
   }
 
@@ -19,15 +21,35 @@ export default class FilterableProductTable extends Component {
     });
   }
 
-  onchange = () => {
-    //
+  updateSearchText = searchQuery => {
+    // set
+    this.setState({
+      query: searchQuery
+    });
   };
+  updateCheckStatus = status => {
+    this.setState({
+      checkStatus: status
+    });
+  };
+
   render() {
+    console.log(this.state.query);
     return (
-      <div>
-        <SearchBar />
-        <ProductTable products={this.state.products} />
-      </div>
+      <>
+        <SearchBar
+          updateSearchText={this.updateSearchText}
+          updateCheckStatus={this.updateCheckStatus}
+          checkStatus={this.state.checkStatus}
+          
+          search={this.state.query}
+        />
+        <ProductTable
+          products={this.state.products}
+          search={this.state.query}
+          checkStatus={this.state.checkStatus}
+        />
+      </>
     );
   }
 }
