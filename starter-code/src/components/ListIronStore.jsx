@@ -11,7 +11,7 @@ export default class ListIronStore extends Component {
       <div>
           <table>
              { this.props.data.map((d, i) => (              
-                 <ListIronStoreChild key={i} name={d.name} price={d.price} stocked={d.stocked} stock={this.props.stock}  />
+                 <ListIronStoreChild key2={i} key={i} name={d.name} price={d.price} stocked={d.stocked} stock={this.props.stock}  />
                 )
             )};
          </table>

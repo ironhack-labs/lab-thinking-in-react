@@ -16,7 +16,7 @@ export default class App extends Component {
         
   gettingInfosFromTheChild = msg => {
     const copy = [...products.data];
-    const copy2 = copy.filter(p => p.name.includes(msg)    )
+    const copy2 = copy.filter(p => p.name.toLowerCase().includes(msg.toLowerCase())    )
     this.setState( {data : copy2 }, console.log("data2", this.state.data));
   };
 
