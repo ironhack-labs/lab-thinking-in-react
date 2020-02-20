@@ -11,19 +11,27 @@ export default class App extends Component {
 
   state= {
       data : products.data,
+      stocked: false
   }       
         
   gettingInfosFromTheChild = msg => {
-    console.log("the child just called back !", msg);
     const copy = [...products.data];
-    const copy2 = copy.filter(p => p.name.includes(msg)    )           
-    console.log("data1", this.state.data);
+    const copy2 = copy.filter(p => p.name.includes(msg)    )
     this.setState( {data : copy2 }, console.log("data2", this.state.data));
-  };      
-        
-        
+  };
+
+  gettingOtherInfosFromTheChild  = msg => {
+        if (this.state.stocked == true ) {
+            this.setState( {stocked : false})
+        } else {
+            this.setState( {stocked : true})
+        }
+        console.log(this.state.stocked);
+  };
+
+
+
   render() {
- 
     
     return (
       <div className="App">
@@ -35,8 +43,8 @@ export default class App extends Component {
             To get started, edit <code>src/App.js</code> and save to reload.
         </p>
 
-        <SearchIronStore  clbk={this.gettingInfosFromTheChild} />       
-        <ListIronStore data={this.state.data}  />
+        <SearchIronStore  clbk={this.gettingInfosFromTheChild} clbk2={this.gettingOtherInfosFromTheChild } />
+        <ListIronStore data={this.state.data}  stock={this.state.stocked} />
        
        </div>
     );
