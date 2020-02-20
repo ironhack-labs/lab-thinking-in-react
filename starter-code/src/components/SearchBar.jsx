@@ -1,19 +1,18 @@
 import React from 'react'
 
-export default function SearchBar({filterItem, availItem}) {
+export default function SearchBar({filterItem}) {
     return (
         <div className="searchBar">
             Search
-            <form onChange={e => filterItem(e.target.value)}>
-                <input className="textInput" type="text" />
+            <form onChange={e => filterItem(e.target)}>
+                <input className="textInput" name="text" type="text" />
+            
+                <div className="checkbox">
+                    <input name="checkbox" type="checkbox"/>
+                    <p>Only show products on stock</p>
+                </div>
 
             </form>
-
-            
-            <div className="checkbox">
-                <input type="checkbox"/>
-                <p>Only show products on stock</p>
-            </div>
             
         </div>
     )
