@@ -1,0 +1,7 @@
+.wholePage {
+    border: 5px solid orange;
+    height: 95vh;
+    width: 95vw;
+    box-sizing: border-box;
+}
+

@@ -1,0 +1,6 @@
+.search {
+    border: 5px solid red;
+    width: 90vh;
+    height: 15vh;
+    box-sizing: border-box;
+}
