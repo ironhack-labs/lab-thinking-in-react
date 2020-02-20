@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -25,4 +25,84 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+} */
+
+* {
+  font-family: 'Helvetica', san-serif;
+}
+
+h1 {
+  letter-spacing: 2px;
+}
+
+.filterable-product-table {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-table {
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  text-align: center;
+  width: 100%;
+  font-family: 'Helvetica', san-serif;
+  letter-spacing: 1px;
+  font-weight: 100;
+}
+
+thead {
+  background-color: #e8ecef;
+}
+
+th {
+  height: 50px;
+}
+
+tr {
+  height: 40px;
+}
+
+.search-bar {
+  width: 60vw;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+/* .search-bar input {
+  height: 28px;
+  font-size: 16px;
+  padding-left: 12px;
+} */
+
+.sold-out {
+  color: red;
+}
+
+.search-input-field {
+  width: 98%;
+  height: 28px;
+  font-size: 16px;
+  padding-left: 12px;
+}
+
+.checkbox-div {
+  margin-top: 16px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox-div label {
+  padding-left: 12px;
 }
