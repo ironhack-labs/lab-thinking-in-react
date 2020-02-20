@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class SearchBar extends Component {
-  render() {
-    return (
-      <div className="search-bar">
-        <label htmlFor="search">Search</label>
-        <input className="bar" type="text" />
+export default function SearchBar({ clbk }) {
+  return (
+    <div>
+      <form onChange={e => clbk(e.target)} className="search-bar">
+        <label htmlFor="">Search</label>
+        <input type="text" name="search" className="bar" />
         <div className="checkbox-stock">
-          <input type="checkbox" name="" id="" />
+          <input type="checkbox" name="checkbox" />
           <label htmlFor="">Only show products on stock</label>
         </div>
-      </div>
-    );
-  }
+      </form>
+    </div>
+  );
 }

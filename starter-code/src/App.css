@@ -15,18 +15,22 @@ h1 {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  height: 100px;
+  height: 200px;
+  font-size: 1.4rem;
 }
 
 .bar {
-  width: 50%;
+  width: 40%;
+  height: 30px;
   border: 1px solid #e5e5e5;
+  font-size: 1rem;
 }
 
 /* PRODUCT TABLE */
 .product-table {
   margin: 30px auto;
   border: 1px solid #e5e5e5;
+  box-shadow: 2px 2px 10px #e5e5e5;
   text-align: center;
 }
 
@@ -37,7 +41,7 @@ h1 {
 
 .product-table th,
 .product-table td {
-  padding: 10px;
+  padding: 10px 20px;
   width: 200px;
 }
 
