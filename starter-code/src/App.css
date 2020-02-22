@@ -1,4 +1,5 @@
 .App {
+  width: 100vw;
   text-align: center;
 }
 
@@ -25,4 +26,40 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* SEARCH */
+
+.searchbar {
+  width: 80%;
+  padding: 20px;
+  border: 1px solid black;
+}
+
+input.searchbox {
+  width: 80%;
+  margin-bottom: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+/* TABLE */
+
+th {
+  width: 100%;
+  padding: 10px 50px;
+  /* border: 1px solid black; */
+}
+
+td {
+  width: 100%;
+  padding: 10px;
+  /* border: 1px solid black; */
 }
