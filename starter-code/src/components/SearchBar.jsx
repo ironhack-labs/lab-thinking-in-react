@@ -1,17 +1,34 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-class SearchBar extends Component {
-    render(){
-        return (
-            <div className="SeachBar">
-                <h2>Search</h2>
-                <input type="text" plachelder="Item to Search"/><br/>
-                <input type="checkbox"/>
-                <label> Only show products on stock</label><br/>
-            </div>
-
-        )
-    }
+{
+  /* <SearchBar search = {props.search} updateSearchText={props.updateSearchText}/> */
 }
 
-export default SearchBar
+const SearchBar = props => {
+  return (
+    <div>
+      <div className="searchbar">
+        <p>Search</p>
+        <input
+          className="searchinputfield"
+          type="text"
+          value={props.search}
+          onChange={e => {
+            props.updateSearchText(e.target.value);
+          }}
+        />
+        <div className="checkboxdiv">
+          <input
+            type="checkbox"
+            name="checkbox"
+            checked={props.inStock}
+            onChange={props.handleCheck}
+          />
+          <label htmlFor="checkbox">Only show products on stock</label>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default SearchBar;

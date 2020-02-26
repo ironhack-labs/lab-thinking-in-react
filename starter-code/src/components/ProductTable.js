@@ -1,5 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
+import ProductRow from './ProductRow';
 
-class ProductTable extends Component {
-    
-}
+const ProductTable = props => {
+    return (
+      <div className="producttable">
+        <table>
+          <thead>
+            <th>Name</th>
+            <th>Price</th>
+          </thead>
+          <tbody>
+            <ProductRow
+              inStock={props.inStock}
+              search={props.search}
+              products={props.products}
+            />
+          </tbody>
+        </table>
+      </div>
+    );
+  };
+  
+  export default ProductTable;
