@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import ProductTable from './ProductTable';
 import SearchBar from './SearchBar';
+import {data} from '../data.json';
 
 class FilterableProductTable extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="Filterable">
+        <h1>Iron Store</h1>
         <SearchBar /> 
-        <ProductTable product={this.props.products.data}/>
+        <ProductTable  products = { data }/> 
       </div>
     );
   }

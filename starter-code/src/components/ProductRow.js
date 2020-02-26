@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
 
-class ProductRow extends Component {
-  render() {
+const ProductRow = (props) => {
+  const { name, price, stocked} = props;
+
     return (
-      <div className="App">
-            <div>
-                <tr>
-                    <td>{this.props.name} </td>
-                </tr>
-            </div>
-      </div>
+      <tr>
+          <td style={{color: !stocked ? 'red': 'black'}}>{name} </td>
+          <td>{price} </td>
+      </tr>
     );
-  }
 }
 
 export default ProductRow;
