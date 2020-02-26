@@ -4,13 +4,21 @@ import ProductRow from './ProductRow';
 class ProductTable extends Component {
 
     render() {
-        return(
+        return (
             <table>
-                <tr>
-                    <th>Name</th>
-                    <th>Price</th>
-                </tr>
-                <ProductRow />
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        this.props.products.map((product) => {
+                            return <ProductRow key={product.name} product={product} />
+                        })
+                    }
+                </tbody>
             </table>
         )
     }
