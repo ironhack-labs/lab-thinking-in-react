@@ -1,44 +1,31 @@
 import React, {Component} from 'react'
-import Product from './Product'
+import SearchBar from './SearchBar'
+import ProductTable from './ProductTable'
 
-class FilterableProductTable extends Component{
-   
+class FilterableProductTable extends Component {
+  state={
+      itemToSearch : '',
+      elements: this.props.data
+  } 
+  search(str){
+    
+      this.setState({
+        itemToSearch : [...this.state.itemToSearch , str]
+    })
+  }
+  itemsToSeach = ()=>{
+    console.log("holas")
+  }
     render(){
-        const showTable=  (listProducts)=>{
-            var arr = [];
-            let arrProducts= []
-                Object.keys(listProducts).forEach(function(key) {
-                arr.push(listProducts[key]);
-                });
-                
-                arr[0].map( (product, index) =>{
-                    console.log(product,index)
-                      arrProducts.push(<Product  key = {"product-"+index} name={product.name} price={product.price}/>)
-                    
-                })
-                return arrProducts
-              
-        }
         return(
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-             
+            <div className="FilterableProductTable">
+                <h1>IronStore</h1>
+                <SearchBar itemSeach={this.search}/>
+                <ProductTable products={this.props.data} filterProducts={this.itemsToSeach}/>
 
-                {
-                 //console.log(typeof(...this.props.products))
-                 showTable(this.props.products)  
-                }
-               
-                </tbody> 
-            </table>
+            </div>
+            
         )
     }
 }
-
 export default FilterableProductTable
