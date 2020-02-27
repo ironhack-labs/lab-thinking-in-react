@@ -1,18 +1,45 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import SearchBar from './SearchBar/SearchBar';
+import ProductTable from './ProductTable/ProductTable';
+import products from "./data.json"
 
 export default class App extends Component {
+
+  state = {
+    products: products.data,
+     newList : [],
+     newProducts : [...products.data],
+  }
+
+
+  searchProduct(info) {
+      this.state.newList = this.state.newProducts.filter(product => {
+        const lc = product.name.toLowerCase();
+        const filter = info.toLowerCase();
+        if(lc.includes(filter)){
+
+          return product ;
+        }
+      })
+
+    this.setState({
+      products: this.state.newList
+    },
+
+    )
+  }
+
   render() {
+    console.log(this.state.products)
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <SearchBar products={this.state.products}
+        updateText = {(info)=> this.searchProduct(info)}
+         >
+
+         </SearchBar>
+        <ProductTable products={this.state.products}></ProductTable>
       </div>
     );
   }
