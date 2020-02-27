@@ -5,45 +5,63 @@ import FilterableProductTable from './components/FilterableProductTable/Filterab
 class App extends Component {
   state = {
     products: data.data,
+    productsChe: data.data,
     allProducts: data.data,
-    stock: true
+    stock: false,
+    search: ''
   };
   searchProduct(e) {
-    console.log(this.state.allProducts);
-    console.log(e.target.value);
     let search = e.target.value;
+    this.searchProductApp(search);
+  }
+  searchProductApp(e) {
+    console.log(e);
+    console.log(this.state.allProducts);
     let currentList = [];
     let newList = [];
-    if (search !== '') {
+    if (e !== '') {
       currentList = this.state.allProducts;
-      console.log(currentList);
       newList = currentList.filter(item => {
         const lc = item.name.toLowerCase();
-        const filter = search.toLowerCase();
-        console.log(lc);
-        console.log(filter);
+        const filter = e.toLowerCase();
         return lc.includes(filter);
       });
     } else {
       newList = this.state.allProducts;
     }
     this.setState({
-      products: newList
+      products: newList,
+      search: e
     });
   }
   filterStock(e) {
     let checkBoxDOM = document.querySelector('input:checked');
-    let stockedFilter;
+    let stockedFilter = [];
+    let currentList = [];
     if (checkBoxDOM !== null) {
-      stockedFilter = this.state.products.filter(prod => prod.stocked);
+      currentList = this.state.products;
+      stockedFilter = currentList.filter(prod => prod.stocked);
+      this.setState(
+        {
+          preSearch: this.state.products,
+          products: stockedFilter,
+          stock: !this.state.stock
+        },
+        this.searchProductApp(this.state.search)
+      );
     } else {
-      stockedFilter = this.state.allProducts;
+      console.log(this.state.search);
+      stockedFilter = this.state.products;
+      this.setState(
+        {
+          stock: !this.state.stock,
+          preSearch: this.state.products
+          // products: this.state.preSearch
+        },
+        this.searchProductApp(this.state.search)
+      );
     }
-
     console.log(stockedFilter);
-    this.setState({
-      products: stockedFilter
-    });
   }
 
   render() {
