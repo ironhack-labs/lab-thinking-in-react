@@ -1,37 +1,30 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ProductRow from './ProductRow';
 
-class ProductTable extends Component {
-  constructor(props){
-    super(props)
-    this.state = {data: props.products}
-  }
+const ProductTable = (props) => {
+  const { products } = props;
 
-  render() {
-    console.log(this.state)
+  return (
+    <div className="Table">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          {products.map((item) => {
+            return <ProductRow key= {item.name} name={item.name} price ={item.price} stocked ={item.stocked}/>
+          })}
+          
+        </tbody>
 
-    return (
-      <div className="Table">
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Price</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-            {this.state.data.map((item) => {
-              return <ProductRow key= {item.name} name={item.name} price ={item.price} stocked ={item.stocked}/>
-            })}
-            
-          </tbody>
-
-        </table>
-        
-      </div>
-    );
-  }
+      </table>
+      
+    </div>
+  );
 }
 
 export default ProductTable;
