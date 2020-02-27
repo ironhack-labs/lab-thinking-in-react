@@ -6,11 +6,15 @@ class SearchBar extends Component{
     itemToSeach:''
   }
   handleChange = (e) =>{
-    //this.props.greet(e.target.value)
      this.setState({
       itemToSeach: e.target.value
     })
   
+  }
+  sendData=(e) =>{
+    this.handleChange(e) 
+    let item = document.getElementById("itemToSearch").value
+    return this.props.search(item)
   }
   render(){
     return (
@@ -21,12 +25,12 @@ class SearchBar extends Component{
             <input
               className="searchinputfield"
               type="text"
+              id="itemToSearch"
               value={this.state.itemToSeach}
-              onChange={ (e) =>this.handleChange(e) }
+              onChange={ (e) => this.sendData(e)}
             />
           </form>
          
-          <button onClick={this.props.itemSeach}> Search</button>
           <div className="checkboxdiv">
             <input
               type="checkbox"
