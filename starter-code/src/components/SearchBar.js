@@ -1,14 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class SearchBar extends Component {
-  render() {
+const SearchBar = (props) => {
     return (
-      <div className="App">
-        <input type='text' placeholder='Search'/>
-        
+      <div>
+        <input 
+        type='text'
+        className="input search-bar"
+        name="search" 
+        placeholder='Search'
+        defaultValue=""
+        onChange={props.handleChange}
+        onKeyDown={props.handleDelete}
+      />
       </div>
     );
-  }
 }
 
 export default SearchBar;
