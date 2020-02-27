@@ -1,19 +1,39 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import data from './data.json'
+import Table from './Components/ProductTable'
+import Search from './Components/SearchBar'
 
-export default class App extends Component {
+class App extends Component {
+  constructor(){
+    super()
+    this.state= {
+      filter: {search: "", tick: false},
+      data
+    }
+  }
+
+search = youSearch =>{
+  console.log(youSearch)
+this.setState({filter: youSearch})
+}
+
   render() {
+    
+    let filterProduct = this.state.data.data.filter(elm => elm.name.includes(this.state.filter.search))
+    this.state.filter.tick && (filterProduct = filterProduct.filter(elm => elm.stocked))
+
+
+
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <h1>IronStore</h1>
+        <Search search={this.search}/>
+        <Table data={[...filterProduct]} />
       </div>
-    );
+    )
   }
 }
+
+
+export default App
