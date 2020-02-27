@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import SearchBar from './components/SearchBar';
 import FilterableProductTable from './components/FilterableProductTable';
+/* Data */
+import productsList from './data.json'
+
 export default class App extends Component {
 
   state={
@@ -24,8 +26,11 @@ export default class App extends Component {
 
   render() {
     return (
+    
       <div className="App">
-       <FilterableProductTable  />
+        <h1>IronStore</h1>
+        <SearchBar />
+        <FilterableProductTable products={productsList}/>
       </div>
     );
   }
