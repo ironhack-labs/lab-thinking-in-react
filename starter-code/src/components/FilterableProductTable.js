@@ -7,7 +7,7 @@ class FilterableProductTable extends Component {
   render() {
     return (
       <div className="Filterable">
-        <h1>Iron Store</h1>
+        <h1>IronStore</h1>
         <SearchBar /> 
         <ProductTable  products = { data }/> 
       </div>
