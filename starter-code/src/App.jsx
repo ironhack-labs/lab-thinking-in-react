@@ -7,10 +7,11 @@ import FilterableProductTable from './FilterableProductTable/FilterableProductTa
 export default class App extends Component {
   state={
         products: data.data,
-        productsOriginal: data.data
+        productsOriginal: data.data,
+        checked: false
     }
 
-    searchBar = value => {
+  searchBar = value => {
     const productsCopie = [...this.state.products]
     const productsOriginal = [...this.state.productsOriginal]
     let newList = []
@@ -18,15 +19,34 @@ export default class App extends Component {
   
       newList = productsOriginal.filter(item => {
 
-        const lc = item.name
+        const lc = item.name.toLowerCase();
         console.log(lc)
-        const filter = value;
+        const filter = value.toLowerCase();
         return lc.includes(filter);
       })
     
     console.log(newList) 
-      this.setState({ products: newList })
-    }
+      this.setState({ products: newList },)
+  }
+
+  searchStock(stock) {
+  
+    console.log(this.state.checked)
+    let checked = !this.state.checked
+    console.log(checked)
+    const productsOriginal = [...this.state.productsOriginal]
+    let newList = []
+    if (checked === true){
+    newList = productsOriginal.filter(item => item.stocked === checked )
+  } else {
+    newList = productsOriginal
+  }
+    this.setState({
+      products: newList,
+      checked: !this.state.checked
+    },)
+    
+  }
 
   render() {
     return (
@@ -36,7 +56,7 @@ export default class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <div>
-          <FilterableProductTable searchBar = {(value) => this.searchBar(value)} products={ this.state.products } />
+          <FilterableProductTable searchBar = {(value) => this.searchBar(value)} products={ this.state.products } searchStock={(stock) => this.searchStock(stock)}/>
         </div> 
       </div>
     );
