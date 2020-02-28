@@ -3,19 +3,14 @@ import React, {Component} from 'react';
 class SearchBar extends Component{
  
   state={
-    itemToSeach:''
+    itemToSearch:''
   }
-  handleChange = (e) =>{
-     this.setState({
-      itemToSeach: e.target.value
-    })
   
-  }
   sendData=(e) =>{
-    this.handleChange(e) 
-    let item = document.getElementById("itemToSearch").value
-    return this.props.search(item)
+    this.setState({itemToSearch: e.target.value})
+    this.props.search(e.target.value)
   }
+  
   render(){
     return (
       <div>
@@ -25,8 +20,7 @@ class SearchBar extends Component{
             <input
               className="searchinputfield"
               type="text"
-              id="itemToSearch"
-              value={this.state.itemToSeach}
+              value={this.state.itemToSearch}
               onChange={ (e) => this.sendData(e)}
             />
           </form>

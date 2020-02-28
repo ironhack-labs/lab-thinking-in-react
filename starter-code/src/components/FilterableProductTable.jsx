@@ -17,21 +17,22 @@ class FilterableProductTable extends Component {
     }
     
   search(str){
-    console.log(str)
     this.setState({
         itemToSearch : str
     })
     
   }
+  
   itemsToSeach = ()=>{
-    console.log("holas")
+    let strToSearch = this.state.itemToSearch
+    console.log(this.itemsToSeach)
   }
     render(){
         return(
             <div className="FilterableProductTable">
                 <h1>IronStore</h1>
                 <SearchBar search={this.search}/>
-                <ProductTable products={this.props.data} filterProducts={this.itemsToSeach}/>
+                <ProductTable products={this.props.data} filterProducts={this.itemToSearch}/>
 
             </div>
             
