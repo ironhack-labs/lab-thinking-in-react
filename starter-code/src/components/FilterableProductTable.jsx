@@ -5,40 +5,40 @@ import ProductTable from './ProductTable';
 export default class FilterableProductTable extends Component {
   state = {
     articles: this.props.products,
-    displayAll: true
+    searchQuery: '',
+    displayInStock: false
   };
 
-  filterHandler = input => {
-    let filteredArticles = [...this.props.products];
-    if (input.type === 'checkbox' && input.checked) {
-      this.setState({ displayAll: false });
-      filteredArticles = [...filteredArticles.filter(a => a.stocked)];
-    }
-    console.log(filteredArticles);
+  updateSearchQuery = e => {
+    const value =
+      e.target.type === 'checkbox' ? e.target.checked : e.target.value;
     this.setState({
-      articles: filteredArticles
-    });
-
-    if (input.type === 'text') {
-      console.log(input.value);
-      filteredArticles.filter(a => {
-        a.name.toLowerCase().includes(input.value.toLowerCase() || input.value);
-      });
-    }
-    this.setState({
-      articles: filteredArticles
+      [e.target.name]: value
     });
   };
 
+  filterStock = articles => {
+    return articles.filter(a => a.stocked);
+  };
+
+  filterSearch = articles => {
+    return articles.filter(a => {
+      return a.name
+        .toLowerCase()
+        .includes(this.state.searchQuery.toLowerCase());
+    });
+  };
+  filterHandler = () => {
+    if (!this.state.displayInStock) {
+      return this.filterSearch(this.state.articles);
+    }
+    return this.filterSearch(this.filterStock(this.state.articles));
+  };
   render() {
     return (
       <div>
-        <SearchBar
-          // stockFilter={() => this.checkHandler()}
-          // searchFilter={e => this.searchHandler(e.target.value)}
-          clbk={this.filterHandler}
-        />
-        <ProductTable articles={this.state.articles} />
+        <SearchBar clbk={this.updateSearchQuery} />
+        <ProductTable articles={this.filterHandler()} />
       </div>
     );
   }
