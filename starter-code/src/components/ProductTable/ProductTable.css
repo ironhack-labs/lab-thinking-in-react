@@ -1,0 +1,30 @@
+.product-table {
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+.product-table table {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-table thead {
+    background-color: lightgray;
+}
+
+.product-table thead tr {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-table tbody tr {
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+}
+
+.product-table tr {
+    margin: 10px 0;
+}
