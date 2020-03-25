@@ -3,8 +3,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 20px;
-
+    margin: 20px auto;
+    width: 58vw;
 }
 
 .search-bar input[type=text] {
@@ -12,4 +12,5 @@
     font-size: 1em;
     border-radius: 5px;
     width: 100%;
+    border: 3px solid coral;
 }

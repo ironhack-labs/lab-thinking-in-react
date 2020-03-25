@@ -1,17 +1,22 @@
 .product-table {
+    margin: 15px auto;
+    max-width: 60vw;
     display: flex;
     justify-content: center;
-    border: 1px solid black;
+    border: 1px solid coral;
+    border-radius: 10px;
+    background-color: bisque;
 }
 
 .product-table table {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 450px;
 }
 
-.product-table thead {
-    background-color: lightgray;
+.product-table th {
+    font-size: 1.2rem;
 }
 
 .product-table thead tr {
@@ -22,7 +27,7 @@
 .product-table tbody tr {
     display: flex;
     justify-content: space-between;
-    width: 600px;
+    width: 40vw;
 }
 
 .product-table tr {
