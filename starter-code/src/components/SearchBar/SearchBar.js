@@ -8,11 +8,14 @@ export default class SearchBar extends Component {
         <form>
           <label>Search</label>
           <input
+            name="search"
             type="text"
             placeholder="Search for a product"
             onChange={this.props.handleSearch}
             value={this.props.search}
           />
+
+          <input type="checkbox" checked={this.props.products.checked} onChange={this.props.showProductsInStock}/>
         </form>
       </div>
     );
