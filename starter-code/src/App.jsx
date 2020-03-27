@@ -15,31 +15,35 @@ export default class App extends Component {
     let filteredProducts = [...this.state.allProducts].filter(el =>
       el.name.toLowerCase().includes(this.state.search)
     );
-    if (this.state.search === '') {
-      this.setState({
-        allProducts: [...products.data]
-      });
-    } else {
-      this.setState({
-        allProducts: filteredProducts
-      });
-    }
+
+    this.setState({
+      allProducts: filteredProducts
+    });
   };
 
   handleSearch = e => {
     // here we set the search term to the state
     const { name, value } = e.target;
-    this.setState({ [name]: value }, this.searchProducts);
+    this.setState({
+      [name]: value
+    });
   };
 
   showProductsInStock = () => {
     let productsInStock = [...this.state.allProducts].filter(
       product => product.stocked === true
     );
-
     this.setState({
-      allProducts: productsInStock
+      checked: !this.state.checked
     });
+
+    !this.state.checked
+      ? this.setState({
+          allProducts: productsInStock
+        })
+      : this.setState({
+          allProducts: [...products.data]
+        });
   };
 
   render() {

@@ -14,3 +14,7 @@
     width: 100%;
     border: 3px solid coral;
 }
+
+.search-bar input[type=checkbox] {
+    margin: 20px 10px 0 0;
+}

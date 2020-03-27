@@ -6,7 +6,6 @@ export default class SearchBar extends Component {
     return (
       <div className="search-bar">
         <form>
-          <label>Search</label>
           <input
             name="search"
             type="text"
@@ -14,8 +13,14 @@ export default class SearchBar extends Component {
             onChange={this.props.handleSearch}
             value={this.props.search}
           />
-
-          <input type="checkbox" checked={this.props.products.checked} onChange={this.props.showProductsInStock}/>
+          <label>
+            <input
+              type="checkbox"
+              checked={this.props.products.checked}
+              onChange={this.props.showProductsInStock}
+            />
+            Only show products in stock
+          </label>
         </form>
       </div>
     );
