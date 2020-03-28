@@ -12,7 +12,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 450px;
 }
 
 .product-table th {
@@ -24,6 +23,10 @@
     justify-content: space-between;
 }
 
+.product-table tbody {
+    height: 340px;
+}
+
 .product-table tbody tr {
     display: flex;
     justify-content: space-between;
@@ -31,5 +34,5 @@
 }
 
 .product-table tr {
-    margin: 10px 0;
+    margin: 20px 0;
 }
