@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import data from './data.json'
+import FilterableProductTable from './components/FilterableProductTable';
 
-export default class App extends Component {
+class App extends Component {
+
+  constructor(){
+    super()
+    this.state = { data }
+  }
+
   render() {
+    const { data } = this.state
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <h1 className="title">IronStore</h1>
+        <FilterableProductTable products={ data } />
       </div>
     );
   }
 }
+
+export default App;
