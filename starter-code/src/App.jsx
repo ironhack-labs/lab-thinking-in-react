@@ -1,18 +1,30 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import SearchBar from "./components/SearchBar";
+import ProductTable from "./components/ProductTable";
+import Data from './data.json';
 
 export default class App extends Component {
+
+  state = {
+    searchValue: '',
+    onlyShowStock: false,
+  };
+
+  handleSearchChange = (state) => {
+    this.setState(state);
+  };
+
   render() {
+    const {searchValue, onlyShowStock} = this.state;
+    const filteredProducts = Data['data'].filter(product => {
+        if (product.name.toLowerCase().includes(searchValue.toLowerCase()) && ((onlyShowStock && product.stocked) || !onlyShowStock )) return product;
+      }
+    );
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <SearchBar searchParams={{searchValue, onlyShowStock}} onChangeSearch={this.handleSearchChange}/>
+        <ProductTable products={filteredProducts}/>
       </div>
     );
   }

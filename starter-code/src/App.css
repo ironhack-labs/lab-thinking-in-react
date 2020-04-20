@@ -26,3 +26,10 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+table {
+  margin:20px auto;
+  width: 20vw;
+}
+tr.out td {
+  color: red;
+}
