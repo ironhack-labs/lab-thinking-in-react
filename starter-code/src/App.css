@@ -2,27 +2,19 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.search-bar {
+  width: 50%;
+  height: 1.5rem;
+  border-radius: 5px;
+  border: 1px solid gray;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.stock-option {
+  display: flex;
+  justify-content: center;
 }
 
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.stock-option-check {
+  margin-top: 1.1rem;
+  margin-right: 0.5rem;
 }
