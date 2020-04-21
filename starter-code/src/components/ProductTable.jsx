@@ -3,6 +3,7 @@ import ProductRow from './ProductRow';
 
 class ProductTable extends Component {
   render() {
+    const { products } = this.props;    
     return (
       <div>
         <table>
@@ -12,9 +13,7 @@ class ProductTable extends Component {
               <th>Price</th>
             </tr>
           </thead>
-          <tbody>
-            <ProductRow />
-          </tbody>
+            <ProductRow products={ products } />
         </table>
       </div>
     );

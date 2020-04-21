@@ -2,17 +2,12 @@ import React, { Component } from 'react';
 
 class ProductRow extends Component {
   render() {
+    const { products } = this.props;    
+    console.log(products);
     return (
-      <div>
-        <tr>
-          <td>Jill</td>
-          <td>Smith</td>
-        </tr>
-        <tr>
-          <td>Eve</td>
-          <td>Jackson</td>
-        </tr>
-      </div>
+      <tbody>
+        {products.data.map(item => <tr key={item.name}><td>{item.name}</td><td>{item.price}</td></tr>)}
+      </tbody>
     );
   }
 }

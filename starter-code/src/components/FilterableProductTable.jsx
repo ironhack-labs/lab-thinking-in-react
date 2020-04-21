@@ -4,11 +4,12 @@ import ProductTable from './ProductTable';
 
 class FilterableProductTable extends Component {
   render() {
+    const { products } = this.props;
     return (
       <div>
         <h1>IronStore</h1>
         <SearchBar />
-        <ProductTable />
+        <ProductTable products={ products } />
       </div>
     );
   }
