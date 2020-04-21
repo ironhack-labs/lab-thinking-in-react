@@ -1,0 +1,9 @@
+.prodRow {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 25px;
+  height: 45px;
+  border-bottom: 2px rgb(17, 103, 160) solid;
+  color: rgb(17, 103, 160);
+}

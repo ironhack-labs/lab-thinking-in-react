@@ -1,0 +1,11 @@
+
+.table {
+  text-align: center;
+  margin: 5%;
+}
+.tableTitle {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: rgb(17, 103, 160);
+  color: aliceblue;
+}
