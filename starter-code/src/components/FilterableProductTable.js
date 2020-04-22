@@ -15,6 +15,7 @@ class FilterableProductTable extends Component {
         <SearchBar data={data.data} />
 
         <hr/>
+        Products:
         <ShowData data={data.data} />
       </div>
 

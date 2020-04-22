@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import '../App.css'
 
 class ShowData extends Component {
 
@@ -7,12 +7,21 @@ class ShowData extends Component {
     const {data} = this.props
 
     return (
-      <div>
-        {data.map((product, index)=>{
-          return (<div key={product.name}>
-                    {product.name} - {product.price}
-                  </div>
-                )  
+      <div className="show-products">
+        {data.map((product)=>{
+          if(product.stocked){
+            return (
+              <div key={product.name}>
+                {product.name} - {product.price}
+               </div>
+            )
+          } else {
+            return (
+              <div key={product.name} style={{color: "red"}} >
+                {product.name} - {product.price}
+              </div>
+              )  
+          }
         })
         }
       </div>

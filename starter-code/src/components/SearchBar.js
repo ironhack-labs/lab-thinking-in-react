@@ -1,13 +1,10 @@
 import React, {Component} from 'react';
-import ShowData from './ShowData';
-
 
 class SearchBar extends Component {
 
   state = {
     inputValue : "",
     showOnlyInStock : false,
-    product : [],
   }
 
   handleChange = (e) =>{
@@ -33,7 +30,7 @@ class SearchBar extends Component {
 
   render(){
     const {data} = this.props;
-    const {showOnlyInStock, product, inputValue} = this.state;
+    const {showOnlyInStock, inputValue} = this.state;
     const productsInStock = [];
 
 
