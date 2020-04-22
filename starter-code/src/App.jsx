@@ -1,19 +1,37 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import data from './data.json';
+import FilterableProductTable from './components/FilterableProductTable';
+import SearchBar from './components/SearchBar';
+import ProductTable from './components/ProductTable';
+import ProductRow from './components/ProductRow';
 import './App.css';
 
-export default class App extends Component {
+class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <FilterableProductTable products={ data } />
+      </div>
+
+      <div className="search-bar">
+        <SearchBar
+  
+        />
+      </div>
+
+       <div className="product-table">
+        <ProductTable/>
+       </div>
+
+       <div className="product-row">
+        <ProductRow
+          product=''
+        />
+       </div>
       </div>
     );
   }
 }
+
+export default App;
