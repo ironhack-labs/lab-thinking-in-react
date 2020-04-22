@@ -6,7 +6,7 @@ const ProductRow = (props) => {
   const { name, price, stocked } = product;
   const divStyle = {
     color: stocked ? 'default': 'red'
-  }
+  };
   return (
     <div className='product-row'>
       <div className='product-name' style={divStyle}>{name}</div>

@@ -4,25 +4,30 @@ import ProductRow from './ProductRow';
 import '../App.css';
 
 const ProductTable = (props) => {
-  const { products, search } = props;
+  const { products, state } = props;
+  const { search, stocked } = state;
+
+  const match = (product) => {
+    if (product.name.toLowerCase().includes(search.toLowerCase())) { return true; }
+    return false;
+  }
+
+  const stockFilter = (product) => {
+    if (stocked && !product.stocked) { return false; }
+    return true;
+  }
+
   return (
     <div className='product-table'>
       <ProductHeader />
       {products.map((product, i) => {
-        if (match(search, product.name)) {
+        if (match(product) && stockFilter(product)) {
           return <ProductRow key={i + product} product={product} />;
         }
         return null;
       })}
     </div>
   );
-}
-
-const match = (search, name) => {
-  if (name.toLowerCase().includes(search.toLowerCase())) {
-    return true;
-  }
-  return false;
 }
 
 export default ProductTable;

@@ -1,15 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import data from './data.json';
+import Header from './components/Header';
 import FilterableProductTable from './components/FilterableProductTable';
 import './App.css';
 
-export default class App extends Component {
-  render() {
-    const products = data.data;
-    return (
-      <div className='App'>
-        <FilterableProductTable products={products} />
-      </div>
-    );
-  }
+const App = () => {
+  const products = data.data;
+  return (
+    <div className='App'>
+      <Header />
+      <FilterableProductTable products={products} />
+    </div>
+  );
 }
+
+export default App;
