@@ -5,13 +5,12 @@ import '../App.css';
 
 const ProductTable = (props) => {
   const { products, search } = props;
-  console.log('products', products);
   return (
     <div className='product-table'>
       <ProductHeader />
-      {products.map((product, index) => {
-        if (searchMatch(search, product.name)) {
-          return <ProductRow key={index + product} product={product} />
+      {products.map((product, i) => {
+        if (match(search, product.name)) {
+          return <ProductRow key={i + product} product={product} />;
         }
         return null;
       })}
@@ -19,7 +18,7 @@ const ProductTable = (props) => {
   );
 }
 
-const searchMatch = (search, name) => {
+const match = (search, name) => {
   if (name.toLowerCase().includes(search.toLowerCase())) {
     return true;
   }

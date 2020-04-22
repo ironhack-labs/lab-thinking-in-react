@@ -1,49 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../App.css';
 
-export default class SearchBar extends Component {
-  state = {
-    search: '',
-    onlyStock: false,
-  };
+const SearchBar = (props) => {
+  const { search, stocked, changeState } = props;
 
-  handleInput = (e) => {
+  const handleInput = (e) => {
     const { target } = e;
-    const { name } = target;
-    const value = name === 'onlyStock' ? target.checked : target.value;
-    console.log(`Input name: ${name}, value: ${value}`);
-    this.setState({
-      [name]: value,
-    }, () => {
-      const { setFilter } = this.props;
-      setFilter(value);
-    });
+    const { id } = target;
+    const value = id === 'search' ? target.value : target.checked;
+    changeState({ id, value });
   };
 
-  render() {
-    const { search, onlyStock } = this.state;
-    return (
-      <div className='search-bar'>
-          <label id='search-box-label' htmlFor='search-box'>Search</label>
-          <input
-            type='text'
-            placeholder='iPhone'
-            id='search-box'
-            name='search'
-            value={search}
-            onChange={this.handleInput}
-          />
-          <div>
-            <input
-              type='checkbox'
-              name='onlyStock'
-              id='checkbox'
-              checked={onlyStock}
-              onChange={this.handleInput}
-            />
-            <label htmlFor='checkbox'>Only show products in stock</label>
-          </div>
-      </div>
-    );
-  }
+  return (
+    <div className='search-bar'>
+        <label id='search-box-label' htmlFor='search-box'>Search</label>
+        <input type='text' id='search' value={search} onChange={handleInput} />
+        <div>
+          <input type='checkbox' id='stocked' checked={stocked} onChange={handleInput} />
+          <label htmlFor='checkbox'>Only show products in stock</label>
+        </div>
+    </div>
+  );
 }
+
+export default SearchBar;

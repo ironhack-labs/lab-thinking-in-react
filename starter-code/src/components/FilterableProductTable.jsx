@@ -5,22 +5,20 @@ import ProductTable from './ProductTable';
 import '../App.css';
 
 export default class FilterableProductTable extends Component {
-  state = {
-    search: '',
-  };
+  state = { search: '', stocked: false };
 
-  setFilter = (search) => {
-    console.log('filter is', search);
-    this.setState({ search });
+  changeState = (obj) => {
+    const { id, value } = obj;
+    this.setState({ [id]: value });
   }
 
   render() {
     const { products } = this.props;
-    const { search, setFilter } = this.state;
+    const { search } = this.state;
     return (
       <div className='filterable-product-table'>
         <Header />
-        <SearchBar setFilter={this.setFilter} />
+        <SearchBar changeState={this.changeState} />
         <ProductTable products={products} search={search} />
       </div>
     );
