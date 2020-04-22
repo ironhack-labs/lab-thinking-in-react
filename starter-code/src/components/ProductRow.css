@@ -4,3 +4,6 @@
     border: none;
     padding: 20px;
 }
+
+tr:nth-child(even) {background: #FFFFFF}
+tr:nth-child(odd) {background: #F7F7F7}

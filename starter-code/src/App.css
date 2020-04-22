@@ -34,3 +34,7 @@
   color: white;
   padding: 20px;
 }
+
+table {
+  border: none;
+}
