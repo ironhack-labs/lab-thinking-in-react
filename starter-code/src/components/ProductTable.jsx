@@ -6,8 +6,8 @@ class ProductTable extends Component {
     const { products } = this.props;    
     return (
       <div>
-        <table>
-          <thead>
+        <table className="full-table">
+          <thead className="head-table">
             <tr>
               <th>Name</th>
               <th>Price</th>

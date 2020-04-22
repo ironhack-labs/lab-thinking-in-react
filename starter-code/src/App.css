@@ -3,7 +3,7 @@
 }
 
 .search-bar {
-  width: 50%;
+  width: 53%;
   height: 1.5rem;
   border-radius: 5px;
   border: 1px solid gray;
@@ -17,4 +17,19 @@
 .stock-option-check {
   margin-top: 1.1rem;
   margin-right: 0.5rem;
+}
+
+.full-table {
+  width: 100%;
+  margin-top: 2rem;
+  padding: 0 20rem;
+}
+
+.head-table {
+  background-color: #dfe6e9;
+  font-size: 1.5rem;
+}
+
+.item-table {
+  height: 2rem;
 }
