@@ -15,13 +15,19 @@ class FilterableProductTable extends Component {
     })
   }
 
+  checkedOrNot = () => {
+    this.setState({
+      checkBox: !this.state.checkBox,
+    })
+  }
+
   render() {
     const { products } = this.props;
     return (
       <div>
         <h1>IronStore</h1>
-        <SearchBar filter={this.filterProducts} />
-        <ProductTable products={ products } searchQuery={this.state.search}/>
+        <SearchBar filter={this.filterProducts} check={this.checkedOrNot}/>
+        <ProductTable products={ products } searchQuery={this.state.search} checkBox={this.state.checkBox}/>
       </div>
     );
   }

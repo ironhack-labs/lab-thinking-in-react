@@ -3,7 +3,7 @@ import ProductRow from './ProductRow';
 
 class ProductTable extends Component {
   render() {
-    const { products, searchQuery } = this.props;
+    const { products, searchQuery, checkBox } = this.props;
     return (
       <div>
         <table className="full-table">
@@ -13,7 +13,7 @@ class ProductTable extends Component {
               <th>Price</th>
             </tr>
           </thead>
-            <ProductRow products={ products } searchQuery={ searchQuery } />
+            <ProductRow products={ products } searchQuery={ searchQuery } checkBox={ checkBox } />
         </table>
       </div>
     );

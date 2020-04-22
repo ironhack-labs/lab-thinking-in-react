@@ -6,13 +6,17 @@ class SearchBar extends Component {
     this.props.filter(e.target.value);
   }
 
+  handleCheck = () => {
+    this.props.check();
+  }
+
   render() {
     return (
       <div>
         <p>Search</p>
-        <input onChange={this.handleChange} className='search-bar' type="text"/>
+        <input placeholder={'Search here...'} onChange={this.handleChange} className='search-bar' type="text"/>
         <div className='stock-option'>
-          <input className='stock-option-check' type="checkbox" name="" id=""/><p className='stock-option-description'>Only show products on stock</p>
+          <input onChange={this.handleCheck} className='stock-option-check' type="checkbox" name="checkbox" /><p className='stock-option-description'>Only show products on stock</p>
         </div>
       </div>
     );

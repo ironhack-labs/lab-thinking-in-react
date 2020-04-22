@@ -8,19 +8,33 @@ class ProductRow extends Component {
     }
   }
 
-  render() {
-    const { products, searchQuery } = this.props;    
+  filterRendering = () => {
+    const { products, searchQuery, checkBox } = this.props;
+    const availableProducts = products.data.filter(item => item.stocked === true);
+
+    if (searchQuery === '' && checkBox === false ) {
+      return products.data.map(item => <tr className="item-table" key={item.name}><td style={this.outOfStock(item)}>{item.name}</td><td>{item.price}</td></tr>)
+    } else if (searchQuery !== '' && checkBox === false) {
+      return products.data.map(item => {
+        if (item.name.toLowerCase().includes(searchQuery.toLowerCase())) {
+          return <tr className="item-table" key={item.name}><td style={this.outOfStock(item)}>{item.name}</td><td>{item.price}</td></tr>
+        } 
+      })
+    } else if (searchQuery === '' && checkBox === true) {
+      return availableProducts.map(item => <tr className="item-table" key={item.name}><td style={this.outOfStock(item)}>{item.name}</td><td>{item.price}</td></tr>)
+    } else {
+      return availableProducts.map(item => {
+        if (item.name.toLowerCase().includes(searchQuery.toLowerCase())) {
+          return <tr className="item-table" key={item.name}><td style={this.outOfStock(item)}>{item.name}</td><td>{item.price}</td></tr>
+        } 
+      })
+    }
+  }
+
+  render() { 
     return (
       <tbody>
-        {products.data.map(item => {
-          if (searchQuery === '') {
-            return <tr className="item-table" key={item.name}><td style={this.outOfStock(item)}>{item.name}</td><td>{item.price}</td></tr>
-          } else {
-            if (item.name.toLowerCase().includes(searchQuery.toLowerCase())) {
-              return <tr className="item-table" key={item.name}><td style={this.outOfStock(item)}>{item.name}</td><td>{item.price}</td></tr>
-            } 
-          }
-        })}
+        {this.filterRendering()}
       </tbody>
     );
   }
