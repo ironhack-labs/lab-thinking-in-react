@@ -26,3 +26,31 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+.StyleRound{
+  width: 70%;
+  margin: 15px auto;
+  border: 1px solid #6b6b6b;
+  border-spacing: 0px; 
+}
+
+thead{
+  font-size: 18px;
+}
+th{
+  padding: 10px;
+  border: 1px solid #6b6b6b;
+  background-color: #66b7f4;
+}
+
+td{
+  padding: 5px;
+  border: 1px solid #6b6b6b;
+}
+
+.SearchBar {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
