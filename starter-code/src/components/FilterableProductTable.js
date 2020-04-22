@@ -34,7 +34,6 @@ class FilterableProductTable extends Component {
         return (
             <div>
                 <SearchBar setFilterProducts={this.handleSearch} setFilterCheck={this.handleCheck}/>
-                {/* <ProductTable products={products} /> */}
                 <ProductTable products={filteredProducts} />
             </div>
         )

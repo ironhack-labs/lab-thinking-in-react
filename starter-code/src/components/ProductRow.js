@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './ProductRow.css';
 
 class ProductRow extends Component {
     render() {
@@ -9,8 +10,8 @@ class ProductRow extends Component {
 
         return (
             <tr>
-              <td style={withoutStock}>{name}</td>
-              <td>{price}</td>
+              <td className='ProductRow-td' style={withoutStock}>{name}</td>
+              <td className='ProductRow-td'>{price}</td>
             </tr>
         )
     }

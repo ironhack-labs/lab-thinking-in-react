@@ -26,3 +26,11 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.App-h1 {
+  font-size: 3.5rem;
+  margin: 0;
+  background-color: #54A9CD;
+  color: white;
+  padding: 20px;
+}

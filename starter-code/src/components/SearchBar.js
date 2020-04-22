@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './SearchBar.css';
 
 class SearchBar extends Component {
     state = {
@@ -26,11 +27,13 @@ class SearchBar extends Component {
         const { textToSearch, onlyProductsOnStock } = this.state;
 
         return (
-            <div>
+            <div className='SearchBar'>
                 <label htmlFor='textToSearch'>Search</label>
-                <input id='textToSearch' type='search' name='textToSearch' value={textToSearch} onChange={this.handleSearch}></input>
-                <input id='onlyProductsOnStock' type='checkbox' name='onlyProductsOnStock' value={onlyProductsOnStock} onChange={this.handleCheck}></input>
-                <label htmlFor='onlyProductsOnStock'>Only show products on stock</label>
+                <input className='SearchBar-input' id='textToSearch' type='text' name='textToSearch' value={textToSearch} onChange={this.handleSearch}></input>
+                <div className='SearchBar-check'>
+                    <input id='onlyProductsOnStock' type='checkbox' name='onlyProductsOnStock' value={onlyProductsOnStock} onChange={this.handleCheck}></input>
+                    <label htmlFor='onlyProductsOnStock'>Only show products on stock</label>
+                </div>
             </div>
         )
     }

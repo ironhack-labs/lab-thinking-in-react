@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ProductRow from './ProductRow';
+import './ProductTable.css'
 
 class ProductTable extends Component {
     render() {
@@ -7,12 +8,11 @@ class ProductTable extends Component {
 
         return (
             <div>
-                {/* <table cellSpacing='0'> */}
-                <table>
+                <table cellSpacing='0'>
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Price</th>
+                            <th className='ProductTable-th'>Name</th>
+                            <th className='ProductTable-th'>Price</th>
                         </tr>
                     </thead>
                     <tbody>
