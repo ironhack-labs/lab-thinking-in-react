@@ -9,11 +9,18 @@ class ProductRow extends Component {
   }
 
   render() {
-    const { products } = this.props;    
-    console.log(products);
+    const { products, searchQuery } = this.props;    
     return (
       <tbody>
-        {products.data.map(item => <tr className="item-table" key={item.name}><td style={this.outOfStock(item)}>{item.name}</td><td>{item.price}</td></tr>)}
+        {products.data.map(item => {
+          if (searchQuery === '') {
+            return <tr className="item-table" key={item.name}><td style={this.outOfStock(item)}>{item.name}</td><td>{item.price}</td></tr>
+          } else {
+            if (item.name.toLowerCase().includes(searchQuery.toLowerCase())) {
+              return <tr className="item-table" key={item.name}><td style={this.outOfStock(item)}>{item.name}</td><td>{item.price}</td></tr>
+            } 
+          }
+        })}
       </tbody>
     );
   }
