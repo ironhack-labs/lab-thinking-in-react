@@ -8,28 +8,30 @@ class ProductRow extends Component {
     }
   }
 
-  filterRendering = () => {
-    const { products, searchQuery, checkBox } = this.props;
-    const availableProducts = products.data.filter(item => item.stocked === true);
+filterRendering = () => {
+  const { products, searchQuery, checkBox } = this.props;
+  const availableProducts = products.data.filter(item => item.stocked === true);
+  const PrintedRow = (item) => <tr className="item-table" key={item.name}><td style={this.outOfStock(item)}>{item.name}</td><td>{item.price}</td></tr>
+  const includes = (item) => item.name.toLowerCase().includes(searchQuery.toLowerCase());
 
-    if (searchQuery === '' && checkBox === false ) {
-      return products.data.map(item => <tr className="item-table" key={item.name}><td style={this.outOfStock(item)}>{item.name}</td><td>{item.price}</td></tr>)
-    } else if (searchQuery !== '' && checkBox === false) {
-      return products.data.map(item => {
-        if (item.name.toLowerCase().includes(searchQuery.toLowerCase())) {
-          return <tr className="item-table" key={item.name}><td style={this.outOfStock(item)}>{item.name}</td><td>{item.price}</td></tr>
-        } 
-      })
-    } else if (searchQuery === '' && checkBox === true) {
-      return availableProducts.map(item => <tr className="item-table" key={item.name}><td style={this.outOfStock(item)}>{item.name}</td><td>{item.price}</td></tr>)
-    } else {
-      return availableProducts.map(item => {
-        if (item.name.toLowerCase().includes(searchQuery.toLowerCase())) {
-          return <tr className="item-table" key={item.name}><td style={this.outOfStock(item)}>{item.name}</td><td>{item.price}</td></tr>
-        } 
-      })
-    }
+  if (searchQuery === '' && checkBox === false ) {
+    return products.data.map(item => PrintedRow(item));
+  } else if (searchQuery !== '' && checkBox === false) {
+    return products.data.map(item => {
+      if (includes(item)) {
+        return PrintedRow(item);
+      } 
+    })
+  } else if (searchQuery === '' && checkBox === true) {
+    return availableProducts.map(item => PrintedRow(item));
+  } else {
+    return availableProducts.map(item => {
+      if (includes(item)) {
+        return PrintedRow(item);
+      } 
+    })
   }
+}
 
   render() { 
     return (
@@ -41,3 +43,8 @@ class ProductRow extends Component {
 }
 
 export default ProductRow;
+
+
+
+
+
