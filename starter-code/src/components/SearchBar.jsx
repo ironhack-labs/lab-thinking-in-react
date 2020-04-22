@@ -14,6 +14,9 @@ export default class SearchBar extends Component {
     console.log(`Input name: ${name}, value: ${value}`);
     this.setState({
       [name]: value,
+    }, () => {
+      const { setFilter } = this.props;
+      setFilter(value);
     });
   };
 
