@@ -2,9 +2,12 @@ import React from 'react';
 import '../App.css';
 
 const ProductRow = (props) => {
+  const { product } = props;
+  const { name, price } = product;
   return (
     <div className='product-row'>
-      product row
+      <div className='product-name'>{name}</div>
+      <div className='product-price'>{price}</div>
     </div>
   );
 }

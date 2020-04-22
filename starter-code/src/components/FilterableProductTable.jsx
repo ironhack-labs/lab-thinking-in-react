@@ -9,10 +9,9 @@ export default class FilterableProductTable extends Component {
     const { products } = this.props;
     return (
       <div className='filterable-product-table'>
-      <Header />
-      <SearchBar />
-      <ProductTable />
-      {JSON.stringify(products)}
+        <Header />
+        <SearchBar />
+        <ProductTable products={products} />
       </div>
     );
   }

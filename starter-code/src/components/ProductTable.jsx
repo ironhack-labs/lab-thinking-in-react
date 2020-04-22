@@ -1,12 +1,17 @@
 import React from 'react';
+import ProductHeader from './ProductHeader';
 import ProductRow from './ProductRow';
 import '../App.css';
 
 const ProductTable = (props) => {
+  const { products } = props;
+  console.log('products', products);
   return (
     <div className='product-table'>
-      product table
-      <ProductRow />
+      <ProductHeader />
+      {products.map((product, index) => {
+        return <ProductRow key={index + product} product={product} />
+      })}
     </div>
   );
 }

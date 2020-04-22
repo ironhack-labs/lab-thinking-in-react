@@ -1,4 +1,47 @@
 .App {
   width: 70vw;
-  margin: 0 auto;
+  margin: 20px auto;
+  color: #333;
+}
+
+.search-bar {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#search-box {
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+}
+
+#checkbox {
+  margin: 10px;
+}
+
+.product-table {
+  margin-top: 20px;
+}
+
+.product-header {
+  font-weight: 700;
+}
+
+.product-header, .product-row {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.product-name {
+  width: 25vw;
+}
+
+.product-price {
+  width: 25vw;
+  text-align: right;
 }
