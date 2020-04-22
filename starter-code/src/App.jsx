@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import data from './data.json';
 import './App.css';
+import FilterableProductTable from './components/FilterableProductTable';
 
 export default class App extends Component {
   render() {
@@ -10,9 +12,8 @@ export default class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <FilterableProductTable data={data} />
+
       </div>
     );
   }
