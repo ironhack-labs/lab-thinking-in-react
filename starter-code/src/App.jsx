@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import FilterableProductTable from './components/filterableProductTable/FilterableProductTable.js';
+
 import './App.css';
 
 export default class App extends Component {
@@ -7,12 +8,11 @@ export default class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">IronStore</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div>
+          <FilterableProductTable />
+        </div>
       </div>
     );
   }
