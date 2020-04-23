@@ -2,25 +2,23 @@ import React, { Component } from 'react';
 import ProductRow from './ProductRow'
 
 class ProductTable extends Component {
-    state = {
-        items: []
-    }
-
-    componentDidMount() {
-        this.setState({items: this.props.products})
-    }
-
     render() {
+        const searchTerm = this.props.searchTerm;
+
         return(
             <table>
-                <tr>
-                    <th>Name</th>
-                    <th>Price</th>
-                </tr>
+                <thead>
+                     <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
 
-                { this.state.items.map(item => (
-                    <ProductRow name={item.name} price={item.price} stock={item.stocked ? null : "outOfStock"} />
-                )) }
+                <tbody>
+                    { this.props.products.map((item, i) => (
+                        <ProductRow key={i} name={item.name} price={item.price} stock={item.stocked ? null : "outOfStock"} />
+                    )) }
+                </tbody>
             </table>
         )
     }

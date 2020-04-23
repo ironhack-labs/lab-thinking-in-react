@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
 class SearchBar extends Component {
-  state = {
-    searchTerm: '',
-  };
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+  }
 
-  handleChange = (e) => {
-    this.setState({ searchTerm: e.target.value });
-    console.log(this.state.searchTerm);
-  };
+  handleChange(e) {
+    this.props.onSearch(e.target.value);
+  }
 
   render() {
     return (
@@ -17,7 +17,7 @@ class SearchBar extends Component {
         <input
           type="search"
           placeholder="Type a product…"
-          value={this.state.searchTerm}
+          value={this.props.searchTerm}
           onChange={this.handleChange}
         />
       </form>

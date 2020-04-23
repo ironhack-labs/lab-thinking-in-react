@@ -1,36 +1,28 @@
 import React, {Component} from 'react';
 import SearchBar from './SearchBar';
 import ProductTable from './ProductTable';
-import products from '../data.json'
 
 class FilterableProductTable extends Component {
 
-    state = {
-        productList: products.data,
-        filteredProductList: []
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            searchTerm: ''
+        }
+
+        this.handleSearch = this.handleSearch.bind(this)
     }
 
-    componentWillMount() {
-        this.setState({ filteredProductList: this.state.productList })
-    }
-
-    filterProducts = () => {
-        let filteredProducts = this.state.productList;
-
-        filteredProducts = filteredProducts.filter(product => {
-            product.name.includes('ball');
-        })
-    }
-
-    componentDidUpdate() {
-        // change the state here
+    handleSearch(searchTerm) {
+        this.setState({ searchTerm: searchTerm })
     }
 
     render() {
         return(
             <div>
-                <SearchBar />
-                <ProductTable products={this.state.filteredProductList} />
+                <SearchBar searchTerm={this.state.searchTerm} onSearch={this.handleSearch} />
+                <ProductTable products={this.props.products} searchTerm={this.state.searchTerm} />
             </div>
         )
     }
