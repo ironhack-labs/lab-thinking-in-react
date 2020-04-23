@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  margin: 40px;
 }
 
 .App-logo {
@@ -25,4 +26,32 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.SearchBarMainDiv {
+  margin: 20px 0px;
+}
+
+.SearchBarSearch {
+  width: 100%;
+  margin: 10px 0px;
+  font-size: large;
+}
+
+.ProductTableHeader {
+  background: #eeeeee;
+  float: left;
+  width: 50%;
+  font-weight: bold;
+  line-height: 40px;
+}
+
+.ProductRowMainDiv {
+  border-top: 1px solid #cccccc;
+}
+
+.ProductRowColumn {
+  margin: 5px auto;
+  float: left;
+  width: 50%;
 }
