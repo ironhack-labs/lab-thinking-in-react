@@ -3,18 +3,11 @@ import SearchBar from './SearchBar';
 import ProductTable from './ProductTable';
 
 class FilterableProductTable extends Component {
-
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            searchTerm: ''
-        }
-
-        this.handleSearch = this.handleSearch.bind(this)
+    state = {
+        searchTerm: ''
     }
 
-    handleSearch(searchTerm) {
+    handleSearch = (searchTerm) => {
         this.setState({ searchTerm: searchTerm })
     }
 

@@ -29,7 +29,7 @@ class ProductTable extends Component {
                 </thead>
 
                 <tbody>
-                    { rows }
+                    { rows.length > 0 ? rows : <tr><td>No search results</td></tr> }
                 </tbody>
             </table>
         )
