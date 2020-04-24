@@ -1,13 +1,14 @@
-import React from "react";
+import React, { Component } from "react";
 
-class SearchBar extends React.Component {
+class SearchBar extends Component {
   render() {
     return (
-      <div>
-        <h3>Search</h3>
-        <input> {this.props.data}</input>
-        <h3>Only show products on stock</h3>
-      </div>
+      <div className="uk-margin">
+        <div className="uk-inline">
+            <span className="uk-form-icon" uk-icon="icon: user"></span>
+            <input className="uk-input" type="text"/>
+        </div>
+    </div>
     )
   }
 }

@@ -1,14 +1,24 @@
 import React, { Component } from "react";
-import ProductRow from './ProductRow';
 
-class ProductTable extends Component {
+
+export default class ProductTable extends Component {
   render() {
+    console.log("me llegan los props", this.props)
     return (
-      <div>
-        <h3></h3>
-      </div>
+      <table className="uk-table uk-table-striped">
+    <thead>
+        <tr>
+            <th>Table Heading</th>
+            <th>Table Heading</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Table Data</td>
+            <td>Table Data</td> 
+        </tr>
+    </tbody>
+</table>
     )
   }
 }
-
-export default ProductTable;
