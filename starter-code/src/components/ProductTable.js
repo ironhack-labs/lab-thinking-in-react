@@ -1,22 +1,30 @@
 import React, { Component } from "react";
+import './TableStyles.css';
 
 
 export default class ProductTable extends Component {
   render() {
     console.log("me llegan los props", this.props)
+    let {data} = this.props
     return (
       <table className="uk-table uk-table-striped">
     <thead>
         <tr>
-            <th>Table Heading</th>
-            <th>Table Heading</th>
+            <th>Name</th>
+            <th>Price</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Table Data</td>
-            <td>Table Data</td> 
+    {/* to validate if we have data */}
+       {data.length ? 
+       data.map((item, index) =>
+        <tr key={index}>
+        {/* ternary operator to validate products in stock*/}
+            <td className= {item.stocked ? '' : 'isStock'}>{item.name}</td>
+            <td>{item.price}</td> 
         </tr>
+       )
+        : ''}
     </tbody>
 </table>
     )
