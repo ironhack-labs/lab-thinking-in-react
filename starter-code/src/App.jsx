@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import SearchBar from './components/SearchBar';
-import ProductTable from './components/ProductTable';
+import SearchBar from './components/searchBar/SearchBar';
+import ProductTable from './components/productTable/ProductTable';
 import dataOriginal from './data.json';
-
 
 class App extends Component {
   state =  {
@@ -34,7 +33,7 @@ handleChange = (e) => {
     let {handleChange, checkIs} = this
     return (
       <div className="App">
-      <h1>IronStore</h1>
+       <h1>IronStore</h1>
         <SearchBar handleChange= {handleChange} checkIs= {checkIs}/>
         <ProductTable data= {this.state.data} isAvailable={this.state.isAvailable}/>
       </div>

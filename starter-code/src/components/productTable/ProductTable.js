@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import './TableStyles.css';
 
-
 export default class ProductTable extends Component {
   render() {
     console.log("me llegan los props", this.props)
