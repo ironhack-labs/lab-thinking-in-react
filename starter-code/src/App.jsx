@@ -7,14 +7,15 @@ import dataOriginal from './data.json';
 
 class App extends Component {
   state =  {
-    data:[]
+    data:[],
+    isAvailable: false
   }
 
   componentDidMount() {
     this.setState({data:dataOriginal})
   }
 
-handleChange= (e) => {
+handleChange = (e) => {
    let {value} = e.target
    
    let newData = dataOriginal.filter((item, index) => item.name.toLowerCase().includes( value.toLowerCase()) )
@@ -23,13 +24,19 @@ handleChange= (e) => {
     this.setState({data: newData})
  }
 
+ checkIs = () => {
+   let {isAvailable} = this.state
+   isAvailable = !isAvailable
+   this.setState({isAvailable})
+ }
+
   render() {
-    let {handleChange} = this
+    let {handleChange, checkIs} = this
     return (
       <div className="App">
       <h1>IronStore</h1>
-        <SearchBar handleChange= {handleChange}/>
-        <ProductTable data= {this.state.data}/>
+        <SearchBar handleChange= {handleChange} checkIs= {checkIs}/>
+        <ProductTable data= {this.state.data} isAvailable={this.state.isAvailable}/>
       </div>
     );
   }
