@@ -2,24 +2,25 @@ import React, { Component } from 'react';
 import './App.css';
 import SearchBar from './components/SearchBar';
 import ProductTable from './components/ProductTable';
-import data from './data.json';
+import dataOriginal from './data.json';
 
 
 class App extends Component {
   state =  {
-    search: '',
-    data = []
+    data:[]
   }
 
   componentDidMount() {
-    this.setState({data:data})
+    this.setState({data:dataOriginal})
   }
 
 handleChange= (e) => {
-  console.log("el evento e", e.target.value)
    let {value} = e.target
-   let {search} = this.state
-   search = value
+   
+   let newData = dataOriginal.filter((item, index) => item.name.toLowerCase().includes( value.toLowerCase()) )
+    console.log('el evento', dataOriginal, newData)
+
+    this.setState({data: newData})
  }
 
   render() {
