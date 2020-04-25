@@ -1,18 +1,62 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import dataOriginal from "./data.json"
 import './App.css';
+import SearchBar from './components/Searchbar/SearchBar';
+import Table from './components/table/ProductTable';
+
+
+//esta es la filterable product table 
+// <FilterableProducts products={ data } />  
 
 export default class App extends Component {
+  state={
+    
+    data: []
+} 
+
+componentDidMount(){
+  this.setState( {data:dataOriginal}     )  }
+
+
+  handleChange= (e) => {console.log ("el evento", e.target.value) 
+  let {value} = e.target
+  
+
+
+  let newData = dataOriginal.filter( (item,index ) => item.name.toLowerCase().includes(value.toLowerCase()   )    )
+
+  this.setState( {data:newData} )
+}
+
+
   render() {
+    let {handleChange} = this
+
     return (
+
+
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        
+       <h1>IronStore</h1>
+        <SearchBar handleChange= {handleChange}/> 
+        <Table data={this.state.data} />
+
+
+
+
+
+
+       
+          
+         
+        
+       
+
+
+
+
+
+
       </div>
     );
   }
