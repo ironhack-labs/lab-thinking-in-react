@@ -1,5 +1,22 @@
 body {
-  margin: 0;
+  margin: 20px;
   padding: 0;
   font-family: sans-serif;
+}
+
+.background-color{
+  background-color: rgb(224, 222, 222);
+  font-size: 20px;
+}
+
+.border-right {
+  border-right: 1px solid gray;
+}
+
+.border-bottom {
+  border-bottom: 1px solid gray;
+}
+
+.search-container {
+  background-color: lightblue;
 }
