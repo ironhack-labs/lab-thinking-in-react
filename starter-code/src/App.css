@@ -22,7 +22,31 @@
   font-size: large;
 }
 
+table,
+td,
+th {
+  border: 1px solid #ddd;
+  text-align: center;
+  padding: 10px;
+}
+
+table {
+  width: 80%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+thead {
+  width: 100%;
+}
+
+
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
