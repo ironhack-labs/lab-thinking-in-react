@@ -1,0 +1,31 @@
+.table {
+    font-family: 'Roboto',
+        sans-serif;
+    color: darkslategrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+    padding: 20px;
+    width: 50vw;
+    height: 50vw;
+    border-radius: 50px;
+    box-shadow: 7px 7px 14px #b5ddd6,
+        -7px -7px 14px #d9ffff;
+}
+
+.table__rows {
+    width: 80vw;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+.table__cells {
+    font-size: 20px;
+    padding: 10px;
+}
+
+.red {
+    color: rgb(249, 120, 69);
+}

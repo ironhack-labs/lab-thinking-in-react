@@ -1,0 +1,37 @@
+.search {
+    display: flex;
+    flex-direction: column;
+}
+
+.search h2 {
+    font-family: 'Archivo Black',
+        sans-serif;
+    font-size: 30px;
+}
+
+.search__input {
+    font-family: 'Roboto',
+        sans-serif;
+    background-color: #c7f3eb;
+    font-size: 18px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: inset 5px 5px 3px #b9e2db,
+        inset -5px -5px 3px #d5fffb;
+}
+
+.search label {
+    padding: 5px;
+}
+
+.checkbox {
+    margin-top: 5vh;
+}
+
+.checkbox label {
+    font-family: 'Roboto',
+        sans-serif;
+    font-size: 18px;
+    color: darkslategrey
+}
