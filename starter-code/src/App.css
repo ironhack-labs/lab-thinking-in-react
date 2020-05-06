@@ -26,3 +26,26 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+table{
+  border-collapse: collapse;
+}
+
+thead {
+  height: 25px;
+  font-weight: bold;
+}
+
+td{
+  padding: 5px 15px;
+}
+
+input{
+  margin: 15px auto;
+}
