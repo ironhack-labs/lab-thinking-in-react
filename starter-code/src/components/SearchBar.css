@@ -1,0 +1,22 @@
+/* A MOUA */
+
+input[type='text'] {
+  padding: 1em;
+  margin: 0.5em;
+  width: 100%;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  transition: border 0.3s ease-in;
+}
+
+input[type='text']:focus {
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  outline: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}

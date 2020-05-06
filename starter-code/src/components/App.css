@@ -1,0 +1,6 @@
+@import-normalize;
+
+.App {
+  max-width: 960px;
+  margin: 0 auto;
+}

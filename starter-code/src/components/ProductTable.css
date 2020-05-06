@@ -1,0 +1,26 @@
+/* A MOUA */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2em;
+}
+
+thead {
+  background: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.5);
+}
+
+th {
+  padding: 1em 0;
+}
+
+tr {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+td {
+  width: 50%;
+  text-align: center;
+  padding: 1em 0;
+}

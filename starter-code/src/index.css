@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+  font-size: 14pt;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+input {
+  font-family: 'Ubuntu', sans-serif;
 }
