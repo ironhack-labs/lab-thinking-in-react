@@ -123,7 +123,7 @@ We know that setting the search and checkbox will probably be the biggest challe
 
 ￼![products_in_stock](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_bda46746e1a2efec4f4b0c16117842ea.png)
 
-### ### Iteration 5 | BONUS - Styling your App
+### Iteration 5 | BONUS - Styling your App
 
 Feel free to style it how ever you want. :art:
 
