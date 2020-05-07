@@ -3,6 +3,18 @@ import ProductRow from './ProductRow ';
 
 class ProductTable extends Component {
   render() {
+    const { products, search, stocked } = this.props;
+
+    const filtered = products.filter((product) => {
+      if (product.name.toLowerCase().includes(search.toLowerCase())) {
+        if (stocked) {
+          return product.stocked;
+        } else {
+          return true;
+        }
+      }
+    });
+
     return (
       <div className="productTable">
         <h2>Product Table</h2>
@@ -14,7 +26,7 @@ class ProductTable extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.props.products.map((ele) => (
+            {filtered.map((ele) => (
               <ProductRow product={ele} />
             ))}
           </tbody>

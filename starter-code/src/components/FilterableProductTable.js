@@ -6,11 +6,18 @@ class FilterableProductTable extends Component {
   state = {
     products: this.props.products.data,
     search: '',
+    inStock: false,
   };
 
   triggerSearch = (val) => {
     this.setState({
       search: val,
+    });
+  };
+
+  triggerChecked = (val) => {
+    this.setState({
+      inStock: val,
     });
   };
 
@@ -21,8 +28,14 @@ class FilterableProductTable extends Component {
         <SearchBar
           search={this.state.search}
           triggerSearch={this.triggerSearch}
+          checked={this.state.inStock}
+          triggerChecked={this.triggerChecked}
         />
-        <ProductTable products={this.state.products} />
+        <ProductTable
+          products={this.state.products}
+          search={this.state.search}
+          stocked={this.state.inStock}
+        />
       </>
     );
   }

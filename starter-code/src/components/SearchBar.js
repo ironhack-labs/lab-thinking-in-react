@@ -5,6 +5,10 @@ class SearchBar extends Component {
     this.props.triggerSearch(event.target.value);
   };
 
+  checkedChange = (event) => {
+  this.props.triggerChecked(event.target.checked)
+  }
+
   render() {
     return (
       <>
@@ -20,7 +24,7 @@ class SearchBar extends Component {
               className="search-text"
             />
             <div>
-              <input type="checkbox" name="stocked" id="stocked" />
+              <input type="checkbox" name="stocked" id="stocked" checked={this.props.checked} onChange={this.checkedChange}/>
               <label htmlFor="stocked">Only Show products on stock</label>
             </div>
           </div>
