@@ -1,0 +1,12 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "index.scss",
+        "components/FilterableProductTable/_FilterableProductTable.scss",
+        "components/ProductRow/_ProductRow.scss",
+        "components/SearchBar/_SearchBar.scss"
+    ],
+    "names": [],
+    "file": "index.css"
+}
