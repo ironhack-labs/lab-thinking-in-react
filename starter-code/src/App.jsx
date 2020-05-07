@@ -1,18 +1,36 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import data from './data.json';
+import FilterableProductTable from './components/FilterableProductTable';
 import './App.css';
 
 export default class App extends Component {
+  state = {
+    query: '',
+    clicked: false,
+  };
+
   render() {
+    const setQuery = (query) => {
+      this.setState({
+        query: query,
+      });
+    };
+
+    const setClick = (query) => {
+      this.setState({
+        clicked: !this.state.clicked,
+      });
+    };
+    //console.log(this.state.clicked);
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <FilterableProductTable
+          products={data.data}
+          query={this.state.query}
+          triggerSetQuery={setQuery}
+          click={setClick}
+          clicked={this.state.clicked}
+        />
       </div>
     );
   }
