@@ -8,56 +8,57 @@ const dataList = dataJson.data
 
 class App extends Component {
   state = {
-    productsList: dataList,
+    searchTerm: "",
+    onlyStocked: false
   };
 
-  // handleNameChange = event => {
-  //   this.setState({ 
-  //     name: event.target.value
-  //   })
-  // }
 
   //function receives event as a parameter from input onChange
-  //dataList is outside of class component so it doens't need this.
-  filterNames = (event) => {
-    const productsCopy = dataList.map(product => product)
-    const filteredNames = productsCopy.filter((product) => {
-      let productName = product.name.toLowerCase();
-      
-      return productName.includes(event.target.value.toLowerCase()) 
-    })
-    this.setState({
-      productsList: filteredNames
+  handleSearchTermChange = event => {
+    this.setState({ 
+      searchTerm: event.target.value
     })
   }
 
-  filterStocks = (event) => {
+  handleStocksChange = event => {
+    this.setState({ 
+      onlyStocked: event.target.checked
+    })
+  }
+
+  //dataList is outside of class component so it doens't need this.
+  filterProducts = () => {
     const productsCopy = dataList.map(product => product)
-    const filteredStocks = productsCopy.filter((product) => {
+    const filteredProducts = productsCopy.filter((product) => {
       let productInStock = product.stocked;
-      
-      if (event.target.checked) {
+      if (this.state.onlyStocked) {
         return productInStock 
       } else {
         return true
       }
+    }).filter((product) => {
+      let productName = product.name.toLowerCase();
       
-    })
-    this.setState({
-      productsList: filteredStocks
-    })
+      return productName.includes(this.state.searchTerm.toLowerCase()) 
+      }
+    );
+    return filteredProducts;
   }
 
   render() {
+    const filteredProducts = this.filterProducts();
+
     return (
       <div >
         <header >
           <h1 >Thinking in React</h1>
           {/* props (products, onSearch) are the parameters we name on our own */}
           <FilterableProductTable 
-          products={ this.state.productsList } 
-          onSearch={ this.filterNames }
-          checkBox={ this.filterStocks }
+          products={ filteredProducts } 
+          onSearch={ this.handleSearchTermChange }
+          searchTerm={this.state.searchTerm}
+          onCheckBoxChange={ this.handleStocksChange }
+          inStock={this.state.onlyStocked}
            />
         </header>
       </div>

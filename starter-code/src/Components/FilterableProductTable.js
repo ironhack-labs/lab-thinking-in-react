@@ -12,11 +12,17 @@ class FilterableProductTable extends Component {
         <div >
           <h1>ironStore</h1>
             {/* taking props from the parent */}
-            <SearchBar onSearch={this.props.onSearch} checkBox={this.props.checkBox}/>
+            <SearchBar 
+            onSearch={this.props.onSearch} 
+            searchTerm={this.props.searchTerm}
+            onCheckBoxChange={this.props.onCheckBoxChange} 
+            inStock={this.props.inStock}
+            />
           <div>
             {/* this.props is all the parameters you get from the parent component attribute "products" */}
             {/* when using class component you have to write "this" */}
-            <ProductTable products={this.props.products}/>
+            <ProductTable 
+            products={this.props.products}/>
           </div>
         </div>
       );

@@ -10,7 +10,7 @@ class SearchBar extends Component {
                 type="text"
                 name="name"
                 id="name"
-                // value={this.state.name} 
+                value={this.props.searchTerm} 
                 // the callback function (this.props.onSearch) recieves parameter event
                 onChange={this.props.onSearch}
                 placeholder='search product'
@@ -20,7 +20,11 @@ class SearchBar extends Component {
               </form>
 
               <form>
-                <input type="checkbox" onChange={this.props.checkBox} />
+                {/* checked is an attribute in checkbox html */}
+                <input 
+                type="checkbox" 
+                onChange={this.props.onCheckBoxChange} 
+                checked={this.props.inStock} />
                 <label> only show products in stock </label>
               </form>
         </div>
