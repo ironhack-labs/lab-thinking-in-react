@@ -1,0 +1,5 @@
+{
+    "prettier.printWidth": 200,
+    "javascript.format.semicolons": "remove",
+    "prettier.semi": false
+}
