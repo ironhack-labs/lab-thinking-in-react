@@ -1,28 +1,50 @@
-.App {
+body {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 300;
+  color: #666665;
+}
+
+.container {
+  width: 1140px;
+  margin: 150px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.my-table {
+  margin: 40px 0;
+}
+
+.my-table tr {
+  height: 40px;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.my-table td,
+.my-table th {
+  width: 150px;
+  border: deepskyblue dotted 1px;
+  border-radius: 15px;
 }
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
+.my-table th {
+  text-transform: uppercase;
+  font-weight: 800;
   font-size: 1.5em;
 }
 
-.App-intro {
-  font-size: large;
+.my-table .special-row {
+  background-color: deepskyblue;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+
+input {
+  margin: 20px 0;
+  width: 350px;
+}
+
+input[type="checkbox"i] {
+  margin: 0;
+  width: 20px;
 }

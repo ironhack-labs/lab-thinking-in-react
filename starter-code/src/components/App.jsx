@@ -5,6 +5,11 @@ import FilterTable from './filterableProductTable/FilterableProductTable';
 
 export default class App extends Component {
   render() {
-    return <FilterTable products={Data.data} ></FilterTable>;
+
+    return (
+      <div className="container">
+        <FilterTable products={Data.data}></FilterTable>
+      </div>
+    );
   }
 }
