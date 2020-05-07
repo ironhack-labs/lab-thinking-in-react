@@ -16,7 +16,9 @@ class FilterableProductTable extends Component {
 
   render() {
     const filteredData = this.props.products.data.filter((product) => {
-      const searchedProduct = product.name.includes(this.state.search);
+      const searchedProduct = product.name
+        .toLowerCase()
+        .includes(this.state.search.toLowerCase());
       if (this.state.search !== '') {
         if (this.state.filtered) return searchedProduct && product.stocked;
         else {
