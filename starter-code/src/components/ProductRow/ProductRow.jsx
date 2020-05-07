@@ -5,6 +5,7 @@ export default function ProductRow(props) {
     <tr>
       <td>{props.product.name}</td>
       <td>{props.product.price}</td>
+      <td>{props.product.stocked}</td>
     </tr>
   );
 }

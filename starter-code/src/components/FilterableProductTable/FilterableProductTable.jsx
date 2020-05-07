@@ -6,7 +6,7 @@ export default class FilterableProductTable extends Component {
   state = {
     products: this.props.products.data,
     search: '',
-    outOfStock: false,
+    onlyShowProductsInStock: false,
   };
 
   setQuery = (search) => {
@@ -15,19 +15,24 @@ export default class FilterableProductTable extends Component {
     });
   };
 
-  handleChange = (e) => {
-    this.setQuery(e.target.value);
+  setInStock = (onlyShowProductsInStock) => {
+    this.setState({
+      onlyShowProductsInStock,
+    });
   };
 
   render() {
+    console.log(this.state.onlyShowProductsInStock);
     return (
       <>
         <SearchBar
           search={this.state.search}
           setQuery={this.setQuery}
-          handleChange={this.handleChange}
+          setInStock={this.setInStock}
+          onlyShowProductsInStock={this.state.onlyShowProductsInStock}
         />
         <ProductTable
+          onlyShowProductsInStock={this.state.onlyShowProductsInStock}
           products={this.state.products}
           search={this.state.search}
         />
