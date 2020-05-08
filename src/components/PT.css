@@ -1,0 +1,13 @@
+.productTable {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+thead {
+  background-color: lightgray;
+}
+
+/* tbody tr td {
+  border: 1px solid red;
+} */
