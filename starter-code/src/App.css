@@ -26,3 +26,23 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+table {
+  border-collapse: collapse;
+ 
+}
+
+th, td {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.205);
+  padding:15px 60px;
+}
+.product-table{
+  display:flex;
+  justify-content: center;
+  padding-top:30px;
+  padding-bottom:70px;
+}
+.style-input{
+  width:400px;
+  height:25px;
+  margin-bottom:15px;
+}
