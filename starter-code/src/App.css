@@ -1,28 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Signika&display=swap');
+
 .App {
-  text-align: center;
+	text-align: center;
+	font-family: 'Signika', sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+#content1::after {
+	content: "\a";
+	white-space: pre;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+#content2 {
+	width: 28.75%;
+	margin: 1rem;
+	padding: 0.5rem;
+	border-radius: 5px;
+	border: 1px solid lightgrey;
 }
 
-.App-title {
-  font-size: 1.5em;
+thead {
+	background-color: lightgray;
 }
 
-.App-intro {
-  font-size: large;
+td {
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	width: 52%;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+th {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+table {
+	width: 30%;
+	margin-left: 35%;
+	margin-right: 35%;
+	border: 1px solid lightgray;
+	border-radius: 5px;
+}
+
+input {
+	text-align: center;
 }
