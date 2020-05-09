@@ -1,18 +1,44 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import ProductTable from './components/ProductTable/ProductTable'
+import SearchBar from './components/SearchBar/SearchBar'
+import data from './data.json'
+
+console.log(data.data)
 
 export default class App extends Component {
+
+state = {data: data.data,
+         filteredData: data.data,
+         inputSearch:'',
+         checkBoxValue:true}
+
+inputSearchHandler = (searchValue) => {
+  const searchedFoods = this.state.data.filter((product) => {
+    return product.name.toLowerCase().includes(searchValue);
+  });
+this.setState({inputSearch:searchValue,
+  filteredData:searchedFoods})
+}
+
+inputHandler = () => {
+this.setState({checkBoxValue:!this.state.checkBoxValue})
+const newArr = this.state.data.filter((product) => {
+if (this.state.checkBoxValue === true) {
+  return  product.stocked === true
+}
+else {
+return product
+}
+})
+this.setState({filteredData: newArr})
+}
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+<SearchBar searchValue={this.state.inputSearch} inputSearchHandler={this.inputSearchHandler} inputHandler={this.inputHandler}></SearchBar>       
+<ProductTable products={this.state.filteredData}  checkBoxValue={this.state.checkBoxValue}></ProductTable>
       </div>
     );
   }
