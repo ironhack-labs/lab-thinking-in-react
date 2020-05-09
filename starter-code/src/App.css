@@ -22,6 +22,34 @@
   font-size: large;
 }
 
+.search-input {
+  padding:10px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  width:90%;
+}
+
+table {
+  border-collapse: collapse;
+  margin:0 auto;
+  width:90%;
+}
+
+.black {
+  color:black;
+}
+
+.red {
+  color:red;
+}
+
+.thead {
+  background-color: lightgray;
+  border-top:1.5px solid lightgrey;
+  border-left:1.5px solid lightgrey;
+  border-right:1.5px solid lightgrey;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
