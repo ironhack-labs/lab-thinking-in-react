@@ -1,0 +1,1 @@
+export { default as FilterableProductTable } from '../organisms/FilterableProductTable/FilterableProductTable'
