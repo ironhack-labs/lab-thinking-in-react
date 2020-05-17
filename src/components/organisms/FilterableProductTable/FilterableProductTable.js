@@ -9,25 +9,21 @@ class FilterableProductTable extends React.Component {
     render() {
         return (
             <div>
-                {console.log(this.state.filteredProducts)}
-                <SearchBar searchMethod={this.filterProducts} filterMethod={this.filterOnStock} />
+                <SearchBar searchMethod={this.filterProducts} />
                 <ProductTable products={this.state.filteredProducts} />
             </div >
         );
     }
 
-    filterProducts = (name) => {
-        const filteredProducts = { data: this.props.products.data.filter(e => e.name.includes(name)) };
-        this.setState({ filteredProducts });
-    }
-
-    filterOnStock = (checked) => {
-        if (checked) {
-            const filteredProducts = { data: this.state.filteredProducts.data.filter(e => e.stocked) };
-            this.setState({ filteredProducts });
+    filterProducts = (name, filterInStock) => {
+        let filteredProducts;
+        if (filterInStock) {
+            filteredProducts = { data: this.props.products.data.filter(e => e.name.includes(name) && e.stocked) };
         } else {
-            this.setState({ filteredProducts: this.props.products });
+            filteredProducts = { data: this.props.products.data.filter(e => e.name.includes(name)) };
         }
+
+        this.setState({ filteredProducts });
     }
 }
 

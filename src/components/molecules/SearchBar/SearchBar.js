@@ -2,7 +2,8 @@ import React from 'react';
 
 class SearchBar extends React.Component {
     state = {
-        value: ''
+        value: '',
+        checked: false
     }
 
     render() {
@@ -18,11 +19,12 @@ class SearchBar extends React.Component {
 
     onChange(event) {
         this.setState({ value: event.target.value },
-            () => this.props.searchMethod(this.state.value));
+            () => this.props.searchMethod(this.state.value, this.state.checked));
     }
 
     onClick(event) {
-        this.props.filterMethod(event.target.checked);
+        this.setState({ checked: event.target.checked },
+            () => this.props.searchMethod(this.state.value, this.state.checked));
     }
 }
 
