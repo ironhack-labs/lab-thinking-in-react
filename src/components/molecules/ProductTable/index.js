@@ -4,8 +4,12 @@ import Item from '../../atoms/Item';
 const ProductTable = ({ data }) => {
   return (
     <div className="productTable--container">
-      {data.data.map(item => (
-        <Item name={item.name} price={item.price} />
+      {data.map((item, index) => (
+        <Item
+          name={item.name}
+          price={item.price}
+          key={`${index + 1}-product`}
+        />
       ))}
     </div>
   );
