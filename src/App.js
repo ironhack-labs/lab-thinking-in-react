@@ -1,26 +1,43 @@
 import React from 'react';
-import logo from './logo.svg';
+
+// importing data
+import productDataObject from './data.json'
+
+// importing styles
+import 'bulma/css/bulma.css';
+import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// importing components
+import FilterableProductTable from './components/organisms/FilterableProductTable';
+import SearchBar from './components/molecules/SearchBar';
+
+class App extends React.Component {
+
+  state = {
+    dataArr: productDataObject.data,
+    searchTerm: ""
+}
+
+searchHandler = (searchTerm) => {
+    this.setState({
+        searchTerm: searchTerm
+    })
+}
+  render() {
+
+           let filteredProducts = this.state.dataArr.filter((product) => product.name.toLowerCase().includes(this.state.searchTerm))
+
+    return (
+      <div className="App container">
+        <h1 className="h1">IronStore</h1>
+        <SearchBar onSearchCallback={this.searchHandler} currentSearchTerm={this.state.searchTerm}></SearchBar>
+
+        <FilterableProductTable products={filteredProducts}></FilterableProductTable>
+        
+      </div>
+    );
+  }
 }
 
 export default App;
