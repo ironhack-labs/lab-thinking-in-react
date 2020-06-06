@@ -16,12 +16,19 @@ class FilterableProductTable extends React.Component {
 
     state = {
         dataArr: productDataObject.data,
-        searchTerm: ""
+        searchTerm: "",
+        stocked: undefined
     }
 
     searchHandler = (searchTerm) => {
         this.setState({
             searchTerm: searchTerm
+        })
+    }
+
+    stockHandler = (stocked) => {
+        this.setState({
+            stocked: stocked
         })
     }
 
@@ -31,7 +38,7 @@ class FilterableProductTable extends React.Component {
 
         return (
             <div className="mb-3">
-                <SearchBar onSearchCallback={this.searchHandler} currentSearchTerm={this.state.searchTerm}></SearchBar>
+                <SearchBar onSearchCallback={this.searchHandler} currentSearchTerm={this.state.searchTerm} currentStockCheck={this.state.stocked}></SearchBar>
                 <ProductTable products={filteredProducts} />
             </div>
         )

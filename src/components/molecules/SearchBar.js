@@ -17,11 +17,18 @@ function SearchBar(props) {
             props.onSearchCallback(currentInputValue) 
         }
 
+        let stockHandler = (event) => {
+            let currentInputValue = event.target.checked
+            
+            props.onStockCallback(currentInputValue) 
+        }
+
         return (
             <div className="mb-3">
-                <input placeholder="Search …" onChange={searchHandler} value={props.currentSearchTerm} className="input"></input>
+                <input type="text" placeholder="Search …" onChange={searchHandler} value={props.currentSearchTerm} className="input"></input>
                 <br />
-                Only show products on stock
+                <input type="checkbox" onChange={stockHandler} className="checkbox" checked={props.currentStockCheck}></input> Only show items in stock
+                
             </div>
         )
 }
