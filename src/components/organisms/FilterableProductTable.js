@@ -11,13 +11,14 @@ import '../../App.css';
 // importing sub components
 import ProductTable from '../molecules/ProductTable';
 import SearchBar from '../molecules/SearchBar';
+import CheckBoxStock from '../molecules/CheckBoxStock';
 
 class FilterableProductTable extends React.Component {
 
     state = {
         dataArr: productDataObject.data,
         searchTerm: "",
-        stocked: undefined
+        inStock: false
     }
 
     searchHandler = (searchTerm) => {
@@ -26,9 +27,10 @@ class FilterableProductTable extends React.Component {
         })
     }
 
-    stockHandler = (stocked) => {
+    stockHandler = (inputStocked) => {
+        //console.log("inputStocked: " + inputStocked)
         this.setState({
-            stocked: stocked
+            inStock: inputStocked
         })
     }
 
@@ -36,9 +38,13 @@ class FilterableProductTable extends React.Component {
 
         let filteredProducts = this.state.dataArr.filter((product) => product.name.toLowerCase().includes(this.state.searchTerm))
 
+        // TODO: filter for true or false -> put stockProducts into <ProductTable>
+        /* let stockProducts = this.state.dataArr.filter((product) => product.stocked(this.state.inStock)) */
+
         return (
             <div className="mb-3">
-                <SearchBar onSearchCallback={this.searchHandler} currentSearchTerm={this.state.searchTerm} currentStockCheck={this.state.stocked}></SearchBar>
+                <SearchBar onSearchCallback={this.searchHandler} currentSearchTerm={this.state.searchTerm}></SearchBar>
+                <CheckBoxStock onStockCallback={this.stockHandler} currentStock={this.state.inStock}></CheckBoxStock>
                 <ProductTable products={filteredProducts} />
             </div>
         )
