@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import 'bulma/css/bulma.css';
-import _ from 'lodash';
 import data from './data.json'
 import FilterableProductTable from './Components/FilterableProductTable';
+import 'bulma/css/bulma.css';
 
 class App extends Component {
   

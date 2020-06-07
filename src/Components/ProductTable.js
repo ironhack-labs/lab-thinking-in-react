@@ -1,23 +1,18 @@
-import React, { Component } from 'react';
-import 'bulma/css/bulma.css';
-import _ from 'lodash';
+import React from 'react';
 import ProductRow from './ProductRow';
+import 'bulma/css/bulma.css';
 
-class ProductTable extends Component {
+function ProductTable(props) {
 
-    state = {
-        products: this.props.products,
-    }
+        let filteredFoods
 
-
-    render() {
+        !props.showStocked ? filteredFoods = props.products.filter((p) => p.name.toLowerCase().includes(props.searchTerm.toLowerCase()) ) : filteredFoods = props.products.filter((p) => p.name.toLowerCase().includes(props.searchTerm.toLowerCase()) && p.stocked === true )
 
         return(
             <div className="column">
-            {this.props.products.filter((p) => p.name.includes(this.props.searchTerm)).map((p) => <ProductRow name={p.name} price={p.price} stocked={p.stocked} key={Math.random()}></ProductRow> )}  
+            {filteredFoods.map((p) => <ProductRow name={p.name} price={p.price} stocked={p.stocked} category={p.category} key={Math.random()}></ProductRow> )}  
             </div>
         )
-    }
 }
 
 export default ProductTable;
