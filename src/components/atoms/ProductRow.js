@@ -7,7 +7,7 @@ import '../../App.css';
 
 function ProductRow(props) {
 
-    console.log("props.stocked: " + props.stocked + ", " + "props.currentStock: " + props.currentStock)
+    //console.log("props.stocked: " + props.stocked + ", " + "props.currentStock: " + props.currentStock)
     return (
         <tr>
             <td style={ (props.stocked) ? {color:"black"} : {color:"red"}} hidden={(props.stocked === false && props.currentStock === true) ? true : false}>{props.name}</td>

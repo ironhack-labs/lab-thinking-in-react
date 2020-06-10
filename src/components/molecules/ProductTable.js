@@ -12,9 +12,10 @@ import '../../App.css';
 import ProductRow from '../atoms/ProductRow'
 
 
-class ProductTable extends React.Component {
-
-    render() {
+//class ProductTable extends React.Component {
+    // no this.props.products in function-case
+function ProductTable(props) {
+    //render() {
 
         return (
             <div className="mb-3">
@@ -26,13 +27,13 @@ class ProductTable extends React.Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.props.products.map((product) => 
-                        <ProductRow name={product.name} price={product.price} key={product.name} stocked={product.stocked}></ProductRow>)}
+                        {props.products.map((product) => 
+                        <ProductRow name={product.name} price={product.price} key={product.name} stocked={product.stocked} currentStock={product.currentStock}></ProductRow>)}
                     </tbody>
                 </table>
             </div>
         )
     }
-}
+//}
 
 export default ProductTable;
