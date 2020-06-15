@@ -2,6 +2,8 @@ import React from 'react';
 import ProductRow from './ProductRow';
 
 function ProductTable(props) {
+  const products = props.products;
+
   return (
     <div className="products-container">
       <table className="table">
@@ -11,10 +13,10 @@ function ProductTable(props) {
             <th scope="col">Price</th>
           </tr>
         </thead>
-        {props.products.data.map((eachProduct) => {
+        {products.map((eachProduct) => {
           return (
             <tbody>
-              <ProductRow eachProduct={eachProduct} />
+              <ProductRow key={eachProduct.name} eachProduct={eachProduct} />
             </tbody>
           );
         })}
