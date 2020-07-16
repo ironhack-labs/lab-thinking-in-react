@@ -1,22 +1,28 @@
-import React from 'react';
-import { uuid } from 'uuidv4';
+import React, { Component } from 'react'
 
-export default function ProductRow(props) {
-  console.log(props);
-  const allProducts = props.filtered.map((product)=> {
+export default class ProductRow extends Component {
+    render() {
+        const allProducts = this.props.filtered.map((product)=> {
       
     
-    console.log(product)
-    return (
-    
-    <tr key={product.id}>
-      <td>{product.name}</td>
-      <td>{product.price}</td>
-    </tr>
+            console.log(product)
+            return (
+            
+            <tr key={product.id}>
+              <td>{product.name}</td>
+              <td>{product.price}</td>
+            </tr>
+        
+          );
+         });
+         return <>{allProducts}</>;
+    }
+}
 
-  );
- });
- return <>{allProducts}</>;
-};
+
+
+
+
+
 
 
