@@ -5,16 +5,16 @@ import './style.css'
 
 export default function index({ products }) {
     return (
-        <table className="books-table">
+        <table className="products-table">
             <thead>
-                <tr className="books-table-header" >
-                    <th>Name</th>
-                    <th>Price</th>
+                <tr className="products-table-header" >
+                    <th className="table-header-label">Name</th>
+                    <th className="table-header-label">Price</th>
                 </tr>
             </thead>
             <tbody>
-                {products && products.map(({ name, price }) =>
-                    <ProductRow key={uuidv4()} name={name} price={price} />
+                {products && products.map(({ name, price, stocked }) =>
+                    <ProductRow key={uuidv4()} name={name} price={price} stocked={stocked} />
                 )}
             </tbody>
         </table>

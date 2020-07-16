@@ -1,11 +1,12 @@
 import React from 'react'
 import './style.css'
 
-export default function index({ name, price }) {
+export default function index({ name, price, stocked }) {
+
     return (
-        <tr>
-            <td className='table-info'>{name}</td>
-            <td className='table-info'>{price}</td>
+        <tr className="row">
+            <td className={`product-info ${!stocked ? 'product-out' : ''}`}>{name}</td>
+            <td className='product-info'>{price}</td>
         </tr>
     )
 }

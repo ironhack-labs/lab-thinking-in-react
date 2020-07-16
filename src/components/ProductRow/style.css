@@ -1,0 +1,57 @@
+.product-out{
+    color:red
+}
+.products-table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+}
+.products-table-header{
+    width: 100%;
+    
+}
+.products-table-header tr{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.table-header-label{
+    width: 600px;
+    margin:0;
+}
+
+thead{
+    background: #726b6b;
+    width: 80%;
+    color: #fff 
+}
+tbody { 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.row{
+    display: flex;
+    width: 80%;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 0 auto;
+    
+}
+.product-info{
+    width: 100%;
+    align-self: center;
+}
+
+tbody tr:nth-child(even) {
+    background: #CCC
+}
+tbody tr:nth-child(odd) {
+    background: #FFF
+}

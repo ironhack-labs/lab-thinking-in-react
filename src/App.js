@@ -37,6 +37,7 @@ function App() {
   return (
     <div className="App">
       <FilterableProductTable
+        title="IronStore"
         products={showProductsList}
         handlerOnChange={(e) => setFindText(e.target.value)}
         handlerIsChecked={() => setInStockChecked(!inStockChecked)} />

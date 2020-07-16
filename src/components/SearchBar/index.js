@@ -3,7 +3,7 @@ import './style.css'
 
 export default function index({ handlerOnChange, handlerIsChecked }) {
     return (
-        <div>
+        <div className="search-bar">
             <h2 className="search-bar-title">Search</h2>
             <input type="text" className="search-bar-input" onChange={handlerOnChange} />
             <label htmlFor="inStock">

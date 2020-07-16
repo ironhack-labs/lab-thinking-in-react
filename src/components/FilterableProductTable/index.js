@@ -7,7 +7,7 @@ export default function index({ title, products, handlerOnChange, handlerIsCheck
 
     return (
         <div>
-            <h1>{title}</h1>
+            <h1 className="table-title">{title}</h1>
             <SearchBar
                 handlerOnChange={handlerOnChange}
                 handlerIsChecked={handlerIsChecked} />
