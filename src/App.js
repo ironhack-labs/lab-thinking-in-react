@@ -4,11 +4,11 @@ import './App.css';
 import FilterableProductTable from './components/FilterableProductTable.js';
 import { v4 as uuid } from 'uuid';
 
-console.log(data.data);
-const products = data.data.map((product) => ({ ...product, id: uuid() }));
 
+const products = data.data.map((product) => ({ ...product, id: uuid() }));
+console.log(products);
 //console.log(`this the dataID ${products}`);
-//const {data:products} = data
+
 export default class App extends Component {
   render() {
     return (
