@@ -1,26 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import data from './data.json'
+import SearchBar from './Components/SearchBar';
+import ProductTable from './Components/ProductTable';
+// import ProductRow from './Components/ProductRow';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  state = {
+    query: ''
+  }
+
+  setQuery = query => {
+    this.setState({
+      query: query
+    })
+  }
+
+  render() {
+    // console.log('from app.js: ',this.state.query)
+    return (
+      <div className="App">
+        <SearchBar query={this.state.query} setQuery={this.setQuery}/>
+        <ProductTable products={ data } query={this.state.query}/>
+      </div>
+    )
+  }
 }
 
 export default App;
