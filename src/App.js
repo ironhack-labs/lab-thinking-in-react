@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
 import './App.css';
 import data from './data.json';
+import { v4 as uuidv4 } from 'uuid';
 
 import FilterableProductTable from './components/FilterableProductTable';
 
-function App() {
+ const App = () =>{
   const [query, setQuery] = useState('');
+  const dataWithId = data.data.map(el => ({...el, key: uuidv4()}))
+
+  // console.log(dataWithId);
 
   return (
     <div className="App">
       <header className="App-header">
-        <FilterableProductTable products={data} query={query} setQuery={setQuery}/>
+        <FilterableProductTable products={dataWithId} query={query} setQuery={setQuery}/>
       </header>
     </div>
   );

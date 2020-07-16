@@ -4,57 +4,49 @@
       "category": "Sporting Goods",
       "price": "$49.99",
       "stocked": true,
-      "name": "Football",
-      "id": 1
+      "name": "Football"
     },
     {
       "category": "Sporting Goods",
       "price": "$9.99",
       "stocked": true,
-      "name": "Baseball",
-      "id": 2
+      "name": "Baseball"
     },
     {
       "category": "Sporting Goods",
       "price": "$29.99",
       "stocked": false,
-      "name": "Basketball",
-      "id": 3
+      "name": "Basketball"
     },
     {
       "category": "Sporting Goods",
       "price": "$199.99",
       "stocked": true,
-      "name": "Tennis Balls",
-      "id": 4
+      "name": "Tennis Balls"
     },
     {
       "category": "Electronics",
       "price": "$99.99",
       "stocked": true,
-      "name": "iPod Touch",
-      "id": 5
+      "name": "iPod Touch"
     },
     {
       "category": "Electronics",
       "price": "$399.99",
       "stocked": false,
-      "name": "iPhone X",
-      "id": 6
+      "name": "iPhone X"
     },
     {
       "category": "Electronics",
       "price": "$199.99",
       "stocked": true,
-      "name": "iPad Mini",
-      "id": 7
+      "name": "iPad Mini"
     },
     {
       "category": "Electronics",
       "price": "$199.99",
       "stocked": true,
-      "name": "Huawei P10",
-      "id": 8
+      "name": "Huawei P10"
     }
   ]
 }

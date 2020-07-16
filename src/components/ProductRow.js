@@ -3,7 +3,7 @@ import React from 'react';
 const ProductRow = (props) => {
   const allProducts = props.filtered.map((product) => {
     return (
-      <tr key={product.id}>
+      <tr key={product.key}>
         <td style={product.stocked ? { color: 'white' } : { color: 'red' }}>
           {product.name}
         </td>

@@ -9,7 +9,7 @@ const ProductTable = (props) => {
           <th>Name</th>
           <th>Price</th>
         </tr>
-        <ProductRow products={props.products.data} filtered={props.filtered} />
+        <ProductRow filtered={props.filtered} />
       </tbody>
     </table>
   );

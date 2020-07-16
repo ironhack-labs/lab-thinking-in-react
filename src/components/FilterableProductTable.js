@@ -5,7 +5,7 @@ import ProductTable from './ProductTable';
 
 const FilterableProductTable = (props) => {
 
-  const filtered = props.products.data.filter((product) => {
+  const filtered = props.products.filter((product) => {
     return product.name.toLowerCase().includes(props.query.toLowerCase())
       ? true
       : false;
