@@ -1,26 +1,54 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import data from './data.json'
 import './App.css';
 
-function App() {
+import FilterableProduct from './FilterableProduct';
+import SearchBar from './SearchBar'
+
+
+class App extends Component{
+
+  state = {
+    query: "",
+    stocked: false
+  }
+
+  setQuery = (name,value) => {
+    console.log(name, value, "HERE")
+    this.setState({
+      [name]: value
+    })
+
+  }
+
+
+
+  render(){
+    console.log(this.state)
+    const filteredata = data.data.filter(product => 
+      product.name.toLowerCase().includes(this.state.query.toLowerCase()) && (product.stocked === this.state.stocked || !this.state.stocked)
+    )
+
   return (
+
+  
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <SearchBar state={this.state} setQuery={this.setQuery}/>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+        <FilterableProduct products={filteredata} query={this.state.query}/>
+        </tbody>
+      </table>
+      
     </div>
   );
+  }
 }
 
 export default App;

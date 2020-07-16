@@ -1,5 +1,28 @@
 .App {
   text-align: center;
+  align-items: center;
+  display:flex;
+  flex-direction: column;
+  padding: 2%;
+  margin: 2%;
+  justify-content: space-evenly;
+  height: 400px;
+}
+
+.App table {
+  width: 70%;
+  height: 54%;
+  border-bottom: 2px black;
+}
+
+th {
+  background-color:grey;
+  color: white;
+}
+
+th, td {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
 }
 
 .App-logo {
