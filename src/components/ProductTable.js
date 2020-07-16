@@ -13,7 +13,7 @@ const ProductTable = props => {
                         <th>Price</th>
                     </tr>
                 </thead>
-                <ProductRow products={props.products} query={props.query}/>
+                <ProductRow products={props.products} query={props.query} checked={props.checked}/>
             </table>
         </div>
     )

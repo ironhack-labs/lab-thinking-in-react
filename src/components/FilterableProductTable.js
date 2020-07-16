@@ -9,14 +9,22 @@ class FilterableProductTable extends Component {
     // const {data:products} = data
     state={
         products: data.data,
-        query:''
+        query:'', 
+        stocked: false, 
     }
     setQuery = query => {
         this.setState({
             query: query
         })
+    
+    // toggleCheckbox = checked => {
+    //     this.setState({
+    //         checked: true, 
+    //     })
+    // }
+    
 
-    console.log("this is the query state", this.state.query);
+    console.log("this is the query state", this.checked);
     }
     render(){
          return(

@@ -1,9 +1,11 @@
 import React from 'react'; 
 
 export default function SearchBar(props) {
-    console.log("search props", props);
     const handleChange = event => {
         props.setQuery(event.target.value)
+    }
+    const toggleCheckbox = event => {
+        props.checked(event.target.value)
     }
     return (
         <div>
@@ -13,6 +15,13 @@ export default function SearchBar(props) {
             value={props.query}
             onChange={handleChange}
             />
+            <label> Only show the products on stock
+            <input
+            name="checked"
+            type="checkbox"
+            checked={props.checked}
+            onChange={toggleCheckbox}/>
+            </label>
         </div>
     )
 }
