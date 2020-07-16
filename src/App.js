@@ -1,26 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import data from './data.json';
 import './App.css';
+import SearchBar from './components/SearchBar.js';
+import FilterableProductTable from './components/FilterableProductTable.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  //state = {
+   // data: data.data,
+  //};
+
+  render() {
+    return (
+      <div className="App">
+        <FilterableProductTable products={data} />
+      </div>
+    );
+  }
 }
-
-export default App;
