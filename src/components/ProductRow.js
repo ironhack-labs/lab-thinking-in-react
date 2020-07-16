@@ -15,7 +15,7 @@ export default class ProductRow extends Component {
         const tableRow=filteredList.map(product => {
             return (
                 <tr>
-                    <td>{product.name}</td>
+                    {product.stocked ? <td>{product.name}</td> : <td style={{color:"red"}}>{product.name}</td> }
                     <td>{product.price}</td>
                 </tr>
             )
