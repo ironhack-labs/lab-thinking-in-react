@@ -8,7 +8,8 @@ import ProductTable from './Components/ProductTable';
 class App extends React.Component {
 
   state = {
-    query: ''
+    query: '',
+    stock: false
   }
 
   setQuery = query => {
@@ -17,12 +18,28 @@ class App extends React.Component {
     })
   }
 
+  filterStock = () => {
+    this.setState((state) => ({
+      stock: !state.stock
+    }))
+  }
+
   render() {
     // console.log('from app.js: ',this.state.query)
     return (
       <div className="App">
-        <SearchBar query={this.state.query} setQuery={this.setQuery}/>
-        <ProductTable products={ data } query={this.state.query}/>
+        <h1>IronStore</h1>
+        <SearchBar 
+          query={this.state.query} 
+          setQuery={this.setQuery} 
+          filterStock={this.filterStock} 
+          stock={this.state.stock}
+          />
+        <ProductTable 
+          products={ data } 
+          query={this.state.query}
+          stock={this.state.stock}
+          />
       </div>
     )
   }
