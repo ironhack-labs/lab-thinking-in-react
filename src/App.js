@@ -3,7 +3,6 @@ import './App.css';
 import data from './data.json'
 import SearchBar from './Components/SearchBar';
 import ProductTable from './Components/ProductTable';
-// import ProductRow from './Components/ProductRow';
 
 class App extends React.Component {
 
@@ -25,7 +24,6 @@ class App extends React.Component {
   }
 
   render() {
-    // console.log('from app.js: ',this.state.query)
     return (
       <div className="App">
         <h1>IronStore</h1>

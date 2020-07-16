@@ -16,7 +16,6 @@ export default function ProductTable(props) {
                 <tr>
                     <th>Name</th>
                     <th>Price</th>
-                    <th>Stocked</th>
                 </tr>
             </thead>
                 <ProductRow products={ filteredProducts } />
