@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import SearchBar from './SearchBar';
 import ProductTable from './ProductTable.js';
-//import products from '../App';
-import App from '../App.js'
 import data from '../data.json';
 import { v4 as uuid } from 'uuid';
 
@@ -13,12 +11,12 @@ export default class FilterableProductTable extends Component {
     products: products,
     query: '',
   };
-  setQuery = (query) => {
+  setQuery = query => {
     this.setState({
       query: query,
     });
 
-    console.log('the query state / my input is:', this.state.query);
+    //console.log('the query state / my input is:', this.state.query);
   };
   render() {
     //console.log(` Imported Products ${[products]}`)
@@ -26,8 +24,8 @@ export default class FilterableProductTable extends Component {
       <div>
         <h1>IronStore</h1>
         <SearchBar query={this.state.query} setQuery={this.setQuery} />
-        <ProductTable products={this.state.products} /> 
+        <ProductTable products={this.state.products} query={this.state.query}/> 
       </div>
     );
-  }
+  } 
 }
