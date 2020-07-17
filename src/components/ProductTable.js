@@ -12,7 +12,7 @@ export default function ProductTable(props) {
       </thead>
 
       <tbody>
-        <ProductRow filtered = {props.products} query={props.query} />
+        <ProductRow filtered={props.products} query={props.query} />
       </tbody>
     </table>
   );
