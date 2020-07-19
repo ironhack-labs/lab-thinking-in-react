@@ -6,7 +6,7 @@ import { v4 as uuid } from 'uuid';
 
 const products = data.data.map((product) => ({ ...product, id: uuid() }));
 //console.log(products);
-//console.log(`this the dataID ${products}`);
+console.log(products);
 
 export default class App extends Component {
   render() {

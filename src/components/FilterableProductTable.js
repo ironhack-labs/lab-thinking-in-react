@@ -15,7 +15,7 @@ export default class FilterableProductTable extends Component {
   setQuery = (name, value) => {
     this.setState({
       //query: query,
-      onStock: false,
+
       [name]:value
     });
 
@@ -26,10 +26,11 @@ export default class FilterableProductTable extends Component {
   render() {
     //console.log(` Imported Products ${[products]}`)
     return (
-      <div>
-        <h1>IronStore</h1>
-        <SearchBar query={this.state.query} setQuery={this.setQuery} onStock={this.props.checked} />
-        <ProductTable products={this.state.products} query={this.state.query} onStock={this.props.checked} />
+      <div className= "appBody">
+        <h1 className="ironStore">IronStore</h1>
+        <p>Search</p>
+        <SearchBar  setQuery={this.setQuery} state={this.state}/>
+        <ProductTable  products={this.state.products} query={this.state.query} onStock={this.state.onStock} />
       </div>
     );
   }
