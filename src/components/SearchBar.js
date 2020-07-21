@@ -12,6 +12,10 @@ const SearchBar = (props) => {
           onChange={props.handleChange}
           value={props.searchParam}
         />
+        <label>
+          <input type="checkbox" onChange={props.handleFilter} />
+          Show products in stock only
+        </label>
       </form>
     </div>
   );

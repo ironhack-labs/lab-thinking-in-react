@@ -4,9 +4,13 @@ import ProductRow from './ProductRow';
 const ProductTable = (props) => {
   const productsList = props.products.data
     .filter((product) => {
-      return product.name
-        .toLowerCase()
-        .includes(props.searchParam.toLowerCase());
+      if (props.filterCheckbox) {
+        return product.stocked === true;
+      } else {
+        return product.name
+          .toLowerCase()
+          .includes(props.searchParam.toLowerCase());
+      }
     })
     .map((product) => (
       <ProductRow
