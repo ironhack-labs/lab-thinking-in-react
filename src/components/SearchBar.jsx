@@ -19,6 +19,7 @@ export default function SearchBar({search, setSearch}) {
                 onChange={handleChange}
                 value={search.name}
                 name="name"
+                id="search-bar"
                 />
             <label htmlFor="checkbox">
                 <input 

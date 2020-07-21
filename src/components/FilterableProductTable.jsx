@@ -13,7 +13,7 @@ export default function FilterableProductTable(props) {
 
     return (
         <div>
-            <h1>FilterableProductTable</h1>
+            <h1>IronStore</h1>
             <SearchBar setSearch={setSearch} search={search}/>
             <ProductTable products={props.products} filterValue={search}/>
         </div>

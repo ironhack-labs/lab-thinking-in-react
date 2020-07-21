@@ -7,7 +7,14 @@
   margin: 0 3em;
 }
 
+#search-bar {
+  padding: 1em;
+  border-radius: 12px;
+}
 .table-info, .product-row {
   display: flex;
   justify-content: space-evenly;
+}
+.table-info {
+  background-color: lightgray;
 }
