@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SearchBar = () => {
+const SearchBar = (props) => {
   return (
     <div className="search-bar">
       <form>
@@ -8,8 +8,9 @@ const SearchBar = () => {
         <input
           type="text"
           name="searchQuery"
-          //value={''}
           placeholder="Browse products..."
+          onChange={props.handleChange}
+          value={props.searchParam}
         />
       </form>
     </div>
