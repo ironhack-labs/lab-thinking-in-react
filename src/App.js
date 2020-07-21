@@ -1,12 +1,12 @@
 import React from 'react';
-import './App.css';
 import FilterableProductTable from './components/FilterableProductTable';
+import data from './data.json';
+import './App.css';
 
 function App() {
   return (
-    <div>
-      <h1>IronStore</h1>
-      <FilterableProductTable />
+    <div className="App">
+      <FilterableProductTable products={data} />
     </div>
   );
 }
