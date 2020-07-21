@@ -1,13 +1,22 @@
 import React from 'react';
 import logo from './logo.svg';
+import data from './data.json'
 import './App.css';
+import FilterableProductTable from './components/FilterableProductTable';
+import SearchBar from './components/SearchBar';
+import ProductTable from './components/ProductTable';
+import 'bulma/css/bulma.css';
+
+
 
 function App() {
+  
+  
   return (
-    <div>
-    <h1>thinking in React</h1>
+    <div className="App">
       
-    </div>
+      <FilterableProductTable products= {data} />
+        </div>
   );
 }
 
