@@ -11,10 +11,9 @@ const FilterableProductTable = (props) => {
   const handleFilter = () => {
     setFilterCheckbox(!filterCheckbox);
   };
-  console.log(filterCheckbox);
   return (
     <div>
-      <h1>IronStore</h1>
+      <h1 className="text-center mt-5">IronStore</h1>
       <SearchBar
         handleChange={handleChange}
         searchParam={searchParam}

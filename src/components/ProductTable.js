@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductRow from './ProductRow';
+import { Table } from 'react-bootstrap';
 
 const ProductTable = (props) => {
   const productsList = props.products.data
@@ -24,7 +25,7 @@ const ProductTable = (props) => {
 
   return (
     <div className="product-table">
-      <table>
+      <Table striped bordered hover>
         <thead>
           <tr>
             <th>Name</th>
@@ -34,7 +35,7 @@ const ProductTable = (props) => {
           </tr>
         </thead>
         <tbody>{productsList}</tbody>
-      </table>
+      </Table>
     </div>
   );
 };
