@@ -5,10 +5,14 @@ export class ProductTable extends Component {
   render() {
     const productList = this.props.products
       .filter((ps) => !this.props.stock || (this.props.stock && ps.stocked))
-      .filter((p) => p.name.includes(this.props.search))
+      .filter((p) =>
+        p.name
+          .toLocaleLowerCase()
+          .includes(this.props.search.toLocaleLowerCase())
+      )
       .map((item) => <ProductRow key={item.name} product={item} />);
     return (
-      <table>
+      <table className="table is-fullwidth is-striped">
         <thead>
           <tr>
             <th>Name</th>

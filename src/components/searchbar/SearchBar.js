@@ -3,24 +3,24 @@ import React, { Component } from 'react';
 export class SearchBar extends Component {
   render() {
     return (
-      <div>
-        <div className="form-group">
-          <label htmlFor="serach"></label>
+      <div className="container">
+        <div className="field">
+          <label htmlFor="search">Search</label>
           <input
             type="text"
-            className="form-control"
+            className="input is-info"
             name="search"
             id="search"
             onChange={this.props.onChange}
             placeholder="Put search words"
           />
         </div>
-        <div className="form-check">
-          <label className="form-check-label">
+        <div className="filed">
+          <label className="checkbox">
             Only Show Products in Stock
             <input
               type="checkbox"
-              className="form-check-input"
+              className="ml-3"
               name="onlyStock"
               id="onlyStock"
               onChange={this.props.onChange}

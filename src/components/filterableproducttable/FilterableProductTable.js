@@ -20,9 +20,21 @@ export class FilterableProductTable extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Iron Store</h1>
-        <SearchBar onChange={this.handleOnSearchChange} />
+      <div className="container">
+        <div className="columns">
+          <div className="column"></div>
+          <div className="column is-two-fifths">
+            <h1 className="title is-1 is-spaced">Iron Store</h1>
+          </div>
+          <div className="column"></div>
+        </div>
+        <div className="columns">
+          <div className="column"></div>
+          <div className="column is-two-fifths">
+            <SearchBar onChange={this.handleOnSearchChange} />
+          </div>
+          <div className="column"></div>
+        </div>
         <ProductTable
           products={this.props.products}
           search={this.state.search}
