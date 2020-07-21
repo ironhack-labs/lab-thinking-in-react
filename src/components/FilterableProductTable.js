@@ -21,7 +21,7 @@ export default class FilterableProductTable extends Component {
         
         return (
             <div>
-                <h1>FilterableProductTable</h1>
+                <h1>IRONSTORE</h1>
                 <SearchBar callbackFunction={this.filtrar}/>
                 <ProductTable products={this.props.products} filtro={this.state.filtro} />
             </div>
