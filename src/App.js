@@ -1,11 +1,13 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import data from './data.json'
 import './App.css';
+import FilterableProductTable from './components/FilterableProductTable';
 
-function App() {
+const App = () => {
   return (
-    <div>
+    <div className="App">
       <h1>Thinking in React</h1>
+      <FilterableProductTable products={data} />
     </div>
   );
 }
