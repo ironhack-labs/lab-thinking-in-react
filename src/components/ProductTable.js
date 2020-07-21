@@ -2,13 +2,21 @@ import React from 'react';
 import ProductRow from './ProductRow';
 
 const ProductTable = (props) => {
-  const filteredProduct = props.masterState.products.filter((item) => {
+  const filterCheckbox = props.masterState.products.filter((item) => {
+    if (props.checkbox) {
+      return item.stocked;
+    } else {
+      return item;
+    }
+  });
+
+  const filteredProducts = filterCheckbox.filter((item) => {
     const listItem = item.name.toLowerCase();
     const filter = props.filter.toLowerCase();
     return listItem.includes(filter);
   });
 
-  const productList = filteredProduct.map((item) => (
+  const productList = filteredProducts.map((item) => (
     <ProductRow key={item.name} product={item} />
   ));
 

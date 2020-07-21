@@ -5,6 +5,10 @@ const SearchBar = (props) => {
     props.callbackFilter(event.target.value);
   };
 
+  const checkbox = (event) => {
+    props.callbackCheckbox(event.target.checked);
+  };
+
   return (
     <div>
       <div>
@@ -22,7 +26,7 @@ const SearchBar = (props) => {
           className="checkbox"
           type="checkbox"
           name="checkbox"
-          value={false}
+          onClick={checkbox}
         />
         <label>Only show products on stock</label>
       </div>

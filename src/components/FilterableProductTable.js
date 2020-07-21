@@ -17,11 +17,26 @@ const FilterableProductTable = (props) => {
     });
   };
 
+  const checkbox = (checked) => {
+    setState({
+      ...state,
+      checkbox: checked,
+    });
+  };
+
   return (
     <div>
       <h1>IronStore</h1>
-      <SearchBar masterState={state} callbackFilter={filter} />
-      <ProductTable masterState={state} filter={state.search} />
+      <SearchBar
+        masterState={state}
+        callbackFilter={filter}
+        callbackCheckbox={checkbox}
+      />
+      <ProductTable
+        masterState={state}
+        filter={state.search}
+        checkbox={state.checkbox}
+      />
     </div>
   );
 };
