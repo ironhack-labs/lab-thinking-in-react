@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+.filterableProductTable {
+  width: 80%;
+  margin: 10px auto 10px;
+}
+
+.searchBar {
+  margin-top: 30px;
+}
+
+.productTable table {
+  width: 100%;
+}
+
+.productTable thead {
+  background: lightgrey;
+  color: rgb(68, 68, 68);
+}
+
+.productTable tr {
+  height: 50px;
+  border-bottom: 1px solid darkgrey;
+}
