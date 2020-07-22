@@ -36,9 +36,7 @@ export class FilterableProductTable extends Component {
       else if (this.state.searchValue && this.state.onlyInStock) {
         return (
           (product.stocked === this.state.onlyInStock &&
-            product.name.includes(this.state.searchValue)) ||
-          (product.stocked === this.state.onlyInStock &&
-            product.category.includes(this.state.searchValue))
+            product.name.includes(this.state.searchValue))
         );
       }
       // EMPTY SEARCH BAR + CHECKED BOX
