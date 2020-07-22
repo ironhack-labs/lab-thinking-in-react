@@ -1,9 +1,13 @@
+* {
+  margin: 0;
+}
+
 .App {
   text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 10vmin;
   pointer-events: none;
 }
 
@@ -15,13 +19,13 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 3vh;
 }
 
 .App-link {
@@ -35,4 +39,47 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.flex.col {
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.ProductTable td,
+th {
+  padding: 5px 20px;
+  border: 1px solid #282c34;
+  min-width: 150px;
+}
+
+.ProductTable tr td:last-of-type {
+  text-align: right;
+}
+
+.ProductTable {
+  border-collapse: collapse;
+  margin: 20px;
+  color: #282c34;
+}
+
+.ProductTable .table-head {
+  border: none;
+  background-color: #282c34;
+  color: white;
+}
+
+.SearchBar {
+  padding: 3vh;
+  min-height: 10vh;
+}
+
+.SearchBar .check-stock {
+  font-size: 12px;
+  margin: 10px;
 }
