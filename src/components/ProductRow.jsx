@@ -4,8 +4,8 @@ const ProductRow = ({product}) => {
     return (
         
             <tr>
-                <td>{product.name}</td>
-                <td>{product.price}</td>
+                <td style={{color : product.stocked === true ? "black" : "red"}}>{product.name}</td>
+                <td style={{color: product.stocked === true ? "black" : "red"}}>{product.price}</td>
             </tr>
     )
 }

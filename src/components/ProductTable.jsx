@@ -12,10 +12,8 @@ const ProductTable = ({ products }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {products.map((product, index) => (
+                    {products.map((product) => (
                         <ProductRow
-                            key={index}
-                            index={index}
                             product={product}
                         />
                     ))}
