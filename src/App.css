@@ -2,37 +2,56 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.total-container {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
+}
+
+.search-container {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+.check-box{
+  display: flex;
+  margin: 20px;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search-input {
+  height: 50px;
+  width: 800px;
+  display: flex;
+}
+
+.product-table {
+  display: flex;
+  /* border: black 1px solid; */
+  border-collapse: collapse;
+  text-align: center;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.product-table thead {
+  height: 70px;
+}
+
+.product-table th {
+  width: 200px;
+}
+
+.product-table tr {
+  height: 70px;
+}
+
+.product-table td {
+  border: black 1px solid;
+  width: 200px;
 }
