@@ -33,7 +33,7 @@ class FilterableProductTable extends Component {
         return (
             <div className="container">
                 <h1>IronStore</h1>
-                <SearchBar callback={this.handleSearch} callback2={this.handleCheckbox} />
+                <SearchBar callback={this.handleSearch} callback2={this.handleCheckbox} searchValue={this.state.searchValue} />
                 <ProductTable products={filterProduct} />
             </div>
 
