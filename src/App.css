@@ -36,3 +36,40 @@
     transform: rotate(360deg);
   }
 }
+
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+
+td{
+  text-align: center;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "calibri";
+  font-size:20px;
+}
+
+.checkbox{
+  display: inline;
+  margin: 20px;
+}
+
+th{
+  background-color: #929497;
+  text-align: center;
+}
+
+table{
+  width: 400px;
+  border-collapse: collapse;
+}
+
+#searchBar{
+  height: 25px;
+}
