@@ -36,3 +36,55 @@
     transform: rotate(360deg);
   }
 }
+
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-input {
+  width: 30%;
+  margin: 10px;
+  height: 3vh;
+  border: 0.5px solid grey;
+  border-radius: 20px;
+  padding: 5px;
+
+}
+.loupe {
+  height: 4vh;
+  width: 4vh;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+table {
+  background-color: rgb(204, 204, 230);
+  padding: 5px;
+}
+
+thead {
+  background-color: rgb(204, 204, 230);
+  border: rgb(204, 204, 230); 
+
+}
+th {
+  width: 50vh;
+  padding: 5px;
+  height: 5vh;
+  
+}
+
+td {
+  background-color: white;
+  border: none;
+  padding: 5px;
+  height: 5vh;
+}
