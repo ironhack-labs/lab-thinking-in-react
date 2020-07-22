@@ -10,7 +10,7 @@ export default class ProductTable extends Component {
       .filter((product) =>
         product.stocked === stock ? product.stocked : product
       )
-      .filter((product) => product.name.includes(filter))
+      .filter((product) => product.name.toLowerCase().includes(filter))
       .map((product, index) => {
         return <ProductRow key={index} product={product} />;
       });
