@@ -3,11 +3,9 @@ import ProductRow from './ProductRow';
 
 const ProductTable = props => {
 
-    const productsList = props.products.map(prod => {
-        return (
-            <ProductRow key={prod.name} product={prod}></ProductRow>
-        )
-    })
+    const productsList = props.products
+        .filter(prod => props.showOnlyOnStock ? prod.stocked : prod)
+        .map(prod => <ProductRow key={prod.name} product={prod}></ProductRow>)
 
     return (
         <table className="table">

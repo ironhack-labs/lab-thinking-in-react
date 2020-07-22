@@ -5,15 +5,23 @@ import ProductTable from './ProductTable';
 const FilterableProductTable = props => {
 
     const initialState = {
-        currentSearch: ""
-      }
+        currentSearch: "",
+        showOnlyOnStock: false
+    }
     
-      const [state, setState] = useState(initialState)
+    const [state, setState] = useState(initialState)
     
-      const handleSearch = (value) => {
+    const handleSearch = (value) => {
         setState(state => ({
             ...state,
             currentSearch: value
+        }))
+    }
+
+    const handleToggleCheckBox = (value)  =>{
+        setState(state => ({
+            ...state,
+            showOnlyOnStock: value
         }))
     }
 
@@ -25,8 +33,8 @@ const FilterableProductTable = props => {
     
     return (
         <div className="container">
-            <SearchBar search={handleSearch} searchInState={state.currentSearch} />
-            <ProductTable products={filteredProducts} />
+            <SearchBar search={handleSearch} searchInState={state.currentSearch} showOnlyOnStock={state.showOnlyOnStock} updateCheckBox={handleToggleCheckBox} />
+            <ProductTable showOnlyOnStock={state.showOnlyOnStock} products={filteredProducts} />
         </div>
     )
 }
