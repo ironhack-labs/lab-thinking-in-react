@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import data from './data.json'
 import './App.css';
 import FilterableProductTable from './components/FilterableProductTable';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   return (

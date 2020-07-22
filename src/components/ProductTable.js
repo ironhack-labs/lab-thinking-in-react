@@ -1,5 +1,6 @@
 import React from 'react'
 import ProductRow from './ProductRow';
+import Table from 'react-bootstrap/Table';
 
 const ProductTable = props => {
 
@@ -8,11 +9,11 @@ const ProductTable = props => {
         .map(prod => <ProductRow key={prod.name} product={prod}></ProductRow>)
 
     return (
-        <table className="table">
+        <Table striped bordered hover>
             <tbody>
                 {productsList}
             </tbody>
-        </table>
+        </Table>
     )
 }
 

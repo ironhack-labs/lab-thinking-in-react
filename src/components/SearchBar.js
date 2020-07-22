@@ -1,4 +1,5 @@
 import React from 'react'
+import { Form } from 'react-bootstrap'
 
 const SearchBar = props => {
     
@@ -10,11 +11,15 @@ const SearchBar = props => {
     return (
         <div>
             <h3 style={{textAlign:"center"}}>Search</h3>
-            <form>
-                <input className="searchBar" name="search" type="text" value={props.searchInState} onChange={handleChangeSearch} />
-                <label htmlFor="showStock">Only show products on stock</label>
-                <input type="checkbox" name="showStock" checked={props.showOnlyOnStock} onChange={handleChangeSearch} />
-            </form>
+            <Form>
+                <Form.Group>
+                    <Form.Control name="search" type="text" value={props.searchInState} onChange={handleChangeSearch} />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label htmlFor="showStock">Only show products on stock</Form.Label>
+                    <Form.Control type="checkbox" name="showStock" checked={props.showOnlyOnStock} onChange={handleChangeSearch} />
+                </Form.Group>
+            </Form>
             
         </div>
     )

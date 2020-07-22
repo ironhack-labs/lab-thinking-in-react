@@ -32,7 +32,7 @@ const FilterableProductTable = props => {
     })
     
     return (
-        <div className="container">
+        <div>
             <SearchBar search={handleSearch} searchInState={state.currentSearch} showOnlyOnStock={state.showOnlyOnStock} updateCheckBox={handleToggleCheckBox} />
             <ProductTable showOnlyOnStock={state.showOnlyOnStock} products={filteredProducts} />
         </div>
