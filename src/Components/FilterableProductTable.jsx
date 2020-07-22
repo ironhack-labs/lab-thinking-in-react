@@ -43,6 +43,7 @@ export class FilterableProductTable extends Component {
 
     return (
       <div className="total-container">
+      <h1>IronStore</h1>
         <SearchBar callback={this.handleSearch} checkbox={this.checkStock} />
         <ProductTable products={filteredProd} />
         {/* this.props.produtcs correspond au data.data envoyé depuis App.js */}
