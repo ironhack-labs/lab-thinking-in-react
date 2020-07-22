@@ -3,7 +3,7 @@ import { Form } from 'react-bootstrap'
 
 const SearchBar = props => {
     
-    const handleChangeSearch = (e) => {
+    const handleChange = (e) => {
         const { name, value, checked } = e.target
         name === "search" ? props.search(value) : props.updateCheckBox(checked)
     }
@@ -13,11 +13,11 @@ const SearchBar = props => {
             <h3 style={{textAlign:"center"}}>Search</h3>
             <Form>
                 <Form.Group>
-                    <Form.Control name="search" type="text" value={props.searchInState} onChange={handleChangeSearch} />
+                    <Form.Control name="search" type="text" value={props.searchInState} onChange={handleChange} />
                 </Form.Group>
                 <Form.Group>
                     <Form.Label htmlFor="showStock">Only show products on stock</Form.Label>
-                    <Form.Control type="checkbox" name="showStock" checked={props.showOnlyOnStock} onChange={handleChangeSearch} />
+                    <Form.Control type="checkbox" name="showStock" checked={props.showOnlyOnStock} onChange={handleChange} />
                 </Form.Group>
             </Form>
             

@@ -25,9 +25,7 @@ const FilterableProductTable = props => {
         }))
     }
 
-    const jsData = JSON.parse(JSON.stringify(props.products))
-
-    const filteredProducts = jsData.data.filter(product => {
+    const filteredProducts = props.products.data.filter(product => {
         return product.name.toUpperCase().indexOf(state.currentSearch.toUpperCase()) !== -1
     })
     
