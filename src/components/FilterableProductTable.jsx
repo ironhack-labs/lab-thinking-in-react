@@ -32,6 +32,7 @@ export default class FilterableProductTable extends Component {
         });
         return (
             <div>
+                <h1 className='header'>IronStore</h1>
                 <SearchBar callback={this.handleSearch} inStock={this.handleChecked} />
                 <ProductTable products={filteredProducts} />
             </div>
