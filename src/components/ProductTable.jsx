@@ -12,9 +12,11 @@ const ProductTable = ({ products }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {products.map((product) => (
+                    {products.map((product, index) => (
                         <ProductRow
+                            key={index}
                             product={product}
+
                         />
                     ))}
 
