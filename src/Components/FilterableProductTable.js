@@ -9,7 +9,7 @@ export class FilterableProductTable extends Component {
   state = {
     searchValue: null,
     onlyInStock: null,
-    products: this.props.products,
+    products: [...this.props.products],
   };
 
   handleSearch = (event) => {
