@@ -1,22 +1,21 @@
 import React, { Component } from 'react';
 
-export class SearchBar extends Component {
+export default class SearchBar extends Component {
     render() {
         return (
-            <div style={{ marginTop: 100 }}>
-                <div>
+            <div className="group-filter">
+                <div className="group-filter__search">
                     <input
                         type="text"
                         placeholder="Search..."
                         onChange={this.props.callback}
                     />
                 </div>
-
-                <label>Show in stock products only</label>
-                <input type="checkbox" onChange={this.props.inStock} />
+                <div>
+                    <input type="checkbox" onChange={this.props.inStock} />
+                    <label>Show in stock products only</label>
+                </div>
             </div>
         );
     }
 }
-
-export default SearchBar;

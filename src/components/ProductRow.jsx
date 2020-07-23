@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-export class ProductRow extends Component {
+export default class ProductRow extends Component {
     render() {
         return (
-            <tr>
+            <tr className="row">
                 <td
                     style={
                         this.props.products.stocked === false
@@ -18,5 +18,3 @@ export class ProductRow extends Component {
         );
     }
 }
-
-export default ProductRow;
