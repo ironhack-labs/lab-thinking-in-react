@@ -21,9 +21,7 @@ export default class FilterableProductTable extends Component {
   };
 
   handleCheckBox = (e) => {
-    this.setState({
-      isChecked: !this.state.isChecked,
-    });
+    this.setState((state) => ({ isChecked: !state.isChecked }));
   };
 
   render() {

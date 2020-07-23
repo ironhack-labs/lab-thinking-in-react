@@ -15,6 +15,14 @@ export default class ProductTable extends Component {
         return <ProductRow key={index} product={product} />;
       });
 
+    /*.reduce((productList, product) => {
+      const isProductInQuery = product.name.toLowerCase().includes(filter))
+      if(isProductInQuery) {
+        productList = [...productList, <ProductRow key={index} product={product} />;]
+      }
+      return productList
+    }, [])*/
+
     return (
       <div className="productTable">
         <div className="line">
