@@ -8,10 +8,10 @@ export class ProductTable extends Component {
         <table>
           <thead>
             <tr>
-              <td>Name</td>
-              <td>Category</td>
-              <td>Price</td>
-              <td> Stock </td>
+              <td>NAME</td>
+              <td>CATEGORY</td>
+              <td>PRICE</td>
+              <td>STOCK</td>
             </tr>
           </thead>
           <tbody>

@@ -11,14 +11,20 @@ body {
 td {
   background-color: white;
   padding: 10px;
+  text-align: center;
+
 }
 
 tr {
   font-size: 13px ;
+  text-align: center;
+
 }
 
 thead {
-  font-weight: 700;
+  font-weight: 900;
+  color:gray;
+  text-align: center;
 }
 
 .searchbar {
