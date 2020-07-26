@@ -8,14 +8,16 @@
 
 
 .search {
-  border: 3px solid blue
+  border: 3px solid blue;
+  margin: 20px;
+  padding-bottom: 10px
 }
 
 .productTable {
-  border: 3px solid green
-
+  border: 3px solid green;
+  margin: 20px
 }
 
 .notStocked {
-  color: red
+  color: red;
 }
