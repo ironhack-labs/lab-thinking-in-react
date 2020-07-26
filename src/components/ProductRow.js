@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 
 export default class ProductRow extends Component {
     render() {
-        console.log("props in Row", this.props.product)
-        
+        //console.log("props in Row", this.props.product)
 
         return (
             <tr>

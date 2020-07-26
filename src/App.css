@@ -21,3 +21,15 @@
 .notStocked {
   color: red;
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.checkDiv {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
