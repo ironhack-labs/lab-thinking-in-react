@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+.check{
+  float:left
+}
+table{
+  text-align: center;
+}
+.productsTable{
+  background-color: gray;
+}
+.searchBar{
+  background-color:#61dafb ;
+}
+p{margin: 0;}
