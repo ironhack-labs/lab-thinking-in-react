@@ -1,0 +1,19 @@
+.tablediv {
+    height: 10em;
+    position: relative }
+table {
+    margin: 0;
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+width: 100% }
+
+th {
+    margin: 10px;
+}
+
+
+  
