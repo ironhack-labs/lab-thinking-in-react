@@ -6,7 +6,7 @@ import products from './data.json';
 
 function App() {
   return (
-    <div className="App">
+    <div class="App">
       <FilterableProductTable products={products} />
     </div>
   );
