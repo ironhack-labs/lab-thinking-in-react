@@ -19,6 +19,7 @@ export default function ProductTable(props) {
   ));
   return (
     <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <h1>ProductTable</h1>
       <table>
         <thead>
           <tr>

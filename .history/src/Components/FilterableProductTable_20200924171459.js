@@ -21,14 +21,10 @@ export default class FilterableProductTable extends Component {
   };
 
   handleCheckbox = () => {
-    this.setState({
-      checkbox: !this.state.checkbox,
-    });
+    checkbox: !this.state.checkbox;
   };
 
   render() {
-    // console.log(this.props.products.data);
-    console.log(this.state.checkbox);
     return (
       <div>
         <h1>IronStore 🛒</h1>
@@ -39,11 +35,7 @@ export default class FilterableProductTable extends Component {
           handleCheckbox={this.handleCheckbox}
         />
         <br></br>
-        <ProductTable
-          query={this.state.query}
-          products={this.props.products}
-          checkbox={this.state.checkbox}
-        />
+        <ProductTable query={this.state.query} products={this.props.products} />
       </div>
     );
   }

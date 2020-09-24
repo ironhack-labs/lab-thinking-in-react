@@ -18,6 +18,7 @@ export default function ProductTable(props) {
     <ProductRow idx={idx} name={product.name} price={product.price} />
   ));
   return (
+    <h1>ProductTable</h1>
     <div style={{ display: 'flex', justifyContent: 'center' }}>
       <table>
         <thead>

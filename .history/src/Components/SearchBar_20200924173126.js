@@ -12,6 +12,7 @@ export default function SearchBar(props) {
 
   return (
     <div>
+      <h1>Search Bar</h1>
       <label htmlFor="search">Search </label>
       <input
         type="text"

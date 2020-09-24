@@ -31,7 +31,6 @@ export default class FilterableProductTable extends Component {
     console.log(this.state.checkbox);
     return (
       <div>
-        <h1>IronStore 🛒</h1>
         <SearchBar
           query={this.state.query}
           setQuery={this.setQuery}

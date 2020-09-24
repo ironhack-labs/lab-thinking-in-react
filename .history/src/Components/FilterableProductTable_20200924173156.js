@@ -30,8 +30,9 @@ export default class FilterableProductTable extends Component {
     // console.log(this.props.products.data);
     console.log(this.state.checkbox);
     return (
+      <h1>IronStore 🛒</h1>
       <div>
-        <h1>IronStore 🛒</h1>
+        
         <SearchBar
           query={this.state.query}
           setQuery={this.setQuery}

@@ -4,6 +4,7 @@ import ProductTable from './ProductTable';
 
 export default class FilterableProductTable extends Component {
   state = {
+    products: this.state.products,
     query: '',
     checkbox: false,
   };
@@ -27,8 +28,6 @@ export default class FilterableProductTable extends Component {
   };
 
   render() {
-    // console.log(this.props.products.data);
-    console.log(this.state.checkbox);
     return (
       <div>
         <h1>IronStore 🛒</h1>

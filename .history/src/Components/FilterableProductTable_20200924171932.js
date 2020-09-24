@@ -8,17 +8,17 @@ export default class FilterableProductTable extends Component {
     checkbox: false,
   };
 
-  // handleQuery = (newValue) => {
-  //   this.setState({
-  //     query: newValue,
-  //   });
-  // };
-
-  setQuery = (query) => {
+  handleQuery = (newValue) => {
     this.setState({
-      query: query,
+      query: newValue,
     });
   };
+
+  // setQuery = (query) => {
+  //   this.setState({
+  //     query: query,
+  //   });
+  // };
 
   handleCheckbox = () => {
     this.setState({
@@ -27,8 +27,6 @@ export default class FilterableProductTable extends Component {
   };
 
   render() {
-    // console.log(this.props.products.data);
-    console.log(this.state.checkbox);
     return (
       <div>
         <h1>IronStore 🛒</h1>
