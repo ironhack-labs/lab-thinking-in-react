@@ -1,26 +1,42 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { data } from './data.json'
+import FilterableProductTable from './Components/FilterableProductTable/FilterableProductTable'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    data: data,
+    query: '',
+    tickQuery: false
+  };
+  setQuery = query => {
+    this.setState({
+      query: query
+    });
+  };
+  setTickQuery = () => {
+    // console.log("val", tickQuery)
+    this.setState({
+      tickQuery: this.state.tickQuery
+    })
+    console.log("tickQuery", this.state.tickQuery)
+  }
+  render() {
+    console.log("inside", this.state.tickQuery)
+    return (
+      <div className="App">
+        {/* {console.log(this.state.data)} */}
+        <FilterableProductTable
+          products={this.state.data}
+          setQuery={this.setQuery}
+          query={this.state.query}
+          tick={this.state.tick}
+          tickQuery={this.state.tickQuery}
+          setTickQuery={this.setTickQuery} />
+      </div>
+    );
+  }
 }
 
 export default App;
