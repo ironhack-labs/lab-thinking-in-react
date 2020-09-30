@@ -9,7 +9,7 @@ export default class ProductTable extends Component {
     return (
       <div className="product-container">
         <h1>Products</h1>
-        <table className="products-table">
+        <div className="products-table">
           {this.props.filtered.map((element) => {
             return (
               <div key={element.id}>
@@ -17,10 +17,11 @@ export default class ProductTable extends Component {
                   <div>{element.name}</div>
                   <div>{element.price}</div>
                 </div>
+                <hr></hr>
               </div>
             );
           })}
-        </table>
+        </div>
       </div>
     );
   }

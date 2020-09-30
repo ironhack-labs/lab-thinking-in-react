@@ -8,6 +8,7 @@ export default class extends Component {
     products: this.props.products,
     searchParams: '',
     filtered: [],
+    inStock: false,
   };
 
   //search
@@ -16,7 +17,8 @@ export default class extends Component {
       {
         [event.target.name]: event.target.value,
       },
-      this.handleFilter
+      this.handleFilter,
+      () => this.handleStock
     );
   };
 
@@ -24,14 +26,38 @@ export default class extends Component {
   handleFilter = () => {
     const dataCopy = [...this.state.products.data];
 
-    const filteredArr = dataCopy.filter((element) =>
+    let filterInStock = [];
+    if (this.state.inStock === true) {
+      filterInStock = dataCopy.filter((element) => element.stocked === true);
+    } else {
+      filterInStock = dataCopy;
+    }
+
+    console.log(`TOGGLE FILTER CHECKBOX `, filterInStock);
+
+    const filteredArr = filterInStock.filter((element) =>
       element.name
         .toLocaleLowerCase()
         .includes(this.state.searchParams.toLocaleLowerCase())
     );
-    this.setState({
-      filtered: filteredArr,
-    });
+    this.setState(
+      {
+        filtered: filteredArr,
+        stock: filterInStock,
+      },
+      () => this.handleOnChange
+    );
+  };
+
+  //inStock
+  handleStock = () => {
+    const inStock = this.state.inStock;
+    this.setState(
+      {
+        inStock: !inStock,
+      },
+      () => console.log(`In Stock State`, this.state.inStock)
+    );
   };
 
   render() {
@@ -42,8 +68,12 @@ export default class extends Component {
         <SearchBar
           products={this.state.products}
           handleOnChange={this.handleOnChange}
+          handleStock={this.handleStock}
         ></SearchBar>
-        <ProductTable filtered={this.state.filtered}></ProductTable>
+        <ProductTable
+          filtered={this.state.filtered}
+          stock={this.state.inStock}
+        ></ProductTable>
       </div>
     );
   }

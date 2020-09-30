@@ -13,7 +13,12 @@ const SearchBar = (props) => {
         placeholder="Search..."
       ></input>
       <div className="in-stock">
-        <input type="checkbox" id="stock" name="stock"></input>
+        <input
+          type="checkbox"
+          id="stock"
+          name="stock"
+          onChange={props.handleStock}
+        ></input>
         <label>Only show products in stock</label>
       </div>
     </div>

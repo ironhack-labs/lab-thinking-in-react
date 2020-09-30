@@ -4,7 +4,7 @@
 }
 
 .products-table {
-  width: 50%;
+  width: 80%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -13,5 +13,6 @@
 
 .products {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  margin: 5px;
 }
