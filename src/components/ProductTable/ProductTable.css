@@ -1,0 +1,9 @@
+.titles {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid rgb(152, 151, 151);
+  background-color: rgba(228, 220, 220, 0.968);
+  height: 30px;
+  align-items: center;
+}

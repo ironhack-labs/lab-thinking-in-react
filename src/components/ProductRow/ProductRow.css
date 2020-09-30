@@ -1,0 +1,6 @@
+.product {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid rgb(152, 151, 151);
+}

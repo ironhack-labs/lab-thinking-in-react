@@ -1,0 +1,16 @@
+.search {
+  padding: 20px;
+}
+
+.search > label {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.search > input {
+  width: 400px;
+  margin: 10px;
+  font-size: 16px;
+}
+
+

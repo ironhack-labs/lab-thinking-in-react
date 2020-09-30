@@ -7,9 +7,22 @@ export default class FilterableProductTable extends Component {
   state = {
     products: data.data,
     search: '',
+    isFiltered: false,
   };
   searchProduct = ({ target: { value: search } }) => {
     this.setState({ search });
+  };
+
+  filterProducts = () => {
+    let inStock;
+    if(this.state.isFiltered){
+      inStock = data.data;
+  } else {
+   
+      inStock = this.state.products.filter(
+        (product) => product.stocked === true)
+  }
+  this.setState({ isFiltered: !this.state.isFiltered, products: inStock });
   };
 
   render() {
@@ -21,8 +34,15 @@ export default class FilterableProductTable extends Component {
     );
     return (
       <div>
-        <SearchBar search={this.state.search} onChange={this.searchProduct} />
-        <ProductTable products={this.state.products} filteredProducts={filteredProducts}/>
+        <SearchBar
+          search={this.state.search}
+          onChange={this.searchProduct}
+          onClick={this.filterProducts}
+        />
+        <ProductTable
+          products={this.state.products}
+          filteredProducts={filteredProducts}
+        />
       </div>
     );
   }
