@@ -16,7 +16,7 @@ class ProductRow extends Component {
                     <td className={this.props.className}>{this.props.name} </td>
                     <td>{this.props.price}</td>
                 </tr>
-                
+
             </>
         )
     }

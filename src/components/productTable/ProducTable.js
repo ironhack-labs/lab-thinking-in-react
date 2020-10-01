@@ -19,15 +19,12 @@ class ProductTable extends Component {
         let searchedProduct = data.data.filter(elm => elm.name.toLowerCase().includes(text.text.toLowerCase()))
         console.log(searchedProduct)
         this.setState({ data: searchedProduct })
-
     }
 
 
-
-
     render() {
+
         let stockColor = ''
-        console.log("----", this.props.product.products.data);
         return (
             <>
                 <SearchBar searchProduct={this.searchProduct} />

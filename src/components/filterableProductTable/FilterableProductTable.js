@@ -22,7 +22,6 @@ class FilterableProductTable extends Component {
     }
 }
 
+
 export default FilterableProductTable
 
-
-// { this.state.foods.map((elm, index) => <FoodBox key={index} {...elm} updateTodaysFood={() => this.updateTodaysFood(index)} />) }

@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-import Form from 'react-bootstrap/Form'
 import '../App.css'
 
 class SearchBar extends Component {
-
     constructor() {
         super()
         this.state = {
@@ -11,19 +9,18 @@ class SearchBar extends Component {
         }
     }
 
+
     handleInputChange = e => {
         let { name, value } = e.target
-
         this.setState({ [name]: value })
     }
 
+
     handleSubmit = e => {
-
         e.preventDefault()
-
         this.props.searchProduct(this.state)
-
     }
+
 
     render() {
         return (
