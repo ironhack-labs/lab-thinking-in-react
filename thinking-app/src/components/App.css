@@ -1,0 +1,14 @@
+.app {
+    margin: 100px;
+}
+
+table, td, th {
+    border: 1px solid;
+    border-collapse: collapse;
+    padding: 10px;   
+}
+
+input {
+    margin-bottom: 20px ;
+}
+
