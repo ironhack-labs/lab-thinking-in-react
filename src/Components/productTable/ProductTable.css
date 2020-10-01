@@ -1,0 +1,21 @@
+.filterable {
+    border: 2px solid yellow
+}
+
+.product-container {
+    border: 2px solid green;
+    height: 300px;
+}
+
+.products-table {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.products {
+    display: flex;
+    justify-content: space-between;
+}
