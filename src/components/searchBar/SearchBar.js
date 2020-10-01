@@ -15,18 +15,11 @@ class SearchBar extends Component {
 
     }
 
-    textChangeHandler = (e) => {
+    inputChangeHandler = (e) => {
 
-        this.setState({ textValue: e.target.value })
+        let newState = e.target.type === 'text' ? { textValue: e.target.value } : { showStockProducts: e.target.checked }
 
-        this.props.filterMethod(e.target.value, this.state.showStockProducts)
-    }
-
-    showStockHandler = (e) => {
-
-        this.setState({ showStockProducts: e.target.checked })
-
-        this.props.filterMethod(this.state.textValue, e.target.checked)
+        this.setState(newState, () => this.props.filterMethod(this.state.textValue, this.state.showStockProducts))
     }
 
     render() {
@@ -39,13 +32,13 @@ class SearchBar extends Component {
 
                 <form>
 
-                    <input className='text-input' type='text' name='name' placeholder='Search' onChange={this.textChangeHandler} />
+                    <input className='text-input' type='text' name='name' placeholder='Search' onChange={this.inputChangeHandler} />
 
                     <div>
 
                         <div className='check-line'>
 
-                            <input type='checkbox' name='onStock' onChange={this.showStockHandler} />
+                            <input type='checkbox' name='onStock' onChange={this.inputChangeHandler} />
 
                             <label>Only show products on stock</label>
 
