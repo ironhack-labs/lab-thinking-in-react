@@ -1,0 +1,44 @@
+
+h1{
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}
+
+.search-bar{
+    display:block;
+    width: 40rem; 
+    height: 30px;
+    background:rgb(232, 236, 239);
+    border: none;
+    padding: 0.5rem;
+    margin:0 auto;
+    margin-bottom: 50px;
+    border-radius: 5px;
+}
+
+th {
+    border-bottom: 1px solid black;
+}
+
+td{
+    border-bottom: 1px solid rgb(172, 155, 155);
+    padding: 10px 0; 
+}
+
+tr:hover{
+    background-color: blanchedalmond;
+}
+
+table{
+   width: 100%;
+    text-align: center;
+    
+}
+
+
+.red{
+    color:red;
+}
