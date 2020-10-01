@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+table {
+  width: 100%;
+}
+
+td{
+  width: 40%;
+  padding: 5px
+}
+
+th{
+  text-align: left
+
+}
+input {
+  width: 60%;
+  margin: 20px 0
+}
