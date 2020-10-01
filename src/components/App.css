@@ -13,6 +13,14 @@
   }
 }
 
+h1 {
+  margin: 20px;
+}
+
+.checkbox-form {
+  margin-bottom: 40px;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
