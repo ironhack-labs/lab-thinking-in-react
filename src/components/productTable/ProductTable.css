@@ -1,0 +1,21 @@
+table{
+
+    border-collapse: collapse;
+    width: 100%;
+
+    margin-top: 30px
+}
+
+thead {
+
+    background-color: lightblue;
+}
+
+td{
+
+    padding: 20px;
+    text-align: center;
+
+    border-top: solid 1px gray;
+    border-top: solid 1px gray
+}
