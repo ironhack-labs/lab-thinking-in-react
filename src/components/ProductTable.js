@@ -8,8 +8,8 @@ const ProductTable = (props) => {
             <table>
                 <thead>
                     <tr>
-                        <td>Name</td>                    
-                        <td>Price</td>
+                        <td><strong>Name</strong></td>                    
+                        <td><strong>Price</strong></td>
                     </tr>
                 </thead>
                 <tbody>

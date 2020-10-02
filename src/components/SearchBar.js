@@ -30,10 +30,14 @@ export default class SearchBar extends Component {
     }
 
     render() {
+        const inputStyle = {
+            width: "80vw",
+            height: "1.5rem"
+        }
         return (
             <div>
                 <h3>Search</h3>
-                <input onChange={this.handleChange} type="text" placeholder="search" value={this.state.search}/><br/>
+                <input style={inputStyle} onChange={this.handleChange} type="text" placeholder="search" value={this.state.search}/><br/>
                 <input onChange={this.inStockToggle} type="checkbox" id="show-in-stock"/><label name="show-in-stock">Only show in stock products</label><br/>
             </div>
         )

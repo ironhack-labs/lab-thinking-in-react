@@ -2,6 +2,24 @@
   text-align: center;
 }
 
+table {
+  margin: 1rem auto;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: rgb(82, 170, 252);
+}
+
+table td {
+  padding: 1rem 10rem  ;
+  border-top: 1px solid black;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
