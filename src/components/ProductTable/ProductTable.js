@@ -14,7 +14,7 @@ export default function ProductTable({ products }) {
                     <div className="column is-one-quarter" style={divStyle}><b>Name</b></div>
                     <div className="column is-one-quarter" style={divStyle}><b>Price</b></div>
                 </div>
-                {products.data.map((product) => {
+                {products?.map((product) => {
                     return <ProductRow key={product.id} name={product.name} stocked={product.stocked} price={product.price} />
                 })}
             </div>
