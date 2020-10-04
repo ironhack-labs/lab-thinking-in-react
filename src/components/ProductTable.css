@@ -1,0 +1,22 @@
+.ProductTable {
+    width: 100%;
+    border: 0px;
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+
+.head {
+    background-color: rgb(212, 206, 206);
+    border-color: rgb(212, 206, 206);
+    padding-top: 200px;
+}
+
+tr {
+    margin: 20px;
+    border-bottom: 1px solid rgb(212, 206, 206);
+}
+
+td, th {
+    padding: 5px;
+}
+

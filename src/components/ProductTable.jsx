@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductRow from './ProductRow';
+import './ProductTable.css'
 
 function ProductTable(props) {    
     const productLi = props.products.map(product => {
@@ -9,7 +10,7 @@ function ProductTable(props) {
     return (
         <table className="ProductTable">
             <tbody>
-                <tr>
+                <tr className="head">
                     <th>Name</th>
                     <th>Price</th>
                 </tr>

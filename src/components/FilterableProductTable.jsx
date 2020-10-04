@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import SearchBar from './SearchBar';
 import ProductTable from './ProductTable';
+import './FilterableProductTable.css'
 
 
 function FilterableProductTable(props) {
