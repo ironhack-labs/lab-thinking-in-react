@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,700&family=Raleway:wght@100;700&display=swap");
+/*
+font-family: 'Lato', sans-serif;
+font-family: 'Raleway', sans-serif;
+*/
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-align: center;
+  color: #333;
+}
+
+body strong {
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Raleway', sans-serif;
+}
+
+h3 {
+  color: tomato;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+
+.table-block {
+  background: #fff;
+  padding: 6rem;
+  margin-top: 6rem;
+  border-radius: 2.4rem;
+  border: solid 0.1rem tomato;
+  -webkit-box-shadow: 0 1rem 2rem 0 rgba(51, 51, 51, 0.1);
+          box-shadow: 0 1rem 2rem 0 rgba(51, 51, 51, 0.1);
+}
+
+header {
+  background: tomato;
+  color: #fff;
+  padding: 1rem;
+}
+
+header h1 {
+  font-size: 5rem;
+  position: relative;
+  display: inline;
+}
+
+header h1:before {
+  content: '';
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  background: url(../images/tag.svg) no-repeat center center/contain;
+  left: -5rem;
+  top: 50%;
+  margin-top: -2rem;
+}
+
+.thead .col-6 {
+  padding: 1.6rem;
+  border-bottom: solid 0.1rem rgba(51, 51, 51, 0.1);
+  font-size: 2rem;
+  margin-top: 4rem;
+  color: tomato;
+}
+
+.table .row {
+  padding: 0.8rem;
+  border-bottom: solid 0.1rem rgba(51, 51, 51, 0.1);
+  position: relative;
+}
+
+.table .no-stocked {
+  position: relative;
+}
+
+.table .no-stocked:before {
+  content: 'out of stock';
+  background: tomato;
+  font-size: 1.2rem;
+  position: absolute;
+  right: 1rem;
+  font-weight: bold;
+  color: #fff;
+  padding: 0.4rem 1.6rem;
+  border-radius: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.form-group label {
+  margin-left: 2rem;
+}
+
+.form-group .form-control {
+  font-size: 1.6rem;
+  border-radius: 2rem;
+  padding-left: 2rem;
+  border-color: tomato;
+}
+
+.form-check {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 2rem;
+}
+
+.form-check label {
+  margin-left: 1rem;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 578px) {
+  html {
+    font-size: 8px;
+  }
+  body {
+    background: #fff;
+  }
+  .table-block {
+    padding: 3rem 6rem;
+    margin-top: 0rem;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .table .no-stocked {
+    color: #fff;
+  }
+  .table .no-stocked:before {
+    content: '- out of stock -';
+    font-size: 1.2rem;
+    left: 1rem;
+    right: 1rem;
+    padding: 0.4rem 1.6rem;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
