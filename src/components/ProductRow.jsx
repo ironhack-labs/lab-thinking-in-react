@@ -4,7 +4,7 @@ class ProductRow extends Component {
     render() {
         const product = this.props.product;
         return (
-            <tr key={product.id}>
+            <tr>
                 <td>{product.name}</td>
                 <td>{product.price}</td>
             </tr>

@@ -4,8 +4,8 @@ import ProductRow from './ProductRow';
 class ProductTable extends Component {
   displayProduct() {
     let products = [];
-    const data = this.props.products.data;
-    data.map((item) => products.push(<ProductRow product={item} />));
+    const data = this.props.products;
+    data.map((item) => products.push(<ProductRow key={item.id} product={item} />));
     return products;
   }
 

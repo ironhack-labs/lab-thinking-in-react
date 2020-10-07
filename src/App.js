@@ -6,7 +6,7 @@ import FilterableProductTable from './components/FilterableProductTable';
 function App() {
   return (
     <div className="App">
-      <FilterableProductTable products={data} />
+      <FilterableProductTable products={data.data} />
     </div>
   );
 }
