@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ProductTable from './ProductTable';
 import SearchBar from './SearchBar';
+import CheckBox from './CheckBox';
 
 class FilterableProductTable extends Component {
   state = {
@@ -16,13 +17,19 @@ class FilterableProductTable extends Component {
     })
   };
 
+  displayInStock = (event) => {
+    this.setState({
+      products: event.target.checked ? this.state.products.filter(elm => elm.stocked === true) : this.props.products,
+    });
+  }
+
   render() {
-    console.log(this.state.products);
     const products = this.state.products
       .filter(product => this.state.input === '' || product.name.toLowerCase().slice(0,this.state.length).includes(this.state.input));
     return (
       <div>
         <SearchBar input={this.state.input} handleFilter={this.displayFilterproduct} />
+        <CheckBox handleChecked={this.displayInStock} />
         <ProductTable products={products} />
       </div>
     );
