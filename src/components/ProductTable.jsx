@@ -20,11 +20,8 @@ state ={}
                     </thead>
                     <tbody>
                     
-                    {this.props.products.map((product) => (
-                        <tr>
-                            <td>{product.name}</td>
-                            <td>{product.price}</td>
-                        </tr>
+                    {this.props.products.map((product, index) => (
+                        <ProductRow productRow={product} key={index}/>
                     ))}
 
 
