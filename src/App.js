@@ -1,14 +1,22 @@
-import React from 'react';
 import FilterableProductTable from './components/FilterableProductTable';
 import data from './data.json';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <FilterableProductTable products={data} />
-    </div>
-  );
+import React, { Component } from 'react';
+
+class App extends Component {
+  state = {
+    products: data,
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <h1>IronStore</h1>
+        <FilterableProductTable products={this.state.products} />
+      </div>
+    );
+  }
 }
 
 export default App;
