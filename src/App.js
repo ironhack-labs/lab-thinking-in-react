@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import data from '../data.json';
+import dataJSON from './data.json';
 
 import FilterableProductTable from './components/FilterableProductTable';
 
@@ -9,7 +9,7 @@ import FilterableProductTable from './components/FilterableProductTable';
 function App() {
   return (
     <div className="App">
-      <FilterableProductTable products={ data } />
+      <FilterableProductTable products={ dataJSON.data } />
     </div>
   );
 }
