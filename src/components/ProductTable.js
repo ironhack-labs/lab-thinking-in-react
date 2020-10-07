@@ -4,8 +4,8 @@ import ProductRow from './ProductRow';
 export default class ProductTable extends Component {
 
   render() {
-    const allProducts = this.props.productList.data;
-
+    const allProducts = this.props.productList;
+// console.log(allProducts)
     return (
       <div>
         <table>
