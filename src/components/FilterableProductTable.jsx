@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import Search from './components/SearchBar';
-import Product from './components/ProductTable';
+import SearchBar from './SearchBar';
+import ProductTable from './ProductTable';
 
 export default class FilterableProductTable extends Component {
   render() {
     return (
       <div>
-        <Search />
+        <SearchBar />
         <div>
-          <Product />
+          <ProductTable />
         </div>
       </div>
     );

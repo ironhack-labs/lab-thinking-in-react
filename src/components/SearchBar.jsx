@@ -6,8 +6,6 @@ export default class SearchBar extends Component {
       <div>
         <h2>Search</h2>
         <input
-          onChange={}
-          value={}
           id="search"
           autoComplete="off"
           className="search"
