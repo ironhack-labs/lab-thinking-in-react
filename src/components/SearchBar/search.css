@@ -1,0 +1,30 @@
+.searchbar {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    background-color: #eee;
+    margin: 20px 0;
+}
+
+.searchbar form {
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 0;
+    
+}
+
+.searchbar form input[type="search"],
+.searchbar form div {
+    width: 100%;
+}
+
+.searchbar form input[type="search"] {
+    padding: 5px;
+    margin: 5px 0;
+}

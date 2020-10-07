@@ -1,0 +1,31 @@
+.product-table {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.product-table table {
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #999;
+}
+
+.product-table table thead {
+    background-color: #333;
+    color: white;
+}
+
+.product-table table tr,
+.product-table table td {
+    border-bottom: solid 1px #999;
+}
+
+.product-table table td,
+.product-table table th {
+    padding: 5px 15px;
+}
+
+
+.product-table table tbody tr:nth-of-type(odd) {
+    background-color: #cfcfcfcf;
+}

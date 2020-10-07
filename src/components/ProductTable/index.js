@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductRow from '../ProductRow';
+import './product-table.css';
 
 const ProductTable = ({ products }) => {
   //console.log(products);
@@ -9,15 +10,15 @@ const ProductTable = ({ products }) => {
       <table>
         <thead>
           <tr>
-            <th> Name </th> <th> Price </th>{' '}
-          </tr>{' '}
-        </thead>{' '}
+            <th> Name </th> <th> Price </th>
+          </tr>
+        </thead>
         <tbody>
           {products.map((product, i) => {
             return <ProductRow key={i} product={product} />;
           })}
-        </tbody>{' '}
-      </table>{' '}
+        </tbody>
+      </table>
     </div>
   );
 };
