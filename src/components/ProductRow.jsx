@@ -8,7 +8,7 @@ const ProductRow = ({name, price, stocked}) => {
     <tr>
         {stocked && <td>{name}</td> }
         {!stocked && <td style={{color: "red"}}>{name}</td> }
-        {/* <td style={{color: stocked ? "red": "black"}}>{name}</td> */}
+        {/* <td style={{color: stocked ? "red": "black"}}>{name}</td> OTHER WAY TO DO IT*/}
       
       <td>{price}</td>
     </tr>

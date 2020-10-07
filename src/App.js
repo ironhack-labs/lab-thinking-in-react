@@ -5,12 +5,13 @@ import FilterableProductTable from './components/FilterableProductTable';
 import SearchBar from './components/SearchBar';
 import ProductTable from './components/ProductTable';
 
-function App() {
+function App(props) {
+
   return (
     <div className="App">
      <FilterableProductTable products={ data } />
-     <SearchBar/>
-     <ProductTable/>
+     <SearchBar />
+     <ProductTable />
     </div>
   );
 }
