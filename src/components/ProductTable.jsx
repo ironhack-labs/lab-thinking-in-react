@@ -11,7 +11,7 @@ state ={}
 
         return (
             <div>
-                <table>
+                <table className ="table-product">
                     <thead>
                         <tr>
                         <th>Name</th>

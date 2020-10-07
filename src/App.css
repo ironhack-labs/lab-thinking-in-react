@@ -36,3 +36,37 @@
     transform: rotate(360deg);
   }
 }
+
+.search-bar{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.input-Search {
+  width: 42em;
+  height: 2em;
+  display: flex;
+}
+
+#search {
+  width: 12em;
+}
+
+.table-product {
+  width: 100vw;
+}
+
+.table-product thead {
+  background-color: slategray;
+}
+
+.table-product tbody {
+ height: 1.2em;
+}
+
+th, td {
+  height: 2rem;
+  border-bottom: 1px solid whitesmoke;
+  text-align: center;
+}

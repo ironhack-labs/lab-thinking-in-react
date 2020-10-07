@@ -31,13 +31,13 @@ export default class SearchBar extends Component {
     render() {
        
         return (
-            <div>  
-                
+            <div className="search-bar">  
                 <h4>Search</h4>
-
-                <input type="text" name="searchInput" onChange={this.handleChange} value={this.state.searchInput}/>
-                <input type="checkbox" name="inStock" onChange={this.handleChecked} checked={this.state.inStock}></input>
-                <label>Only show products on stock</label>
+                <div className="input-search">    
+                    <input id="search" type="text" name="searchInput" onChange={this.handleChange} value={this.state.searchInput}/>
+                    <input type="checkbox" name="inStock" onChange={this.handleChecked} checked={this.state.inStock}></input>
+                    <label>Only show products on stock</label>
+                </div>
             </div>
         )
     }
