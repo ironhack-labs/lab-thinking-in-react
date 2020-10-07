@@ -9,7 +9,6 @@ export default class FilterableProductTable extends Component {
 
   search = (searchProduct) => {
     const copyproducts = [...this.props.products];
-    //const reg = new RegExp(searchProduct, 'gi');
 
     const filtered = copyproducts.filter((product) =>
       product.name
@@ -17,11 +16,6 @@ export default class FilterableProductTable extends Component {
         .slice(0, searchProduct.search.length)
         .includes(searchProduct.search.toLowerCase())
     );
-    // console.log(filtered);
-    //console.log(copyproducts);
-    //copyproducts.filter(reg.test())
-    //reg.test(product.name) map/filter
-    //words.filter(word => word.length > 6);
     this.setState({ products: filtered });
   };
 
