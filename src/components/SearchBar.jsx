@@ -7,21 +7,22 @@ export default class SearchBar extends Component {
 
   handleChange = (event) => {
     const value = event.target.value;
-
-    this.props.handleSearch({
-      search: this.state.name,
-    });
-
+    
     this.setState({
       search: value,
     });
+
+    this.props.handleSearch({
+      search: event.target.value,
+    });
+
   };
 
   render() {
     return (
       <div>
         <h2>Search</h2>
-        <form className="Form" onSubmit={this.handleSubmit}>
+        <form className="Form">
           <input
             id="search"
             autoComplete="off"

@@ -5,6 +5,8 @@ import React, { Component } from 'react';
 export default class ProductTable extends Component {
   render() {
 
+  //  console.log(this.props.products.data);
+
     return (
       <div>
         <table>
@@ -15,7 +17,7 @@ export default class ProductTable extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.props.products.data.map((product, i) => (
+            {this.props.products.map((product, i) => (
               <ProductRow
                 key={i}
                 price={product.price}

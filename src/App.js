@@ -4,9 +4,13 @@ import './App.css';
 
 import React, { Component } from 'react';
 
+
+const products = data.data.map((product) => product)
+
+
 class App extends Component {
   state = {
-    products: data,
+    products: products,
   };
 
   render() {
