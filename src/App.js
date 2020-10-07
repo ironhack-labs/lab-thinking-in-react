@@ -4,9 +4,7 @@ import './App.css';
 
 import React, { Component } from 'react';
 
-
-const products = data.data.map((product) => product)
-
+const products = data.data.map((product) => product);
 
 class App extends Component {
   state = {

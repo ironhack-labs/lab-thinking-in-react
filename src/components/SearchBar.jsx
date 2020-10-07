@@ -3,11 +3,12 @@ import React, { Component } from 'react';
 export default class SearchBar extends Component {
   state = {
     search: '',
+    isCheck:false
   };
 
   handleChange = (event) => {
     const value = event.target.value;
-    
+
     this.setState({
       search: value,
     });
@@ -15,7 +16,17 @@ export default class SearchBar extends Component {
     this.props.handleSearch({
       search: event.target.value,
     });
+  };
 
+  handleCheck = (event) => {
+
+     this.setState({
+      isCheck: event.target.checked,
+    });
+
+    this.props.handleStock({
+      stock: event.target.checked,
+    });
   };
 
   render() {
@@ -32,6 +43,14 @@ export default class SearchBar extends Component {
             value={this.state.search}
             onChange={this.handleChange}
           />
+
+          <input
+            onChange={this.handleCheck}
+            type="checkbox"
+            id="checkstock"
+            name="checkstock"
+          />
+          <label for="checkstock">Only show products on stock</label>
         </form>
       </div>
     );
