@@ -13,9 +13,8 @@ class FilterableProductTable extends React.Component {
   };
 
   search = (value) => {
-      console.log("search in table", value);
       let donotmutate = [...products];
-      let newarray = donotmutate.filter((product)=> product.name.toLowerCase().includes(value.toLowerCase()) )
+      let newarray = donotmutate.filter((product)=> product.name.toLowerCase().slice(0, value.length).includes(value.toLowerCase()) )
         console.log(newarray)
         this.setState({
             products: newarray
