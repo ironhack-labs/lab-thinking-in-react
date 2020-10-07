@@ -1,27 +1,39 @@
 import React, { Component } from 'react';
 
 export default class Searchbar extends Component {
-  state= {
-    searchbar: ''
-  }
+  state = {
+    searchbar: '',
+    inStock: false,
+  };
 
-  handleChange = e => {
-    console.log(e.target)
-    const { name, value } = e.target
-    console.log('name, value in sb 1st', name, value)
-    this.setState({
-      [name]: value
-    }, () => this.props.searchProduct(this.state)) 
-  }
+  handleChange = (e) => {
+    const { name } = e.target;
+    const value =
+      e.target.type === 'checkbox' ? e.target.checked : e.target.value;
+
+    this.setState(
+      {[name]: value},
+      () => this.props.searchProduct(this.state)
+    );
+  };
 
   render() {
-    console.log('state 3step', this.state.searchbar)
     return (
       <div>
         <form>
-          <input type="text" name="searchbar" onChange={this.handleChange} value={this.state.searchbar}/>
-          {/*<input type="checkbox" name="stock" />
-          <label>Only show products on stock</label>*/}
+          <input
+            type="text"
+            name="searchbar"
+            onChange={this.handleChange}
+            value={this.state.searchbar}
+          />
+          <input
+            type="checkbox"
+            name="inStock"
+            onChange={this.handleChange}
+            checked={this.state.inStock}
+          />
+          <label>Only show products on stock</label>
         </form>
       </div>
     );
