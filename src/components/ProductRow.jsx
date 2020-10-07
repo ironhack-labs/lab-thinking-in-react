@@ -9,7 +9,7 @@ class ProductRow extends Component {
     return (
       <tr
         style={{
-          color: this.state.isStock == this.props.stocked ? 'black' : 'red',
+          color: this.state.isStock === this.props.stocked ? 'black' : 'red',
         }}
       >
         <td>{this.props.name}</td>

@@ -5,12 +5,15 @@ export default class SearchBar extends Component {
     search: '',
   };
 
-  handlChange = (event) => {
+  handleChange = (event) => {
     const value = event.target.value;
-    const key = event.target.name;
+
+    this.props.handleSearch({
+      search: this.state.name,
+    });
 
     this.setState({
-      [key]: value,
+      search: value,
     });
   };
 
