@@ -1,9 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
+import data from './data.json';
 import './App.css';
 
+import FilterableProductTable from './components/FilterableProductTable';
+
 function App() {
-  return <div></div>;
+  return (
+    <div className="App">
+      <FilterableProductTable products={data} />
+    </div>
+  );
 }
 
 export default App;
