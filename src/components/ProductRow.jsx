@@ -1,9 +1,9 @@
 import React from 'react';
 
-const ProductRow = (price, stocked, name) => {
+const ProductRow = ({ price, stocked, name }) => {
   return (
     <tr>
-      <td className={stocked}>{name}</td>
+      <td>{name}</td>
       <td>{price}</td>
     </tr>
   );

@@ -4,24 +4,23 @@ import React, { Component } from 'react';
 
 export default class ProductTable extends Component {
   render() {
-    console.log(this.props.products);
 
     return (
       <div>
         <table>
           <thead>
-            <th style={{ display: 'flex' }}>
-              <tr>Name</tr>
-              <tr>Price</tr>
-            </th>
+            <tr style={{ display: 'flex' }}>
+              <th>Name</th>
+              <th>Price</th>
+            </tr>
           </thead>
           <tbody>
-            {this.props.products.map((products, i) => (
+            {this.props.products.data.map((product, i) => (
               <ProductRow
                 key={i}
-                price={products.price}
-                stocked={products.stocked}
-                name={products.name}
+                price={product.price}
+                stocked={product.stocked}
+                name={product.name}
               />
             ))}
           </tbody>
