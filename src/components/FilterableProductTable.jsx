@@ -5,22 +5,24 @@ import SearchBar from './SearchBar';
 class FilterableProductTable extends Component {
   state = {
     products: this.props.products,
+    input: "",
+    length: 0,
   };
 
   displayFilterproduct = (event) => {
-    console.log(this.state.products, "thisiiiiiiiiiiii");
     this.setState({
-      products: this.state.products.filter((prd) => {
-        prd.name.includes(event.target.value);
-      }),
-    });
+      input: event.target.value,
+      length: event.target.value.length,
+    })
   };
 
   render() {
-    const products = this.state.products;
+    console.log(this.state.products);
+    const products = this.state.products
+      .filter(product => this.state.input === '' || product.name.toLowerCase().slice(0,this.state.length).includes(this.state.input));
     return (
       <div>
-        <SearchBar handleFilter={this.displayFilterproduct} />
+        <SearchBar input={this.state.input} handleFilter={this.displayFilterproduct} />
         <ProductTable products={products} />
       </div>
     );
