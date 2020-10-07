@@ -1,16 +1,24 @@
 import React from 'react';
 
 const ProductRow = ({product}) => {
-    
+
 
     return (
         <tr className="product-row">
-            <td style={ !product.stocked ? { color:  'red' } : { color: 'black'} }>
-                
+            <td style={
+                !product.stocked ? {
+                    color: 'red'
+                } : {
+                    color: 'black'
+                }
+            }>
+                {
+                product.name
+            } </td>
 
-            {product.name}</td>
-
-            <td>{product.price}</td>
+            <td> {
+                product.price
+            } </td>
         </tr>
     );
 }
