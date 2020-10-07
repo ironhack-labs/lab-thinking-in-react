@@ -2,6 +2,23 @@
   text-align: center;
 }
 
+
+
+.search-bar{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.checkbox-product{
+  display: flex;
+  flex-direction: row;
+}
+
+#search{
+  width: 90%;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
