@@ -13,27 +13,10 @@ class FilterableProductTable extends Component {
 
 
     handleSearch =(valueSearch) => {
-        let arrToPrint= [...this.state.products];
-
-        if( this.state.products.filter(({name})=> new RegExp(valueSearch,"gi").test(name)) ) {
-            this.setState({
-           products: arrToPrint = arrToPrint.filter(({name})=> new RegExp(valueSearch,"gi").test(name)),
-           value: valueSearch,
-       })
-         
-           
-        } else {
-            this.setState({
-           products: arrToPrint = [...this.state.products],
-           value: valueSearch,
-       })
-        }
-
-       this.setState({
-           products: arrToPrint,
-           value: valueSearch,
-       })
-      
+    const filteredProducts = this.props.products.filter(product => product.name.toLowerCase().includes(valueSearch.toLowerCase()))
+    this.setState({
+       products: filteredProducts
+     });
     }
 
     render() {
@@ -41,13 +24,9 @@ class FilterableProductTable extends Component {
         return (
             <div>
                 <h1>IronStore</h1>
-                {/* <div className="monBOule"> toto {this.props.data.price}</div> */}
-                {/* {arrProduct} */}
-
-
-
-
-                <SearchBar valueInput={this.state.value} handleSearch={this.handleSearch}  products={this.state.products}/>
+   
+                {/* <SearchBar valueInput={this.state.value} handleSearch={this.handleSearch}  products={this.state.products}/> */}
+                <SearchBar handleSearch={this.handleSearch}/>
                 <ProductTable products={this.state.products} />
             </div>
         )

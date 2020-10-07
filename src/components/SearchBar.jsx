@@ -3,25 +3,19 @@ import React, { Component } from 'react'
 export default class SearchBar extends Component {
 
     state = {
-        product : this.props.products,
-        name : "",
+        // product : this.props.products,
+        searchInput : "",
     }
-
 
     handleChange = (evt) =>{
         const value = evt.target.value;
         const name = evt.target.name;
-       
-       
         this.setState({
-        name: value,
+          [name]: value,
         });
+      
+        this.props.handleSearch(value);
 
-           
-       const { valueInput } = this.props
-
-       console.log("juste avant de voir le parent >>>>>>", valueInput);
-       this.props.handleSearch(value);
     }
 
     render() {
@@ -29,16 +23,8 @@ export default class SearchBar extends Component {
         return (
             <div>  
                 <h4>Search</h4>
-                <input
-                       onChange={this.handleChange}
-                        value={this.valueInput}
-                       id="name"
-                        autoComplete="off"
-                        className="input"
-                        type="text"
-                        name="name"
-                    />
-                
+
+                <input type="text" name="searchInput" onChange={this.handleChange} value={this.state.searchInput}/>
                 <input type="checkbox"></input>
                 <label>Only show products on stock</label>
             </div>
