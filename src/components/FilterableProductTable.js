@@ -7,31 +7,33 @@ class FilterableProductTable extends Component {
     super();
     this.state = {
       dbdata: [],
+      checked: true,
     };
-  }
-
-  componentDidMount() {
-    this.setState({
-      dbdata: this.props.data.data,
-    });
   }
 
   searchBar = (searchValue) => {
     const expresion = new RegExp(searchValue, 'i');
 
-    const search = this.props.data.data.filter((elm) =>
-      elm.name.match(expresion)
+    const search = this.props.data.data.filter((elem) =>
+      !this.state.checked
+        ? elem.name.match(expresion) && elem.stocked
+        : elem.name.match(expresion)
     );
-    console.log(search);
 
-    this.setState({ dbdata: search });
+    this.setState({
+      dbdata: search,
+      checked: !this.state.checked,
+    });
   };
 
   render() {
     return (
       <>
         <SearchBar searchBar={this.searchBar} />
-        <ProductTable searchBar={this.searchBar} products={this.state.dbdata} />
+        <ProductTable
+          products={this.state.dbdata}
+          handleChecked={this.handleChecked}
+        />
       </>
     );
   }

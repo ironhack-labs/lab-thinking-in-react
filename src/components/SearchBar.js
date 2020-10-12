@@ -9,19 +9,15 @@ class SearchBar extends Component {
   render() {
     return (
       <>
-        <h3>Search</h3>
-        <input
-          classNote="search-principal"
-          type="text"
-          placeholder="Search:"
-          onChange={this.handleSearch}
-        />
+        <h3>Search: </h3>
+        <input type="text" placeholder="Search:" onChange={this.handleSearch} />
         <input
           type="checkbox"
           name="stocked"
           checked={this.props.checked}
-          onChange={this.props.filterByStock}
+          onChange={this.props.searchBar}
         />
+        <label>Only show products on stock</label>
       </>
     );
   }
