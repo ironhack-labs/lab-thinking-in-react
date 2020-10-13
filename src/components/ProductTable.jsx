@@ -3,11 +3,10 @@ import ProductRow from './ProductRow'
 
 class ProductTable extends React.Component {
 
-  state = {
-    products: []
-  }
+  
   render() {
     
+    console.log(this.props.products.products.data);
     return (
       <table className="table">
         <thead>
@@ -17,9 +16,13 @@ class ProductTable extends React.Component {
           </tr>
         </thead>
         <tbody>
-          {this.state.products.map(p => {
+          
+          {this.props.products.products.data.map(p => {
             return (
-              <ProductRow product={p}/>
+              <ProductRow 
+              key={p.key}
+              product={p}
+              />
             )
           })}
         </tbody>
