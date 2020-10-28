@@ -11,7 +11,7 @@ class SearchBar extends Component{
         //console.log(e.target.value)
         
         this.setState({
-            inputValue: e.target.value
+            inputValue: e.target.value.toLowerCase()
         })
 
         this.props.filterArray(e.target.value)
