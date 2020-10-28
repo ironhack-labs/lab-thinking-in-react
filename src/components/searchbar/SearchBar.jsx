@@ -8,7 +8,6 @@ export default class SearchBar extends Component {
     }
 
     changeHandler = (e) => {
-
         let {name, value, type} = e.target
         if(type === 'checkbox') {
             value = e.target.checked;
@@ -20,6 +19,7 @@ export default class SearchBar extends Component {
 
     handleSubmit = () => {
         this.props.searchTerm(this.state)
+        // this.props.inStock(this.state.inStock)
     }
 
     render() {

@@ -6,27 +6,21 @@ export default class FilterableProductTable extends Component {
 
     state = {
         products: this.props.products.data,
-        filteredProductsBySearch: '',
-        productsInStock: ''
+        filteredProductsBySearch: ''
     }
 
     filterProducts = (searchInput) => {
         const filteredProductArrByInstock = this.state.products.filter(product => product.stocked)
-        // let filteredProductInStockArrBySearch = this.state.productsInStock.filter(product => product.name.toLowerCase().startsWith(searchInput.search))
-        
-        
-        searchInput.inStock && this.setState({productsInStock : filteredProductArrByInstock})
-
-        // this.state.productsInStock !== '' ? filteredProductInStockArrBySearch : filteredProductArrBySearch
+        let filteredProducts
     
-        let filteredProductArrBySearch = this.state.products.filter(product => product.name.toLowerCase().startsWith(searchInput.search))
-
-
-
-        this.setState({
-            filteredProductsBySearch: filteredProductArrBySearch,
-        })
+        if(searchInput.inStock){
+            filteredProducts = filteredProductArrByInstock.filter(product => product.name.toLowerCase().startsWith(searchInput.search))
+        } else {
+            filteredProducts = this.state.products.filter(product => product.name.toLowerCase().startsWith(searchInput.search))
+        }
+        this.setState({filteredProductsBySearch: filteredProducts})
     }
+    
 
     render() {
 
@@ -35,7 +29,7 @@ export default class FilterableProductTable extends Component {
         return (
             <div>
                 <h1>IronStore</h1>
-                <SearchBar products={ this.state.products } searchTerm={this.filterProducts} />
+                <SearchBar products={ this.state.products } searchTerm={this.filterProducts} inStock={this.checkInStock} />
                 {
                     this.state.filteredProductsBySearch !== "" 
                     ?
