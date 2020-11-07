@@ -1,4 +1,38 @@
-.ProductTable table {
+.ProductTable {
   margin-left: auto;
   margin-right: auto;
+  margin-top: 25px;
+  border-collapse: collapse;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.ProductTable thead tr {
+  background-color: lightskyblue;
+  color: #ffffff;
+  font-size: large;
+}
+
+.ProductTable th,
+.ProductTable td {
+  padding: 12px 15px;
+}
+
+.ProductTable tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.ProductTable tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.ProductTable tbody tr:last-of-type {
+  border-bottom: 2px solid lightblue;
+}
+
+.ProductTable tbody tr:hover {
+  font-weight: bold;
+  color: darkblue;
 }

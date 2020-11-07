@@ -9,12 +9,21 @@ class FilterableProductTable extends Component {
     allProducts: this.props.products,
   };
 
-  filterProducts = (productName) => {
-    const filteredProducts = this.state.allProducts.filter((product) =>
-      product.name.toLowerCase().includes(productName.toLowerCase())
-    );
-
-    this.setState({ products: filteredProducts });
+  filterProducts = (productName, inStock) => {
+    if (inStock) {
+      const filteredProducts = this.state.allProducts.filter((product) => {
+        return (
+          product.stocked === inStock &&
+          product.name.toLowerCase().includes(productName.toLowerCase())
+        );
+      });
+      this.setState({ products: filteredProducts });
+    } else {
+      const filteredProducts = this.state.allProducts.filter((product) => {
+        return product.name.toLowerCase().includes(productName.toLowerCase());
+      });
+      this.setState({ products: filteredProducts });
+    }
   };
 
   render() {
