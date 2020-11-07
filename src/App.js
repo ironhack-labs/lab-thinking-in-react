@@ -1,12 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
-import SearchBar from './components/SearchBar/SearchBar';
-import ProductTable from './components/ProductTable/ProductTable';
+import data from './data.json';
+import './App.css';
+import 'bulma/css/bulma.min.css';
+import FilterableProductTable from './components/FilterableProductTable/FilterableProductTable';
 
 function App() {
 	return (
-    	<div className="App">
-    
+    	<div className="container center">
+			<FilterableProductTable products={data} />
     	</div>
   	);
 }

@@ -1,0 +1,11 @@
+.input {
+    top: 20px;
+}
+
+.custom-checkbox {
+    margin-top: 50px;
+}
+
+.custom-checkbox input {
+    margin-right: 10px;
+}
