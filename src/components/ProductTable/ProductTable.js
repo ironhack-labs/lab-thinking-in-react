@@ -5,10 +5,6 @@ import './ProductTable.css';
 import ProductRow from '../ProductRow/ProductRow';
 
 class ProductTable extends Component {
-  state = {
-    quantity: 1,
-  };
-
   render() {
     return (
       <div>
