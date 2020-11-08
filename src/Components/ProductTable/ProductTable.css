@@ -1,0 +1,9 @@
+table {
+    width: 100%;
+    justify-content: center;
+}
+
+th {
+    padding: 20px;
+    background-color: grey;
+}

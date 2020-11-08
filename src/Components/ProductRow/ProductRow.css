@@ -1,0 +1,8 @@
+
+.outOfStock {
+    color: red;
+    padding: 20px;
+}
+.inStock {
+    padding: 20px;
+}
