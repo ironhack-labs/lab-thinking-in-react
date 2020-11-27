@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import Searchinput from './components/Searchinput';
+import Table from  './components/Table';
+import infoData from './data.json';
 
-function App() {
+class App extends Component {
+
+  state ={
+    data:[]
+  }
+
+  componentDidMount(){
+
+  this.setState({data:infoData.data})
+  }
+
+  handleChange = (event) =>{
+    
+    const {value} = event.target
+   
+
+    let newData = infoData.data.filter ((item,index) => (item.name.toLowerCase().includes(value.toLowerCase())))
+    this.setState({data:newData})
+
+  }
+
+  render(){
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <h1>IronStore</h1>
+      </div>
+      <Searchinput handleChange={this.handleChange} />
+      <Table data={this.state.data}/>
     </div>
-  );
+   );
+  }
 }
 
 export default App;
