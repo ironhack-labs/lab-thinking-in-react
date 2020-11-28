@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import SearchInput from './components/SearchInput';
+import { Table } from './components/Table';
+import dataInfo from './data.json'
+// import infoData from './data.json'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  //Estados o funciones
+  state={
+    store:dataInfo.data
+  }
+
+handleChange = (event)=>{
+  const {value, name}= event.target
+  let {store}=this.state
+  console.log("Que es lo que traigo", value, name)
+  let newStore = dataInfo.data.filter((item, index)=>item.name.toLowerCase().includes(value.toLowerCase()))
+  console.log("este es el nuevo arreglo", newStore)
+
+  //Manipular el state, para filtrar en tiempo real 
+  this.setState({store:newStore})
 }
 
-export default App;
+  render(){
+    //Constantes y consoles
+    return (
+      <div className="App">
+        <div>
+          <span>Iron Store</span>
+        </div>
+        {/*Aquí va mi buscador*/}
+        <SearchInput
+          handleChange={this.handleChange}
+        />
+        {/* Aquí va mi tabla */}
+        <Table
+          store={this.state.store}
+        />
+      </div>
+    );
+  }
+}
+
+export default App; 
