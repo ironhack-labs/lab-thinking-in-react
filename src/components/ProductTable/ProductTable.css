@@ -1,0 +1,18 @@
+.product-row {
+  display: flex;
+  padding: 5px; 
+  border-bottom: 1px solid #E8ECEF;
+}
+
+.product-head {
+  background: #E8ECEF;
+  font-weight: 600;
+}
+
+.col-left {
+  width: 50%;
+}
+
+.col-right {
+  width: 50%;
+}

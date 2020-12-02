@@ -1,0 +1,25 @@
+.search {
+  margin: 15px 0;
+}
+
+.search h4 {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.search-input {
+  width: 100%;
+  border: 1px solid #C3CAD9;
+  outline: none;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.search-stock {
+  font-size: 14px;
+}
+
+.search-checkbox {
+  margin-right: 5px;
+}
