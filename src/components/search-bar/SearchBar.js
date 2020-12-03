@@ -12,6 +12,15 @@ class SearchBar extends Component {
           onChange={this.props.handleChange}
           placeholder="Write the name of the product here"
         ></input>
+        <form>
+          <label for="checkbox">Only show product on stock</label>
+          <input
+            type="checkbox"
+            name="checkbox"
+            id="checkbox"
+            onChange={this.props.handleChange2}
+          ></input>
+        </form>
       </div>
     );
   }
