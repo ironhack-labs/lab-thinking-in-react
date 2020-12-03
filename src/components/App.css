@@ -1,0 +1,21 @@
+.container {
+  text-align: center;
+  padding-top: 2rem
+}
+
+.table{
+  border-radius: 5px;
+  padding: 1rem
+}
+
+h1{
+  margin: 1.5rem;
+}
+
+.titles{
+  background: lightgrey;
+  padding-top: 15px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  border-radius: 5px;
+}
