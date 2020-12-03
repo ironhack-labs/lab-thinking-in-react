@@ -30,6 +30,7 @@ export default class ProductTable extends Component {
                             <th>Name </th>
                             <th>Price </th>
                             <th>Category</th>
+                            {/* <th>Stocked?</th> */}
                         </tr>
                     </thead>
                     

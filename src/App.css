@@ -1,9 +1,9 @@
-.App {
+.App, table {
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  /* width: 100%; */
 }
 .App-logo {
   height: 40vmin;
@@ -40,7 +40,22 @@
   }
 }
 
-table {
-  /* border: 2px solid blue; */
-  width: 50vw;
+/* table {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px solid blue;
+} */
+
+/* .stocked {
+  color: green;
+} */
+
+.stockedNo {
+  color: red;
+}
+
+.emailUs {
+  font-size:.7em;
+  font-style: italic;
 }
