@@ -5,6 +5,7 @@ import ProductTable from './ProductTable';
 class FilterableProductTable extends Component {
   state = {
     searchValue: '',
+    checked: false,
   };
 
   searchHandler = (e) => {
@@ -13,11 +14,20 @@ class FilterableProductTable extends Component {
 
   render() {
     // console.log('props.products', this.props.products);
+
+    const filteredProducts = this.props.products.filter((filteredProduct) => {
+      console.log('filteredProduct', filteredProduct);
+
+      return filteredProduct.name
+        .toLowerCase()
+        .includes(this.state.searchValue.toLowerCase());
+    });
+
     return (
       <>
         <h1>IronStore</h1>
         <SearchBar onSearch={this.searchHandler} />
-        <ProductTable products={this.props.products} />
+        <ProductTable products={filteredProducts} />
       </>
     );
   }
