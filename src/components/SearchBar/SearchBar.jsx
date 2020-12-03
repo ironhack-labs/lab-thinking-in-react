@@ -1,11 +1,23 @@
 import React from 'react'
 
-const SearchBar = () => {
+const SearchBar = (props) => {
+  const {handleChange, questions} = props
   return (
     <div>
-      <input name="search" type="text" placeholder="Enter input here"/>
-    </div>
+    <form>
+      <label for='search'>Search </label>
+        <input 
+          id='search'
+          name='search' 
+          handleChange={handleChange}
+          type='text' 
+          placeholder='Enter input here' />
+      </form>
+    </div> 
+
   )
 }
+
+
 
 export default SearchBar
