@@ -1,0 +1,10 @@
+h1 {
+  font-size: 40px;
+}
+
+.FilterableProductTable {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}

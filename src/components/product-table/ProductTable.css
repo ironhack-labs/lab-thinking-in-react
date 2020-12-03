@@ -1,0 +1,19 @@
+table {
+  margin-top: 40px;
+  background-color: rgb(255, 255, 255);
+  width: 90vw;
+  border: 0;
+  border-spacing: 0px;
+}
+
+thead {
+  margin-bottom: 10px;
+  background-color: rgb(255, 255, 255);
+  width: 90vw;
+}
+
+th {
+  padding: 15px 0px;
+  border: 0;
+  background-color: rgba(115, 117, 141, 0.514);
+}

@@ -5,8 +5,9 @@ class SearchBar extends Component {
   render() {
     return (
       <div>
-        <h1>Search</h1>
+        <h2>Search</h2>
         <input
+          class="searchBar"
           type="text"
           name="search"
           onChange={this.props.handleChange}
