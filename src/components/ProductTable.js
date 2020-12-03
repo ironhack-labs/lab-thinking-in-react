@@ -20,7 +20,9 @@ const ProductTable = (props) => {
           {/* <ProductRow product={props.products[0]} /> */}
           {listOfProducts &&
             listOfProducts.map((product) => {
-              console.log('*************', product);
+              {
+                /* console.log('*************', product); */
+              }
               return <ProductRow key={product.id} product={product} />;
             })}
         </tbody>
