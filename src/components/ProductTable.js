@@ -9,7 +9,7 @@ const ProductTable = (props) => {
 
   return (
     <div>
-      <table>
+      <table className="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
         <thead>
           <tr>
             <th>Name</th>

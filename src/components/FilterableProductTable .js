@@ -17,11 +17,6 @@ class FilterableProductTable extends Component {
     let checked = e.target.checked;
     // console.log(e.target.checked);
 
-    // let filtered = this.state.data.filter((item) => {
-    //   if (item.stocked === checked) {
-    //     return true;
-    //   }
-
     this.setState({
       checked: checked,
     });
@@ -47,15 +42,8 @@ class FilterableProductTable extends Component {
       });
     }
 
-    // if (this.state.teacher) {
-    //   filteredUsers = filteredUsers.filter((filteredUser) => {
-    //     return filteredUser.role === "teacher";
-    //   });
-    // }
-
     return (
       <>
-        <h1>IronStore</h1>
         <SearchBar onSearch={this.searchHandler} onCheckbox={this.onCheckbox} />
         <ProductTable products={stockedProducts} />
       </>
