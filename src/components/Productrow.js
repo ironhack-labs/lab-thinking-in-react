@@ -13,7 +13,7 @@ class Productrow extends React.Component {
   render() {
     return (
       <tr>
-        <td>Football</td>
+        <td>{this.state.singleProduct.name}</td>
         <td>49.99</td>
         <td>false</td>
       </tr>

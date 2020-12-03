@@ -3,9 +3,11 @@ import Productrow from './Productrow';
 import products from '../data.json';
 
 class Productable extends React.Component {
-  state = {
-    filteredproducts: [],
-  };
+  // componentDidMount = () => {
+  //   filteredproducts().then((product) => {
+  //     this.setState({ product });
+  //   });
+  // };
 
   render() {
     return (

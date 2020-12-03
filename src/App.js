@@ -20,19 +20,25 @@ class App extends React.Component {
     });
   };
 
-  render() {
+  filteredProduct = () => {
     const filteredProducts = this.state.allProducts.filter((product) => {
       return (
         product.name.toLowerCase().includes(this.state.search.toLowerCase()) ||
         product.price.toLowerCase().includes(this.state.search.toLowerCase())
       );
     });
-    console.log(this.state.search);
+    this.setState({
+      allProducts: filteredProducts,
+    });
+  };
+
+  render() {
+    // console.log(this.state.search);
     return (
       <div className="App">
         <h1>IronStore</h1>
         <Searchbar setSearch={this.setSearch}></Searchbar>
-        <Productable search={filteredProducts}></Productable>
+        <Productable filteredProduct={this.filteredProduct}></Productable>
       </div>
     );
   }
