@@ -5,47 +5,44 @@ import './FilterableProductTable.css';
 
 export default class FilterableProductTable extends Component {
   state = {
-    products: this.props.products,
-    showInStock: false
+    products: [],
+    search: '',
+    stock: false
+  }
+
+  componentDidMount = () => {
+    this.setState({ products: this.props.products })
   }
 
   handleChange = (event) => {
-    const filteredProducts = this.props.products.filter(e => {
-      return e.name.toLowerCase().startsWith(event.target.value)
-    })
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
 
     this.setState({
-      products: filteredProducts
-    });
-  }
-
-  handleCheck = (event) => {
-    if (event.target.checked) {
-      const filteredProducts = this.state.products.filter(e => {
-        return e.stocked; 
-      })
-      this.setState({ 
-        products: filteredProducts,
-        showInStock: true
-      })
-    } else {
-      this.setState({ 
-        products: this.props.products,
-        showInStock: false 
-      })
-    }
+      [target.name]: value
+    })
   }
 
   render() {
+    let products = this.state.products;
+
+    if (this.state.stock) {
+      products = this.state.products.filter(e => e.stocked)
+    }
+
+    const filteredProducts = products.filter(e => {
+      return e.name.toLowerCase().includes(this.state.search.toLowerCase())
+    })
+
     return (
       <div className='main'>
         <h1>IronStore</h1>
         <SearchBar 
+          value={this.state.search}
           handleChange={this.handleChange} 
-          showInStock={this.state.showInStock}
-          handleCheck={this.handleCheck}
+          stock={this.state.stock}
         />
-        <ProductTable products={this.state.products} />
+        <ProductTable products={filteredProducts} />
       </div>
     )
   }
