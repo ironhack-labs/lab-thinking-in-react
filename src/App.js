@@ -1,18 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react'
 import logo from './logo.svg';
 import './App.css';
 import FilterableProductTable from './components/FilterableProductTable.js';
-import data from 'data.json'
+import data from './data.json'
 
-function App() {
-  return (
-    <div className="App">
-    <FilterableProductTable />
-{/* <h1>IronStore</h1>
-<SearchBar />
-<ProductTable data={} /> */}
+
+
+
+
+export default class App extends Component {
+  render() {
+    return (
+      <div>
+    <h1>IronStore</h1>
+    <FilterableProductTable products = { data } />
+    
+
+
     </div>
-  );
+    )
+  }
 }
-
-export default App;
