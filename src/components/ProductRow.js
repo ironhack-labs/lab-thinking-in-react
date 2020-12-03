@@ -1,18 +1,26 @@
 import React, { Component } from 'react';
 
+
+
 export default class ProductRow extends Component {
-  render() {
-    console.log('those are my products', this.props.products);
-    {props.products.map((product) => {
+    render() {
         return (
-          <tr>
+            <>
+                {this.props.products.data.map((product) => {
+        return (
+          <tr style={{color: product.stocked ? 'inherited' : 'red' }}>
             <td>{product.name}</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{product.price}</td>
+            {/* <td>{product.category}</td> */}
+            <td>{product.stocked===true ? "yes" : "no"}</td>
           </tr>
-        );
-      });
+         
+        ) 
+      }
+      )
     }
-  }
+        </>    
+        )
+    }
 }
+

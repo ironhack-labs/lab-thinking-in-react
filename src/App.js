@@ -14,9 +14,6 @@ export default class App extends Component {
       <div>
     <h1>IronStore</h1>
     <FilterableProductTable products = { data } />
-    
-
-
     </div>
     )
   }
