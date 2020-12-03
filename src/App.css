@@ -1,7 +1,10 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +38,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+table {
+  /* border: 2px solid blue; */
+  width: 50vw;
 }
