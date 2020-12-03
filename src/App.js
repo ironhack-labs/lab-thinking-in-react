@@ -1,26 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Searchbar from '../src/components/Searchbar';
+import Productable from '../src/components/Productable';
+import Productrow from '../src/components/Productrow';
+import products from './data.json';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    allProducts: products.data,
+    search: '',
+    name: '',
+    price: '',
+    stocked: false,
+  };
+
+  setSearch = (event) => {
+    this.setState({
+      search: event.target.value,
+    });
+  };
+
+  render() {
+    const filteredProducts = this.state.allProducts.filter((product) => {
+      return (
+        product.name.toLowerCase().includes(this.state.search.toLowerCase()) ||
+        product.price.toLowerCase().includes(this.state.search.toLowerCase())
+      );
+    });
+    console.log(this.state.search);
+    return (
+      <div className="App">
+        <h1>IronStore</h1>
+        <Searchbar setSearch={this.setSearch}></Searchbar>
+        <Productable search={filteredProducts}></Productable>
+      </div>
+    );
+  }
 }
 
 export default App;
