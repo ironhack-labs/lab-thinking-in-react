@@ -3,8 +3,12 @@ import React, { Component } from 'react';
 export default class SearchBar extends Component {
 
     handleChange = event => {
-        this.props.setQuery(event.target.value)
+        // console.log('EVENT', event.target)
+        const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
+        const name = event.target.name;
+        this.props.setQuery(name, value)
     } 
+
     render() {
         return (
             <div>
@@ -17,8 +21,8 @@ export default class SearchBar extends Component {
                 />
                 <input 
                     type="checkbox" 
-                    name="inStock"
-                    value={ this.props.inStock }
+                    name="stocked"
+                    value={ this.props.stocked }
                     onChange={ this.handleChange }
                 />
                 <label htmlFor="inStock">Only show products in stock</label>

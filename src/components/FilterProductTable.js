@@ -6,11 +6,12 @@ export default class FilterProductTable extends Component {
 
     state = {
         query: '',
-        inStock: false,
+        stocked: false,
     }
 
-    setQuery = query => {
-        this.setState({ query: query });
+    setQuery = (name, query) => {
+        // console.log('NAME', name, 'QUERY', query)
+        this.setState({ [name]: query });
     }
 
     render() {
@@ -20,11 +21,12 @@ export default class FilterProductTable extends Component {
                 <SearchBar 
                     query = { this.state.query }
                     setQuery = { this.setQuery }
-                    inStock = { this.state.inStock }
+                    stocked = { this.state.stocked }
                 />
                 <ProductTable 
                     products = { this.props.products }
                     query = { this.state.query}
+                    stocked = { this.state.stocked }
                 />
             </>
         )

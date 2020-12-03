@@ -15,6 +15,7 @@ export default function ProductTable(props) {
                     <ProductRow 
                         products={ props.products }
                         query = { props.query}
+                        stocked = { props.stocked }
                     />
                 </tbody>
             </table>
