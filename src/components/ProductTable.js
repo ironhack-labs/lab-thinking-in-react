@@ -16,7 +16,7 @@ export default class ProductTable extends Component {
           </thead>
 <tbody>
 
-    <ProductRow products={this.props.products} />   
+    <ProductRow products={this.props.products} query={this.props.query} />   
 </tbody>
            
         
