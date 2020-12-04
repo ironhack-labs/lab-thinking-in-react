@@ -1,22 +1,26 @@
 import React from 'react';
-import Productrow from './Productrow';
-import products from '../data.json';
 
 class Productable extends React.Component {
-  state = {
-    filteredproducts: [],
-  };
-
   render() {
     return (
       <table>
         <thead>
-          <th>Name</th>
-          <th>Price</th>
-          <th>Available</th>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+          </tr>
         </thead>
         <tbody>
-          <Productrow></Productrow>
+          {this.props.passedProducts.map((product) => {
+            return (
+              <tr key={product.id}>
+                <td style={{ color: product.stocked ? 'black' : 'red' }}>
+                  {product.name}
+                </td>
+                <td>{product.price}</td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     );
