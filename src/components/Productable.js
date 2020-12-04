@@ -1,4 +1,5 @@
 import React from 'react';
+import Productrow from './Productrow';
 
 class Productable extends React.Component {
   render() {
@@ -12,14 +13,7 @@ class Productable extends React.Component {
         </thead>
         <tbody>
           {this.props.passedProducts.map((product) => {
-            return (
-              <tr key={product.id}>
-                <td style={{ color: product.stocked ? 'black' : 'red' }}>
-                  {product.name}
-                </td>
-                <td>{product.price}</td>
-              </tr>
-            );
+            return <Productrow product={product} key={product.id}></Productrow>;
           })}
         </tbody>
       </table>

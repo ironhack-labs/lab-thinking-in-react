@@ -5,7 +5,7 @@ class Searchbar extends React.Component {
     return (
       <input
         onChange={this.props.passedSearchValue}
-        style={{ width: '100%' }}
+        style={{ width: '80%' }}
         type="text"
         name="product"
         placeholder="Search your product here"

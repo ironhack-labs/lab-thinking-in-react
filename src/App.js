@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import Searchbar from '../src/components/Searchbar';
 import Productable from '../src/components/Productable';
-import Productrow from '../src/components/Productrow';
 
 import products from './data.json';
 
