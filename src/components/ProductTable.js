@@ -2,9 +2,12 @@ import React from 'react'
 import ProductRow from './ProductRow'
 
 export default function ProductTable(props) {
+    const filtered = props.products.filter(
+        product => product.name.toLowerCase().includes(props.query.toLowerCase())
+    )
     
     return (
-        // <div className="productTable">
+        <div className="productTable">
             <table>
               <thead>
                   <tr>
@@ -14,15 +17,15 @@ export default function ProductTable(props) {
               </thead>
               <tbody>
                 {
-                  props.filterableproducts.map((product) => {
+                  filtered.map(product => {
                     return (
-                      <ProductRow productrow={product}/>
+                     <ProductRow product={product}/>
                     )
                   })
                 }
               </tbody>
           </table>
-        // </div>
+        </div>
     )
 }
 
