@@ -39,6 +39,9 @@ export default class FilterableProductTable extends Component {
 
 
     render() {
+        // const filteredProduct = data.filter(product => {
+        //     return 
+        // })
         console.log(this.state.data)
         return (
             
