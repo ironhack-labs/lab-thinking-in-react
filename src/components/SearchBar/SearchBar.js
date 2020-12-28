@@ -1,26 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './SearchBar.css';
 
-class SearchBar extends React.Component {
+class SearchBar extends Component {
   render() {
     return (
       <div>
-        <label name="search">
-          Search <br></br>
-          <br></br>
-          <input
-            className="input"
-            type="text"
-            value={this.props.data}
-            onChange={this.props.filter}
-          />
-        </label>
-
-        <label>
-          <input type="checkbox" onChange={this.props.onlyStocked} />
-          <br></br>
-          <br></br>Only show products on stock
-        </label>
+        <input
+          type="text"
+          name="search"
+          value={this.props.search}
+          onChange={(event) => this.props.handleChange(event.target.value)}
+        />
       </div>
     );
   }
