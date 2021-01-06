@@ -9,7 +9,6 @@ export class FilterableProductTable extends Component {
   };
 
   handleCheck = (event) => {
-    console.log('wtf');
     if (event.target.checked === true) {
       this.setState({
         filteredProducts: this.state.products.filter(
