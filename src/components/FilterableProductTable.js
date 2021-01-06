@@ -17,11 +17,11 @@ export default class FilterableProductTable extends Component {
                 //show product that is on stock 
                 if (!this.state.isOnStock) {
                         newList = [...this.props.products].filter(product => {
-                                return product.name.toLowerCase().includes(searchedProduct)
+                                return product.name.toLowerCase().includes(searchedProduct.toLowerCase())
                         });
                 } else {
                         newList = [...this.props.products].filter(product => {
-                                return product.name.toLowerCase().includes(searchedProduct) && product.stocked === true
+                                return product.name.toLowerCase().includes(searchedProduct.toLowerCase()) && product.stocked === true
                         });
                 }
 
@@ -40,7 +40,7 @@ export default class FilterableProductTable extends Component {
                 } else {
                         this.setState({ isOnStock: false });
                         newList = [...this.props.products].filter(product => {
-                                return product.name.toLowerCase().includes(this.state.searchedProd)
+                                return product.name.toLowerCase().includes((this.state.searchedProd).toLocaleLowerCase())
                         });
                 }
                 this.setState({ listProducts: newList });
