@@ -15,7 +15,7 @@ export class SearchBar extends Component {
           <label htmlFor="check">Only show products in stock</label>
           <input
             type="checkbox"
-            name="check"
+            name="checkbox"
             onChange={this.props.handleCheck}
           />
         </div>

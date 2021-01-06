@@ -9,9 +9,18 @@ export class FilterableProductTable extends Component {
   };
 
   handleCheck = (event) => {
-    this.setState({
-      fileredProducts: this.state.products.filter((product) => product.stocked),
-    });
+    console.log('wtf');
+    if (event.target.checked === true) {
+      this.setState({
+        filteredProducts: this.state.products.filter(
+          (product) => product.stocked !== false
+        ),
+      });
+    } else {
+      this.setState({
+        filteredProducts: this.state.products,
+      });
+    }
   };
 
   handleSearch = (event) => {
