@@ -26,8 +26,7 @@ export default class FilterableProductTable extends Component {
 
         const copy = [...this.state.originalProducts]
 
-        //this way allows the checkedbox and seachbar function together, no matter the order of the actions 
-
+        //this allows the checkedbox and seachbar function together, no matter the order of the actions 
         checked ?
             this.setState({ checkbox: true, filteredProducts: copy.filter((arr) => (arr["stocked"] && arr["name"].includes(this.state.searchbarInput))) })
             : this.setState({ checkbox: false, filteredProducts: copy.filter((arr) => (arr["name"].includes(this.state.searchbarInput))) })

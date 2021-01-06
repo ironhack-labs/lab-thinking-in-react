@@ -15,8 +15,8 @@ export default class ProductRow extends Component {
 
             <tr className="ProductRow">
 
-                <th style={thStyle}>{name}</th>
-                <th>{price}</th>
+                <td style={thStyle}>{name}</td>
+                <td>{price}</td>
 
             </tr>
         )

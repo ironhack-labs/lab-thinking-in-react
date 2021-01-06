@@ -15,8 +15,37 @@ code {
 
 .FilterableProductTable{
   margin: 3% auto;
+  line-height: 1.5rem;
+
 }
 
-table{
-  margin: 1% auto
+.SearchBar.form__input{
+  display:block;
+  width: 50%;
+  margin: 2px auto;
+
 }
+
+
+
+.ProductTable table{
+  width: 50%;
+  margin: 1% auto;
+  border-collapse: collapse;
+
+}
+
+.ProductTable th{
+  background: #4CAF50;
+  color: white;
+}
+
+.ProductTable td, .ProductTable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+
+.ProductTable tr:nth-child(even){background-color: #f2f2f2;}
+
+.ProductTable tr:hover {background-color: #ddd;}
