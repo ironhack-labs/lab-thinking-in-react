@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.App__title {
+  display: flex;
+  justify-content: center;
+}
+
+.SearchBar__input {
+  width: 100vw;
+}
