@@ -1,8 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
+import data from './data.json';
 import './App.css';
+import FilterableProductTable from './components/FilterableProductTable';
 
 function App() {
+  const products = data.data.map((product) => product);
   return (
     <div className="App">
       <header className="App-header">
@@ -19,6 +22,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <FilterableProductTable products={products} />
     </div>
   );
 }
