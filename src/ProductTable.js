@@ -16,7 +16,7 @@ const ProductTable = (props) => {
                 <tbody>
                     {/* accessing props passed down */}
                     {/* passing product data down to single table rows*/}
-                    {props.products.map((product) => {
+                    {props.products.map(product => {
                         return <ProductRow product={product} key={product.id} />
                     })}
                 </tbody>
