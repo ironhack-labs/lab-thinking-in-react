@@ -5,10 +5,12 @@ import './App.css';
 import FilterableProductTable from './components/FilterableProductTable';
 
 
+const products = data.data;
+
 function App() {
   return (
     <div className="App">
-      <FilterableProductTable products={data.data} />
+      <FilterableProductTable products={products} />
     </div>
   );
 }
