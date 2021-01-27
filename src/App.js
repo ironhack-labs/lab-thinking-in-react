@@ -10,6 +10,7 @@ const products = data.data;
 function App() {
   return (
     <div className="App">
+      <h1>IronStore</h1>
       <FilterableProductTable products={products} />
     </div>
   );

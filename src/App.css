@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
 }
 
 .App-logo {
@@ -35,4 +39,23 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  margin:0 1rem 2rem 1rem;
+}
+
+thead td {
+  font-size: 1.5rem;
+  background-color: rgba(99, 216, 99, 0.589);
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td {
+  padding: 1.5rem;
 }

@@ -23,7 +23,7 @@ export default class SearchBar extends Component {
 
   render() {
     return (
-      <div>
+      <div className="search">
         <h3>Search</h3>
         <input onChange={this.handleInputChange} type="text" name="searchInput" value={this.state.searchInput} />
         <label>
