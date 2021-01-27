@@ -13,11 +13,7 @@ export default class FilterableProductTable extends Component {
   }
 
   handleSearch = (search) => {
-    const {searchInput, ifShowOnlyOnStock} = search;
-    this.setState({
-      searchInput,
-      ifShowOnlyOnStock
-    })
+    this.setState(search);
   }
 
   render() {
@@ -29,7 +25,10 @@ export default class FilterableProductTable extends Component {
 
     return (
       <>
-        <SearchBar onSearchInputChange={this.handleSearch} />
+        <SearchBar 
+          onSearchInputChange={this.handleSearch} 
+          searchInput={this.state.searchInput} 
+          ifShowOnlyOnStock={this.state.ifShowOnlyOnStock} />
         <ProductTable products={displayedProducts} />
       </>
     )
