@@ -11,12 +11,20 @@ export default class FilterableProductTable extends Component {
         }
     }
 
+    filterProducts = searchQuery => {
+        const filteredProducts = searchQuery ? this.state.products.filter(product => product.name.toUpperCase().includes(searchQuery.toUpperCase())) : this.props.products;
+    
+        this.setState({
+            products: filteredProducts
+        })
+    }
+
     render() {
         let shownProducts = this.state.products;
         return (
             <div>
                 <h1>IronStore</h1>
-                <SearchBar />
+                <SearchBar searchProducts={this.filterProducts} />
                 <ProductTable products={shownProducts} />
             </div>
         )
