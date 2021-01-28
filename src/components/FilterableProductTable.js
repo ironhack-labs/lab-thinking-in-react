@@ -7,7 +7,8 @@ export default class FilterableProductTable extends Component {
     constructor(props){
         super(props);
         this.state = {
-            products: this.props.products
+            products: this.props.products,
+            inStock: []
         }
     }
 
@@ -19,12 +20,20 @@ export default class FilterableProductTable extends Component {
         })
     }
 
+    showInStock = checkboxValue => {
+        const inStockProducts = checkboxValue ? this.props.products : this.state.products.filter(product => product.stocked == true);
+
+        this.setState({
+            products: inStockProducts
+        })
+    }
+
     render() {
         let shownProducts = this.state.products;
         return (
             <div>
                 <h1>IronStore</h1>
-                <SearchBar searchProducts={this.filterProducts} />
+                <SearchBar searchProducts={this.filterProducts} showProductsInStock={this.showInStock} />
                 <ProductTable products={shownProducts} />
             </div>
         )
