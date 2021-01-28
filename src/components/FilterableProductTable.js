@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import SearchBar from './SearchBar';
 import ProductTable from './ProductTable';
+import 'bulma/css/bulma.css';
 
 export default class FilterableProductTable extends Component {
 
@@ -32,7 +33,7 @@ export default class FilterableProductTable extends Component {
         let shownProducts = this.state.products;
         return (
             <div>
-                <h1>IronStore</h1>
+                <h1 className="title is-2">IronStore</h1>
                 <SearchBar searchProducts={this.filterProducts} showProductsInStock={this.showInStock} />
                 <ProductTable products={shownProducts} />
             </div>

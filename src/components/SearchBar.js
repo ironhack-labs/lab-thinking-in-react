@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import 'bulma/css/bulma.css';
 
 export default class SearchBar extends Component {
 
@@ -24,10 +25,9 @@ export default class SearchBar extends Component {
     render() {
         return (
             <div>
-                <label>Search for products</label>
-                <input type='text' name='search' value={this.state.search} onChange={this.handleSearch} />
+                <input className='input is-info' type='text' name='search' value={this.state.search} onChange={this.handleSearch} placeholder='Search products' />
                 <input type="checkbox" name='stock' value={this.state.stock} onChange={this.handleCheckbox} />
-                <label>Only show products in stock</label>
+                <label for='checkbox' className='content is-normal'> Only show products in stock</label>
             </div>
         )
     }

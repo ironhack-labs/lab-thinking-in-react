@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ProductRow from './ProductRow';
+import 'bulma/css/bulma.css';
 
 export default class ProductTable extends Component {
     render() {
@@ -8,17 +9,17 @@ export default class ProductTable extends Component {
         })
 
         return (
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {productRow}
-                </tbody>
-            </table>
+                <table className="table is-striped container is-fluid">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {productRow}
+                    </tbody>
+                </table>
         )
     }
 }
