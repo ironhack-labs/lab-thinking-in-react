@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .App-logo {
@@ -35,4 +38,29 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.searchBar form {
+	display: flex;
+	flex-direction: column;
+
+}
+
+.productTable {
+	display: flex;
+	justify-content: space-around;
+}
+
+.productTable tbody{
+	width: 25%;
+}
+
+.productTable tr {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.ironStore {
+  width: 75%;
 }

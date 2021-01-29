@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import '../App.css'
 
 export class SearchBar extends Component {
 
@@ -27,13 +28,14 @@ export class SearchBar extends Component {
 
     render() {
         return (
-            <div>
+            <div className='searchBar' >
                 <h2>Search</h2>
                 <form>
                     <input type='text' name="search" value={this.state.searchInput} onChange={this.handleChange}/>
-
-                    <input type="checkbox" name="stock" value={this.state.inStock} onChange={this.handleCheckBox}/>
-                    <label for="stock"> Only show products in stock</label>
+                    <div>
+                        <input type="checkbox" name="stock" value={this.state.inStock} onChange={this.handleCheckBox}/>
+                        <label htmlFor="stock"> Only show products in stock</label>
+                    </div>
                 </form>
 
             </div>
