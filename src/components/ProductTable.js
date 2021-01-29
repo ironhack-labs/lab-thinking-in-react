@@ -3,17 +3,7 @@ import ProductRow from './ProductRow'
 
 export class ProductTable extends Component {
 
-    constructor(props){
-        super(props);
-        
-        this.state = {
-            products: this.props.products.data
-        }
-    }
-
-    render() {
-      console.log(`Products: ${this.state.products}`)
-
+   render() {
         return (
           <div>
             <h3>ProductTable</h3>
@@ -21,7 +11,7 @@ export class ProductTable extends Component {
               <th>Name</th>
               <th>Price</th>
             </tr>
-            {this.state.products.map((product) => {
+            {this.props.products.map((product) => {
               return (
                 <ProductRow
                   key={product.name}
