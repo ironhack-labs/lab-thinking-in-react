@@ -5,16 +5,24 @@ export class SearchBar extends Component {
     constructor(props){
         super(props);
         this.state ={
-            searchInput: ''
+            searchInput: '',
+            inStock: false
         }
     }
 
     handleChange = (e) => {
         const value = e.target.value
         this.setState({
-            searchInput: value
+            searchInput: value,
         })
         this.props.filterItems(value)
+    }
+
+    handleCheckBox = () => {
+        this.setState({
+            inStock: !this.state.inStock
+        })
+        this.props.showInStock(this.state.inStock)
     }
 
     render() {
@@ -24,7 +32,7 @@ export class SearchBar extends Component {
                 <form>
                     <input type='text' name="search" value={this.state.searchInput} onChange={this.handleChange}/>
 
-                    <input type="checkbox" name="stock" value="stock" />
+                    <input type="checkbox" name="stock" value={this.state.inStock} onChange={this.handleCheckBox}/>
                     <label for="stock"> Only show products in stock</label>
                 </form>
 

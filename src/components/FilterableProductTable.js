@@ -20,12 +20,20 @@ export class FilterableProductTable extends Component {
         })
       }
 
+    showInStock = (value) => {
+        const productsInStock = value ? this.props.products : this.state.products.filter(product => product.stocked === true);
+
+        this.setState({
+            products: productsInStock
+        })    
+    }  
+
 
     render() {
         return (
             <div>
                 <h1>IronStore</h1>
-                <SearchBar filterItems={this.handleSearch} />
+                <SearchBar filterItems={this.handleSearch} showInStock={this.showInStock}/>
                 <ProductTable products={this.state.products} />
             </div>
         )
