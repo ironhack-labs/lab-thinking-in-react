@@ -10,7 +10,7 @@ export default function ProductTable (props) {
     return (
         <div>
             <table className="table">
-                <thead>
+                <thead className="thead-dark">
                     <tr>
                         <th>Name</th>
                         <th>Price</th>
