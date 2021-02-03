@@ -1,13 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react';
 
-export class ProductRow extends Component {
-    render() {
-        return (
-            <div>
-                <p>ProductRow</p>
-            </div>
-        )
-    }
+function ProductRow(props) {
+    return (
+        <tr>
+            <td style={props.stocked ? { color: 'black' } : { color: 'red' }}>{props.name}</td>
+            <td>{props.price}</td>
+        </tr>
+    )
 }
 
-export default ProductRow
+export default ProductRow;
