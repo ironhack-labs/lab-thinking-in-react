@@ -1,0 +1,29 @@
+.form-group {
+	font-size: 30px;
+	color: black;
+	font-family: Roboto;
+	font-weight: bold;
+}
+
+.form-group input {
+	font-family: Roboto;
+	font-size: 20px;
+	width: 75%;
+	height: 25px;
+	text-align: center;
+}
+
+.form-check {
+	text-align: left;
+}
+
+.form-check input {
+	width: 20px;
+	text-align: left;
+}
+
+.form-check-label {
+	font-family: Roboto;
+	font-size: 16px;
+	text-align: left;
+}

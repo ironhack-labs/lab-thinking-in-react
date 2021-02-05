@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+lab-thinking-in-react.iml
+modules.xml
+saveactions_settings.xml
+vcs.xml
+.idea*
