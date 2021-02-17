@@ -2,7 +2,7 @@ import React from 'react';
 
 
 
-function SearchBar({search, setSearch, getProductsFilter }) {
+function SearchBar({search, setSearch }) {
   const handleChange = ({ target }) => {
     setSearch({
       search: target.value,
