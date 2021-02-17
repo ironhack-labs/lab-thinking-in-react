@@ -1,24 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
+import {data} from "./data.json"
 import './App.css';
+import ProductTable from "./components/ProductTable/ProductTable"
+import SearchBar from "./components/SearchBar/SearchBar"
 
 function App() {
+  const [query, setQuery] = React.useState('');
+  const [products, setProducts] = React.useState(data)
+  //const [stock, setStock] = React.useState(true)
+
+  const handleQuery = ({ target }) => setQuery(target.value);
+
+  const handleOnClick = ({target}) => {
+      let clicked = target.value
+      let stockAviable = [...products]
+      if(clicked){
+        stockAviable = stockAviable.filter((product) => product.stocked === true)
+      }
+  } 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <SearchBar onChange={handleQuery} query={query} onClick={handleOnClick}/>
+    <ProductTable data={products} query={query}/>
     </div>
   );
 }
