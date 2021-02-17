@@ -1,24 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
+import {data} from './data.json'
 import './App.css';
+import SearchBar from './components/SearchBar'
+import ProductTable from './components/ProductTable'
+import ProductRow from './components/ProductRow'
 
 function App() {
+
+  const [products, setProducts] = React.useState(data)
+  const [query, setQuery] = React.useState('')
+
+  function handleQuery({ target }) {
+    setQuery(target.value)
+  }
+
+  function filterProducts(query) {
+    const filteredProducts = products.filter((product) => product.includes(query))
+    setProducts(filteredProducts)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SearchBar handleQuery={handleQuery} query={query}/>
+      <ProductTable products={products}/>
+      <ProductRow />
     </div>
   );
 }
