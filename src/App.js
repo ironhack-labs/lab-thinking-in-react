@@ -6,8 +6,8 @@ import FilterableProductTable from './components/FilterableProductTable/Filterab
 
 function App() {
   return (
-    <div className="App">
-      <h1>IronStore</h1>
+    <div className="App" style={{ margin: '1em' }}>
+      <h1 className="title">IronStore</h1>
       <FilterableProductTable data={jsondata.data} />
     </div>
   );

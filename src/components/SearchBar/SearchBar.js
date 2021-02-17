@@ -1,24 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const SearchBar = ({filter}) => {
-    const [inputValue, setValue] = useState('');
-    
-  const handleChange = (event) => {
-    const { value } = event.target;
-      setValue(value);
-      filter(inputValue);
-  };
-
+const SearchBar = ({ filter, query }) => {
   return (
-    <section>
-      <h3>Search</h3>
+    <section
+      className="container"
+      style={{ maxWidth: '50%', margin: '1em auto' }}
+    >
+      <h3 className="subtitle">Search</h3>
       <input
         type="text"
         name="search"
         id="search"
         placeholder="Search ..."
-        value={inputValue}
-        onChange={handleChange}
+        value={query}
+        onChange={filter}
+        className="input is-medium"
       />
     </section>
   );
