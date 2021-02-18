@@ -15,13 +15,14 @@ function SearchBar({onChange, input, checked}){
       onChange={onChange}
     />
     <div>
+      <label className="text-label">
       <input
         style={{"margin-top":"15px"}}
         type="checkbox"
         name="checkInput"
         onChange={checked}
       />
-      <label className="text-label">Only show products on stock</label>
+      Only show products on stock</label>
     </div>
    
 

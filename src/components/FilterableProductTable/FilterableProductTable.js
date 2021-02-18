@@ -5,12 +5,12 @@ import ProductTable from "../ProductTable/ProductTable"
 function FilterableProductTable({data}){
   const [search, setSearch] = React.useState("");
   const [checkBox, setCheckBox] = React.useState(false)
-
+  const orderData = data.sort((a,b)=>a.price - b.price)
   const stock = () => {
     if (checkBox){
-      return data.filter((product) => product.stocked === true)
+      return orderData.filter((product) => product.stocked === true)
     } else {
-      return data
+      return orderData
     }
   }
   const handleChange = (e) =>{

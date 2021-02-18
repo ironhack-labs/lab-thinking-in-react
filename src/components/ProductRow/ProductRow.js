@@ -3,8 +3,8 @@ import React from "react";
 function ProductRow({product}){
   return(
     <tr>
-      <td>{product.name}</td>
-      <td>{product.price}</td>
+      <td className="name-align">{product.name}</td>
+      <td>${product.price}</td>
     </tr>
   )
 }

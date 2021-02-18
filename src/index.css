@@ -46,3 +46,8 @@ th{
   font-size: 0.9em;
   margin-bottom: 50px;
 }
+
+.name-align{
+  text-align: left;
+  padding-left: 120px;
+}
