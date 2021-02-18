@@ -23,7 +23,26 @@ code {
  flex-direction: column;
  align-items: center;
 }
-
+.container-gen{
+  width: auto;
+}
 .margin{
   margin-top: 50px;
+}
+table{
+width: 600px;
+}
+tr{
+  height: 30px;
+}
+
+th{
+  height: 40px;
+  width: 300px;
+  background-color: gainsboro;
+}
+
+.text-label{
+  font-size: 0.9em;
+  margin-bottom: 50px;
 }

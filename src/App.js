@@ -7,7 +7,9 @@ function App() {
   return (
     <div className="App">
       <h1>IronStore</h1>
-      <FilterableProductTable data={dataJson.data} />
+      <div className="container-gen">
+        <FilterableProductTable data={dataJson.data} />
+      </div>
     </div>
   );
 }

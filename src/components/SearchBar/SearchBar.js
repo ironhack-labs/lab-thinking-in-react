@@ -3,8 +3,11 @@ import React from "react";
 function SearchBar({onChange, input, checked}){
   return(
     <div className="container-col margin">
-    <label>Search</label>
+    <label
+    style={{"margin-bottom":"15px"}}
+    >Search</label>
     <input
+      style={{width:"600px", height:"25px"}} 
       type="text"
       name="search"
       placeholder="Search product"
@@ -12,12 +15,13 @@ function SearchBar({onChange, input, checked}){
       onChange={onChange}
     />
     <div>
-      <input 
+      <input
+        style={{"margin-top":"15px"}}
         type="checkbox"
         name="checkInput"
         onChange={checked}
       />
-      <label>Only show products on stock</label>
+      <label className="text-label">Only show products on stock</label>
     </div>
    
 
