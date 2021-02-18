@@ -1,0 +1,9 @@
+.productTable {
+    border: 3px solid green;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    justify-content: center;
+    margin: 0px auto;   
+}
+
