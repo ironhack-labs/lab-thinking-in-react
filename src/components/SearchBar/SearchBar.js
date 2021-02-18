@@ -1,6 +1,6 @@
 import React from "react";
 
-function SearchBar({onChange,query,onClick}){
+function SearchBar({onChange,query,onClick,stocked}){
     return(
         <form>
             <input
@@ -9,7 +9,7 @@ function SearchBar({onChange,query,onClick}){
                 value={query}
             />
             <label>Only show products on stock</label>
-                <input type="checkbox" value="true" onChange={onClick}/>
+                <input type="checkbox" value={stocked} onChange={onClick}/>
         </form>
     )
 }

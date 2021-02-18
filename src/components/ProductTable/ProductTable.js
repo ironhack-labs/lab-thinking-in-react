@@ -1,10 +1,12 @@
 import React from "react";
 import ProductRow from "../ProductRow/ProductRow"
 
-function ProductTable({data, query}){
-    function includesName(data, query) {
-        return data.name.toLowerCase().includes(query.toLowerCase())
+function ProductTable({data, query, stockedProducts}){
+
+    function includesName(products, query) {
+        return products.name.toLowerCase().includes(query.toLowerCase())
     }
+    
     return(
         <table>
             <thead>
