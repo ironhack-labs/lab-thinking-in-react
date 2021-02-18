@@ -5,17 +5,12 @@ import ProductTable from './components/ProductTable/ProductTable';
 import SearchBar from './components/SearchBar/SearchBar';
 
 function App() {
-
   let products = jsondata.data
-  console.log("products", products)
 
   const [filteredProducts, setFilteredProducts] = React.useState(products)
 
   const searchProducts = (userInput) => {
-    let filteredArr = products.filter(item => item.category.toLowerCase().includes(userInput))
-    console.log("filteredArr",filteredArr)
-    setFilteredProducts(filteredArr)
-    //setFilteredProducts(products => products.filter(item => item.name.toLowerCase().includes(userInput) ))
+    setFilteredProducts(products => products.filter(item => item.name.toLowerCase().includes(userInput)))
   }
 
   const stockProducts = () => {

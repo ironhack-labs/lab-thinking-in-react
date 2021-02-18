@@ -1,11 +1,10 @@
 import React from 'react';
+import './ProductRow.css';
 
 function ProductRow(props) {
-    //console.log("props de product row", props)
     return (
-        <div>
-        
-        <table>
+        <div >
+        <table className="products-table">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -23,8 +22,6 @@ function ProductRow(props) {
                         )
                     })
                 }
-            
-
             </tbody>
         </table>
         </div>
@@ -32,26 +29,3 @@ function ProductRow(props) {
 }
 
 export default ProductRow;
-
-// function ProductRow(props) {
-//     console.log("props de product row", props)
-//     return (
-//         <div>
-        
-//         <table>
-//             <thead>
-//                 <tr>
-//                     <th>Name</th>
-//                     <th>Price</th>
-//                 </tr>
-//             </thead>
-//             <tbody>
-//                 <tr key={props.id}>
-//                     <td>{props.name}</td>
-//                     <td>{props.price}</td>
-//                 </tr>
-//             </tbody>
-//         </table>
-//         </div>
-//     )
-// }
