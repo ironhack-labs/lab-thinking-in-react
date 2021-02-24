@@ -1,0 +1,12 @@
+import React from 'react';
+
+const ProductRow = (props) => {
+    return(
+        <tr className={props.product.stocked ? "" : "table-danger"}>
+          <td>{props.product.name}</td>
+          <td>{props.product.price}</td>
+        </tr>
+    );
+}
+
+export default ProductRow;
