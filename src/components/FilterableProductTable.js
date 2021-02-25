@@ -22,11 +22,21 @@ class FilterableProducTable extends Component {
     this.loadProductsList(this.props.products);
   }
 
+  filterProduct(searchInput) {
+    this.setState({
+      productsList: this.state.productsList.filter((product) =>
+        product.name.toLowerCase().includes(searchInput.toLowerCase())
+      ),
+    });
+  }
+
   render() {
     return (
       <Container>
         <h1>IronStore</h1>
-        <SearchBar />
+        <SearchBar
+          searchHandler={(inputText) => this.filterProduct(inputText)}
+        />
         <ProductTable products={this.state.productsList}></ProductTable>
       </Container>
     );
