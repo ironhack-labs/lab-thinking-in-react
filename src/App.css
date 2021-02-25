@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 table {
@@ -8,5 +12,10 @@ table {
 
 table td {
   padding: 20px;
-  width: 200px;
+  width: 250px;
+}
+
+thead td {
+  font-weight: bold;
+  font-size: 24px;
 }
