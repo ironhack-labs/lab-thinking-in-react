@@ -8,11 +8,18 @@ export default class FilterableProductTable extends Component {
       productsFiltered : this.props.products
     }
 
+    handleCallback = (childData) =>{
+        const filteredCopy = [...this.props.products].filter(item => item.name.toLowerCase().includes(childData.toLowerCase()))
+        this.setState({
+            productsFiltered: filteredCopy
+        })
+    }
+
     render() {
         return (
             <div>
                 <h1>IronStore</h1>
-                <SearchBar />
+                <SearchBar parentCallback={this.handleCallback} products={this.props.products}/>
                 <ProductTable products={this.state.productsFiltered}/>
             </div>
         )
