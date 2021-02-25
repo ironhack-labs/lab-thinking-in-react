@@ -11,11 +11,12 @@ class FilterableProducTable extends Component {
     super();
     this.state = {
       productsList: [],
+      originalProductsList: [],
     };
   }
 
   loadProductsList(products) {
-    this.setState({ productsList: products });
+    this.setState({ productsList: products, originalProductsList: products });
   }
 
   componentDidMount() {
@@ -24,7 +25,7 @@ class FilterableProducTable extends Component {
 
   filterProduct(searchInput) {
     this.setState({
-      productsList: this.state.productsList.filter((product) =>
+      productsList: this.state.originalProductsList.filter((product) =>
         product.name.toLowerCase().includes(searchInput.toLowerCase())
       ),
     });
