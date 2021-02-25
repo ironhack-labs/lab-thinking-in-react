@@ -31,12 +31,21 @@ class FilterableProducTable extends Component {
     });
   }
 
+  filterByStock() {
+    this.setState({
+      productsList: this.state.originalProductsList.filter(
+        (product) => product.stocked
+      ),
+    });
+  }
+
   render() {
     return (
       <Container>
         <h1>IronStore</h1>
         <SearchBar
           searchHandler={(inputText) => this.filterProduct(inputText)}
+          stockCheckHandler={() => this.filterByStock()}
         />
         <ProductTable products={this.state.productsList}></ProductTable>
       </Container>
