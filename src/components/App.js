@@ -1,8 +1,16 @@
 import React from 'react';
 import './App.css';
+import FilterableProducTable from './FilterableProductTable';
+import SearchBar from './SearchBar';
+import datajson from '../data.json';
 
 function App() {
-  return <h1>Hola</h1>;
+  return (
+    <>
+      <SearchBar />
+      <FilterableProducTable products={datajson.data} />
+    </>
+  );
 }
 
 export default App;
