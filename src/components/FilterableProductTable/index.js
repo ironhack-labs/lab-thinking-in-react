@@ -12,7 +12,7 @@ class FilterableProductTable extends Component {
 
   showProducts = () => {
     return this.state.products.map((eachProduct) => {
-      return <ProductRow {...eachProduct} />;
+      return <ProductRow key={eachProduct.id} {...eachProduct} />;
     });
   };
 
