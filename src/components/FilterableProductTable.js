@@ -9,13 +9,13 @@ export default class FilterableProductTable extends Component {
   };
 
   handleSearch = (event) => {
+    console.log(`loggin value`, event);
+
     const value =
       event.target.type === 'checkbox'
         ? event.target.checked
         : event.target.value;
     const name = event.target.name;
-
-    //console.log(`loggin value`, value);
 
     this.setState({
       [name]: value,
@@ -23,15 +23,22 @@ export default class FilterableProductTable extends Component {
   };
 
   render() {
-    const filteredProducts = this.props.products.filter((product) => {
-      if (this.state.search === '') {
-        return product;
+    const matchStock = (product) => {
+      if (this.state.stocked) {
+        return product.stocked === true;
+      } else {
+        return true;
       }
-      return (
-        product.name.toLowerCase().includes(this.state.search.toLowerCase()) &&
-        //checkbox not working yet:
-        this.state.stocked === product.stocked
-      );
+    };
+
+    const matchSearch = (product) => {
+      return product.name
+        .toLowerCase()
+        .includes(this.state.search.toLowerCase());
+    };
+
+    const filteredProducts = this.props.products.filter((product) => {
+      return matchSearch(product) && matchStock(product);
     });
     // console.log(filteredProducts);
 
