@@ -1,15 +1,16 @@
-import React from 'react'
+import React from 'react';
 
 export default function ProductRow(props) {
-    //console.log(props.product.id)
+  //console.log(props.products)
 
+  return props.products.map((product) => {
     return (
-        
-            <tr key={props.product.id}>
-                <td style={props.product.stocked ? { color: 'black'} :{color: 'red'} } >{props.product.name } </td>
-                <td>{props.product.price } </td>
-            </tr>
-            
-      
-    )
+      <tr key={product.id}>
+        <td style={product.stocked ? { color: 'black' } : { color: 'red' }}>
+          {product.name}
+        </td>
+        <td>{product.price} </td>
+      </tr>
+    );
+  });
 }
