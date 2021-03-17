@@ -12,8 +12,9 @@ function App() {
 <div className="App">
       <FilterableProductTable products={ jsondata.data } />
     </div>
+<SearchBar/>
 
-
+<ProductTable><ProductRow /></ProductTable>
 
   );
 }
