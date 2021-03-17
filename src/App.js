@@ -1,24 +1,16 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import dataJson from "./data.json"
+import FilterableProductTable from "./Components/FilterableProductTable";
+import SearchBar from "./Components/SearchBar";
+import ProductTable from "./Components/SearchBar";
+import ProductRow from "./Components/ProductRow";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <FilterableProductTable products={ dataJson.data } />
     </div>
   );
 }
