@@ -18,7 +18,7 @@ export default class ProductTable extends Component {
                     <tbody>
                         { 
                             datas
-                                .filter(data => data.name.toLowerCase().match(this.props.renderValue.toLowerCase()+".*"))
+                                .filter(data => data.name.toLowerCase().match("^"+this.props.renderValue.toLowerCase()+".*"))
                                 .map((prod,index) => <ProductRow name ={prod.name} price={prod.price} key={index}/> )
                         }
                     </tbody>
