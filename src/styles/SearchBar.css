@@ -1,0 +1,19 @@
+.SearchBar {
+    display: flex;
+    width: 600px;
+    height: 30px;
+    margin: 20px 0;
+}
+.SearchBar input {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+.SearchBar button {
+    outline: 0;
+    border: 0;
+    padding: 10px;
+    line-height: 10px;
+    background-color: cornflowerblue;
+    color: white;
+    cursor: pointer;
+}

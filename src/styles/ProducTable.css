@@ -1,0 +1,21 @@
+.ProducTable {
+    width: 600px;
+}
+
+.ProducTable table {
+    width: 100%;
+    border: 1px solid black;
+    padding: 40px;
+}
+.ProducTable thead tr td {
+    padding: 10px;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+}
+
+.ProducTable table td {
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px dotted black;
+}
