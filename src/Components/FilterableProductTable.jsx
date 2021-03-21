@@ -16,8 +16,8 @@ class FilterableProductTable extends Component {
                 <SearchBar>
                     test
                 </SearchBar>
-
-                <ProductTable /**  {this.state.products} **/ />
+                {/* ligne ci-dessous, products could be called anything */}
+                <ProductTable products_from_filteredproductstable={this.state.products} />
 
 
             </div>
