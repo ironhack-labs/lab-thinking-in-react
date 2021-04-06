@@ -11,7 +11,7 @@ class FilterableProductTable extends React.Component {
 	onSearch = async (e) => { 
 
         await this.setState({ 
-            search: e.target.value 
+            search: e.target.value
         });
         
         console.log('this.state.search', this.state.search);
@@ -19,16 +19,18 @@ class FilterableProductTable extends React.Component {
 
     filteredProducts = () => {
 		let products = [...this.state.products];
-		if (this.state.search) {
+		if (this.state.search !== '') {
 			products = this.state.products.filter(({name}) => {
-				name.toLowerCase().includes(this.state.search.toLowerCase())
+				return name.toLowerCase().includes(this.state.search.toLowerCase())
 			})
 		}
+		return products;
     }
 
 	render() {
-		console.log(this.state.products)
+		//console.log('FiltearableProductTable', this.state.products)
 		let allProducts = this.filteredProducts();
+		console.log('allProducts', allProducts)
 
 		return (
 			<>	
@@ -36,7 +38,7 @@ class FilterableProductTable extends React.Component {
 					onSearch={this.onSearch}
 					search={this.state.search}
 				/>
-				<ProductTable products={this.state.products} />
+				<ProductTable products={allProducts} />
 			</>
 		)
 	}
