@@ -1,5 +1,8 @@
-{
-  "data": [
+import React from 'react'
+import { render, cleanup} from '@testing-library/react'
+import ProductTable from '../components/ProductTable'
+
+const products = [
     {
       "category": "Sporting Goods",
       "price": "$49.99",
@@ -57,4 +60,13 @@
       "id": "10858000-7894-4d77-bd0f-24639d111e74"
     }
   ]
-}
+
+describe('ProductTable component', () => {
+    test('it renders a table', () => {
+        const { debug, container } = render(<ProductTable products={products} />)
+
+        debug()
+
+        expect(container.firstChild.nodeName).toBe('TABLE')
+    })
+})
