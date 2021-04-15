@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
-function ProductRow({name, price}) {
+function ProductRow({ name, price, stocked }) {
+    if (stocked) {
+        
+    }
     return (
-        <tr className="ProductRow">
-            <th scope="row">{name}</th>
-            <td>{price}</td>
-        </tr>
+        <Fragment>
+            {
+                stocked
+                    ? (<tr className="ProductRow">
+                        <th scope="row">{name}</th>
+                        <td>{price}</td>
+                    </tr>)
+                    : (<tr className="ProductRow" style={{color: "red"}}>
+                        <th scope="row">{name}</th>
+                        <td>{price}</td>
+                    </tr>)
+            }     
+        </Fragment>
     );
 }
 
