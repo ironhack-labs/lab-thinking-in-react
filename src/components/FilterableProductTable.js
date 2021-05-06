@@ -8,7 +8,7 @@ class FilterableProductTable extends React.Component {
     stockonly: false,
   };
   setQuery = (name, value) => {
-    console.log('FilterableProductTable -> setQuery', name, value);
+    //console.log('FilterableProductTable -> setQuery', name, value);
     this.setState({
       [name]: value,
     });
@@ -17,8 +17,16 @@ class FilterableProductTable extends React.Component {
     return (
       <div className="FilterableProductTable">
         <h1>IronStore</h1>
-        <SearchBar qq={this.state.q} setQueryChild={this.setQuery} />
-        <ProductTable products={this.props.products} qqq={this.state.q} />
+        <SearchBar
+          qq={this.state.q}
+          stockonly={this.state.stockonly}
+          setQueryChild={this.setQuery}
+        />
+        <ProductTable
+          products={this.props.products}
+          qqq={this.state.q}
+          stockonly={this.state.stockonly}
+        />
       </div>
     );
   }

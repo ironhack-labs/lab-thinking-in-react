@@ -6,7 +6,7 @@ class SearchBar extends React.Component {
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
 
-    console.log('SearchBar -> handleChange', name, value);
+    // console.log('SearchBar -> handleChange', name, value);
     this.props.setQueryChild(name, value);
   };
   render() {
@@ -22,7 +22,13 @@ class SearchBar extends React.Component {
           onChange={this.handleChange}
         />
         <br />
-        <input type="checkbox" name="stockonly" id="stockonly" />
+        <input
+          type="checkbox"
+          name="stockonly"
+          id="stockonly"
+          checked={this.props.stockonly}
+          onChange={this.handleChange}
+        />
         <label htmlFor="stockonly">Only show products on stock</label>
       </div>
     );

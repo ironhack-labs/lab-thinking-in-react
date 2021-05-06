@@ -3,12 +3,11 @@ import ProductRow from './ProductRow';
 
 class ProductTable extends React.Component {
   render() {
-    console.log('ProductTable -> render', this.props.qqq);
-    const productsFiltered = this.props.products.filter((prod) =>
-      prod.category
-        .concat(prod.name)
-        .toLowerCase()
-        .includes(this.props.qqq.toLowerCase())
+    //console.log('ProductTable -> render', this.props.qqq);
+    const productsFiltered = this.props.products.filter(
+      (prod) =>
+        prod.name.toLowerCase().includes(this.props.qqq.toLowerCase()) &&
+        (prod.stocked || !this.props.stockonly)
     );
 
     return (
