@@ -3,7 +3,7 @@ import ProductRow from './ProductRow';
 
 export default class ProductTable extends Component {
     state = {
-        search : this.props.search
+        search : this.props.search.search
     }
 
     render() {

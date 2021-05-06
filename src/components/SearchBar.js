@@ -6,20 +6,19 @@ export default class SearchBar extends Component {
         this.props.searchMethod(event.target.value)
     }
 
-    stockChange = () => {
-
+    stockChange = event => {
+        this.props.stockMethod(event.target.checked)
     }
 
     render() {
-        
         return (
             <div className="Search">
                 <input
                     type="text"
                     id="text"
                     name="text"
-                    // Is this right? The value?
-                    value={this.props.search}
+                    // MAKE SURE THIS IS CORRECT
+                    value={this.props.search.search}
                     onChange={this.handleChange}
                 />
                     <p></p>
@@ -27,7 +26,7 @@ export default class SearchBar extends Component {
                     type="checkbox"
                     id="stock"
                     name="stock"
-                    value=""
+                    value={this.props.search.stocked}
                     onChange={this.stockChange}
                 />
                 <label htmlFor="stock">Only show items that are in stock</label>
