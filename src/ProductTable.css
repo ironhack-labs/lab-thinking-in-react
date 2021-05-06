@@ -1,0 +1,22 @@
+.product-table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.product-table table {
+    width: 80%;
+    border-collapse: collapse;
+    border-spacing: 0 20px;
+}
+
+thead{
+    background-color: rgb(245, 245, 245);
+}
+
+td, th {
+    padding: 15px 0;
+    border-bottom: 1px solid rgb(245, 245, 245);
+    box-sizing: border-box;
+}
