@@ -5,11 +5,12 @@ import ProductTable from './ProductTable';
 class FilterableProductTable extends React.Component {
   state = {
     q: '',
+    stockonly: false,
   };
-  setQuery = (queryParam) => {
-    console.log('FilterableProductTable -> setQuery', queryParam);
+  setQuery = (name, value) => {
+    console.log('FilterableProductTable -> setQuery', name, value);
     this.setState({
-      q: queryParam,
+      [name]: value,
     });
   };
   render() {
