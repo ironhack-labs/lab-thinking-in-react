@@ -7,6 +7,7 @@ class ProductRow extends React.Component {
     };
     return (
       <tr className="ProductRow" style={divStyle}>
+        <td>{this.props.product.category}</td>
         <td>{this.props.product.name}</td>
         <td>{this.props.product.price}</td>
       </tr>
