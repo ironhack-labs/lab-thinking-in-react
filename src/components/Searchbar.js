@@ -10,7 +10,7 @@ class Searchbar extends React.Component{
         <h3>Search</h3>
         <input type="text" onChange={(e)=>this.props.filterProducts(e)}/>
         <div>
-            <input type="checkbox" />
+            <input type="checkbox" onChange={()=>this.props.onStock()} />
             <label>Only show products in stock</label>            
         </div>
 
