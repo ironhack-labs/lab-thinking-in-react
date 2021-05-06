@@ -1,6 +1,6 @@
 import React from 'react';
 
-class SearchBar extends React.Component {
+export default class SearchBar extends React.Component {
   handleChange = (event) => {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -34,5 +34,3 @@ class SearchBar extends React.Component {
     );
   }
 }
-
-export default SearchBar;
