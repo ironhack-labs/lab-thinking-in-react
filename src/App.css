@@ -43,10 +43,31 @@
 }
 
 .ProductTable table {
-  margin: 2em;
+  margin: 0.1em;
+  width: 100%;
 }
 
-.ProductTable table tr th,
-.ProductTable table tr td {
-  border: #282c34 solid 1px;
+@media (min-width: 801px) {
+  .ProductTable table {
+    margin: 2em;
+    width: 60%;
+  }
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+th,
+td {
+  padding: 15px;
+  text-align: left;
+}
+
+.SearchBar .searchText {
+  width: 80%;
+  padding: 0.5em 1em;
+  margin: 1em;
 }

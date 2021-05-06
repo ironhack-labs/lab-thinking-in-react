@@ -1,7 +1,7 @@
 import React from 'react';
 import ProductRow from './ProductRow';
 
-class App extends React.Component {
+class ProductTable extends React.Component {
   render() {
     return (
       <div className="ProductTable">
@@ -14,7 +14,7 @@ class App extends React.Component {
           </thead>
           <tbody>
             {this.props.products.map((product) => {
-              return <ProductRow product={product} />;
+              return <ProductRow product={product} key={product.id} />;
             })}
           </tbody>
         </table>
@@ -23,4 +23,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default ProductTable;

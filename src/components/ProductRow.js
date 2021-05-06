@@ -1,6 +1,6 @@
 import React from 'react';
 
-class App extends React.Component {
+class ProductRow extends React.Component {
   render() {
     const divStyle = {
       color: this.props.product.stocked ? 'black' : 'red',
@@ -14,4 +14,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default ProductRow;
