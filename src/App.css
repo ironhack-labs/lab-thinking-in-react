@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.ProductTable {
+  display: flex;
+  justify-content: center;
+}
+
+.ProductTable table {
+  margin: 2em;
+}
+
+.ProductTable table tr th,
+.ProductTable table tr td {
+  border: #282c34 solid 1px;
+}

@@ -6,8 +6,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="FilterableProductTable">
+        <h1>IronStore</h1>
         <SearchBar />
-        <ProductTable />
+        <ProductTable products={this.props.products} />
       </div>
     );
   }

@@ -5,7 +5,19 @@ class App extends React.Component {
   render() {
     return (
       <div className="ProductTable">
-        <ProductRow />
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.props.products.map((product) => {
+              return <ProductRow product={product} />;
+            })}
+          </tbody>
+        </table>
       </div>
     );
   }
