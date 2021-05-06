@@ -1,26 +1,47 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { data } from './data.json';
+import { Container } from 'reactstrap';
+import SearchBar from './components/SearchBar';
+import ProductTable from './components/ProductTable';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    searchQuery: '',
+    onStockCheck: false,
+  };
+
+  handleSearchChange = (searchQuery) => {
+    this.setState({
+      searchQuery: searchQuery,
+    });
+  };
+
+  handleCheckboxChange = (onStockCheck) => {
+    this.setState({
+      onStockCheck: onStockCheck,
+    });
+  };
+
+  render = () => {
+    return (
+      <Container className="App">
+        <h1>Iron Store</h1>
+        <SearchBar
+          searchQuery={this.state.searchQuery}
+          onStock={this.state.onStockCheck}
+          handleSearchChange={this.handleSearchChange}
+          handleCheckboxChange={this.handleCheckboxChange}
+        />
+        <ProductTable
+          products={data}
+          searchQuery={this.state.searchQuery}
+          onStockCheck={this.state.onStockCheck}
+        />
+      </Container>
+    );
+  };
 }
 
 export default App;
