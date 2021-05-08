@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import './ProductRow.css'
 
 const ProductRow = (props) => {
-    console.log(props.data.products)
   return (
     <tbody>
     {!props.searching ?
