@@ -36,3 +36,54 @@
     transform: rotate(360deg);
   }
 }
+
+.section-container {
+  margin: 5px;
+  border: 1px solid #7c7c7c;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+input {
+  width: 60%;
+  padding: 5px;
+}
+
+.checkbox-container {
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-content:flex-end;
+  padding: 5px 0 0 0;
+}
+
+.checkbox-container input {
+  width: fit-content;
+}
+
+.product-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 2px;
+  border: 1px solid #7c7c7c;
+  border-radius: 15px;
+  color: #000;
+}
+
+.product-box p {
+  width: 40%;
+  text-align: center;
+  padding: 2px 0px;
+}
+
+.product-box-red {
+  color:rgb(255, 0, 0);
+}
+
+.list-header {
+  font-size: 20px;
+  font-weight: bold;
+  color:#7c7c7c;
+  margin: 5px;
+}
