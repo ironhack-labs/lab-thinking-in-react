@@ -1,10 +1,11 @@
 import React from 'react';
 
-export default function ProductRow() {
+export default function ProductRow(props) {
+  const { name, price } = props;
   return (
     <div className="row table-row">
-      <div className="col">Name</div>
-      <div className="col">Price</div>
+      <div className="col">{name}</div>
+      <div className="col">{price}</div>
     </div>
   );
 }
