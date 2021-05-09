@@ -1,0 +1,10 @@
+#table-header{
+    background-color: #E7ECEF;
+    color: #555B5F;
+    font-size: 16px;
+    font-weight: 600;
+    border-bottom: 2px solid #E0E2E4;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
