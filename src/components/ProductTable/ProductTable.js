@@ -3,7 +3,7 @@ import ProductRow from '../ProductRow/ProductRow';
 import './ProductTable.css';
 
 export default function ProductTable(props) {
-  const { data, search } = props;
+  const { data, search, inStock } = props;
   return (
     <div id="product-table" className="container px-0 mt-4">
       <div className="col">
@@ -11,11 +11,18 @@ export default function ProductTable(props) {
           <div className="col">Name</div>
           <div className="col">Price</div>
         </div>
-        {data
-          .filter((product) => product.name.includes(search))
-          .map((product) => {
-            return <ProductRow key={product.id} {...product} />;
-          })}
+        {inStock
+          ? data
+              .filter((product) => product.name.includes(search))
+              .filter((product) => product.stocked)
+              .map((product) => {
+                return <ProductRow key={product.id} {...product} />;
+              })
+          : data
+              .filter((product) => product.name.includes(search))
+              .map((product) => {
+                return <ProductRow key={product.id} {...product} />;
+              })}
       </div>
     </div>
   );

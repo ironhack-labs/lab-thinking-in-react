@@ -4,7 +4,7 @@ import './SearchBar.css';
 
 export default class SearchBar extends Component {
   render() {
-    const { handleSearch } = this.props;
+    const { handleSearch, handleInStock } = this.props;
     return (
       <form id="search-bar-form" className="row">
         <div className="mb-3 col-12 px-0">
@@ -19,6 +19,7 @@ export default class SearchBar extends Component {
             type="checkbox"
             value=""
             id="stock-products"
+            onClick={(e) => handleInStock(e)}
           />
           <label className="form-check-label" htmlFor="stock-products">
             Only show products on stock
