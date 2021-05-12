@@ -1,14 +1,16 @@
 import React from 'react';
 import 'bulma/css/bulma.css';
-import SearchBar from './SearchBar'
 import ProductRow from './ProductRow';
 
 
-const ProductTable = ({products}) => {
+
+const ProductTable = ({productList}) => {
+   
     return (
+        
 
         <div className="table-container">
-        <table className="table table is-fullwidth">
+        <table className="table is-fullwidth">
         <thead>
           <tr>
         <th>Name</th>
@@ -16,14 +18,11 @@ const ProductTable = ({products}) => {
       
         </tr>
         </thead>
-
-        <tbody>
-        {products.map(product => (
+        {productList.map(product => (
             <ProductRow {...product} key={product.id} />
           )
           )}
         
-        </tbody>
         </table>
       </div>
     )

@@ -2,12 +2,24 @@ import React from 'react';
 import 'bulma/css/bulma.css';
 
 
-const ProductRow = ({ name, price }) => {
+const ProductRow = ({ name, price, stocked }) => {
     return (
-       <tr>
+    <tbody>
+{ 
+    stocked ? 
+    (<tr>
         <td>{name}</td>
         <td>{price}</td>
-        </tr>    
+        </tr> 
+) : (
+    <tr>
+        <td style={{color:'red'}}>{name}</td>
+        <td>{price}</td>
+        </tr> 
+)
+
+}
+</tbody>   
     )
 }
 
