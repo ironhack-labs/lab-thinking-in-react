@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import 'bulma/css/bulma.css';
 import jsondata from './data.json';
 
 import FilterableProductTable from './components/FilterableProductTable';

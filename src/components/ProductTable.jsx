@@ -1,5 +1,4 @@
 import React from 'react';
-import 'bulma/css/bulma.css';
 import ProductRow from './ProductRow';
 
 

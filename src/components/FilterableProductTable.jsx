@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import 'bulma/css/bulma.css';
+import React, { useState} from 'react';
 import SearchBar from './SearchBar';
 import ProductTable from './ProductTable'
 
@@ -8,7 +7,6 @@ const FilterableProductTable = ({products}) => {
     const [search, setSearch] = useState([]);
     const [displayResults, setDisplayResults] = useState(false);
 
-   
     const handleSearch = (search) => {
         const productListCopy = [...productList];
         const filteredList = productListCopy.filter((item) => {
@@ -16,11 +14,10 @@ const FilterableProductTable = ({products}) => {
     
         });
         setDisplayResults(true);
-        setSearch(filteredList);
+      setSearch(filteredList);
     
       };
    
-
    return (
         <div>
 <SearchBar searchTerm={handleSearch} />

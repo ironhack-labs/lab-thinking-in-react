@@ -1,11 +1,12 @@
-import React from 'react';
-import 'bulma/css/bulma.css';
+import React from 'react'
 
-const SearchBar = ({ searchTerm }) => {
+const SearchBar = ({ searchTerm}) => {
 
   const searchHandler = (e) => {
     searchTerm(e.target.value)
   };
+
+  
 
     return (
 
@@ -13,20 +14,21 @@ const SearchBar = ({ searchTerm }) => {
   
   <div className="field">
     
-    <label className="label" >Search</label>
+    <label htmlFor='search' className="label" >Search</label>
     
     <div className="control"> 
       <input className="input" 
       type="search" 
+      name= 'search'
       placeholder="search..."
       onChange={searchHandler}
       />
     </div>
     
-    <label className="checkbox">
+    <label htmlFor='stock' className="checkbox">
   <input 
   type="checkbox"
- 
+  name = 'stock'
 
   />
   Only show products on stock
