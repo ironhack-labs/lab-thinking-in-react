@@ -7,18 +7,29 @@ import ProductTable from '../ProductTable/ProductTable';
 export default class FilterableProductTable extends React.Component {
   state = {
     searchKey: '',
+    toggle: false,
   };
 
-  handleSearchUpdate = (searchKey) => {
+  handleTextUpdate = (searchKey) => {
     this.setState({ searchKey: searchKey });
+  };
+
+  handleToggleUpdate = () => {
+    this.setState({ toggle: !this.state.toggle });
   };
 
   render() {
     return (
-      <div>
+      <div className="filterable-product-table">
         <h1>{this.props.title}</h1>
-        <SearchBar listener={this.handleSearchUpdate} />
-        <ProductTable filter={this.state.searchKey} />
+        <SearchBar
+          textChangeListener={this.handleTextUpdate}
+          toggleChangeListener={this.handleToggleUpdate}
+        />
+        <ProductTable
+          filter={this.state.searchKey}
+          showOutOfStock={!this.state.toggle}
+        />
       </div>
     );
   }

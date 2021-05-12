@@ -11,13 +11,36 @@ export default class ProductTable extends React.Component {
     products: data.data,
   };
 
-  filterProducts = () => {
-    return this.state.products.map((product) => {
-      return <ProductRow key={product.id} {...product} />;
-    });
-  };
-
   render() {
-    return <div>{this.filterProducts()}</div>;
+    const visibleProducts = this.state.products.filter((product) => {
+      return this.props.showOutOfStock || product.stocked
+        ? product.name.toLowerCase().includes(this.props.filter.toLowerCase())
+        : false;
+    });
+    console.log(`filter: "${this.props.filter}"`, visibleProducts);
+
+    const categories = visibleProducts
+      .map((product) => product.category)
+      .reduce(
+        (unique, category) =>
+          unique.includes(category) ? unique : [...unique, category],
+        []
+      );
+
+    const sections = [];
+    categories.forEach((category) => {
+      sections.push(
+        <div key={category}>
+          <h3 className="category-title">{category}</h3>
+          {visibleProducts
+            .filter((product) => product.category === category)
+            .map((product) => {
+              return <ProductRow key={product.id} {...product} />;
+            })}
+        </div>
+      );
+    });
+
+    return <div className="product-table">{sections}</div>;
   }
 }
