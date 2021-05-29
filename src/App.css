@@ -36,3 +36,36 @@
     transform: rotate(360deg);
   }
 }
+
+.searchbar:focus{
+  border: 1.5px solid rgb(148, 148, 148);
+  border-radius: 25px;
+  outline: none;
+}
+
+.searchbar{
+  border-radius: 25px;
+  border: none;
+  padding: 10px;
+}
+
+.text-red{
+  color: rgb(196, 0, 0);
+}
+/* 
+.input::placeholder]{
+  padding: 20px;
+
+} */
+
+.bg-light-gray{
+  background-color: rgb(230, 233, 236);
+}
+
+
+.modal-scrollable-area {
+  height: auto;
+  max-height: 30vh;
+  padding-right: 10px;
+  overflow-y: scroll;
+}
