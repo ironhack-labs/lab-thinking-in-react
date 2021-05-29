@@ -65,7 +65,7 @@
 
 .modal-scrollable-area {
   height: auto;
-  max-height: 30vh;
+  max-height: 40vh;
   padding-right: 10px;
   overflow-y: scroll;
 }
