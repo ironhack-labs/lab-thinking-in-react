@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.productFilter {
+  padding-left: 20px;
+  padding-top: 20px;
+  font-size: 1.5em;
+}
+
+.searchBar .form input{
+  font-size: 1.2em;
+}
+
+.productTable .products {
+  font-weight: 700;
+}
