@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ProductTable from './ProductTable';
+import SearchBar from './SearchBar';
 
 
 
@@ -31,13 +32,19 @@ export default class FilterableProductTable extends Component{
             
             <div>
                 <h1>IronStore</h1>
+                <SearchBar/>
+                <ProductTable/>
                 {data.map(item => {
                     return(
                         
-                        <div>{item.name}</div>
+                        <div className="rowElements">
+                            <span className="rowItems">{item.name}</span>
+                            <span className="rowItems">{item.price}</span>
+                            </div>
+                        
                     )
                 })}
-                <ProductTable/>
+               
             </div>
         )
     }

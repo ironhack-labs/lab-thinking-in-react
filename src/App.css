@@ -10,7 +10,27 @@
 }
 
 .rowElements {
+ 
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  border: rgb(165, 165, 165) 1px solid;
+}
+
+.rowItems {
+  margin: 2% 0;
+}
+
+.searchBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: rgb(165, 165, 165) 1px solid;
+  margin: 2% 0;
+}
+
+.search {
+  margin: 2% 0;
+  border: rgb(165, 165, 165) 1px solid;
 }
