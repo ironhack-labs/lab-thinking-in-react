@@ -2,6 +2,11 @@ import React, { useState } from 'react'
 import ItemTable from './ItemTable';
 import SearchBar from './SearchBar';
 import data from './data.json';
+import styled from 'styled-components';
+
+const StyledArticle = styled.article`
+    text-align: center;
+`
 
 const FilterableItemTable = () => {
     const [items, setItems] = useState(data.data);
@@ -20,7 +25,7 @@ const FilterableItemTable = () => {
     };
 
     return (
-      <article className="FilterableItemTable">
+      <StyledArticle className="FilterableItemTable">
         <SearchBar
           showSearch={myShowSearch}
           setIsChecked={myIsChecked}
@@ -32,7 +37,7 @@ const FilterableItemTable = () => {
           searchedItemsList={searchItems}
           itemsList={items}
         ></ItemTable>
-      </article>
+      </StyledArticle>
     );
 }
  
