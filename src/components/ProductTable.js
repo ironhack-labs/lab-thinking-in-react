@@ -1,5 +1,5 @@
 import React from 'react';
-// import ProductRow from './ProductRow';
+import ProductRow from './ProductRow';
 
 const ProductTable = (props) => {
     console.log('props from ProductTable: ', props)
@@ -47,12 +47,7 @@ const ProductTable = (props) => {
                 </tr>
             </thead>
             <tbody>
-                {props.products.map(product => (
-                <tr key={product.id}>
-                    <td>{product.name}</td>
-                    <td>{product.price}</td>
-                </tr>
-                ))}
+                <ProductRow products={props.products} />
             </tbody>
         </table>
         </>
