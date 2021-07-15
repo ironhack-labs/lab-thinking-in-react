@@ -36,3 +36,38 @@
     transform: rotate(360deg);
   }
 }
+
+#title {
+  text-align: center;
+  font-family: arial, sans-serif;
+}
+
+#data {
+  text-align: center;
+  font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  border: 3px solid #ddd;
+  width: 100%;
+}
+
+#data td,
+#data th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#data tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#data tr:hover {
+  background-color: #ddd;
+}
+
+#data th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: grey;
+  color: white;
+}
