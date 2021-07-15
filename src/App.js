@@ -10,7 +10,7 @@ function App() {
       <h1>Iron Store</h1>
 
       <Search />
-      <ProductTable />
+      {/* <ProductTable /> */}
     </div>
   );
 }
