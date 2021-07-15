@@ -47,7 +47,7 @@ const ProductTable = (props) => {
                 </tr>
             </thead>
             <tbody>
-                <ProductRow products={props.products} />
+                <ProductRow products={props.products} state={props.state} />
             </tbody>
         </table>
         </>
