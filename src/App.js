@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+// import React from 'react';
 import './App.css';
+import React, { Component } from "react";
+import jsondata from './data.json';
+import FilterableProductTable from './components/FilterableProductTable';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+	state = {
+		query: '',
+		stock: false,
+	}
+
+	setQuery = event => {
+		const name = event.target.name;
+		const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
+		this.setState({
+			[name]: value
+		})
+	}
+
+	render() {
+		return (
+			<div className="App">
+				<h1>IronStore</h1>
+				<FilterableProductTable products={jsondata.data} state={this.state} setQuery={this.setQuery} />
+			</div>
+		);
+	}
 }
 
 export default App;
