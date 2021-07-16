@@ -1,10 +1,17 @@
-import React, { Component } from 'react'
-import ProductRow from './ProductRow'
+import React, { Component } from 'react';
+import ProductRow from './ProductRow';
+import '../App.css';
 
 export default class ProductTable extends Component {
+    
     render() {
+
+        const filtered = this.props.products.filter(product => {
+            return product.name.toLowerCase().includes(this.props.query.toLowerCase())
+        });
+
         return (
-            <div>
+            <>
                 <table>
                     <thead>
                         <tr>
@@ -14,12 +21,11 @@ export default class ProductTable extends Component {
                     </thead>
                     <tbody>
                         <ProductRow
-                            products={this.props.products}
+                            products={filtered}
                         />
                     </tbody>
                 </table>
-                
-            </div>
+            </>
         )
     }
 }

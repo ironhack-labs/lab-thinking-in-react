@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import jsondata from './data.json';
 import './App.css';
 import FilterableProductTable from './components/FilterableProductTable';
+// import SearchBar from './components/SearchBar';
 
 function App() {
   return (
