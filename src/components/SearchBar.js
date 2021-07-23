@@ -22,7 +22,7 @@ class SearchBar extends Component {
     this.setState ({
       isChecked: event.target.checked
     });
-    //this.props.checkStock(this.state.isChecked);
+    this.props.checkStock(this.state.isChecked);
   }
 
 
