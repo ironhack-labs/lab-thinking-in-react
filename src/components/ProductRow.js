@@ -7,7 +7,7 @@ function ProductRow(props) {
     <tbody>
       {props.filteredRow.map((el)=>
       <tr key={el.id}>
-        <td>{el.name}</td>
+        <td className= {el.stocked === false ? "red" : null}>{el.name}</td>
         <td>{el.price}</td>
       </tr>)}
     </tbody>
