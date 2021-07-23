@@ -1,0 +1,21 @@
+.search-input {
+  width: 600px;
+  border-radius: 5px;
+  height: 30px;
+  border: 1px solid lightgrey;
+}
+
+
+.search-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0px;
+}
+
+.search-form label {
+  margin: 10px 0px;
+}
+
+
