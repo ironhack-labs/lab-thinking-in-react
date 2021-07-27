@@ -1,0 +1,13 @@
+.table {
+    text-align: center;
+    border: 1px solid lightgray;
+    margin-top: 20px;
+    margin-left: 38px;
+    width: 95%;
+    line-height: 40px;
+}
+
+.table thead {
+    background-color: lightgray;
+    color:darkslategray;
+}

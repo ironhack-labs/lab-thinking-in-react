@@ -1,0 +1,9 @@
+h2 {
+    font-size: 20px;
+    font-weight:500;
+}
+
+.search-bar {
+    width: 95%;
+    height: 30px;
+}

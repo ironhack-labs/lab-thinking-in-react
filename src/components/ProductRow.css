@@ -1,0 +1,11 @@
+.no-stocked {
+    color: red;
+}
+
+.stocked {
+    color: black;
+}
+
+.product-row {
+    font-weight: 500;
+}
