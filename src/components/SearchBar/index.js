@@ -9,8 +9,8 @@ class SearchBar extends Component {
   handleChange = (event) => {
     event.preventDefault();
     let { name, value } = event.target;
-    this.setState({ [name]: value });
-    this.props.searchQuery(this.state);
+    this.setState({ [name]: value }); // this.setState({search:value})
+    this.props.searchQuery(this.state.search);
   }
 
   handleCheckbox = () => {

@@ -5,11 +5,11 @@ class ProductTable extends Component {
   render() {
     return (
       <div className= "columns is-flex is-justify-content-center">
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Price</th>
+        <table className=''>
+          <thead className=''>
+            <tr className= ''>
+              <th className=''>Name</th>
+              <th className=''>Price</th>
             </tr>
           </thead>
           <tbody>
