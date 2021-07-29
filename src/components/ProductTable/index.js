@@ -4,12 +4,12 @@ import ProductRow from '../ProductRow/index';
 class ProductTable extends Component {
   render() {
     return (
-      <div className= "columns is-flex is-justify-content-center">
-        <table className=''>
-          <thead className=''>
-            <tr className= ''>
-              <th className=''>Name</th>
-              <th className=''>Price</th>
+      <div className= "table-container">      
+        <table className='table is-bordered is-fullwidth'>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Price</th>
             </tr>
           </thead>
           <tbody>

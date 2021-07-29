@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SearchBar from '../SearchBar/index';
 import ProductTable from '../ProductTable/';
-
+import NavBar from '../NavBar';
 class FilterableProductTable extends Component {
   
     state = {
@@ -20,7 +20,7 @@ class FilterableProductTable extends Component {
   render() {
     return (
       <div>
-        <h1 className="h1 p-2">IronStore</h1>
+        <NavBar/>
         <SearchBar searchQuery={this.searchHandler} />
         <ProductTable products={this.state.foundProducts} />
       </div>

@@ -21,9 +21,9 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div className="columns is-flex is-justify-content-center">
+      <div className="columns is-flex is-justify-content-center m-2">
         <form className="column is-half">
-          <label htmlFor="name">Search...</label>
+          <label htmlFor="name" className="is-size-4">Search...</label>
           <input
             className="input is-small"
             type="text"
@@ -38,7 +38,7 @@ class SearchBar extends Component {
             value={this.state.inStock}
             onChange={this.handleCheckbox}
           />
-          <label htmlFor="inStock">Only show products in stock</label>
+          <label htmlFor="inStock" className="is-size-5">Only show products in stock</label>
         </form>
       </div>
     );
