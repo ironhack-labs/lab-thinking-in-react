@@ -15,13 +15,14 @@ class SearchBar extends Component {
         const {name, value } = event.target
         this.setState(( prevState )  => ({
             ...prevState,
-            [name] : value
+            [name] : value,
+            avalaibleonly: true? false : true
         }))
     }
 
     render(){
         const { onSearch, onProducstAvalaible } = this.props
-        const { searchproduct } = this.state
+        const { searchproduct, avalaibleonly } = this.state
         return(
             <form>
             <div class="input-group mb-3">
@@ -29,7 +30,7 @@ class SearchBar extends Component {
                 <span class="input-group-text" id="basic-addon2"><i class="fas fa-search"></i></span>
             </div>
             <div class="form-check">
-                <input class="form-check-input" name="avalaibleonly" type="checkbox" value={true} id="flexCheckDefault" onChange={(event) => this.handleInputs(event), onProducstAvalaible}/>
+                <input class="form-check-input" name="avalaibleonly" type="checkbox" value={avalaibleonly} id="flexCheckDefault" onChange={(event) => this.handleInputs(event), onProducstAvalaible}/>
                 <label class="form-check-label" for="flexCheckDefault">
                     Show only products in stock
                 </label>

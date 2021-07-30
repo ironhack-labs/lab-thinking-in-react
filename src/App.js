@@ -19,9 +19,12 @@ class App extends Component {
  
   return (
     <div className="container m-5">
-      <h1>IronProducts</h1>
-    
-     <FilterableProductTable products= { products.data } />     
+      <div className="m-5">
+        <h1>The IronStore</h1>
+      </div>
+      <div className="display">
+        <FilterableProductTable products= { products.data } /> 
+      </div>    
     </div>
   );
 }}

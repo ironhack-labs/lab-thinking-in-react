@@ -7,7 +7,9 @@ import SearchBar from './search-bar/SearchBar'
 class FilterableProductTable extends Component {
 
     state= {
-        products: [...this.props.products]
+        products: [...this.props.products],
+        availability: false,
+        searchitem: ''
     }
     
     handleSearchProducts(event) {
@@ -17,14 +19,13 @@ class FilterableProductTable extends Component {
         }))
     }
 
-    handleSearchAvalaibleProducts(event) {
-        const {value} = event.target
+    handleSearchAvalaibleProducts() {       
+      
         this.setState(({products}) => ({
-
             products : products.filter(product => product.stocked)
 
         }           
-        ))
+        )) 
     }
 
     render(){

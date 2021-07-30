@@ -7,9 +7,9 @@ function ProductTable ({ products } ) {
         <table class="table">
             <thead>
                 <tr>
-                <th scope="col">Product</th>
-                <th scope="col">Price</th>
-                <th scope="col">Disponibility</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Disponibility</th>
                 </tr>
             </thead>
             <tbody>
