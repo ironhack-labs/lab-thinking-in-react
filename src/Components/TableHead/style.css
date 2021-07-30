@@ -1,0 +1,13 @@
+thead{
+    background-color: rgb(64, 104, 64);
+    height: 40px;
+    margin-left: 50px;
+    width: 100%;
+}
+thead> tr > td{
+    width: 50%;
+}
+tr{
+    border-bottom: 1px solid lightgray;
+    height: 50px;
+}

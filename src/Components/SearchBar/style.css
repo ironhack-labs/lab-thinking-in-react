@@ -1,0 +1,13 @@
+.search-bar{
+    width: 95%px;
+    height: 100px;
+}
+input{
+    width: 95%;
+    height: 30px;
+    font-size: 20px;
+}
+p{
+    margin-bottom: 10px;
+    font-size: 25px;
+}
