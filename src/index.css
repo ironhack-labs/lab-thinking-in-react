@@ -11,3 +11,38 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.searchbar {
+  height: 50px;
+  width: 90vw;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  background-color: #e7ecef;
+  height: 5vh;
+  margin-top: 2vh;
+}
+
+.column {
+  margin-left: 20vw;
+}
+
+.product-row {
+  display: flex;
+  width: 90vw;
+}
+
+.column-name {
+  width: 44vw;
+}
+
+.column-price {
+  width: 46vw;
+  text-align: left;
+}
