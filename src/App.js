@@ -4,12 +4,17 @@ import './App.css';
 
 import FilterableProductTable from './components/FilterableProductTable';
 
-function App() {
-  return (
-    <div className="App">
-      <FilterableProductTable products={jsondata.data} />
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <FilterableProductTable
+          products={jsondata.data}
+          methodToSearcProduct={this.searchProduct}
+        />
+      </div>
+    );
+  }
 }
 
 export default App;

@@ -5,7 +5,11 @@ class SearchBar extends React.Component {
     return (
       <div className="search-box">
         <p>Search</p>
-        <input className="search-input" type="search" />
+        <input
+          className="search-input"
+          type="search"
+          onChange={this.props.handleSearchInput}
+        />
         <div className="checkbox">
           <label>
             <input type="checkbox" />
