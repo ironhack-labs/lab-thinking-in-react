@@ -7,14 +7,26 @@ class FilterableProductTable extends React.Component {
     super(props);
     this.state = {
       searchInput: '',
+      checkBoxStatus: false,
     };
   }
 
   render() {
-    const { searchInput } = this.state;
-    const filteredProducts = this.props.products.filter((productObj) =>
-      productObj.name.toLowerCase().includes(searchInput.toLowerCase())
-    );
+    const { searchInput, checkBoxStatus } = this.state;
+    let filteredProducts;
+
+    filteredProducts =
+      checkBoxStatus === true
+        ? this.props.products
+            .filter((productObj) =>
+              productObj.name.toLowerCase().includes(searchInput.toLowerCase())
+            )
+            .filter((productObj) => {
+              return productObj.stocked === true;
+            })
+        : (filteredProducts = this.props.products.filter((productObj) =>
+            productObj.name.toLowerCase().includes(searchInput.toLowerCase())
+          ));
 
     return (
       <div className="header">
@@ -23,7 +35,9 @@ class FilterableProductTable extends React.Component {
           handleSearchInput={(e) =>
             this.setState({ searchInput: e.target.value })
           }
-          s
+          handleCheckBox={(e) =>
+            this.setState({ checkBoxStatus: !checkBoxStatus })
+          }
         />
         <ProductTable products={filteredProducts} />
       </div>
