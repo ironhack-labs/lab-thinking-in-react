@@ -1,0 +1,8 @@
+.ProductRow {
+    display: flex;
+    height: 50px;
+}
+
+.ProductRow td{
+    height: 50px;
+}

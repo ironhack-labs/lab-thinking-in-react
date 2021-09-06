@@ -1,0 +1,29 @@
+.SearchBar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.SearchBar .SearchBar-searcher input {
+  width: 50vw;
+  height: 25px;
+  appearance: none;
+  border: 1px solid rgb(211, 211, 211);
+}
+
+.SearchBar .SearchBar-checkbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.SearchBar .SearchBar-checkbox p{
+    font-weight: bold;
+  }
+
+  .SearchBar .SearchBar-checkbox input{
+    padding: 5px;
+    margin: 0 5px 0 0;
+  }

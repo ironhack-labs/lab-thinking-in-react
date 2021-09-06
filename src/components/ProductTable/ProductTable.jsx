@@ -1,4 +1,5 @@
 import React from 'react';
+import './ProductTable.css'
 
 import ProductRow from '../ProductRow/ProductRow';
 

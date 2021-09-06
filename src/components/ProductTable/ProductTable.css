@@ -1,0 +1,25 @@
+.ProductTable{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ProductTable table{
+    width: 60vw;
+    border: 2px solid black;
+}
+
+.ProductTable table th{
+    background-color: rgb(185, 185, 185);
+    height: 50px;
+    font-size: 1.4rem;
+    border: 1px solid black;
+}
+
+
+.ProductTable table td{
+    height: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
