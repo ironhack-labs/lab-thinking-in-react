@@ -1,0 +1,13 @@
+.product-row-container {
+  display: flex;
+  justify-content: space-around;
+  width: 75vw;
+  min-width: 500px;
+  background-color: rgba(190, 203, 233, 0.5);
+  border: 2px solid white;
+}
+
+.product-row-container p {
+  text-align: center;
+  width: 250px;
+}

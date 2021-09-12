@@ -1,24 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
+import data from './data.json';
+
+import SearchBar from './SearchBar/SearchBar';
+import ProductTable from './ProductTable/ProductTable';
+
 function App() {
+  const [state, setState] = useState([...data.data]);
+  const [search, setSearch] = useState({
+    searchWord: '',
+    searchOnlyStocked: false,
+  });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className="title">IronStore</h1>
+      <SearchBar search={search} setSearch={setSearch} />
+      <ProductTable state={state} search={search} />
     </div>
   );
 }

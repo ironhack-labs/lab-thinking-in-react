@@ -1,0 +1,20 @@
+.product-table-container .table-header {
+  display: flex;
+  justify-content: space-around;
+  width: 75vw;
+  min-width: 500px;
+  background-color: rgba(155, 176, 219, 0.5);
+  border-bottom: 2px solid white;
+}
+
+.product-table-container .category-row {
+  margin-left: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75vw;
+  min-width: 500px;
+  background-color: rgba(162, 183, 226, 0.5);
+  height: 50px;
+  font-weight: bold;
+}

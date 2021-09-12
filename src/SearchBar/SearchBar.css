@@ -1,0 +1,16 @@
+.search-bar-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.search-bar-container h3 {
+  margin: 0;
+}
+
+.search-bar-container .text-input {
+  min-width: 500px;
+  font-size: 1em;
+  width: 75vw;
+  margin: 10px auto;
+}
