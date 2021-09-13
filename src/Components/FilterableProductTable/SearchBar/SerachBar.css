@@ -1,0 +1,11 @@
+.bar{
+    width: 600px;
+    height: 30px;
+    background-color: #F2F1F9;
+    border: none;
+    padding: 0.5em;
+    border-radius: 10px;
+}
+.searchBar{
+    border: 2px solid blue;
+}
