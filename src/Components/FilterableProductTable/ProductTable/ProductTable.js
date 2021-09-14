@@ -4,7 +4,6 @@ import './ProductRow/ProductRow'
 import ProductRow from './ProductRow/ProductRow';
 
 const ProductTable = ({products}) => {
-    console.log(products);
 return (
    <div className="allProduct">
     <div className='productTable'>
@@ -15,7 +14,7 @@ return (
 
         {products.map((product) => {
             return (
-                <ProductRow products={product} />
+                <ProductRow key={product.id} products={product} />
             )
         })}
 

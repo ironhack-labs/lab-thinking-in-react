@@ -17,7 +17,7 @@ const hasStock = () => {
    
     <div className='productRow'>
     
-       <p >{hasStock()}</p>
+       {hasStock()}
        
        <p>{products.price}</p>
            

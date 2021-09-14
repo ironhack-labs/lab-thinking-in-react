@@ -4,8 +4,10 @@ import ProductTable from './ProductTable/ProductTable';
 
 const FilterableProductTable = ({products}) => {
 const [keyWord, setKeyword] = useState('');
+const [stock, setStock] = useState(products);
 
-const filtered = products.filter((product, i, array)=> {
+// eslint-disable-next-line array-callback-return
+const filtered = stock.filter((product, i, array)=> {
             if (keyWord === '') {
                         return product;
                       } 
@@ -17,7 +19,7 @@ const filtered = products.filter((product, i, array)=> {
 return (
     <div>
         <h1>IronStore</h1>
-        <SearchBar setKeyword={setKeyword} />
+        <SearchBar setKeyword={setKeyword} setStock={setStock} stock={products}/>
         <ProductTable products={filtered} />
 
 
