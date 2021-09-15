@@ -2,7 +2,7 @@ import React from 'react';
 import './ProductTable.css';
 import ProductRow from '../ProductRow/ProductRow';
 
-const ProductTable = ({ products }) => {
+const ProductTable = ({ prodList }) => {
   return (
     <div className="product-table-box">
       <table>
@@ -13,7 +13,7 @@ const ProductTable = ({ products }) => {
           </tr>
         </thead>
         <tbody>
-          {products.map((product) => {
+          {prodList.map((product) => {
             return (
               <ProductRow
                 name={product.name}
