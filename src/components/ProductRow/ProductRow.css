@@ -1,0 +1,14 @@
+td {
+    text-align: center;
+    font-weight: normal;
+    padding: 15px;
+    border-bottom: 1px solid #E9E9EB ;
+}
+
+.out-of-stock {
+    color: red;    
+}
+
+.in-stock {
+    color: black;
+}

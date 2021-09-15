@@ -1,0 +1,5 @@
+h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+}

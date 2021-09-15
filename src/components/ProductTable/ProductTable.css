@@ -1,0 +1,17 @@
+.product-table-box {
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    width: 700px;
+    border-spacing: 0;
+}
+
+th {
+    color: #4F555C;
+    background-color: #E7ECEF;
+    width: 50%;
+    height: 50px;
+    font-weight: bold;
+}
