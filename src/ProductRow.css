@@ -1,0 +1,8 @@
+.ProductRow__inner {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.ProductRow__inner-onStock {
+  color: red;
+}

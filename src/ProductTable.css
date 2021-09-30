@@ -1,0 +1,5 @@
+.ProductTable__inner-A {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: gray;
+}
