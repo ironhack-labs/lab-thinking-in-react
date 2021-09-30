@@ -1,24 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import { ProductRow } from './components/ProductRow';
+import { ProductTable } from './components/ProductTable';
+import SearchBar from './components/SearchBar';
+import data from './data.json';
 
 function App() {
+  const [allProducts, setAllProducts] = useState([...data.data]);
+  const [isSearch, setIsSearch] = useState();
+  const [searchResults, setSearchResults] = useState();
+
+  const getSearchQuery = (data) => {
+    setIsSearch(data);
+    console.log('data', data);
+  };
+  useEffect(() => {
+    setSearchResults([]);
+  }, [allProducts]);
+
+  useEffect(() => {
+    const results = allProducts.filter((product) =>
+      product.name.includes(isSearch)
+    );
+    setSearchResults(results);
+  }, [allProducts, isSearch]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>IronStore</h1>
+      <SearchBar getSearchQuery={getSearchQuery} />
+      <ProductTable>
+        {searchResults.map((product) => {
+          return <ProductRow name={product.name} price={product.price} />;
+        })}
+      </ProductTable>
     </div>
   );
 }
