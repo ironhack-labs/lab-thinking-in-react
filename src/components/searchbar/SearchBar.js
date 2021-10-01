@@ -1,29 +1,16 @@
 import React from 'react';
 
-class SearchBar extends React.Component {
+const SearchBar = (props) => {
 
-    state = {
-        searchInput: '',
+    const changeHandler = (event) => {
+        props.searchProducts(event.target.value)
     }
 
-    changeHandler = (event) => {
-        this.setState({
-            [event.target.name]: event.target.value
-        })
-    }
-
-    clickHandler = (event) => {
-        
-    }
-
-    render() {
-        return (
+    return (
         <div>
-            <input type="text" name="searchInput" placeholder="Search" onChange={this.changeHandler} value={this.state.searchInput} />
+            <input type="text" name="searchInput" placeholder="Search" onChange={changeHandler} />
         </div>
-        );
-    }
-
+    );
 }
 
 export default SearchBar;

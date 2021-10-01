@@ -2,7 +2,6 @@ import React from 'react';
 import ProductRow from '../productRow/ProductRow.js'
 
 
-
 const ProductTable = (props) => {
   return (
     <table>

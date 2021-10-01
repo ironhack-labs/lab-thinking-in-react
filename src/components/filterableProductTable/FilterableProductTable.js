@@ -4,11 +4,26 @@ import ProductTable from '../productTable/ProductTable.js';
 
 
 class FilterableProductTable extends React.Component {
+
+  state = {
+    products: this.props.products,
+  };
+
+  searchProducts = (searchInput) => {
+    const filteredProducts = this.props.products.filter((product) => {
+      const lowerCaseProduct = product.name.toLowerCase()
+      const lowerCaseSearchInput = searchInput.toLowerCase()
+      return lowerCaseProduct.includes(lowerCaseSearchInput)
+    })
+
+    this.setState({ products: filteredProducts })
+  }
+
   render() {
     return (
       <div>
-        <SearchBar />
-        <ProductTable data={this.props.products} />
+        <SearchBar searchProducts={this.searchProducts} />
+        <ProductTable data={this.state.products} />
       </div>
     );
   }
