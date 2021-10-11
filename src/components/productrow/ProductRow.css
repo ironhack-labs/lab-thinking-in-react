@@ -1,0 +1,11 @@
+.highlighted {
+    background-color: pink;
+}
+
+.product-row {
+    text-align: left;
+}
+
+.product-row td {
+    padding-right: 2rem;
+}
