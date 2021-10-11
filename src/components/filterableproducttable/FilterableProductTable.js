@@ -4,13 +4,34 @@ import ProductTable from '../../components/producttable/ProductTable';
 
 export default class FilterableProductTable extends Component {
   state = {
-    products: this.props.products,
-    filteredData: [],
+    filteredData: this.props.products,
+    inStockChecked: false,
   };
 
-  onSearchInputChange = (filteredGoods) => {
+  onSearchInputChange = (searchInput) => {
+    let filteredGoods = this.props.products.filter((good) =>
+      good.name.toLowerCase().includes(searchInput.toLowerCase())
+    );
+    if (searchInput && filteredGoods.length === 0) {
+      filteredGoods = [];
+    }
     this.setState({
       filteredData: filteredGoods,
+    });
+  };
+
+  onCheckboxInStockChangeHandler = (checkedInStock) => {
+    let filteredData = [];
+    if (checkedInStock) {
+      filteredData = this.state.filteredData.filter((good) => {
+        return good.stocked && good;
+      });
+    } else {
+      filteredData = this.props.products;
+    }
+
+    this.setState({
+      filteredData: filteredData,
     });
   };
 
@@ -19,16 +40,9 @@ export default class FilterableProductTable extends Component {
       <div>
         <SearchBar
           onSearchQueryChange={this.onSearchInputChange}
-          data={this.state.products}
-          filteredData={this.state.filteredData}
+          onCheckboxInStockChange={this.onCheckboxInStockChangeHandler}
         />
-        <ProductTable
-          products={
-            this.state.filteredData.length > 0
-              ? this.state.filteredData
-              : this.state.products
-          }
-        />
+        <ProductTable products={this.state.filteredData} />
       </div>
     );
   }
