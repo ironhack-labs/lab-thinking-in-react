@@ -15,7 +15,6 @@ export default class FilterableProductTable extends Component {
   };
 
   render() {
-    console.log(this.state.filteredData);
     return (
       <div>
         <SearchBar
