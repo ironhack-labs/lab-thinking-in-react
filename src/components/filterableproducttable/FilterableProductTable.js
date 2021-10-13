@@ -8,13 +8,22 @@ export default class FilterableProductTable extends Component {
         super(props);
         this.state = {
             productList: this.props.products.slice(0),
-            filteredList: this.props.products.slice(0)
+            filteredList: this.props.products.slice(0),
+            inStockList: []
         }
     }
 
     searchHandler = (filteredProductList) => {
         this.setState({
             filteredList: filteredProductList,
+            inStockList: this.state.inStockList,
+        })
+    }
+
+    inStockHandler = (inStockProducts) => {
+        this.setState({
+            filteredList: this.state.filteredList,
+            inStockList: inStockProducts,
         })
     }
 
@@ -28,6 +37,7 @@ export default class FilterableProductTable extends Component {
                 </h1>
                 <SearchBar 
                 onChangeSearchHandler={this.searchHandler} 
+                inStockHandler={this.inStockHandler}
                 products={this.state.productList}
                 filteredProducts={this.state.filteredProductList}
                 />
