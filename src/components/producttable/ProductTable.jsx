@@ -6,8 +6,12 @@ function ProductTable(props) {
     <table>
       <thead>
         <tr>
-          <td>Name</td>
-          <td>Price</td>
+          <td>
+            <h3>Name</h3>
+          </td>
+          <td>
+            <h3>Price</h3>
+          </td>
         </tr>
       </thead>
       <tbody>

@@ -4,15 +4,12 @@ import SearchBar from '../searchbar/SearchBar';
 
 function FilterableProductTable(props) {
   return (
-    <div>
+    <>
       <h1>Ironstore</h1>
-      <div>
-        <SearchBar />
-      </div>
-      <div>
-        <ProductTable products={props.products} />
-      </div>
-    </div>
+      <SearchBar />
+
+      <ProductTable products={props.products} />
+    </>
   );
 }
 
