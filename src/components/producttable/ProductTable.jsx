@@ -2,6 +2,16 @@ import React from 'react';
 import ProductRow from '../productrow/ProductRow';
 
 function ProductTable(props) {
+  const filterInput = props.filterInput;
+  const rows = [];
+
+  props.products.forEach((product) => {
+    if (product.name.indexOf(filterInput) === -1) {
+      return;
+    }
+    rows.push(<ProductRow product={product} key={product.name} />);
+  });
+
   return (
     <table>
       <thead>
@@ -14,11 +24,7 @@ function ProductTable(props) {
           </td>
         </tr>
       </thead>
-      <tbody>
-        {props.products.map((product) => (
-          <ProductRow {...product} />
-        ))}
-      </tbody>
+      <tbody>{rows}</tbody>
     </table>
   );
 }

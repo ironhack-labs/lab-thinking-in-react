@@ -1,30 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './SearchBar.css';
-// import ProductTable from '../producttable/ProductTable';
 
-function SearchBar() {
-  const [searchProduct, setSearchProduct] = useState({ productName: '' });
-
-  function handleSearchStatus(event) {
-    const copy = { ...searchProduct };
-    console.log(copy);
-    copy[event.target.name] = event.target.value;
-    setSearchProduct(copy);
-  }
-  // const filteredProduct = searchProduct.filter((product) => {
-  //   return product.name
-  //     .toLocaleLowerCase()
-  //     .includes(searchProduct.productName.toLocaleLowerCase());
-  // });
+function SearchBar(props) {
+  const filterInput = props.filterInput;
+  console.log(filterInput);
 
   return (
     <form className="searchContainer" action="">
       <label htmlFor="">Search</label>
       <input
         type="text"
-        name="productName"
-        onChange={handleSearchStatus}
-        value={searchProduct.productName}
+        value={filterInput}
+        onChange={(e) => props.updatedInput(e.target.value)}
         placeholder="Type any product"
       />
     </form>

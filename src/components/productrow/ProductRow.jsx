@@ -1,12 +1,17 @@
 import React from 'react';
 
 function ProductRow(props) {
-  const { id, name, price, stocked } = props;
+  const product = props.product;
+  const name = product.stocked ? (
+    product.name
+  ) : (
+    <span style={{ color: 'red' }}>{product.name}</span>
+  );
   // console.log(props);
   return (
-    <tr key={id} style={{ color: stocked === true ? 'inherit' : 'red' }}>
+    <tr>
       <td>{name}</td>
-      <td>{price}</td>
+      <td>{product.price}</td>
     </tr>
   );
 }
