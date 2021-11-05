@@ -1,13 +1,10 @@
 import React from 'react';
 
 class SearchBar extends React.Component {
-  state = {
-    searchInput: '',
-  };
+
 
   handleChange = (event) => {
-    this.setState({ searchInput: event.target.value });
-    this.props.filterProductsHandler(this.state.searchInput);
+    this.props.setSearchField(event.target.value);
   };
 
   render() {
@@ -19,7 +16,6 @@ class SearchBar extends React.Component {
             type="text"
             name="searchInput"
             placeholder="Search..."
-            value={this.state.searchInput}
             onChange={this.handleChange}
           />
         </label>
