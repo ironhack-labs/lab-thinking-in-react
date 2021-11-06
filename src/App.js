@@ -1,26 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
+import listOfProducts from "./data.json"
+// import SearchBar from './components/SearchBar';
+// import ProductTable from './components/ProductTable';
+// import ProductRow from './components/ProductRow';
+import FilterableProductTable from "./components/FilterableProductTable"
 import './App.css';
+//import { json } from 'body-parser';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class  App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      totalProducts : listOfProducts.data
+      
+    };
+  }
+  render() {
+
+    return (
+      <div className="App">
+          <FilterableProductTable productsList = {this.state.totalProducts} />
+          {/* {console.log("totalproducts", this.state.totalProducts)}               */}
+      </div>
+    );
+
+  }
+  
 }
 
 export default App;

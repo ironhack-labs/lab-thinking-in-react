@@ -1,0 +1,11 @@
+.ProductTable {
+    margin: 1rem auto;
+    border: 1px solid #999;
+    padding: 1rem;
+    max-width: 90%;
+    text-align: center;
+}
+
+.ProductRow td {
+    margin-right: 5px;
+}

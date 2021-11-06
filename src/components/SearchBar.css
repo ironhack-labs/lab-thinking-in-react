@@ -1,0 +1,13 @@
+.SearchBar label, .SearchBar input{
+    display: block;
+    margin: 0.5rem auto;
+}
+
+
+.SearchBar {
+    margin: 1rem auto;
+    border: 1px solid #999;
+    padding: 1rem;
+    max-width: 90%;
+    text-align: center;
+}
