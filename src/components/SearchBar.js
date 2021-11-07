@@ -5,7 +5,15 @@ import listOfProducts from "../data.json"
 class SearchBar extends React.Component {
 
     handleInputSearch = (event) => {
+        event.preventDefault();
         this.props.setInputField(event.target.value)
+    }
+
+    handleInputCheckbox = (event) => {
+        event.preventDefault()
+        this.props.isThereStock(event.target.value)
+        
+        // console.log(event.target.value)
     }
 
     render() {
@@ -18,7 +26,7 @@ class SearchBar extends React.Component {
 
                 <label for="onlyProductsStock">
                     Only show products on stock
-                    <input type = "checkbox" id="onlyProductsStock" name="onlyProductsStock" />
+                    <input type = "checkbox" id="isThereStock" name="isThereStock" onChange = {this.handleInputCheckbox} />
                 </label>
     
             </form>
