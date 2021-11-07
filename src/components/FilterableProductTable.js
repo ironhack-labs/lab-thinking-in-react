@@ -14,8 +14,8 @@ export default class FilterableProductTable extends React.Component {
     return (
         <>
         <h1>IronStore</h1>
-        <SearchBar />
-        <ProductTable products={this.state.products}/>
+            <SearchBar products={this.state.products}/>
+            <ProductTable products={this.state.products}/>
         </>
     )
     }
