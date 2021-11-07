@@ -12,14 +12,19 @@ class  App extends React.Component {
     super(props);
     this.state = {
       totalProducts : listOfProducts.data
+
       
     };
   }
+
+
+
+
   render() {
 
     return (
       <div className="App">
-          <FilterableProductTable productsList = {this.state.totalProducts} />
+          <FilterableProductTable/>
           {/* {console.log("totalproducts", this.state.totalProducts)}               */}
       </div>
     );

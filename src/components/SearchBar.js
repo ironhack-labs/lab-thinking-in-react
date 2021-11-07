@@ -1,12 +1,11 @@
 import React from 'react';
 import "./SearchBar.css";
+import listOfProducts from "../data.json"
 
 class SearchBar extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            productName : "",
-        }
+
+    handleInputSearch = (event) => {
+        this.props.setInputField(event.target.value)
     }
 
     render() {
@@ -14,16 +13,13 @@ class SearchBar extends React.Component {
             <form className="SearchBar">
                 <label>
                     Search
-                    <input type = "text" name= "productName" value= {this.state.productName}/>
+                    <input type = "text" name= "searchInputField"  placeholder="Search..." onChange = {this.handleInputSearch}/>
                 </label>
 
                 <label for="onlyProductsStock">
                     Only show products on stock
                     <input type = "checkbox" id="onlyProductsStock" name="onlyProductsStock" />
                 </label>
-
-    
-                
     
             </form>
         )
