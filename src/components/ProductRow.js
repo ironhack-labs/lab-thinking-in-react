@@ -8,7 +8,7 @@ const ProductRow = (props) => {
            {products.map(product => {
                return (
                 <tr key={product.id}>
-                    <td>{product.name}</td>
+                    <td style={{color: (product.stocked ? "" : "red")}}>{product.name}</td>
                     <td>{product.price}</td>
                 </tr>
                )
