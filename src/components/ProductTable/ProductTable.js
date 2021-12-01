@@ -4,14 +4,14 @@ import './ProductTable.css'
 
 const ProductTable = (props) => {
 
-    const { products } = props
+    const { productsState } = props
     return(
         <div>
             <div className="flex-titles">
                 <h3>Name</h3>
                 <h3>Price</h3>
             </div>
-                <ProductRow products={ products } />
+                <ProductRow productsState={ productsState } />
         </div>
         
     )
