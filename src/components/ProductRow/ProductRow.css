@@ -1,0 +1,4 @@
+.flex-products{
+    display: flex;
+    justify-content: space-around;
+}
