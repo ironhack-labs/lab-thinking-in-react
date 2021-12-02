@@ -4,11 +4,11 @@ import { useState } from 'react';
 const SearchBar = (props) => {
   const { products, setFilteredProducts } = props;
   const [query, setQuery] = useState('');
-  const [checkbox, setCheckbox] = useState('off');
+  const [checkbox, setCheckbox] = useState(false);
 
   const filterProducts = (newQuery, checkbox) => {
     let filteredProducts;
-    if (checkbox === 'on') {
+    if (checkbox) {
       filteredProducts = products.filter((product) => {
         return (
           product.name.toLowerCase().includes(newQuery.toLowerCase()) &&
@@ -31,17 +31,17 @@ const SearchBar = (props) => {
         placeholder="search here"
         onChange={(event) => {
           setQuery(event.target.value);
-          filterProducts(event.target.value);
+          filterProducts(event.target.value, checkbox);
         }}
       />
 
       <label>Only show products on stock</label>
       <input
         type="checkbox"
+        value="2"
         onClick={(event) => {
-          setCheckbox(event.target.value);
-          console.log(event.target.value);
-          filterProducts(query, checkbox);
+          setCheckbox(event.target.checked);
+          filterProducts(query, event.target.checked);
         }}
       />
     </div>
