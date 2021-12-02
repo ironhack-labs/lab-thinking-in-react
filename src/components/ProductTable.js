@@ -12,9 +12,9 @@ function ProductTable (props) {
         </tr>
         <tr>
             
-            {props.products.map((elm) => <ProductRow name={elm.name} price={elm.price} />)}
-            {props.search?.map(elm => <ProductRow name={elm.name} price={elm.price} />)}
-            {props.enStock?.map(elm => <ProductRow name={elm.name} price={elm.price} />)}
+        
+            {props.search.map(elm => <ProductRow name={elm.name} price={elm.price} />)}
+    
 
         </tr>
 

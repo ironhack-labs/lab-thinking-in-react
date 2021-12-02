@@ -10,46 +10,39 @@ class SearchBar extends Component {
         checkbox: false
     }
 
+    handleChange = (e) => {
+        let { checked } = e.currentTarget
 
-    componentDidUpdate = () => {
-        this.props.sendInfo(this.state)
+        this.setState({
+            checkbox: checked
+        }, () => this.props.sendInfo(this.state))
 
     }
 
-
-    handleChange = (e) => {
-        let { checked } = e.currentTarget
-        
-            this.setState({
-            checkbox: checked
-        })
-    } 
-    
 
 
 
     getSearch = (e) => {
         let searchValue = e.currentTarget.value.toLowerCase();
-       
+
         this.setState({
             searchbar: searchValue
 
-        })
+        }, () => this.props.sendInfo(this.state))
 
     }
 
     render() {
         return (
             <div>
-                <form>
                 <div>
                     <input type="search" name="searchbar" placeholder="search" onChange={this.getSearch}></input>
                 </div>
                 <label>
                     Busca productos<input value="" type="checkbox" name="checkbox" onChange={this.handleChange} />
                 </label>
-                </form>
-                
+
+
 
 
             </div>

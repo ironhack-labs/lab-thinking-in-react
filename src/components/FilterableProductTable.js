@@ -4,36 +4,46 @@ import SearchBar from './SearchBar'
 import ProductTable from './ProductTable'
 
 
-const FilterableProductTable = (props) => {
-  
-    let productsFilter = [] 
-    let enStock = [] 
+class FilterableProductTable extends Component {
 
-    const sendInfo = (search) => {
-        console.log(props.products)
-        productsFilter = props.products?.filter((elm) => elm.name.toLowerCase() === search.searchbar)
-        enStock = props.products?.filter((elm) => elm.stocked === true && search.checkbox)
-
-        return {
-            productsFilter, enStock
-        }
-            
+    state = {
+        productsFilter: [],
         
     }
 
+    componentDidMount = () => {
+        this.setState({
+            productsFilter: this.props.products
+        })
+    }
+
+
+    sendInfo = (search) => {
+        console.log(this.props.products)
+        let productsFilter = [...this.props.products]
+        productsFilter = this.props.products?.filter((elm) => elm.name.toLowerCase().includes(search.searchbar))
+        if (search.checkbox)
+            productsFilter = productsFilter.filter((elm) => elm.stocked)
+
+        this.setState({
+            productsFilter: productsFilter
+        })
+
+        console.log(productsFilter);
+
+    }
+
+render() {
     return (
-      <div>
-        <h1>Iron Store</h1>
-        <SearchBar sendInfo={sendInfo}/>
-        <ProductTable search={productsFilter} enStock={enStock} {...props}/>
-            
-      </div> 
+        <div>
+            <h1>Iron Store</h1>
+            <SearchBar sendInfo={this.sendInfo} />
+            <ProductTable search={this.state.productsFilter} {...this.props} />
+
+        </div>
 
     )
-
-
-
-  
+}
 }
 
 export default FilterableProductTable
