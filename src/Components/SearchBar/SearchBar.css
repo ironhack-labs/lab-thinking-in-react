@@ -1,0 +1,17 @@
+.searchbox-input {
+    width: 580px;
+    height: 30px;
+    border-radius: 8px;
+    background-color: rgba(240, 248, 255, 0);
+    border: 0px;
+    outline: solid 2px blueviolet;
+    margin-bottom: 18px;
+}
+
+
+.searchbox-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

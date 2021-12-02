@@ -1,0 +1,24 @@
+.container-productrow {
+    display: flex ;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: #e0e0e7 0px 0px 20px 0px;
+    border-radius: 20px;
+    height: 60px;
+}
+
+
+.main-container-productrow {
+    width: 600px;
+    margin-bottom: 20px;
+}
+
+
+h6 {
+    font-size: 20px;
+}
+
+
+.productrow-info {
+    margin: 0px 20px;
+}
