@@ -1,0 +1,14 @@
+.RowList {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid black;
+  margin: 10px 30%;
+}
+.HeaderList {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: red;
+  margin: 10px 30%;
+}
