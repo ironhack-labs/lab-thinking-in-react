@@ -1,26 +1,57 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {Component} from 'react';
+import SearchBar from './components/SearchBar/SearchBar';
+import ProductTable from './components/ProductTable/ProductTable';
+import data from './data.json';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const products = data
+const allProducts = products.data
+
+class App extends Component {
+
+	state = {
+		products: products.data
+	}
+
+	searchProduct = (e) => {
+		let searchValue = e.currentTarget.value;
+		console.log(searchValue)
+		let filteredProducts = allProducts.filter(data =>{
+			return data.name.toLowerCase().includes(searchValue.toLowerCase())
+		})
+		
+		this.setState({
+			products: filteredProducts
+		})
+	}
+
+	onStock = (e) => {
+		let checked = e.currentTarget.checked
+		if (checked){
+			let filteredProducts = allProducts.filter(data => {
+				return data.stocked === true
+			})
+			this.setState({
+				products: filteredProducts
+			})
+		}
+		else{
+			this.setState({
+				products: allProducts
+			})
+		}
+	}
+
+	render() {
+		return (
+		<div className="App">
+			<SearchBar searchProduct={()=>this.searchProduct} onStock={()=>this.onStock}/>
+			<ProductTable products={this.state.products}/>
+		</div>
+		)
+  }
+
 }
 
 export default App;
