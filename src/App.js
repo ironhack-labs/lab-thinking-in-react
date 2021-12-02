@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import SearchBar from './components/SearchBar'
+import ProductTable from './components/ProductTable'
+import jsondata from './data.json'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  constructor() {
+    super()
+      
+    this.state = {
+      products: jsondata.data 
+    }
+
+
+  }
+  
+
+  filterProducts = (text) => {
+    const newArr = jsondata.data.filter((prd) => {
+      return prd.name.toLocaleLowerCase().includes(text.toLocaleLowerCase())
+    })
+
+    this.setState({
+      products: newArr
+    })
+  
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <SearchBar filterProducts={this.filterProducts}/>
+        <ProductTable products={ this.state.products } />
+      </div>
+    );
+  }
+  
 }
 
 export default App;
