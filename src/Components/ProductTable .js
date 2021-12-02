@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import ProductRow from './ProductRow '
+
 
 export default class ProductTable extends Component {
     constructor(props) {
@@ -14,20 +16,26 @@ export default class ProductTable extends Component {
 
         }
     }
+
+
+
     render() {
 
         return (
-            <div>
-                {this.state.products.map(eachProducts => (
-                    <article>
-                        <div >
-                            <p>{eachProducts.name}</p>
-                            <p>{eachProducts.price}</p>
-                        </div>
-                    </article >
-                ))
-                }
-            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>NAME</th>
+                        <th>PRICE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {this.state.products.map(eachProducts => {
+                        return <ProductRow product={eachProducts} />
+                    })
+                    }
+                </tbody>
+            </table>
         )
     }
 }

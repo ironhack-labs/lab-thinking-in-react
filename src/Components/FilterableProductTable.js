@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Searchbar from './SearchBar'
 import ProductTable from './ProductTable '
+import ProductRow from './ProductRow '
 
 export default class extends Component {
 
