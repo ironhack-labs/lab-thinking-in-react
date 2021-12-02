@@ -7,7 +7,7 @@ const FilterableProductTable = (props) => {
     <div>
       <h1>IronStore</h1>
       <SearchBar />
-      <ProductTable />
+      <ProductTable  products={ props.products } />
     </div>
   );
 };

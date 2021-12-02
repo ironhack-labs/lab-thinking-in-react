@@ -5,7 +5,20 @@ const ProductTable = (props) => {
   return (
     <div>
       <h2>ProductTable</h2>
-      <ProductRow />
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+        {props.products.map((product,i) => (
+            <ProductRow product={product} key={i} />
+        ))}
+          
+        </tbody>
+      </table>
     </div>
   );
 };

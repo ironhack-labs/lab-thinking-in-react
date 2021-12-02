@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import jsondata from "./data.json"
-import FilterableProductTable from "./components/FilterableProductTable"
+import products from './data.json';
+import FilterableProductTable from './components/FilterableProductTable';
 
 function App() {
+  const [dataList, setdataList] = useState(products);
   return (
     <div className="App">
-     <FilterableProductTable products={ jsondata.data } />
+      <FilterableProductTable products={dataList.data} />
     </div>
   );
 }

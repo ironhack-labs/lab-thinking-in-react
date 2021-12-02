@@ -1,10 +1,13 @@
 import React from 'react';
 
 const ProductRow = (props) => {
+  const { name, price, stocked } = props.product;
+  const style = {color:stocked ? "black" : "red"} 
   return (
-    <div>
-      <h2>ProductRow </h2>
-    </div>
+    <tr>
+      <td style={style}>{name}</td>
+      <td>{price}</td>
+    </tr>
   );
 };
 
