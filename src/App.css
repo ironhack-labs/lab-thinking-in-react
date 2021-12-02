@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+.single-product {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.green {
+  color: green;
+}
+.red {
+  color: red;
+}
