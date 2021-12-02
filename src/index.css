@@ -1,13 +1,257 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@charset "UTF-8";
+/* CSS Document */
+
+/*=============================================== Reset ===============================================*/
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+button {
+    cursor: pointer;
+}
+
+/*=============================================== Variables ===============================================*/
+:root {
+    --margin-xxl: 48px;
+    --margin-xl: 32px;
+    --margin-l: 24px;
+    --margin-m: 16px;
+    --margin-s: 12px;
+    --margin-xs: 8px;
+    --margin-xxs: 4px;
+    --font-family: -apple-system, Arial, Helvetica, sans-serif;
+    --line-height: 1.4;
+    --radius-xl: 16px;
+    --radius-l: 12px;
+    --radius-m: 8px;
+    --radius-s: 4px;
+    --radius-round: 99em;
+    --grid-template: 1fr 600px 1fr;
+    --grid-column: 2;
+    --grid-padding: var(--margin-xxl) 0;
+    --transition-short: all 0.2s ease;
+    --transition-long: all 0.5s ease;
+}
+
+@media (max-width: 1024px) {
+    :root {
+        --grid-template: 1fr;
+        --grid-column: 1;
+        --grid-padding: var(--margin-xxl) 5vw;
+    }
+}
+
+/*============================================================= Helpers =============================================================*/
+.text-left {
+    text-align: left !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.clear-float {
+    float: none !important;
+}
+
+.hidden {
+    position: fixed;
+    top: -999em;
+    left: -999em;
+}
+
+.no-marg {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+.no-marg-top {
+    margin-top: 0 !important;
+}
+
+.no-marg-bottom {
+    margin-bottom: 0 !important;
+}
+
+.no-marg-left {
+    margin-left: 0 !important;
+}
+
+.no-marg-right {
+    margin-right: 0 !important;
+}
+
+.no-padd {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
+
+.no-padd-top {
+    padding-top: 0 !important;
+}
+
+.no-padd-bottom {
+    padding-bottom: 0 !important;
+}
+
+.no-padd-left {
+    padding-left: 0 !important;
+}
+
+.no-padd-right {
+    padding-right: 0 !important;
+}
+
+.no-select {
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+}
+
+.center {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
 }
