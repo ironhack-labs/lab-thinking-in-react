@@ -27,7 +27,50 @@
 .App-link {
   color: #61dafb;
 }
+.FilterableProductTable{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.SearchBar {
+ width: 90%;
+ display: block;
+ margin: 0 auto;
+}
+.SearchBar-cont{
+  width: 100%;
+  display: block;
+  margin: 0 auto;;
+padding: 15px 0px;
+}
+.SearchBar-cont input {
+ width: 90%;
+}
+.ProductTable {
+  width: 90%;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ gap:10px;
+ align-items: center;
+ margin: 0 auto;
+ border: 1px solid green;
+ padding: 20px 0px;
 
+
+}
+.ProductRow {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px 10px;
+  border: 1px solid red;
+
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
