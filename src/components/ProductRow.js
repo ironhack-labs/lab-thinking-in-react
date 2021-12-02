@@ -1,11 +1,15 @@
 import React from 'react';
-// import './ProductRow.css'
+import './ProductRow.css';
 
 const ProductRow = (props) => {
   const { products, inStock } = props;
 
   return (
     <div className="ProductRow">
+      <tr>
+        <td>Name</td>
+        <td>Price</td>
+      </tr>
       {products.map((product) => {
         return (
           (!inStock || product.stocked) && (
