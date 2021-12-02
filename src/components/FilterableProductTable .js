@@ -8,7 +8,7 @@ import SearchBar from './SearchBar';
 const FilterableProductTable = (props) => {
   const [products, setProducts] = useState(props.products);
 
-  const [checked, setChecked] = useState(false)
+  const [checked, setChecked] = useState(false);
 
   const search = (text) => {
     const searched = props.products.filter((product) => {
@@ -16,11 +16,11 @@ const FilterableProductTable = (props) => {
     });
     setProducts(searched);
   };
-  
+
   return (
     <div className="FilterableProductTable">
       <SearchBar search={search} checked={checked} setChecked={setChecked} />
-      <ProductTable products={products} inStock={checked}/>
+      <ProductTable products={products} inStock={checked} />
     </div>
   );
 };
