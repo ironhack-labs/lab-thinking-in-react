@@ -4,7 +4,7 @@ import './ProductTable.css'
 
 const ProductTable = (props) => {
 
-    const { productsState, searchWriteBar } = props
+    const { productsState } = props
     
     return(
         <div>
@@ -13,7 +13,6 @@ const ProductTable = (props) => {
                 <h3>Price</h3>
             </div>
                 <ProductRow 
-                searchWriteBar={searchWriteBar}
                 productsState={ productsState } />
         </div>
         

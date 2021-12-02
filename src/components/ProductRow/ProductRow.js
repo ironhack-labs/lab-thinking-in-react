@@ -3,13 +3,11 @@ import './ProductRow.css'
 
 const ProductRow = (props) => {
 
-    const { productsState, searchWriteBar } = props
-
-    const filterProducts = searchWriteBar ? productsState.filteredProducts : productsState.products
+    const { productsState } = props
     
     return(
         <div>
-            {filterProducts.map((product, index) => {
+            {productsState.filteredProducts.map((product, index) => {
                 const divStyle     = product.stocked ? {color: 'black'} : {color: 'red'}
                 return(
                     <div className="flex-products" key={index + Date.now()}>

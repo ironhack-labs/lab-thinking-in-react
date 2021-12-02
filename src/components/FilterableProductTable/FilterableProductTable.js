@@ -11,20 +11,13 @@ const FilterableProductTable = (props) => {
         products,
         filteredProducts: [...products],
     })
-    
-    const [ searchWriteBar, setSearchWriteBar ] = useState(false)
-
-    
-    
 
     return (
         <div>
             <h1>IronStore</h1>
              <SearchBar 
-             searchWriteBar={searchWriteBar} setSearchWriteBar={setSearchWriteBar}
              productsState={productsState} setProductsState={setProductsState}/>
              <ProductTable 
-             searchWriteBar={searchWriteBar}
              productsState={productsState}/>
         </div>
         
