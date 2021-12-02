@@ -5,7 +5,7 @@ import SearchBar from './SearchBar';
 const FilterableProductTable = (props) => {
   return (
     <div>
-      <h2>FilterableProductTable</h2>
+      <h1>IronStore</h1>
       <SearchBar />
       <ProductTable />
     </div>
