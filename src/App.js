@@ -1,26 +1,42 @@
-import React from 'react';
+import React, { Component } from 'react'
 import logo from './logo.svg';
 import './App.css';
+import storeGoods from './data.json'
+import SearchBar from './SearchBar/SearchBar';
+import ProductTable from './ProductTable/ProductTable';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+export default class App extends Component {
+  constructor() {
+    super()
+
+    this.state = {
+      search: "",
+      checked: false
+    }
+    
+  }
+
+  searchProduct = (searchItem) => {
+    this.setState({
+      search: searchItem
+    })
+  }
+
+  checkProduct = (isChecked) => {
+    this.setState({
+      checked: isChecked
+    })
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>IronStore</h1>
+        <SearchBar searchFunction={this.searchProduct} checkFunction={this.checkProduct}/>
+        <ProductTable allProducts={storeGoods} searchProduct={this.state.search} checkFunction={this.state.checked}/>
     </div>
-  );
+    )
+  }
 }
 
-export default App;
