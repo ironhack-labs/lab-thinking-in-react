@@ -12,13 +12,6 @@ function App() {
     setSearch(search2);
   };
 
-  const colorName = (items) => {
-    items.map((item) => {
-      let color = item.stocked ? 'black' : 'red';
-    });
-    return color;
-  };
-
   useEffect(() => {
     let copy = ItemsJSON.data.filter((elm) => elm.name.includes(search));
     setItems(copy);
@@ -28,7 +21,7 @@ function App() {
     <div className="App">
       <h1 className="TitleSotre">IronStore</h1>
       <SearchBar getInfo={getInfo} />
-      <List items={items} colorName={colorName}></List>
+      <List items={items}></List>
     </div>
   );
 }

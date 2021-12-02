@@ -6,7 +6,10 @@ function List(props) {
 
   return (
     <div>
-      <RowItem style={{ color: props.colorName }} items={items}></RowItem>
+      <RowItem
+        style={items.stocked ? { color: 'black' } : { color: 'red' }}
+        items={items}
+      ></RowItem>
     </div>
   );
 }

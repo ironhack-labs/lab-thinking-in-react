@@ -10,7 +10,10 @@ function RowItem(props) {
       </div>
       {items.map((item) => {
         return (
-          <div className="RowList">
+          <div
+            className="RowList"
+            style={{ color: item.stocked ? 'black' : 'red' }}
+          >
             <p> {item.name}</p>
             <p> {item.price}</p>
           </div>
