@@ -4,14 +4,17 @@ import './ProductTable.css'
 
 const ProductTable = (props) => {
 
-    const { productsState } = props
+    const { productsState, searchWriteBar } = props
+    
     return(
         <div>
             <div className="flex-titles">
                 <h3>Name</h3>
                 <h3>Price</h3>
             </div>
-                <ProductRow productsState={ productsState } />
+                <ProductRow 
+                searchWriteBar={searchWriteBar}
+                productsState={ productsState } />
         </div>
         
     )

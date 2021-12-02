@@ -3,13 +3,16 @@ import './SearchBar.css'
 
 const SearchBar = (props) =>{
 
-    const { productsState, setProductsState } = props
+    const { productsState, setProductsState ,setSearchWriteBar} = props
+
 
     const searchProduct = (event) => {
-        const filteredProducts = productsState.filter((product) => {
+        event ? setSearchWriteBar(true) : setSearchWriteBar(false)
+
+        const searchProducts = productsState.filteredProducts.filter((product) => {
             return product.name.toLowerCase().includes(event.toLowerCase())
         })
-        setProductsState(filteredProducts)
+        setProductsState({...productsState, filteredProducts: searchProducts})
     }
 
     return(

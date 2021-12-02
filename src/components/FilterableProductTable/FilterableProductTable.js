@@ -7,13 +7,25 @@ const FilterableProductTable = (props) => {
 
     const { products } = props
 
-    const [ productsState, setProductsState ] = useState(products)
+    const [ productsState, setProductsState ] = useState({
+        products,
+        filteredProducts: [...products],
+    })
+    
+    const [ searchWriteBar, setSearchWriteBar ] = useState(false)
+
+    
+    
 
     return (
         <div>
             <h1>IronStore</h1>
-             <SearchBar productsState={productsState} setProductsState={setProductsState}/>
-             <ProductTable productsState={productsState}/>
+             <SearchBar 
+             searchWriteBar={searchWriteBar} setSearchWriteBar={setSearchWriteBar}
+             productsState={productsState} setProductsState={setProductsState}/>
+             <ProductTable 
+             searchWriteBar={searchWriteBar}
+             productsState={productsState}/>
         </div>
         
     )
