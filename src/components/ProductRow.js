@@ -1,14 +1,16 @@
 import React from 'react';
 
-function ProductRow(props) {
-  const { name, price } = props;
+const ProductRow = (props) => {
   return (
-    <div>
-      <div>{props.name}</div>
-
-      <div>{props.priice}</div>
-    </div>
+    <tr key={props.product.id}>
+      {props.product.stocked === true ? (
+        <td>{props.product.name}</td>
+      ) : (
+        <td className="out-of-stock">{props.product.name}</td>
+      )}
+      <td>{props.product.price}</td>
+    </tr>
   );
-}
+};
 
 export default ProductRow;

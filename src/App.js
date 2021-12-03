@@ -6,6 +6,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+      <h1>IronStore</h1>
       <FilterableProductTable products={jsondata.data} />
     </div>
   );
