@@ -1,6 +1,58 @@
 .App {
-  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
+h1 {
+  font-family: Poppins;
+  margin-top: 20px;
+  font-size: 18px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(202, 180, 180);
+  color: rgb(66, 66, 66);
+  width: 150px;
+  height: 150px;
+  border-radius: 500px;
+  text-transform: uppercase;
+  transition-duration: 2s;
+}
+
+h1:hover {
+  background-color: rgb(66, 66, 66);
+  color: rgb(202, 180, 180); 
+  transition-duration: 2s;
+  transform: rotate(-360deg);
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Poppins;
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+.checkbox {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+}
+
+table {
+  margin-top: 15px;
+
+};
+
+
+
+
 
 .App-logo {
   height: 40vmin;
