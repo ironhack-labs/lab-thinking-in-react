@@ -1,11 +1,13 @@
 import React from 'react';
 
-function ProductRow() {
+function ProductRow(props) {
+    const { name, price, stocked } = props.product;
+    const fontColor = {color:stocked ? "black" : "red"} 
     return (
-      <div className="ProductRow">
-      
-      </div>
+      <tr>
+        <td style={fontColor}>{name}</td>
+        <td>{price}</td>
+      </tr>
     );
-  }
-  
+  };
   export default ProductRow;

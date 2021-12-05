@@ -4,19 +4,17 @@ import ProductTable from '../ProductTable/ProductTable';
 import SearchBar from '../SearchBar/SearchBar';
 
 const FilterableProductTable = (props) => {
-  const {products} = props.products
-
-  const [filteredProducts, setfilteredProducts] = useState([...products]);
+  const copyOfProducts = [...props.products]
+  const [filteredProducts, setfilteredProducts] = useState([copyOfProducts]);
 
   function filterBy(input){
-    setfilteredProducts(products.filter((product)=> product.name.toLowerCase().includes(input.toLowerCase()) ));
-
+    setfilteredProducts(copyOfProducts.filter((product)=> product.name.toLowerCase().includes(input.toLowerCase()) ));
   }
   return (
     <div>
       <h1>IronStore</h1>
       <SearchBar filterBy={filterBy}   />
-      <ProductTable  products={ filteredProducts }  />
+      <ProductTable  products={filteredProducts}  />
     </div>
   );
 };

@@ -6,9 +6,10 @@ import FilterableProductTable from './components/FilterableProductTable/Filterab
 
 
 function App() {
+  const copyOfJson = {...jsondata};
   return (
     <div className="App">
-      <FilterableProductTable products={ jsondata.data } />
+      <FilterableProductTable products={copyOfJson.data} />
     </div>
   );
 }
