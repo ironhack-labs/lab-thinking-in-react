@@ -1,4 +1,4 @@
-![logo_ironhack_blue 7](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
+![logo_ironhack_blue 7](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png),
 
 # LAB | Thinking in React
 
@@ -75,9 +75,9 @@ Each product object has the following fields: `category`, `price`, `inStock` and
 
 You will be dealing with multiple components that depend on each other. To properly reflect the changes in all the components, we'll store the state in the closest common parent component (remember _lift the state up_).
 
-You will be dealing with multiple components that depend on each other. To ensure that components can interact with eachother, we'll store the state in the closest common parent component (remember _lifting the state up_).
+You will be dealing with multiple components that depend on each other. To ensure that components can interact with each other, we'll store the state in the closest common parent component (remember _lifting the state up_).
 
-And remember, this is just an exercise and a part of the learning process. No one expects from you to do it perfectly. Think through it, ask questions, be curious and explore all possibilities. Let's do this! :wink:
+And remember, this is just an exercise and a part of the learning process. No one expects you to do it perfectly. Think it through, ask questions, be curious and explore all possibilities. Let's do this! :wink:
 
 
 
@@ -87,8 +87,8 @@ And remember, this is just an exercise and a part of the learning process. No on
 
 ### Iteration 1 | Break The UI Into A Component Hierarchy
 
-So remember: the proper planning will save you a lot of time when building the app. The first thing you’ll want to do is to make a sketch on the piece of paper: draw boxes around every component (and sub-component) and give each components a name.
-Possible approach could be something like this:
+So remember: the proper planning will save you a lot of time when building the app. The first thing you’ll want to do is to make a sketch on the piece of paper: draw boxes around every component (and sub-component) and give each component a name.
+A possible approach could be something like this:
 
 <!-- ![image](https://user-images.githubusercontent.com/23629340/42808309-54d1594a-89b3-11e8-9df3-450127e4459e.png) -->
 
@@ -106,11 +106,11 @@ Possible approach could be something like this:
 As you can see here, we have four components in our app:
 
 - **ProductsPage (orange):** contains the entirety of the example (we will render it in the `App.js`)
-- **SearchBar (blue):** having an input that takes user's search string
+- **SearchBar (blue):** having an input that takes the user's search string
 - **ProductTable (green):** displays all the products and also shows the filtered products based on the user's search
 - **ProductRow (red):** displays a row (_table data_) for each product
 
-Now that we’ve identified the components in our app, let’s arrange them into a hierarchy. Components that appear within another component should appear as children in the hierarchy:
+Now that we’ve identified the components in our app let’s arrange them into a hierarchy. Components that appear within another component should appear as children in the hierarchy:
 
 - ProductsPage
   - SearchBar
@@ -125,9 +125,9 @@ Now that we’ve identified the components in our app, let’s arrange them into
 
 ### Iteration 2 | Products Page
 
-First, let's create a `components/` folder and inside of it our first component `ProductsPage`. This component will be the _parent_ of the other components.
+First, let's create a `components/` folder and our first component `ProductsPage.js`. This component will be the _parent_ of the other components.
 
-To kick off the project, we'll give you a starter hint: this component should have a state variable holding the array of products. It should then pass down the products to other components that need it. So, to start you should import the `data.json` file and create a state variable in the following way:
+We'll give you a starter hint to kick off the project: this component should have a state variable holding the array of products. It should then pass down the products to other components that need them. So to start, you should import the `data.json` file and create a state variable in the following way:
 
 ```jsx
 // src/components/ProductsPage.js
@@ -169,7 +169,7 @@ export default App;
 
 
 
-Okay, now it's your turn. Create the `<SearchBar />` and the `<ProductTable />` components to display the search bar and the list of products. Both components should be rendered inside of the `ProductsPage` (take a look at the above sketch 😉).
+Okay, now it's your turn. Create the `<SearchBar />` and the `<ProductTable />` components to display the search bar and the list of products. You should render both components inside the `ProductsPage` (see the sketch above 😉).
 
 
 
@@ -177,7 +177,7 @@ Okay, now it's your turn. Create the `<SearchBar />` and the `<ProductTable />` 
 
 Next, create a `<ProductRow />` component and use it to display each product in the list. This component should be rendered inside of the `ProductTable`. 
 
-The products that are out of stock should be colored in **red**. _Hint:_ Each product object has a property `inStock` which you can use to conditonally change the text color.
+The products that are out of stock should be colored in **red**. _Hint:_ Each product object has a property `inStock` which you can use to change the text color conditionally.
 
 <details>
   <summary>Click here to see the image</summary>
@@ -225,8 +225,8 @@ _Hint:_  Search functionality can be easily implemented using an `input` with th
 ### Iteration 5 | The Checkbox Filter (Bonus)
 
 As a part of the search box, add a check box that allows filtering through the products that are in stock.
-_Hint:_ To do this you will need an `<input type="checkbox" />` with the `onChange` handler, which will update the state depending of the value of the `checked` property.
-We know that setting the search and checkbox will probably be the biggest challenge but don't be discouraged - you already know this, just take your time and try to work your way through by applying knowledge you gained so far.
+_Hint:_ To do this, you will need an `<input type="checkbox" />` with the `onChange` handler, which will update the state depending on the value of the `checked` property.
+We know that setting the search and checkbox will probably be the biggest challenge but don't be discouraged - you've got this! Take your time and try to work your way through by applying the knowledge you gained so far.
 
 <details>
   <summary>Click here to see the image</summary>
