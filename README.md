@@ -99,7 +99,7 @@ Possible approach could be something like this:
   <hr>
 
 
-![](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_e51857195e0f883bc5514619c231a02f.jpg)
+![](https://education-team-2020.s3.eu-west-1.amazonaws.com/web-dev/m3/lab-thinking-in-react/thinking-in-react-1.png)
 
 </details>
 
@@ -125,20 +125,41 @@ Now that we’ve identified the components in our app, let’s arrange them into
 
 ### Iteration 2 | Products Page
 
-First, let's create a `components/` folder and inside of it our first component `ProductsPage`. This component will be the _parent_ of the other components. Let's import it to `App.js` and also, let's import `data.json` there as well. To kick off the project, we'll give you a starter hint: this component will pass in (and down) the products from the _data.json_. So you'll have something like this in your `App.js`:
+First, let's create a `components/` folder and inside of it our first component `ProductsPage`. This component will be the _parent_ of the other components.
+
+To kick off the project, we'll give you a starter hint: this component should have a state variable holding the array of products. It should then pass down the products to other components that need it. So, to start you should import the `data.json` file and create a state variable in the following way:
+
+```jsx
+// src/components/ProductsPage.js
+
+import { useState } from 'react';
+import jsonData from './../../data.json';
+
+function ProductsPage () {
+  const [products, setProducts] = useState(jsonData);
+  
+  return(
+      <div>
+        <h1>IronStore</h1>
+      </div>    
+  )
+}
+```
+
+
+
+Next, let's import and render the `ProductsPage` component in the `App.js`:
 
 ```jsx
 // App.js
-import jsonData from '../data.json'
 import './App.css';
-
 import ProductsPage from './components/ProductsPage';
 
 
 function App() {
   return (
     <div className="App">
-      <ProductsPage products={ jsonData } />
+      <ProductsPage />
     </div>
   );
 }
@@ -146,9 +167,28 @@ function App() {
 export default App;
 ```
 
-Okay, now it's your turn. Create the `<SearchBar />`, `<ProductTable />` and `<ProductRow />` components to display the search bar and all the products. The _checkbox_ part of the search component is BONUS.
 
-Also, the products that are out of stock should be colored in **red**. _Hint:_ Each product object has a property `inStock` which you can use to conditonally change the text color.
+
+Okay, now it's your turn. Create the `<SearchBar />` and the `<ProductTable />` components to display the search bar and the list of products. Both components should be rendered inside of the `ProductsPage` (take a look at the above sketch 😉).
+
+
+
+### Iteration 3 | Product Row
+
+Next, create a `<ProductRow />` component and use it to display each product in the list. This component should be rendered inside of the `ProductTable`. 
+
+The products that are out of stock should be colored in **red**. _Hint:_ Each product object has a property `inStock` which you can use to conditonally change the text color.
+
+<details>
+  <summary>Click here to see the image</summary>
+
+
+  <hr>
+
+
+![](https://education-team-2020.s3.eu-west-1.amazonaws.com/web-dev/m3/lab-thinking-in-react/thinking-in-react-4.png)
+
+</details>
 
 <!-- ![image](https://user-images.githubusercontent.com/23629340/42808421-95a78a66-89b3-11e8-85c1-3246127a7f1a.png) -->
 
@@ -158,7 +198,7 @@ Also, the products that are out of stock should be colored in **red**. _Hint:_ E
 
 
 
-### Iteration 3 | Filter the Products
+### Iteration 4 | Filter the Products
 
 In this iteration, we'll add the list filtering functionality. Every time someone types a letter in the search input, the list should update based on the user's input.
 _Hint:_  Search functionality can be easily implemented using an `input` with the `onChange` handler, which will update the state on every keystroke.
@@ -172,7 +212,7 @@ _Hint:_  Search functionality can be easily implemented using an `input` with th
 
 
 
-![](https://media.giphy.com/media/AnRrZMk7NNf4oF8IzS/giphy.gif)
+![](https://education-team-2020.s3.eu-west-1.amazonaws.com/web-dev/m3/lab-thinking-in-react/thinking-in-react-2.gif)
 
 </details>
 
@@ -182,11 +222,11 @@ _Hint:_  Search functionality can be easily implemented using an `input` with th
 
 
 
-### Iteration 4 | The Checkbox Filter (Bonus)
+### Iteration 5 | The Checkbox Filter (Bonus)
 
 As a part of the search box, add a check box that allows filtering through the products that are in stock.
 _Hint:_ To do this you will need an `<input type="checkbox" />` with the `onChange` handler, which will update the state depending of the value of the `checked` property.
-We know that setting the search and checkbox will probably be the biggest challenge but don't be discouraged - you already know this, just take your time and try to work your way through by applying knowledge that you gained so far.
+We know that setting the search and checkbox will probably be the biggest challenge but don't be discouraged - you already know this, just take your time and try to work your way through by applying knowledge you gained so far.
 
 <details>
   <summary>Click here to see the image</summary>
@@ -195,7 +235,7 @@ We know that setting the search and checkbox will probably be the biggest challe
   <hr>
 
 
-![](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_bda46746e1a2efec4f4b0c16117842ea.png)
+![](https://education-team-2020.s3.eu-west-1.amazonaws.com/web-dev/m3/lab-thinking-in-react/thinking-in-react-3.png)
 
 </details>
 
@@ -205,7 +245,7 @@ We know that setting the search and checkbox will probably be the biggest challe
 
 
 
-### Iteration 5 | Styling your app (Bonus)
+### Iteration 6 | Styling your app (Bonus)
 
 Feel free to style the app in any way you would like. :art:
 
