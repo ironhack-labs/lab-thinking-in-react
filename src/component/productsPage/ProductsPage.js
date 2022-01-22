@@ -3,21 +3,24 @@ import SearchBar from "../searchBar/SearchBar";
 import ProductCard from "../productCard/ProductCard";
 
 function ProductsPage(props) {
-  console.log(props.products);
+  //   console.log(props.products);
   const [products, setProducts] = React.useState(props.products);
+  const [searchTerm, setSearchterm] = React.useState("");
 
-  const productCardList = products.map((product) => {
+  const getSearchTerm = (searchInput) => setSearchterm(searchInput);
+  console.log(searchTerm);
+  const searchCondition = (product) =>
+    product.name.toLowerCase().includes(searchTerm.toLowerCase());
+
+  const productCardList = products.filter(searchCondition).map((product) => {
     // conditional styling, if a product is out of stock
     let styling;
-    !product.inStock
-      && (styling = { border: "1px solid black", backgroundColor: "red" })
+    !product.inStock &&
+      (styling = { border: "1px solid black", backgroundColor: "red" });
     return (
       <div key={product.id} style={styling}>
         <p>Name: {product.name}</p>
         <p>Category: {product.category}</p>
-        {/* { !product.inStock 
-
-        } */}
         <p>Stock: {product.inStock}</p>
         <p>Price: {product.price}</p>
       </div>
@@ -26,7 +29,7 @@ function ProductsPage(props) {
   return (
     <div>
       <h1>IronStore</h1>
-      <SearchBar />
+      <SearchBar searchTerm={getSearchTerm} />
       {productCardList}
     </div>
   );
