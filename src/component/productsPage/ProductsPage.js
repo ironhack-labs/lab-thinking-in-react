@@ -15,6 +15,9 @@ function ProductsPage(props) {
       <div key={product.id} style={styling}>
         <p>Name: {product.name}</p>
         <p>Category: {product.category}</p>
+        {/* { !product.inStock 
+
+        } */}
         <p>Stock: {product.inStock}</p>
         <p>Price: {product.price}</p>
       </div>
