@@ -1,13 +1,13 @@
 import "./App.css";
 import React from "react";
 import productsJson from "./data.json";
+import ProductsPage from "./component/productsPage/ProductsPage";
+
 
 function App() {
   return (
     <div className="App">
-      {/* {productsJson.map((product) => (
-        <div>{product.price}</div>
-      ))} */}
+      <ProductsPage products={productsJson} />
     </div>
   );
 }
