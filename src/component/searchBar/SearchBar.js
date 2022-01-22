@@ -20,7 +20,11 @@ const SearchBar = ({searchTerm}) => {
       />
       <br />
       <label htmlFor="inStock">Only show products in stock</label>
-      <input type="checkbox" name="inStock" id="" />
+      <input 
+        type="checkbox" 
+        name="inStock" 
+        id=""
+      />
     </div>
   );
 };

@@ -8,7 +8,6 @@ function ProductsPage(props) {
   const [searchTerm, setSearchterm] = React.useState("");
 
   const getSearchTerm = (searchInput) => setSearchterm(searchInput);
-  console.log(searchTerm);
   const searchCondition = (product) =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase());
 
