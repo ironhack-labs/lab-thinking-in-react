@@ -5,14 +5,21 @@ import ProductCard from "../productCard/ProductCard";
 function ProductsPage(props) {
   console.log(props.products);
   const [products, setProducts] = React.useState(props.products);
-  const productCardList = products.map((product) => (
-    <div key={product.id} style={{border: "1px solid black"}}>
-      <p>Name: {product.name}</p>
-      <p>Category: {product.category}</p>
-      <p>Stock: {product.inStock}</p>
-      <p>Price: {product.price}</p>
-    </div>
-  ));
+
+  const productCardList = products.map((product) => {
+    // conditional styling, if a product is out of stock
+    let styling;
+    !product.inStock
+      && (styling = { border: "1px solid black", backgroundColor: "red" })
+    return (
+      <div key={product.id} style={styling}>
+        <p>Name: {product.name}</p>
+        <p>Category: {product.category}</p>
+        <p>Stock: {product.inStock}</p>
+        <p>Price: {product.price}</p>
+      </div>
+    );
+  });
   return (
     <div>
       <h1>IronStore</h1>
