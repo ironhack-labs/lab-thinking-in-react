@@ -1,20 +1,20 @@
-import React from 'react'
-import jsonData from '../data.json'
-import Searchbar from './SearchBar'
-import ProductTable from './ProductTable'
+import React from 'react';
+import jsonData from '../data.json';
+import Searchbar from './SearchBar';
+import ProductTable from './ProductTable';
 
-const ProductPage = () =>{
+const ProductPage = () => {
+  const [searchTerm, setSearchTerm] = React.useState('');
 
-const [products, useProducts] = React.useState(jsonData)
+  const handleSearchChange = (value) => setSearchTerm(value);
 
-
-return(
+  return (
     <div className="ProductPage">
-        <h1>IronStore</h1>
-        <Searchbar />
-        <ProductTable itemList={products} />
+      <h1>IronStore</h1>
+      <Searchbar onChange={handleSearchChange} />
+      <ProductTable searchTerm={searchTerm} itemList={jsonData} />
     </div>
-    )
-}
+  );
+};
 
-export default ProductPage
+export default ProductPage;

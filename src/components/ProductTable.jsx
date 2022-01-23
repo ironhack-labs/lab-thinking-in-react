@@ -1,41 +1,32 @@
 import React from 'react';
 import 'bulma/css/bulma.css';
-import ProductRow from './ProductRow'
+import ProductRow from './ProductRow';
 
-const ProductTable = ({ itemList }) => {
+const ProductTable = ({ itemList, searchTerm }) => {
+
+
+  const bySearchTerm = (product) =>
+    product.name.toLowerCase().includes(searchTerm) ||
+    product.name.toUpperCase().includes(searchTerm)
 
 
   return (
     <div className="ProductTable">
       <table className="table is-hoverable">
-          <thead>
+        <thead>
           <tr>
-          <th>Product</th>
-          <th>Price</th>
-          <th>Category</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Category</th>
 
-          <th>In Stock</th>
-        </tr>
-          </thead>
-          <tbody>
-
-        {itemList.map((item) => {
-          return (
-                 <ProductRow {...item}/>
-
-            // <tr>
-            //   <td>{item.name}</td>
-            //   <td>{item.price}</td>
-            //   <td>{item.category}</td>
-
-            //   {item.inStock ? <td>in Stock</td> : <td>not available</td>}
-            // </tr>
-
-            
-          );
-        })}
-                    </tbody>
-
+            <th>In Stock</th>
+          </tr>
+        </thead>
+        <tbody>
+          {itemList.filter(bySearchTerm).map((item) => {
+            return <ProductRow key={item.id}{...item} />;
+          })}
+        </tbody>
       </table>
     </div>
   );
