@@ -1,0 +1,15 @@
+table {
+  width: 100%;
+  background: #ffffff;
+  border-collapse: collapse;
+}
+
+tr:not(:last-of-type) {
+  border-bottom: 1px solid #eeeeee;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 12px 12px;
+}
