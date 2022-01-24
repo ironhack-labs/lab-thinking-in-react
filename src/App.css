@@ -19,4 +19,13 @@
   justify-content: center;
   margin-top: 20px;
 }
-  
+
+.checkbox input {
+  margin-right: 5px;
+
+}
+
+.checkbox {
+  font-weight: 400;
+  padding-left: 10px;
+}
