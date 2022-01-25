@@ -5,22 +5,22 @@ import SearchBar from './SearchBar';
 import ProductTable from './ProductTable';
 
 const ProductsPage = () => {
-  const [products, setProducts] = useState(jsonData);
+  const products = jsonData;
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredProducts, setFilteredProducts] = useState(products);
   const [inStockCheckBox, setInStockCheckBox] = useState(false);
 
   const isInStockChangeHandler = (bool) => {
     createArray(searchTerm, bool);
-    setInStockCheckBox(bool);
   };
 
   const searchChangeHandler = (text) => {
     createArray(text, inStockCheckBox);
-    setSearchTerm(text);
   };
 
   const createArray = (text, bool) => {
+    setSearchTerm(text);
+    setInStockCheckBox(bool);
     setFilteredProducts(
       products.filter(
         (p) =>
