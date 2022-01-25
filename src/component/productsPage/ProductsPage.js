@@ -1,4 +1,5 @@
 import React from "react";
+import CheckBox from "../checkBox/CheckBox";
 import SearchBar from "../searchBar/SearchBar";
 import './ProductsPage.css';
 
@@ -11,31 +12,35 @@ function ProductsPage(props) {
   const [searchTerm, setSearchTerm] = React.useState("");
 
   // - - - SearchBox - - - - -   
-  // From <SearchBox /> to this parent
+  // From <SearchBox /> to this parent state -> searchTerm
   // triggers when the onChange event is triggered in <SearchBar/>
   // searchInput --> is the target.value from SearchBox passing from Chid -> to Parent
   const getSearchTerm = (searchInput) => setSearchTerm(searchInput);
 
+  // callback function to pass inside the filter()
   // filter with the 'searchTerm' typed by the user in <SearchBox />
   const searchCondition = (product) =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase());
+  // - - - /////////////// - - - - -   
+
 
   // - - - CheckBox - - - - -  
   const getCheckBoxItems = (isCheck) => {
-    console.log(isCheck)
+    //console.log(isCheck)
     // if is checked or true, then filter the items and show them
     let filteredProducts = products.filter((product) => product.inStock === true);
-    isCheck 
-      ? setProducts(filteredProducts)
-      : setProducts([...allProducts])
+    isCheck //if the checkbox is checked or true, then
+      ? setProducts(filteredProducts) //change the products to display
+      : setProducts([...allProducts]) //copy of the original
   }
+   // - - - /////////////// - - - - -  
 
   // style
   // const outOfStockStyle = {  border: "1px solid black", backgroundColor: "red" }
-
+  // If the filter is "" empty, it won't filter anything and show all the products
   const productCardList = products.filter(searchCondition).map((product) => {
     const hasStock = product.inStock; // true or false
-    console.log(hasStock)
+    //console.log(hasStock)
     const outOfStock = "outOfStock" // className
     const inStock = "inStock" // className
     return (
@@ -50,7 +55,14 @@ function ProductsPage(props) {
   return (
     <div>
       <h1>IronStore</h1>
-      <SearchBar searchTerm={getSearchTerm} checkBoxItems={getCheckBoxItems}/>
+      {/* 
+        From child <SearchBar /> we will pass the item searched to this parent
+        onChangeSearchBar -> is a prop that brings the 'item to search'
+        onChangeSearchBar -> receives a function as a value that will be triggered here in the parent
+        onChangeSearchBar -> triggers -> getSearchTerm
+       */}
+      <SearchBar onChangeSearchBar={getSearchTerm}/>
+      <CheckBox onCheckBoxHandler={getCheckBoxItems}/>
       {productCardList}
     </div>
   );
