@@ -7,19 +7,19 @@ class FilterableProductTable extends Component {
         products: this.props.products,
     }
 
+    filterProducts = (searchInfo) => {
+        
+    }
     render() {
         console.log(this.state)
         return (
             <>
                 <h1>IronStore</h1>
-
-                <SearchBar />
-
+                <SearchBar filterProducts={this.filterProducts} />
                 <ProductTable products={this.state.products}/>
-
             </>
         )
     }
 }
 
-export default FilterableProductTable
+export default FilterableProductTable;
