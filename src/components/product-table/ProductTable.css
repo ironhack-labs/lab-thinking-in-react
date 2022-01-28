@@ -1,0 +1,13 @@
+table {
+    background-color: rgba(128, 128, 128, 0.25);
+    width: 100%;
+}
+
+tbody {
+    background-color: white;
+}
+
+thead > tr,
+tbody > tr {
+    height: 50px;
+}
