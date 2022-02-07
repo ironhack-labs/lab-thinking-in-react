@@ -1,12 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-function SearchBar({ productData }) {
+function SearchBar({ productData, handleChange, handleCheckBox }) {
+  const [checkbox, setCheckbox] = useState(false);
+
+  const handleChangeBox = () => {
+    setCheckbox(!checkbox);
+    handleCheckBox(checkbox);
+  };
+
   return (
     <div>
       <div>
         <p>Search</p>
-        <input type="search" name="" id="" />
-        <input type="checkbox" name="" id="" />
+        <input onChange={handleChange} type="search" name="" id="" />
+        <input
+          onChange={handleChangeBox}
+          type="checkbox"
+          name="inSotck"
+          id=""
+          checked={checkbox}
+        />
         <span>Only show products in stock</span>
       </div>
 

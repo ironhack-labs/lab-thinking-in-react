@@ -2,7 +2,6 @@ import React from 'react';
 import ProductRow from './ProductRow';
 
 function ProductTable({ productData }) {
-  console.log('PRODUCT DATA', productData);
   return (
     <div className="product-table-container">
       <table>
