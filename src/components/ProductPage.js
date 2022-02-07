@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 
+import SearchBar from './SearchBar';
+import ProductTable from './ProductTable';
+
 import jsonData from '../data.json';
 
 function ProductPage() {
@@ -8,6 +11,8 @@ function ProductPage() {
   return (
     <div>
       <h1>Iron Store</h1>
+      <SearchBar productData={products} />
+      <ProductTable productData={products} />
     </div>
   );
 }
