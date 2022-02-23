@@ -46,3 +46,13 @@ th {
   padding: 20px 40px;
   margin: 0;
 }
+
+#checkbox {
+  margin: 20px;
+}
+
+.search {
+  border-radius: 15px;
+  width: 50%;
+  padding: 5px;
+}

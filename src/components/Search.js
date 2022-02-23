@@ -15,25 +15,25 @@ function Search(props) {
   };
 
   return (
-    <div className="search">
+    <div>
       <form>
         <label>Search</label>
         <input
+          className="search"
           type="text"
           name="input"
           value={searchInput}
           onChange={executeSearch}
         ></input>
       </form>
-      <form>
-        <input
-          type="checkbox"
-          name="checkbox"
-          id="checkbox"
-          onChange={handleCheckbox}
-        ></input>
-        <label>See only items in stock</label>
-      </form>
+
+      <input
+        type="checkbox"
+        name="checkbox"
+        id="checkbox"
+        onChange={handleCheckbox}
+      ></input>
+      <label> See only items in stock</label>
     </div>
   );
 }
