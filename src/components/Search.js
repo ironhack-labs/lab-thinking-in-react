@@ -9,6 +9,11 @@ function Search(props) {
     props.handleSearch(event.target.value.toLowerCase());
   };
 
+  const handleCheckbox = () => {
+    let filter = document.getElementById('checkbox').checked;
+    props.inStock(filter);
+  };
+
   return (
     <div className="search">
       <form>
@@ -19,6 +24,15 @@ function Search(props) {
           value={searchInput}
           onChange={executeSearch}
         ></input>
+      </form>
+      <form>
+        <input
+          type="checkbox"
+          name="checkbox"
+          id="checkbox"
+          onChange={handleCheckbox}
+        ></input>
+        <label>See only items in stock</label>
       </form>
     </div>
   );

@@ -15,10 +15,23 @@ function ProductsPage() {
     setProducts(searchedProducts);
   };
 
+  const onlyInStock = (input) => {
+    let filteredProducts;
+    if (input) {
+      filteredProducts = productsData.filter((eachProduct) => {
+        return eachProduct.inStock === true;
+      });
+      setProducts(filteredProducts);
+    } else {
+      filteredProducts = [...productsData];
+      setProducts(filteredProducts);
+    }
+  };
+
   return (
     <div>
       <h1>IronStore</h1>
-      <Search handleSearch={searchResult} />
+      <Search handleSearch={searchResult} inStock={onlyInStock} />
       <ProductTable allProducts={products} />
     </div>
   );
