@@ -1,10 +1,12 @@
 body {
-  margin: 0;
+  margin: 0px 100px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: center;
 }
 
 code {
@@ -12,10 +14,35 @@ code {
     monospace;
 }
 
+h1,
+h3 {
+  margin-top: 50px;
+  color: rgb(70, 180, 180);
+}
 .green {
   color: green;
 }
 
 .red {
   color: red;
+}
+
+input {
+  margin-left: 20px;
+}
+table {
+  border: 3px solid rgb(13, 38, 43);
+  border-radius: 5px;
+}
+
+thead {
+  background-color: rgb(30, 88, 99);
+  color: white;
+  font-size: bold;
+}
+
+td,
+th {
+  padding: 20px 40px;
+  margin: 0;
 }
