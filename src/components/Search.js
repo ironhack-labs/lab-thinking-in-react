@@ -6,6 +6,7 @@ function Search(props) {
   const executeSearch = (event) => {
     setSearchInput(event.target.value);
     console.log(searchInput);
+    props.handleSearch(event.target.value.toLowerCase());
   };
 
   return (

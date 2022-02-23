@@ -1,4 +1,3 @@
-import { v4 as randomId } from 'uuid';
 import ProductRow from './ProductRow';
 
 function ProductTable(props) {
@@ -9,10 +8,12 @@ function ProductTable(props) {
       <h3>All products</h3>
       <table>
         <thead>
-          <th>Name</th>
-          <th>Category</th>
-          <th>Price</th>
-          <th>Available</th>
+          <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Available</th>
+          </tr>
         </thead>
         <tbody>
           {allProducts.map((eachProduct) => {
