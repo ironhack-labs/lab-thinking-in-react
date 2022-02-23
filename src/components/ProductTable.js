@@ -1,6 +1,3 @@
-import { useState } from 'react';
-import jsonData from './../data.json';
-import { Card, Row, Col, Divider, Input, Button } from 'antd';
 import ProductRow from './ProductRow';
 
 function ProductTable(props) {
