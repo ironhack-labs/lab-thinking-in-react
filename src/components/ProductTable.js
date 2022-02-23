@@ -3,6 +3,7 @@ import ProductRow from './ProductRow';
 function ProductTable({ ProductRows }) {
   return (
     <div className="ProductList">
+      <h2 className="subtitle">Product List</h2>
       <table className="ProductTable">
         <thead>
           <tr>

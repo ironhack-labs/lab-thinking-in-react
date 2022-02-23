@@ -17,11 +17,24 @@ function ProductsPage() {
     setFilteredProducts(searchResult);
   };
 
+  const onlyInStock = (input) => {
+    let filteredProducts;
+    if (input) {
+      filteredProducts = products.filter((product) => {
+        return product.inStock === true;
+      });
+      setProducts(filteredProducts);
+    } else {
+      filteredProducts = [...products];
+      setProducts(filteredProducts);
+    }
+  };
+
   return (
     <div className="productsPage">
-      <h1>IronStore</h1>
+      <h1 className="heading">IronStore</h1>
 
-      <SearchBar handleSearch={productSearch} />
+      <SearchBar handleSearch={productSearch} inStock={onlyInStock} />
 
       <ProductTable ProductRows={filteredProducts} />
     </div>
