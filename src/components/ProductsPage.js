@@ -6,27 +6,27 @@ import { Card, Row, Col, Divider, Input, Button } from 'antd';
 
 function ProductsPage() {
   const [products, setProducts] = useState(jsonData);
+  //always add updated state
+  const [filteredProducts, setFilteredProducts] = useState(products);
 
   const filterTable = (str) => {
-    let productsCopy = [...products];
     let filteredList;
 
     if (str.length > 0) {
-      filteredList = productsCopy.filter((item) => {
+      filteredList = products.filter((item) => {
         return item.name.toLowerCase().includes(str.toLowerCase());
       });
     } else {
-      filteredList = productsCopy;
+      filteredList = products;
     }
-
-    setProducts(filteredList);
+    setFilteredProducts(filteredList);
   };
 
   return (
     <div>
       <h1>IronStore</h1>
       <SearchBar searchProp={filterTable} />
-      <ProductTable productTable={products} />
+      <ProductTable productTable={filteredProducts} />
     </div>
   );
 }
