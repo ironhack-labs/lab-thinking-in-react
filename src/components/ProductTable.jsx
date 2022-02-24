@@ -1,7 +1,7 @@
 import React from 'react';
 import ProductRow from './ProductRow';
 
-export default function ProductTable({ products }) {
+export default function ProductTable({ products, query }) {
   return (
     <div>
       <table width="90%">
@@ -12,9 +12,15 @@ export default function ProductTable({ products }) {
           </tr>
         </thead>
         <tbody>
-          {products.map(product => (
-            <ProductRow product={product} key={product.id} />
-          ))}
+          {products
+            .filter(product => {
+              return (
+                product.name.toLowerCase().indexOf(query.toLowerCase()) === 0
+              );
+            })
+            .map(product => (
+              <ProductRow product={product} key={product.id} />
+            ))}
         </tbody>
       </table>
     </div>
