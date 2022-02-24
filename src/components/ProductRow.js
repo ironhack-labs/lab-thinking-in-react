@@ -1,9 +1,19 @@
-const ProductRow = ({ product }) => {
-    const { name, category, price } = product
-    return (
 
+const ProductRow = ({ product }) => {
+
+    const { name, category, price, inStock } = product
+
+    function stockAvailable(inStock) {
+        if (inStock === false) {
+            return <td Style="color:red"> {name}</td>
+        } else {
+            return <td>{name}</td>
+        }
+    }
+
+    return (
         <>
-            <td> {name}</td>
+            {stockAvailable(inStock)}
             <td> {category}</td>
             <td>{price}</td>
         </>

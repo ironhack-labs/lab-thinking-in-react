@@ -1,4 +1,8 @@
 import { Form, FormControl, Button } from 'react-bootstrap'
+import { useState } from 'react'
+
+
+
 const SearchBar = () => {
     return (
         <Form className="d-flex">
