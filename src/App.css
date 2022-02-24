@@ -13,6 +13,15 @@
   }
 }
 
+table {
+  padding: 30px;
+  padding-left: 80px;
+  width: 100%;
+  border-spacing: 15px;
+}
+
+
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -35,4 +44,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.productsPageDiv {
+  width: 60%;
+  margin: auto;
+  text-align: center;
+}
+
+
+.tableDiv {
+  margin: auto;
 }
