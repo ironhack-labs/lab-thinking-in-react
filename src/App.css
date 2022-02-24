@@ -36,3 +36,35 @@
     transform: rotate(360deg);
   }
 }
+
+table {
+  margin: 40px auto;
+  width: 90vw;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: lightgray;
+  width: 200px;
+  height: 40px;
+}
+
+tr {
+  border-bottom: 1px solid lightgrey;
+}
+
+td {
+  width: 200px;
+  height: 40px;
+}
+
+tbody {
+  box-sizing: border-box;
+  border-bottom: #282c34;
+}
+
+#search-bar {
+  width: 80vw;
+  height: 25px;
+  margin: 10px 0 10px 0;
+}
