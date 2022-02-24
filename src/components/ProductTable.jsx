@@ -1,7 +1,7 @@
 import React from 'react';
 import ProductRow from './ProductRow';
 
-export default function ProductTable({ products, query }) {
+export default function ProductTable({ products, query, checkbox }) {
   return (
     <div>
       <table width="90%">
@@ -14,6 +14,12 @@ export default function ProductTable({ products, query }) {
         <tbody>
           {products
             .filter(product => {
+              if (checkbox) {
+                return (
+                  product.name.toLowerCase().indexOf(query.toLowerCase()) ===
+                    0 && product.inStock
+                );
+              }
               return (
                 product.name.toLowerCase().indexOf(query.toLowerCase()) === 0
               );
