@@ -7,7 +7,7 @@ import ProductTable from './ProductTable';
 export default function ProductPage() {
   const [products] = useState(jsonData);
   const [query, setQuery] = useState('');
-  const [checkbox, setCheckbox] = useState('false');
+  const [checkbox, setCheckbox] = useState(false);
   return (
     <div>
       <h1>IronStore</h1>
