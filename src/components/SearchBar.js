@@ -1,12 +1,13 @@
-import productsJSON from './../data.json';
 import { useState } from 'react';
 
-function SearchBar() {
-  const [products, setProducts] = useState(productsJSON);
+function SearchBar(props) {
+  const [searchQuery, setSearchQuery] = useState('');
 
-/* const handleSearch = (event) => {
-    setProducts(event.target.value);
-} */
+  const executeSearch = (event) => {
+    setSearchQuery(event.target.value);
+    console.log(searchQuery)
+    props.searchProducts(event.target.value);
+  };
 
   return (
     <div className="search-bar">
@@ -15,10 +16,10 @@ function SearchBar() {
 
         <label>Search</label>
         <input
-          value={''}
+          value={searchQuery}
           type="text"
-          /* onChange={handleSearch}
-          placeholder={"Search for products"} */
+          onChange={executeSearch}
+          placeholder="Search..."
         />
       </>
     </div>
