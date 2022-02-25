@@ -9,10 +9,17 @@ export default function ProductTable(props) {
           <tr>
             <th>Name</th>
             <th>Price</th>
+            <th>Category</th>
           </tr>
         </thead>
+        <tbody>
+          <ProductRow
+            productRows={props.products}
+            secQuery={props.queryProp}
+            inStockProp={props.inStockProp}
+          />
+        </tbody>
       </table>
-      <ProductRow productRows={props.products} />
     </>
   );
 }
