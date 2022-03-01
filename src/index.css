@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+ html {
+   display: flex;
+   justify-content: space-evenly;
+ }
+
+.row  {
+   justify-content: space-evenly;
+   padding: 4px 10px;
+
+ }
+ .table {
+   justify-content: space-between;
+ }
+
+ #price {
+   align-items: flex-end;
+ }
+ #name {
+   align-items: flex-start;
+ }
