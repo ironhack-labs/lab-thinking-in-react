@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#search-bar {
+border-width: 1px;
+border-style: solid;
+border-color: blue;
+}
