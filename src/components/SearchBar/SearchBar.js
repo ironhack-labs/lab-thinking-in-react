@@ -20,7 +20,7 @@ function SearchBar({ filterByProduct }) {
                 type="text"
                 name="search"
                 placeholder="Product name"
-                value={ search}
+                value={ search }
                 onChange={ inputHandler }>
                 </input>
             </form>
