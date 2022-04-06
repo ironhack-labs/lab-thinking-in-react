@@ -1,3 +1,5 @@
+import ProductRow from "../ProductRow/ProductRow"
+
 const ProductTable = ({ products }) => {
   return (
     <div className="mt-5">
@@ -12,12 +14,11 @@ const ProductTable = ({ products }) => {
         <tbody>
           {products.map(product => {
             return (
-          <tr key={product.id}>
-            <th scope="row">{product.name}</th>
-            <td>{product.price}</td>
-          </tr>
-          )
-        })}
+              <tr key={product.id}>
+                <ProductRow {...product} />
+              </tr>
+            )}
+          )}
         </tbody>
       </table>
     </div>
