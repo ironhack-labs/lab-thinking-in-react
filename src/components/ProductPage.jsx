@@ -7,14 +7,22 @@ function ProductsPage () {
   const [products, setProducts] = useState(jsonData);
   const [copiedProducts, setCopiedProducts] = useState(jsonData);
 
-  function filterProducts(string){
-    const filteredProducts = products.filter((product)=>{
+  function filterProducts(string, isChecked){
 
+    let firstFilteredProducts = products;
+
+    if(isChecked){
+        firstFilteredProducts = products.filter((product)=>{
+            return product.inStock === true;
+        })
+    }
+
+    const secondFilteredProducts = firstFilteredProducts.filter((product)=>{
         if(string === "") return true;
         else return product.name.toLowerCase().includes(string.toLowerCase());
-      })
+    })
   
-      setCopiedProducts(filteredProducts);
+    setCopiedProducts(secondFilteredProducts);
   }
   
   return(
