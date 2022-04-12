@@ -2,11 +2,11 @@ import ProductRow from "./ProductRow";
 
 export default function ProductTable (props){
     return (
-        <table>
-            <thead>
+        <table className="table">
+            <thead className="thead-light">
                 <tr>
-                    <th>Name</th>
-                    <th>Price</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
                 </tr>
             </thead>
             <tbody>
