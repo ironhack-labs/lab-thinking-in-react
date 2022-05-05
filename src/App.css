@@ -1,38 +1,47 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(#9439d4, #9198e5);
+  color: #fff;
+  font-size: 22px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.ProductsPage {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+  font-size: 40px;
+  font-weight: normal;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.SearchBar form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.SearchBar label {
+  margin: 10px 0;
+}
+
+.SearchBar input[type='text'] {
+  width: 600px;
+  height: 40px;
+  margin: 10px 0;
+}
+
+.SearchBar {
+  margin: 10px 0;
+}
+
+td {
+  padding: 5px 40px;
 }
