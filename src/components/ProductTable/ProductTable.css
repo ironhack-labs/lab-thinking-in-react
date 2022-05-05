@@ -1,0 +1,9 @@
+.centerTable {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.rowStyle {
+    border-bottom: 1px solid black;
+}
