@@ -5,21 +5,21 @@ import jsonData from './../../data.json';
 function SearchBar({filterProducts}) {
     const [products, setProducts] = useState(jsonData);
     const [searchInput, setSearchInput] = useState("");
-    const [checkedInput, setCheckedInput] = useState("off");
+    const [checkedInput, setCheckedInput] = useState(false);
 
     const handleSelect = e => {
 
-        const { value, name } = e.target
+        const { name } = e.target
 
         let nameValue = searchInput
         let checkedValue = checkedInput
 
-        if(name == "name") nameValue = value
-        if (name == "checkbox") checkedValue = value
+        if (name == "name") nameValue = e.target.value
+        if (name == "checkbox") checkedValue = e.target.checked
 
         setSearchInput(nameValue)
         setCheckedInput(checkedValue)
-        filterProducts(nameValue, checkedValue =="on")
+        filterProducts(nameValue, checkedValue)
     }
 
     return (
