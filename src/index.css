@@ -11,3 +11,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+input {
+  margin-bottom: 30px;
+}
+.searchField {
+  width: 60%;
+  padding: 10px;
+  border: 1px solid LightGray; 
+  border-radius: 5px;
+}
+table {
+  margin: 0 auto;
+  width: 60%;
+}
+
+thead {
+  background-color: lightgrey;
+}
+th {
+  padding: 10px;
+}
+td {
+  border-bottom: 1px solid lightgray;
+  padding: 10px;
+}
