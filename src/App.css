@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  margin: 0px 50px;
 }
 
 .App-logo {
@@ -35,4 +36,55 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+h1 {
+  font-size: 64px;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 5px;
+}
+
+#search {
+  height: 30px;
+  text-align: center;
+  border-radius: 10px;
+  margin: 10px 15px;
+}
+
+.search-checkbox {
+  flex-direction: row;
+}
+
+/* .product-table {
+  border-radius: 10px;
+} */
+
+.table-header { 
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(213, 211, 211, 0.874);
+  border-radius: 10px;
+}
+
+.product-row {
+  display: flex;
+  justify-content: space-around;
+  border:1px solid black;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.product-row-no-stock {
+  display: flex;
+  justify-content: space-around;
+  border:1px solid black;
+  margin: 5px;
+  border-radius: 5px;
+  color: red;
+  background-color: rgba(255, 0, 0, 0.461);
 }
