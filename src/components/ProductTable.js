@@ -1,27 +1,33 @@
 import data from "../data.json";
-import ProductsRow from "./ProductsRow";
+import React, { useState } from "react";
+import ProductRow from "./ProductRow";
 
 function ProductTable(props) {
 
-    const { category, price, inStock, name, id } = props;
+    // const [products, setProducts] = useState(data)
 
     return(
         <div>
-            <table style={{display: 'flex', flexDirection: 'column'}}>
+            <table style={{ display: 'flex', flexDirection: 'column' }}>
                
-                <thead style={{display: 'flex', height: '50px', width: '750px', backgroundColor: '#C4C4C4', borderRadius: '10px'}}>
-                    <tr> 
-                        <th style={{ textAlign: 'center', paddingLeft: '150px', paddingTop: '10px'}}>Name</th>
-                        <th style={{ textAlign: 'center', paddingLeft: '350px', paddingTop: '10px'}}>Price</th>
+                <thead style={{height: '50px', backgroundColor: '#C4C4C4', borderRadius: '10px'}}>
+                    <tr style={{ display: 'flex' }}> 
+                        <th style={{ textAlign: 'center', flex: '1'}}>Name</th>
+                        <th style={{ textAlign: 'center', flex: '1'}}>Price</th>
                     </tr>
                 </thead>
-                <tbody style={{ display: 'flex'}}>
-                        <ProductsRow />
+                <tbody style={{ display: 'flex', flexDirection: 'column'}} >
+                { props.myFilteredArray.map((productObject)=> {
+                return (
+                    <ProductRow product={productObject}/>
+                )})}
                 </tbody>
             </table>
         </div>
     );
 }
+
+
 
 export default ProductTable;
 

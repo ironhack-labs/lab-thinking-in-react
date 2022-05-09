@@ -21,7 +21,7 @@ function ProductsPage () {
       <div>
         <h1>IronStore</h1>
         <SearchBar handleSearch={filterProductsByString} />
-        <ProductTable />
+        <ProductTable myFilteredArray={filteredProductsArray}/>
       </div>    
   )
 }
