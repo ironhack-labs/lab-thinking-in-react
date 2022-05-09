@@ -9,23 +9,20 @@ const ProductTable = (props) =>{
     
       }
      
-  console.log(props)
+   console.log(props)
   return (
-
-<table style={centerIt}>
-  <thead>
+  <table style={centerIt}>
+   <thead>
     <tr>
-    <th>Name</th>
-    <th>Price</th>
+      <th>Name</th>
+      <th>Price</th>
     </tr>
-    </thead>
+  </thead>
     <tbody style={{
       width:'100%'
    
     }}>
-{props.productsArray.map(eachProduct=>{
- return <ProductRow eachProd={eachProduct} key={eachProduct.id}/>
-})}
+    {props.productsArray.map(eachProduct=>{ return <ProductRow eachProd={eachProduct} key={eachProduct.id}/>})}
       </tbody>
 </table>
     

@@ -8,6 +8,7 @@ const SearchBar = (props) =>{
     setSearchTerm(e.target.value);
     props.handleSearch(e.target.value)
   };
+
 return (
   <>
   <div>
