@@ -10,9 +10,11 @@ function SearchBar(props) {
     }
 
     return(
-        <div>
-            <label htmlFor=''>Search Products</label>
-            <input type="text"  value={searchTerm} onChange={handleSearch} />
+        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+            <div>
+                <label htmlFor=''>Search Products</label>
+            </div>
+            <input type="text" style={{ width: '750px'}} value={searchTerm} onChange={handleSearch} />
         </div>
     );
 }
