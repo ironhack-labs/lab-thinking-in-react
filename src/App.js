@@ -1,23 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import ProductsPage from './components/ProductsPage'
+import Data from './data.json'
+import SearchBar from './components/SearchBar'
+import { useState } from 'react'
+
 
 function App() {
+  const [productsData, setProductsData] = useState(Data)
+  const filterProductData = (str) => {
+    let filteredProducts;
+    
+    if (str === "") {
+      filteredProducts = Data;
+    } else {
+      filteredProducts = productsData.filter((product) => {
+        return product.name[0].toLowerCase() === str.toLowerCase();
+      });
+    }
+   
+    setProductsData(filteredProducts);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <SearchBar filter={filterProductData}/>
+    <ProductsPage data={productsData} />
     </div>
   );
 }
