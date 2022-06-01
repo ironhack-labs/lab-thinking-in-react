@@ -172,6 +172,8 @@ export default App;
 Okay, now it's your turn. Create the `<SearchBar />` and the `<ProductTable />` components to display the search bar and the list of products. You should render both components inside the `ProductsPage` (see the sketch above 😉).
 
 
+----
+
 
 ### Iteration 3 | Product Row
 
