@@ -1,0 +1,24 @@
+.products-page {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 80vw;
+  margin: 1rem auto;
+}
+
+form *{
+  margin: .2rem;
+}
+
+[name="query"] {
+  margin-right: 3rem;
+}
+
+thead {
+  height: 2.5rem;
+  background-color: rgb(156, 153, 192);
+}
+
+tr {
+  height: 1.3rem;
+}
