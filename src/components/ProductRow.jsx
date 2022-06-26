@@ -3,7 +3,6 @@ import React from 'react';
 import './ProductRow.css';
 
 const ProductRow = ({ price, inStock, name }) => {
-  console.log('inStock', inStock, name);
   return (
     <>
       <tr className="table-row">
