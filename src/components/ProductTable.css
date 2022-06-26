@@ -1,0 +1,6 @@
+.columns {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+  background-color: rgb(235, 235, 235);
+}
