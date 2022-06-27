@@ -5,8 +5,11 @@ const Checkbox = ({ stock, setStock }) => {
     <>
       <input
         type="checkbox"
-        value={!stock}
-        onChange={(e) => setStock(e.target.value)}
+        value={stock}
+        onChange={(e) => {
+          console.log('value in checkbox is ', e.target.value);
+          setStock(stock === '' ? 'on' : '');
+        }}
       />
       <label>Only show products in stock</label>
     </>

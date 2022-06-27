@@ -1,21 +1,29 @@
 import React from 'react';
+import { useEffect, useState } from 'react';
 
 import ProductRow from './ProductRow';
 
 const ProductTable = ({ products, setProducts, search, stock }) => {
-  let productsToDisplay = [];
+  const [productsToDisplay, setProductsToDisplay] = useState([]);
   console.log(stock);
-  if (stock) {
-    productsToDisplay = products.filter((product) => {
-      return product.name
-        .toLowerCase()
-        .includes(search.toLowerCase() && product.inStock);
-    });
-  } else {
-    productsToDisplay = products.filter((product) => {
-      return product.name.toLowerCase().includes(search.toLowerCase());
-    });
-  }
+
+  useEffect(() => {
+    if (stock) {
+      const newProd = products.filter((product) => {
+        return product.name
+          .toLowerCase()
+          .includes(search.toLowerCase() && product.inStock);
+      });
+      console.log(newProd);
+      setProductsToDisplay(newProd);
+    } else {
+      setProductsToDisplay(
+        products.filter((product) => {
+          return product.name.toLowerCase().includes(search.toLowerCase());
+        })
+      );
+    }
+  }, [stock, search]);
 
   //   productsToDisplay.sort(
   //     (a, b) => a.category.toLowerCase() < b.category.toLowerCase()

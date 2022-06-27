@@ -10,7 +10,7 @@ import Checkbox from './Checkbox';
 const ProductsPage = () => {
   const [products, setProducts] = useState(jsonData);
   const [search, setSearch] = useState('');
-  const [stock, setStock] = useState();
+  const [stock, setStock] = useState('');
 
   return (
     <div>
