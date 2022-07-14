@@ -5,6 +5,7 @@ import ProductsPage from './components/ProductsPage';
 import ProductTable from './components/ProductTable';
 import SearchBar from './components/SearchBar';
 import ProductRow from './components/ProductRow'
+import "bootstrap/dist/css/bootstrap.min.css";
 
 
 function App() {
@@ -12,18 +13,24 @@ function App() {
   const [pRow, setPRow] = useState([...jsonData])
   const [search, setSearch] = useState('')
   const [pTable, setPTable] = useState('')
+
   return (
     <div className="App">
+      
+      
       <ProductsPage 
         products={products}
         searchProp={search}
         pTableProp={pTable}
       />
-      <ProductRow pRowProp={pRow}/>
-      <SearchBar searchProp={setSearch}/>
+      <SearchBar setSearchProp={setSearch}/>
+      <ProductRow pRowProp={pRow}
+      searchProp={search}/>
+      
       <ProductTable 
         pTableProp={setPTable}
         pRowProp={pRow}
+        
       />
       
     </div>

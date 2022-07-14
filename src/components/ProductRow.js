@@ -1,5 +1,4 @@
 import { useState, React } from 'react';
-import jsonData from '../data.json';
 
 const ProductRow = props => {
   return (
@@ -13,13 +12,13 @@ const ProductRow = props => {
             <th>
               <h3>Price</h3>
             </th>
-            <th>
-              <h3>Price</h3>
-            </th>
           </tr>
         </thead>
         <tbody>
-          {props.pRowProp.map((p) => (
+          {props.pRowProp
+          .filter((p) => p.name.toLowerCase().includes(props.searchProp.toLowerCase()))
+          .map((p) => {
+            return (
             <tr key={p.id}>
               <td>
                 <h5>{!p.inStock ? <p className='red'>{p.name} </p>: <p>{p.name} </p>}</h5>
@@ -28,7 +27,8 @@ const ProductRow = props => {
                 <h5> {p.price}</h5>
               </td>
             </tr>
-          ))}
+          )} 
+          )}
         </tbody>
       </table>
     </div>
