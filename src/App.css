@@ -36,3 +36,38 @@
     transform: rotate(360deg);
   }
 }
+
+h1 {
+  font-size: 84px;
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+table{
+  width:100%;
+  padding:5vh 20% 10vh 20%;
+}
+
+thead{
+  font-size: 1.2em;
+  padding-bottom: 3vh;
+}
+
+th, td {
+  font-size: 1.5em;
+  padding-bottom: 1vh;
+
+}
+
+.search-input {
+  font-size: 1.2em;
+  padding: 0.2rem;
+  width:30%;
+}
+.check-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:1rem;
+}
