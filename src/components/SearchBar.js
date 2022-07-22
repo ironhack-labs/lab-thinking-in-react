@@ -1,34 +1,32 @@
 import react from 'react';
 import { useState } from 'react';
-import jsonData from '../data.json'
+import jsonData from '../data.json';
 
-function SearchBar () {
+const SearchBar = ({
+  search,
+  setSearch,
+  products,
+  setFilteredProductArray,
+}) => {
+  // const [filteredProductArray, setFilteredProductArray] = useState(jsonData);
+  // const [products, setProducts] = useState(jsonData);
 
+  const updateSearch = (event) => {
+    const newProductArray = products.filter((individualProduct) => {
+      return individualProduct.name
+        .toLowerCase()
+        .includes(event.currentTarget.value.toLowerCase());
+    });
+    setSearch(event.target.value);
+    setFilteredProductArray(newProductArray);
+  };
 
-    const [filteredProductArray, setFilteredProductArray] = useState(jsonData);
-    const [products, setProducts] = useState(jsonData);
-
-
-
-    const updateSearch = (event) => {
-        const newProductArray = products.filter((individualProduct) => {
-          return individualProduct.name
-            .toLowerCase()
-            .includes(event.currentTarget.value.toLowerCase());
-        });
-        setFilteredProductArray(newProductArray);
-      };
-
-//how to pass newProductArray into ProductTable???
-
-return(
+  return (
     <div className="searchBar">
-    <form>
-<label>Search Products </label>
-        <input type="text" onChange={updateSearch} />
-        </form>
-</div>
-)
-}
+      <label>Search Products </label>
+      <input type="text" value={search} onChange={updateSearch} />
+    </div>
+  );
+};
 
 export default SearchBar;

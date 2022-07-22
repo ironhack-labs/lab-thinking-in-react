@@ -2,7 +2,7 @@ function ProductRow({name, price, inStock}) {
     return(  
         <div className="tableRow">
 <tr>
-<div style= {{color: inStock === false ? "red" : "black" }}><td>{name}</td></div>
+<td style= {{color: inStock === false ? "red" : "black" }}>{name}</td>
 <td>{price}</td>
 </tr>
 </div>

@@ -6,13 +6,15 @@ import SearchBar from './SearchBar';
 
 function ProductsPage() {
     const [products, setProducts] = useState(jsonData);
+    const [filteredProductArray, setFilteredProductArray] =useState(jsonData);
+    const [search, setSearch] = useState('');
 
     return(
 
         <div>
             <h1>IronStore</h1>
-            <SearchBar />
-<ProductTable products={products} />
+            <SearchBar search={search} setSearch={setSearch} setFilteredProductArray= {setFilteredProductArray} products={products}/>
+<ProductTable products={filteredProductArray} />
 
 
 {/* {products.map((product) => {

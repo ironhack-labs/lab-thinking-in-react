@@ -1,7 +1,25 @@
 .App {
-  text-align: center;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  
 }
-.productListing {
+.productTable {
+text-align: center;
+display: flex;
+flex-direction: column;
 
-border-bottom:1px solid black;
+}
+
+.tableRow {
+  border-bottom: 1px solid lightgray;
+}
+
+.header {
+
+  background-color: lightgray;
+}
+
+h1 {
+  text-align: center;
 }

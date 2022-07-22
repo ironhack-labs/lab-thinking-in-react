@@ -1,12 +1,12 @@
 import ProductRow from "./ProductRow";
-import SearchBar from "./SearchBar";
+
 
 function ProductTable({ products }) {
   return (
     <div className="productTable">
       <table>
         <thead>
-          <tr>
+          <tr className= "header">
             <th>Name</th>
             <th>Price</th>
           </tr>
