@@ -1,5 +1,12 @@
 .App {
   text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.price {
+  padding-left: 20px;
 }
 
 .App-logo {
