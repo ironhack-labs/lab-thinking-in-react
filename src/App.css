@@ -1,6 +1,3 @@
-.App {
-  text-align: center;
-}
 
 .App-logo {
   height: 40vmin;
@@ -35,4 +32,29 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.row td {
+  margin: 10px;
+}
+
+.searchBar {
+  margin: 20px;
+} 
+
+.btn{
+  color: #61dafb;
 }
