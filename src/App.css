@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .App-logo {
@@ -35,4 +41,13 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.App input {
+  margin-top:20px;
+  width:300px;
+  height:40px;
+  font-size:20px;
+  padding-left: 10px;
+
 }
