@@ -3,7 +3,7 @@ function ProductTable(props) {
   console.log('si llego, ', data);
   return (
     <div>
-      <h1>IronStore</h1>
+      <h1>Available products</h1>
 
       <table>
         <thead>

@@ -6,6 +6,13 @@
   align-items: center;
   flex-direction: column;
   font-family: Arial, Helvetica, sans-serif;
+  
+  color:rgb(22, 4, 141);
+}
+
+.App h1{
+  color:rgb(255, 0, 0);
+
 }
 
 .App-logo {
@@ -50,4 +57,42 @@
   font-size:20px;
   padding-left: 10px;
 
+}
+
+.App table{
+
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+}
+
+.App tr{
+  
+  display:flex;
+  justify-content:space-around;
+  padding-left: 20px;
+  padding-right:20px;
+  margin:10px
+}
+
+
+.App tbody{
+  width: 300px;
+}
+.App thead{
+  width: 300px;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.stockChecker{
+  color:red;
+  display:flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.stockChecker input{
+  width: 20px;
+  height: 20px;
 }
