@@ -1,19 +1,23 @@
-import { useState } from 'react';
-
-function SearchBar (){
-    const [query,setQuery]= useState('')
-return (
-    <div className='search'>
-        Search
-    <div className='searchbar'>
-
-    <input placeholder='' className='searchterm' type='text' onChange={(e)=>setQuery(e.target.value) }/>
+function Searchbar(props) {
+    const { search, updateSearchAndFilter, filterInStock, updateFilterInStock } =
+      props;
+  
+    return (
+      <div className='search'
+              >
+        <label >Search</label>
+        <input type="text" value={search} onChange={updateSearchAndFilter} />
+  
+        <div>
+          <input
+            type="checkbox"
+            value={filterInStock}
+            onChange={updateFilterInStock}
+          />
+          <label>Only show products in stock</label>
         </div>
-    <br/>
-    <input  type='checkbox'  /> Only show products in stock
-    </div>    
+      </div>
     );
-    
-    }
-    
-    export default SearchBar;
+  }
+  
+  export default Searchbar;
