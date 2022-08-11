@@ -1,7 +1,9 @@
+
 import ProductRow from "./ProductRow";
 
 
 function ProductTable (props){
+  
     const productName = props.products.map( (product)=>{
         return( 
             <ProductRow name = {product.name}/>)});
@@ -11,27 +13,20 @@ function ProductTable (props){
     const productStock = props.products.map( (product)=>{
         return( 
             <ProductRow price = {product.inStock}/>)});
-    const checkStock = function Stock(){
-        if(productStock === false){
-            return (<td>{productName}</td>);
-        }
-        else{
-            return (<td className="stock">{productName}</td>)
-        }
-    }
-    
-
-
+   
 return (
 <div className="tablecss">
+
+  
     <table>
             <tr className="title">
             <th>Name</th>  
             <th>Price</th> 
             </tr>
             <tr>
-                <td>{checkStock()}</td>
-                <td>{productPrice}</td>
+            {productStock ? <td >{productName}</td>: <td className='redProduct'>{productName}</td>}
+              <td>{productPrice}</td>
+                
             </tr>
 
     </table>  

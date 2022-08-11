@@ -1,20 +1,23 @@
 table, th, td {
+  
   border-top: 2px solid rgb(182, 182, 182);
   border-collapse:collapse;
   width:150px;
-  padding:10px
-  
+  padding:10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 table {
   width: 80%;
+  text-align: center;
+  
   
 }
 
 .tablecss{
   display: flex;
-  text-align: center;
-  padding: 20px 20px 20px 20px;
+  width: 100%;
   
 }
 
@@ -22,6 +25,33 @@ table {
   background-color: rgb(219, 223, 232);
 }
 
-.stock{
+.redProduct{
   color: red;
+}
+
+.search{
+
+  padding: 10px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  
+
+}
+
+
+
+.searchterm{
+
+  border: 2px solid #ecebeb;
+  padding: 6px;
+  height: 20px;
+  border-radius: 5px;
+  outline: none;
+  color: #000000;
+  width: 80%;
+  margin-left: 50px;
+  margin-right: 50px;
+
+  
 }
