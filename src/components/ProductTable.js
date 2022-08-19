@@ -1,4 +1,15 @@
+import './ProductTable.css'
+
 function ProductTable () {
-    return
+    return (
+            <table className='table-list'>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </tr>
+                 </thead>
+            </table>     
+    )
 }
 export default ProductTable;
