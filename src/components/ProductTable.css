@@ -1,15 +1,6 @@
-.table-list {
+.products-table {
     background-color: rgba(28,110,164,0.24);
     width: 900px;
     height: 50px;
     color: #404040;
-    margin:auto; 
-    margin-top: 30px;
-}
-
-.table-list p {
-    justify-content: space-around;
-    align-content: space-around;
-    display: flex;
-
-}
+ }
