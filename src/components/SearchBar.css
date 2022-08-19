@@ -1,0 +1,21 @@
+.search-form input {
+    border: 1px solid rgba(28,110,164,0.29);
+    border-radius: 5px;
+    width: 900px;
+    height: 30px;
+}
+
+.check-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.check-form input {
+    border: 1px rgba(28,110,164,0.29);
+    width: 13px;
+}
+
+.check-form p {
+    margin-left: 5px;
+}
