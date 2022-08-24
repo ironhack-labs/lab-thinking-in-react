@@ -1,3 +1,4 @@
+import './SearchBar.css'
 function SearchBar() {
     return(
         <div className='SearchBar'>
