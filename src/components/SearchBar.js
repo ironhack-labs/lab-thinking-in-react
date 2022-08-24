@@ -4,7 +4,7 @@ function SearchBar() {
         <div className='SearchBar'>
             <p>Search</p>
             <input className='SearchInput'></input><br />
-            <input type='checkbox' id='Checkbox'></input>
+            <input type='checkbox' value='Checkbox'id='Checkbox'></input>
             <label htmlFor="Checkbox"> Only show products in stock</label>
         </div>
     )
