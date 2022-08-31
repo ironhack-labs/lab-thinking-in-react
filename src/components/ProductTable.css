@@ -1,0 +1,17 @@
+table{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+th{
+    padding: 20px 200px;
+}
+#Thead{
+    background:#E7ECEF;
+    color:#4F535A;
+}
+td{
+    border-top: 2px solid #E0E2E4;
+    padding: 20px 180px;
+}

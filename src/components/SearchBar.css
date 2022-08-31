@@ -1,0 +1,13 @@
+#menu div{
+    margin: 10px;
+}
+#search{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#Search{
+    width: 860px;
+    height: 30px;
+}
