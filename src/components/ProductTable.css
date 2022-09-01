@@ -1,13 +1,16 @@
 #tablecss {
     width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.37);
 }
 
 #tableHeader {
     background-color: rgb(148, 144, 159);
     height: 50px;
     width: 950px;
+    border: 1px solid black;
 }
 
 #table {
     padding: 0 250px 0 250px;
+
 }

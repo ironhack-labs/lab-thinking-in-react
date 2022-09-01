@@ -3,11 +3,10 @@ import React from 'react';
 function ProductRow(props) {
   return (
     <tbody>
-    {props.gridData.map(data => <tr>
-        <td>{data.name}</td>
-        <td>{data.price}</td>
-      </tr>)}
-      
+      <tr>
+        <td style={{color: props.gridData.inStock ? 'black': 'red'}} >{props.gridData.name}</td>
+        <td style={{color: props.gridData.inStock ? 'black': 'red'}} >{props.gridData.price}</td>
+      </tr>
     </tbody>
   );
 }

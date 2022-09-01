@@ -12,7 +12,7 @@ function ProductTable(props) {
             <th>Price</th>
           </tr>
         </thead>
-        {props.gridData.map(data => <ProductRow gridData={data}/>)}
+        {props.gridData.map((data, index) => <ProductRow key={index} gridData={data} />)}
       </table>
     </div>
   );
