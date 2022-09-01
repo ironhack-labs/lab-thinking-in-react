@@ -12,7 +12,7 @@ const ProductsPage = () => {
     if (Object.keys(filter).length > 0) {
       const filterCapitalizeUpperCase = filter.name && filter.name.charAt(0).toUpperCase() + filter.name.slice(1);
       const filterCapitalizeLowercase = filter.name && filter.name.charAt(0).toLowerCase() + filter.name.slice(1);
-      let filterProduct = data.filter(product => product.name.includes(filterCapitalizeUpperCase) || product.inStock == filter.stock || product.name.includes(filterCapitalizeLowercase));
+      let filterProduct = data.filter(product => product.name.includes(filterCapitalizeUpperCase) ||product.inStock == filter.stock || product.name.includes(filterCapitalizeLowercase));
       setProducts([...filterProduct]);
     } else {
       setProducts(jsonData)
