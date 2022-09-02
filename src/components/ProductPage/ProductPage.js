@@ -9,8 +9,10 @@ function ProductPage() {
 
   return (
     <div>
-      <h1 className='text-center'>IronStore</h1>
-      <SearchBar products={products} setProducts={setProducts} jsonData={jsonData}></SearchBar>
+      <h1 className='text-center mt-5'>IronStore</h1>
+      <div className='mb-5 row d-flex justify-content-center'>
+        <SearchBar products={products} setProducts={setProducts} jsonData={jsonData}></SearchBar>
+      </div>
       <ProductTable products={products}></ProductTable>
     </div>
   )
