@@ -10,7 +10,7 @@ function ProductsPage() {
     <div className='container'>
       <h1 className='text-center mt-3'>IronStore</h1>
       <SearchBar />
-      <ProductTable />
+      <ProductTable products={jsonData}/>
     </div>
   );
 }

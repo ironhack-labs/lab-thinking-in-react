@@ -1,20 +1,19 @@
 import ProductRow from '../product-row/ProductRow';
 
-function ProductTable() {
+function ProductTable({ products }) {
   return (
     <div className="container d-flex mt-4">
       <table className="table text-center">
-        <thead className='bg-light text-dark'>
+        <thead className="bg-light text-dark">
           <tr>
             <th scope="col-6">Name</th>
             <th scope="col-6">Price</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Mark</td>
-            <td>Otto</td>
-          </tr>
+            {products.map((product) => (
+              <ProductRow product={product} />
+            ))}
         </tbody>
       </table>
     </div>
