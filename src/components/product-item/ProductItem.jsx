@@ -1,8 +1,8 @@
-function ProductItem({ item }) {
+function ProductItem({ product }) {
   return(
     <tr>
-      <td className={!item.inStock ? "text-danger" : ""}>{item.name}</td>
-      <td>{item.price}</td>
+      <td className={!product.inStock ? "text-danger" : ""}>{product.name}</td>
+      <td>{product.price}</td>
     </tr>
   )
 }

@@ -1,6 +1,6 @@
 import ProductItem from "../product-item/ProductItem"
 
-function ProductTable({ data }) {
+function ProductTable({ products }) {
   return(
     <div>
       <table className="table text-center mt-3">
@@ -11,8 +11,8 @@ function ProductTable({ data }) {
           </tr>
         </thead>
         <tbody>
-          {data.map((item) => (
-              <ProductItem item={item}/>
+          {products.map((product) => (
+              <ProductItem key={product.name} product={product}/>
           ))}
         </tbody>
       </table>
