@@ -7,12 +7,11 @@ function ProductsPage() {
   const [products, setProducts] = useState(jsonData);
 
   return (
-    <div className='container'>
-      <h1 className='text-center mt-3'>IronStore</h1>
-      <SearchBar />
-      <ProductTable products={jsonData}/>
+    <div className="container">
+      <h1 className="text-center mt-3">IronStore</h1>
+      <SearchBar list={jsonData} />
+      <ProductTable products={jsonData} />
     </div>
   );
 }
-
 export default ProductsPage;

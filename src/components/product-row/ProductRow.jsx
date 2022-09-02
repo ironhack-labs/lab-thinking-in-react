@@ -1,14 +1,14 @@
-function ProductRow({ product }) {
+function ProductRow({ item }) {
   return (
     <tr>
       <th
         scope="col-6"
-        className={`fw-light ${product.inStock ? '' : 'text-danger'}`}
+        className={`fw-light ${item.inStock ? '' : 'text-danger'}`}
       >
-        {product.name}
+        {item.name}
       </th>
       <th scope="col-6" className="fw-light">
-        {product.price}
+        {item.price}
       </th>
     </tr>
   );

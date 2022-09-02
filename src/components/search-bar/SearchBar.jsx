@@ -4,7 +4,7 @@ function SearchBar() {
       <div className="input-group flex-column mt-3">
         <div className="form-outline">
           <h6 className="text-center">Search</h6>
-          <input type="search" id="form1" className="form-control " />
+          <input type="search" name="search-bar" className="form-control" />
         </div>
         <div className="my-3 form-check align-self-center">
           <input

@@ -11,9 +11,9 @@ function ProductTable({ products }) {
           </tr>
         </thead>
         <tbody>
-            {products.map((product) => (
-              <ProductRow product={product} />
-            ))}
+          {products.map((product) => (
+            <ProductRow item={product} />
+          ))}
         </tbody>
       </table>
     </div>
