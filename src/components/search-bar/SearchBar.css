@@ -1,0 +1,12 @@
+.search-bar{
+  width: 100%;
+}
+
+.search-bar>input{
+  width: 70%;
+  margin: 0 auto;
+}
+
+.search-bar h6{
+  margin:10px;
+}
