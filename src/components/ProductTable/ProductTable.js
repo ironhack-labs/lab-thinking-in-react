@@ -3,7 +3,7 @@ import './ProductTable.css'
 
 function ProductTable({products}) {
   return (
-    <table class="table">
+    <table className="table text-center">
       <thead>
         <tr>
           <th scope="col">#</th>
@@ -13,7 +13,7 @@ function ProductTable({products}) {
         </tr>
       </thead>
       <tbody>
-        { products.map((x, i) =>  <ProductRow category={x.category} price={x.price} inStock={x.inStock} name={x.name} id={x.id} i={i+1}/>)}
+        { products.map((x, i) =>  <ProductRow key={x.id} category={x.category} price={x.price} inStock={x.inStock} name={x.name} id={x.id} i={i+1}/>)}
       </tbody>
     </table>
   )

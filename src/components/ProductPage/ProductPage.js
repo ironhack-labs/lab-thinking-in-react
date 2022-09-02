@@ -7,12 +7,10 @@ import jsonData from './../../data.json';
 function ProductPage() {
   const [products, setProducts] = useState(jsonData);
 
-console.log(setProducts)
-
   return (
     <div>
       <h1 className='text-center'>IronStore</h1>
-      <SearchBar></SearchBar>
+      <SearchBar products={products} setProducts={setProducts} jsonData={jsonData}></SearchBar>
       <ProductTable products={products}></ProductTable>
     </div>
   )
