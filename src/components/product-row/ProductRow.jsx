@@ -3,7 +3,7 @@ function ProductRow({ item }) {
     <tr>
       <th
         scope="col-6"
-        className={`fw-light ${item.inStock ? '' : 'text-danger'}`}
+        className={`fw-normal ${item.inStock ? '' : 'text-danger'}`}
       >
         {item.name}
       </th>

@@ -5,7 +5,7 @@ function SearchBar({search, check}) {
     <div className="container d-flex">
       <div className="input-group flex-column mt-3">
         <div className="form-outline">
-          <h6 className="text-center">Search</h6>
+          <h6 className="text-center fs-5">Search</h6>
           <input type="search" name="search-bar" className="form-control" onChange={search} />
         </div>
         <div className="my-3 form-check align-self-center">
@@ -15,7 +15,7 @@ function SearchBar({search, check}) {
             id="exampleCheck1"
             onChange={check}
           />
-          <label className="form-check-label" for="checkProduct">
+          <label className="form-check-label fw-bold" for="checkProduct">
             Only show products in stock
           </label>
         </div>
