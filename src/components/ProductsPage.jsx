@@ -1,68 +1,58 @@
 import { useState } from 'react'
 import jsonData from '../data.json'
-import ProductTable from './ProductTable'
+import ProductTable from './productTable/ProductTable'
 import Searchbar from './SearchBar'
 
 function ProductsPage() {
-  const [products] = useState(jsonData)
-  const [handleProducts, setHandleProducts] = useState(jsonData)
+  const [products, setProducts] = useState(jsonData)
   const [search, setSearch] = useState('')
   const [checkbox, setCheckbox] = useState(false)
 
   const handleSearch = (event) => {
-    let dataProductsFilter;
+    let dataSearchFilter;
 
     if (checkbox) {
-      dataProductsFilter = products.filter((product) => {
-        return (
-          product.name
-            .includes(event.currentTarget.value) &&
-          product.inStock
-        );
-      });
+      dataSearchFilter = jsonData.filter((product) => {
+        return product.name.includes(event.target.value) && product.inStock
+      })
     } else {
-      dataProductsFilter = products.filter((product) => {
-        return product.name
-          .toLowerCase()
-          .includes(event.currentTarget.value.toLowerCase())
-      });
+      dataSearchFilter = jsonData.filter((product) => {
+        return product.name.includes(event.target.value)
+      })
     }
 
-    setHandleProducts(dataProductsFilter);
-    setSearch(event.currentTarget.value);
+    setProducts(dataSearchFilter);
+    setSearch(event.target.value);
   }
 
   const handleInStock = (event) => {
-    let newFilteredProductsArray
+    let dataStockFilter
 
-    if (event.currentTarget.checked) {
-      newFilteredProductsArray = products.filter((product) => {
-        return (
-          product.name.toLowerCase().includes(search.toLowerCase()) &&
-          product.inStock
-        );
-      });
+    if (event.target.checked) {
+      dataStockFilter = jsonData.filter((product) => {
+        return product.name.includes(search) && product.inStock
+      })
     } else {
-      newFilteredProductsArray = products.filter((product) => {
-        return product.name
-          .toLowerCase()
-          .includes(search.toLowerCase());
-      });
+      dataStockFilter = jsonData.filter((product) => {
+        return product.name.includes(search)
+      })
     }
 
-    setHandleProducts(newFilteredProductsArray)
-    setCheckbox(event.currentTarget.checked)
+    setProducts(dataStockFilter)
+    setCheckbox(event.target.checked)
   }
   return (
     <div className="d-flex flex-column mb-3">
-      <h1 className="align-self-center">IronStore</h1>
+      <h1 className="text-center">IronStore</h1>
       <Searchbar
         search={search}
         handleSearch={handleSearch}
         filterInStock={checkbox}
         handleInStock={handleInStock}
       />
-      <ProductTable products={handleProducts} />
+      <div className='d-flex justify-content-center mt-3'>
+        <ProductTable products={products} />
+      </div>
     </div>
   );
 }

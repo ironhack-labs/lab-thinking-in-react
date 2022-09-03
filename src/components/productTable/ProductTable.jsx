@@ -1,12 +1,13 @@
-import ProductRow from '../components/ProductRow';
+import ProductRow from '../ProductRow';
+import './Product-Table.css'
 
 function ProductTable({ products }) {
 
   return (
     <>
-      <div className="p-5">
-        <table class="table">
-          <thead>
+      <div className="container-table">
+        <table className="table text-center">
+          <thead className='table-dark'>
             <tr>
               <th scope="col">Name</th>
               <th scope="col">Price</th>
