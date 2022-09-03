@@ -6,10 +6,10 @@ function SearchBar(props) {
         <div>
             <label>
                 Search
-                <input type="text" placeholder="Product" onChange={props.filter}/>
+                <input className="searchBar" type="text" placeholder="Product" onChange={props.filter}/>
             </label>
             <label>
-                <input className="checkbox" type="checkbox" value="instock" onChange={props.filter}/>
+                <input id="checkbox" type="checkbox" value="instock" onChange={props.filter}/>
                 Only show products in stock
             </label>
         </div>
