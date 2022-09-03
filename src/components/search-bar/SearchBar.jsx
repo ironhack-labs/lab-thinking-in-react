@@ -1,22 +1,26 @@
-function SearchBar({ data, product }) {
-    /* function handleChange(event) {
-      console.log(data.filter(data => data.includes(event.target.value)))
-    } */
+function SearchBar({ search, setSearch, filterInStock, setFilterInStock }) {
   return (
     <div>
       <form className="d-flex flex-column" role="search">
-        <h3 className="align-self-center">Search</h3>
-        <input onChange={event => console.log(data.filter(data => data.name.startsWith(event.target.value)))}
+        <h5 className="align-self-center">Search</h5>
+        <input 
+          value={search}
           className="form-control me-2"
-          type="search"
+          type="text"
           placeholder="Search"
           aria-label="Search"
+          onChange={(ev) => {
+            setSearch(ev.target.value)
+          }}
         />
-        <datalist>
-          {data.map((i) => (
-            <option key={(i.name)} value={i.name} />
-          ))}
-        </datalist>
+        <div className="form-check d-flex justify-content-center gap-2 mt-2">
+          <input className="form-check-input" type="checkbox" checked={filterInStock} onChange={(ev) => {
+            setFilterInStock(ev.target.checked)
+          }} id="flexCheckDefault" />
+          <label className="form-check-label" htmlFor="flexCheckDefault">
+            Only show products in stock
+          </label>
+        </div>
       </form>
     </div>
   );
