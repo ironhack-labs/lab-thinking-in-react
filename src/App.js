@@ -7,9 +7,6 @@ function App() {
   return (
     <div className="App">
       <ProductsPages></ProductsPages>
-      <SearchBar></SearchBar>
-      <ProductTable></ProductTable>
-      {/* <ProductRow></ProductRow> */}
     </div>
   );
 }
