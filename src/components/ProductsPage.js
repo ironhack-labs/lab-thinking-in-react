@@ -1,16 +1,23 @@
-import productsData from "../data.json";
-import { useState } from "react";
+import { useState } from 'react';
 import SearchBar from './SearchBar';
+import ProductTable from './ProductTable';
 
 function ProductsPage() {
-  //const [products, setProducts] = useState(productsData);
+  const [search, setSearch] = useState('');
+  const [stockFilter, setStockFilter] = useState(false);
 
-  return(
+  return (
     <div>
-      <h1>IronStore</h1>
-      <SearchBar data={productsData} />
+      <h2>IronStore</h2>
+      <SearchBar
+        search={search}
+        setSearch={setSearch}
+        stockFilter={stockFilter}
+        setStockFilter={setStockFilter}
+      />
+      <ProductTable search={search} stockFilter={stockFilter} />
     </div>
-  )
+  );
 }
 
 export default ProductsPage;

@@ -1,22 +1,30 @@
-import { useState } from "react";
-
-function SearchBar({ data }) {
-  const [searchProduct, setSearchProduct] = useState("");
-
+function SearchBar({ search, setSearch, stockFilter, setStockFilter }) {
   return (
     <div>
-      <form>
-        <h5>Search</h5>
+      <h5>Search</h5>
+      <div className="mb-2">
         <input
-          value={searchProduct}
-          name="searchProduct"
-          onChange={(event) => setSearchProduct((event.target.value))}
+          value={search}
+          onChange={(event) => {
+            setSearch(event.target.value);
+          }}
           className="form-control"
-          type="search"
-          placeholder="Search..."
+          type="text"
         />
-        <label><input type="checkbox" value="first_checkbox" /> Only show products in stock</label>
-      </form>
+      </div>
+      <div className="form-check">
+        <label>
+          <input
+            checked={stockFilter}
+            type="checkbox"
+            className="form-check-input"
+            onChange={(event) => {
+              setStockFilter(event.target.checked);
+            }}
+          />
+          Only show products in stock
+        </label>
+      </div>
     </div>
   );
 }
