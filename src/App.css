@@ -1,3 +1,54 @@
 #checkbox{
   display: flex;
 }
+
+body{
+  background-color: grey;
+  display:flex;
+  justify-content: center;
+  align-items: center
+}
+
+#root{
+  margin-top: 20vw;
+  background-color:rgb(124, 187, 242);
+  border-radius: 20px;
+  box-shadow: 10px 5px 5px black;
+
+}
+
+.App{
+padding: 30px;
+
+}
+
+#checkbox{
+  display:flex
+}
+
+#searchbox{
+  background-color: beige;
+  padding:10px 20px;
+  border-radius:10px;
+  border: 1px  black solid;
+}
+
+#table{
+  background-color: white;
+  border-radius:10px;
+  border: 1px  black solid;
+  margin-top:30px
+}
+
+td{
+  padding-inline: 20px;
+}
+
+table{
+  margin:auto
+}
+
+th{
+  padding-block: 10px;
+}
+

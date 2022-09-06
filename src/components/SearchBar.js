@@ -1,14 +1,18 @@
 function SearchBar(props) {
 
+
   return (
-    <div>
+    <div id="searchbox">
       <label>
-        <input value={props.search} type="text" onChange={props.filter} id="searchbar" ></input>
+        Filter by name:
+        <input type="text" onChange={props.search} id="searchbar" ></input>
       </label>
-      <label>
-        <input type="checkbox" onChange={props.filter} value="instock" id="checkbox"></input>
-        <p>Only show products in stock</p>
+      <hr/>
+      <label id="checkbox">
+        <input type="checkbox" onChange={props.search} value="instock" id="checkbox"></input>
+        Only show products in stock
       </label>
+      <hr/>
     </div>
   );
 }
