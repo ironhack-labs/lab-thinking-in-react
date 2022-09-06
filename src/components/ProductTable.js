@@ -1,9 +1,6 @@
-import { useState } from 'react';
-import jsonData from '../data.json';
 import ProductRow from './ProductRow';
 
-function ProductTable() {
-  const [productTable, setProductTable] = useState(jsonData);
+function ProductTable(props) {
 
   return (
     <table>
@@ -14,8 +11,8 @@ function ProductTable() {
         </tr>
       </thead>
       <tbody>
-        {products.map((el) => {
-          return <ProductRow name={el.name} price={el.price} />;
+        {props.products.map((el) => {
+          return <ProductRow key={el._id} name={el.name} price={el.price} inStock={el.inStock} />;
         })}
       </tbody>
     </table>

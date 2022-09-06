@@ -1,15 +1,20 @@
-import { useState } from 'react';
-import jsonData from '../data.json';
-
 function ProductRow(props) {
-  const [productRow, setProductRow] = useState(jsonData);
 
+  let inStockColor="black"
+  if (!props.inStock){
+    inStockColor="red"
+  }
+  const style={color:inStockColor}
+  
   return (
     <tr>
-      <td>{props.name}</td>
+      <td style={style}>{props.name}</td>
       <td>{props.price}</td>
     </tr>
   );
 }
+
+//style={props.inStock ? "color:black" : "color:red" }
+
 
 export default ProductRow;

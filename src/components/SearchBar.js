@@ -1,12 +1,14 @@
-import { useState } from 'react';
-import jsonData from '../data.json';
-
-function SearchBar() {
-  const [searchBar, setsearchBar] = useState(jsonData);
+function SearchBar(props) {
 
   return (
     <div>
-      <h1>SearchBar</h1>
+      <label>
+        <input value={props.search} type="text" onChange={props.filter} id="searchbar" ></input>
+      </label>
+      <label>
+        <input type="checkbox" onChange={props.filter} value="instock" id="checkbox"></input>
+        <p>Only show products in stock</p>
+      </label>
     </div>
   );
 }
