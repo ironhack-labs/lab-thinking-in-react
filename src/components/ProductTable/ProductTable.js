@@ -1,4 +1,4 @@
-import ProductRow from './ProductTable';
+import ProductRow from '../ProductRow/ProductRow'
 
 function ProductTable({ products, search, stock }) {
   return (
