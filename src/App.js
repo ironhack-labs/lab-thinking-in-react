@@ -8,11 +8,7 @@ function App() {
     <div className="App">
       
       <ProductsPage />
-
-
-
-
-      
+     
     </div>
   );
 }

@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import jsonData from './ProductsPage';
-import { useState } from 'react';
-import SearchBar from './SearchBar/SearchBar';
+import jsonData from '../../data.json';
+import productsJSON from '../../data.json';
+import ProductTable from './ProductTable/ProductTable';
+
+
 
 function ProductsPage () {
   const [products, setProducts] = useState(jsonData);
