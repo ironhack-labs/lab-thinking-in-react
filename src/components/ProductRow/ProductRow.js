@@ -1,13 +1,17 @@
+function ProductRow({ product }) {
+  return (
+    <>
+      <tr>
+        <td style={!product.inStock ? { color: 'red' } : { color: 'black' }}>
+          {product.name}
+        </td>
 
-
-function ProductRow () {
-
-    return (
-       <>
-
-
-       </> 
-    )
+        <td style={!product.inStock ? { color: 'red' } : { color: 'black' }}>
+          {product.price}
+        </td>
+      </tr>
+    </>
+  );
 }
 
-export default ProductRow
+export default ProductRow;

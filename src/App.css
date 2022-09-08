@@ -7,6 +7,29 @@
   pointer-events: none;
 }
 
+table {
+  margin-top: 32px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: lightgrey;
+}
+
+th {
+  padding: 16px 0;
+}
+
+td {
+  border-top: 1px solid grey;
+  padding: 16px;
+}
+
+tr:hover {
+  background-color: #b1b1b1;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
