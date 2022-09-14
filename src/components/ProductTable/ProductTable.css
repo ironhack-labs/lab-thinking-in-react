@@ -1,0 +1,22 @@
+.table{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 150px;
+}
+
+.table_title{
+    background-color: rgb(180, 179, 179);
+    color: rgb(85, 85, 85);
+    padding: 0px 35px;
+}
+
+.table_title th{
+    padding: 20px 110px;
+}
+
+td {
+    border-bottom: 2px solid rgb(180, 179, 179);
+    padding: 10px 110px;
+}
