@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import '../SearchBar/SearchBar.css';
 
 const SearchBar = (props) => {
-  const [searchInput, setSearchInput] = useState('');
+  // const [searchInput, setSearchInput] = useState('');
   const [inStock, setInStock] = useState(false);
 
   return (
@@ -22,7 +22,7 @@ const SearchBar = (props) => {
         name='inStock'
         id='inStock'
         checked={inStock}
-        onChange={(e) => setInStock(!inStock)}
+        onChange={(e) => props.filterProductsInStock(!inStock)}
         />
         <label htmlFor='inStock'>Only show products in stock</label>
       </div>
