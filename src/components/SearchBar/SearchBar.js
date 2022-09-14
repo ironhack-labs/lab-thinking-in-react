@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import '../SearchBar/SearchBar.css';
 
 const SearchBar = (props) => {
-  // const [searchInput, setSearchInput] = useState('');
-  const [inStock, setInStock] = useState(false);
-
+    
   return (
     <div className='searchbar'>
       <p>Search</p>
@@ -19,10 +17,8 @@ const SearchBar = (props) => {
         <input 
         type="checkbox" 
         className='searchbar_checkbox' 
-        name='inStock'
-        id='inStock'
-        checked={inStock}
-        onChange={(e) => props.filterProductsInStock(!inStock)}
+        checked={props.inStock}
+        onChange={() => props.filterProductsSearch(!props.inStock)}
         />
         <label htmlFor='inStock'>Only show products in stock</label>
       </div>
