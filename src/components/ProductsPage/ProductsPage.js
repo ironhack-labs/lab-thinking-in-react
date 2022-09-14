@@ -6,13 +6,19 @@ import SearchBar from '../SearchBar/SearchBar'
 
 
 const ProductsPage = () => {
-  const [products, setProducts] = useState(data)
+  const [products, setProducts] = useState(data);
+  const [filteredProducts, setFilteredProducts] = useState(products);   //ou useState(data)
+
+  const filterProductsSearch = (input) => {
+    const filtered = products.filter(product => product.name.toLowerCase().includes(input.toLowerCase()));
+    setFilteredProducts(filtered);
+  };
 
   return (
     <div>
         <h1>IronStore</h1>
-        <SearchBar/>
-        <ProductTable products={products}/>
+        <SearchBar filterProductsSearch={filterProductsSearch}/>
+        <ProductTable filteredProducts={filteredProducts}/>
     </div>
   )
 }

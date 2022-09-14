@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 
-
 import '../SearchBar/SearchBar.css';
 
-const SearchBar = () => {
-  const [name, setName] = useState('');
+const SearchBar = (props) => {
+  const [searchInput, setSearchInput] = useState('');
   const [inStock, setInStock] = useState(false);
 
   return (
@@ -14,9 +13,7 @@ const SearchBar = () => {
       type="text" 
       placeholder='search your product here' 
       className='searchbar_input'
-      name='name'
-      value={name}
-      onChange={(e) => setName(e.target.value)}
+      onChange={(e) => props.filterProductsSearch(e.target.value)}
       />
       <div className='checkbox_container'>
         <input 

@@ -4,7 +4,7 @@ import ProductRow from '../ProductRow/ProductRow';
 
 import '../ProductTable/ProductTable.css';
 
-const ProductTable = ({ products }) => {
+const ProductTable = ({ filteredProducts }) => {
   return (
     <table className="table">
       <thead className="table_title">
@@ -14,8 +14,8 @@ const ProductTable = ({ products }) => {
         </tr>
       </thead>
       <tbody>
-          {products.map((product) => {
-            return <ProductRow product={product} />;
+          {filteredProducts.map((product) => {
+            return <ProductRow product={product} key={product.id} />;
           })}
       </tbody>
     </table>
