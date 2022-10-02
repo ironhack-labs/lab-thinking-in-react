@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+
+.ckeckbox{
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+}
+
+input[type="text"]{
+  padding: 10px;
+  color: rgb(0, 0, 0);
+  width: 500px;
+}
+
+input[type="text"]:focus{
+  border: 5px solid blue;
+}
+
+table{
+ margin: auto;
+ width: 60%;
+ font-size: 30px;
+}
+
+table td{
+  background-color: #d7d7d7;
+  padding: 10px;
+}
