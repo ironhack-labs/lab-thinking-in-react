@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+table {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 960px;
+  
+}
+.grey{
+  background-color: rgba(245, 245, 245, 0.897);
+ 
+}
+
