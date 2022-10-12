@@ -1,0 +1,44 @@
+.search-bar {
+  margin-bottom: 3rem;
+}
+.search-bar-input,
+.search-bar-check {
+  margin: 1rem;
+}
+.search-bar-input label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.search-bar-input input {
+  width: 400px;
+  height: 2rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #bbb;
+  font-size: 1rem;
+  padding-left: 1rem;
+}
+.search-bar-input input:hover {
+  background-color: #ccc;
+}
+.search-bar-input input:focus {
+  background-color: #ddd;
+}
+
+.product-table {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.product-table thead {
+  background-color: lightskyblue;
+}
+
+.product-table tbody {
+  background-color: gainsboro;
+  text-align: start;
+}
+
+.product-table tbody td {
+  padding: 0.5rem 1rem;
+}
