@@ -1,25 +1,45 @@
-import logo from './logo.svg';
+// src/App.js
 import './App.css';
+import ProductsPage from './components/ProductsPage';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import { purple } from '@mui/material/colors';
+
+let darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+    primary: {
+      light: '#757ce8',
+      main: purple[500],
+      dark: '#002884',
+      contrastText: '#fff',
+    },
+    secondary: {
+      light: '#ff7961',
+      main: '#fff',
+      dark: '#ba000d',
+      contrastText: '#000',
+      custom: '#ba000d',
+    },
+  },
+});
+
+darkTheme = createTheme(darkTheme, {
+  palette: {
+    error: {
+      main: darkTheme.palette.secondary.custom,
+    },
+  },
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
+      <div className="App">
+        <ProductsPage />
+      </div>
+    </ThemeProvider>
   );
 }
-
 export default App;
