@@ -7,24 +7,31 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import ProductRow from './ProductRow';
 
-function ProductTable() {
+function ProductTable({ jsonData }) {
   return (
     <TableContainer component={Paper}>
       <Table>
         <TableHead>
           <TableRow hover>
-            {/* <TableCell style={{ cursor: 'pointer' }} onClick={sortByName}> */}
-            <TableCell>
-              Name <span color="error">&#8639;&#8642;</span>
+            {/* <TableCell onClick={sortByName}> */}
+            <TableCell style={{ cursor: 'pointer' }}>
+              <h2>Name &#8639;&#8642;</h2>
             </TableCell>
-            {/* <TableCell style={{ cursor: 'pointer' }} onClick={sortByPopularity}> */}
-            <TableCell>
-              <span>Price &#8639;&#8642;</span>
+            {/* <TableCell onClick={sortByPopularity}> */}
+            <TableCell style={{ cursor: 'pointer' }}>
+              <h2>Price &#8639;&#8642;</h2>
             </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          <ProductRow />
+          {jsonData.map((product) => (
+            <ProductRow
+              key={product.id}
+              name={product.name}
+              price={product.price}
+              inStock={product.inStock}
+            />
+          ))}
         </TableBody>
       </Table>
     </TableContainer>

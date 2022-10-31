@@ -1,15 +1,24 @@
 import TableRow from '@mui/material/TableRow';
 import TableCell from '@mui/material/TableCell';
+import { red } from '@mui/material/colors';
 
-function ProductRow() {
+function ProductRow({ name, price, inStock }) {
   return (
-    <TableRow hover>
+    <TableRow
+    // hover
+    // sx={{
+    //   backgroundColor: '',
+    //   '&:hover': {
+    //     backgroundColor: red,
+    //     // opacity: [0.1, 0.4, 0.3],
+    //   },
+    // }}
+    >
       <TableCell>
-        <p>Football</p>
+        {inStock ? <p>{name}</p> : <p className="red">{name}</p>}
       </TableCell>
-      {/* <TableCell style={{ cursor: 'pointer' }} onClick={sortByPopularity}> */}
       <TableCell>
-        <p>100$</p>
+        <p>{price}</p>
       </TableCell>
     </TableRow>
   );

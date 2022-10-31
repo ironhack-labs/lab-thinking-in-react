@@ -32,7 +32,6 @@ function SearchBar() {
             onChange={handleChange}
             inputProps={{ 'aria-label': 'controlled' }}
             label="End"
-            labelPlacement="end"
           />
         }
         label="Only show products with stock"
