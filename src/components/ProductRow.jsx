@@ -5,14 +5,14 @@ import { red } from '@mui/material/colors';
 function ProductRow({ name, price, inStock }) {
   return (
     <TableRow
-    // hover
-    // sx={{
-    //   backgroundColor: '',
-    //   '&:hover': {
-    //     backgroundColor: red,
-    //     // opacity: [0.1, 0.4, 0.3],
-    //   },
-    // }}
+      hover
+      // sx={{
+      //   backgroundColor: '',
+      //   '&:hover': {
+      //     backgroundColor: red,
+      //     // opacity: [0.1, 0.4, 0.3],
+      //   },
+      // }}
     >
       <TableCell>
         {inStock ? <p>{name}</p> : <p className="red">{name}</p>}

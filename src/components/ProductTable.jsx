@@ -10,7 +10,7 @@ import ProductRow from './ProductRow';
 function ProductTable({ jsonData }) {
   return (
     <TableContainer component={Paper}>
-      <Table>
+      <Table size="small">
         <TableHead>
           <TableRow hover>
             {/* <TableCell onClick={sortByName}> */}
