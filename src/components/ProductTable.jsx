@@ -13,18 +13,17 @@ function ProductTable({ products, searchInput }) {
       <Table size="small">
         <TableHead>
           <TableRow hover>
-            {/* <TableCell onClick={sortByName}> */}
-            <TableCell style={{ cursor: 'pointer' }}>
-              <h2>Name &#8639;&#8642;</h2>
+            <TableCell>
+              <h2>Name</h2>
             </TableCell>
-            {/* <TableCell onClick={sortByPopularity}> */}
-            <TableCell style={{ cursor: 'pointer' }}>
-              <h2>Price &#8639;&#8642;</h2>
+            <TableCell>
+              <h2>Price</h2>
             </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {products
+            // eslint-disable-next-line array-callback-return
             .filter((item) => {
               if (searchInput === '') {
                 return item;

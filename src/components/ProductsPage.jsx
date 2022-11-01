@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import jsonData from '../data.json';
-
 import ProductTable from './ProductTable';
 import SearchBar from './SearchBar';
 
@@ -9,17 +8,8 @@ function ProductsPage() {
   const [checked, setChecked] = useState(true);
   const [searchInput, setSearchInput] = useState('');
 
-  // Filter by SearchInput
-  // const filterProducts = () => {
-  //   const filteredProducts = products.filter((product) =>
-  //     product.name.includes(searchInput)
-  //   );
-
-  // };
-
   const handleSearch = (event) => {
     setSearchInput(event.target.value);
-    // filterProducts();
   };
 
   // Filter by inStockSwitch

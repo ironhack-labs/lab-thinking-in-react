@@ -18,18 +18,16 @@ function SearchBar({ productsInStockSwitch, handleSearch, searchInput }) {
           onChange={handleSearch}
           value={searchInput}
           label="Search Products"
-          color="secondary"
-          focused
+          color="primary"
         />
       </Box>
 
       <FormControlLabel
         control={
           <Switch
-            // color="secondary"
+            color="primary"
             onChange={productsInStockSwitch}
             inputProps={{ 'aria-label': 'controlled' }}
-            label="End"
           />
         }
         label="Only show products with stock"
