@@ -7,7 +7,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import ProductRow from './ProductRow';
 
-function ProductTable({ jsonData }) {
+function ProductTable({ products, searchInput }) {
   return (
     <TableContainer component={Paper}>
       <Table size="small">
@@ -24,14 +24,24 @@ function ProductTable({ jsonData }) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {jsonData.map((product) => (
-            <ProductRow
-              key={product.id}
-              name={product.name}
-              price={product.price}
-              inStock={product.inStock}
-            />
-          ))}
+          {products
+            .filter((item) => {
+              if (searchInput === '') {
+                return item;
+              } else if (
+                item.name.toLowerCase().includes(searchInput.toLowerCase())
+              ) {
+                return item;
+              }
+            })
+            .map((product) => (
+              <ProductRow
+                key={product.id}
+                name={product.name}
+                price={product.price}
+                inStock={product.inStock}
+              />
+            ))}
         </TableBody>
       </Table>
     </TableContainer>

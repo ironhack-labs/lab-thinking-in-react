@@ -7,7 +7,22 @@ import SearchBar from './SearchBar';
 function ProductsPage() {
   const [products, setProducts] = useState(jsonData);
   const [checked, setChecked] = useState(true);
+  const [searchInput, setSearchInput] = useState('');
 
+  // Filter by SearchInput
+  // const filterProducts = () => {
+  //   const filteredProducts = products.filter((product) =>
+  //     product.name.includes(searchInput)
+  //   );
+
+  // };
+
+  const handleSearch = (event) => {
+    setSearchInput(event.target.value);
+    // filterProducts();
+  };
+
+  // Filter by inStockSwitch
   const productsWithStock = products.filter((product) => {
     return product.inStock === true;
   });
@@ -26,8 +41,10 @@ function ProductsPage() {
       <SearchBar
         checked={checked}
         productsInStockSwitch={productsInStockSwitch}
+        handleSearch={handleSearch}
+        searchInput={searchInput}
       />
-      <ProductTable jsonData={products} />
+      <ProductTable products={products} searchInput={searchInput} />
     </div>
   );
 }

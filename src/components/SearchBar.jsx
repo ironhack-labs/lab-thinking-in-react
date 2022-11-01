@@ -1,17 +1,9 @@
-import { useState } from 'react';
-
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 
-function SearchBar({ productsInStockSwitch }) {
-  // const [checked, setChecked] = useState(true);
-
-  // const productsInStock = (event) => {
-  //   setChecked(event.target.checked);
-  // };
-
+function SearchBar({ productsInStockSwitch, handleSearch, searchInput }) {
   return (
     <div>
       <Box
@@ -22,7 +14,13 @@ function SearchBar({ productsInStockSwitch }) {
         noValidate
         autoComplete="off"
       >
-        <TextField label="Search Products" color="secondary" focused />
+        <TextField
+          onChange={handleSearch}
+          value={searchInput}
+          label="Search Products"
+          color="secondary"
+          focused
+        />
       </Box>
 
       <FormControlLabel
