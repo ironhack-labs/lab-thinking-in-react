@@ -4,7 +4,7 @@ import ProductTable from './ProductTable';
 import SearchBar from './SearchBar';
 
 function ProductsPage() {
-  const [products, setProducts] = useState(jsonData);
+  const [products, setProducts] = useState(jsonData); // Kann theoretisch weg
   const [checked, setChecked] = useState(true);
   const [searchInput, setSearchInput] = useState('');
 
@@ -21,20 +21,15 @@ function ProductsPage() {
     checked ? setProducts(productsWithStock) : setProducts(jsonData);
   };
 
-  const productsInStockSwitch = (event) => {
+  const inStockSwitch = (event) => {
     setChecked(!event.target.checked);
     sortProducts();
   };
 
   return (
     <div>
-      <SearchBar
-        checked={checked}
-        productsInStockSwitch={productsInStockSwitch}
-        handleSearch={handleSearch}
-        searchInput={searchInput}
-      />
-      <ProductTable products={products} searchInput={searchInput} />
+      <SearchBar {...{ checked, inStockSwitch, handleSearch, searchInput }} />
+      <ProductTable {...{ products, searchInput, inStockSwitch }} />
     </div>
   );
 }

@@ -3,7 +3,7 @@ import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 
-function SearchBar({ productsInStockSwitch, handleSearch, searchInput }) {
+function SearchBar({ inStockSwitch, handleSearch, searchInput }) {
   return (
     <div>
       <Box
@@ -26,7 +26,7 @@ function SearchBar({ productsInStockSwitch, handleSearch, searchInput }) {
         control={
           <Switch
             color="primary"
-            onChange={productsInStockSwitch}
+            onChange={inStockSwitch}
             inputProps={{ 'aria-label': 'controlled' }}
           />
         }
