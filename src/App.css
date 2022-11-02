@@ -1,0 +1,13 @@
+.tableDiv {
+    margin-top: 25px;
+}
+
+label {
+    font-size: smaller;
+}
+
+.mainDiv {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}

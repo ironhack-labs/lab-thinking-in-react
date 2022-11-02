@@ -1,12 +1,27 @@
-import React from 'react'
-import ProductRow from './ProductRow'
+import React from 'react';
+import ProductRow from './ProductRow';
 
-function ProductTable(props) {
-    const productList = props.products;
-    console.log("productList: ", productList)
+function ProductTable({ products, searchValue, inStock }) {
+  console.log(
+    'ProductTable inStockValue: ',
+    inStock,
+    'ProductTable products: ',
+    products,
+    'ProductTable SearchValue: ',
+    searchValue
+  );
+
+  const filteredProductsByName = products.filter((elem) => {
+    return elem.name.toLowerCase().includes(searchValue.toLowerCase());
+  });
+
+  const filteredProductsByInStock = filteredProductsByName.filter((elem) => {
+    return inStock ? elem.inStock : elem;
+  });
+
   return (
-    <div>
-        <table className="productTable">
+    <div className='tableDiv'>
+      <table className="productTable">
         <thead>
           <tr>
             <th>Name</th>
@@ -14,11 +29,11 @@ function ProductTable(props) {
           </tr>
         </thead>
         <tbody>
-        <ProductRow productList={productList}/>
+          <ProductRow filteredProductsByInStock={filteredProductsByInStock} />
         </tbody>
       </table>
     </div>
-  )
+  );
 }
 
-export default ProductTable
+export default ProductTable;

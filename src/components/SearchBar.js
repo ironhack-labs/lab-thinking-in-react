@@ -1,30 +1,31 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-function SearchBar(props) {
-  const [searchValue, setSearchValue] = useState('');
-
-  console.log('Searchbar Props: ', props);
-  const allProducts = props.products;
-
-  function handleChange(elem) {
-    setSearchValue(elem.target.value);
-    const filteredProducts = allProducts.filter((elem) => {
-      return elem.name.toLowerCase().includes(searchValue.toLowerCase());
-    });
-    console.log('filteredProducts', filteredProducts);
-    console.log('SearchValue', searchValue);
-  }
-
+function SearchBar({
+  handleChangeSearch,
+  searchValue,
+  inStock,
+  handleChangeInStock,
+}) {
   return (
     <div>
-      <p>Search</p>
       <input
         name="search"
         type="text"
+        className='input'
         value={searchValue}
-        onChange={handleChange}
+        onChange={handleChangeSearch}
         placeholder="Search..."
       />
+      <br />
+      <label>
+        <input
+          type="checkbox"
+          className='checkbox'
+          checked={inStock}
+          onChange={handleChangeInStock}
+        />
+        Only show products in stock
+      </label>
     </div>
   );
 }

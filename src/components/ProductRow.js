@@ -1,16 +1,12 @@
-function ProductRow(props) {
-  console.log('ProductRow Props: ', props.productList);
-  const productList = props.productList;
+function ProductRow({ filteredProductsByInStock }) {
+  console.log('ProductRow Products: ', filteredProductsByInStock);
   return (
     <>
-      {productList.map((elem) => {
+      {filteredProductsByInStock.map((elem) => {
         return (
-          <tr
-            key={elem.id}
-            style={{ color: elem.inStock ? 'black' : 'red' }}
-          >
-            <td>{elem.name}</td>
-            <td>{elem.price}</td>
+          <tr key={elem.id} style={{ color: elem.inStock ? 'black' : 'red' }}>
+            <td className="elementName">{elem.name}</td>
+            <td className="elementPrice">{elem.price}</td>
           </tr>
         );
       })}
