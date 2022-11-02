@@ -19,36 +19,24 @@ function ProductsPage() {
 
   // eslint-disable-next-line array-callback-return
   let products = jsonData.filter((product) => {
-    if (checked && searchInput === '') {
-      return product.inStock === true;
-    } else if (!checked && searchInput === '') {
-      return product;
-    } else if (
-      checked &&
-      product.name.toLowerCase().includes(searchInput.toLowerCase())
-    ) {
-      return product.inStock === true;
-    } else if (
-      !checked &&
-      product.name.toLowerCase().includes(searchInput.toLowerCase())
-    ) {
-      return product;
+    if (checked) {
+      if (searchInput === '') {
+        return product.inStock === true;
+      } else if (
+        product.name.toLowerCase().includes(searchInput.toLowerCase())
+      ) {
+        return product.inStock === true;
+      }
+    } else if (!checked) {
+      if (searchInput === '') {
+        return product;
+      } else if (
+        product.name.toLowerCase().includes(searchInput.toLowerCase())
+      ) {
+        return product.inStock === true;
+      }
     }
   });
-
-  // if (checked)
-  //   products = products.filter((product) => {
-  //     return product.inStock === true;
-  //   });
-
-  // Filter by inStockSwitch
-  // const productsWithStock = products.filter((product) => {
-  //   return product.inStock === true;
-  // });
-
-  // const sortProducts = () => {
-  //   checked ? setProducts(productsWithStock) : setProducts(jsonData);
-  // };
 
   return (
     <div>
@@ -58,3 +46,24 @@ function ProductsPage() {
   );
 }
 export default ProductsPage;
+
+// refactoring round 1
+
+// eslint-disable-next-line array-callback-return
+// let products = jsonData.filter((product) => {
+//   if (checked && searchInput === '') {
+//     return product.inStock === true;
+//   } else if (!checked && searchInput === '') {
+//     return product;
+//   } else if (
+//     checked &&
+//     product.name.toLowerCase().includes(searchInput.toLowerCase())
+//   ) {
+//     return product.inStock === true;
+//   } else if (
+//     !checked &&
+//     product.name.toLowerCase().includes(searchInput.toLowerCase())
+//   ) {
+//     return product;
+//   }
+// });
