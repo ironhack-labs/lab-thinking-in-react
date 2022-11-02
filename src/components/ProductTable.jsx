@@ -7,7 +7,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import ProductRow from './ProductRow';
 
-function ProductTable({ products, searchInput }) {
+function ProductTable({ products }) {
   return (
     <TableContainer component={Paper}>
       <Table size="small">
@@ -22,25 +22,14 @@ function ProductTable({ products, searchInput }) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {products
-            // eslint-disable-next-line array-callback-return
-            .filter((item) => {
-              if (searchInput === '') {
-                return item;
-              } else if (
-                item.name.toLowerCase().includes(searchInput.toLowerCase())
-              ) {
-                return item;
-              }
-            })
-            .map((product) => (
-              <ProductRow
-                key={product.id}
-                name={product.name}
-                price={product.price}
-                inStock={product.inStock}
-              />
-            ))}
+          {products.map((product) => (
+            <ProductRow
+              key={product.id}
+              name={product.name}
+              price={product.price}
+              inStock={product.inStock}
+            />
+          ))}
         </TableBody>
       </Table>
     </TableContainer>
