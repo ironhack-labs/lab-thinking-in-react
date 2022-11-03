@@ -5,6 +5,8 @@ export function ProductTable({ products, searchString }) {
     product.name.toLowerCase().includes(searchString.toLowerCase())
   );
 
+
+
   return (
     <div>
       <table>

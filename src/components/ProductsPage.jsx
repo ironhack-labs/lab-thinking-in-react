@@ -8,11 +8,14 @@ export function ProductsPage() {
   const handleChange = (e) => {
     setFormState(e.target.value);
   };
-
+  const handleCheckbox = (e) => {
+    if (e.target.value === false) {
+    }
+  };
 
   return (
     <div>
-      <SearchBar handleChange={handleChange} searchString={searchString} />
+      <SearchBar {...{ handleChange, searchString, handleCheckbox }} />
       <ProductTable products={products} searchString={searchString} />
     </div>
   );
