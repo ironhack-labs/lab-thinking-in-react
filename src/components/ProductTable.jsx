@@ -1,6 +1,10 @@
 import { ProductRow } from './ProductRow';
 
-export function ProductTable({ products }) {
+export function ProductTable({ products, searchString }) {
+  const filteredProducts = products.filter((product) =>
+    product.name.toLowerCase().includes(searchString.toLowerCase())
+  );
+
   return (
     <div>
       <table>
@@ -9,7 +13,7 @@ export function ProductTable({ products }) {
           <th>Price</th>
         </tr>
 
-        {products.map((product) => {
+        {filteredProducts.map((product) => {
           return (
             <ProductRow
               name={product.name}
@@ -22,21 +26,3 @@ export function ProductTable({ products }) {
     </div>
   );
 }
-
-// <table>
-// <tr>
-//   <th>Company</th>
-//   <th>Contact</th>
-//   <th>Country</th>
-// </tr>
-// <tr>
-//   <td>Alfreds Futterkiste</td>
-//   <td>Maria Anders</td>
-//   <td>Germany</td>
-// </tr>
-// <tr>
-//   <td>Centro comercial Moctezuma</td>
-//   <td>Francisco Chang</td>
-//   <td>Mexico</td>
-// </tr>
-// </table>

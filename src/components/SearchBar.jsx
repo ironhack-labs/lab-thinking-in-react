@@ -1,13 +1,7 @@
-export function SearchBar({ handleChange, formState }) {
-  console.log(formState);
+export function SearchBar({ searchString, handleChange }) {
   return (
     <div>
-      <input
-        type="text"
-        placeholder="Enter text"
-        onChange={handleChange}
-        value={formState}
-      />
+      <input value={searchString} onChange={handleChange} />
     </div>
   );
 }

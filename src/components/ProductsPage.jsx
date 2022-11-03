@@ -1,30 +1,19 @@
 import { useState } from 'react';
-import jsonData from './../data.json';
+import products from './../data.json';
 import { ProductTable } from './ProductTable';
 import { SearchBar } from './SearchBar';
 
-const defaultState = [];
-
 export function ProductsPage() {
-  const [products, setProducts] = useState(jsonData);
-
-  const [formState, setFormState] = useState(defaultState);
-
-  console.log(formState.length);
-  const handleChange = (event) => {
-    setFormState(() => {
-      return [event.target.value];
-    });
+  const [searchString, setFormState] = useState('');
+  const handleChange = (e) => {
+    setFormState(e.target.value);
   };
 
-  const searchedProduct = () => {
-   let search = [...products].filter
-  };
 
   return (
     <div>
-      <SearchBar handleChange={handleChange} formState={formState} />
-      <ProductTable products={products} />
+      <SearchBar handleChange={handleChange} searchString={searchString} />
+      <ProductTable products={products} searchString={searchString} />
     </div>
   );
 }
