@@ -1,0 +1,4 @@
+ProductsPage
+ -SearchBar
+ -ProductTable
+   -ProductRow
