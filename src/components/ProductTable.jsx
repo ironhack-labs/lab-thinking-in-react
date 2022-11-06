@@ -1,28 +1,19 @@
 import React from 'react';
+import ProductsRow from './ProductsRow';
 
 function ProductTable(props) {
-  console.log(props);
   const { productsToShow } = props;
   return (
-    <div 
-    style={{display:"flex", justifyContent:"center"}}>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
       <table>
         <thead>
-          <tr >
-            <th  style={{padding:"2vh 10vh"}}>Name</th>
+          <tr>
+            <th style={{ padding: '2vh 10vh' }}>Name</th>
             <th>Price</th>
           </tr>
         </thead>
-        <tbody>
-          {productsToShow.map((eachProduct) => {
-            return (
-              <tr key={eachProduct.id}>
-                <td>{eachProduct.name}</td>
-                <td>{eachProduct.price}</td>
-              </tr>
-            );
-          })}
-        </tbody>
+
+        <ProductsRow productsToShow={productsToShow} />
       </table>
     </div>
   );
