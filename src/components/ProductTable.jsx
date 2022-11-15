@@ -1,8 +1,11 @@
 import React from 'react'
 import { ProductRow } from '../components/ProductRow';
+import { useContext } from "react"
+import { ThemeContext } from "../context/ThemeContext";
 
 function ProductTable({ products, filterText }) {
 
+    const { isDarkMode } = useContext(ThemeContext);
     const rows = [];
 
     products.forEach((product) => {
@@ -24,12 +27,14 @@ function ProductTable({ products, filterText }) {
 
     return (
         <>
-            <h2>ProductTable</h2>
-            <table>
-                <tr className='border-bottom'>
-                    <th scope="col">Name</th>
-                    <th scope="col">Price</th>
-                </tr>
+            <h2 style={{ color: isDarkMode ? "white" : "black" }}>ProductTable</h2>
+            <table style={{ color: isDarkMode ? "white" : "#283848" }}>
+                <thead>
+                    <tr className='border-bottom' style={{ borderBottom: isDarkMode ? "1px solid white" : "1px solid #283848" }}>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
                 {rows}
             </table>
         </>
