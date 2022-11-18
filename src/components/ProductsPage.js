@@ -27,8 +27,8 @@ function ProductsPage () {
         <div>
             <h1>IronStore</h1>
             <SearchBar filterProduct={filterProduct}/>
-            <label >Product on stock</label>
             <input type="checkbox" onChange={isProductOnStock}/>
+            <label>Only show products in stock</label>
             <ProductTable productsToShow={productsToShow}/>
         </div>
     )

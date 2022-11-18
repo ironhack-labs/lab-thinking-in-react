@@ -5,5 +5,41 @@
 .search {
   display: flex;
   flex-direction: column;
-  margin: 2rem;
+  margin: 0 10rem;
 }
+
+.search label {
+  margin-bottom: 0.5rem;
+}
+
+.search input {
+  height: 2rem;
+  border: 1px solid #999999;
+  border-radius: 0.3rem;
+  margin: 0 0 0.5rem;
+}
+
+table {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 10rem 0;
+}
+
+table thead tr {
+  display: flex;
+  height: 3rem;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #e7e7e7;
+}
+
+
+table tbody tr {
+  display: flex;
+  height: 3rem;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+
