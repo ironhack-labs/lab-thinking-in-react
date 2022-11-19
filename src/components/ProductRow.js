@@ -1,14 +1,11 @@
-const ProductRow = (products) => {
+const ProductRow = (props) => {
+  const {name, price} = props
   return (
-    <div>
-        {products.map((product) => {
-        <tr>
-            <td>{product.name}</td>
-            <td>{product.price}</td>
-        </tr>
-        } 
-        )}
-    </div>
+    <tr>
+      <td>{name}</td>
+      <td>{price}</td>
+
+    </tr>
   )
 }
 

@@ -4,18 +4,25 @@ const ProductTable = (props) => {
     const { products } = props
   return (
     <div>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Price</th>
-            </tr>
-        </thead>
 
-        <tbody>
-            <ProductRow 
-                products={products}
-            />
-        </tbody>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                 { products.map((product) => {
+                    return <ProductRow
+                        key={product.id}
+                        price={product.price}  
+                        name={product.name} 
+                        />
+                 })}
+            </tbody>
+        </table>
         
 
     </div>
