@@ -17,7 +17,7 @@ export function ProductsPage() {
       <h1>IronStore</h1>
       <SearchBar
         jsonData={jsonData}
-        products={filteredProducts}
+        products={products}
         setQuery={setQuery}
         setProducts={setProducts}
       />
