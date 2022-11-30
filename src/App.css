@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+table,
+td {
+    border: 1px solid #333;
+}
+
+thead,
+tfoot {
+    background-color: #333;
+    color: #fff;
+}
+.colorInStock{
+  color: black;
+}
+.colorOutOfStock{
+  color: red;
+}
