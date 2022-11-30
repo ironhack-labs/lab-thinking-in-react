@@ -1,7 +1,12 @@
 import React from 'react'
 
-export const SearchBar = () => {
+export const SearchBar = ({setQuery}) => {
+    const handleSearchChange = event => {
+		setQuery(event.target.value)
+	}
   return (
-    <div>SearchBar</div>
+    <>
+        <input type="text" onChange={handleSearchChange}/>
+    </>
   )
 }
