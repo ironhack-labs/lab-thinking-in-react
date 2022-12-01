@@ -1,0 +1,6 @@
+.product {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 500px;
+    margin-right: 500px;
+}
