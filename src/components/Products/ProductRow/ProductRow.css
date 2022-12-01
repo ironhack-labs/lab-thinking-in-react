@@ -1,0 +1,7 @@
+
+.flexProduct {
+    display: flex;
+    margin: 0 50px;
+    justify-content: space-around;
+    padding: 10px
+}

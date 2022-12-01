@@ -1,0 +1,7 @@
+
+.flex {
+    display: flex;
+    margin: 50px;
+    justify-content: space-around;
+    border: solid black 3px
+}
