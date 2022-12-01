@@ -1,0 +1,5 @@
+.TableHeader {
+    display: flex;
+    justify-content: space-around;
+    background-color: lightblue;
+}
