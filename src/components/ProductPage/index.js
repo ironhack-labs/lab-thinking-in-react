@@ -7,20 +7,27 @@ const ProductPage = () => {
   const [products, setProducts] = useState(jsonData);
   const productsBackup = jsonData;
 
-  const getSearch = (term) => {
+  const updateSearch = (queries) => {
+    const { term, checked } = queries;
+
     const matches = productsBackup.filter(product => {
       const prodLower = product.name.toLowerCase();
       const termLower = term.toLowerCase();
 
-      return prodLower.includes(termLower);
-    })
+      const result = checked ?
+        prodLower.includes(termLower) && product.inStock :
+        prodLower.includes(termLower);
+
+      return result;
+    });
+
     setProducts(matches);
   }
 
   return (
     <div className='product-page'>
       <h1>IronStore</h1>
-      <SearchBar getSearch={ getSearch }/>
+      <SearchBar updateSearch={updateSearch}/>
       <ProductTable products={products}/>
     </div>
   )

@@ -32,6 +32,16 @@ tr {
 .search-bar {
   display: flex;
   flex-direction: column;
+  margin: 2vw;
+}
+
+.search-bar input[type=text] {
+  margin: 2vh 0;
+}
+
+.search-bar input[type=checkbox] {
+  transform: scale(1.4);
+  margin-right: 0.5vw;
 }
 
 .prod-out {

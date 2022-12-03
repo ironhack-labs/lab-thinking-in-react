@@ -1,17 +1,27 @@
 import React, { useState } from 'react';
 
-const SearchBar = ( {getSearch} ) => {
+const SearchBar = ({ updateSearch }) => {
   const [search, setSearch] = useState("");
-  const [stock, setStock] = useState(false);
+  const [inStock, setInStock] = useState(false);
 
   const handleSearch = (e) => {
-    setSearch(e.target.value);
-    getSearch(e.target.value);
-  }
+    let textValue = search;
+    let checkValue = inStock;
 
-  const handleStock = (e) => {
-    setStock(e.target.checked);
-    return e.target.checked;
+    if (e.target.type === "text") {
+      textValue = e.target.value;
+      setSearch(e.target.value);
+    }
+
+    if (e.target.type === "checkbox") {
+      checkValue = e.target.checked;
+      setInStock(e.target.checked);
+    }
+
+    updateSearch({
+      term: textValue,
+      checked: checkValue
+    });
   }
 
   return (
@@ -19,7 +29,7 @@ const SearchBar = ( {getSearch} ) => {
       <label>Search</label>
       <input type="text" value={search} onChange={handleSearch}/>
       <div>
-        <input type="checkbox" checked={stock} onChange={handleStock}/>
+        <input type="checkbox" checked={inStock} onChange={handleSearch}/>
         <label>Show only products in stock</label>
       </div>
     </div>
