@@ -1,0 +1,12 @@
+.table {
+    border: 2px solid black;
+    margin: 10vh;
+    width: 50vw;
+    height: 50vh;
+}
+
+.titles {
+    background-color: rgb(223, 223, 223);
+    color: rgb(112, 112, 112);
+    height: 10vh;
+}
