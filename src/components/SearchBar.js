@@ -12,7 +12,7 @@ const SearchBar = () => {
     }
     if (searchInput.length > 0) {
         products.filter((product) => {
-            return  product.name.toLowerCase() === setSearchInput
+            return  product.name.match(setSearchInput)
         })
     }
 
