@@ -6,20 +6,24 @@ import ProductTable from '../ProductTable/ProductTable.components';
 export default function ProductsPage() {
   //State
   const [products, setProducts] = useState(jsonData);
-  const [searchText, setSearchText] = useState('');
+  const [filtered, setFiltered] = useState('');
+
+  let filteredProducts = products.filter((product) => {
+    return product.name.toLowerCase().includes(filtered);
+  });
 
   function handleSearchChange(searchText) {
-    const filteredProducts = products.filter((product) => {
-      return product.name.toLowerCase().includes(searchText.toLowerCase());
-    });
-    setProducts(filteredProducts);
+    setFiltered(filteredProducts);
   }
 
   return (
     <div>
       <h1>IronStore</h1>
-      <SearchBar handleSearchChange={handleSearchChange} />
-      <ProductTable products={products} />
+      <SearchBar
+        handleSearchChange={handleSearchChange}
+        setFiltered={setFiltered}
+      />
+      <ProductTable products={filteredProducts} />
     </div>
   );
 }
