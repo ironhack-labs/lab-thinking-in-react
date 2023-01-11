@@ -1,8 +1,12 @@
-import logo from './logo.svg';
+import ProductsPage from './components/ProductsPage/ProductsPage.component';
 import './App.css';
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <ProductsPage />
+    </div>
+  );
 }
 
 export default App;

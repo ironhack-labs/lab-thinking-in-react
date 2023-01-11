@@ -1,3 +1,13 @@
 export default function ProductTable() {
-  return <div></div>;
+  return (
+    <div>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+        </tr>
+        <tr></tr>
+      </table>
+    </div>
+  );
 }
