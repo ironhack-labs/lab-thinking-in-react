@@ -3,7 +3,7 @@ import products from '../data.json'
 
 const SearchBar = () => {
 
-    const [searchInput, setSearchInput] = useState({})
+    const [searchInput, setSearchInput] = useState('')
 
     const searchProducts = e => {
         e.preventDefault()
@@ -12,7 +12,7 @@ const SearchBar = () => {
     }
     if (searchInput.length > 0) {
         products.filter((product) => {
-            return  product.name.toLowerCase() === {setSearchInput}.toLowerCase()
+            return  product.name.toLowerCase() === setSearchInput
         })
     }
 
