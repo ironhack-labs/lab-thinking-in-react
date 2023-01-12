@@ -6,10 +6,10 @@
 
     return(
         
-        copyOfArray.map(product=>{
-            return <tr key={product.id}>
+        copyOfArray.map((product, index)=>{
+            return <tr className={index%2===0? "blue" : "gray"} key={product.id}>
             {product.inStock 
-                ? <td>{product.name}</td>
+                ? <td >{product.name}</td>
                 : <td className="red">{product.name}</td>
             }
                 

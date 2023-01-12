@@ -25,12 +25,28 @@ code {
 td{
   outline:1px solid gray;
   width: 350px;
+  height: 35px;
 }
 
 table{
   margin:0 auto;
+  border: 1px black solid;
+  padding: 25px;
+  outline: 2px orange solid;
+  outline-offset: 10px;
 }
 
 .red{
   color:red
+}
+
+.orange{
+  background-color: orange;
+  font:black;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.gray{
+  background-color: lightgrey;
 }

@@ -9,8 +9,8 @@ function ProductTable (props) {
         <table>
             <thead>
                 <tr>
-                    <td>Name</td>
-                    <td>Price</td>
+                    <td className="orange">Name</td>
+                    <td className="orange">Price</td>
                 </tr>
             </thead>
             <tbody>

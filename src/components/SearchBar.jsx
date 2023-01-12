@@ -1,30 +1,43 @@
 import { useState } from 'react';
 
+
 function SearchBar (props) {
   
     const { products, setProducts } = props
     const [userFilter, userSetFilter] =useState('')
 
 
-    const copyOfArray = [...products]   
-    const productsFilter = copyOfArray.filter(product=>{
+    const copyOfArray = [...products]
+    
+
+    const filterFunction = (event) => {
+        userSetFilter(event.target.value)
+        const productsFilter = copyOfArray.filter(product=>{
        return product.name.toLowerCase().includes(userFilter.toLowerCase())
     })
-
-    const filterFunction = () => {
         setProducts(productsFilter)
+    }
+
+    const isInStock = (event) =>{
+        //trying to reset products' initial array value here but the Array is already modified and can't go back
+        if (!event.target.checked){
+            setProducts(copyOfArray)
+        } 
+       let productsInStock = copyOfArray.filter(product=>{
+            return product.inStock === true
+        })
+
+        setProducts(productsInStock)
     }
    
 
   return(
       <div>
-        <h1>Search:</h1>
+        <h1>Filter by products' name:</h1>
         <div className='column-flex'>
-        <input onChange={(event)=> {userSetFilter(event.target.value)
-            filterFunction()}
-        } value={userFilter} className='input' type="text"></input>
+        <input onChange={(event)=> filterFunction(event) } value={userFilter} className='input' type="search"></input>
             <div>
-            <input type="checkbox" placeholder='Only show products in stock'></input>
+            <input onClick={(event)=>isInStock(event)} type="checkbox" placeholder='Only show products in stock'></input>
             <label>Only show products in stock</label>
             </div>
         </div>
