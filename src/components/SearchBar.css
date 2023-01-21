@@ -1,0 +1,5 @@
+.search-group {
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+}

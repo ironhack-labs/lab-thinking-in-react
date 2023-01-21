@@ -1,3 +1,4 @@
+import './ProductsPage.css';
 import SearchBar from './SearchBar';
 import jsonData from '../data.json';
 import ProductTable from './ProductTable';
@@ -28,7 +29,7 @@ function ProductsPage() {
   }
 
   return (
-    <div>
+    <div className="components-group">
       <h1>IronStore</h1>
       <SearchBar
         handleFilterProducts={handleFilterProducts}

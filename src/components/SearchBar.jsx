@@ -1,3 +1,4 @@
+import './SearchBar.css';
 import { useState } from 'react';
 
 function SearchBar(props) {
@@ -15,17 +16,19 @@ function SearchBar(props) {
   }
 
   return (
-    <div>
+    <div className="search-group">
       <label htmlFor="search">Search</label>
       <input onChange={handleSearch} type="text" value={searchBar} />
 
-      <input
-        onChange={handleInStockItems}
-        type="checkbox"
-        id="inStock"
-        checked={inStock}
-      />
-      <label htmlFor="inStockOnly">Only show products in stock</label>
+      <div>
+        <input
+          onChange={handleInStockItems}
+          type="checkbox"
+          id="inStock"
+          checked={inStock}
+        />
+        <label htmlFor="inStockOnly">Only show products in stock</label>
+      </div>
     </div>
   );
 }

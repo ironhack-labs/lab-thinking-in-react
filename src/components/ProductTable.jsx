@@ -1,6 +1,4 @@
-import React from 'react';
-import { useState } from 'react';
-import jsonData from '../data.json';
+import './ProductTable.css';
 import ProductRow from './ProductRow';
 
 function ProductTable(props) {

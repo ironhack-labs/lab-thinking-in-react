@@ -1,0 +1,9 @@
+.components-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.components-group h1 {
+  margin-bottom: 0;
+}
