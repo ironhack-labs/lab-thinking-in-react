@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 function ProductsPage() {
   const [products, setProducts] = useState(jsonData);
+  const [checkStockProducts, setcheckStockProducts] = useState(jsonData);
   const [filteredProducts, setFilteredProducts] = useState(jsonData);
 
   function handleFilterProducts(keyword) {
@@ -15,10 +16,24 @@ function ProductsPage() {
     setFilteredProducts(filteredProducts);
   }
 
+  function handleInStock(checked) {
+    if (checked) {
+      const itemInStock = checkStockProducts.filter((product) => {
+        return product.inStock === true;
+      });
+      setFilteredProducts(itemInStock);
+    } else {
+      setFilteredProducts(checkStockProducts);
+    }
+  }
+
   return (
     <div>
       <h1>IronStore</h1>
-      <SearchBar handleFilterProducts={handleFilterProducts} />
+      <SearchBar
+        handleFilterProducts={handleFilterProducts}
+        handleInStock={handleInStock}
+      />
       <ProductTable products={filteredProducts} />
     </div>
   );
