@@ -14,7 +14,7 @@ function SearchBar(props) {
 
     function handleInStock(event) {
         setInStock(event.target.checked)
-        props.handleCheckbox(event.target.checked)
+        props.handleCheckbox(event.target.checked, name)
 
     }
 

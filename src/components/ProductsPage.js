@@ -23,21 +23,25 @@ function ProductsPage() {
     }
 
     // THE CHECKBOX FILTER
-    function handleCheckbox(inStock) {
+    function handleCheckbox(inStock, keyWord) {
 
-        const fiterOutOfStock = filteredProducts.filter((product) => {
-            return product.inStock === inStock;
+        const fiterOutOfStock = products.filter((product) => {
+            return product.name.toLocaleLowerCase().startsWith(keyWord.toLocaleLowerCase())
         })
 
-        if(inStock) {
-            setFilteredProducts(fiterOutOfStock)
+
+        const fiterInStock = products.filter((product) => {
+            return product.inStock && product.name.toLocaleLowerCase().startsWith(keyWord.toLocaleLowerCase())
+        })
+
+
+        if (inStock) {
+            setFilteredProducts(fiterInStock)
         } else {
-            setFilteredProducts(products)
-            
+            setFilteredProducts(fiterOutOfStock)
         }
 
     }
-
 
 
     return (
