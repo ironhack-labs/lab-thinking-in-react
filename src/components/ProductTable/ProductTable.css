@@ -1,0 +1,16 @@
+table {
+    max-width: 700px;
+    background-color: #dcdbdc;
+    font-family: sans-serif;
+    margin: auto;
+    border: 1px solid #000;
+    margin-top: 20px;
+    border-collapse: collapse;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+th {
+    width: 350px;
+    text-align: center;
+    padding: 12px 15px;
+}

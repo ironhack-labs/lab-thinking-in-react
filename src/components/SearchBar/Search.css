@@ -1,0 +1,18 @@
+.container {
+    max-width: 700px;
+    margin: auto;
+}
+.search {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+}
+
+.search input {
+    margin-top: 5px;
+}
+
+.check-box {
+    margin-top: 5px;
+}
