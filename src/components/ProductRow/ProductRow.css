@@ -1,0 +1,17 @@
+.product-row {
+    border-bottom: 1px solid #ddd;
+}
+
+.product-row td {
+    padding: 0.5rem 1rem;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.product-row td:nth-child(2) {
+    text-align: right;
+}
+
+.product-row.out-of-stock td {
+    color: #aaa;
+}

@@ -1,24 +1,57 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import { ProductRow, ProductsPage, SearchBar } from './components';
 
 function App() {
+  const [products, setProducts] = useState([]);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetch('/data.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Error retrieving data');
+        }
+        return response.json();
+      })
+      .then(data => setProducts(data))
+      .catch(error => setError(error.message));
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ProductsPage>
+        <SearchBar />
+        {error ? (
+          <p>Something went wrong: {error}</p>
+        ) : products.length ? (
+          <ProductTable products={products} />
+        ) : (
+          <p>No products found</p>
+        )}
+      </ProductsPage>
     </div>
+  );
+}
+
+function ProductTable(props) {
+  const { products } = props;
+
+  return (
+    <table className="product-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Category</th>
+        </tr>
+      </thead>
+      <tbody>
+        {products.map(product => (
+          <ProductRow key={product.id} product={product} />
+        ))}
+      </tbody>
+    </table>
   );
 }
 
