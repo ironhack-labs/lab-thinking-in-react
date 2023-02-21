@@ -1,0 +1,10 @@
+.productTable__header {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.productTable__productRows {
+  display: flex;
+  flex-direction: column;
+}
