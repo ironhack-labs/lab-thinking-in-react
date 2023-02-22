@@ -6,31 +6,48 @@ import jsonData from '../data.json';
 import './ProductsPage.css';
 
 export const ProductsPage = () => {
-  const [products, setProducts] = useState(jsonData);
-  const [showInStockOnly, setShowInStockOnly] = useState(true);
+  const allProducts = jsonData;
+  const [products, setProducts] = useState(allProducts);
+  const [showInStockOnly, setShowInStockOnly] = useState(false);
 
   const handleSearchForProducts = (searchQuery) => {
-    if (!searchQuery) {
-      setProducts(jsonData);
-    } else if (searchQuery) {
-      const filteredProducts = jsonData.filter((product) => {
+    if (!searchQuery && !showInStockOnly) {
+      setProducts(allProducts);
+    } else if (!searchQuery && showInStockOnly) {
+      const inStockProducts = allProducts.filter((product) => {
+        return product.inStock;
+      });
+      setProducts(inStockProducts);
+    } else if (searchQuery && !showInStockOnly) {
+      const filteredProducts = allProducts.filter((product) => {
         return product.name.toLowerCase().includes(searchQuery.toLowerCase());
       });
 
       setProducts(filteredProducts);
+    } else if (searchQuery && showInStockOnly) {
+      const filteredProducts = allProducts.filter((product) => {
+        return product.name.toLowerCase().includes(searchQuery.toLowerCase());
+      });
+
+      const inStockProducts = filteredProducts.filter((product) => {
+        return product.inStock;
+      });
+
+      setProducts(inStockProducts);
     }
   };
 
-  const handleToggleProductsInStock = () => {
-    if (showInStockOnly) {
-      const productsInStock = jsonData.filter((product) => {
+  const handleToggleProductsInStock = (isChecked) => {
+    if (isChecked) {
+      const inStockProducts = allProducts.filter((product) => {
         return product.inStock;
       });
-      setProducts(productsInStock);
-    } else if (!showInStockOnly) {
-      setProducts(jsonData);
+
+      setProducts(inStockProducts);
+    } else if (!isChecked) {
+      setProducts(allProducts);
     }
-    setShowInStockOnly(!showInStockOnly);
+    setShowInStockOnly(isChecked);
   };
 
   return (
@@ -39,6 +56,7 @@ export const ProductsPage = () => {
       <SearchBar
         toggleProductsInStock={handleToggleProductsInStock}
         searchForProducts={handleSearchForProducts}
+        showInStockOnly={showInStockOnly}
       />
       <ProductTable products={products} />
     </div>
