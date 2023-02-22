@@ -1,27 +1,25 @@
-function ProductTable() {
+import React from 'react';
+import ProductRow from "./ProductRow";
+
+function ProductTable({ products }) {
+
 
     return (
         <div>
-
             <table>
-                <thead>
+                <tbody>
                     <tr>
                         <th>Name</th>
                         <th>Price</th>
                     </tr>
-                </thead>
-
-                <tbody>
-
-                    <tr >
-                        <td>name data</td>
-                        <td>price data</td>
-                    </tr>
                 </tbody>
             </table>
+            {products.map((newProduct) => {
+                return <ProductRow newProduct={newProduct} key={newProduct.name} />;
+            })}
         </div>
 
-    )
+    );
 }
 
 export default ProductTable;
