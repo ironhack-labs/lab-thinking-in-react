@@ -1,8 +1,21 @@
 import React from 'react'
 
-const SearchBar = () => {
+const SearchBar = ({search}) => {
+
+// const handleChange = (e) => {
+//   search(e.target.value)
+// }
+
   return (
-    <div>SearchBar</div>
+    <div>
+      <label>Search</label>
+     <input 
+        placeholder='Search Product'
+        onChange={search} 
+        type='text'
+        id="id">
+      </input>
+    </div>
   )
 }
 
