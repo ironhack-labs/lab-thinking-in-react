@@ -1,7 +1,7 @@
 import React from 'react';
 import ProductRow from "./ProductRow";
 
-function ProductTable({ products }) {
+function ProductTable({ products, search }) {
 
 
     return (
@@ -14,9 +14,13 @@ function ProductTable({ products }) {
                     </tr>
                 </tbody>
             </table>
-            {products.map((newProduct) => {
-                return <ProductRow newProduct={newProduct} key={newProduct.name} />;
-            })}
+            {products
+                .filter((product) => {
+                    return product.name.toLowerCase().includes(search.toLowerCase());
+                })
+                .map((newProduct) => {
+                    return <ProductRow newProduct={newProduct} key={newProduct.name} />;
+                })}
         </div>
 
     );
