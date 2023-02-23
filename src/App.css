@@ -1,5 +1,12 @@
+body{
+  margin: 0; 
+  padding: 0;
+}
 .App {
   text-align: center;
+  background-color: #F6F7F8;
+  height: 100vh;
+  padding-top: 30px;
 }
 
 .App-logo {
@@ -36,3 +43,26 @@
     transform: rotate(360deg);
   }
 }
+
+.red{
+  color: red;
+}
+
+table{
+  width: 30%; 
+  margin: 0 auto;
+  text-align: left;
+  background-color: #fafbfb;
+  padding: 30px 20px;
+  border-collapse: collapse;
+  border: #645CBB 3px solid;
+  border-radius: 20px;
+}
+
+.row{
+  border: #645CBB 3px solid;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+
