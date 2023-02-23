@@ -1,14 +1,22 @@
 import { useState } from 'react';
 import jsonData from './../data.json';
+import Checkbox from './Checkbox';
 import ProductTable from './ProductTable';
 import SearchBar from './SearchBar';
 
 function ProductsPage() {
     const [products, setProducts] = useState(jsonData);
     const [search, setSearch] = useState('');
+    const [checked, setCheck] = useState(false);
 
     const handleSearch = (userInput) => {
         setSearch(userInput.target.value);
+    };
+
+    const handleChange = () => {
+        console.log('The checkbox was toggled');
+        setCheck(!checked);
+
     };
 
 
@@ -27,8 +35,10 @@ function ProductsPage() {
     return (
         <div className="product-page-container">
             <h1>IronStore</h1>
-            <SearchBar handleSearch={handleSearch} search={search} />
+            <SearchBar handleSearch={handleSearch} search={search} checked={checked} />
+            <Checkbox handleChange={handleChange} checked={checked} />
             <ProductTable products={products} search={search} />
+
         </div>
     );
 }
