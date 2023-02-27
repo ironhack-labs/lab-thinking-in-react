@@ -1,0 +1,10 @@
+.form-outline{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width:100%
+}
+.input-group{
+    max-width: 700px;
+    margin: auto;
+}

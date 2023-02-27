@@ -1,0 +1,14 @@
+table {
+    max-width: 700px;
+    margin: auto;
+    border: 2px solid #000;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th {
+    width: 350px;
+    text-align: center;
+    padding: 12px 15px;
+    background-color: #000;
+}
