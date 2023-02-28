@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+.product-table {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.price {
+  text-align: center;
+  font-size: 1.2em;
+}
