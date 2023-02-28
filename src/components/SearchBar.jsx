@@ -1,6 +1,4 @@
-import { InStockToggle } from "./InStockToggle";
-
-export const SearchBar = ({ handleSearch,inStockToggle }) => {
+export const SearchBar = ({ handleSearch, showInStockOnly }) => {
   return (
     <div>
       <label>
@@ -8,9 +6,16 @@ export const SearchBar = ({ handleSearch,inStockToggle }) => {
         Search
         <input type="text" onChange={(e) => handleSearch(e.target.value)} />
       </label>
-      <InStockToggle inStockToggle={inStockToggle}/>
+      <br />
+      <label>
+        Show products in stock{' '}
+        <input
+          type="checkbox"
+          onChange={(e) =>
+            e.target.checked ? showInStockOnly(true) : showInStockOnly(false)
+          }
+        />{' '}
+      </label>
     </div>
   );
 };
-
-

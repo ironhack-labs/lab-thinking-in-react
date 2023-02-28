@@ -3,10 +3,9 @@ import data from '../data.json';
 import { SearchBar } from './SearchBar';
 import { ProductTable } from './ProductTable';
 
-
 export const ProductsPage = () => {
   const [products, setProducts] = useState(data);
-  const [onlyInStock, setOnlyInStock] = useState(false);
+
   function handleSearch(userInput) {
     if (!userInput) {
       setProducts(data);
@@ -17,21 +16,20 @@ export const ProductsPage = () => {
       setProducts(filteredProducts);
     }
   }
-  function inStockToggle(data) {
-   if (onlyInStock === false){
-    setProducts(data)
-    setOnlyInStock(!onlyInStock)
-   }
-   else{
-    const inStockProducts = data.filter(product => product.inStock === true)
-    setProducts(inStockProducts)
-    setOnlyInStock(onlyInStock)
-   }
+
+  function showInStockOnly(bool) {
+    if (bool === true) {
+      const inStockProducts = data.filter((product) => product.inStock);
+      setProducts(inStockProducts);
+    } else {
+      setProducts(data);
+    }
   }
+
   return (
     <div>
       <h1>IronStore</h1>
-      <SearchBar handleSearch={handleSearch} inStockToggle={inStockToggle} />
+      <SearchBar handleSearch={handleSearch} showInStockOnly={showInStockOnly} />
 
       <ProductTable products={products} />
     </div>
