@@ -8,21 +8,37 @@ const ProductPage = () => {
 
     const [products, setProducts] = useState(productsJSON)
     const [productsFiltered, setproductsFiltered] = useState(productsJSON)
+    const [inStock, setInStock] = useState(false)
 
     const filterProducts = (text) => {
         const productsCopy = [...products]
         const filterResult = productsCopy.filter(product => {
-            return product.name.toLowerCase().startsWith(text.toLowerCase()) && product
+
+            const productName = product.name.toLowerCase()
+
+            if (productName.startsWith(text.toLowerCase()))
+
+
+
+
+
+
+                if (inStock && product.inStock) return product
+                else if (!inStock) return product
         })
 
         setproductsFiltered(filterResult)
     }
 
     const stockProducts = (status) => {
-        const productsCopy = [...products]
-        const filterResult = productsCopy.filter(products => status ? products.inStock : products)
+        setInStock(status)
+        if (!productsFiltered.length) setproductsFiltered(products)
+        else {
+            const productsCopy = [...productsFiltered]
+            const filterResult = productsCopy.filter(products => status ? products.inStock : products)
 
-        setproductsFiltered(filterResult)
+            setproductsFiltered(filterResult)
+        }
 
     }
     return (
