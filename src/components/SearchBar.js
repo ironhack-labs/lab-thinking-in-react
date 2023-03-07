@@ -1,6 +1,12 @@
 function SearchBar(props) {
   //   const [productRow, setProductRow] = useState(jsonData);
 
+  function handleChange(event) {
+    const input = document.querySelector('#searchBox');
+
+    props.filterProducts(input.value, event.target.checked);
+  }
+
   return (
     <div className="searchContainer">
       <div>Seach</div>
@@ -15,8 +21,13 @@ function SearchBar(props) {
         />
       </div>
       <div>
-        <input type="checkbox" name="chInStock" id="chInStock" /> Only show
-        products in stock
+        <input
+          type="checkbox"
+          name="chInStock"
+          id="chInStock"
+          onChange={handleChange}
+        />{' '}
+        Only show products in stock
       </div>
     </div>
   );

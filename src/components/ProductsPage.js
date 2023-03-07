@@ -7,14 +7,20 @@ import SearchBar from './SearchBar';
 
 function ProductsPage() {
   const [products, setProducts] = useState(productsData);
-  // const [inStock, setInStock] = useState(false);
+  const [onlyInStock, setOnlyInStock] = useState(false);
 
-  const filterProducts = (query = '') => {
+  const filterProducts = (query = '', inStock = onlyInStock) => {
     const filter = query.toUpperCase().trim();
 
-    if (filter==='') return setProducts(productsData);
+    setOnlyInStock(inStock);
 
-    const filteredProducts = products.filter((product) => {
+    const filteredProducts = productsData.filter((product) => {
+      if (inStock)
+        return product.name.toUpperCase().indexOf(filter) > -1
+          ? product.inStock
+            ? true
+            : false
+          : false;
       return product.name.toUpperCase().indexOf(filter) > -1 ? true : false;
     });
 
@@ -24,7 +30,7 @@ function ProductsPage() {
   return (
     <div>
       <h1>IronStore</h1>
-      <SearchBar filterProducts={filterProducts} />
+      <SearchBar onlyInStock={filterProducts} filterProducts={filterProducts} />
       <ProductTable products={products} />
     </div>
   );
