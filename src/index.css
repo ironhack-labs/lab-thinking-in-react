@@ -13,6 +13,9 @@ code {
     monospace;
 }
 
+h1 {
+  text-align: center;
+}
 
 .searchContainer {
   display: flex;
@@ -29,8 +32,7 @@ code {
 .productsTableContainer {
   display: grid;
   grid-template-columns: repeat(2, auto);
-  /* grid-auto-flow: row; */
-  grid-gap: 1em;
+  row-gap: 1em;
   padding: 1em;
   border: 1px solid black;
   text-align: center;
@@ -40,23 +42,30 @@ code {
   font-weight: bold;
 }
 
+.header-row > div {
+  background-color: rgb(122, 122, 122);
+  color: #fff;
+}
+
 .cell {
-  /* border: 1px solid black; */
   padding: 0.5em;
 }
 
 .row {
   display: contents;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 1em;
 }
 
 
-.searchContainer > div {
-  /* width: 100%; */
-  /* flex: 1; */
+.searchContainer input[type='text'] {
+  min-width: 500px;
+  height: 30px;
+  font-size: 1.5em;
 }
 
-.searchContainer input[type="text"] {
-  width: 100%;
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+:-moz-placeholder {
+  text-align: center;
 }

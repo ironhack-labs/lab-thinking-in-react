@@ -12,8 +12,6 @@ function ProductsPage() {
   const filterProducts = (query = '', inStock = onlyInStock) => {
     const filter = query.toUpperCase().trim();
 
-    setOnlyInStock(inStock);
-
     const filteredProducts = productsData.filter((product) => {
       if (inStock)
         return product.name.toUpperCase().indexOf(filter) > -1
@@ -24,6 +22,7 @@ function ProductsPage() {
       return product.name.toUpperCase().indexOf(filter) > -1 ? true : false;
     });
 
+    setOnlyInStock(inStock);
     setProducts([...filteredProducts]);
   };
 

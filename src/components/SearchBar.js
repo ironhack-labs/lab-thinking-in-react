@@ -15,6 +15,7 @@ function SearchBar(props) {
           type="text"
           name="searchBox"
           id="searchBox"
+          placeholder="Type to search"
           onChange={(event) => {
             props.filterProducts(event.target.value);
           }}
