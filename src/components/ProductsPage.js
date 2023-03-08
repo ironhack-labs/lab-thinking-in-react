@@ -7,22 +7,20 @@ import SearchBar from './SearchBar';
 
 function ProductsPage() {
   const [products, setProducts] = useState(productsData);
-  const [onlyInStock, setOnlyInStock] = useState(false);
 
-  const filterProducts = (query = '', inStock = onlyInStock) => {
+  const filterProducts = (query = '', inStock = false) => {
     const filter = query.toUpperCase().trim();
 
     const filteredProducts = productsData.filter((product) => {
       if (inStock)
-        return product.name.toUpperCase().indexOf(filter) > -1
+        return product.name.toUpperCase().includes(filter)
           ? product.inStock
             ? true
             : false
           : false;
-      return product.name.toUpperCase().indexOf(filter) > -1 ? true : false;
+      return product.name.toUpperCase().includes(filter) ? true : false;
     });
 
-    setOnlyInStock(inStock);
     setProducts([...filteredProducts]);
   };
 

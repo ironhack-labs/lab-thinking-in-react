@@ -1,12 +1,6 @@
 function SearchBar(props) {
   //   const [productRow, setProductRow] = useState(jsonData);
 
-  function handleChange(event) {
-    const input = document.querySelector('#searchBox');
-
-    props.filterProducts(input.value, event.target.checked);
-  }
-
   return (
     <div className="searchContainer">
       <div>Seach</div>
@@ -17,7 +11,8 @@ function SearchBar(props) {
           id="searchBox"
           placeholder="Type to search"
           onChange={(event) => {
-            props.filterProducts(event.target.value);
+            const chCheckbox = document.querySelector('#chInStock');
+            props.filterProducts(event.target.value, chCheckbox.checked);
           }}
         />
       </div>
@@ -26,7 +21,10 @@ function SearchBar(props) {
           type="checkbox"
           name="chInStock"
           id="chInStock"
-          onChange={handleChange}
+          onChange={(event) => {
+            const input = document.querySelector('#searchBox');
+            props.filterProducts(input.value, event.target.checked);
+          }}
         />{' '}
         Only show products in stock
       </div>
