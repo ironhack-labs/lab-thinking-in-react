@@ -1,5 +1,11 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .App {
   text-align: center;
+  padding: 20px;
 }
 
 .App-logo {
@@ -26,6 +32,23 @@
 
 .App-link {
   color: #61dafb;
+}
+.red{
+  color:red
+}
+.gray{
+  background-color: rgb(221, 221, 221);
+
+}
+table{
+  margin: 0 auto;
+  width: 100%;
+}
+input[type='text']{
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  margin: 5px;
 }
 
 @keyframes App-logo-spin {
