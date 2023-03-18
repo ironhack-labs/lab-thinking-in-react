@@ -11,7 +11,7 @@ const ProductsPage = () => {
     <div>
       <SearchBar />
 
-      <ProductTable />
+      <ProductTable productsData={products} />
     </div>
   );
 };
