@@ -7,7 +7,7 @@ import './productsPage.css';
 const ProductsPage = () => {
   const [products, setProducts] = useState(jsonData);
 
-  const searchProducts = (value) => {
+  const handleSearchProducts = (value) => {
     if (value)
       setProducts((prev) =>
         prev.filter((product) =>
@@ -17,9 +17,20 @@ const ProductsPage = () => {
     else setProducts(jsonData);
   };
 
+  const handleIsStockProducts = (value) => {
+    if (value)
+      setProducts((prev) =>
+        prev.filter((product) => product.inStock === value)
+      );
+    else setProducts(jsonData);
+  };
+
   return (
     <div>
-      <SearchBar searchProducts={searchProducts} />
+      <SearchBar
+        searchProducts={handleSearchProducts}
+        isStockProducts={handleIsStockProducts}
+      />
 
       <ProductTable productsData={products} />
     </div>
