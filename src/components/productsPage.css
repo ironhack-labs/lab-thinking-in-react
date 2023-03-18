@@ -1,0 +1,60 @@
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.container h1 {
+  font-size: 5rem;
+  margin: 2rem;
+}
+
+/* Search Container */
+
+.search-container h3 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.search-container .search-inputs .checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.search-container .search-inputs input[type='text'] {
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  margin: 2rem 0;
+  border-radius: 10px;
+  border: none;
+  background-color: aliceblue;
+  color: rgb(29, 29, 29);
+}
+
+/* Table Container */
+
+.table-container {
+  width: 70%;
+  border-collapse: collapse;
+  margin: 0 auto 3rem auto;
+}
+
+.table-container th {
+  background-color: aliceblue;
+  color: rgb(29, 29, 29);
+  border-collapse: collapse;
+}
+
+.table-container tr th {
+  font-size: 2rem;
+}
+
+.table-container tr td {
+  font-size: 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid aliceblue;
+}

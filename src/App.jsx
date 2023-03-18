@@ -3,7 +3,9 @@ import ProductsPage from './components/ProductsPage';
 
 function App() {
   return (
-    <div>
+    <div className="container">
+      <h1>IronStore</h1>
+
       <ProductsPage />
     </div>
   );
