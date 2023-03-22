@@ -1,12 +1,18 @@
+import { useState } from 'react';
+import jsonData from '../data.json';
+import ProductTable from './ProductTable';
+import SearchBar from './SearchBar';
 
-import SearchBar from "./SearchBar";
-import ProductTable from "./ProductTable";
+function ProductsPage() {
+  const [products, setProducts] = useState(jsonData);
 
-
-function ProductsPage(){
-    return(
-        <div>ProductsPage</div>
-    )
+  return (
+    <div>
+      <h1>IronStore</h1>
+      <SearchBar />
+      <ProductTable />
+    </div>
+  );
 }
 
 export default ProductsPage;
