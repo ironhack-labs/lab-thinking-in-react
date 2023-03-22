@@ -1,6 +1,10 @@
-function ProductRow(){
+function ProductRow(props){
     return (
-        <div>ProductRow</div>
+        <div>
+            {props.inStock ? <span>{props.name}</span> : <span style={{color:'red'}}>{props.name}</span>}
+            <span>{props.price}</span>
+
+        </div>
     )
 }
 

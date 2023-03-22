@@ -1,9 +1,17 @@
-import ProductRow from "./ProductRow";
+import ProductRow from './ProductRow';
+import jsonData from '../data.json';
 
-function ProductTable(){
+function ProductTable() {
     return(
-        <div>ProductTable</div>
-    )
-}
+        <div className='product-table'>
+                {jsonData.map(jso => {
+                    return(
+                        <ProductRow key={jso.id} inStock={jso.inStock} name={jso.name} price={jso.price}/>
+                    );
+                })}
+            </div>
+
+    );
+};
 
 export default ProductTable;
