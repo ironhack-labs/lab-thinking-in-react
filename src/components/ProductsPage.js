@@ -29,13 +29,16 @@ function ProductsPage() {
   };
   
   return (
-    <div>
+    <div className="mx-auto px-4 py-8 max-w-screen-lg flex flex-col items-center">
+      <h1 className="text-3xl font-extrabold text-gray-900 mt-10 mb-3">IronStore</h1>
       <SearchBar
         handleSearchProducts={handleSearchProducts}
         handleInStockProducts={handleInStockProducts}
       />
-      <h1>IronStore</h1>
-      <ProductTable products={products} />
+      
+      <div className="w-full flex justify-center">
+        <ProductTable products={products} />
+      </div>
     </div>
   );
 }
