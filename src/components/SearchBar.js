@@ -1,16 +1,26 @@
 import React from 'react'
 
-function SearchBar({searchProducts}) {
-  const searchProduct = (searchValue) => {
-    searchProducts(searchValue)
-  }
+function SearchBar({handleSearchProducts, handleInStockProducts }) {
   return (
     <>
-      <input className='border border-black' type="text" onChange={(e)  => {
-        searchProduct(e.target.value)
-      }} />
+    {console.log('search '+ handleSearchProducts, ' stock ' + handleInStockProducts)}
+      <input
+        className='border border-black m-8 pl-2'
+        placeholder='  Search...'
+        type="text"
+        onChange={(e)  => {
+          handleSearchProducts(e.target.value)
+      }} /> <br/>
+      <input
+        type="checkbox"
+        name="isStock"
+        id="isStock"
+        onChange={(e) => {
+        handleInStockProducts(e.target.checked)
+      }}/>
+      <label htmlFor="isStock">Show only products on stock</label>
     </>
   )
 }
 
-export default SearchBar
+export default SearchBar;
