@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
 
-function ProductRow() {
+function ProductRow({ product }) {
   return (
-    <div>ProductRow</div>
-  )
-}
+    <tr>
+    <td className={product.inStock ? "" : "text-danger"}>{product.name}</td>
+    <td>{product.price}</td>
+  </tr>
+);
+};
 
-export default ProductRow
+export default ProductRow;

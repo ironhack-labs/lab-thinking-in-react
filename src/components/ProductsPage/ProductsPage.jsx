@@ -4,7 +4,6 @@ import ProductTable from '../ProductTable/ProductTable';
 import SearchBar from '../SearchBar/SearchBar';
 import jsonData from './../../data.json';
 
-
 function ProductsPage() {
 
   const [products, setProducts] = useState(jsonData);
@@ -13,7 +12,7 @@ function ProductsPage() {
       <div>
         <h1>IronStore</h1>
         <SearchBar />
-        <ProductTable />
+        <ProductTable  products={products}/>
       </div>   
     )
   }

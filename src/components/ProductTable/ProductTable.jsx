@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
+import ProductRow from '../ProductRow/ProductRow';
 
-function ProductTable() {
+function ProductTable({ products }) {
   return (
     <div>
       <h1>Products Table</h1>
@@ -12,11 +13,11 @@ function ProductTable() {
           </tr>
         </thead>
         <tbody>
-
+          {products.map((product) => (<ProductRow product={product} key={product.id} /> ))}
         </tbody>
       </table>
     </div>
   )
 }
 
-export default ProductTablegit
+export default ProductTable;
