@@ -1,24 +1,34 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-function SearchBar() {
+function SearchBar({ onInputChange }) {
+
+  const [inputValue, setInputValue] = useState("");
+
+  const handleSearch = (event) => {
+    setInputValue(event.target.value);
+    onInputChange(inputValue);
+  }
+
   return (
     <div>
-      <form action="">
-        <div className='m-3'>
-          <div><label htmlFor="validationCustom01" className="form-label">Search</label></div>
-          <div classNameName='w-100'><input type="text" className="form-control" id="validationCustom01" value="" required></input></div>
+      <form>
+        <div className="input-group filters">
+          <span className="input-group-text"></span>
+          <input type="text" className="form-control description-input" onChange={handleSearch} value={inputValue} id="search" name="search"
+            placeholder="Search" ></input>
         </div>
-        <div>
-          <input className="form-check-input" type="checkbox" value="" id="invalidCheck" required></input>
-          <label className="form-check-label" htmlFor="invalidCheck">
-            Only show products in stock
-          </label>
+        <div className="form-check">
+          <input className="form-check-input" type="checkbox" name="stock" value="stock" />
+          <label className="form-check-label" htmlFor='stock'>Only show products in stock</label>
         </div>
       </form>
     </div>
   )
+};
+
+SearchBar.defaultValue = {
+  onInputChange: () => {}
 }
 
-export default SearchBar
-
+export default SearchBar;
 
