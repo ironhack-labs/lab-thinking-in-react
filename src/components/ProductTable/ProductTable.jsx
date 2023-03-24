@@ -1,7 +1,8 @@
 import React from 'react';
 import ProductRow from '../ProductRow/ProductRow';
 
-function ProductTable({ products }) {
+function ProductTable({ products, inputText }) {
+  //TODO: apply regex to search filter
   return (
     <div>
       <h1>Products Table</h1>
@@ -13,7 +14,7 @@ function ProductTable({ products }) {
           </tr>
         </thead>
         <tbody>
-          {products.map((product) => (<ProductRow product={product} key={product.id} /> ))}
+          {products.filter((product) => (product.name.toLowerCase().includes(inputText))).map(product => (<ProductRow product={product} key={product.id} /> ))}
         </tbody>
       </table>
     </div>

@@ -8,11 +8,17 @@ function ProductsPage() {
 
   const [products, setProducts] = useState(jsonData);
 
+  const [inputText, setInputText] = useState("");
+
+  const handleInputChange = (value) => {
+    setInputText(value)
+  } 
+
     return (
       <div>
         <h1>IronStore</h1>
-        <SearchBar />
-        <ProductTable  products={products}/>
+        <SearchBar onInputChange={handleInputChange}/>
+        <ProductTable  products={products} inputText={inputText}/>
       </div>   
     )
   }
