@@ -1,8 +1,25 @@
 import React from 'react'
+import ProductRow from '../ProductRow/ProductRow'
 
-function ProductTable() {
+function ProductTable({ products }) {
   return (
-    <div>ProductTable</div>
+    <div>
+      <h1>ProductTable</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {products.map(product =>
+            <ProductRow key={product.id} product={product}
+            />
+          )}
+        </tbody>
+      </table>
+    </div>
   )
 }
 
