@@ -10,15 +10,25 @@ function SearchBar({ search, onSearch, inStock }) {
   return (
     <div>
       <form>
-        <label htmlFor="search">Search</label>
-        <input
-          type="text"
-          className="form form-control mb-3"
-          value={search}
-          onChange={handleChange}
-        />
-        <input type="checkbox" onChange={handleCheck} />
-        <label className="text-primary">Only show products in stock</label>
+        <div class="input-group mb-3 input-group-lg">
+          <span class="input-group-text">Search</span>
+          <input
+            type="text"
+            value={search}
+            onChange={handleChange}
+            className="form-control"
+          />
+        </div>
+        <div className="text-center fs-5 mb-4 text-primary form-check form-switch d-flex justify-content-center">
+          <input
+            className="form-check-input"
+            type="checkbox"
+            onChange={handleCheck}
+          />
+          <label className="form-check-label ms-3">
+            Only show products in stock
+          </label>
+        </div>
       </form>
     </div>
   );

@@ -22,7 +22,7 @@ function ProductPage() {
 
   return (
     <div className="container">
-      <h1>IronStore</h1>
+      <h1 className='text-center'>IronStore</h1>
       <SearchBar search={search} onSearch={onSearch} inStock={onStock} />
       <ProductTable products={productsToShow} />
     </div>

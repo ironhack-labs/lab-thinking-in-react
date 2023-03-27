@@ -3,7 +3,7 @@ import ProductRow from './ProductRow';
 function ProductTable({ products }) {
   return (
     <div>
-      <table class="table">
+      <table class="table table-success table-striped">
         <thead>
           <tr>
             <th scope="col">Name</th>
