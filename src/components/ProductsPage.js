@@ -4,9 +4,6 @@ import jsonData from './../data.json';
 import ProductTable from './ProductTable';
 import SearchBar from './SearchBar';
 
-let currentSearch;
-let currentCheck;
-
 function ProductsPage() {
   const [products, setProducts] = useState(jsonData);
   const [search, setSearch] = useState('');
