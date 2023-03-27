@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import jsonData from './../data.json';
 import ProductTable from './ProductTable';
@@ -9,26 +9,24 @@ let currentCheck;
 
 function ProductsPage() {
   const [products, setProducts] = useState(jsonData);
+  const [search, setSearch] = useState('');
+  const [check, setCheck] = useState(false);
+
   const onChangeSearch = (text) => {
-    setProducts((prevProducts) => {
-      currentSearch = text
-      return jsonData
-        .filter((product) => product.name.indexOf(text) !== -1)
-        .filter((product) =>
-          currentCheck
-            ? product.inStock === currentCheck
-            : product.inStock !== undefined
-        );
-    });
+    setSearch((prevSearch) => text)
   };
   const onChangeCheck = (check) => {
-    currentCheck = check;
-    setProducts((prevProducts) =>
-      jsonData
-        .filter((product) => (check ? product.inStock === check : product))
-        .filter((product) => currentSearch ? product.name.indexOf(currentSearch) !== -1 : product)
-    );
+    setCheck((prevCheck) => check)
   };
+
+  useEffect(() => {
+    setProducts((prevProducts) => jsonData
+      .filter((product) => (check ? product.inStock === check : product))
+      .filter((product) =>
+        search ? product.name.indexOf(search) !== -1 : product
+      )
+    )
+  }, [search, check]);
 
   return (
     <div>
