@@ -1,20 +1,23 @@
-import React, { useState } from 'react'
+import React from 'react'
 
- function SearchBar(searchProduct) {
-
-  const [search, setSearch] = useState('');
+function SearchBar({ search, onSearch }) {
+  const handleChange = (ev) => {
+    onSearch(ev.target.value);
+  };
 
   return (
     <div>
-        <h1 className="text-2xl font-bold mb-4">Search</h1>
-      <input
-      className='border mr-4'
-        value={search}
-        onChange={(ev) => {
-          setSearch(ev.target.value);
-        }}
-      />
+    <form>
+        <span>Search</span>
+        <input
+          type="text"
+          value={search}
+          onChange={handleChange}
+          className="form-control"
+        />
+      </form>
     </div>
   )
 }
+
 export default SearchBar
