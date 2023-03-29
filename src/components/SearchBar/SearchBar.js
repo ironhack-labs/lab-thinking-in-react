@@ -1,14 +1,20 @@
-import { useState } from 'react';
-import jsonData from './../../data.json';
+import React, { useState } from 'react'
 
-function ProductsPage () {
-  const [products, setProducts] = useState(jsonData);
-  
-  return(
-      <div>
-        <h1>IronStore</h1>
-      </div>    
+ function SearchBar(searchProduct) {
+
+  const [search, setSearch] = useState('');
+
+  return (
+    <div>
+        <h1 className="text-2xl font-bold mb-4">Search</h1>
+      <input
+      className='border mr-4'
+        value={search}
+        onChange={(ev) => {
+          setSearch(ev.target.value);
+        }}
+      />
+    </div>
   )
 }
-
-export default ProductsPage
+export default SearchBar
