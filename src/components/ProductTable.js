@@ -2,16 +2,16 @@ import ProductRow from './ProductRow';
 
 function ProductTable({ products }) {
   return (
-    <table class="table">
+    <table className="table">
       <thead>
-        <tr>
+        <tr className="table-dark">
           <th scope="col">Name</th>
           <th scope="col">Price</th>
         </tr>
       </thead>
       <tbody>
         {products.map((product) => (
-          <ProductRow key={product.id} product={product} />
+          <ProductRow product={product} key={product.id} />
         ))}
       </tbody>
     </table>
