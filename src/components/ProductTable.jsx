@@ -1,10 +1,10 @@
 import React from 'react'
 import ProductRow from './ProductRow'
 
-function ProductTable() {
+function ProductTable({ productsList }) {
   return (
     <div>
-      <ProductRow />
+      <ProductRow productsList={productsList} />
     </div>
 
   )
