@@ -1,22 +1,17 @@
-
-
 function ProductRow({product}){
     return(
         
-        {   product.inStock
-                ? 
-                <tr>
+            <tr key={product.id}>
+                {
+                    product.inStock
+                    ?
                     <td>{product.name}</td>
-                    <td>{product.price}</td>
-                </tr> 
-                : 
-                <tr>
+                    :
                     <td style={{color: "red"}}>{product.name}</td>
-                    <td>{product.price}</td>
-                </tr>
-        }
+                }
+                <td>{product.price}</td>
+            </tr> 
         
-
     )
 }
 

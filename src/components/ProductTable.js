@@ -1,7 +1,7 @@
 import ProductRow from "./ProductRow";
 
 function ProductTable({products}){
-    console.log(products)
+    
     return (
         <div>
             <h1>Product Table</h1>
@@ -13,7 +13,7 @@ function ProductTable({products}){
                     </tr>
                 </thead>
                 <tbody>
-                    {products.map((products) => { return <ProductRow product={products}/>} )}
+                    {products.map((product) => { return <ProductRow product={product}/>} )}
                 </tbody>
             </table>
         </div>

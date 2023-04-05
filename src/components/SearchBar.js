@@ -1,6 +1,13 @@
-function SearchBar(){
+function SearchBar({keyword, onChange}){
+    
     return (
-        <div className="search-bar">Search Bar</div>
+        <input 
+            key="search-bar"
+            type="text"
+            placeholder="Search..."
+            value={keyword}
+            onChange={onChange}
+        />
     )
 }
 
