@@ -9,12 +9,12 @@ function ProductsPage () {
   const [products, setProducts] = useState(jsonData);
 
   const checkProductsType = (event) => {
-    event.preventDefault();
 
     if(event.target.value === ''){
       setProducts([...jsonData])
       return products
     }
+    
 
     const filteredProducts = products.filter(product => product.name.toUpperCase().startsWith(event.target.value.toUpperCase()) )
     setProducts(filteredProducts)

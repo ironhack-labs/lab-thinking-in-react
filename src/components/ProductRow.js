@@ -9,26 +9,32 @@ function ProductRow (props) {
 
       <div>
         <table>
+        <thead>
             <tr>
                 <th>Name</th>
                 <th>Price</th>
             </tr>
+        </thead>
             {props.products.map((product) => {
 
                 if(product.inStock){
                   return(
-                        <tr key={product.id} className='inStock'>
+                    <tbody key={product.id}>
+                        <tr className='inStock'>
                             <td>{product.name}</td>
                             <td>{product.price}</td>
                         </tr>
+                    </tbody>
 
                         )
                 }else{
                     return(
-                        <tr key={product.id} className='notInStock'>
+                    <tbody key={product.id}>
+                        <tr className='notInStock'>
                             <td>{product.name}</td>
                             <td>{product.price}</td>
                         </tr>
+                    </tbody>
 
                         )
                 }
