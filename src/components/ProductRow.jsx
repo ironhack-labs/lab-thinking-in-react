@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ProductRow({ productsList, searchProduct }) {
+function ProductRow({ productsList, searchProduct, showInStock, handleInStock }) {
 
   const filteredProducts = productsList.filter((product) => (
     product.name.toLowerCase().includes(searchProduct.toLowerCase())
@@ -20,21 +20,23 @@ function ProductRow({ productsList, searchProduct }) {
           </tr>
         </thead>
         <tbody>
-          {filteredProducts.map((product) => (
-            <tr
-              className={product.inStock ? 'bg-gray-800 hover:scale-105 transition-all ease-in-out duration-300 cursor-pointer' : 'bg-red-500 text-white hover:scale-105 transition-all ease-in-out duration-300 cursor-pointer'}
-              key={product.id}
-            >
-              <td
-                className="px-6 py-4 font-medium whitespace-nowrap text-white">
-                {product.name}
-              </td>
-              <td
-                className="px-6 py-4 font-medium whitespace-nowrap text-white">
-                {product.price}
-              </td>
-            </tr>
-          ))}
+          {filteredProducts
+            .filter((product) => !showInStock || product.inStock)
+            .map((product) => (
+              <tr
+                className={product.inStock ? 'bg-gray-800 hover:scale-105 transition-all ease-in-out duration-300 cursor-pointer' : 'bg-red-500 text-white hover:scale-105 transition-all ease-in-out duration-300 cursor-pointer'}
+                key={product.id}
+              >
+                <td
+                  className="px-6 py-4 font-medium whitespace-nowrap text-white">
+                  {product.name}
+                </td>
+                <td
+                  className="px-6 py-4 font-medium whitespace-nowrap text-white">
+                  {product.price}
+                </td>
+              </tr>
+            ))}
         </tbody>
       </table>
     </div>

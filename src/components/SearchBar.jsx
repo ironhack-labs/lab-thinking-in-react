@@ -1,8 +1,10 @@
 
-function SearchBar({ searchProduct, handleSearch }) {
+function SearchBar({ searchProduct, handleSearch, showInStock, handleInStock }) {
+
+
 
   return (
-    <div className='w-1/2 mb-8'>
+    <div className='w-1/2 mb-6'>
       <form>
         <div className="">
           <div className="flex space-x-4">
@@ -16,6 +18,15 @@ function SearchBar({ searchProduct, handleSearch }) {
               />
             </div>
           </div>
+          <label className="flex justify-center items-center mt-2">
+            <input
+              className="mr-2"
+              type="checkbox"
+              checked={showInStock}
+              onChange={handleInStock}
+            />
+            <span className="text-white opacity-50 font-thin italic">Only show products in stock</span>
+          </label>
         </div>
       </form>
     </div>
