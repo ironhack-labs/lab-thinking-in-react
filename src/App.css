@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .App-logo {
@@ -7,11 +11,92 @@
   pointer-events: none;
 }
 
+.product-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  padding: 20px;
+  gap: 10px;
+}
+
+.search-bar input {
+  width: 100%;
+  line-height: 2em;
+  border: 1px solid #e4e0e0c5;
+}
+.check {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 10px;
+}
+
+#stock {
+  padding: 10px;
+  width: 2%;
+}
+
 .black {
   color: black;
 }
 .red {
   color: red;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+  padding: 20px;
+  gap: 10px;
+}
+
+thead {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 10px;
+}
+tbody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+tr,
+th {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  padding: 10px;
+  gap: 10px;
+}
+
+tr {
+  border-bottom: 2px solid #e4e0e0c5;
+}
+
+.headrow {
+  width: 100%;
+  background-color: #e4e0e0c5;
 }
 
 @media (prefers-reduced-motion: no-preference) {

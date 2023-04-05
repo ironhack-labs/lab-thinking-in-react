@@ -1,19 +1,19 @@
 const SearchBar = ({ search, onSearch, onCheck }) => {
   return (
-    <div className="search-bar">
-      <form action="">
-        <label htmlFor="">Search</label>
-        <input type="text" value={search} onChange={onSearch} />
+    <form className="search-bar" action="">
+      <label htmlFor="bar">Search</label>
+      <input type="text" value={search} onChange={onSearch} id="bar" />
 
-        <label htmlFor="">Only show products in stock</label>
+      <div className="check">
         <input
           type="checkbox"
           name="Only show products in stock"
           id="stock"
           onChange={onCheck}
         />
-      </form>
-    </div>
+        <label htmlFor="stock">Only show products in stock</label>
+      </div>
+    </form>
   );
 };
 
