@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.notInStock {
+  color: red;
+}
+
+.inStock {
+  color: green;
+}
