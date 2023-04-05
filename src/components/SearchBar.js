@@ -1,7 +1,7 @@
 function SearchBar({keyword, onChange}){
     
     return (
-        <input 
+        <input className="form-control"
             key="search-bar"
             type="text"
             placeholder="Search..."

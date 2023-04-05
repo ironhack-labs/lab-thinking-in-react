@@ -18,7 +18,14 @@ function ProductsPage () {
   return(
       <div>
         <h1>IronStore</h1>
+        
         <SearchBar keyword={keyword} onChange={keywordChange} />
+        <div className="checkbox">
+          <input type="checkbox" className="form-check-input" id="flexCheckDefault" />
+          <label className="form-check-label" for="flexCheckDefault">
+            Only show products in stock
+          </label>
+        </div>
         <ProductTable products={results}/>
 
       </div>    

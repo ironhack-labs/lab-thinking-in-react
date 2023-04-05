@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+h1 {
+  margin: 30px;
+}
+
+.checkbox {
+  padding: 10px;
+}
+
+table {
+  margin-top: 30px;
+}
