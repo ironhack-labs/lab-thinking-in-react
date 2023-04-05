@@ -34,10 +34,19 @@ function ProductsPage () {
 
   
   return(
-      <div>
+      <div className='container'>
         <h1>IronStore</h1>
-        <SearchBar checkProductsType={checkProductsType} inStockProduct={inStockProduct}/>
-        <ProductTable products={products}/>
+        
+        <div className='row'>
+          <div className='d-flex justify-content-center'><SearchBar checkProductsType={checkProductsType} inStockProduct={inStockProduct}/></div>
+        </div>
+        <div className='row'>
+        <div className='d-flex justify-content-center'><ProductTable products={products}/></div>
+          
+        </div>
+  
+
+
       </div>    
   )
 }

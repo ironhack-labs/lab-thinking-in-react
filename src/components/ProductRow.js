@@ -8,11 +8,11 @@ function ProductRow (props) {
   return(
 
       <div>
-        <table>
+        <table className='table'>
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Price</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
             </tr>
         </thead>
             {props.products.map((product) => {
