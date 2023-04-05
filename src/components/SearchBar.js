@@ -1,4 +1,4 @@
-const SearchBar = ({ search, onSearch }) => {
+const SearchBar = ({ search, onSearch, onCheck }) => {
   return (
     <div className="search-bar">
       <form action="">
@@ -6,7 +6,12 @@ const SearchBar = ({ search, onSearch }) => {
         <input type="text" value={search} onChange={onSearch} />
 
         <label htmlFor="">Only show products in stock</label>
-        <input type="checkbox" name="Only show products in stock" id="stock" />
+        <input
+          type="checkbox"
+          name="Only show products in stock"
+          id="stock"
+          onChange={onCheck}
+        />
       </form>
     </div>
   );
