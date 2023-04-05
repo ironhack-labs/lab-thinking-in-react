@@ -7,11 +7,25 @@ import ProductTable from './ProductTable';
 
 function ProductsPage () {
   const [products, setProducts] = useState(jsonData);
+
+  const checkProductsType = (event) => {
+    console.log(event.target.value)
+
+    if(event.target.value === ''){
+      setProducts([...jsonData])
+      return products
+    }
+
+    const filteredProducts = products.filter(product => product.name.toUpperCase().startsWith(event.target.value.toUpperCase()) )
+    setProducts(filteredProducts)
+    return filteredProducts
+  }
+
   
   return(
       <div>
         <h1>IronStore</h1>
-        <SearchBar />
+        <SearchBar checkProductsType={checkProductsType} />
         <ProductTable products={products}/>
       </div>    
   )
