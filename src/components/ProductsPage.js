@@ -9,7 +9,7 @@ function ProductsPage () {
   const [products, setProducts] = useState(jsonData);
 
   const checkProductsType = (event) => {
-    console.log(event.target.value)
+    event.preventDefault();
 
     if(event.target.value === ''){
       setProducts([...jsonData])
@@ -21,11 +21,22 @@ function ProductsPage () {
     return filteredProducts
   }
 
+  const inStockProduct = (event) => {
+    if(event.target.checked){
+      const filteredProducts = products.filter(product => product.inStock)
+      setProducts(filteredProducts)
+      return filteredProducts
+    }else{
+      setProducts([...jsonData])
+      return products
+    }
+  }
+
   
   return(
       <div>
         <h1>IronStore</h1>
-        <SearchBar checkProductsType={checkProductsType} />
+        <SearchBar checkProductsType={checkProductsType} inStockProduct={inStockProduct}/>
         <ProductTable products={products}/>
       </div>    
   )
