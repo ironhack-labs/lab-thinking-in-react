@@ -1,6 +1,11 @@
 import React from 'react'
 
-function ProductRow({ productsList }) {
+function ProductRow({ productsList, searchProduct }) {
+
+  const filteredProducts = productsList.filter((product) => (
+    product.name.toLowerCase().includes(searchProduct.toLowerCase())
+  ))
+
   return (
     <div className="relative overflow-x-auto w-screen h-[40rem]">
       <table className="w-1/2 mx-auto text-sm text-left text-gray-400">
@@ -15,7 +20,7 @@ function ProductRow({ productsList }) {
           </tr>
         </thead>
         <tbody>
-          {productsList.map((product) => (
+          {filteredProducts.map((product) => (
             <tr
               className={product.inStock ? 'bg-gray-800 hover:scale-105 transition-all ease-in-out duration-300 cursor-pointer' : 'bg-red-500 text-white hover:scale-105 transition-all ease-in-out duration-300 cursor-pointer'}
               key={product.id}
