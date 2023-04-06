@@ -31,7 +31,7 @@ function ProductsPage() {
   });
 
   return (
-    <div>
+    <div className="search-bar-container">
       <h1>IronStore</h1>
       <SearchBar
         searchQuery={searchQuery}
