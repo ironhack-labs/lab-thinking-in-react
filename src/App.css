@@ -1,5 +1,50 @@
 .App {
   text-align: center;
+  margin: 0;
+  width: 100vw;
+}
+
+#nav-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.search {
+  font-size: 18px;
+}
+
+.search input {
+  width: 90vw;
+  height: 5vh;
+  border: solid 0.5px;
+  border-radius: 5px;
+}
+
+.checkbox {
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+table th {
+  padding: 0.5rem 8.25rem;
+  font-size: 18px;
+  color: #595959;
+  background-color: #DADADA;
+}
+
+table td {
+  padding: 0.5rem 7.5rem;
+  border-bottom: solid 0.5px #595959;
 }
 
 .App-logo {

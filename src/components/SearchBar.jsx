@@ -20,11 +20,28 @@ const SearchBar = ({ setProducts, products }) => {
     setSearch(value);
   };
 
+  const checkBox = () => {
+    const { checked } = "true";
+
+    if(!checked) {
+      setProducts(jsonData);
+    } else {
+      const inStockProducts = [...jsonData].filter(product => product.inStock === "true");
+      setProducts(inStockProducts);
+    }
+  }
+
   return (
-    <div>
-      <div>Search</div>
-      <input type="text" onChange={handleChange} value={search} />
-      <p>Only show products in stock</p>
+    <div id="nav-bar">
+      <h1>IronStore</h1>
+      <div class="search">
+        <p>Search</p>
+        <input type="text" onChange={handleChange} value={search} />
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" onChange={checkBox} checked={"false"}/>
+        <p>Only show products in stock</p>
+      </div>
     </div>
   );
 };
