@@ -1,3 +1,7 @@
+* {
+  margin: 0;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +39,44 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+h1 {
+  background-color: tomato;
+  color: antiquewhite;
+  padding: 40px;
+  margin-bottom: 40px;
+}
+
+input {
+  width: 60%;
+  padding: 10px;
+  margin: 20px 0;
+}
+
+.input-checkbox {
+  width: 1.15em;
+  height: 1.15em;
+  margin-right: 5px;
+}
+
+.table {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 50px 0;
+  border-collapse: collapse;
+}
+
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  border-collapse: collapse;
+}
+
+th {
+  border: 1px solid tomato;
+  background-color: tomato;
+  color: antiquewhite;
+  padding: 8px;
+  border-collapse: collapse;
 }
