@@ -1,39 +1,43 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import jsonData from './../data.json';
 import SearchBar from './SearchBar';
 import ProductTable from './ProductTable';
 
-function ProductsPage () {
+function ProductsPage() {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [showInStockOnly, setShowInStockOnly] = useState(false);
   const [products, setProducts] = useState(jsonData);
-  console.log('products ', products)
+  console.log('products ', products);
+
+  useEffect(() => {
+    const filteredProducts = jsonData
+      .filter((product) =>
+        product.name.toUpperCase().startsWith(searchQuery.toUpperCase())
+      )
+      .filter((product) => !showInStockOnly || product.inStock);
+
+    setProducts(filteredProducts);
+  }, [searchQuery, showInStockOnly]);
 
   const productsSearch = (event) => {
-    console.log('event ', event.target.value)
+    console.log('event ', event.target.value);
+    setSearchQuery(event.target.value);
+  };
 
-    if (event.target.value ==='') {
-        setProducts([...jsonData])
-        return products
-    }
+  const showProductsInStock = (event) => {
+    setShowInStockOnly(event.target.checked);
+  };
 
-    const searchedProducts = [...products].filter(product => product.name.toUpperCase().startsWith(event.target.value.toUpperCase()))
-    console.log('searchedProducts ', searchedProducts)
-    setProducts(searchedProducts)
-    return products
-  }
-
-    const showProductsInStock = (event) => {
-        const productsInStock=[...products].filter(product => product.inStock)
-        setProducts(productsInStock)
-        return products
-    }
-  
-  return(
-      <div>
-        <h1>IronStore</h1>
-        <SearchBar productsSearch={productsSearch} showProductsInStock={showProductsInStock}/>
-        <ProductTable products={products} />
-      </div>    
-  )
+  return (
+    <div>
+      <h1>IronStore</h1>
+      <SearchBar
+        productsSearch={productsSearch}
+        showProductsInStock={showProductsInStock}
+      />
+      <ProductTable products={products} />
+    </div>
+  );
 }
 
-export default ProductsPage
+export default ProductsPage;

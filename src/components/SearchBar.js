@@ -5,8 +5,9 @@ const SearchBar = ({productsSearch, showProductsInStock}) => {
   return (
     <div>
         <h4>Search</h4>
-        <input onChange={productsSearch} placeholder="Search..."></input>
-        <input onChange={showProductsInStock} type="checkbox"></input><label>Only show products in stock</label>
+        <input onChange={productsSearch} placeholder="Search..." />
+        <br />
+        <input onChange={showProductsInStock} type="checkbox" /><label>Only show products in stock</label>
 
     </div>
   )
