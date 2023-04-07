@@ -5,33 +5,37 @@ import ProductTable from './ProductTable';
 
 function ProductsPage () {
   const [products, setProducts] = useState(jsonData);
-  console.log('products ', products)
+  const [filteredProducts, setFilteredProducts] = useState(jsonData);
+  const [filteredProductsAll, setFilteredProductsAll] = useState(jsonData);
 
-  const productsSearch = (event) => {
-    console.log('event ', event.target.value)
-
-    if (event.target.value ==='') {
-        setProducts([...jsonData])
-        return products
+  const refreshFilteredProducts = searchText => {
+    if (searchText === "") {
+      setFilteredProducts(products)
     }
-
-    const searchedProducts = [...products].filter(product => product.name.toUpperCase().startsWith(event.target.value.toUpperCase()))
-    console.log('searchedProducts ', searchedProducts)
-    setProducts(searchedProducts)
-    return products
+    else {
+      const filteredProducts = products.filter(product => product.name.toUpperCase().includes(searchText.toUpperCase()))
+      setFilteredProducts(filteredProducts)
+    }
   }
 
-    const showProductsInStock = (event) => {
-        const productsInStock=[...products].filter(product => product.inStock)
-        setProducts(productsInStock)
-        return products
+  const toggleProductsInStock = inStock => {  
+    setFilteredProductsAll(filteredProducts);  
+    if (inStock === false) {
+      const productsInStock=filteredProducts.filter(product => product.inStock)
+      setFilteredProducts(productsInStock)
+      console.log('from Toggle in Stock: ', productsInStock)
+    } else {
+      setFilteredProducts(filteredProductsAll)
+      console.log('from Toggle all: ', filteredProductsAll)
     }
+
+  }
   
   return(
       <div>
         <h1>IronStore</h1>
-        <SearchBar productsSearch={productsSearch} showProductsInStock={showProductsInStock}/>
-        <ProductTable products={products} />
+        <SearchBar refreshFilteredProducts={refreshFilteredProducts} toggleProductsInStock={toggleProductsInStock}/>
+        <ProductTable products={filteredProducts} />
       </div>    
   )
 }
