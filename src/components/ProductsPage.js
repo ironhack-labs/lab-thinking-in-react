@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import jsonData from './../data.json';
 import SearchBar from './SearchBar';
 import ProductTable from './ProductTable';
 
-function ProductsPage () {
+function ProductsPage() {
   const [products, setProducts] = useState(jsonData);
   const [filteredProducts, setFilteredProducts] = useState(jsonData);
   const [filteredProductsAll, setFilteredProductsAll] = useState(jsonData);
@@ -40,4 +40,4 @@ function ProductsPage () {
   )
 }
 
-export default ProductsPage
+export default ProductsPage;
