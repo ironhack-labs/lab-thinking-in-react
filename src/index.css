@@ -11,3 +11,36 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.App {
+  width: 50%;
+  margin: 0 auto;
+}
+.out-of-stock {
+  color: red;
+}
+.ProductPage {
+  display: flex;
+  flex-direction: column;
+}
+.Search {
+  display: flex;
+  flex-direction: column;
+}
+.Search .search {
+  height: 30px;
+  margin: 1rem;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-top: 2rem;
+}
+th {
+background-color: rgb(234, 233, 233);
+padding: 1rem;
+}
+td {
+  border-bottom: 1px solid gray;
+  padding: 1rem;
+}
