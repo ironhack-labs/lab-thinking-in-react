@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
+import data from "./data.json";
+import SearchBar from "./components/SearchBar";
+import ProductTable from "./components/ProductTable";
 
 function App() {
+  const [products, setProducts] = useState(data);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [inStockOnly, setInStockOnly] = useState(false);
+
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const handleCheckbox = (event) => {
+    setInStockOnly(event.target.checked);
+  };
+
+  let filteredProducts = products.filter((product) =>
+    product.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  if (inStockOnly) {
+    filteredProducts = filteredProducts.filter((product) => product.inStock);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SearchBar handleSearch={handleSearch} handleCheckbox={handleCheckbox} />
+      <ProductTable products={filteredProducts} />
     </div>
   );
 }
