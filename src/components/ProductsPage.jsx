@@ -1,9 +1,14 @@
-import React from 'react'
+import { useState } from 'react';
+import jsonData from '../data.json';
 
 const ProductsPage = () => {
-  return (
-    <div>ProductsPage</div>
-  )
-}
+  const [products, setProducts] = useState(jsonData);
 
-export default ProductsPage
+  return (
+    <div>
+      <h1>IronStore</h1>
+    </div>
+  );
+};
+
+export default ProductsPage;
