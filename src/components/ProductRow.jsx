@@ -1,9 +1,18 @@
-import React from 'react'
+import React from 'react';
 
-const ProductRow = () => {
+const ProductRow = ({ products }) => {
   return (
-    <div>ProductRow</div>
-  )
-}
+    <>
+      {products.map((product) => (
+        <tr key={product.id}>
+          <td style={{ color: product.inStock ? 'black' : 'red' }}>
+            {product.name}
+          </td>
+          <td>{product.price}</td>
+        </tr>
+      ))}
+    </>
+  );
+};
 
-export default ProductRow
+export default ProductRow;
