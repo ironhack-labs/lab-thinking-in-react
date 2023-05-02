@@ -2,6 +2,29 @@
 
 # LAB | Thinking in React
 
+<details>
+  <summary>
+   <h2>Learning Goals</h2>
+  </summary>
+
+  This exercise allows you to practice and apply the concepts and techniques taught in class. 
+
+  Upon completion of this exercise, you will be able to:
+
+  - Extract and organize parts of the existing UI into separate new components.
+  - Use the `useState` hook to create state variables and add state to React components.
+  - Use state variable setter functions to update state and trigger component re-render.
+  - Use the `map()` method to render array data as a list of elements.
+  - Create controlled components to manage the form inputs.
+  - Create event handler functions to handle user interactions and browser events.
+  - Apply the "Lifting State Up" approach to share the state between components.
+  - Create a search bar component that allows users to filter items in a list based on a search query.
+
+  <br>
+  <hr> 
+
+</details>
+
 ## Introduction
 
 By now you probably know that **in React everything is a component**. A React app is built out of components, usually a lot of them. When used, components are _usually_ nested inside of other components. 
