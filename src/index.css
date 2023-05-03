@@ -11,3 +11,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.productsPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+th{
+  background-color: gray;
+  font-weight: 500;
+}
+tr{
+  display: flex;
+  justify-content: space-around;
+  width: 500px;
+  border-bottom: 1px solid gray;
+  padding: 10px;
+}
