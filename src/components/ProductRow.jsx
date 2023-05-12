@@ -1,14 +1,13 @@
 import React from 'react'
 
 const ProductRow = ({ product }) => {
-  const nameClass = product.inStock ? "in-stock" : "out-of-stock";
   return (
-    <>
-      <tr>
-        <td className={nameClass}>{product.name}</td>
-        <td>{product.price}</td>
-      </tr>
-    </>
+    <tr>{product.inStock ? (
+      <td style={{ color: 'black', height: 40 }}>{product.name}</td>
+    ) : (
+      <td style={{ color: 'red', height: 40 }}>{product.name}</td>)}
+      <td>{product.price}</td>
+    </tr>
   )
 }
 

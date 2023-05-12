@@ -1,35 +1,35 @@
-import { useState } from 'react';
-import jsonData from '../data.json';
-import SearchBar from './SearchBar';
-import ProductTable from './ProductTable';
+import React, { useState } from 'react'
+import SearchBar from './SearchBar'
+import ProductTable from './ProductTable'
+import storeDB from '../data.json';
 
 const ProductsPage = () => {
-  const [products, setProducts] = useState(jsonData);
-  const [searchKeyword, setSearchKeyword] = useState('');
+  const [products, setProducts] = useState(storeDB)
 
-  const handleSearch = (event) => {
-    setSearchKeyword(event.target.value);
-  };
-
-  const filteredProduct = !searchKeyword.length
-    ? products
-    : products.filter((product) =>
-      product.name
-        .toLocaleLowerCase()
-        .includes(searchKeyword.toLocaleLowerCase())
-    );
-
-  const handleCheck = (event) => {
-    event.target.checked ? setProducts(products.filter((product) => product.inStock)) :
-      setProducts(jsonData);
+  const filteredProduct = (str, inStockOnly) => {
+    let newList
+    if (!str && !inStockOnly) {
+      newList = storeDB
+    } else {
+      newList = storeDB.filter((product) => {
+        const nameMatch = product.name.toLowerCase().includes(str.toLowerCase())
+        const inStockMatch = inStockOnly ? product.inStock : true
+        if (inStockOnly) {
+          return nameMatch && inStockMatch
+        } else {
+          return nameMatch
+        }
+      })
+    }
+    setProducts(newList)
   }
 
   return (
-    <div className='ProductPage'>
+    <div>
       <h1>IronStore</h1>
-      <SearchBar handleSearch={handleSearch} searchKeyword={searchKeyword} handleCheck={handleCheck
-      } />
-      <ProductTable products={filteredProduct} />
+      <SearchBar filteredProduct={filteredProduct} />
+      <ProductTable products={products} />
+
     </div>
   )
 }
