@@ -40,9 +40,9 @@ Now one more time, we will be _thinking and acting_ in that direction. Maybe in 
 - Clone this repo
 
   ```bash
-  $ cd lab-thinking-in-react
-  $ npm install
-  $ npm start
+  cd lab-thinking-in-react-vite
+  npm install
+  npm run dev
   ```
 
 ## Submission
@@ -55,21 +55,10 @@ Now one more time, we will be _thinking and acting_ in that direction. Maybe in 
   git push origin master
   ```
 
-- Create a Pull Request so that your TAs can review your work.
+- Create a Pull Request and submit your assignment.
 
-## Getting Started
 
-Clean the `App.js` component so that it has the following structure:
 
-```jsx
-// src/App.js
-import "./App.css";
-
-function App() {
-  return <div className="App"></div>;
-}
-export default App;
-```
 
 ## Instructions
 
@@ -114,7 +103,7 @@ A possible approach could be something like this:
 
 As you can see here, we have four components in our app:
 
-- **ProductsPage (orange):** contains the entirety of the example (we will render it in the `App.js`)
+- **ProductsPage (orange):** contains the entirety of the example (we will render it in the `App.jsx`)
 - **SearchBar (blue):** having an input that takes the user's search string
 - **ProductTable (green):** displays all the products and also shows the filtered products based on the user's search
 - **ProductRow (red):** displays a row (_table data_) for each product
@@ -130,12 +119,12 @@ Now that we’ve identified the components in our app let’s arrange them into 
 
 ### Iteration 2 | Products Page
 
-First, let's create a `components/` folder and our first component `ProductsPage.js`. This component will be the _parent_ of the other components.
+First, let's create a `components/` folder and our first component `ProductsPage.jsx`. This component will be the _parent_ of the other components.
 
 We'll give you a starter hint to kick off the project: this component should have a state variable holding the array of products. It should then pass down the products to other components that need them. So to start, you should import the `data.json` file and create a state variable in the following way:
 
 ```jsx
-// src/components/ProductsPage.js
+// src/components/ProductsPage.jsx
 
 import { useState } from "react";
 import jsonData from "./../../data.json";
@@ -151,10 +140,10 @@ function ProductsPage() {
 }
 ```
 
-Next, let's import and render the `ProductsPage` component in the `App.js`:
+Next, let's import and render the `ProductsPage` component in the `App.jsx`:
 
 ```jsx
-// App.js
+// App.jsx
 import "./App.css";
 import ProductsPage from "./components/ProductsPage";
 
