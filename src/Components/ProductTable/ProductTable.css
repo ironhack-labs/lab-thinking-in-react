@@ -1,0 +1,9 @@
+.table {
+    width: 600px;
+    margin: auto;
+    margin-top: 120px;
+}
+
+.table thead {
+    display: inline-block;
+}
