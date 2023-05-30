@@ -1,23 +1,26 @@
 
-import { useState } from 'react';
 
+function SearchBar({searchInput,setSearchInput,checkedInput, setCheckedInput}) {
+  const handleChange = (event) => {
+    setSearchInput(event.target.value);
+  };
 
-function SearchBar() {
+  const handleChangeChecked = (event) => {
+    setCheckedInput(!checkedInput);
+  };
+
   return (
     <>
     <div>
-        <input type="text">
-            {/* <label></label> */}
-        </input> 
+        <input type="text" value={searchInput} onChange={handleChange}></input> 
+        {console.log(searchInput)}
     </div>
  
      <div>
-        <input type="checkbox">
-        {/* <label>Only show products in stock</label> */}
+        <input type="checkbox" value={checkedInput} onChange={handleChangeChecked}>
+        {console.log(checkedInput)}
         </input> 
     </div> 
-   
-
     </>
   )
 }

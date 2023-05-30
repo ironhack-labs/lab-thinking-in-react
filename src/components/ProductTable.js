@@ -1,19 +1,31 @@
 
-import { useState } from 'react';
-import jsonData from '../data.json';
+
+// import jsonData from '../data.json';
 import ProductRow from "./ProductRow"
 
-function ProductTable() {
+function ProductTable({products, searchInput,checkedInput}) {
   return (
     <div>
         <table>
-            <thead>
+        <thead>
+            <tr>
                 <th>Name</th>
                 <th>Price</th>
-            </thead>
-            {jsonData.map( (product) => {
-                return <ProductRow oneProduct={product} />;
-            } )}
+            </tr>
+         </thead>
+
+         {products
+              .filter((oneProduct) => {
+                if (
+                  oneProduct.name.toLowerCase().includes(searchInput.toLowerCase())
+                ) {
+                  return true;
+                }
+              })
+              .filter((stockedProduct) => checkedInput ?  stockedProduct.inStock : true)
+              .map( (product) => {
+                  return <ProductRow oneProduct={product} key={product.name}/>;
+              } )}
         </table>
       
     </div>
