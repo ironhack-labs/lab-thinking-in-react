@@ -1,10 +1,18 @@
-import React from 'react'
+import { useState } from 'react';
+import jsonData from '../data.json';
 
-function SearchBar() {
-//function here    
+function SearchBar({ search, setSearch }) {
+  
+  const handleSearch = (event) => {
+    setSearch(event.target.value);
+  };
   return (
-    <div>SearchBar</div>
-  )
+    <label>
+      {" "}
+      Search products
+      <input type="text" value={search} onChange={handleSearch} />
+    </label>
+  );
 }
 
-export default SearchBar
+export default SearchBar;
