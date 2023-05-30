@@ -1,4 +1,4 @@
-function ProductRow({ products }) {
+function ProductRow({ products, search }) {
   return (
     <div className="d-flex justify-content-center">
       <table style={{ width: '800px' }}>
@@ -9,19 +9,25 @@ function ProductRow({ products }) {
           </tr>
         </thead>
         <tbody>
-          {products.map((product) => {
-            return (
-              <tr className="border border-dark" key={product.id}>
-                <td
-                  className="fw-bold fs-5"
-                  style={{ color: product.inStock ? 'black' : 'red' }}
-                >
-                  {product.name}
-                </td>
-                <td className="fw-bold fs-5">{product.price}</td>
-              </tr>
-            );
-          })}
+          {products
+            .filter((oneProduct) => {
+              return oneProduct.name
+                .toLowerCase()
+                .includes(search.toLowerCase());
+            })
+            .map((product) => {
+              return (
+                <tr className="border border-dark" key={product.id}>
+                  <td
+                    className="fw-bold fs-5"
+                    style={{ color: product.inStock ? 'black' : 'red' }}
+                  >
+                    {product.name}
+                  </td>
+                  <td className="fw-bold fs-5">{product.price}</td>
+                </tr>
+              );
+            })}
         </tbody>
       </table>
     </div>
