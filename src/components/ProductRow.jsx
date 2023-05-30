@@ -1,4 +1,26 @@
-function ProductRow({ products, search }) {
+function ProductRow({ products, search, showInStock }) {
+  const filteredItems = products.filter((oneProduct) => {
+    const searchCheck = oneProduct.name
+      .toLowerCase()
+      .includes(search.toLowerCase());
+    const inStockCheck = showInStock ? oneProduct.inStock === true : true;
+    return searchCheck && inStockCheck;
+  });
+
+  const mappedItems = filteredItems.map((product) => {
+    return (
+      <tr className="border border-dark" key={product.id}>
+        <td
+          className="fw-bold fs-5"
+          style={{ color: product.inStock ? 'black' : 'red' }}
+        >
+          {product.name}
+        </td>
+        <td className="fw-bold fs-5">{product.price}</td>
+      </tr>
+    );
+  });
+
   return (
     <div className="d-flex justify-content-center">
       <table style={{ width: '800px' }}>
@@ -8,27 +30,7 @@ function ProductRow({ products, search }) {
             <td className="fs-5 fw-bold">Price</td>
           </tr>
         </thead>
-        <tbody>
-          {products
-            .filter((oneProduct) => {
-              return oneProduct.name
-                .toLowerCase()
-                .includes(search.toLowerCase());
-            })
-            .map((product) => {
-              return (
-                <tr className="border border-dark" key={product.id}>
-                  <td
-                    className="fw-bold fs-5"
-                    style={{ color: product.inStock ? 'black' : 'red' }}
-                  >
-                    {product.name}
-                  </td>
-                  <td className="fw-bold fs-5">{product.price}</td>
-                </tr>
-              );
-            })}
-        </tbody>
+        <tbody>{mappedItems}</tbody>
       </table>
     </div>
   );
