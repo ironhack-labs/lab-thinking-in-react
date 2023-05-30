@@ -1,11 +1,22 @@
 import { useState } from 'react';
+import ProductRow from './ProductRow.jsx';
 
 
 function ProductTable({products, search}) {
     console.log(products);
-    return (
+    return (<>
         <h1>products</h1>
-        /* <ProductRow products={products} /> */
+
+        {products
+            .map((product) => {
+                return <ProductRow key={product.id} product={product} />
+            })}
+            
+
+        
+
+    
+    </>
 
     )
 }
