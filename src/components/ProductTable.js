@@ -7,8 +7,8 @@ function ProductTable({ products, searchBox, searchCheckedBox }) {
     <div>
       <table>
         <thead>
-          <th>Name</th>
-          <th>Price</th>
+          <th className="table"> Name</th>
+          <th className="table">Price</th>
         </thead>
         {products
           .filter((oneProduct) => {

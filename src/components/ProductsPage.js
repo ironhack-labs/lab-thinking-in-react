@@ -9,8 +9,8 @@ function ProductsPage() {
   const [searchCheckedBox, setCheckedBox] = useState(false);
 
   return (
-    <div>
-      <h1>IronStore</h1>
+    <div className="iron-store">
+      <h1 className="h1">IronStore</h1>
       <SearchBar
         searchBox={searchBox}
         setSearchBox={setSearchBox}

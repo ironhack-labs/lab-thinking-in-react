@@ -14,11 +14,18 @@ function SearchBar({
   return (
     <>
       <div>
-        <input type="text" value={searchBox} onChange={handleTextSearch} />
+        <input
+          className="search-bar"
+          placeholder="Search products..."
+          type="text"
+          value={searchBox}
+          onChange={handleTextSearch}
+        />
       </div>
 
       <div>
         <input
+          className="check-box"
           type="checkbox"
           value={searchCheckedBox}
           onChange={handleCheckedBox}
