@@ -5,7 +5,7 @@ export default function SeachBar(props) {
 
   const handleCheckbox = (event) => {
     setIsChecked(event.target.checked);
-    props.handleChangeCheckbox(isChecked);
+    props.handleChangeCheckbox(event.target.checked);
   };
 
   return (
