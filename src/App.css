@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+.productRow{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 500px;
+  border: #282c34 solid;
+  margin: 5px;
+}
+body{
+  display: flex;
+  justify-content: center;
+}

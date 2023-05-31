@@ -1,23 +1,33 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import jsonData from './data.json';
+import SearchBar from './components/SearchBar.jsx'
+import ProductTable from './components/ProductTable.jsx'
 
 function App() {
+  const [products, setProducts] = useState(jsonData);
+  const [search, setSearch] = useState("");
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <div>
+        <h1>IronStore</h1>
+      </div> 
+      
+      <SearchBar
+        search={search}
+        setSearch={setSearch}
+
+      />
+      <ProductTable
+        products={products}
+        setProducts={setProducts}
+        search={search}
+
+      />
+
     </div>
   );
 }
