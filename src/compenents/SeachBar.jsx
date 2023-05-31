@@ -2,12 +2,10 @@ import { useState } from 'react';
 
 export default function SeachBar(props) {
   const [isChecked, setIsChecked] = useState(false);
-  const [inputSearch, setInputSearch] = useState('');
 
   const handleCheckbox = (event) => {
     setIsChecked(event.target.checked);
-    console.log(inputSearch);
-    props.handleChange(inputSearch, isChecked);
+    props.handleChangeCheckbox(isChecked);
   };
 
   return (
@@ -15,9 +13,7 @@ export default function SeachBar(props) {
       <p>Search</p>
       <input
         onChange={(event) => {
-          setInputSearch(event.target.value);
-          console.log(inputSearch);
-          props.handleChange(inputSearch, isChecked);
+          props.handleChangeSearchBar(event.target.value);
         }}
       />
       <input type="checkbox" onChange={handleCheckbox} checked={isChecked} />

@@ -6,27 +6,45 @@ import SeachBar from './SeachBar';
 export default function ProductPage() {
   const [products, setProducts] = useState(jsonData);
 
-  const handleChange = (filterProduct, onStock) => {
+  const handleChangeSearchBar = (filterProduct) => {
     let copy = [...jsonData];
-    if (onStock) {
-      copy = copy.filter(
-        (product) =>
-          product.name.toLowerCase().includes(filterProduct.toLowerCase()) &&
-          product.inStock === onStock
-      );
-    } else {
-      copy = copy.filter((product) =>
-        product.name.toLowerCase().includes(filterProduct.toLowerCase())
-      );
+    copy = copy.filter((product) =>
+      product.name.toLowerCase().includes(filterProduct.toLowerCase())
+    );
+    setProducts(copy);
+  };
+
+  const handleChangeCheckbox = (isChecked) => {
+    let copy = [...jsonData];
+    if (isChecked) {
+      copy = copy.filter((product) => product.inStock === isChecked);
     }
     setProducts(copy);
   };
+
+  // const handleChange = (filterProduct, onStock) => {
+  //   if (onStock) {
+  //     copy = copy.filter(
+  //       (product) =>
+  //         product.name.toLowerCase().includes(filterProduct.toLowerCase()) &&
+  //         product.inStock === onStock
+  //     );
+  //   } else {
+  //     copy = copy.filter((product) =>
+  //       product.name.toLowerCase().includes(filterProduct.toLowerCase())
+  //     );
+  //   }
+  //   setProducts(copy);
+  // };
 
   return (
     <div>
       <h1>IronStore</h1>
       <div>
-        <SeachBar handleChange={handleChange} />
+        <SeachBar
+          handleChangeSearchBar={handleChangeSearchBar}
+          handleChangeCheckbox={handleChangeCheckbox}
+        />
       </div>
       <div className="Center">
         <ProductTable products={products} />
