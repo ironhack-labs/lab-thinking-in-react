@@ -1,15 +1,10 @@
 import ProductRow from './ProductRow';
 
-function ProductTable ({search, products}) {
-  
-  
-  return(
+function ProductTable({ search, products }) {
+  return (
     <div>
-      
       <ProductRow search={search} products={products} />
-      
-
-    </div>    
-)
+    </div>
+  );
 }
-export default ProductTable           
+export default ProductTable;
