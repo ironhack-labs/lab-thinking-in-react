@@ -8,6 +8,10 @@ function ProductTable({products, search}) {
         <h1>products</h1>
 
         {products
+            .filter((oneProduct) => {
+                if (oneProduct.name.toLowerCase().includes(search.toLowerCase())
+                ) { return true; }
+            })
             .map((product) => {
                 return <ProductRow key={product.id} product={product} />
             })}
