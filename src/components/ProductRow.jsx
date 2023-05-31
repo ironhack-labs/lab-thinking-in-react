@@ -9,7 +9,7 @@ function ProductRow({search, products}) {
       </div>
       {products
       .filter((oneFilteredStudent)=>{
-        if(oneFilteredStudent.name.includes(search))
+        if(oneFilteredStudent.name.toLowerCase().includes(search.toLowerCase()))
         
         return true;
       })
