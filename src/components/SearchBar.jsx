@@ -1,7 +1,14 @@
-function SearchBar({ }) {
-    return (
-        <h1>searchbar</h1>
-    );
-  }
-  
-  export default SearchBar;
+function SearchBar({ search, setSearch }) {
+    const handleSearch = (event) => {
+        setSearch(event.target.value);
+    };
+  return (
+    <label>
+      {' '}
+      Search products:
+      <input type="text" value={search} onChange={handleSearch} />
+    </label>
+  );
+}
+
+export default SearchBar;
