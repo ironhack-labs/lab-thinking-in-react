@@ -2,7 +2,7 @@ import { useState } from 'react';
 import ProductRow from './ProductRow';
 import jsonDataJSON from './../data.json';
 
-function ProductTable() {
+function ProductTable({ search, setSearch }) {
   const [products, getProducts] = useState(jsonDataJSON);
 
   return (
@@ -13,15 +13,27 @@ function ProductTable() {
         <th>Product</th>
       </thead>
       <tbody>
-        {products.map((item) => (
-          <ProductRow
-            key={item.id}
-            category={item.category}
-            name={item.name}
-            price={item.price}
-            inStock={item.inStock}
-          />
-        ))}
+        {products
+          .filter((oneFilteredProduct) => {
+            if (
+              oneFilteredProduct.name
+                .toLowerCase()
+                .includes(search.toLowerCase())
+            ) {
+              return true;
+            }
+          })
+          .map((item) => {
+            return (
+              <ProductRow
+                key={item.id}
+                category={item.category}
+                name={item.name}
+                price={item.price}
+                inStock={item.inStock}
+              />
+            );
+          })}
       </tbody>
     </table>
   );

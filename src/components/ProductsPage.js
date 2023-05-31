@@ -1,13 +1,16 @@
+import { useState } from 'react';
 import SearchBar from './SearchBar';
 import ProductTable from './ProductTable';
 
 function ProductsPage() {
+  const [search, setSearch] = useState('');
+
   return (
     <div>
       <h1>IronStore</h1>
-      <SearchBar />
+      <SearchBar search={search} setSearch={setSearch} />
       <article>
-        <ProductTable />
+        <ProductTable search={search} />
       </article>
     </div>
   );
