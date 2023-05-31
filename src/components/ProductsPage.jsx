@@ -4,7 +4,7 @@ import productInfo from '../data.json';
 function ProductsPage({  }) {
 const [products, setProducts] = useState(productInfo);
     return (
-     <h1>products page</h1>
+     <h1>IronStore</h1>
     );
   }
   
