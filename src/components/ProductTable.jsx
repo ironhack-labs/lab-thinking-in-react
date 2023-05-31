@@ -6,11 +6,7 @@ function ProductTable () {
   
   return(
     <div>
-    {products.map((products) => {
-    return (
-    <h1>{products.category}</h1>
-    );
-    })}
+
     </div>    
 )
 }
