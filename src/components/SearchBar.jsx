@@ -1,6 +1,6 @@
-function SearchBar({ search, setSearch }) {
+function SearchBar({ }) {
     return (
-     <h1>product row</h1>
+        <h1>searchbar</h1>
     );
   }
   

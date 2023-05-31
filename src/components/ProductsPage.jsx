@@ -1,11 +1,14 @@
-import { useState } from 'react';
-import productInfo from '../data.json';
+import ProductTable from './ProductTable';
+import SearchBar from './SearchBar';
 
-function ProductsPage({  }) {
-const [products, setProducts] = useState(productInfo);
-    return (
-     <h1>IronStore</h1>
-    );
-  }
-  
-  export default ProductsPage;
+function ProductsPage() {
+  return (
+    <div className="products-page">
+      <h1>IronStore</h1>
+      <SearchBar />
+      <ProductTable />
+    </div>
+  );
+}
+
+export default ProductsPage;

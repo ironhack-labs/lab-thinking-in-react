@@ -1,6 +1,12 @@
-function ProductTable({ search, setSearch }) {
+import ProductRow from './ProductRow';
+
+function ProductTable({ products }) {
     return (
-     <h1>products page</h1>
+        <div className="product-table">
+             <ProductRow products={products}/>
+
+        </div>
+    
     );
   }
   
