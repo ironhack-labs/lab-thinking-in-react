@@ -1,14 +1,12 @@
-import { useState } from 'react';
-import jsonData from '../data.json';
 import ProductRow from './ProductRow';
-import ProductsPage from './ProductsPage';
-import SearchBar from './SearchBar';
-function ProductTable ({search}) {
-  const [products, setProducts] = useState(jsonData);
+
+function ProductTable ({search, products}) {
+  
   
   return(
     <div>
-      <ProductRow search={search} />
+      
+      <ProductRow search={search} products={products} />
       
 
     </div>    

@@ -1,7 +1,16 @@
 .App {
   text-align: center;
 }
-
+.Row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.ProductAndPriceTable{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

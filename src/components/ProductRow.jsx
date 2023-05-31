@@ -1,21 +1,24 @@
-import React from 'react'
-import jsonData from '../data.json';
-import {useState} from 'react'
-import SearchBar from './SearchBar';
-function ProductRow({search}) {
-  const [products, setProducts] = useState(jsonData);
+function ProductRow({search, products}) {
+
   return (
    
     <div className='ProductRow'>
-   <h1>Products Page </h1>
+  <div className="ProductAndPriceTable">
+        <h1>Product</h1>
+        <h1>Price</h1>
+      </div>
       {products
       .filter((oneFilteredStudent)=>{
         if(oneFilteredStudent.name.includes(search))
         
-        return oneFilteredStudent.name
+        return true;
       })
       .map((products)=> {
-        return  <h1>{products.name}</h1>
+        return  <div className="Row">
+          <h1>{products.name}</h1>
+          <h1>{products.price}</h1>
+        </div>
+
         
       })
      
