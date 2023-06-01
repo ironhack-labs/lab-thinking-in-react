@@ -1,7 +1,58 @@
-.green {
-  background-color: green;
+body {
+  background-image: url('/public/bg-image.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.red {
-  background-color: red;
+.App {
+  width: 500px;
+  margin: 100px;
+  border: solid 1px black;
+  box-shadow: 10px 5px 5px gray;
+  /* display: flex;
+  justify-content: center; */
+}
+
+.products-page h1 {
+  text-align: center;
+}
+
+.search-bar {
+  color: white;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar label input {
+  margin-left: 10px;
+}
+
+
+.table-container {
+  /* padding: 10px; */
+}
+
+table {
+  background-color: white;
+  width: 100%;
+  border-collapse: collapse;
+  padding: 10px;
+}
+
+table td,
+table th {
+  text-align: left;
+  padding: 10px;
+}
+
+table tr:nth-child(even){background-color: #f2f2f2;}
+
+table tr:hover {background-color: #EFA741;}
+
+table th {
+  color: white;
+  background-color: #A42F3A;
 }

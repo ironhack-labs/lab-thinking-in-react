@@ -22,7 +22,7 @@ function ProductTable({ search }) {
   });
 
   return (
-    <div>
+    <div className='table-container'>
       <table>
         <thead>
           <tr>
