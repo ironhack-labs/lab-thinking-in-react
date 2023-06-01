@@ -10,7 +10,7 @@ function ProductsPage () {
   const [checkedInput, setCheckedInput] = useState(false);
   
   return(
-      <div>
+      <div className='main'>
         <h1>IronStore</h1>
         <SearchBar searchInput={searchInput} setSearchInput={setSearchInput} checkedInput={checkedInput} setCheckedInput={setCheckedInput}/>
         <ProductTable searchInput={searchInput} products={products} checkedInput={checkedInput}/>

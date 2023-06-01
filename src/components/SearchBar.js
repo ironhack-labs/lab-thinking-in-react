@@ -1,6 +1,9 @@
-
-
-function SearchBar({searchInput,setSearchInput,checkedInput, setCheckedInput}) {
+function SearchBar({
+  searchInput,
+  setSearchInput,
+  checkedInput,
+  setCheckedInput,
+}) {
   const handleChange = (event) => {
     setSearchInput(event.target.value);
   };
@@ -11,18 +14,24 @@ function SearchBar({searchInput,setSearchInput,checkedInput, setCheckedInput}) {
 
   return (
     <>
-    <div>
-        <input type="text" value={searchInput} onChange={handleChange}></input> 
-        {console.log(searchInput)}
-    </div>
- 
-     <div>
-        <input type="checkbox" value={checkedInput} onChange={handleChangeChecked}>
-        {console.log(checkedInput)}
-        </input> 
-    </div> 
+      <div className="searchdiv">
+        <input id="search-id" type="text" value={searchInput} onChange={handleChange}/>
+        <label for="search-id">Search</label>
+        {/* {console.log(searchInput)} */}
+      </div>
+
+      <div className="checkeddiv">
+        <input
+          type="checkbox"
+          value={checkedInput}
+          onChange={handleChangeChecked}
+          id="checkboxid" 
+        /> 
+        <label for="checkboxid">Only show products in stock</label>
+          {/* {console.log(checkedInput)} */}  
+      </div>
     </>
-  )
+  );
 }
 
-export default SearchBar
+export default SearchBar;
