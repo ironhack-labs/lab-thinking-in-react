@@ -1,26 +1,21 @@
-function ProductRow({ products }) {
+function ProductRow({ product }) {
+  const outOfStockStyle = {
+    color: 'red',
+  };
+
   return (
-    <div className="product-row">
-      <table>
-        <tr>
-          <th>CATEGORY</th>
-          <th>NAME</th>
-          <th>PRICE</th>
-        </tr>
-        <tbody>
-            {products.map((product) => {
-             <tr>
-                return (
-                <td>{product.category}</td>
-                <td>{product.name} </td>
-                <td>{product.price} </td>
-                )
-                </tr>
-            })}
-       
-        </tbody>
-      </table>
-    </div>
+    <tr>
+      {product.inStock ? (
+        <td>{product.name}</td>
+      ) : (
+        <td style={outOfStockStyle}>{product.name}</td>
+      )}
+      {product.inStock ? (
+        <td>{product.price}</td>
+      ) : (
+        <td style={outOfStockStyle}>{product.price}</td>
+      )}
+    </tr>
   );
 }
 
