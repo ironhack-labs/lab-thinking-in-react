@@ -39,12 +39,43 @@
 
 .container {
   text-align: center;
+  margin:50px
+}
+
+.search-bar {
+  width: 800px;
+  padding:10px
+}
+
+.stock-text {
+  font-size: 16px;
+}
+
+.check-div {
+  margin-top:10px;
+}
+
+.table-container {
+  display: flex;
+  justify-content: center;
+}
+
+.red-text {
+  color:red
 }
 
 table {
-  border: 1px solid black
+  width: 800px;
+  margin-top: 20px;
+  border-spacing:0px
 }
 
-td{
-  border: 1px solid black
+td {
+  border-bottom: 1px solid gray;
+  padding: 5px;
+}
+
+th {
+  padding: 10px 5px;
+  background-color: #e7ecef;
 }

@@ -34,7 +34,7 @@ function ProductsPage() {
     }
   };
   return (
-    <div>
+    <div className="page-body">
       <h1>IronStore</h1>
       <SearchBar
         filterProductsByName={filterProductsByName}
