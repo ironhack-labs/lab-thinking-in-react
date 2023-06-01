@@ -1,5 +1,8 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .App-logo {
@@ -35,4 +38,54 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+table{
+  width: 500px;
+
+}
+
+.main{
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tablediv,.searchdiv{
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+
+}
+
+h1{
+  text-align: center;
+}
+
+thead,tr,th,td{
+  text-align: center;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+thead{
+  background-color: gray;
+}
+
+.searchdiv{
+  padding: 10px;
+  align-items: center;
+
+}
+
+.checkeddiv{
+  padding: 10px;
+  display: inline;
+}
+
+#search-id{
+  width: 500px;
 }
