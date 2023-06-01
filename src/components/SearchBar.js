@@ -15,7 +15,12 @@ function SearchBar({
   return (
     <>
       <div className="searchdiv">
-        <input id="search-id" type="text" value={searchInput} onChange={handleChange}/>
+        <input
+          id="search-id"
+          type="text"
+          value={searchInput}
+          onChange={handleChange}
+        />
         <label for="search-id">Search</label>
         {/* {console.log(searchInput)} */}
       </div>
@@ -25,10 +30,10 @@ function SearchBar({
           type="checkbox"
           value={checkedInput}
           onChange={handleChangeChecked}
-          id="checkboxid" 
-        /> 
+          id="checkboxid"
+        />
         <label for="checkboxid">Only show products in stock</label>
-          {/* {console.log(checkedInput)} */}  
+        {/* {console.log(checkedInput)} */}
       </div>
     </>
   );
