@@ -1,12 +1,19 @@
 import "../App.css";
 
 function ProductRow (props) {
-    console.log('PROPS', props)
+
+    let redColor = ""
+    if (props.inStock === false) {
+    redColor = <td style={{color: 'red'}}> {props.name}</td>
+    } else {
+        redColor = <td>{props.name}</td>
+    }
+  
     return (
         <div>
             <tbody>
                 <tr>
-                <td>{props.name}</td>
+                {redColor}
                 <td>{props.price}</td>
                 </tr>
 
