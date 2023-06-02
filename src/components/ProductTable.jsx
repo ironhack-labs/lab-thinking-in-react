@@ -1,5 +1,6 @@
 import React from 'react';
-import  ProductRow from './ProductRow'
+import ProductRow from './ProductRow'
+import jsonData from '../data.json'; //¿porque aqui no tengo que exportar los datos?
 
 const ProductTable = ({ products }) => {
   return (
