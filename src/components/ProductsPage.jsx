@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './ProductsPage.css'
 import jsonData from '../data.json'
 import SearchBar from './SearchBar';
 
@@ -11,7 +12,8 @@ const ProductsPage = () => {
     setSearchTerm(searchTerm);
   };
  return (
-    <div>
+   <div>
+     <h1>IRONSTORE</h1>
       <SearchBar onSearch={handleSearch} />
     </div>
   );
