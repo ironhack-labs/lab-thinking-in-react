@@ -1,21 +1,19 @@
 import React from 'react';
+import  ProductRow from './ProductRow'
 
 const ProductTable = ({ products }) => {
   return (
-    <div  className='ProductTable'>
+    <div>
       <table>
         <thead>
-         <tr>      
+          <tr>
             <th>Nombre</th>
             <th>Precio</th>
           </tr>
         </thead>
         <tbody>
           {products.map((product) => (
-            <tr key={product.id}>
-              <td>{product.name}</td>
-              <td>{product.price}</td>
-            </tr>
+            <ProductRow key={product.id} product={product} />
           ))}
         </tbody>
       </table>
@@ -24,5 +22,3 @@ const ProductTable = ({ products }) => {
 };
 
 export default ProductTable;
-
-
