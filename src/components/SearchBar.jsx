@@ -23,11 +23,14 @@ function SearchBar ({ products, setProducts }) {
         setInStock(event.target.checked);
         if (event.target.checked) {
             const filteredProducts = products.filter((product) => {
-                return product.inStock === true;
+                return product.inStock === true && product.name.toLowerCase().includes(search.toLowerCase());
             });
             setProducts(filteredProducts);
         } else {
-            setProducts(products);
+            const filteredProducts = products.filter((product) => {
+                return product.name.toLowerCase().includes(search.toLowerCase());
+            });
+            setProducts(filteredProducts);
         }
     };
 
