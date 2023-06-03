@@ -2,7 +2,7 @@ import ProductRow from "./ProductRow";
 
 
 function ProductTable (props) {
-    const { searchListResults } = props;
+    const { products } = props;
 
     return (
         <div>
@@ -13,10 +13,11 @@ function ProductTable (props) {
                         <th>Price</th>
                     </tr>
                 </thead>
-                {searchListResults.map ((product) => (
-            <ProductRow key={product.id} {...product}/>
-            ))}
-
+                <tbody>
+                {products.map ((product) => {
+                 return <ProductRow key={product.id} {...product}/>
+                })}
+                </tbody>
             </table>
 
         </div>

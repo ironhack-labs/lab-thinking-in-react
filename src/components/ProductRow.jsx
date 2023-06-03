@@ -10,17 +10,11 @@ function ProductRow (props) {
     }
   
     return (
-        <div>
-            <tbody>
-                <tr>
-                {redColor}
+            <tr>
+                <td>{redColor}</td>
                 <td>{props.price}</td>
-                </tr>
+            </tr>
 
-            </tbody>
-          
-
-        </div>
     )
 }
 
