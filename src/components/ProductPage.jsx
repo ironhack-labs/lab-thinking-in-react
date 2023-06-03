@@ -17,12 +17,25 @@ function ProductsPage () {
     setProducts(filteredProduct)
   }
 
+  const showStockProducts = (isChecked) => {
+    let productsInStock = "";
+    if(isChecked) {
+        productsInStock = productsData.filter(product =>{
+        return product.inStock
+      }) 
+    }else {
+      return productsData;
+    }
+    setProducts(productsInStock);
+  }
+
+
   return(
       <div>
         <h1>IronStore</h1>
         <div className='main-container'>
             <div className='search-bar'>
-                <SearchBar showFilteredProducts={showFilteredProducts}/>
+                <SearchBar showFilteredProducts={showFilteredProducts} showStockProducts={showStockProducts} />
             </div>
             <div className='products-table'>
                 <ProductTable products={products}/>
