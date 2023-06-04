@@ -5,7 +5,7 @@ function SearchBar (props) {
 
     const {showFilteredProducts, showStockProducts} = props
     const [searchName, setSearchName] = useState('');
-    const [isChecked, setChecked] = useState('')
+    const [isChecked, setChecked] = useState(false)
 
     const handleForm = (event) => {
     setSearchName(event.target.value);
