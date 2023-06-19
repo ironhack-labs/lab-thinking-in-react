@@ -6,6 +6,7 @@ const initialProducts = jsonData;
 console.log('initial Products Table : ', initialProducts);
 
 function ProductTable(props) {
+    
   return (
     <div className="productTable">
       <h1>ProductTable</h1>

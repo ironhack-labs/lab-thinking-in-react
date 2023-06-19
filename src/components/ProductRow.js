@@ -5,9 +5,6 @@ function ProductRow(props) {
     //const isEmptyClass = !props.productFromList.inStock && "empty"
     return(
     <>
-        {console.log("Inside my props",props)}
-        {console.log("And one level down",props.productFromList)}
-        {console.log("And now at the bottom",props.productFromList.name)}
 
         <tr>
             <td
