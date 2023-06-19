@@ -1,7 +1,7 @@
 function ProductRow(props) {
   return (
     <tr className="row">
-      <td>{props.name}</td>
+      <td style={{ color: props.inStock ? 'black' : 'red' }}>{props.name}</td>
       <td>{props.price}</td>
     </tr>
   );

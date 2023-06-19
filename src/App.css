@@ -1,38 +1,75 @@
-.App {
+* {
+  box-sizing: border-box;
+}
+
+h1 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.prod-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.searchBar-container {
+  margin-bottom: 30px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.searchBar-container .searchInput {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.searchBar-container .searchInput input {
+  padding: 5px 0;
+  font-size: 16px;
+  width: 750px;
+}
+
+.searchBar-container .stockInput {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.table-container {
+  margin-left: auto;
+  margin-right: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.table-container table {
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+}
+
+.table-container table thead tr {
+  display: flex;
+  justify-content: space-around;
+}
+
+.table-container table thead th{
+  padding: 10px 0;
+
+}
+
+.table-container thead tr {
+  background-color: #e7ecef;
+}
+
+.table-container tbody {
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.table-container tbody tr {
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #e7ecef;
+  padding: 10px 0;
 }
