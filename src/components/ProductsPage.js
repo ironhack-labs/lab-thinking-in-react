@@ -4,7 +4,7 @@ import jsonData from '../data.json';
 import SearchBar from './SearchBar';
 import ProductTable from './ProductTable';
 
-function ProductsPage(props) {
+function ProductsPage() {
   const [products, setProducts] = useState(jsonData);
 
   return (
@@ -13,7 +13,7 @@ function ProductsPage(props) {
 
       <SearchBar />
 
-      <ProductTable />
+      <ProductTable products={products} />
     </div>
   );
 }
