@@ -1,22 +1,20 @@
-import React, { useState } from 'react';
-
+import React from 'react';
 
 function SearchBar(props) {
-    const [searchValue, setSearchValue] = useState("")
-  
-  function changeValue (el){
-    props.filterFunction (el.target.value)
-   
-
-
-  }
-  return(
-      <div>
-        <label >Search the site:
-<input type="search" value={searchValue} name="search" onChange={changeValue}></input>
-</label>
-      </div>    
-  )
+ 
+  return (
+    <div>
+      <label>
+        Search the site:
+        <input
+          type="search"
+          value={props.value}
+          name="search"
+          onChange={props.searchWord}
+        ></input>
+      </label>
+    </div>
+  );
 }
 
 export default SearchBar;
