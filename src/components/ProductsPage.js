@@ -10,8 +10,8 @@ function ProductsPage () {
   return(
       <div>
         <h1>IronStore</h1>
-        <SearchBar/>
-        <ProductTable/>
+        <SearchBar products={products}/>
+        <ProductTable products={products} />
       </div>    
   )
 }
