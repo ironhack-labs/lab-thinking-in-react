@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,81 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+/* .App {
+  display: flex;
+  justify-content: center;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+h1 {
+  font-size: 3rem;
+  margin-top: 2.4rem;
+}
+
+.big-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 1.2rem;
+width: 80vw;
+margin: 0 auto;
+}
+
+.searchBar-container h3 {
+  font-size: 1.6rem;
+}
+
+.searchBar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.search-input {
+  width: 50vw;
+  font-size: 1.8rem;
+  border-radius: 5px;
+  border: 1px solid rgba(128, 128, 128, 0.582);
+}
+
+.searchBar-container label {
+display: flex;
+align-items: center;
+gap: 5px;
+}
+
+table {
+  width: 60vw;
+  text-align: center;
+  padding: 1rem;
+}
+
+.table-heading {
+  background-color: rgba(204, 201, 201, 0.637);
+}
+
+.table-heading tr th {
+  padding: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.table-data {
+  padding: 0.7rem;
+  text-align: center;
+  border: 1px solid rgba(128, 128, 128, 0.5);
+  font-size: 1.2rem;
+}
+
+.outOfStock {
+  color: red;
+}
+
+
