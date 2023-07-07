@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.searchBar{
+  padding: 10px;
+}
+
+.productTable{
+    width: 50vw;
+    height: 20vw;
+    padding: 10px;
+    display: inline-table;
+    border-style: double;
+    margin: 6rem 12rem 0 28rem;
+}
+
