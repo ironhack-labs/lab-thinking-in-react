@@ -41,7 +41,12 @@
   padding: 10px;
 }
 
-.productTable{
+.table-heading{
+  background-color: slategrey;
+  height: 2rem;
+}
+
+table{
     width: 50vw;
     height: 20vw;
     padding: 10px;
@@ -50,3 +55,7 @@
     margin: 6rem 12rem 0 28rem;
 }
 
+.table-data{
+  border-bottom: 1px solid lightgrey
+
+}
