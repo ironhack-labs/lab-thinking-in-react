@@ -1,21 +1,20 @@
+import ProductRow from "./ProductRow";
+
 const ProductTable = (props) => {
+  const { products, searchTerm, showOnStock } = props;
   return (
-    <div>
+    <div className="ProductTable">
       <table>
         <thead>
           <tr>
-            <th></th>
             <th>Name</th>
             <th>Price</th>
           </tr>
         </thead>
         <tbody>
-          {/* TableRow */}
-          <tr> 
-            <td>Product row</td>
-            <td>Football</td>
-            <td>$49.99</td>
-          </tr>
+          {products.map((product) => (
+            <ProductRow product={product} searchTerm={searchTerm} showOnStock={showOnStock} key={product.id} />
+          ))}
         </tbody>
       </table>
     </div>
