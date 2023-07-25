@@ -1,10 +1,11 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import ProductsPage from './components/ProductsPage';
 
 function App() {
   return (
     <div className="App">
-      
+      <ProductsPage />
     </div>
   );
 }
