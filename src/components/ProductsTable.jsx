@@ -1,23 +1,24 @@
+import ProductRow from "./ProductRow";
+
+
 function ProductsTable (props) {
-    return(
-    <div>
-        <table>
+    return (
+        <div className="table-container">
+          <table>
             <thead>
-                <tr>
-                    <th></th>
-                    <th>Name</th>
-                    <th>Price</th>
-                </tr>
+              <tr>
+                <th>Name</th>
+                <th>Price</th>
+              </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>ProductRow</td>
-                    <td>Football</td>
-                    <td>$49.99</td>
-                </tr>
+              {props.products.map((product) => {
+                return <ProductRow name={product.name} price={product.price} />;
+              })}
             </tbody>
-        </table>
-    </div>)
+          </table>
+        </div>
+      );
 }
 
 export default ProductsTable;
