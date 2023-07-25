@@ -1,10 +1,25 @@
-function ProductRow (props) {
-    return (
-        <tr>
-            <td>{props.name}</td>
-            <td>{props.price}</td>
-        </tr>
+const ProductRow = ({ product, searchTerm, showOnStock }) => {
+    const productName = String(product.name).toLowerCase()
+    const searchName = String(searchTerm).toLowerCase()
+  
+    const toRender = (
+      <tr className="ProductRow">
+        <td className={product.inStock ? 'inStock' : 'outStock'}>
+          {product.name}
+        </td>
+        <td>{product.price}</td>
+      </tr>
     )
-}
-
-export default ProductRow;
+  
+    if (productName.startsWith(searchName) && !showOnStock) {
+      return (
+        toRender
+      )
+    } else if (productName.startsWith(searchName) && showOnStock && product.inStock) { 
+      return (
+        toRender
+      )
+    }
+  }
+  
+  export default ProductRow

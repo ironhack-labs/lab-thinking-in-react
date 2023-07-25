@@ -3,15 +3,19 @@ import jsonData from '../data.json';
 import SearchBar from './SearchBar';
 import ProductsTable from './ProductsTable';
 
-function ProductsPage (props) {
+function ProductsPage () {
   const [products, setProducts] = useState(jsonData);
-  console.log("productsTable :", ProductsTable)
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearchTermChange = (event) => {
+    setSearchTerm(event.target.value)
+  }
   
   return(
       <div>
         <h1>IronStore</h1>
-        <SearchBar/>
-        <ProductsTable products={products}/>
+        <SearchBar searchByWord={handleSearchTermChange}/>
+        <ProductsTable products={products} searchTerm={searchTerm}/>
       </div>    
   )
 }

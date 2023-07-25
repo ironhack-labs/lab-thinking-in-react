@@ -1,24 +1,24 @@
 import ProductRow from "./ProductRow";
 
-
-function ProductsTable (props) {
-    return (
-        <div className="table-container">
-          <table>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Price</th>
-              </tr>
-            </thead>
-            <tbody>
-              {props.products.map((product) => {
-                return <ProductRow name={product.name} price={product.price} />;
-              })}
-            </tbody>
-          </table>
-        </div>
-      );
+const ProductTable = (props) => {
+  const { products, searchTerm, showOnStock } = props;
+  return (
+    <div className="ProductTable">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {products.map((product) => (
+            <ProductRow product={product} searchTerm={searchTerm} showOnStock={showOnStock} key={product.id} />
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
 }
 
-export default ProductsTable;
+export default ProductTable

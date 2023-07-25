@@ -1,9 +1,9 @@
-function SearchBar (props) {
+function SearchBar ({name, searchByWord}) {
     return (
     <div>
         <h2>Search</h2>
 
-        <input type="search"></input>
+        <input onInput={e => searchByWord(e)} type="text"></input>
         <input type="checkbox"></input>Only products in stock
     </div>)
 }
