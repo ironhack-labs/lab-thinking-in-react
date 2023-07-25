@@ -5,7 +5,7 @@ import ProductTable from './ProductTable'
 
 const ProductsPage = () => {
   // eslint-disable-next-line no-unused-vars
-  const [products, setProducts] = useState(jsonData)
+  const [products ] = useState(jsonData)
   const [searchTerm, setSearchTerm] = useState("")
   const [onlyInStock, setOnlyInStock] = useState(false)
 
