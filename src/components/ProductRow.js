@@ -1,12 +1,14 @@
 import React from "react";
 
-const ProductRow = (data) => {
+const ProductRow = ({product}) => {
+    const {category, price, name, inStock} = product;
+    const outOfStock =  inStock ? "" : "outOfStock"
+
     return (
         <tr>
-            <td>{data.category}</td>
-            <td>{data.price}</td>
-            <td>{data.inStock}</td>
-            <td>{data.id}</td>
+            <td className={outOfStock}>{name}</td>
+            <td>{price}</td>
+            
         </tr>
     );
 };

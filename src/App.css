@@ -1,4 +1,32 @@
 .App {
   text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 100%;
 }
 
+.outOfStock {
+  color: red;
+}
+
+h1 {
+  padding: 20px;
+  font-size: 70px;
+}
+
+input {
+  margin: 10px;
+}
+
+td, th {
+  justify-content: center;
+  text-align: left;
+  padding-left: 70px;
+  padding-top: 5px;
+}
+
+table {
+  width: 400px;
+  padding-top: 20px;
+}
