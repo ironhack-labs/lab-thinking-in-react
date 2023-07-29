@@ -1,8 +1,6 @@
 
 
 function ProductRow (props) {
-
-   
     
     return(
      <tr>
