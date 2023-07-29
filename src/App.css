@@ -28,6 +28,21 @@
   color: #61dafb;
 }
 
+ul {
+  display: flex;
+  flex-direction: column;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content:space-around
+}
+
+.red {
+  color:red;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
