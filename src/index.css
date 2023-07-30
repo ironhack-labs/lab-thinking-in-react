@@ -11,3 +11,44 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.input-text{
+  width: 600px;
+  height: 20px;
+}
+.check{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.out-of-stock{
+  color: red;
+}
+
+.table-products{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.table-products table{
+  border: none;
+  border-collapse: collapse;
+
+}
+
+.table-products th{
+  background-color: coral;
+  width: 360px;
+  height: 40px;
+  border: none;
+  border-collapse: collapse;
+
+}
+.table-products td{
+  border-top: 1px solid gray;
+  height: 40px;
+
+}
