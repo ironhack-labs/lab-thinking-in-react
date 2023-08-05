@@ -1,38 +1,39 @@
+/* Estilos para el contenedor principal */
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Estilos para las celdas de productos agotados */
+.outofStock {
+  color: red; /* Puedes cambiar el color según tus preferencias */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Estilos para el encabezado de la tabla */
+h1 {
+  font-size: 24px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Estilos para los campos de entrada */
+input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Estilos para las celdas y encabezados de columna de la tabla */
+td, th {
+  padding: 10px;
+  border: 1px solid #ccc;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Estilos para la tabla */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Estilos para las filas impares (opcional, solo para mejorar la legibilidad) */
+tr:nth-child(odd) {
+  background-color: #f2f2f2; /* Puedes cambiar el color según tus preferencias */
 }
