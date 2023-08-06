@@ -1,25 +1,27 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 function SearchBar(props) {
-  const [searchQuery, setSearchQuery] = useState('');
+  const { handleSearchChange, handleStockChange, inStockOnly } = props;
 
-  // Handler function to update the searchQuery state when the user types in the input field
-  const handleSearchChange = (event) => {
-    setSearchQuery(event.target.value);
-  };
 
   return (
     <div className="search-bar">
+      <p> Search </p>
       <input
         type="text"
         placeholder="Search..."
-        value={searchQuery}
         onChange={handleSearchChange}
       />
-      {/* Add any additional search bar UI elements or logic as needed */}
+      <label>
+        <input
+          type="checkbox"
+          checked={inStockOnly}
+          onChange={handleStockChange}
+        />
+        Only show products in stock
+      </label>
     </div>
   );
+}
 
-  }
-  
-  export default SearchBar
+export default SearchBar;
