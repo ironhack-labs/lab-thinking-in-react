@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+
+.productsPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchBar > input {
+  margin-bottom: 10px;
+  padding: 5px 10px;
+}
+
+.productsTable {
+  margin: 40px 0px;
+}
+
+.productsTable > table > th, td {
+  padding: 5px 15px;
+}
