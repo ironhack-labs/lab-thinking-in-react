@@ -96,9 +96,8 @@ Each product object has the following fields: `category`, `price`, `inStock` and
 
 
 
-You will be dealing with multiple components that depend on each other. To properly reflect the changes in all the components, we'll store the state in the closest common parent component (remember _lift the state up_).
 
-You will be dealing with multiple components that depend on each other. To ensure that components can interact with each other, we'll store the state in the closest common parent component (remember _lifting the state up_).
+You will be dealing with multiple components that depend on each other. To properly reflect the changes in all the components and ensure that components can interact with each other, we'll store the state in the closest common parent component (remember _lifting the state up_).
 
 And remember, this is just an exercise and a part of the learning process. No one expects you to do it perfectly. Think it through, ask questions, be curious and explore all possibilities. Let's do this! :wink:
 
