@@ -5,7 +5,7 @@ function ProductsTable({ products, deleteProduct, resetProduct }) {
     <table>
       <thead>
         <tr>
-          <th colspan="3" className="reset" onClick={resetProduct}>
+          <th colSpan="3" className="reset" onClick={resetProduct}>
             Reset
           </th>
         </tr>
