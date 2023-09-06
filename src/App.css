@@ -1,38 +1,76 @@
 .App {
   text-align: center;
+  margin: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.ProductsPage {
+  background-image: url(/public/training-scottWebb-pixabay.jpg);
+  background-size: cover;
+  background-position: center center;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 100vh;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 80px;
   color: white;
+  
 }
 
-.App-link {
-  color: #61dafb;
+h3 {
+  color: gainsboro;
+  font-size: 20px;
+ 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.SearchBar {
+  margin-bottom: 10px;
+  color: white;
+  width: 250px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.ProductTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  background-position: center center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  
+  
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.ProductsRow {
+  color: white; 
+}
+
+.ProductsRow.out-of-stock {
+  color: red; 
 }
