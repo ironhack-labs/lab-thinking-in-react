@@ -1,5 +1,5 @@
 function SearchBar(props) {
-  function filterProducts() {
+  function FilterProducts() {
     alert('works');
   }
 
@@ -8,7 +8,7 @@ function SearchBar(props) {
       <div className="search-bar-input-container">
         <label htmlFor="search">Search</label>
         <input
-          onChange={filterProducts}
+          onChange={FilterProducts}
           type="text"
           name="search"
           id="search"
