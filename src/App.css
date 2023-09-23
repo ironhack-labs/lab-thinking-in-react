@@ -36,3 +36,34 @@
     transform: rotate(360deg);
   }
 }
+/* src/components/ProductsPage.css */
+.products-page {
+  text-align: center;
+  padding: 20px;
+}
+
+.page-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* src/components/ProductTable.css */
+.table-container {
+  margin-top: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.text-red {
+  color: red;
+}
