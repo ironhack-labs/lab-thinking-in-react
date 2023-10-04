@@ -5,21 +5,20 @@ import React, { useState } from "react";
 function SearchBar({ onSearch }) {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const handleInputChange = (e) => {
-    const newSearchTerm = e.target.value;
-    setSearchTerm(newSearchTerm);
-    onSearch(newSearchTerm); // Llamar a la función de búsqueda con la nueva entrada
+  const handleInputChange = (e) => {  //evento de cambio//
+    const newSearchTerm = e.target.value; // extraer el valor del cambio//
+    setSearchTerm(newSearchTerm); //actualiza el estado//
+    onSearch(newSearchTerm); 
   };
 
   return (
     <div>
       <input
         type="text"
-        placeholder="Buscar productos"
+        placeholder="Find Products"
         value={searchTerm}
         onChange={handleInputChange}
       />
-      {/* Otros elementos de búsqueda si es necesario */}
     </div>
   );
 }

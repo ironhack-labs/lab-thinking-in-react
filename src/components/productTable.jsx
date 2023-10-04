@@ -11,7 +11,6 @@ function ProductTable({ products }) {
           <tr>
             <th>Nombre</th>
             <th>Precio</th>
-            {/* Agregar más encabezados si es necesario */}
           </tr>
         </thead>
         <tbody>
