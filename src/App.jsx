@@ -1,9 +1,11 @@
-import "./App.css";
+import React from "react";
+import ProductsPage from "./components/ProductsPage";
+import productsData from "./data.json";
 
 function App() {
   return (
     <div className="App">
-      <h1>React | Thinking in React</h1>
+      <ProductsPage productsData={productsData} />
     </div>
   );
 }
