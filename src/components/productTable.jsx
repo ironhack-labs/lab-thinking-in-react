@@ -1,4 +1,6 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
+import React from "react";
 import ProductRow from "./productRow";
 
 function ProductTable({ products }) {
@@ -7,8 +9,9 @@ function ProductTable({ products }) {
       <table>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Price</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            {/* Agregar más encabezados si es necesario */}
           </tr>
         </thead>
         <tbody>

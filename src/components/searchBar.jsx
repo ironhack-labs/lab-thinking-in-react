@@ -8,7 +8,7 @@ function SearchBar({ onSearch }) {
   const handleInputChange = (e) => {
     const newSearchTerm = e.target.value;
     setSearchTerm(newSearchTerm);
-    onSearch(newSearchTerm);
+    onSearch(newSearchTerm); // Llamar a la función de búsqueda con la nueva entrada
   };
 
   return (
@@ -19,6 +19,7 @@ function SearchBar({ onSearch }) {
         value={searchTerm}
         onChange={handleInputChange}
       />
+      {/* Otros elementos de búsqueda si es necesario */}
     </div>
   );
 }
