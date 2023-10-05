@@ -1,0 +1,8 @@
+.productsColumn {
+    display: flex;
+    align-items: flex-start;
+}
+
+.productsColumn td {
+    margin-left: 30px;
+}
