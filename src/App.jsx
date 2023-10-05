@@ -1,9 +1,11 @@
-import "./App.css";
+import React from 'react';
+import './App.css';
+import ProductsPage from './components/product-page/ProductPage';
 
 function App() {
   return (
-    <div className="App">
-      <h1>React | Thinking in React</h1>
+    <div className="appStyles">
+      <ProductsPage/>
     </div>
   );
 }
