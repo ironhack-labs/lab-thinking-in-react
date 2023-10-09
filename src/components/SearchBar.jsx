@@ -28,6 +28,7 @@ function SearchBar({ products }) {
       <div className="mt-4">
 
         <input
+          className="w-50 p-3 mt-4"
           type="text"
           placeholder="Search product..."
           value={search}
@@ -45,7 +46,7 @@ function SearchBar({ products }) {
 
       <div className="form-check form-check-inline mt-5">
         <input 
-          className="form-check-input" 
+          className="form-check-input " 
           type="checkbox" 
           checked={showOnlyInStock} 
           onChange={handleCheckboxChange} 

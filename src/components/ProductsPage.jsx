@@ -9,7 +9,7 @@ function ProductsPage() {
   
   return (
     <div>
-      <h1>IronStore</h1>
+      <p class="fs-1 mt-3">IronStore</p>
       <SearchBar
       products = {products} />
       <ProductTable 
