@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+
+
+.searchbar-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 30px;
+}
+
+.checkBox{
+  display: flex;
+  flex-direction: row;
+}
+
+table{
+  position: absolute;
+  top: 50%;
+  left: 40%;
+}
