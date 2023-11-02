@@ -1,38 +1,135 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width:100%;
+  margin: 0;
+  padding: 0;
+}
+
+#heading{
+  background-color: rgb(41, 41, 66);
   color: white;
+  position: fixed;
+  width: 100%;
+  height: 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
-.App-link {
-  color: #61dafb;
+#main-search{
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 3%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#search{
+  border-style: none;
+  padding: 15px;
+  width: 50%;
+  margin-top: 2%;
+  background-color: rgb(231, 231, 231);
+  border-radius: 20px;
+  text-align: center;
+  font-size: 18px;
+  color: rgb(41, 41, 66);
+  transition: 2s;
+}
+
+#search::placeholder{
+  color: rgb(114, 114, 114);
+}
+
+#search:hover{
+  background-color: rgb(211, 211, 211);
+  transition: 2s;
+}
+
+#search:active{
+  border-style: none;
+}
+
+#stock{
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  width: 50%;
+  
+}
+
+#check{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 0.5%;
+}
+
+#table{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#info-table{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+}
+
+#thead{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#titles{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+  background-color: rgb(41, 41, 66);
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 1%;
+}
+
+#table-row{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 20px;
+  text-align: center;
+  width: 50%;
+}
+
+#parent-row{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.row{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 20px;
+  border-bottom: 2px solid rgba(41, 41, 66, 0.322);;
 }
