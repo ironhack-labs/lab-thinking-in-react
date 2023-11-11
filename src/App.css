@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+
+h1 {
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 0;
+}
+
+.product-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
