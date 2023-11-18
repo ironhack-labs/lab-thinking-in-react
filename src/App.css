@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+
+input[type="text"],
+select {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid red;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.productTable {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: x-large;
+}
+.productName {
+}
+.productPrice {
+  color: red;
+  padding: 20px;
+}
