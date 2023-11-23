@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.outOfStock {
+  color: red;
+}
+
+.tabli {
+  text-align: center;
+  border: 2px solid black;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.titul {
+  font-size: 24px;
+  justify-content: center;
+  margin-right: 30px;
+  margin-bottom: 10px;
+
+}
