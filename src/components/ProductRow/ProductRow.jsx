@@ -13,7 +13,7 @@ const ProductRow = ({ products }) => {
                     })
                 }
             </div>
-            {/* <div className="price col-6">
+            <div className="price col-6">
                 {
                     products.map(e => {
                         return (
@@ -21,7 +21,7 @@ const ProductRow = ({ products }) => {
                         )
                     })
                 }
-            </div> */}
+            </div>
         </div>
 
 
