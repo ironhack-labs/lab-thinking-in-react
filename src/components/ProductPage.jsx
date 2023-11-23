@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import jsonData from './../data.json'
 import SearchBar from "./SearchBar/SearchBar"
 import ProductTable from "./ProductTable/ProductTable"
@@ -12,16 +12,12 @@ const ProductPage = () => {
 
     const [checked, setChecked] = useState(false)
 
-    const filterByStock = () => {
+    useEffect(() => { productsInStock() }, [checked])
 
-        setChecked(!checked)
-        console.log(checked)
-        productsInStock()
-    }
 
     function productsInStock() {
         console.log(checked)
-        if (!checked) {
+        if (checked) {
             const copy = productsBackup.filter(e => e.inStock)
             setProducts(copy)
             console.log(products)
@@ -38,7 +34,7 @@ const ProductPage = () => {
             <h1>IronStore</h1>
             <SearchBar products={products} setProducts={setProducts} />
             <label>Stock</label>
-            <input type="checkbox" onChange={filterByStock} />
+            <input type="checkbox" onChange={() => setChecked(!checked)} />
             <ProductTable products={products} />
         </div>
     )
