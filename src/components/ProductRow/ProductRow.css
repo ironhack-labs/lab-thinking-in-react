@@ -1,0 +1,8 @@
+.ProductRow {
+    display: flex;
+    justify-content: space-around;
+}
+
+.red {
+    color: red;
+}
