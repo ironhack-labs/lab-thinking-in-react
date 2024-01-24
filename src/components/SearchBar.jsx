@@ -10,7 +10,7 @@ function SearchBar() {
         <input type="checkbox" name="checkBox" id="check-box" />
         <label htmlFor="checkBox" id="check-box-label">
           {' '}
-          Only show products in stock
+          only show products in stock
         </label>
       </div>
     </div>

@@ -4,21 +4,21 @@ function ProductRow(props) {
 
   const inStockColor = (isInStock) => {
     if (!isInStock) {
-      return { color: 'red' };
+      return { backgroundColor: 'red', color: 'white' };
     } else {
-      return { color: 'black' };
+      return { backgroundColor: 'white', color: 'black' };
     }
   };
 
   return (
     <>
-      <tr className="product-table-row">
-        <th className="product-table-body-name" style={inStockColor(inStock)}>
+      <tr className="product-table-body-row">
+        <td className="product-table-body-data" style={inStockColor(inStock)}>
           {productName}
-        </th>
-        <th className="product-table-body-price" style={inStockColor(inStock)}>
+        </td>
+        <td className="product-table-body-data" style={inStockColor(inStock)}>
           {productPrice}
-        </th>
+        </td>
       </tr>
     </>
   );

@@ -12,24 +12,20 @@ function ProductTable(props) {
   return (
     <>
       <table id="product-table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          {products.map((product) => {
-            return (
-              <ProductRow
-                productName={product.name}
-                productPrice={product.price}
-                inStock={product.inStock}
-                key={product.id}
-              ></ProductRow>
-            );
-          })}
-        </tbody>
+        <tr id="product-table-head-row">
+          <th className="product-table-head-data">Name</th>
+          <th className="product-table-head-data">Price</th>
+        </tr>
+        {products.map((product) => {
+          return (
+            <ProductRow
+              productName={product.name}
+              productPrice={product.price}
+              inStock={product.inStock}
+              key={product.id}
+            ></ProductRow>
+          );
+        })}
       </table>
     </>
   );
