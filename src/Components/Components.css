@@ -1,0 +1,44 @@
+/* Estilo básico de la tabla */
+.title{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 30px;
+    text-align:center;
+}
+#table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+  }
+  
+  /* Encabezado de la tabla */
+  th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  /* Resaltar fila al pasar el ratón */
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  /* Estilo de la primera columna (si es necesario) */
+  td:first-child {
+    font-weight: bold;
+  }
+  
+  /* Alineación de las celdas según sea necesario */
+  td {
+    text-align: left;
+  }
+  
+  /* Estilo alternativo de filas */
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
