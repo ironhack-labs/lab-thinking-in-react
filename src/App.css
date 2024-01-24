@@ -36,3 +36,34 @@
     transform: rotate(360deg);
   }
 }
+
+/*  */
+
+#iron-store {
+  padding: 30px;
+}
+
+#search-bar-component {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#product-table {
+  width: 100%;
+  margin-top: 40px;
+}
+
+#product-table > thead th {
+  background-color: lightgray;
+  padding: 10px 0;
+  width: 50%;
+}
+
+#product-table tbody {
+  background-color: white;
+}
+
+.product-table-row > th {
+  padding: 10px 0;
+}
