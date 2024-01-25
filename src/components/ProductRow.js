@@ -1,5 +1,4 @@
 function ProductRow(props) {
-  console.log(props.productName);
   return (
     <>
       {props.productName.map((product) => {
