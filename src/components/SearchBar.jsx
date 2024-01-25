@@ -2,19 +2,13 @@ function SearchBar(props) {
   const { products, setProducts, fullList } = props;
 
   const filterProducts = (event) => {
-    console.log(event.target.value);
     const inputString = event.target.value;
-    const filteredProducts = products.filter((product) => {
+    // console.log(inputString);
+    const filteredProducts = fullList.filter((product) => {
       return product.name.startsWith(inputString);
     });
-    console.log(filteredProducts);
-    if (inputString === '') {
-      setProducts(fullList);
-    } else if (filteredProducts.length === 0) {
-      setProducts([]);
-    } else {
-      setProducts(filteredProducts);
-    }
+    // console.log(filteredProducts);
+    setProducts(filteredProducts);
   };
 
   return (
