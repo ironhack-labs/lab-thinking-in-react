@@ -1,0 +1,26 @@
+.ProductTable table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.ProductTable thead {
+    background-color: #e7ecef;
+}
+
+.ProductTable tr {
+    border-bottom: 1px solid #dee2e4;
+
+}
+
+.ProductTable thead tr {
+    height: 52px;
+    color: #505459;
+}
+
+.ProductTable tbody tr {
+    height: 48px;
+}
+
+.ProductTable table td {
+    text-align: center;
+}
