@@ -1,0 +1,23 @@
+.SearchBar form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.SearchBar fieldset.checkbox-fieldset {
+    display: flex;
+    align-items: center;
+}
+
+.SearchBar input[type="text"]{
+    width: 100%;
+    height: 40px;
+    padding: 4px 8px;
+}
+
+.SearchBar input[type="checkbox"]{
+    height: 1.25rem;
+    width: 1.25rem;
+    margin-right: 4px;
+}

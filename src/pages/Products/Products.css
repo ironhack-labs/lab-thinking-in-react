@@ -1,0 +1,17 @@
+#products-page {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 24px;
+}
+
+#products-page > .page-title {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+#products-page > .wrapper {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
