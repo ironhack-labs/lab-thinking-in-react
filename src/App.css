@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+#table{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headers{
+  font-size: 1.3em;
+  padding: 0 8em;
+}
+
+.inStock{
+  color:black;
+}
+
+.notInStock{
+  color:red
+}
