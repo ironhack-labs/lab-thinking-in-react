@@ -11,6 +11,19 @@ function SearchBar(props) {
     setProducts(filteredProducts);
   };
 
+  const showInStock = (event) => {
+    const isChecked = event.target.checked;
+    // console.log(isChecked);
+    if (isChecked) {
+      const productsInStock = products.filter((product) => {
+        return product.inStock;
+      });
+      setProducts(productsInStock);
+    } else {
+      setProducts(fullList);
+    }
+  };
+
   return (
     <div id="search-bar-component">
       <label htmlFor="searchBar" id="search-bar-label">
@@ -24,7 +37,12 @@ function SearchBar(props) {
       />
 
       <div id="checkbox-container">
-        <input type="checkbox" name="checkBox" id="check-box" />
+        <input
+          type="checkbox"
+          name="checkBox"
+          id="check-box"
+          onChange={showInStock}
+        />
         <label htmlFor="checkBox" id="check-box-label">
           {' '}
           only show products in stock
