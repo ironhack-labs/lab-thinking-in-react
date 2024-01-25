@@ -4,7 +4,19 @@ function SearchBar(props) {
   const filterProducts = (event) => {
     const inputString = event.target.value;
     // console.log(inputString);
-    const filteredProducts = fullList.filter((product) => {
+
+    /* HERE IS A PROBLEM:
+
+I can decide if I want to have both filters working at the same time 
+and the input one not correctly, or to have only each one working correctly,
+but not correctly at the same time.
+
+Problem is which array I am using as a reference to filter in the filterProducts function.
+fullList.filter = filterProducts alone works correctly
+products.filter = filterProducts and checkbox work at the same time, but not filterProducts individually.
+*/
+
+    const filteredProducts = products.filter((product) => {
       return product.name.startsWith(inputString);
     });
     // console.log(filteredProducts);
