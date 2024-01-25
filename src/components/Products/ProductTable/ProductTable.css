@@ -24,3 +24,7 @@
 .ProductTable table td {
     text-align: center;
 }
+
+.ProductTable .out-of-stock {
+    color:red;
+}

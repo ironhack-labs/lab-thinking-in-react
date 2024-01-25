@@ -1,6 +1,6 @@
 import './ProductTable.css';
 
-export default function ProductTable() {
+export default function ProductTable({ products }) {
   return (
     <section className="ProductTable" id="products">
       <table id="product-table">
@@ -11,12 +11,25 @@ export default function ProductTable() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Abc</td>
-            <td>$12.12</td>
-          </tr>
+          {products.map((product) => (
+            <ProductRow
+              key={product.id}
+              name={product.name}
+              price={product.price}
+              inStock={product.inStock}
+            />
+          ))}
         </tbody>
       </table>
     </section>
+  );
+}
+
+function ProductRow({ name, price, inStock }) {
+  return (
+    <tr>
+      <td className={!inStock ? 'out-of-stock' : ''}>{name}</td>
+      <td>{price}</td>
+    </tr>
   );
 }

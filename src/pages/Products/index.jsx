@@ -12,7 +12,7 @@ export default function Products() {
       <h1 className="page-title">IronStore</h1>
       <div className="wrapper">
         <SearchBar />
-        <ProductTable />
+        <ProductTable products={products} />
       </div>
     </div>
   );
