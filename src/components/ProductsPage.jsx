@@ -17,7 +17,11 @@ function ProductsPage() {
   return (
     <div id="iron-store">
       <h1 id="ironstore-headline">IronStore</h1>
-      <SearchBar products={products} setProducts={setProducts}></SearchBar>
+      <SearchBar
+        products={products}
+        setProducts={setProducts}
+        fullList={jsonData}
+      ></SearchBar>
       <ProductTable
         products={products}
         setProducts={setProducts}

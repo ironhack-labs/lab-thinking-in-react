@@ -37,7 +37,7 @@
 
 #search-bar-input:focus {
   border-style: none;
-  background-color: red;
+  background-color: blue;
   color: white;
 }
 
