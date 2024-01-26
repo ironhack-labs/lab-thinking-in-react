@@ -11,3 +11,42 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.main-container {
+}
+
+h1 {
+  text-align: center;
+  font-weight: 400;
+}
+
+h2{
+  font-weight: 300
+}
+
+.search-bar {
+  width: 40%;
+}
+
+.table {
+  border: 1px solid;
+  width: 50%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  margin: auto;
+  margin-top: 50px;
+
+  /* align-items: center; */
+}
+
+.table-header {
+  border: 1px solid;
+  padding: 10px;
+  background-color: lightgray;
+}
+
+.table-row{
+  border: 1px solid;
+  border-color: black;
+  padding: 10px;
+}
