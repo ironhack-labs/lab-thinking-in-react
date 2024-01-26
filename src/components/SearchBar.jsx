@@ -1,11 +1,13 @@
+import { useState } from 'react';
+
 function SearchBar(props) {
   const { products, setProducts, fullList } = props;
 
-  const filterProducts = (event) => {
-    const inputString = event.target.value;
-    // console.log(inputString);
+  // make state for each input
+  const [isChecked, setIsChecked] = useState(false);
+  const [searchFilterProducts, setSearchFilterProducts] = useState(fullList);
 
-    /* HERE IS A PROBLEM:
+  /* I HAD A BIG REFERENCING PROBLEM:
 
 I can decide if I want to have both filters working at the same time 
 and the input one not correctly, or to have only each one working correctly,
@@ -14,25 +16,43 @@ but not correctly at the same time.
 Problem is which array I am using as a reference to filter in the filterProducts function.
 fullList.filter = filterProducts alone works correctly
 products.filter = filterProducts and checkbox work at the same time, but not filterProducts individually.
+
+ODD SOLUTION:
+
+I made a state for the checkbox to compare in the search bar filter function if the box is checked.
+So I can only filter the ones that are in stock with the search bar.
+Then I made another state just for the products that are filtered by the search bar.
+I don't think this is really good... but it works.
+
 */
 
-    const filteredProducts = products.filter((product) => {
-      return product.name.startsWith(inputString);
-    });
-    // console.log(filteredProducts);
-    setProducts(filteredProducts);
+  //   FUNCTION for filtering with search bar
+  const handleSearchBar = (inputString) => {
+    if (!isChecked) {
+      const filteredAllProducts = fullList.filter((product) => {
+        return product.name.startsWith(inputString);
+      });
+      setProducts(filteredAllProducts);
+      setSearchFilterProducts(filteredAllProducts);
+    } else {
+      const filteredCheckedProducts = products.filter((product) => {
+        return product.name.startsWith(inputString);
+      });
+      setProducts(filteredCheckedProducts);
+    }
   };
 
-  const showInStock = (event) => {
-    const isChecked = event.target.checked;
-    // console.log(isChecked);
+  // FUNCTION for filtering with checkbox
+  const handleInStock = (isChecked) => {
+    setIsChecked(isChecked);
+    //console.log(isChecked);
     if (isChecked) {
       const productsInStock = products.filter((product) => {
         return product.inStock;
       });
       setProducts(productsInStock);
     } else {
-      setProducts(fullList);
+      setProducts(searchFilterProducts);
     }
   };
 
@@ -45,7 +65,9 @@ products.filter = filterProducts and checkbox work at the same time, but not fil
         type="text"
         name="searchBar"
         id="search-bar-input"
-        onChange={filterProducts}
+        onChange={(event) => {
+          handleSearchBar(event.target.value);
+        }}
       />
 
       <div id="checkbox-container">
@@ -53,7 +75,9 @@ products.filter = filterProducts and checkbox work at the same time, but not fil
           type="checkbox"
           name="checkBox"
           id="check-box"
-          onChange={showInStock}
+          onChange={(event) => {
+            handleInStock(event.target.checked);
+          }}
         />
         <label htmlFor="checkBox" id="check-box-label">
           {' '}
