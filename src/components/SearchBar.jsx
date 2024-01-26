@@ -13,15 +13,17 @@ I can decide if I want to have both filters working at the same time
 and the input one not correctly, or to have only each one working correctly,
 but not correctly at the same time.
 
-Problem is which array I am using as a reference to filter in the filterProducts function.
+Problem is which array I am using as a reference to filter in the handleSearchBar function.
 fullList.filter = filterProducts alone works correctly
 products.filter = filterProducts and checkbox work at the same time, but not filterProducts individually.
 
 ODD SOLUTION:
 
 I made a state for the checkbox to compare in the search bar filter function if the box is checked.
-So I can only filter the ones that are in stock with the search bar.
-Then I made another state just for the products that are filtered by the search bar.
+So I can only filter the ones that are in stock using the search bar.
+Then I made another state only for the products that are filtered by the search bar.
+So this can be used as a reference for the checkbox to filter out those not in stock.
+
 I don't think this is really good... but it works.
 
 */
