@@ -36,3 +36,50 @@
     transform: rotate(360deg);
   }
 }
+
+.search{
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+}
+
+.search-bar input{
+  width: 70vw;
+  height: 30px;
+  font-size: 17px;
+}
+
+.search-bar p{
+  font-size: 20px;
+}
+
+.inStock-search{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  column-gap: 5px;
+}
+
+table{
+  font-size: 20px;
+  margin: 75px 280px;
+}
+
+thead{
+  background-color: lightgrey;
+  border: 8px solid lightgrey;
+}
+
+tr{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid lightgrey;
+  width: 60vw;
+  height: 40px;
+}
+
+td{
+  width: 150px;
+}
