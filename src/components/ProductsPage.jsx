@@ -16,7 +16,9 @@ export default function ProductsPage() {
     if(userInput.length > 0){
       const searchedProduct = products.filter((product) => {
         const lowerCaseProduct = product.name.toLowerCase();
-        return lowerCaseProduct.includes(userInput);
+        const userInputLength = userInput.length;
+        const compareProduct =  lowerCaseProduct.slice(0, userInputLength)
+        return compareProduct.includes(userInput);
       });
       
       setProducts(searchedProduct);
