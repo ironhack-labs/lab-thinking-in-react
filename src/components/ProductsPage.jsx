@@ -5,27 +5,44 @@ import jsonData from './../data.json';
 import SearchBar from './SearchBar';
 import ProductTable from './ProductTable';
 
-
-function ProductsPage () {
+function ProductsPage() {
   const [products, setProducts] = useState(jsonData);
 
-  const filterProducts =(wordToSearch) => {
+  const filterProducts = (wordToSearch) => {
     // Case insensitive search
-    wordToSearch = wordToSearch.toLowerCase();  
-    setProducts(jsonData.filter((product)=>{
-      return product.name.toLowerCase().includes(wordToSearch);    }))
-  }
-  
-  return(
-      <div>
-        <h1>IronStore</h1>
+    wordToSearch = wordToSearch.toLowerCase();
+    setProducts(
+      jsonData.filter((product) => {
+        return product.name.toLowerCase().includes(wordToSearch);
+      })
+    );
+  };
 
-        <SearchBar filterProducts={filterProducts}/>
+  const toggleInStock = () => {
+    // If the products on page are the full list, toggle to show only in-stock products
+    if (products.length === jsonData.length) {
+      setProducts(
+        jsonData.filter((product) => {
+          return product.inStock;
+        })
+      );
+    } else {
+      // Otherwise, toggle to show all
+      setProducts(jsonData);
+    }
+  };
 
-        <ProductTable products={products} />
+  return (
+    <div>
+      <h1>IronStore</h1>
 
-      </div>    
-  )
+      <SearchBar filterProducts={filterProducts} />
+      <input type="checkbox" onChange={toggleInStock} />
+      <label htmlFor="stockCheckbox">Only show products in stock</label>
+
+      <ProductTable products={products} />
+    </div>
+  );
 }
 
-export default ProductsPage
+export default ProductsPage;
