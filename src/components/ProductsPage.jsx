@@ -10,9 +10,10 @@ function ProductsPage () {
   const [products, setProducts] = useState(jsonData);
 
   const filterProducts =(wordToSearch) => {
+    // Case insensitive search
+    wordToSearch = wordToSearch.toLowerCase();  
     setProducts(jsonData.filter((product)=>{
-        return product.name.includes(wordToSearch)
-    }))
+      return product.name.toLowerCase().includes(wordToSearch);    }))
   }
   
   return(
