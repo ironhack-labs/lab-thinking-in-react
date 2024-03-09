@@ -1,10 +1,13 @@
-import React from 'react'
+import React from 'react';
 
-
-function ProductRow({product}) {
+function ProductRow({ product }) {
   return (
-    <div>{product.name}</div>
-  )
+    <div style={{
+      color: product.inStock ? 'black' : 'red'
+    }}>
+      {product.name}
+    </div>
+  );
 }
 
-export default ProductRow
+export default ProductRow;
