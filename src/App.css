@@ -36,3 +36,36 @@
     transform: rotate(360deg);
   }
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 10%;
+}
+
+table {
+  margin-top: 20px;
+  width: 80vw;
+  border: 1px solid  rgb(229, 223, 223);
+}
+
+th {
+  background-color: rgb(229, 223, 223);
+  padding: 10px 10px;
+  width: 50%;
+}
+
+td {
+  padding: 10px 0;
+  border-bottom: 1px solid rgb(229, 223, 223);
+}
+
+.search-bar {
+  margin-top: 20px;
+  padding: 10px;
+  width: 75vw;
+}
+
+.unavailable {
+  color: red;
+}
