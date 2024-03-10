@@ -9,7 +9,7 @@ function ProductsPage() {
   const filterProduct = (wordToSearch) => {
     setProducts(
       jsonData.filter((product) => {
-        product.name.includes('wordToSearch');
+        return product.name.toLowerCase().startsWith(wordToSearch.toLowerCase())
       })
     );
   };

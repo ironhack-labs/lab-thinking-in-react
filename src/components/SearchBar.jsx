@@ -15,7 +15,10 @@ function SearchBar({ filterProduct }) {
         <input type="checkbox" placeholder="Search your items" />
         <label for="stock">Only show products in stock</label>
       </div>
-      <input className='search-bar' onChange={handleChange} placeholder="Search your items" />
+      <input 
+      className='search-bar' 
+      onChange={handleChange} 
+      placeholder="Search your items" />
     </div>
   );
 }
