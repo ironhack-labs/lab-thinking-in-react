@@ -1,6 +1,8 @@
+import { useState } from "react"
 import ProductRow from "./ProductRow"
 
 function ProductTable({products}) {
+
   return (
     <table>
       <thead>

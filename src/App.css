@@ -65,3 +65,7 @@ td {
   padding: 10px;
   width: 75vw;
 }
+
+.unavailable {
+  color: red;
+}
