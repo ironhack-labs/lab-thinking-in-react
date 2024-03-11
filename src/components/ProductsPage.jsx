@@ -14,11 +14,16 @@ function ProductsPage() {
             return product.name.toLocaleLowerCase().includes(wordToSearch)
         }))
     }
+    function inStock(isChecked) {
+        setProducts(products.filter((product) => {
+            return product.inStock
+        }))
+    }
     return (
         <div>
             <h1>IronStore</h1>
             <Table products={products} />
-            <SearchBar filterProducts={filterProducts} product={products} />
+            <SearchBar filterProducts={filterProducts} inStock={inStock} product={products} />
 
         </div>
 

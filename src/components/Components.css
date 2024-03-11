@@ -18,7 +18,10 @@
     border-bottom: 1px solid #934242;
 }
 
-input{
+.search{
     display: flex;
+    width: 200px;
+    align-items: center;
+    flex-direction: column;
     margin: 10px auto;
 }
