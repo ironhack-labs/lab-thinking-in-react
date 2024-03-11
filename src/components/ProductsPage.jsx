@@ -3,6 +3,8 @@ import { useState } from 'react';
 import Table from './Table';
 import jsonData from '../data.json'
 import SearchBar from './SearchBar';
+import './Components.css'
+
 function ProductsPage() {
     const [products, setProducts] = useState(jsonData);
 
@@ -16,7 +18,7 @@ function ProductsPage() {
         <div>
             <h1>IronStore</h1>
             <Table products={products} />
-            <SearchBar filterProducts={filterProducts} />
+            <SearchBar filterProducts={filterProducts} product={products} />
 
         </div>
 

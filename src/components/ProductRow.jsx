@@ -1,11 +1,12 @@
 import React from 'react';
+import './Components.css'
 
 function ProductRow(props) {
     return (
-        <tbody>
+        <tbody className={props.tableClass}>
             {props.products.map((prod, index) => (
                 <tr key={index}>
-                    <td style={{ color: prod.inStock ? 'inherit' : 'red' }}>{prod.name}</td>
+                    <td style={{ color: prod.inStock ? '' : 'red' }}>{prod.name}</td>
                     <td>{prod.price}</td>
                 </tr>
             ))}
