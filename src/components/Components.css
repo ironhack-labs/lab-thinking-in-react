@@ -1,0 +1,27 @@
+.table-container  ,h1 {
+    
+    margin: 20px;
+    display: flex;
+ justify-content: center;
+}
+
+.table {
+    width: 100%;
+
+    border: 1px solid #726969;
+}
+
+.table th,
+.table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #934242;
+}
+
+.search{
+    display: flex;
+    width: 200px;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px auto;
+}
