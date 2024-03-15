@@ -11,7 +11,7 @@ function ProductsPage() {
   const filterProducts = (wordToSearch) => {
     setProducts(
       jsonData.filter((product) => {
-        return product.name.includes(wordToSearch);
+        return product.name.toLowerCase().includes(wordToSearch.toLowerCase());
       })
     );
   };

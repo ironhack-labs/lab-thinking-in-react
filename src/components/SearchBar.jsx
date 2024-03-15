@@ -5,7 +5,7 @@ function SearchBar({ filterProducts }) {
   const [searchWords, setSearchWords] = useState('');
 
   const handleChange = (e) => {
-    const newWord = e.target.value;
+    const newWord = e.target.value.toLowerCase();
     setSearchWords(newWord);
     filterProducts(newWord);
   };
