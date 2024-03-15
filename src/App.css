@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+
+.product-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.table {
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+.table-head {
+  background-color: rgb(195, 183, 183);
+  font-size: larger;
+}
+
+.row{
+  border-bottom: 1px solid rgb(147, 29, 29);
+}
+
