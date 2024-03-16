@@ -4,7 +4,7 @@ import ProductRow from './ProductRow'
 
 function ProductTable({products}) {
   return (
-    <table>
+    <table classname="table">
       <thead>
         <tr>
           <th>Name</th>
