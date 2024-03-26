@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+.tableau {
+  margin: auto;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+th {
+  border: solid 1px;
+}
+td {
+  border: solid 1px;
+}
