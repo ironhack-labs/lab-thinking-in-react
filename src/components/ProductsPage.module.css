@@ -1,0 +1,63 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+}
+
+.container {
+  padding: 20px;
+  width: 100%; /* Use full width to center the content inside it */
+  max-width: 800px; /* Set a max-width to keep the content from stretching too far on larger screens */
+  margin: 0 auto; /* This centers the container */
+}
+
+.title {
+  color: #333;
+  text-align: center;
+  margin-bottom: 1em; /* Adds some space below the title */
+}
+
+.searchBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1em; /* Adds some space below the search bar */
+}
+
+.searchBar input[type="text"],
+.searchBar label {
+  padding: 10px;
+  font-size: 0.9rem;
+}
+
+.searchBar input[type="text"] {
+  flex: 1;
+  max-width: 300px; /* Adjust as per your layout */
+  border: 1px solid #ddd;
+  border-radius: 4px; /* Optional: for rounded corners */
+}
+
+.searchBar input[type="checkbox"] {
+  margin-left: 10px; /* Adjust as needed */
+}
+
+.productTable {
+  margin-top: 20px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+}
+
+.productTable th,
+.productTable td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.productTable th {
+  background-color: #f2f2f2;
+}
