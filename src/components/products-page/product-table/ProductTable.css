@@ -1,0 +1,17 @@
+.ProductTable{
+    color: white;
+    width: 90%;
+    border: 1px solid white;
+    margin: 50px;
+    padding: 20px;
+}
+
+.ProductTable th{
+    color: aqua;
+    padding-bottom: 30px;
+}
+
+.category-name{
+    color: blueviolet;
+}
+

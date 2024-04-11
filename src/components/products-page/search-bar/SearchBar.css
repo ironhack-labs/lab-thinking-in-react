@@ -1,0 +1,15 @@
+.SearchBar{
+    color: white;
+    width: 90%;
+    border: 1px solid white;
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.show-only{
+    margin-top: 20px;
+}
