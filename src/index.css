@@ -1,5 +1,4 @@
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,4 +9,29 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.App {
+  text-align: center;
+}
+
+.table-container {
+  display: flex;
+  justify-content: center;
+}
+
+td {
+  padding: 10px 100px; 
+}
+
+th {
+  background-color: rgb(216, 213, 213);
+  color: rgba(61, 60, 60, 0.809);
+  padding: 20px
+}
+
+.searchBar {
+  width: 40%;
+  margin: auto;
+  padding: 10px;
 }
