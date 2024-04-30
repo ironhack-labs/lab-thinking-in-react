@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+
+#searchBar {
+  height: 40px;
+  width: 500px;
+  border-radius: 20px;
+  text-indent: 20px;
+}
+
+#table {
+  border: 2px red solid;
+  margin: 10px;
+}
+#top-row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.product-row {
+  display: flex;
+  justify-content: space-around;
+}
+
+#inStock {
+  margin-top: 20px;
+}
