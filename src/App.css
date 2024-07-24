@@ -13,14 +13,13 @@
   }
 }
 
-.App-header {
+.App{
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(9px + 1.8vmin);
   color: white;
 }
 
@@ -35,4 +34,52 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+div.searchInput{
+  display: flex;
+  justify-content: center;
+  align-content: baseline;
+  margin-bottom: 20px;
+}
+
+#search-label{
+  margin-right: 20px;;
+}
+
+div.searchFilters{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  
+  button{
+    margin-top: 10px;
+    padding: 4px 7px;
+    text-transform: uppercase;
+    color: #282c34;
+    font-weight: 600;
+  }
+}
+
+
+
+#stock-only{
+
+  margin-right: 20px;
+
+  input{
+    margin-right: 10px;
+
+  }
+  label{
+    font-size: 1.2rem;
+  }
+}
+table{
+  margin-top: 5%;
+  width: 50%;
+}
+
+td{
+  border-top: 1px solid white;
 }
