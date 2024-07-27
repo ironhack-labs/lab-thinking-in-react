@@ -36,3 +36,31 @@
     transform: rotate(360deg);
   }
 }
+
+.ProductTable {
+  width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 
+table {
+    border: 2px solid forestgreen;
+    width: 800px;
+    height: 200px;
+    margin-top: 70px;
+    margin-left: 350px;
+}
+ 
+th {
+    border-bottom: 1px solid black;
+    background-color: rgb(177, 175, 175);
+    
+}
+ 
+td {
+    text-align: center;
+    font-weight: normal;
+    font-size: 16px;
+}
