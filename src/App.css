@@ -1,10 +1,27 @@
 .App {
+  background-color: #f9f9f9;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  color: #333;
   text-align: center;
 }
 
+.App-header {
+  background-color: #1a202c;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(12px + 2vmin);
+  color: white;
+  padding: 40px 20px;
+}
+
 .App-logo {
-  height: 40vmin;
+  height: 30vmin;
   pointer-events: none;
+  margin-bottom: 20px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -13,26 +30,120 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@keyframes App-logo-spin {
+@@ -36,3 +40,120 @@
+    transform: rotate(360deg);
+  }
 }
 
 .App-link {
   color: #61dafb;
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.App-link:hover {
+  color: #21a1f1;
+}
+
+.SearchBar {
+  margin: 20px auto;
+  max-width: 400px;
+  text-align: left;
+}
+
+.SearchBar label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+.SearchBar input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.SearchBar input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.ProductRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.ProductRow:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.ProductRow .out-of-stock {
+  color: #e63946;
+  font-weight: bold;
+}
+
+.ProductTable {
+  margin: 20px auto; 
+  width: 100%;
+  max-width: 800px; 
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ProductTable table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ProductTable th,
+.ProductTable td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.ProductTable th {
+  background-color: #f1f1f1;
+  font-weight: bold;
+}
+
+.ProductTable .out-of-stock {
+  color: #e63946;
+}
+
+.ProductsPage {
+  text-align: center;
+  padding: 20px;
+}
+
+.ProductsPage h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .App-header {
+    padding: 20px 10px;
+    font-size: calc(10px + 2vmin);
   }
-  to {
-    transform: rotate(360deg);
+
+  .ProductRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ProductRow,
+  .ProductTable table {
+    font-size: 14px;
   }
 }
