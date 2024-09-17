@@ -1,38 +1,89 @@
-.App {
-  text-align: center;
+:root {
+  --grey: rgb(231, 231, 231);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#iron-store {
+  padding: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-grow: 1;
+  gap: 20px;
+}
+
+#ironstore-headline {
+  margin: 40px 0 0 0;
+}
+
+#search-bar-component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 50%;
+  margin-top: 20px;
+}
+
+#search-bar-input {
+  border-style: none;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--grey);
+  text-align: center;
+  font-size: 1rem;
+}
+
+#search-bar-input:focus {
+  border-style: none;
+  background-color: blue;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#search-bar-label {
+  text-transform: uppercase;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#product-table {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 40px;
+}
+
+#product-table-head-row {
+  margin: 0;
+  padding: 0;
+  background-color: var(--grey);
+}
+
+.product-table-head-data {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  padding: 15px 0;
+  text-transform: uppercase;
+  width: 50%;
+}
+
+.product-table-body-row {
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid var(--grey);
+}
+
+.product-table-body-data {
+  text-align: center;
+  margin: 0;
+  padding: 10px 0;
+}
+
+table th:first-child {
+  border-radius: 10px 0 0 0px;
+}
+
+table th:last-child {
+  border-radius: 0 10px 0px 0;
 }
