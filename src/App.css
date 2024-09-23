@@ -1,38 +1,86 @@
+#root{
+  height: 100svh;
+  padding: 0px;
+  --primary-color: rgb(255,255,255);
+  --second-color: rgb(225, 225, 225);
+  --text-color: rgb(0,0,0);
+  --link-color: #0096c7;
+
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.dark-theme{
+  --primary-color: rgb(0,0,0);
+  --second-color: rgb(43, 43, 43);
+  --text-color: rgb(218, 218, 218);
+  --link-color: #caf0f8;
+}
+
+#theme-btn {
+  position: absolute;
+  left: 10px;
+}
+
 .App {
+  background-color: var(--primary-color);
+  color: var(--text-color);
   text-align: center;
+  padding: 10px;
+  min-height: 100svh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#product-page{
+  padding: 20px
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#search-bar {
+  box-sizing: border-box;
+  padding: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#product-table{
+  border: 2px solid var(--second-color);
+}
+
+input[type="text"], textarea {
+
+  background-color : var(--second-color); 
+}
+
+
+.flex-column{
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 10px
 }
 
-.App-link {
-  color: #61dafb;
+.flex-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.space-evenly{
+  justify-content: space-evenly;
 }
+
+.pd-10{
+  padding: 10px;
+}
+
+.width-total{
+  width: 100%;
+}
+
+.bg-lightgray{
+  background-color: var(--second-color);
+}
+
+.border-row{
+  border-bottom: 2px solid var(--second-color);
+}
+
