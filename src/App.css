@@ -36,3 +36,41 @@
     transform: rotate(360deg);
   }
 }
+
+.prod-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100px;
+  width: 70vw;
+
+  border: dotted 0.5px black;
+}
+
+#searchStr {
+  width: 90%;
+  height: 2.5vh;
+}
+
+.prod-table {
+  width: 70vw;
+  border: 1px solid grey;
+}
+
+thead tr {
+  background-color: grey;
+  height: 5vh;
+}
+
+td {
+  border-top: 1px solid grey;
+  height: 3vh;
+}
