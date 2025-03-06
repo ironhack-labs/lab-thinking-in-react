@@ -1,0 +1,16 @@
+table {
+  width: 850px;
+  padding: 10px;
+  thead {
+    background-color: rgba(128, 128, 128, 0.518);
+  }
+  th {
+    padding: 15px;
+    margin-left: 15px;
+  }
+  tbody {
+    th {
+      border-bottom: 1px solid black;
+    }
+  }
+}

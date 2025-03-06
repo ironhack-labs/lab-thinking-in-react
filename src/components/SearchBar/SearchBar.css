@@ -1,0 +1,24 @@
+
+  .search-container {
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 4px;
+  }
+  .search-bar {
+    margin-bottom: 10px;
+    width: 70%;
+    padding: 3.5px;
+    margin-bottom: 15px;
+  }
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+  }
+  .checkbox-container label {
+    margin-left: 5px;
+  }
